@@ -3,7 +3,7 @@
     "version": "0.1.0",
     "private": true,
     "scripts": {
-    	"dev": "next dev",
+        "dev": "next dev",
         "build": "next build",
         "start": "next start"
     },
@@ -16,6 +16,10 @@
         "tailwindcss": "^2.0.2"
     },
     "devDependencies": {
+        "prettier": "2.2.1",
         "standard-version": "^9.1.0"
+    },
+    "prettier": {
+        "tabWidth": 4
     }
 }
