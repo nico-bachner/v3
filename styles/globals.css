@@ -1,3 +1,45 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+    font-family: "Inter";
+    font-weight: 100 900;
+    font-display: swap;
+    font-style: normal;
+    src: url("/fonts/Inter-roman.var.woff2?v=3.15") format("woff2");
+}
+
+@layer base {
+    :root {
+        color-scheme: light dark;
+    }
+    html {
+        @apply bg-white dark:bg-black;
+    }
+    h1 {
+        @apply text-4xl font-extrabold sm:text-5xl;
+    }
+    h2 {
+        @apply text-3xl font-bold sm:text-4xl;
+    }
+    h3 {
+        @apply text-xl font-semibold;
+    }
+    section {
+        @apply my-16;
+    }
+}
+
+@layer components {
+    .subtitle {
+        @apply my-4 text-gray-700 sm:text-lg dark:text-gray-400;
+    }
+}
+
+@layer utilities {
+    .bg-blur {
+        @apply bg-white bg-opacity-80 dark:bg-black;
+        backdrop-filter: blur(16px);
+    }
+}
