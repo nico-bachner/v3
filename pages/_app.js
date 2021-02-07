@@ -73,7 +73,7 @@ function App({ Component, pageProps }) {
                 <a href="/">
                     <svg
                         viewBox="0 0 512 512"
-                        className="h-12 text-gray-800 dark:text-gray-100"
+                        className="h-12"
                         fill="currentColor"
                         stroke="currentColor"
                         xmlns="http://www.w3.org/2000/svg"
