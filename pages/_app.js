@@ -27,6 +27,10 @@ function App({ Component, pageProps }) {
     ];
     const other = [
         {
+            title: "Source Code",
+            url: "https://github.com/nico-bachner/v3",
+        },
+        {
             title: "Uses",
             url: "/uses",
         },
@@ -43,6 +47,10 @@ function App({ Component, pageProps }) {
         {
             title: "DEV",
             url: "https://dev.to/nicob",
+        },
+        {
+            title: "Stack Overflow",
+            url: "https://stackoverflow.com/users/story/13506524",
         },
         {
             title: "Code Golf",
