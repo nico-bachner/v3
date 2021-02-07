@@ -15,7 +15,7 @@
         color-scheme: light dark;
     }
     html {
-        @apply bg-white dark:bg-black;
+        @apply text-black bg-white dark:text-white dark:bg-black;
     }
     h1 {
         @apply text-4xl font-extrabold sm:text-5xl;
