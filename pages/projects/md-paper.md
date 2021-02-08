@@ -21,7 +21,8 @@ For those unfamiliar with the command line:
 
 -   With [Homebrew](https://brew.sh):
     ```
-    brew install nico-bachner/md-paper/md-paper
+    brew tap nico-bachner/formulae
+    brew install md-paper
     ```
 -   With `curl`:
     ```
