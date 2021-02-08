@@ -67,7 +67,7 @@ function App({ Component, pageProps }) {
                 <meta property="og:description" content={meta.description} />
             </Head>
 
-            <nav className="sticky top-0 flex items-center justify-between max-w-4xl p-8 mx-auto my-4 bg-blur sm:my-8">
+            <nav className="sticky top-0 flex items-center justify-between max-w-4xl px-8 py-4 mx-auto my-8 bg-white sm:py-8 dark:bg-black bg-blur">
                 <a href="#content" className="sr-only focus:not-sr-only">
                     Skip to content
                 </a>
@@ -75,7 +75,7 @@ function App({ Component, pageProps }) {
                     <svg
                         role="img"
                         viewBox="0 0 512 512"
-                        className="h-12"
+                        className="w-12 h-12"
                         fill="currentColor"
                         stroke="currentColor"
                         xmlns="http://www.w3.org/2000/svg"
@@ -93,7 +93,7 @@ function App({ Component, pageProps }) {
                         return (
                             <li key={index}>
                                 <Link href={page.url}>
-                                    <a className="text-lg font-medium hover:text-blue-300">
+                                    <a className="text-lg font-medium hover:text-blue-400">
                                         {page.title}
                                     </a>
                                 </Link>
@@ -101,39 +101,29 @@ function App({ Component, pageProps }) {
                         );
                     })}
                 </ul>
-                <details className="sm:hidden" id="menu">
-                    <summary className="text-lg font-semibold">MENU</summary>
-                    <ul className="absolute left-0 w-screen h-screen px-8 py-4 bg-blur top-24">
-                        {pages.map((page, index) => {
-                            return (
-                                <li
-                                    key={index}
-                                    className="my-8 text-lg text-center"
-                                >
-                                    <Link href={page.url}>
-                                        <button
-                                            onClick={() => {
-                                                document
-                                                    .getElementById("menu")
-                                                    .toggleAttribute("open");
-                                            }}
-                                            className="text-lg font-medium"
-                                        >
-                                            {page.title}
-                                        </button>
-                                    </Link>
-                                </li>
-                            );
-                        })}
-                    </ul>
-                </details>
+            </nav>
+
+            <nav className="fixed bottom-0 w-screen bg-white sm:hidden dark:bg-black bg-blur">
+                <ul className="grid grid-cols-4 gap-2 px-8 py-2">
+                    {pages.map((page, index) => {
+                        return (
+                            <li key={index}>
+                                <Link href={page.url}>
+                                    <button className="w-full py-4 text-sm font-bold hover:text-blue-400">
+                                        {page.title}
+                                    </button>
+                                </Link>
+                            </li>
+                        );
+                    })}
+                </ul>
             </nav>
 
             <main id="content" className="px-8 mx-auto max-w-prose">
                 <Component {...pageProps} />
             </main>
 
-            <footer className="px-8 mx-auto my-12 text-gray-500 max-w-prose">
+            <footer className="px-8 mx-auto my-20 text-gray-400 dark:text-gray-600 max-w-prose">
                 <hr className="dark:border-gray-700" />
                 <div className="grid my-12 sm:grid-cols-3">
                     <ul>
@@ -141,7 +131,7 @@ function App({ Component, pageProps }) {
                             return (
                                 <li
                                     key={index}
-                                    className="my-4 transition hover:text-gray-600"
+                                    className="my-4 transition hover:text-gray-500"
                                 >
                                     <Link href={page.url}>
                                         <a>{page.title}</a>
@@ -155,7 +145,7 @@ function App({ Component, pageProps }) {
                             return (
                                 <li
                                     key={index}
-                                    className="my-4 transition hover:text-gray-600"
+                                    className="my-4 transition hover:text-gray-500"
                                 >
                                     <Link href={item.url}>
                                         <a>{item.title}</a>
@@ -169,7 +159,7 @@ function App({ Component, pageProps }) {
                             return (
                                 <li
                                     key={index}
-                                    className="my-4 transition hover:text-gray-600"
+                                    className="my-4 transition hover:text-gray-500"
                                 >
                                     <Link href={link.url}>
                                         <a>{link.title}</a>

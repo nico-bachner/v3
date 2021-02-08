@@ -38,8 +38,10 @@
 }
 
 @layer utilities {
-    .bg-blur {
-        @apply bg-white bg-opacity-80 dark:bg-black;
-        backdrop-filter: blur(16px);
+    @supports (backdrop-filter: blur()) {
+        .bg-blur {
+            @apply bg-opacity-80 dark:bg-opacity-60;
+            backdrop-filter: blur(20px);
+        }
     }
 }
