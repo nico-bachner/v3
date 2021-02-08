@@ -14,7 +14,7 @@ export default function Home() {
             </Head>
 
             <h1>Hi, I'm Nico.</h1>
-            <p className="my-2 text-3xl font-bold text-blue-400 sm:text-4xl">
+            <p className="my-2 text-3xl font-bold text-blue-500 dark:text-blue-300 sm:text-4xl">
                 I'm an Aspiring Open Sourcerer.
             </p>
             <p className="subtitle">
@@ -28,12 +28,12 @@ export default function Home() {
                         return (
                             <li key={index} className="my-4 cursor-pointer">
                                 <Link href={"/projects/" + project.slug}>
-                                    <article className="px-6 py-4 border rounded dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-800">
-                                        <h3>{project.title}</h3>
-                                        <p className="dark:text-gray-300">
-                                            {project.summary}
-                                        </p>
-                                    </article>
+                                    <button className="w-full px-6 py-4 card">
+                                        <h3 className="text-xl ">
+                                            {project.title}
+                                        </h3>
+                                        <p>{project.summary}</p>
+                                    </button>
                                 </Link>
                             </li>
                         );
@@ -65,14 +65,12 @@ export default function Home() {
                         return (
                             <li key={index} className="my-6 cursor-pointer">
                                 <Link href={"/projects/" + article.slug}>
-                                    <article className="">
-                                        <h3 className="font-medium">
+                                    <a>
+                                        <h3 className="text-xl">
                                             {article.title}
                                         </h3>
-                                        <p className="dark:text-gray-300">
-                                            {article.summary}
-                                        </p>
-                                    </article>
+                                        <p>{article.summary}</p>
+                                    </a>
                                 </Link>
                             </li>
                         );

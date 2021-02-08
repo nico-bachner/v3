@@ -49,12 +49,12 @@ export default function Projects() {
                     return (
                         <li key={index} className="my-4 cursor-pointer">
                             <Link href={"/projects/" + project.slug}>
-                                <article className="px-6 py-4 border rounded dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-800">
-                                    <h3>{project.title}</h3>
-                                    <p className="dark:text-gray-300">
-                                        {project.summary}
-                                    </p>
-                                </article>
+                                <button className="w-full px-8 py-4 card">
+                                    <h2 className="text-2xl">
+                                        {project.title}
+                                    </h2>
+                                    <p>{project.summary}</p>
+                                </button>
                             </Link>
                         </li>
                     );

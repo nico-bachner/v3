@@ -27,10 +27,10 @@ export default function Articles() {
                         <li key={index} className="my-8 cursor-pointer">
                             <Link href={"/articles/" + article.slug}>
                                 <article className="">
-                                    <h3>{article.title}</h3>
-                                    <p className="dark:text-gray-300">
-                                        {article.summary}
-                                    </p>
+                                    <h2 className="text-3xl">
+                                        {article.title}
+                                    </h2>
+                                    <p>{article.summary}</p>
                                 </article>
                             </Link>
                         </li>

@@ -1,9 +1,32 @@
 import "../styles/globals.css";
 
+import { MDXProvider } from "@mdx-js/react";
+
 import Head from "next/head";
 import Link from "next/link";
 
 function App({ Component, pageProps }) {
+    const CustomLink = (props) => {
+        const href = props.href;
+        const isInternalLink =
+            href && (href.startsWith("/") || href.startsWith("#"));
+
+        if (isInternalLink) {
+            return (
+                <Link href={href}>
+                    <a {...props} />
+                </Link>
+            );
+        }
+
+        return <a target="_blank" rel="noopener noreferrer" {...props} />;
+    };
+
+    const mdxComponents = {
+        wrapper: (props) => <article {...props} />,
+        a: CustomLink,
+    };
+
     const meta = {
         description: "Aspiring Open Sourcerer",
     };
@@ -120,7 +143,9 @@ function App({ Component, pageProps }) {
             </nav>
 
             <main id="content" className="px-8 mx-auto max-w-prose">
-                <Component {...pageProps} />
+                <MDXProvider components={mdxComponents}>
+                    <Component {...pageProps} />
+                </MDXProvider>
             </main>
 
             <footer className="px-8 mx-auto my-20 text-gray-400 dark:text-gray-600 max-w-prose">

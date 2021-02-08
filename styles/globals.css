@@ -24,16 +24,53 @@
         @apply text-3xl font-bold sm:text-4xl;
     }
     h3 {
-        @apply text-xl font-semibold;
+        @apply text-2xl font-semibold sm:text-3xl;
+    }
+    h4 {
+        @apply text-xl font-medium sm:text-2xl;
+    }
+    p {
+        @apply text-gray-600 dark:text-gray-400;
     }
     section {
         @apply my-16;
     }
+
+    article h1 {
+        @apply mb-4;
+    }
+    article h2 {
+        @apply mt-12;
+    }
+    article h3 {
+        @apply mt-8;
+    }
+    article h4 {
+        @apply mt-4;
+    }
+    article p {
+        @apply mt-2;
+    }
+    article ul {
+        @apply mt-4;
+    }
+    article a {
+        @apply text-blue-400;
+    }
+    article code {
+        @apply p-1 py-0.5 font-mono bg-gray-100 rounded dark:bg-gray-800;
+    }
+    article pre {
+        @apply px-4 py-2 my-2 overflow-x-scroll font-mono bg-gray-100 rounded dark:bg-gray-800;
+    }
 }
 
 @layer components {
+    button.card {
+        @apply text-left border rounded hover:bg-gray-100 dark:hover:bg-gray-800 dark:border-gray-700;
+    }
     .subtitle {
-        @apply my-4 text-gray-700 sm:text-lg dark:text-gray-400;
+        @apply my-4 sm:text-lg;
     }
 }
 
