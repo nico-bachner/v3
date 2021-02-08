@@ -85,6 +85,13 @@ function App({ Component, pageProps }) {
         <>
             <Head>
                 <link rel="icon" href="/icon.svg" />
+                <link
+                    rel="preload"
+                    href="/fonts/Inter-roman.var.woff2"
+                    as="font"
+                    type="font/woff2"
+                    crossOrigin="anonymous"
+                />
                 <meta name="description" content={meta.description} />
                 <meta property="og:type" content="website" />
                 <meta property="og:description" content={meta.description} />

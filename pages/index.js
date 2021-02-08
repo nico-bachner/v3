@@ -14,7 +14,7 @@ export default function Home() {
             </Head>
 
             <h1>Hi, I'm Nico.</h1>
-            <p className="my-2 text-3xl font-bold text-blue-500 dark:text-blue-300 sm:text-4xl">
+            <p className="my-2 text-3xl font-bold text-blue-400 dark:text-blue-300 sm:text-4xl">
                 I'm an Aspiring Open Sourcerer.
             </p>
             <p className="subtitle">
