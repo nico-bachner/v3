@@ -35,9 +35,9 @@ export default function Footer({ pages }) {
     ];
 
     return (
-        <footer className="px-8 mx-auto my-20 text-gray-400 dark:text-gray-600 max-w-prose">
+        <footer className="px-8 mx-auto my-24 text-gray-400 dark:text-gray-600 max-w-prose">
             <hr className="dark:border-gray-700" />
-            <div className="grid my-12 sm:grid-cols-3">
+            <nav className="grid my-12 sm:grid-cols-3">
                 <ul>
                     {pages.map((page, index) => {
                         return (
@@ -80,7 +80,7 @@ export default function Footer({ pages }) {
                         );
                     })}
                 </ul>
-            </div>
+            </nav>
         </footer>
     );
 }

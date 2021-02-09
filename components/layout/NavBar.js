@@ -10,7 +10,7 @@ export default function NavBar({ pages }) {
                 <svg
                     role="img"
                     viewBox="0 0 512 512"
-                    className="w-12 h-12"
+                    className="w-12 h-12 hover:text-blue-400"
                     fill="currentColor"
                     stroke="currentColor"
                     xmlns="http://www.w3.org/2000/svg"
