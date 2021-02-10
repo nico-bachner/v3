@@ -15,22 +15,19 @@
         color-scheme: light dark;
     }
     html {
-        @apply text-black bg-white dark:text-white dark:bg-black;
+        @apply text-gray-600 bg-white dark:text-gray-400 dark:bg-black;
     }
     h1 {
-        @apply text-4xl font-extrabold sm:text-5xl;
+        @apply text-4xl font-extrabold text-black dark:text-white sm:text-5xl;
     }
     h2 {
-        @apply text-3xl font-bold sm:text-4xl;
+        @apply text-3xl font-bold text-gray-900 dark:text-gray-50 sm:text-4xl;
     }
     h3 {
-        @apply text-2xl font-semibold sm:text-3xl;
+        @apply text-2xl font-semibold text-gray-800 dark:text-gray-100 sm:text-3xl;
     }
     h4 {
-        @apply text-xl font-medium sm:text-2xl;
-    }
-    p {
-        @apply text-gray-600 dark:text-gray-400;
+        @apply text-xl font-medium text-gray-700 dark:text-gray-200 sm:text-2xl;
     }
     section {
         @apply my-16;
@@ -55,10 +52,13 @@
         @apply mt-4;
     }
     article a {
-        @apply text-blue-400;
+        @apply link;
+    }
+    article ul {
+        @apply ml-4 list-disc list-inside;
     }
     article code {
-        @apply p-1 py-0.5 font-mono bg-gray-100 rounded dark:bg-gray-800;
+        @apply p-1 py-0.5 font-mono text-gray-700 dark:text-gray-200 bg-gray-100 rounded dark:bg-gray-800;
     }
     article pre {
         @apply px-4 py-2 my-2 overflow-x-scroll font-mono bg-gray-100 rounded dark:bg-gray-800;
@@ -72,6 +72,9 @@
     .subtitle {
         @apply my-4 sm:text-lg;
     }
+    .link {
+        @apply text-blue-500 dark:text-blue-400 dark:hover:text-blue-300 hover:text-blue-600;
+    }
 }
 
 @layer utilities {
@@ -80,5 +83,8 @@
             @apply bg-opacity-80 dark:bg-opacity-60;
             backdrop-filter: blur(20px);
         }
+    }
+    .disabled {
+        @apply text-gray-400 cursor-not-allowed dark:text-gray-500;
     }
 }

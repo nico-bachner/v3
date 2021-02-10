@@ -10,7 +10,7 @@ export default function NavBar({ pages }) {
                 <svg
                     role="img"
                     viewBox="0 0 512 512"
-                    className="w-12 h-12 hover:text-blue-400"
+                    className="w-12 h-12 text-black dark:text-white hover:text-blue-500 dark:hover:text-blue-300"
                     fill="currentColor"
                     stroke="currentColor"
                     xmlns="http://www.w3.org/2000/svg"
@@ -28,7 +28,7 @@ export default function NavBar({ pages }) {
                     return (
                         <li key={index}>
                             <Link href={page.url}>
-                                <a className="text-lg font-medium hover:text-blue-400">
+                                <a className="text-lg font-medium text-black dark:text-white hover:text-blue-500 dark:hover:text-blue-300">
                                     {page.title}
                                 </a>
                             </Link>

@@ -16,7 +16,7 @@ export default function Custom404() {
                 right page.
             </p>
             <Link href="/">
-                <button className="px-8 py-4 my-4 font-semibold border rounded dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-800">
+                <button className="px-8 py-4 my-4 font-semibold text-black dark:text-white card">
                     Return to Homepage
                 </button>
             </Link>

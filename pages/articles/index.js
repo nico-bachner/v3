@@ -24,14 +24,14 @@ export default function Articles() {
             <ul>
                 {articles.map((article, index) => {
                     return (
-                        <li key={index} className="my-8 cursor-pointer">
+                        <li key={index} className="my-8">
                             <Link href={"/articles/" + article.slug}>
-                                <article className="">
+                                <a>
                                     <h2 className="text-3xl">
                                         {article.title}
                                     </h2>
                                     <p>{article.summary}</p>
-                                </article>
+                                </a>
                             </Link>
                         </li>
                     );

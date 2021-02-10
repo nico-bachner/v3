@@ -22,7 +22,7 @@ export default function ProjectsPreview() {
                     );
                 })}
             </ul>
-            <div className="flex p-4 space-x-4 text-blue-500">
+            <div className="flex p-4 space-x-4">
                 <button
                     onClick={() => {
                         if (projectCount < projects.length) {
@@ -31,9 +31,7 @@ export default function ProjectsPreview() {
                         console.log(projectCount);
                     }}
                     className={
-                        projectCount < projects.length - 1
-                            ? "hover:text-blue-600 dark:hover:text-blue-400"
-                            : "text-gray-500 cursor-not-allowed"
+                        projectCount < projects.length - 1 ? "link" : "disabled"
                     }
                 >
                     Show More
@@ -45,18 +43,12 @@ export default function ProjectsPreview() {
                         }
                         console.log(projectCount);
                     }}
-                    className={
-                        projectCount > 2
-                            ? "hover:text-blue-600 dark:hover:text-blue-400"
-                            : "text-gray-500 cursor-not-allowed"
-                    }
+                    className={projectCount > 2 ? "link" : "disabled"}
                 >
                     Show Less
                 </button>
                 <Link href="/projects">
-                    <a className="flex-grow text-right hover:text-blue-600 dark:hover:text-blue-400">
-                        View All
-                    </a>
+                    <a className="flex-grow text-right link">View All</a>
                 </Link>
             </div>
         </section>
