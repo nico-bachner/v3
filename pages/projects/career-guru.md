@@ -1,0 +1,7 @@
+# Career Guru
+
+Career Guru is a web application designed to bring students in contantact with professionals in various fields of work in order to help students in their career orientation. The project was built collaboratively during a hackathon.
+
+Useful Links:
+- [GitHub Repository](https://github.com/nico-bachner/career-guru)
+- [Demo](https://career-guru.now.sh)
