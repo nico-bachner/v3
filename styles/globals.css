@@ -17,6 +17,9 @@
     html {
         @apply text-gray-600 bg-white dark:text-gray-400 dark:bg-black;
     }
+    section {
+        @apply my-16;
+    }
     h1 {
         @apply text-4xl font-extrabold text-black dark:text-white sm:text-5xl;
     }
@@ -29,51 +32,42 @@
     h4 {
         @apply text-xl font-medium text-gray-700 dark:text-gray-200 sm:text-2xl;
     }
-    section {
-        @apply my-16;
-    }
 
-    article h1 {
-        @apply mb-4;
-    }
     article h2 {
-        @apply mt-12;
+        @apply mt-6 mb-4;
     }
     article h3 {
-        @apply mt-8;
+        @apply mt-5 mb-3;
     }
     article h4 {
-        @apply mt-4;
+        @apply mt-4 mb-2;
     }
     article p {
-        @apply mt-2;
+        @apply my-2;
     }
     article ul {
-        @apply mt-4;
+        @apply pl-4 my-4 list-disc list-inside;
     }
-    article a {
-        @apply link;
-    }
-    article ul {
-        @apply ml-4 list-disc list-inside;
+    article ol {
+        @apply pl-4 my-4 list-decimal list-inside;
     }
     article code {
-        @apply p-1 py-0.5 font-mono text-gray-700 dark:text-gray-200 bg-gray-100 rounded dark:bg-gray-800;
+        @apply px-1 py-0.5 rounded code;
     }
     article pre {
-        @apply px-4 py-2 my-2 overflow-x-scroll font-mono bg-gray-100 rounded dark:bg-gray-800;
+        @apply px-4 py-2 my-4 overflow-x-scroll rounded code;
+    }
+    article pre > code {
+        @apply p-0;
     }
 }
 
 @layer components {
-    button.card {
+    .card {
         @apply text-left border rounded hover:bg-gray-100 dark:hover:bg-gray-800 dark:border-gray-700;
     }
     .subtitle {
         @apply my-4 sm:text-lg;
-    }
-    .link {
-        @apply text-blue-500 dark:text-blue-400 dark:hover:text-blue-300 hover:text-blue-600;
     }
 }
 
@@ -86,5 +80,11 @@
     }
     .disabled {
         @apply text-gray-400 cursor-not-allowed dark:text-gray-500;
+    }
+    .link {
+        @apply text-blue-500 dark:text-blue-400 dark:hover:text-blue-300 hover:text-blue-600;
+    }
+    .code {
+        @apply font-mono text-gray-700 bg-gray-100 dark:text-gray-200 dark:bg-gray-800;
     }
 }

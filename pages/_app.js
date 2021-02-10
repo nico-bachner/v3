@@ -4,31 +4,40 @@ import { MDXProvider } from "@mdx-js/react";
 
 import Head from "next/head";
 import Link from "next/link";
+import Image from "next/image";
 
 import Footer from "../components/layout/Footer";
 import NavBar from "../components/layout/NavBar";
 import MobileNav from "../components/layout/MobileNav";
 
 function App({ Component, pageProps }) {
-    const CustomLink = (props) => {
-        const href = props.href;
-        const isInternalLink =
-            href && (href.startsWith("/") || href.startsWith("#"));
-
-        if (isInternalLink) {
-            return (
-                <Link href={href}>
-                    <a {...props} />
-                </Link>
-            );
-        }
-
-        return <a target="_blank" rel="noopener noreferrer" {...props} />;
-    };
-
     const mdxComponents = {
+        Image: (props) => {
+            return <Image {...props} />;
+        },
         wrapper: (props) => <article {...props} />,
-        a: CustomLink,
+        a: (props) => {
+            const href = props.href;
+            const isInternalLink =
+                href && (href.startsWith("/") || href.startsWith("#"));
+
+            if (isInternalLink) {
+                return (
+                    <Link href={href}>
+                        <a className="link" {...props} />
+                    </Link>
+                );
+            }
+
+            return (
+                <a
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="link"
+                    {...props}
+                />
+            );
+        },
     };
 
     const meta = {

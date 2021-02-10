@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function NavBar({ pages }) {
     return (
-        <nav className="sticky top-0 flex items-center justify-between max-w-4xl px-8 py-4 mx-auto my-8 bg-white sm:py-8 dark:bg-black bg-blur">
+        <nav className="sticky top-0 z-50 flex items-center justify-between max-w-4xl px-8 py-4 mx-auto my-8 bg-white sm:py-8 dark:bg-black bg-blur">
             <a href="#content" className="sr-only focus:not-sr-only">
                 Skip to content
             </a>
