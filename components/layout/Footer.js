@@ -35,17 +35,24 @@ export default function Footer({ pages }) {
     ];
 
     return (
-        <footer className="px-8 mx-auto my-24 text-gray-400 dark:text-gray-600 max-w-prose">
-            <hr className="dark:border-gray-700" />
-            <nav className="grid my-12 sm:grid-cols-3">
+        <footer className="px-8 mx-auto my-24 max-w-prose">
+            <hr className="my-12 dark:border-gray-700" />
+            <nav className="grid text-gray-400 sm:grid-cols-3 dark:text-gray-600">
                 <ul>
                     {pages.map((page, index) => {
                         return (
                             <li
                                 key={index}
-                                className="my-4 transition hover:text-gray-500"
+                                className="my-4 hover:text-gray-500"
                             >
-                                <Link href={page.url}>
+                                <Link
+                                    href={page.href}
+                                    as={
+                                        page.slug != undefined
+                                            ? "/" + page.slug
+                                            : "/"
+                                    }
+                                >
                                     <a>{page.title}</a>
                                 </Link>
                             </li>
@@ -57,7 +64,7 @@ export default function Footer({ pages }) {
                         return (
                             <li
                                 key={index}
-                                className="my-4 transition hover:text-gray-500"
+                                className="my-4 hover:text-gray-500"
                             >
                                 <Link href={item.url}>
                                     <a>{item.title}</a>
@@ -71,7 +78,7 @@ export default function Footer({ pages }) {
                         return (
                             <li
                                 key={index}
-                                className="my-4 transition hover:text-gray-500"
+                                className="my-4 hover:text-gray-500"
                             >
                                 <Link href={link.url}>
                                     <a>{link.title}</a>

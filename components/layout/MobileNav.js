@@ -1,16 +1,32 @@
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 export default function MobileNav({ pages }) {
+    const { pathname } = useRouter();
+
     return (
         <nav className="fixed bottom-0 z-50 w-screen bg-white sm:hidden dark:bg-black bg-blur">
-            <ul className="grid grid-cols-4 gap-2 px-8 py-2">
+            <ul className="flex p-4 text-sm font-bold justify-evenly">
                 {pages.map((page, index) => {
                     return (
                         <li key={index}>
-                            <Link href={page.url}>
-                                <button className="w-full py-4 text-sm font-bold hover:text-blue-400">
+                            <Link
+                                href={page.href}
+                                as={
+                                    page.slug != undefined
+                                        ? "/" + page.slug
+                                        : "/"
+                                }
+                            >
+                                <a
+                                    className={
+                                        pathname == page.href
+                                            ? "text-gray-500"
+                                            : "hover:text-blue-500 dark:hover:text-blue-300"
+                                    }
+                                >
                                     {page.title}
-                                </button>
+                                </a>
                             </Link>
                         </li>
                     );

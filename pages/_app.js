@@ -5,6 +5,7 @@ import { MDXProvider } from "@mdx-js/react";
 import Head from "next/head";
 import Link from "next/link";
 import Image from "next/image";
+import { useRouter } from "next/router";
 
 import Footer from "../components/layout/Footer";
 import NavBar from "../components/layout/NavBar";
@@ -44,24 +45,118 @@ function App({ Component, pageProps }) {
         description: "Aspiring Open Sourcerer",
     };
 
-    const pages = [
-        {
-            title: "Home",
-            url: "/",
-        },
-        {
-            title: "About",
-            url: "/about",
-        },
-        {
-            title: "Projects",
-            url: "/projects",
-        },
-        {
-            title: "Articles",
-            url: "/articles",
-        },
-    ];
+    const { locale } = useRouter();
+
+    const pages =
+        locale == "lu"
+            ? [
+                  {
+                      title: "Heem",
+                      href: "/",
+                  },
+                  {
+                      title: "Iwwert mech",
+                      slug: "iwwert-mech",
+                      href: "/about",
+                  },
+                  {
+                      title: "Projeten",
+                      slug: "projeten",
+                      href: "/projects",
+                  },
+                  {
+                      title: "Artikelen",
+                      slug: "artikelen",
+                      href: "/articles",
+                  },
+              ]
+            : locale == "de"
+            ? [
+                  {
+                      title: "Heim",
+                      href: "/",
+                  },
+                  {
+                      title: "Über mich",
+                      slug: "ueber-mich",
+                      href: "/about",
+                  },
+                  {
+                      title: "Projekte",
+                      slug: "projekte",
+                      href: "/projects",
+                  },
+                  {
+                      title: "Artikel",
+                      slug: "artikel",
+                      href: "/articles",
+                  },
+              ]
+            : locale == "fr"
+            ? [
+                  {
+                      title: "Accueil",
+                      href: "/",
+                  },
+                  {
+                      title: "Sur moi",
+                      slug: "sur-moi",
+                      href: "/about",
+                  },
+                  {
+                      title: "Projets",
+                      slug: "projets",
+                      href: "/projects",
+                  },
+                  {
+                      title: "Articles",
+                      slug: "articles",
+                      href: "/articles",
+                  },
+              ]
+            : locale == "da"
+            ? [
+                  {
+                      title: "Hjem",
+                      href: "/",
+                  },
+                  {
+                      title: "Om Mig",
+                      slug: "om-mig",
+                      href: "/about",
+                  },
+                  {
+                      title: "Projekter",
+                      slug: "projekter",
+                      href: "/projects",
+                  },
+                  {
+                      title: "Artikler",
+                      slug: "artikler",
+                      href: "/articles",
+                  },
+              ]
+            : [
+                  {
+                      title: "Home",
+                      href: "/",
+                  },
+                  {
+                      title: "About",
+                      slug: "about",
+                      href: "/about",
+                  },
+                  {
+                      title: "Projects",
+                      slug: "projects",
+                      href: "/projects",
+                  },
+                  {
+                      title: "Articles",
+                      slug: "projects",
+                      href: "/articles",
+                  },
+              ];
 
     return (
         <>
