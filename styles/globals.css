@@ -63,9 +63,6 @@
 }
 
 @layer components {
-    .card {
-        @apply text-left border rounded hover:bg-gray-100 dark:hover:bg-gray-800 dark:border-gray-700;
-    }
     .subtitle {
         @apply my-4 sm:text-lg;
     }

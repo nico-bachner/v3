@@ -1,5 +1,6 @@
 import Head from "next/head";
-import Link from "next/link";
+
+import Card from "@components/Card";
 
 export const projects = [
     {
@@ -64,14 +65,15 @@ export default function Projects() {
                         if (project.type == "web") {
                             return (
                                 <li key={index} className="my-6 cursor-pointer">
-                                    <Link href={"/projects/" + project.slug}>
-                                        <button className="w-full px-8 py-6 card">
-                                            <h3 className="text-2xl">
-                                                {project.title}
-                                            </h3>
-                                            <p>{project.summary}</p>
-                                        </button>
-                                    </Link>
+                                    <Card
+                                        href={"/projects/" + project.slug}
+                                        className="px-8 py-6"
+                                    >
+                                        <h3 className="text-2xl">
+                                            {project.title}
+                                        </h3>
+                                        <p>{project.summary}</p>
+                                    </Card>
                                 </li>
                             );
                         }
@@ -85,14 +87,15 @@ export default function Projects() {
                         if (project.type == "game") {
                             return (
                                 <li key={index} className="my-6 cursor-pointer">
-                                    <Link href={"/projects/" + project.slug}>
-                                        <button className="w-full px-8 py-6 card">
-                                            <h3 className="text-2xl">
-                                                {project.title}
-                                            </h3>
-                                            <p>{project.summary}</p>
-                                        </button>
-                                    </Link>
+                                    <Card
+                                        href={"/projects/" + project.slug}
+                                        className="px-8 py-6"
+                                    >
+                                        <h3 className="text-2xl">
+                                            {project.title}
+                                        </h3>
+                                        <p>{project.summary}</p>
+                                    </Card>
                                 </li>
                             );
                         }
@@ -106,14 +109,15 @@ export default function Projects() {
                         if (project.type == "other") {
                             return (
                                 <li key={index} className="my-6 cursor-pointer">
-                                    <Link href={"/projects/" + project.slug}>
-                                        <button className="w-full px-8 py-6 card">
-                                            <h3 className="text-2xl">
-                                                {project.title}
-                                            </h3>
-                                            <p>{project.summary}</p>
-                                        </button>
-                                    </Link>
+                                    <Card
+                                        href={"/projects/" + project.slug}
+                                        className="px-8 py-6"
+                                    >
+                                        <h3 className="text-2xl">
+                                            {project.title}
+                                        </h3>
+                                        <p>{project.summary}</p>
+                                    </Card>
                                 </li>
                             );
                         }

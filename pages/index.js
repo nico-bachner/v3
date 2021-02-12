@@ -1,6 +1,8 @@
 import Head from "next/head";
 import Link from "next/link";
 
+import Card from "@components/Card";
+
 import { useRouter } from "next/router";
 import { useState } from "react";
 
@@ -68,14 +70,13 @@ export default function Home() {
                     {projects.slice(0, projectCount).map((project, index) => {
                         return (
                             <li key={index} className="my-4">
-                                <Link href={"/projects/" + project.slug}>
-                                    <button className="w-full px-6 py-4 card">
-                                        <h3 className="text-xl">
-                                            {project.title}
-                                        </h3>
-                                        <p>{project.summary}</p>
-                                    </button>
-                                </Link>
+                                <Card
+                                    href={"/projects/" + project.slug}
+                                    className="px-6 py-4"
+                                >
+                                    <h3 className="text-xl">{project.title}</h3>
+                                    <p>{project.summary}</p>
+                                </Card>
                             </li>
                         );
                     })}
