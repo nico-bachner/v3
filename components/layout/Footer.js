@@ -70,7 +70,10 @@ export default function Footer(props) {
                 <ul>
                     {hiddenPages.map((item, index) => {
                         return (
-                            <li key={index} className="my-4 text-right">
+                            <li
+                                key={index}
+                                className="my-4 text-right sm:text-center"
+                            >
                                 <IntLink
                                     href={item.url}
                                     className="hover:text-gray-500"
@@ -84,7 +87,10 @@ export default function Footer(props) {
                 <ul>
                     {other.map((item, index) => {
                         return (
-                            <li key={index} className="my-4 text-left">
+                            <li
+                                key={index}
+                                className="my-4 text-left sm:text-center"
+                            >
                                 <ExtLink
                                     href={item.url}
                                     className="hover:text-gray-500"
