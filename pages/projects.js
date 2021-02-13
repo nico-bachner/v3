@@ -1,5 +1,5 @@
-import Head from "next/head";
-
+import Title from "@components/Title";
+import IntLink from "@components/IntLink";
 import Card from "@components/Card";
 
 export const projects = [
@@ -41,9 +41,7 @@ export const projects = [
 export default function Projects() {
     return (
         <>
-            <Head>
-                <title>Projects | Nico Bachner</title>
-            </Head>
+            <Title>Projects | Nico Bachner</Title>
 
             <h1>Projects</h1>
             <p className="subtitle">
@@ -59,21 +57,20 @@ export default function Projects() {
                 , where you can also find some of my less noteworthy projects.
             </p>
             <section>
-                <h2>Web Projects</h2>
-                <ul>
+                <h2 className="my-4">Web Projects</h2>
+                <ul className="grid grid-cols-1 gap-4">
                     {projects.map((project, index) => {
                         if (project.type == "web") {
                             return (
-                                <li key={index} className="my-6 cursor-pointer">
-                                    <Card
-                                        href={"/projects/" + project.slug}
-                                        className="px-8 py-6"
-                                    >
-                                        <h3 className="text-2xl">
-                                            {project.title}
-                                        </h3>
-                                        <p>{project.summary}</p>
-                                    </Card>
+                                <li key={index}>
+                                    <IntLink href={"/projects/" + project.slug}>
+                                        <Card link className="px-8 py-6">
+                                            <h3 className="text-2xl">
+                                                {project.title}
+                                            </h3>
+                                            <p>{project.summary}</p>
+                                        </Card>
+                                    </IntLink>
                                 </li>
                             );
                         }
@@ -81,21 +78,20 @@ export default function Projects() {
                 </ul>
             </section>
             <section>
-                <h2>Games</h2>
-                <ul>
+                <h2 className="my-4">Games</h2>
+                <ul className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                     {projects.map((project, index) => {
                         if (project.type == "game") {
                             return (
-                                <li key={index} className="my-6 cursor-pointer">
-                                    <Card
-                                        href={"/projects/" + project.slug}
-                                        className="px-8 py-6"
-                                    >
-                                        <h3 className="text-2xl">
-                                            {project.title}
-                                        </h3>
-                                        <p>{project.summary}</p>
-                                    </Card>
+                                <li key={index}>
+                                    <IntLink href={"/projects/" + project.slug}>
+                                        <Card link className="px-8 py-6">
+                                            <h3 className="text-2xl">
+                                                {project.title}
+                                            </h3>
+                                            <p>{project.summary}</p>
+                                        </Card>
+                                    </IntLink>
                                 </li>
                             );
                         }
@@ -103,21 +99,20 @@ export default function Projects() {
                 </ul>
             </section>
             <section>
-                <h2>Other Projects</h2>
-                <ul>
+                <h2 className="my-4">Other Projects</h2>
+                <ul className="grid grid-cols-1 gap-4">
                     {projects.map((project, index) => {
                         if (project.type == "other") {
                             return (
-                                <li key={index} className="my-6 cursor-pointer">
-                                    <Card
-                                        href={"/projects/" + project.slug}
-                                        className="px-8 py-6"
-                                    >
-                                        <h3 className="text-2xl">
-                                            {project.title}
-                                        </h3>
-                                        <p>{project.summary}</p>
-                                    </Card>
+                                <li key={index}>
+                                    <IntLink href={"/projects/" + project.slug}>
+                                        <Card link className="px-8 py-6">
+                                            <h3 className="text-2xl">
+                                                {project.title}
+                                            </h3>
+                                            <p>{project.summary}</p>
+                                        </Card>
+                                    </IntLink>
                                 </li>
                             );
                         }

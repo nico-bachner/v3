@@ -1,162 +1,33 @@
 import "../styles/globals.css";
 
-import { MDXProvider } from "@mdx-js/react";
-
 import Head from "next/head";
-import Link from "next/link";
-import Image from "next/image";
+
+import { MDXProvider } from "@mdx-js/react";
 import { useRouter } from "next/router";
 
-import Footer from "../components/layout/Footer";
-import NavBar from "../components/layout/NavBar";
-import MobileNav from "../components/layout/MobileNav";
+import Footer from "@components/layout/Footer";
+import NavBar from "@components/layout/NavBar";
+import MobileNav from "@components/layout/MobileNav";
+
+import { pages } from "@utils/pages";
+import { MDXComponents } from "@utils/mdxComponents";
 
 function App({ Component, pageProps }) {
-    const mdxComponents = {
-        Image: (props) => {
-            return <Image {...props} />;
-        },
-        wrapper: (props) => <article {...props} />,
-        a: (props) => {
-            const href = props.href;
-            const isInternalLink =
-                href && (href.startsWith("/") || href.startsWith("#"));
-
-            if (isInternalLink) {
-                return (
-                    <Link href={href}>
-                        <a className="link" {...props} />
-                    </Link>
-                );
-            }
-
-            return (
-                <a
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="link"
-                    {...props}
-                />
-            );
-        },
-    };
-
     const meta = {
         description: "Aspiring Open Sourcerer",
     };
 
     const { locale } = useRouter();
-
-    const pages =
+    const translatedPages =
         locale == "lu"
-            ? [
-                  {
-                      title: "Heem",
-                      href: "/",
-                  },
-                  {
-                      title: "Iwwert mech",
-                      slug: "iwwert-mech",
-                      href: "/about",
-                  },
-                  {
-                      title: "Projeten",
-                      slug: "projeten",
-                      href: "/projects",
-                  },
-                  {
-                      title: "Artikelen",
-                      slug: "artikelen",
-                      href: "/articles",
-                  },
-              ]
+            ? pages.lu
             : locale == "de"
-            ? [
-                  {
-                      title: "Heim",
-                      href: "/",
-                  },
-                  {
-                      title: "Über mich",
-                      slug: "ueber-mich",
-                      href: "/about",
-                  },
-                  {
-                      title: "Projekte",
-                      slug: "projekte",
-                      href: "/projects",
-                  },
-                  {
-                      title: "Artikel",
-                      slug: "artikel",
-                      href: "/articles",
-                  },
-              ]
+            ? pages.de
             : locale == "fr"
-            ? [
-                  {
-                      title: "Accueil",
-                      href: "/",
-                  },
-                  {
-                      title: "Sur moi",
-                      slug: "sur-moi",
-                      href: "/about",
-                  },
-                  {
-                      title: "Projets",
-                      slug: "projets",
-                      href: "/projects",
-                  },
-                  {
-                      title: "Articles",
-                      slug: "articles",
-                      href: "/articles",
-                  },
-              ]
+            ? pages.fr
             : locale == "da"
-            ? [
-                  {
-                      title: "Hjem",
-                      href: "/",
-                  },
-                  {
-                      title: "Om Mig",
-                      slug: "om-mig",
-                      href: "/about",
-                  },
-                  {
-                      title: "Projekter",
-                      slug: "projekter",
-                      href: "/projects",
-                  },
-                  {
-                      title: "Artikler",
-                      slug: "artikler",
-                      href: "/articles",
-                  },
-              ]
-            : [
-                  {
-                      title: "Home",
-                      href: "/",
-                  },
-                  {
-                      title: "About",
-                      slug: "about",
-                      href: "/about",
-                  },
-                  {
-                      title: "Projects",
-                      slug: "projects",
-                      href: "/projects",
-                  },
-                  {
-                      title: "Articles",
-                      slug: "projects",
-                      href: "/articles",
-                  },
-              ];
+            ? pages.da
+            : pages.en;
 
     return (
         <>
@@ -174,16 +45,16 @@ function App({ Component, pageProps }) {
                 <meta property="og:description" content={meta.description} />
             </Head>
 
-            <NavBar pages={pages} />
-            <MobileNav pages={pages} />
+            <NavBar pages={translatedPages} />
+            <MobileNav pages={translatedPages} />
 
-            <main id="content" className="px-8 mx-auto max-w-prose">
-                <MDXProvider components={mdxComponents}>
+            <main id="content" className="max-w-2xl px-8 mx-auto">
+                <MDXProvider components={MDXComponents}>
                     <Component {...pageProps} />
                 </MDXProvider>
             </main>
 
-            <Footer pages={pages} />
+            <Footer pages={translatedPages} />
         </>
     );
 }

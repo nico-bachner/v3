@@ -1,14 +1,24 @@
 import Link from "next/link";
 
-export default function Footer({ pages }) {
+import IntLink from "@components/IntLink";
+import ExtLink from "@components/ExtLink";
+
+export default function Footer(props) {
+    const pages = props.pages;
+    const hiddenPages = [
+        {
+            title: "Uses",
+            url: "/uses",
+        },
+        {
+            title: "Repositories",
+            url: "/repos",
+        },
+    ];
     const other = [
         {
             title: "Source Code",
             url: "https://github.com/nico-bachner/v3",
-        },
-        {
-            title: "Uses",
-            url: "/uses",
         },
         {
             title: "CV",
@@ -35,26 +45,38 @@ export default function Footer({ pages }) {
     ];
 
     return (
-        <footer className="px-8 mx-auto my-24 max-w-prose">
+        <footer className="max-w-2xl px-8 mx-auto my-24 text-center">
             <hr className="my-12 dark:border-gray-700" />
-            <nav className="grid text-gray-400 sm:grid-cols-3 dark:text-gray-600">
+            <nav className="grid grid-cols-2 gap-8 text-gray-400 sm:grid-cols-4 dark:text-gray-600">
                 <ul>
                     {pages.map((page, index) => {
                         return (
-                            <li
-                                key={index}
-                                className="my-4 hover:text-gray-500"
-                            >
-                                <Link
+                            <li key={index} className="my-4 text-left">
+                                <IntLink
                                     href={page.href}
                                     as={
                                         page.slug != undefined
                                             ? "/" + page.slug
                                             : "/"
                                     }
+                                    className="hover:text-gray-500"
                                 >
-                                    <a>{page.title}</a>
-                                </Link>
+                                    {page.title}
+                                </IntLink>
+                            </li>
+                        );
+                    })}
+                </ul>
+                <ul>
+                    {hiddenPages.map((item, index) => {
+                        return (
+                            <li key={index} className="my-4 text-right">
+                                <IntLink
+                                    href={item.url}
+                                    className="hover:text-gray-500"
+                                >
+                                    {item.title}
+                                </IntLink>
                             </li>
                         );
                     })}
@@ -62,13 +84,13 @@ export default function Footer({ pages }) {
                 <ul>
                     {other.map((item, index) => {
                         return (
-                            <li
-                                key={index}
-                                className="my-4 hover:text-gray-500"
-                            >
-                                <Link href={item.url}>
-                                    <a>{item.title}</a>
-                                </Link>
+                            <li key={index} className="my-4 text-left">
+                                <ExtLink
+                                    href={item.url}
+                                    className="hover:text-gray-500"
+                                >
+                                    {item.title}
+                                </ExtLink>
                             </li>
                         );
                     })}
@@ -76,13 +98,13 @@ export default function Footer({ pages }) {
                 <ul>
                     {links.map((link, index) => {
                         return (
-                            <li
-                                key={index}
-                                className="my-4 hover:text-gray-500"
-                            >
-                                <Link href={link.url}>
-                                    <a>{link.title}</a>
-                                </Link>
+                            <li key={index} className="my-4 text-right">
+                                <ExtLink
+                                    href={link.url}
+                                    className="hover:text-gray-500"
+                                >
+                                    {link.title}
+                                </ExtLink>
                             </li>
                         );
                     })}

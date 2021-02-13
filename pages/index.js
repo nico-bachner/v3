@@ -1,12 +1,11 @@
-import Head from "next/head";
-import Link from "next/link";
-
+import Title from "@components/Title";
+import IntLink from "@components/IntLink";
 import Card from "@components/Card";
 
 import { useRouter } from "next/router";
 import { useState } from "react";
 
-import { projects } from "../pages/projects";
+import { projects } from "./projects";
 import { articles } from "../pages/articles";
 
 export default function Home() {
@@ -17,9 +16,7 @@ export default function Home() {
 
     return (
         <>
-            <Head>
-                <title>Nico Bachner</title>
-            </Head>
+            <Title>Nico Bachner</Title>
 
             <h1>
                 {locale == "lu"
@@ -55,7 +52,7 @@ export default function Home() {
                     : "I'm currently also a High School Student in Luxembourg."}
             </p>
             <section>
-                <h2>
+                <h2 className="my-4">
                     {locale == "lu"
                         ? "Projeten"
                         : locale == "de"
@@ -66,21 +63,25 @@ export default function Home() {
                         ? "Projekter"
                         : "Projects"}
                 </h2>
-                <ul>
+                <div className="grid grid-cols-1 gap-4">
                     {projects.slice(0, projectCount).map((project, index) => {
                         return (
-                            <li key={index} className="my-4">
-                                <Card
-                                    href={"/projects/" + project.slug}
-                                    className="px-6 py-4"
-                                >
-                                    <h3 className="text-xl">{project.title}</h3>
-                                    <p>{project.summary}</p>
+                            <IntLink
+                                key={index}
+                                href={"/projects/" + project.slug}
+                            >
+                                <Card link className="px-8 py-6">
+                                    <h3 className="text-2xl">
+                                        {project.title}
+                                    </h3>
+                                    <p className="sm:text-lg">
+                                        {project.summary}
+                                    </p>
                                 </Card>
-                            </li>
+                            </IntLink>
                         );
                     })}
-                </ul>
+                </div>
                 <div className="flex p-4 space-x-4">
                     <button
                         onClick={() => {
@@ -124,19 +125,20 @@ export default function Home() {
                             ? "Vise Fære"
                             : "Show Less"}
                     </button>
-                    <Link href="/projects">
-                        <a className="flex-grow text-right link">
-                            {locale == "lu"
-                                ? "Alleguer Weisen"
-                                : locale == "de"
-                                ? "Alle Zeigen"
-                                : locale == "fr"
-                                ? "Montrer Tous"
-                                : locale == "da"
-                                ? "Vise Alle"
-                                : "Show All"}
-                        </a>
-                    </Link>
+                    <IntLink
+                        href="/projects"
+                        className="flex-grow text-right link"
+                    >
+                        {locale == "lu"
+                            ? "Alleguer Weisen"
+                            : locale == "de"
+                            ? "Alle Zeigen"
+                            : locale == "fr"
+                            ? "Montrer Tous"
+                            : locale == "da"
+                            ? "Vise Alle"
+                            : "Show All"}
+                    </IntLink>
                 </div>
             </section>
             <section>
@@ -155,14 +157,10 @@ export default function Home() {
                     {articles.slice(0, articleCount).map((article, index) => {
                         return (
                             <li key={index} className="my-6">
-                                <Link href={"/articles/" + article.slug}>
-                                    <a>
-                                        <h3 className="text-xl">
-                                            {article.title}
-                                        </h3>
-                                        <p>{article.summary}</p>
-                                    </a>
-                                </Link>
+                                <IntLink href={"/articles/" + article.slug}>
+                                    <h3 className="text-xl">{article.title}</h3>
+                                    <p>{article.summary}</p>
+                                </IntLink>
                             </li>
                         );
                     })}
@@ -210,19 +208,20 @@ export default function Home() {
                             ? "Vise Fære"
                             : "Show Less"}
                     </button>
-                    <Link href="/articles">
-                        <a className="flex-grow text-right link">
-                            {locale == "lu"
-                                ? "Alleguer Weisen"
-                                : locale == "de"
-                                ? "Alle Zeigen"
-                                : locale == "fr"
-                                ? "Montrer Tous"
-                                : locale == "da"
-                                ? "Vise Alle"
-                                : "Show All"}
-                        </a>
-                    </Link>
+                    <IntLink
+                        href="/articles"
+                        className="flex-grow text-right link"
+                    >
+                        {locale == "lu"
+                            ? "Alleguer Weisen"
+                            : locale == "de"
+                            ? "Alle Zeigen"
+                            : locale == "fr"
+                            ? "Montrer Tous"
+                            : locale == "da"
+                            ? "Vise Alle"
+                            : "Show All"}
+                    </IntLink>
                 </div>
             </section>
         </>
