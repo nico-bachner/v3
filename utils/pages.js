@@ -22,7 +22,7 @@ export const pages = {
     ],
     de: [
         {
-            title: "Heim",
+            title: "Startseite",
             href: "/",
         },
         {
