@@ -18,6 +18,10 @@ export default function Footer(props) {
             title: "Repositories",
             url: "/repos",
         },
+        {
+            title: "Mac Setup",
+            url: "/setup",
+        },
     ];
     const other = [
         {
