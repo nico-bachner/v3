@@ -1,6 +1,5 @@
 import Title from "@components/Title";
-import IntLink from "@components/IntLink";
-import Card from "@components/Card";
+import Project from "@components/Project";
 
 export const projects = [
     {
@@ -63,14 +62,14 @@ export default function Projects() {
                         if (project.type == "web") {
                             return (
                                 <li key={index}>
-                                    <IntLink href={"/projects/" + project.slug}>
-                                        <Card link className="px-8 py-6">
-                                            <h3 className="text-2xl">
-                                                {project.title}
-                                            </h3>
-                                            <p>{project.summary}</p>
-                                        </Card>
-                                    </IntLink>
+                                    <Project href={"/projects/" + project.slug}>
+                                        <h3 className="text-2xl">
+                                            {project.title}
+                                        </h3>
+                                        <p className="sm:text-lg">
+                                            {project.summary}
+                                        </p>
+                                    </Project>
                                 </li>
                             );
                         }
@@ -84,14 +83,14 @@ export default function Projects() {
                         if (project.type == "game") {
                             return (
                                 <li key={index}>
-                                    <IntLink href={"/projects/" + project.slug}>
-                                        <Card link className="px-8 py-6">
-                                            <h3 className="text-2xl">
-                                                {project.title}
-                                            </h3>
-                                            <p>{project.summary}</p>
-                                        </Card>
-                                    </IntLink>
+                                    <Project href={"/projects/" + project.slug}>
+                                        <h3 className="text-2xl">
+                                            {project.title}
+                                        </h3>
+                                        <p className="sm:text-lg">
+                                            {project.summary}
+                                        </p>
+                                    </Project>
                                 </li>
                             );
                         }
@@ -105,14 +104,14 @@ export default function Projects() {
                         if (project.type == "other") {
                             return (
                                 <li key={index}>
-                                    <IntLink href={"/projects/" + project.slug}>
-                                        <Card link className="px-8 py-6">
-                                            <h3 className="text-2xl">
-                                                {project.title}
-                                            </h3>
-                                            <p>{project.summary}</p>
-                                        </Card>
-                                    </IntLink>
+                                    <Project href={"/projects/" + project.slug}>
+                                        <h3 className="text-2xl">
+                                            {project.title}
+                                        </h3>
+                                        <p className="sm:text-lg">
+                                            {project.summary}
+                                        </p>
+                                    </Project>
                                 </li>
                             );
                         }

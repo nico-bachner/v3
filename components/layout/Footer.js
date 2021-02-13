@@ -7,6 +7,10 @@ export default function Footer(props) {
     const pages = props.pages;
     const hiddenPages = [
         {
+            title: "Source Code",
+            url: "https://github.com/nico-bachner/v3",
+        },
+        {
             title: "Uses",
             url: "/uses",
         },
@@ -16,10 +20,6 @@ export default function Footer(props) {
         },
     ];
     const other = [
-        {
-            title: "Source Code",
-            url: "https://github.com/nico-bachner/v3",
-        },
         {
             title: "CV",
             url: "https://read.cv/nicob",

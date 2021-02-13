@@ -45,7 +45,7 @@ export default function NavBar(props) {
                                 <a
                                     className={
                                         router.pathname == page.href
-                                            ? "text-gray-500 cursor-default"
+                                            ? "dark:text-gray-400 text-gray-500 cursor-default"
                                             : "hover:text-blue-500 dark:hover:text-blue-300"
                                     }
                                 >

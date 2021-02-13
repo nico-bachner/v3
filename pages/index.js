@@ -1,6 +1,6 @@
 import Title from "@components/Title";
 import IntLink from "@components/IntLink";
-import Card from "@components/Card";
+import Project from "@components/Project";
 
 import { useRouter } from "next/router";
 import { useState } from "react";
@@ -66,19 +66,13 @@ export default function Home() {
                 <div className="grid grid-cols-1 gap-4">
                     {projects.slice(0, projectCount).map((project, index) => {
                         return (
-                            <IntLink
+                            <Project
                                 key={index}
                                 href={"/projects/" + project.slug}
                             >
-                                <Card link className="px-8 py-6">
-                                    <h3 className="text-2xl">
-                                        {project.title}
-                                    </h3>
-                                    <p className="sm:text-lg">
-                                        {project.summary}
-                                    </p>
-                                </Card>
-                            </IntLink>
+                                <h3 className="text-2xl">{project.title}</h3>
+                                <p className="sm:text-lg">{project.summary}</p>
+                            </Project>
                         );
                     })}
                 </div>
@@ -146,7 +140,7 @@ export default function Home() {
                     {locale == "lu"
                         ? "Artikelen"
                         : locale == "de"
-                        ? "Artiklen"
+                        ? "Artikel"
                         : locale == "fr"
                         ? "Articles"
                         : locale == "da"
