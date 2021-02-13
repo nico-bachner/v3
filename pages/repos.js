@@ -5,18 +5,22 @@ import Card from "@components/Card";
 import { useState, useEffect } from "react";
 
 export default function About() {
-    const GitHubApi = "https://api.github.com/users/nico-bachner";
+    const GitHubApiEndpoint = "https://api.github.com/users/nico-bachner";
 
     const [userData, setUserData] = useState(null);
-    const getUserData = () => fetch(GitHubApi).then((res) => res.json());
+    const getUserData = () =>
+        fetch(GitHubApiEndpoint).then((res) => res.json());
     useEffect(() => {
         getUserData().then((userData) => {
             setUserData(userData);
         });
     }, []);
 
+    const [allRepos, setToggleAllRepos] = useState(false);
+
     const [repos, setData] = useState(null);
-    const getData = () => fetch(GitHubApi + "/repos").then((res) => res.json());
+    const getData = () =>
+        fetch(GitHubApiEndpoint + "/repos").then((res) => res.json());
     useEffect(() => {
         getData().then((repos) => {
             repos.sort((a, b) => {
@@ -26,7 +30,7 @@ export default function About() {
         });
     }, []);
 
-    const [all, toggleAll] = useState(false);
+    const [allForks, setToggleAllForks] = useState(false);
 
     return (
         <>
@@ -54,7 +58,7 @@ export default function About() {
                             .replaceAll("md", "Markdown");
                         if (
                             repo.fork != true &&
-                            (repo.stargazers_count > 0 || all)
+                            (repo.stargazers_count > 0 || allRepos)
                         ) {
                             return (
                                 <ExtLink key={index} href={repo.html_url}>
@@ -71,15 +75,15 @@ export default function About() {
                 </div>
                 <button
                     onClick={() => {
-                        if (all != true) {
-                            toggleAll(true);
+                        if (allRepos != true) {
+                            setToggleAllRepos(true);
                         } else {
-                            toggleAll(false);
+                            setToggleAllRepos(false);
                         }
                     }}
                     className="m-4 link"
                 >
-                    {all == false ? "Show All" : "Show Less"}
+                    {allRepos == false ? "Show All" : "Show Less"}
                 </button>
             </section>
             <section>
@@ -87,7 +91,10 @@ export default function About() {
                 <div className="grid grid-cols-1 gap-4">
                     {repos?.map((repo, index) => {
                         repo.name = repo.name.replaceAll("-", " ");
-                        if (repo.fork == true && repo.stargazers_count > 0) {
+                        if (
+                            repo.fork == true &&
+                            (repo.stargazers_count > 0 || allForks)
+                        ) {
                             return (
                                 <ExtLink key={index} href={repo.html_url}>
                                     <Card link className="px-6 py-6">
@@ -101,6 +108,18 @@ export default function About() {
                         }
                     })}
                 </div>
+                <button
+                    onClick={() => {
+                        if (allForks != true) {
+                            setToggleAllForks(true);
+                        } else {
+                            setToggleAllForks(false);
+                        }
+                    }}
+                    className="m-4 link"
+                >
+                    {allForks == false ? "Show All" : "Show Less"}
+                </button>
             </section>
         </>
     );
