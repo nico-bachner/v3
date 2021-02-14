@@ -2,6 +2,51 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.2](https://github.com/nico-bachner/v3/compare/v0.1.1...v0.1.2) (2021-02-14)
+
+
+### Features
+
+* **content:** added mac setup script instuctions ([d4ed439](https://github.com/nico-bachner/v3/commit/d4ed439b442d51ab5b75a5f082de506d8bddfcf1))
+* **content:** added sos-school project ([ff15ee0](https://github.com/nico-bachner/v3/commit/ff15ee09b58a2254e0964f8fc5bc89ec9c5c352e))
+* added toggle all switch to forks list ([49ef40d](https://github.com/nico-bachner/v3/commit/49ef40d9cb209a0ed383abe4a69ca436755633c1))
+* added toggle all switch to repositories list ([f0bc2f1](https://github.com/nico-bachner/v3/commit/f0bc2f1fbbcc1ecce2edc8613bcb2573967a1055))
+* **content:** added first project description ([896e981](https://github.com/nico-bachner/v3/commit/896e98155247b23df78ad1f65e776e7e78f0fadc))
+* **content:** added project find the polygon ([267cabb](https://github.com/nico-bachner/v3/commit/267cabb199836b78c3084b1e072b932945562fca))
+* style improvements and component refactor ([c1c47d7](https://github.com/nico-bachner/v3/commit/c1c47d7ffc88595b5ba45c96a6ed9cd239b44bcb))
+* **content:** added career-guru project ([0d07a21](https://github.com/nico-bachner/v3/commit/0d07a2122469b908998a5adaad6da6d6bbbe5fa0))
+* **content:** added the-first-martian project ([0f94e2e](https://github.com/nico-bachner/v3/commit/0f94e2eacd7f832561b6be65fbd461d553e9590f))
+* **content:** elaborate on the first martian project ([c75919a](https://github.com/nico-bachner/v3/commit/c75919aed91a1d76153f1ab0168940e9fb18fa72))
+* **design:** improved project page styles ([a858282](https://github.com/nico-bachner/v3/commit/a858282358cb08d3ab41a9447d710d779b74e496))
+* **design:** restructured projects page ([2a179ea](https://github.com/nico-bachner/v3/commit/2a179ea0fc94c25dfcbe94e95386809e09ed2b68))
+* **footer:** added source code link ([5f176ec](https://github.com/nico-bachner/v3/commit/5f176ec77989236831e0f6b8dcb2730ac18cf9ad))
+* **i18n:** added navigation and homepage translations ([1609931](https://github.com/nico-bachner/v3/commit/1609931ab213b86d182b5c4b38eac99a177a341a))
+* **navigation:** added mobile-frindly bottom nav ([8045a08](https://github.com/nico-bachner/v3/commit/8045a08ebfd4141d7c4b6ebaf74b11809fd139f2))
+* **structure:** major refactors in components and other ([fb9b565](https://github.com/nico-bachner/v3/commit/fb9b565479c8fc68ef8d80965e861349a5eba76f))
+* **structure:** refactored component usage ([96a989e](https://github.com/nico-bachner/v3/commit/96a989e554f18473d7f9e65f8d863f8da33d0622))
+* added controls to show more projects/articles ([6ac404e](https://github.com/nico-bachner/v3/commit/6ac404e666ad1f6ac75aec34f786b61e5dbed645))
+* added github repositories page ([e6b0153](https://github.com/nico-bachner/v3/commit/e6b0153dddc3830a3c29a6bd08b55f744c381b99))
+* **structure:** refactored global layout ([706a917](https://github.com/nico-bachner/v3/commit/706a917b3beee69151e58552687423f63bd5fba6))
+* **style:** added article-specific styles ([caab73e](https://github.com/nico-bachner/v3/commit/caab73eabd2ba1d1a0241032da2ffa01f8f21b02))
+
+
+### Bug Fixes
+
+* **a11y:** increased mobile nav tap targets ([a4592c7](https://github.com/nico-bachner/v3/commit/a4592c793cea369cab43be790fbb5fb4ee993668))
+* **content:** clarified md-paper installation process ([e061a1a](https://github.com/nico-bachner/v3/commit/e061a1aee9ceed3481cb73aec2326b31e4855e41))
+* **content:** fixed a typo in the career-guru description ([5745705](https://github.com/nico-bachner/v3/commit/5745705bd2aed6ed4ac3f8a01697dec743410032))
+* **design:** increased z-index of mobile nav ([c146b08](https://github.com/nico-bachner/v3/commit/c146b081ef07625f90d51e545d2a37a4919ca952))
+* **design:** minor design improvements ([3ab30c5](https://github.com/nico-bachner/v3/commit/3ab30c52b6533cfedddc3987c5b8ebd0dd7535b9))
+* **design:** more minor improvements ([d8b2eaa](https://github.com/nico-bachner/v3/commit/d8b2eaafa032fce8707107238d6c725c33e4f443))
+* **design:** removed vercel logo ([85a0c03](https://github.com/nico-bachner/v3/commit/85a0c0388ed9ee5c9abe203e2b932ec88d094a21))
+* **design:** various minor improvements ([07918f6](https://github.com/nico-bachner/v3/commit/07918f6a4d1a0f75d6250dca58c77ee20697d095))
+* **i18n:** fix german mistake ([10a73eb](https://github.com/nico-bachner/v3/commit/10a73eb971a5e954ecd15a2b11ef89a996a2c4f8))
+* **performance:** (hopefully) fixed cumulative layout shift ([4d6e5c2](https://github.com/nico-bachner/v3/commit/4d6e5c287e048bdac378f9afb49c17d454bb3973))
+* **performance:** fixed cumulative layout shift ([0c5738f](https://github.com/nico-bachner/v3/commit/0c5738f50dcc2ad63b1ba8b1e42ed41e1ddfe8da))
+* removed erroneous web font import ([0781743](https://github.com/nico-bachner/v3/commit/07817439ca5c2d3b6b48dcb34ac868e3e4580912))
+* **style:** fixed text not displaying on firefox ([4fbe186](https://github.com/nico-bachner/v3/commit/4fbe18695efd697f3f571cc2e3b543e963ef41b7))
+* **style:** made logo colour consistent ([22dbb4f](https://github.com/nico-bachner/v3/commit/22dbb4f59bae12e4a4111c2853d157293da66aba))
+
 ### 0.1.1 (2021-02-07)
 
 
