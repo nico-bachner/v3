@@ -1,4 +1,3 @@
-import Title from "@components/Title";
 import ExtLink from "@components/ExtLink";
 import Card from "@components/Card";
 
@@ -34,8 +33,6 @@ export default function About() {
 
     return (
         <>
-            <Title>Repositories | Nico Bachner</Title>
-
             <h1>GitHub Repositories</h1>
             <p className="subtitle">
                 Here are a few of my public GitHub repositories. They can all be

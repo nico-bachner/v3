@@ -17,7 +17,10 @@ function App({ Component, pageProps }) {
         description: "Aspiring Open Sourcerer",
     };
 
-    const { locale } = useRouter();
+    const router = useRouter();
+    const page = router.pathname.split("/");
+
+    const locale = router.locale;
     const translatedPages =
         locale == "lu"
             ? pages.lu
@@ -32,6 +35,24 @@ function App({ Component, pageProps }) {
     return (
         <>
             <Head>
+                <title>
+                    {page[1] == ""
+                        ? "Nico Bachner - Aspiring Open Sourcerer"
+                        : `${
+                              page.length == 2
+                                  ? page[1].charAt(0).toUpperCase() +
+                                    page[1].slice(1)
+                                  : page[2]
+                                        .split("-")
+                                        .map(
+                                            (word) =>
+                                                word.charAt(0).toUpperCase() +
+                                                word.slice(1)
+                                        )
+                                        .toString()
+                                        .replaceAll(",", " ")
+                          } | Nico Bachner`}
+                </title>
                 <link rel="icon" href="/icon.svg" />
                 <link
                     crossOrigin="anonymous"
@@ -48,7 +69,10 @@ function App({ Component, pageProps }) {
             <NavBar pages={translatedPages} />
             <MobileNav pages={translatedPages} />
 
-            <main id="content" className="max-w-2xl px-8 mx-auto">
+            <main
+                id="content"
+                className="px-8 mx-auto text-gray-600 sm:text-lg max-w-prose dark:text-gray-400"
+            >
                 <MDXProvider components={MDXComponents}>
                     <Component {...pageProps} />
                 </MDXProvider>

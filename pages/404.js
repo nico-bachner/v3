@@ -5,9 +5,6 @@ import Button from "@components/Button";
 export default function Custom404() {
     return (
         <>
-            <Head>
-                <title>404 | Nico Bachner</title>
-            </Head>
             <h1>404</h1>
             <p className="text-2xl subtitle sm:text-3xl">Page Not Found</p>
             <p className="subtitle">

@@ -1,4 +1,3 @@
-import Title from "@components/Title";
 import IntLink from "@components/IntLink";
 import Project from "@components/Project";
 
@@ -6,7 +5,7 @@ import { useRouter } from "next/router";
 import { useState } from "react";
 
 import { projects } from "./projects";
-import { articles } from "../pages/articles";
+import { articles } from "./articles";
 
 export default function Home() {
     const { locale } = useRouter();
@@ -16,9 +15,7 @@ export default function Home() {
 
     return (
         <>
-            <Title>Nico Bachner</Title>
-
-            <h1>
+            <h1 className="my-2">
                 {locale == "lu"
                     ? "Ech sin den Nico,"
                     : locale == "de"
@@ -52,7 +49,7 @@ export default function Home() {
                     : "I'm currently also a High School Student in Luxembourg."}
             </p>
             <section>
-                <h2 className="my-4">
+                <h2>
                     {locale == "lu"
                         ? "Projeten"
                         : locale == "de"

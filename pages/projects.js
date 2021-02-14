@@ -1,4 +1,3 @@
-import Title from "@components/Title";
 import Project from "@components/Project";
 
 export const projects = [
@@ -25,13 +24,13 @@ export const projects = [
     },
     {
         title: "Find The Polygon",
-        slug: "ftp",
+        slug: "find-the-polygon",
         summary: "A Game of Dimensions",
         type: "game",
     },
     {
         title: "The First Martian",
-        slug: "tfm",
+        slug: "the-first-martian",
         summary: "Indie Space Exploration Game",
         type: "game",
     },
@@ -40,8 +39,6 @@ export const projects = [
 export default function Projects() {
     return (
         <>
-            <Title>Projects | Nico Bachner</Title>
-
             <h1>Projects</h1>
             <p className="subtitle">
                 Here are some projects I've made and/or have participated in

@@ -1,5 +1,3 @@
-import Link from "next/link";
-
 import IntLink from "@components/IntLink";
 import ExtLink from "@components/ExtLink";
 
@@ -49,9 +47,9 @@ export default function Footer(props) {
     ];
 
     return (
-        <footer className="max-w-2xl px-8 mx-auto my-24 text-center">
+        <footer className="max-w-3xl px-8 mx-auto my-24 text-center">
             <hr className="my-12 dark:border-gray-700" />
-            <nav className="grid grid-cols-2 gap-8 text-gray-400 sm:grid-cols-4 dark:text-gray-600">
+            <nav className="grid grid-cols-2 gap-8 text-gray-400 sm:grid-cols-4 dark:text-gray-600 max-w-prose">
                 <ul>
                     {pages.map((page, index) => {
                         return (

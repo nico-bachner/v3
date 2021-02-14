@@ -100,7 +100,7 @@ export const pages = {
         },
         {
             title: "Articles",
-            slug: "projects",
+            slug: "articles",
             href: "/articles",
         },
     ],
