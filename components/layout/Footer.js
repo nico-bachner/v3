@@ -49,7 +49,7 @@ export default function Footer(props) {
     return (
         <footer className="max-w-3xl px-8 mx-auto my-24 text-center">
             <hr className="my-12 dark:border-gray-700" />
-            <nav className="grid grid-cols-2 gap-8 text-gray-400 sm:grid-cols-4 dark:text-gray-600 max-w-prose">
+            <nav className="grid grid-cols-2 gap-8 mx-auto text-gray-400 sm:grid-cols-4 dark:text-gray-600 max-w-prose">
                 <ul>
                     {pages.map((page, index) => {
                         return (
