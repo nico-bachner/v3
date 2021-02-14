@@ -13,12 +13,23 @@ import { pages } from "@utils/pages";
 import { MDXComponents } from "@utils/mdxComponents";
 
 function App({ Component, pageProps }) {
+    const router = useRouter();
+
     const meta = {
         description: "Aspiring Open Sourcerer",
     };
 
-    const router = useRouter();
-    const page = router.pathname.split("/");
+    const pageRoute = router.pathname.split("/");
+    let page = " ";
+    if (pageRoute.length > 2) {
+        const pageWords = pageRoute[2].split("-");
+        const pageWordsCapitalised = pageWords.map((word) => {
+            return word.charAt(0).toUpperCase() + word.slice(1);
+        });
+        page = pageWordsCapitalised.join(" ");
+    } else {
+        page = pageRoute[1].charAt(0).toUpperCase() + pageRoute[1].slice(1);
+    }
 
     const locale = router.locale;
     const translatedPages =
@@ -36,22 +47,9 @@ function App({ Component, pageProps }) {
         <>
             <Head>
                 <title>
-                    {page[1] == ""
+                    {pageRoute[1] == ""
                         ? "Nico Bachner - Aspiring Open Sourcerer"
-                        : `${
-                              page.length == 2
-                                  ? page[1].charAt(0).toUpperCase() +
-                                    page[1].slice(1)
-                                  : page[2]
-                                        .split("-")
-                                        .map(
-                                            (word) =>
-                                                word.charAt(0).toUpperCase() +
-                                                word.slice(1)
-                                        )
-                                        .toString()
-                                        .replaceAll(",", " ")
-                          } | Nico Bachner`}
+                        : `${page} | Nico Bachner`}
                 </title>
                 <link rel="icon" href="/icon.svg" />
                 <link
