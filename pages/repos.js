@@ -1,5 +1,5 @@
-import ExtLink from "@components/ExtLink";
-import Card from "@components/Card";
+import ExternalLink from "../components/ExternalLink";
+import Card from "../components/Card";
 
 import { useState, useEffect } from "react";
 
@@ -58,14 +58,14 @@ export default function About() {
                             (repo.stargazers_count > 0 || allRepos)
                         ) {
                             return (
-                                <ExtLink key={index} href={repo.html_url}>
+                                <ExternalLink key={index} href={repo.html_url}>
                                     <Card link className="px-6 py-6">
                                         <h3 className="text-2xl capitalize">
                                             {repo.name}
                                         </h3>
                                         <p>{repo.description}</p>
                                     </Card>
-                                </ExtLink>
+                                </ExternalLink>
                             );
                         }
                     })}
@@ -93,14 +93,14 @@ export default function About() {
                             (repo.stargazers_count > 0 || allForks)
                         ) {
                             return (
-                                <ExtLink key={index} href={repo.html_url}>
+                                <ExternalLink key={index} href={repo.html_url}>
                                     <Card link className="px-6 py-6">
                                         <h3 className="text-2xl capitalize">
                                             {repo.name}
                                         </h3>
                                         <p>{repo.description}</p>
                                     </Card>
-                                </ExtLink>
+                                </ExternalLink>
                             );
                         }
                     })}

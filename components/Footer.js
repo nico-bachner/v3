@@ -1,5 +1,5 @@
-import IntLink from "@components/IntLink";
-import ExtLink from "@components/ExtLink";
+import InternalLink from "./InternalLink";
+import ExternalLink from "./ExternalLink";
 
 export default function Footer(props) {
     const pages = props.pages;
@@ -54,7 +54,7 @@ export default function Footer(props) {
                     {pages.map((page, index) => {
                         return (
                             <li key={index} className="my-4 text-left">
-                                <IntLink
+                                <InternalLink
                                     href={page.href}
                                     as={
                                         page.slug != undefined
@@ -64,7 +64,7 @@ export default function Footer(props) {
                                     className="hover:text-gray-500"
                                 >
                                     {page.title}
-                                </IntLink>
+                                </InternalLink>
                             </li>
                         );
                     })}
@@ -76,12 +76,12 @@ export default function Footer(props) {
                                 key={index}
                                 className="my-4 text-right sm:text-center"
                             >
-                                <IntLink
+                                <InternalLink
                                     href={item.url}
                                     className="hover:text-gray-500"
                                 >
                                     {item.title}
-                                </IntLink>
+                                </InternalLink>
                             </li>
                         );
                     })}
@@ -93,12 +93,12 @@ export default function Footer(props) {
                                 key={index}
                                 className="my-4 text-left sm:text-center"
                             >
-                                <ExtLink
+                                <ExternalLink
                                     href={item.url}
                                     className="hover:text-gray-500"
                                 >
                                     {item.title}
-                                </ExtLink>
+                                </ExternalLink>
                             </li>
                         );
                     })}
@@ -107,12 +107,12 @@ export default function Footer(props) {
                     {links.map((link, index) => {
                         return (
                             <li key={index} className="my-4 text-right">
-                                <ExtLink
+                                <ExternalLink
                                     href={link.url}
                                     className="hover:text-gray-500"
                                 >
                                     {link.title}
-                                </ExtLink>
+                                </ExternalLink>
                             </li>
                         );
                     })}

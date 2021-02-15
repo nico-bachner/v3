@@ -57,6 +57,9 @@
     .subtitle {
         @apply my-4 sm:text-lg;
     }
+    .button {
+        @apply font-medium text-black border rounded dark:text-white hover:bg-gray-100 dark:hover:bg-gray-800 dark:border-gray-700;
+    }
 }
 
 @layer utilities {

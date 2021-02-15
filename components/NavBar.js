@@ -1,4 +1,4 @@
-import Link from "next/link";
+import InternalLink from "./InternalLink";
 import { useRouter } from "next/router";
 
 export default function NavBar(props) {
@@ -34,24 +34,21 @@ export default function NavBar(props) {
                 {props.pages.map((page, index) => {
                     return (
                         <li key={index}>
-                            <Link
+                            <InternalLink
                                 href={page.href}
                                 as={
                                     page.slug != undefined
                                         ? "/" + page.slug
                                         : "/"
                                 }
+                                className={
+                                    router.pathname == page.href
+                                        ? "dark:text-gray-400 text-gray-500 cursor-default"
+                                        : "hover:text-blue-500 dark:hover:text-blue-300"
+                                }
                             >
-                                <a
-                                    className={
-                                        router.pathname == page.href
-                                            ? "dark:text-gray-400 text-gray-500 cursor-default"
-                                            : "hover:text-blue-500 dark:hover:text-blue-300"
-                                    }
-                                >
-                                    {page.title}
-                                </a>
-                            </Link>
+                                {page.title}
+                            </InternalLink>
                         </li>
                     );
                 })}

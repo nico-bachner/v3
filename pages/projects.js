@@ -1,4 +1,10 @@
-import Project from "@components/Project";
+import { useRouter } from "next/router";
+
+import Project from "../components/Project";
+
+import { projectsPageTranslations } from "../translations/projectsPage";
+
+import i18n from "../lib/i18n";
 
 export const projects = [
     {
@@ -37,23 +43,15 @@ export const projects = [
 ];
 
 export default function Projects() {
+    const { locale } = useRouter();
+    const projectsPage = i18n(locale, projectsPageTranslations);
+
     return (
         <>
-            <h1>Projects</h1>
-            <p className="subtitle">
-                Here are some projects I've made and/or have participated in
-                recently. All code-based projects are Open Source and can be
-                found on{" "}
-                <a
-                    href="https://github.com/nico-bachner?tab=repositories"
-                    className="link"
-                >
-                    GitHub
-                </a>
-                , where you can also find some of my less noteworthy projects.
-            </p>
+            <h1>{projectsPage.title}</h1>
+            <p className="subtitle">{projectsPage.subtitle}</p>
             <section>
-                <h2 className="my-4">Web Projects</h2>
+                <h2 className="my-4">{projectsPage.web}</h2>
                 <ul className="grid grid-cols-1 gap-4">
                     {projects.map((project, index) => {
                         if (project.type == "web") {
@@ -74,7 +72,7 @@ export default function Projects() {
                 </ul>
             </section>
             <section>
-                <h2 className="my-4">Games</h2>
+                <h2 className="my-4">{projectsPage.games}</h2>
                 <ul className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                     {projects.map((project, index) => {
                         if (project.type == "game") {
@@ -95,7 +93,7 @@ export default function Projects() {
                 </ul>
             </section>
             <section>
-                <h2 className="my-4">Other Projects</h2>
+                <h2 className="my-4">{projectsPage.other}</h2>
                 <ul className="grid grid-cols-1 gap-4">
                     {projects.map((project, index) => {
                         if (project.type == "other") {

@@ -1,4 +1,4 @@
-export default function ExtLink(props) {
+export default function ExternalLink(props) {
     return (
         <a
             href={props.href}

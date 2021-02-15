@@ -1,6 +1,6 @@
 import { useRouter } from "next/router";
 
-import IntLink from "@components/IntLink";
+import InternalLink from "./InternalLink";
 
 export default function MobileNav({ pages }) {
     const { pathname } = useRouter();
@@ -11,7 +11,7 @@ export default function MobileNav({ pages }) {
                 {pages.map((page, index) => {
                     return (
                         <li key={index}>
-                            <IntLink
+                            <InternalLink
                                 href={page.href}
                                 as={
                                     page.slug != undefined
@@ -27,7 +27,7 @@ export default function MobileNav({ pages }) {
                                 }
                             >
                                 {page.title}
-                            </IntLink>
+                            </InternalLink>
                         </li>
                     );
                 })}

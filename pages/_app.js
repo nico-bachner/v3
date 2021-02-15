@@ -1,84 +1,78 @@
 import "../styles/globals.css";
 
-import Head from "next/head";
+import Link from "next/link";
+import Image from "next/image";
 
 import { MDXProvider } from "@mdx-js/react";
 import { useRouter } from "next/router";
 
-import Footer from "@components/layout/Footer";
-import NavBar from "@components/layout/NavBar";
-import MobileNav from "@components/layout/MobileNav";
+import Meta from "../components/Meta";
+import NavBar from "../components/NavBar";
+import MobileNav from "../components/MobileNav";
+import Footer from "../components/Footer";
 
-import { pages } from "@utils/pages";
-import { MDXComponents } from "@utils/mdxComponents";
+import { pagesTranslations } from "../translations/pages";
+import i18n from "../lib/i18n";
 
-function App({ Component, pageProps }) {
-    const router = useRouter();
-
-    const meta = {
-        description: "Aspiring Open Sourcerer",
-    };
-
-    const pageRoute = router.pathname.split("/");
-    let page = " ";
-    if (pageRoute.length > 2) {
-        const pageWords = pageRoute[2].split("-");
-        const pageWordsCapitalised = pageWords.map((word) => {
-            return word.charAt(0).toUpperCase() + word.slice(1);
-        });
-        page = pageWordsCapitalised.join(" ");
-    } else {
-        page = pageRoute[1].charAt(0).toUpperCase() + pageRoute[1].slice(1);
-    }
-
-    const locale = router.locale;
-    const translatedPages =
-        locale == "lu"
-            ? pages.lu
-            : locale == "de"
-            ? pages.de
-            : locale == "fr"
-            ? pages.fr
-            : locale == "da"
-            ? pages.da
-            : pages.en;
+export default function App({ Component, pageProps }) {
+    const { locale } = useRouter();
+    const translatedPages = i18n(locale, pagesTranslations);
+    const pageRoutes = ["/", "/about", "/projects", "/articles"];
+    const pages = pageRoutes.map((route, index) => {
+        const page = {
+            title: translatedPages[index].title,
+            slug: translatedPages[index].slug,
+            href: route,
+        };
+        return page;
+    });
 
     return (
         <>
-            <Head>
-                <title>
-                    {pageRoute[1] == ""
-                        ? "Nico Bachner - Aspiring Open Sourcerer"
-                        : `${page} | Nico Bachner`}
-                </title>
-                <link rel="icon" href="/icon.svg" />
-                <link
-                    crossOrigin="anonymous"
-                    rel="preload"
-                    href="/fonts/inter.woff2"
-                    as="font"
-                    type="font/woff2"
-                />
-                <meta name="description" content={meta.description} />
-                <meta property="og:type" content="website" />
-                <meta property="og:description" content={meta.description} />
-            </Head>
+            <Meta description="Aspiring Open Sourcerer" />
 
-            <NavBar pages={translatedPages} />
-            <MobileNav pages={translatedPages} />
+            <NavBar pages={pages} />
+            <MobileNav pages={pages} />
 
             <main
                 id="content"
                 className="px-8 mx-auto text-gray-600 sm:text-lg max-w-prose dark:text-gray-400"
             >
-                <MDXProvider components={MDXComponents}>
+                <MDXProvider
+                    components={{
+                        Image: (props) => {
+                            return <Image {...props} />;
+                        },
+                        wrapper: (props) => (
+                            <article className="mx-auto max-w-prose" {...props}>
+                                {props.children}
+                            </article>
+                        ),
+                        a: (props) => {
+                            if (props.href.startsWith("/")) {
+                                return (
+                                    <Link href={href}>
+                                        <a className="link" {...props} />
+                                    </Link>
+                                );
+                            }
+
+                            return (
+                                <a
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="link"
+                                    {...props}
+                                />
+                            );
+                        },
+                    }}
+                >
                     <Component {...pageProps} />
                 </MDXProvider>
             </main>
 
-            <Footer pages={translatedPages} />
+            <Footer pages={pages} />
         </>
     );
 }
-
-export default App;

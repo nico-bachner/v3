@@ -1,5 +1,5 @@
-import IntLink from "@components/IntLink";
-import Project from "@components/Project";
+import InternalLink from "../components/InternalLink";
+import Project from "../components/Project";
 
 import { useRouter } from "next/router";
 import { useState } from "react";
@@ -7,59 +7,36 @@ import { useState } from "react";
 import { projects } from "./projects";
 import { articles } from "./articles";
 
+import { homePageTranslations } from "../translations/homePage";
+import { aboutPageTranslations } from "../translations/aboutPage";
+import { projectsPageTranslations } from "../translations/projectsPage";
+import { articlesPageTranslations } from "../translations/articlesPage";
+
+import i18n from "../lib/i18n";
+
 export default function Home() {
     const { locale } = useRouter();
+    const homePage = i18n(locale, homePageTranslations);
+    const aboutPage = i18n(locale, aboutPageTranslations);
+    const projectsPage = i18n(locale, projectsPageTranslations);
+    const articlesPage = i18n(locale, articlesPageTranslations);
 
     const [projectCount, setProjectCount] = useState(3);
     const [articleCount, setArticleCount] = useState(1);
 
     return (
         <>
-            <h1 className="my-2">
-                {locale == "lu"
-                    ? "Ech sin den Nico,"
-                    : locale == "de"
-                    ? "Hallo, Ich bin Nico,"
-                    : locale == "fr"
-                    ? "Je suis Nico,"
-                    : locale == "da"
-                    ? "Jeg er Nico,"
-                    : "Hi, I'm Nico,"}
-            </h1>
+            <h1 className="my-2 text-4xl sm:text-5xl">{homePage.title}</h1>
             <p className="my-2 text-3xl font-bold text-blue-400 dark:text-blue-300 sm:text-4xl">
-                {locale == "lu"
-                    ? "en Open Source Enthusiast."
-                    : locale == "de"
-                    ? "ein Open Source Enthusiast."
-                    : locale == "fr"
-                    ? "un passionné d'Open Source."
-                    : locale == "da"
-                    ? "en Open Source Entusiast."
-                    : "an Aspiring Open Sourcerer."}
-            </p>
-            <p className="subtitle">
-                {locale == "lu"
-                    ? "Ech sinn zurzäit och e Schüler an engem Lycée hei zu Lëtzebuerg."
-                    : locale == "de"
-                    ? "Ich bin zurzeit auch ein Student in einem Gymnasium in Luxemburg."
-                    : locale == "fr"
-                    ? "Pour le moment, je suis aussi un étudiant au Luxembourg."
-                    : locale == "da"
-                    ? "For den nuværende tid er jeg også en student i Luxemborg."
-                    : "I'm currently also a High School Student in Luxembourg."}
+                {homePage.subtitle}
             </p>
             <section>
-                <h2>
-                    {locale == "lu"
-                        ? "Projeten"
-                        : locale == "de"
-                        ? "Projekte"
-                        : locale == "fr"
-                        ? "Projets"
-                        : locale == "da"
-                        ? "Projekter"
-                        : "Projects"}
-                </h2>
+                <h2>{aboutPage.title}</h2>
+                <p>{aboutPage.preview}</p>
+            </section>
+            <section>
+                <h2>{projectsPage.title}</h2>
+                <p className="my-4">{projectsPage.subtitle}</p>
                 <div className="grid grid-cols-1 gap-4">
                     {projects.slice(0, projectCount).map((project, index) => {
                         return (
@@ -116,7 +93,7 @@ export default function Home() {
                             ? "Vise Fære"
                             : "Show Less"}
                     </button>
-                    <IntLink
+                    <InternalLink
                         href="/projects"
                         className="flex-grow text-right link"
                     >
@@ -129,29 +106,22 @@ export default function Home() {
                             : locale == "da"
                             ? "Vise Alle"
                             : "Show All"}
-                    </IntLink>
+                    </InternalLink>
                 </div>
             </section>
             <section>
-                <h2>
-                    {locale == "lu"
-                        ? "Artikelen"
-                        : locale == "de"
-                        ? "Artikel"
-                        : locale == "fr"
-                        ? "Articles"
-                        : locale == "da"
-                        ? "Artikler"
-                        : "Articles"}
-                </h2>
+                <h2>{articlesPage.title}</h2>
+                <p className="my-4">{articlesPage.subtitle}</p>
                 <ul>
                     {articles.slice(0, articleCount).map((article, index) => {
                         return (
                             <li key={index} className="my-6">
-                                <IntLink href={"/articles/" + article.slug}>
+                                <InternalLink
+                                    href={"/articles/" + article.slug}
+                                >
                                     <h3 className="text-xl">{article.title}</h3>
                                     <p>{article.summary}</p>
-                                </IntLink>
+                                </InternalLink>
                             </li>
                         );
                     })}
@@ -199,7 +169,7 @@ export default function Home() {
                             ? "Vise Fære"
                             : "Show Less"}
                     </button>
-                    <IntLink
+                    <InternalLink
                         href="/articles"
                         className="flex-grow text-right link"
                     >
@@ -212,7 +182,7 @@ export default function Home() {
                             : locale == "da"
                             ? "Vise Alle"
                             : "Show All"}
-                    </IntLink>
+                    </InternalLink>
                 </div>
             </section>
         </>
