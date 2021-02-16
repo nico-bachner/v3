@@ -1,5 +1,6 @@
 import InternalLink from "../components/InternalLink";
 import Project from "../components/Project";
+import SectionFooter from "../components/SectionFooter";
 
 import { useRouter } from "next/router";
 import { useState } from "react";
@@ -50,64 +51,12 @@ export default function Home() {
                         );
                     })}
                 </div>
-                <div className="flex p-4 space-x-4">
-                    <button
-                        onClick={() => {
-                            if (projectCount < projects.length) {
-                                setProjectCount(projectCount + 2);
-                            }
-                            console.log(projectCount);
-                        }}
-                        className={
-                            projectCount < projects.length - 1
-                                ? "link"
-                                : "disabled"
-                        }
-                    >
-                        {locale == "lu"
-                            ? "Méi Weisen"
-                            : locale == "de"
-                            ? "Zeige Mehr"
-                            : locale == "fr"
-                            ? "Montrer Plus"
-                            : locale == "da"
-                            ? "Vise Flere"
-                            : "Show More"}
-                    </button>
-                    <button
-                        onClick={() => {
-                            if (projectCount > 1) {
-                                setProjectCount(projectCount - 2);
-                            }
-                            console.log(projectCount);
-                        }}
-                        className={projectCount > 2 ? "link" : "disabled"}
-                    >
-                        {locale == "lu"
-                            ? "Manner Weisen"
-                            : locale == "de"
-                            ? "Zeige Weniger"
-                            : locale == "fr"
-                            ? "Montrer Moins"
-                            : locale == "da"
-                            ? "Vise Fære"
-                            : "Show Less"}
-                    </button>
-                    <InternalLink
-                        href="/projects"
-                        className="flex-grow text-right link"
-                    >
-                        {locale == "lu"
-                            ? "Alleguer Weisen"
-                            : locale == "de"
-                            ? "Alle Zeigen"
-                            : locale == "fr"
-                            ? "Montrer Tous"
-                            : locale == "da"
-                            ? "Vise Alle"
-                            : "Show All"}
-                    </InternalLink>
-                </div>
+                <SectionFooter
+                    items={projects}
+                    count={projectCount}
+                    modifier={setProjectCount}
+                    href="/projects"
+                />
             </section>
             <section>
                 <h2>{articlesPage.title}</h2>
@@ -126,64 +75,12 @@ export default function Home() {
                         );
                     })}
                 </ul>
-                <div className="flex p-4 space-x-4">
-                    <button
-                        onClick={() => {
-                            if (articleCount < articles.length) {
-                                setArticleCount(articleCount + 2);
-                            }
-                            console.log(articleCount);
-                        }}
-                        className={
-                            articleCount < articles.length - 1
-                                ? "link"
-                                : "disabled"
-                        }
-                    >
-                        {locale == "lu"
-                            ? "Méi Weisen"
-                            : locale == "de"
-                            ? "Zeige Mehr"
-                            : locale == "fr"
-                            ? "Montrer Plus"
-                            : locale == "da"
-                            ? "Vise Flere"
-                            : "Show More"}
-                    </button>
-                    <button
-                        onClick={() => {
-                            if (articleCount > 1) {
-                                setArticleCount(articleCount - 2);
-                            }
-                            console.log(articleCount);
-                        }}
-                        className={articleCount > 2 ? "link" : "disabled"}
-                    >
-                        {locale == "lu"
-                            ? "Manner Weisen"
-                            : locale == "de"
-                            ? "Zeige Weniger"
-                            : locale == "fr"
-                            ? "Montrer Moins"
-                            : locale == "da"
-                            ? "Vise Fære"
-                            : "Show Less"}
-                    </button>
-                    <InternalLink
-                        href="/articles"
-                        className="flex-grow text-right link"
-                    >
-                        {locale == "lu"
-                            ? "Alleguer Weisen"
-                            : locale == "de"
-                            ? "Alle Zeigen"
-                            : locale == "fr"
-                            ? "Montrer Tous"
-                            : locale == "da"
-                            ? "Vise Alle"
-                            : "Show All"}
-                    </InternalLink>
-                </div>
+                <SectionFooter
+                    items={articles}
+                    count={articleCount}
+                    modifier={setArticleCount}
+                    href="/articles"
+                />
             </section>
         </>
     );
