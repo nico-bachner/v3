@@ -1,5 +1,6 @@
 import InternalLink from "../components/InternalLink";
 import Project from "../components/Project";
+import Counter from "../components/Counter";
 import SectionFooter from "../components/SectionFooter";
 
 import { useRouter } from "next/router";
@@ -34,6 +35,7 @@ export default function Home() {
             <section>
                 <h2>{aboutPage.title}</h2>
                 <p>{aboutPage.preview}</p>
+                <SectionFooter href="/about"></SectionFooter>
             </section>
             <section>
                 <h2>{projectsPage.title}</h2>
@@ -51,12 +53,13 @@ export default function Home() {
                         );
                     })}
                 </div>
-                <SectionFooter
-                    items={projects}
-                    count={projectCount}
-                    modifier={setProjectCount}
-                    href="/projects"
-                />
+                <SectionFooter href="/projects">
+                    <Counter
+                        items={projects}
+                        count={projectCount}
+                        modifier={setProjectCount}
+                    />
+                </SectionFooter>
             </section>
             <section>
                 <h2>{articlesPage.title}</h2>
@@ -75,12 +78,13 @@ export default function Home() {
                         );
                     })}
                 </ul>
-                <SectionFooter
-                    items={articles}
-                    count={articleCount}
-                    modifier={setArticleCount}
-                    href="/articles"
-                />
+                <SectionFooter href="/articles">
+                    <Counter
+                        items={articles}
+                        count={articleCount}
+                        modifier={setArticleCount}
+                    />
+                </SectionFooter>
             </section>
         </>
     );
