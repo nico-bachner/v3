@@ -4,19 +4,19 @@ export const homePageTranslations = {
         subtitle: "I'm an Aspiring Open Sourcerer.",
     },
     da: {
-        title: "Hej, jeg er Nico.",
-        subtitle: "Jeg er en Open Source Entusiast.",
+        title: "Hej, jeg er Nico,",
+        subtitle: "en Open Source Entusiast.",
     },
     fr: {
-        title: "Salut, je suis Nico.",
-        subtitle: "Je suis un passionné d'Open Source.",
+        title: "Je suis Nico,",
+        subtitle: "un passionné d'Open Source.",
     },
     de: {
-        title: "Hallo, ich bin Nico.",
-        subtitle: "Ich bin ein Open Source Enthusiast.",
+        title: "Ich bin Nico,",
+        subtitle: "ein Open Source Enthusiast.",
     },
     lu: {
-        title: "Salut, ech sin den Nico.",
-        subtitle: "Ech sin en Open Source Enthusiast.",
+        title: "Ech sin den Nico,",
+        subtitle: "en Open Source Enthusiast.",
     },
 };
