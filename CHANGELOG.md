@@ -2,6 +2,26 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.2.0](https://www.github.com/nico-bachner/v3/compare/v0.1.3...v0.2.0) (2021-02-19)
+
+
+### Features
+
+* **design:** added subtitle text gradient ([8bf252d](https://www.github.com/nico-bachner/v3/commit/8bf252dfb2d8f17c87eaa66077ac057f2e6d3e7c))
+* **structure:** further refactored home section footers ([319e769](https://www.github.com/nico-bachner/v3/commit/319e769346dec707d01914a0ac0daa9f94b3db90))
+* **structure:** refactored home section footers ([eaf9f4d](https://www.github.com/nico-bachner/v3/commit/eaf9f4d507661707727afb0a880dc543d7fbd0c6))
+
+
+### Bug Fixes
+
+* **actions:** test ([d5062b4](https://www.github.com/nico-bachner/v3/commit/d5062b471b11519e8bd422bbe3a1cc4bf806d99e))
+* **actions:** test ([8c91e51](https://www.github.com/nico-bachner/v3/commit/8c91e510f21d506667e5073eeef8de90fc00e0d6))
+* **content:** streamlined some title translations ([0157996](https://www.github.com/nico-bachner/v3/commit/0157996d360cda4ccd323f6bc3dee88f14927990))
+* **design:** fixed Firefox style error ([a7c529a](https://www.github.com/nico-bachner/v3/commit/a7c529aa88c30a04d1003e7f5cfc10b144dbbea8))
+* **sitemap:** fixed sitemap generation errors ([c8e7f70](https://www.github.com/nico-bachner/v3/commit/c8e7f702a74ebe55929a5d5885fdf0756c9b5941))
+* **sitemap:** removed leftover console log ([6225524](https://www.github.com/nico-bachner/v3/commit/6225524e31e72e82d62a76cdbec9559363e845d9))
+* upgraded dependencies ([ef70368](https://www.github.com/nico-bachner/v3/commit/ef7036866b6633d4959c8708a9d0e30a03ed3122))
+
 ### [0.1.3](https://github.com/nico-bachner/v3/compare/v0.1.2...v0.1.3) (2021-02-15)
 
 
