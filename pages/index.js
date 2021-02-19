@@ -29,7 +29,7 @@ export default function Home() {
     return (
         <>
             <h1 className="my-2 text-4xl sm:text-5xl">{homePage.title}</h1>
-            <p className="my-2 text-3xl font-bold text-blue-400 dark:text-blue-300 sm:text-4xl">
+            <p className="my-2 text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-green-300 to-blue-600 sm:text-4xl">
                 {homePage.subtitle}
             </p>
             <section>
