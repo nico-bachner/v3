@@ -36,6 +36,6 @@
         "standard-version": "^9.1.1"
     },
     "prettier": {
-        "tabWidth": 4
+        "tabWidth": 2
     }
 }
