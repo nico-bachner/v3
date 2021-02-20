@@ -73,7 +73,7 @@ export default function NavBar(props) {
                     });
                 }}
                 defaultValue={router.locale}
-                className="px-3 py-1 ml-8 text-center border rounded appearance-none bg-white dark:bg-black dark:border-gray-500"
+                className="py-1 pr-8 ml-8 text-gray-600 bg-transparent border border-gray-400 rounded dark:text-gray-300 dark:border-gray-700"
             >
                 {router.locales.map((language, index) => {
                     return (
