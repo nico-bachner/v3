@@ -17,7 +17,8 @@
         "dev": "next dev",
         "build": "next build",
         "start": "next start",
-        "release": "standard-version"
+        "release": "standard-version",
+        "format": "prettier --write **/*.{js,jsx,ts,tsx,md,mdx,json}"
     },
     "dependencies": {
         "@mdx-js/loader": "^1.6.22",
