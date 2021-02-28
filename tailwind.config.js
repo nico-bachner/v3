@@ -18,5 +18,4 @@ module.exports = {
             backgroundOpacity: ["dark"],
         },
     },
-    plugins: [require("@tailwindcss/forms")],
 };
