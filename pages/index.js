@@ -1,10 +1,10 @@
+import { useRouter } from "next/router";
+import { useState } from "react";
+
 import InternalLink from "../components/InternalLink";
 import Project from "../components/Project";
 import Counter from "../components/Counter";
 import SectionFooter from "../components/SectionFooter";
-
-import { useRouter } from "next/router";
-import { useState } from "react";
 
 import { projects } from "./projects";
 import { articles } from "./articles";
@@ -35,7 +35,22 @@ export default function Home() {
             <section>
                 <h2>{aboutPage.title}</h2>
                 <p>{aboutPage.preview}</p>
-                <SectionFooter href="/about"></SectionFooter>
+                <div className="flex p-4">
+                    <InternalLink
+                        href="/about"
+                        className="flex-grow text-right text-blue hover:text-blue-light active:text-blue-dark"
+                    >
+                        {locale == "lu"
+                            ? "Méi liesen"
+                            : locale == "de"
+                            ? "Mehr lesen"
+                            : locale == "fr"
+                            ? "En lire plus"
+                            : locale == "da"
+                            ? "Lese videre"
+                            : "Read more"}
+                    </InternalLink>
+                </div>
             </section>
             <section>
                 <h2>{projectsPage.title}</h2>

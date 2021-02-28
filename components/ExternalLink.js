@@ -1,11 +1,10 @@
 export default function ExternalLink(props) {
     return (
         <a
-            href={props.href}
             target="_blank"
             rel="noopener noreferrer"
             className={
-                props.styled == "false"
+                props.unstyled
                     ? props.className
                     : "text-blue hover:text-blue-light active:text-blue-dark" +
                       " " +

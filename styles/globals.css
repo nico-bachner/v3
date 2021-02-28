@@ -2,35 +2,41 @@
 @tailwind components;
 @tailwind utilities;
 
-@font-face {
-    font-family: "Inter";
-    font-weight: 100 900;
-    font-display: optional;
-    font-style: normal;
-    src: url("/fonts/inter.woff2") format("woff2");
-}
-
 @layer base {
+    @font-face {
+        font-family: "Inter";
+        font-weight: 100 900;
+        font-display: optional;
+        src: url("/fonts/inter.woff2") format("woff2");
+    }
+
     :root {
         color-scheme: light dark;
     }
     html {
         @apply text-black bg-white dark:text-white dark:bg-black;
     }
+    h1,
+    h2,
+    h3,
+    h4 {
+        @apply text-black dark:text-white;
+    }
+
     section {
         @apply my-16;
     }
     h1 {
-        @apply mt-8 mb-6 text-4xl font-extrabold text-black dark:text-white sm:text-5xl;
+        @apply mt-8 mb-6 text-4xl font-extrabold sm:text-5xl;
     }
     h2 {
-        @apply mt-6 mb-4 text-3xl font-bold text-gray-900 dark:text-gray-50 sm:text-4xl;
+        @apply mt-6 mb-4 text-3xl font-bold sm:text-4xl;
     }
     h3 {
-        @apply text-2xl font-semibold text-gray-800 dark:text-gray-100 sm:text-3xl;
+        @apply text-2xl font-semibold sm:text-3xl;
     }
     h4 {
-        @apply text-xl font-medium text-gray-700 dark:text-gray-200 sm:text-2xl;
+        @apply text-xl font-medium sm:text-2xl;
     }
 
     article p {
@@ -55,14 +61,14 @@
 
 @layer components {
     hr {
-        @apply dark:border-gray-700;
+        @apply border;
     }
     select {
-        @apply px-3 py-1 ml-8 text-center bg-transparent border rounded appearance-none dark:border-gray-500;
-        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
-        background-position: right 0.5rem center;
+        @apply px-3 py-1 ml-8 text-center bg-transparent border rounded appearance-none dark:border-gray;
+        background-image: url("/icons/select.svg");
+        background-position: 75% center;
         background-repeat: no-repeat;
-        background-size: 1.5em 1.5em;
+        background-size: 0.75em 0.75em;
     }
 }
 
@@ -73,13 +79,13 @@
             backdrop-filter: blur(20px);
         }
     }
-    .button {
-        @apply font-medium text-black border rounded dark:text-white hover:bg-gray-100 dark:hover:bg-gray-800 dark:border-gray-700;
+    .border {
+        @apply border-gray-lightest dark:border-gray-darkest;
     }
     .disabled {
-        @apply text-gray-400 cursor-default dark:text-gray-500;
+        @apply cursor-default text-gray-light dark:text-gray-dark;
     }
     .code {
-        @apply font-mono text-gray-700 bg-gray-100 dark:text-gray-200 dark:bg-gray-800;
+        @apply font-mono text-gray-darkest bg-gray-lightest dark:text-gray-lightest dark:bg-gray-darkest;
     }
 }

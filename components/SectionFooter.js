@@ -6,11 +6,11 @@ export default function SectionFooter(props) {
     const { locale } = useRouter();
 
     return (
-        <div className="flex p-4 space-x-4">
+        <div className="flex justify-between p-4 sm:space-x-8">
             {props.children}
             <InternalLink
                 href={props.href}
-                className="flex-grow text-right link"
+                className="text-right sm:flex-grow text-blue hover:text-blue-light active:text-blue-dark"
             >
                 {locale == "lu"
                     ? "Alleguer Weisen"

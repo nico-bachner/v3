@@ -2,9 +2,11 @@ export default function Card(props) {
     return (
         <div
             className={
-                "w-full text-left border rounded dark:border-gray-700" +
+                "w-full text-left border rounded" +
                 (props.link == "true"
-                    ? " " + "hover:bg-gray-100 dark:hover:bg-gray-800" + " "
+                    ? " " +
+                      "hover:bg-gray-lightest dark:hover:bg-gray-darkest" +
+                      " "
                     : " ") +
                 props.className
             }

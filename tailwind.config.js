@@ -1,4 +1,3 @@
-const colors = require("tailwindcss/colors");
 const { fontFamily } = require("tailwindcss/defaultTheme");
 
 module.exports = {
@@ -13,7 +12,13 @@ module.exports = {
             current: "currentColor",
             black: "black",
             white: "white",
-            gray: colors.gray,
+            gray: {
+                lightest: "#E5E7EB",
+                light: "#D1D5DB",
+                DEFAULT: "#9CA3AF",
+                dark: "#6B7280",
+                darkest: "#374151",
+            },
             blue: {
                 light: "#93C5FD",
                 DEFAULT: "#60A5FA",
@@ -32,6 +37,7 @@ module.exports = {
     variants: {
         extend: {
             backgroundOpacity: ["dark"],
+            textColor: ["active"],
         },
     },
 };

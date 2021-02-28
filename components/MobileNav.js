@@ -22,8 +22,8 @@ export default function MobileNav({ pages }) {
                                     "p-2" +
                                     " " +
                                     (pathname == page.href
-                                        ? "text-gray-400 dark:text-gray-600"
-                                        : "hover:text-blue-500 dark:hover:text-blue-300")
+                                        ? "text-gray dark:text-gray-dark"
+                                        : "hover:text-blue")
                                 }
                             >
                                 {page.title}

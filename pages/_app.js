@@ -36,7 +36,10 @@ export default function App({ Component, pageProps }) {
             <MobileNav pages={pages} />
 
             <div className="px-8 mx-auto max-w-prose sm:text-lg">
-                <main id="content" className="text-gray-600 dark:text-gray-400">
+                <main
+                    id="content"
+                    className="text-gray-dark dark:text-gray-light"
+                >
                     <MDXProvider
                         components={{
                             wrapper: (props) => (
@@ -66,10 +69,7 @@ export default function App({ Component, pageProps }) {
 
                 <footer className="my-24">
                     <hr className="my-12" />
-                    <Footer
-                        pages={pages}
-                        className="text-gray-400 dark:text-gray-600"
-                    />
+                    <Footer pages={pages} className="text-gray" />
                 </footer>
             </div>
         </>

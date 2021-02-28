@@ -11,7 +11,11 @@ export default function Counter({ count, items, modifier }) {
                         modifier(count + 2);
                     }
                 }}
-                className={count < items.length - 1 ? "link" : "disabled"}
+                className={
+                    count < items.length - 1
+                        ? "text-blue hover:text-blue-light"
+                        : "disabled"
+                }
             >
                 {locale == "lu"
                     ? "Méi Weisen"
@@ -29,7 +33,9 @@ export default function Counter({ count, items, modifier }) {
                         modifier(count - 2);
                     }
                 }}
-                className={count > 2 ? "link" : "disabled"}
+                className={
+                    count > 2 ? "text-blue hover:text-blue-light" : "disabled"
+                }
             >
                 {locale == "lu"
                     ? "Manner Weisen"

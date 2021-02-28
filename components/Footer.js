@@ -65,7 +65,7 @@ export default function Footer(props) {
                                         ? "/" + page.slug
                                         : "/"
                                 }
-                                className="hover:text-gray-500"
+                                className="hover:text-gray-dark dark:hover:text-gray-light"
                             >
                                 {page.title}
                             </InternalLink>
@@ -82,7 +82,7 @@ export default function Footer(props) {
                         >
                             <InternalLink
                                 href={item.url}
-                                className="hover:text-gray-500"
+                                className="hover:text-gray-dark dark:hover:text-gray-light"
                             >
                                 {item.title}
                             </InternalLink>
@@ -99,7 +99,7 @@ export default function Footer(props) {
                         >
                             <ExternalLink
                                 href={item.url}
-                                className="hover:text-gray-500"
+                                className="hover:text-gray-dark dark:hover:text-gray-light"
                             >
                                 {item.title}
                             </ExternalLink>
@@ -113,7 +113,7 @@ export default function Footer(props) {
                         <li key={index} className="my-4 text-right">
                             <ExternalLink
                                 href={link.url}
-                                className="hover:text-gray-500"
+                                className="hover:text-gray-dark dark:hover:text-gray-light"
                             >
                                 {link.title}
                             </ExternalLink>

@@ -58,8 +58,12 @@ export default function About() {
                             (repo.stargazers_count > 0 || allRepos)
                         ) {
                             return (
-                                <ExternalLink key={index} href={repo.html_url}>
-                                    <Card link className="px-6 py-6">
+                                <ExternalLink
+                                    key={index}
+                                    href={repo.html_url}
+                                    unstyled
+                                >
+                                    <Card link="true" className="px-6 py-6">
                                         <h3 className="text-2xl capitalize">
                                             {repo.name}
                                         </h3>
@@ -78,7 +82,7 @@ export default function About() {
                             setToggleAllRepos(false);
                         }
                     }}
-                    className="m-4 link"
+                    className="m-4"
                 >
                     {allRepos == false ? "Show All" : "Show Less"}
                 </button>
@@ -93,8 +97,12 @@ export default function About() {
                             (repo.stargazers_count > 0 || allForks)
                         ) {
                             return (
-                                <ExternalLink key={index} href={repo.html_url}>
-                                    <Card link className="px-6 py-6">
+                                <ExternalLink
+                                    key={index}
+                                    href={repo.html_url}
+                                    unstyled="true"
+                                >
+                                    <Card link="true" className="px-6 py-6">
                                         <h3 className="text-2xl capitalize">
                                             {repo.name}
                                         </h3>
@@ -113,7 +121,7 @@ export default function About() {
                             setToggleAllForks(false);
                         }
                     }}
-                    className="m-4 link"
+                    className="m-4"
                 >
                     {allForks == false ? "Show All" : "Show Less"}
                 </button>
