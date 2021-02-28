@@ -18,7 +18,7 @@ export default function Articles() {
     return (
         <>
             <h1>{articlesPage.title}</h1>
-            <p className="subtitle">{articlesPage.subtitle}</p>
+            <p>{articlesPage.subtitle}</p>
             <ul>
                 {articles.map((article, index) => {
                     return (

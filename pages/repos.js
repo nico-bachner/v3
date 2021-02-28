@@ -34,7 +34,7 @@ export default function About() {
     return (
         <>
             <h1>GitHub Repositories</h1>
-            <p className="subtitle">
+            <p>
                 Here are a few of my public GitHub repositories. They can all be
                 found on{" "}
                 <a

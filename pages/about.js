@@ -9,7 +9,7 @@ export default function About() {
     return (
         <>
             <h1>{aboutPage.title}</h1>
-            <p className="subtitle">{aboutPage.preview}</p>
+            <p>{aboutPage.preview}</p>
             {locale == "en" ? (
                 <>
                     <h2>Projects</h2>

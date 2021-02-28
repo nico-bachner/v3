@@ -49,7 +49,7 @@ export default function Projects() {
     return (
         <>
             <h1>{projectsPage.title}</h1>
-            <p className="subtitle">{projectsPage.subtitle}</p>
+            <p>{projectsPage.subtitle}</p>
             <section>
                 <h2 className="my-4">{projectsPage.web}</h2>
                 <ul className="grid grid-cols-1 gap-4">
