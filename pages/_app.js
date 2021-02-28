@@ -34,45 +34,48 @@ export default function App({ Component, pageProps }) {
             <NavBar pages={pages} />
             <MobileNav pages={pages} />
 
-            <main
-                id="content"
-                className="px-8 mx-auto text-gray-600 sm:text-lg max-w-prose dark:text-gray-400"
-            >
-                <MDXProvider
-                    components={{
-                        Image: (props) => {
-                            return <Image {...props} />;
-                        },
-                        wrapper: (props) => (
-                            <article className="mx-auto max-w-prose" {...props}>
-                                {props.children}
-                            </article>
-                        ),
-                        a: (props) => {
-                            if (props.href.startsWith("/")) {
+            <div className="px-8 mx-auto max-w-prose sm:text-lg">
+                <main id="content" className="text-gray-600 dark:text-gray-400">
+                    <MDXProvider
+                        components={{
+                            Image: (props) => {
+                                return <Image {...props} />;
+                            },
+                            wrapper: (props) => (
+                                <article {...props}>{props.children}</article>
+                            ),
+                            a: (props) => {
+                                if (props.href.startsWith("/")) {
+                                    return (
+                                        <Link href={href}>
+                                            <a className="link" {...props} />
+                                        </Link>
+                                    );
+                                }
+
                                 return (
-                                    <Link href={href}>
-                                        <a className="link" {...props} />
-                                    </Link>
+                                    <a
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="link"
+                                        {...props}
+                                    />
                                 );
-                            }
+                            },
+                        }}
+                    >
+                        <Component {...pageProps} />
+                    </MDXProvider>
+                </main>
 
-                            return (
-                                <a
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="link"
-                                    {...props}
-                                />
-                            );
-                        },
-                    }}
-                >
-                    <Component {...pageProps} />
-                </MDXProvider>
-            </main>
-
-            <Footer pages={pages} />
+                <footer className="my-24">
+                    <hr className="my-12" />
+                    <Footer
+                        pages={pages}
+                        className="text-gray-400 dark:text-gray-600"
+                    />
+                </footer>
+            </div>
         </>
     );
 }

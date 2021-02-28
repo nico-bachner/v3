@@ -54,8 +54,8 @@
 }
 
 @layer components {
-    .button {
-        @apply font-medium text-black border rounded dark:text-white hover:bg-gray-100 dark:hover:bg-gray-800 dark:border-gray-700;
+    hr {
+        @apply dark:border-gray-700;
     }
     select {
         @apply px-3 py-1 ml-8 text-center bg-transparent border rounded appearance-none dark:border-gray-500;
@@ -72,6 +72,9 @@
             @apply bg-opacity-80 dark:bg-opacity-60;
             backdrop-filter: blur(20px);
         }
+    }
+    .button {
+        @apply font-medium text-black border rounded dark:text-white hover:bg-gray-100 dark:hover:bg-gray-800 dark:border-gray-700;
     }
     .disabled {
         @apply text-gray-400 cursor-default dark:text-gray-500;
