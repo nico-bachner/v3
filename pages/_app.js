@@ -1,6 +1,5 @@
 import "../styles/globals.css";
 
-import Link from "next/link";
 import Image from "next/image";
 
 import { MDXProvider } from "@mdx-js/react";
@@ -10,6 +9,8 @@ import Meta from "../components/Meta";
 import NavBar from "../components/NavBar";
 import MobileNav from "../components/MobileNav";
 import Footer from "../components/Footer";
+import InternalLink from "../components/InternalLink";
+import ExternalLink from "../components/ExternalLink";
 
 import { pagesTranslations } from "../translations/pages";
 import i18n from "../lib/i18n";
@@ -38,30 +39,25 @@ export default function App({ Component, pageProps }) {
                 <main id="content" className="text-gray-600 dark:text-gray-400">
                     <MDXProvider
                         components={{
-                            Image: (props) => {
-                                return <Image {...props} />;
-                            },
                             wrapper: (props) => (
                                 <article {...props}>{props.children}</article>
                             ),
                             a: (props) => {
                                 if (props.href.startsWith("/")) {
                                     return (
-                                        <Link href={href}>
-                                            <a className="link" {...props} />
-                                        </Link>
+                                        <InternalLink {...props}>
+                                            {props.children}
+                                        </InternalLink>
+                                    );
+                                } else {
+                                    return (
+                                        <ExternalLink {...props}>
+                                            {props.children}
+                                        </ExternalLink>
                                     );
                                 }
-
-                                return (
-                                    <a
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="link"
-                                        {...props}
-                                    />
-                                );
                             },
+                            Image,
                         }}
                     >
                         <Component {...pageProps} />

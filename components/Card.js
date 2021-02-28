@@ -3,7 +3,7 @@ export default function Card(props) {
         <div
             className={
                 "w-full text-left border rounded dark:border-gray-700" +
-                (props.link
+                (props.link == "true"
                     ? " " + "hover:bg-gray-100 dark:hover:bg-gray-800" + " "
                     : " ") +
                 props.className
