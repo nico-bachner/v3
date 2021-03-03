@@ -7,9 +7,7 @@ export default function InternalLink(props) {
                 className={
                     props.unstyled == "true"
                         ? props.className
-                        : "text-blue hover:text-blue-light active:text-blue-dark" +
-                          " " +
-                          props.className
+                        : "text-blue hover:underline" + " " + props.className
                 }
                 {...props}
             >

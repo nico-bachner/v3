@@ -6,9 +6,7 @@ export default function ExternalLink(props) {
             className={
                 props.unstyled
                     ? props.className
-                    : "text-blue hover:text-blue-light active:text-blue-dark" +
-                      " " +
-                      props.className
+                    : "text-blue hover:underline" + " " + props.className
             }
             {...props}
         >
