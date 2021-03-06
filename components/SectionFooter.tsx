@@ -2,7 +2,10 @@ import { useRouter } from "next/router";
 
 import InternalLink from "./InternalLink";
 
-export default function SectionFooter(props) {
+export default function SectionFooter(props: {
+    href: string;
+    children?: React.ReactNode;
+}) {
     const { locale } = useRouter();
 
     return (

@@ -5,6 +5,8 @@ import Image from "next/image";
 import { MDXProvider } from "@mdx-js/react";
 import { useRouter } from "next/router";
 
+import type { AppProps } from "next/app";
+
 import Meta from "../components/Meta";
 import NavBar from "../components/NavBar";
 import MobileNav from "../components/MobileNav";
@@ -15,7 +17,7 @@ import ExternalLink from "../components/ExternalLink";
 import { pagesTranslations } from "../translations/pages";
 import i18n from "../lib/i18n";
 
-export default function App({ Component, pageProps }) {
+export default function App({ Component, pageProps }: AppProps) {
     const { locale } = useRouter();
     const translatedPages = i18n(locale, pagesTranslations);
     const pageRoutes = ["/", "/about", "/projects", "/articles"];
@@ -30,7 +32,10 @@ export default function App({ Component, pageProps }) {
 
     return (
         <>
-            <Meta description="Aspiring Open Sourcerer" />
+            <Meta
+                title="Nico Bachner - Aspiring Open Sourcerer"
+                description="High School Student and Aspiring Open Sourcerer living in Luxembourg"
+            />
 
             <NavBar pages={pages} />
             <MobileNav pages={pages} />
@@ -42,19 +47,22 @@ export default function App({ Component, pageProps }) {
                 >
                     <MDXProvider
                         components={{
-                            wrapper: (props) => (
+                            wrapper: (props: { children: React.ReactNode }) => (
                                 <article {...props}>{props.children}</article>
                             ),
-                            a: (props) => {
+                            a: (props: {
+                                href: string;
+                                children: React.ReactNode;
+                            }) => {
                                 if (props.href.startsWith("/")) {
                                     return (
-                                        <InternalLink {...props}>
+                                        <InternalLink href={props.href}>
                                             {props.children}
                                         </InternalLink>
                                     );
                                 } else {
                                     return (
-                                        <ExternalLink {...props}>
+                                        <ExternalLink href={props.href}>
                                             {props.children}
                                         </ExternalLink>
                                     );

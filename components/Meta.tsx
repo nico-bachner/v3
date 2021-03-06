@@ -2,7 +2,7 @@ import Head from "next/head";
 
 import { useRouter } from "next/router";
 
-export default function Meta({ description }) {
+export default function Meta(props: { title: string; description: string }) {
     const { pathname } = useRouter();
 
     const pageRoute = pathname.split("/");
@@ -20,9 +20,7 @@ export default function Meta({ description }) {
     return (
         <Head>
             <title>
-                {pageRoute[1] == ""
-                    ? "Nico Bachner - Aspiring Open Sourcerer"
-                    : `${page} | Nico Bachner`}
+                {pageRoute[1] == "" ? props.title : `${page} | Nico Bachner`}
             </title>
             <link rel="icon" href="/icon.svg" />
             <link
@@ -32,9 +30,9 @@ export default function Meta({ description }) {
                 as="font"
                 type="font/woff2"
             />
-            <meta name="description" content={description} />
+            <meta name="description" content={props.description} />
             <meta property="og:type" content="website" />
-            <meta property="og:description" content={description} />
+            <meta property="og:description" content={props.description} />
         </Head>
     );
 }

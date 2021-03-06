@@ -1,18 +1,22 @@
 import { useRouter } from "next/router";
 
-export default function Counter({ count, items, modifier }) {
+export default function Counter(props: {
+    count: number;
+    items: Array<Object>;
+    modifier: Function;
+}) {
     const { locale } = useRouter();
 
     return (
         <>
             <button
                 onClick={() => {
-                    if (count < items.length) {
-                        modifier(count + 2);
+                    if (props.count < props.items.length) {
+                        props.modifier(props.count + 2);
                     }
                 }}
                 className={
-                    count < items.length - 1
+                    props.count < props.items.length - 1
                         ? "text-blue hover:text-blue-light"
                         : "disabled"
                 }
@@ -29,12 +33,14 @@ export default function Counter({ count, items, modifier }) {
             </button>
             <button
                 onClick={() => {
-                    if (count > 1) {
-                        modifier(count - 2);
+                    if (props.count > 1) {
+                        props.modifier(props.count - 2);
                     }
                 }}
                 className={
-                    count > 2 ? "text-blue hover:text-blue-light" : "disabled"
+                    props.count > 2
+                        ? "text-blue hover:text-blue-light"
+                        : "disabled"
                 }
             >
                 {locale == "lu"

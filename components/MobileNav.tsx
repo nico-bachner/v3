@@ -2,13 +2,19 @@ import { useRouter } from "next/router";
 
 import InternalLink from "./InternalLink";
 
-export default function MobileNav({ pages }) {
+interface Page {
+    title: string;
+    href: string;
+    slug: string;
+}
+
+export default function MobileNav(props: { pages: Array<Page> }) {
     const { pathname } = useRouter();
 
     return (
         <nav className="fixed bottom-0 z-50 w-screen bg-white sm:hidden dark:bg-black bg-blur">
             <ul className="flex py-6 text-sm font-bold justify-evenly">
-                {pages.map((page, index) => {
+                {props.pages.map((page, index) => {
                     return (
                         <li key={index}>
                             <InternalLink

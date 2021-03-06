@@ -1,4 +1,12 @@
-export default function i18n(locale, translations) {
+interface Translations {
+    en: any
+    da: any
+    fr: any
+    de: any
+    lu: any
+}
+
+export default function i18n(locale: string | undefined, translations: Translations) {
     let translation = translations.en;
 
     if (locale == "da") {

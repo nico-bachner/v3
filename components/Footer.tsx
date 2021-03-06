@@ -1,50 +1,60 @@
 import InternalLink from "./InternalLink";
 import ExternalLink from "./ExternalLink";
 
-export default function Footer(props) {
+const hiddenPages = [
+    {
+        title: "Source Code",
+        url: "https://github.com/nico-bachner/v3",
+    },
+    {
+        title: "Uses",
+        url: "/uses",
+    },
+    {
+        title: "Repositories",
+        url: "/repos",
+    },
+    {
+        title: "Mac Setup",
+        url: "/setup",
+    },
+];
+const other = [
+    {
+        title: "CV",
+        url: "https://read.cv/nicob",
+    },
+];
+const links = [
+    {
+        title: "GitHub",
+        url: "https://github.com/nico-bachner",
+    },
+    {
+        title: "DEV",
+        url: "https://dev.to/nicob",
+    },
+    {
+        title: "Stack Overflow",
+        url: "https://stackoverflow.com/users/story/13506524",
+    },
+    {
+        title: "Code Golf",
+        url: "https://code.golf/golfers/nico-bachner",
+    },
+];
+
+interface Page {
+    title: string;
+    href: string;
+    slug: string;
+}
+
+export default function Footer(props: {
+    pages: Array<Page>;
+    className: string;
+}) {
     const pages = props.pages;
-    const hiddenPages = [
-        {
-            title: "Source Code",
-            url: "https://github.com/nico-bachner/v3",
-        },
-        {
-            title: "Uses",
-            url: "/uses",
-        },
-        {
-            title: "Repositories",
-            url: "/repos",
-        },
-        {
-            title: "Mac Setup",
-            url: "/setup",
-        },
-    ];
-    const other = [
-        {
-            title: "CV",
-            url: "https://read.cv/nicob",
-        },
-    ];
-    const links = [
-        {
-            title: "GitHub",
-            url: "https://github.com/nico-bachner",
-        },
-        {
-            title: "DEV",
-            url: "https://dev.to/nicob",
-        },
-        {
-            title: "Stack Overflow",
-            url: "https://stackoverflow.com/users/story/13506524",
-        },
-        {
-            title: "Code Golf",
-            url: "https://code.golf/golfers/nico-bachner",
-        },
-    ];
 
     return (
         <nav

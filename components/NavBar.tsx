@@ -1,7 +1,13 @@
 import InternalLink from "./InternalLink";
 import { useRouter } from "next/router";
 
-export default function NavBar(props) {
+interface Page {
+    title: string;
+    href: string;
+    slug: string;
+}
+
+export default function NavBar(props: { pages: Array<Page> }) {
     const router = useRouter();
     const locale = router.locale;
 
@@ -72,7 +78,7 @@ export default function NavBar(props) {
                 defaultValue={router.locale}
                 className="py-1 pr-8 ml-8 text-gray-600 bg-transparent border border-gray-400 rounded dark:text-gray-300 dark:border-gray-700"
             >
-                {router.locales.map((language, index) => {
+                {router.locales?.map((language, index) => {
                     return (
                         <option key={index} value={language}>
                             {language.toUpperCase()}
