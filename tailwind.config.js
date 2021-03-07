@@ -1,4 +1,4 @@
-const { fontFamily } = require("tailwindcss/defaultTheme");
+const { fontFamily, boxShadow } = require("tailwindcss/defaultTheme");
 
 module.exports = {
     purge: [
@@ -27,6 +27,10 @@ module.exports = {
             green: {
                 DEFAULT: "#6EE7B7",
             },
+        },
+        boxShadow: {
+            DEFAULT: boxShadow.lg,
+            lg: boxShadow["2xl"],
         },
         extend: {
             fontFamily: {

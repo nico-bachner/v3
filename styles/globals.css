@@ -61,10 +61,10 @@
 
 @layer components {
     hr {
-        @apply border;
+        @apply border border-gray-lightest dark:border-gray-darkest;
     }
     select {
-        @apply px-3 py-1 ml-8 text-center bg-transparent border rounded appearance-none dark:border-gray;
+        @apply px-3 py-1 ml-8 text-center bg-transparent border rounded appearance-none border-gray-lightest dark:border-gray-darkest;
         background-image: url("/icons/select.svg");
         background-position: 75% center;
         background-repeat: no-repeat;
@@ -74,13 +74,14 @@
 
 @layer utilities {
     @supports (backdrop-filter: blur()) {
-        .bg-blur {
-            @apply bg-opacity-80 dark:bg-opacity-60;
+        .glass {
             backdrop-filter: blur(20px);
         }
     }
-    .border {
-        @apply border-gray-lightest dark:border-gray-darkest;
+    @supports not (backdrop-filter: blur()) {
+        .glass {
+            @apply bg-white dark:bg-black;
+        }
     }
     .disabled {
         @apply cursor-default text-gray-light dark:text-gray-dark;

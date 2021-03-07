@@ -12,7 +12,7 @@ export default function NavBar(props: { pages: Array<Page> }) {
     const locale = router.locale;
 
     return (
-        <nav className="top-0 z-50 flex items-center justify-between max-w-4xl px-8 py-4 mx-auto my-8 font-medium bg-white sm:py-8 sm:sticky dark:bg-black bg-blur">
+        <nav className="top-0 z-50 flex items-center justify-between max-w-4xl p-8 mx-auto my-4 font-medium sm:my-8 sm:sticky glass">
             <a href="#content" className="sr-only focus:not-sr-only">
                 Skip to content
             </a>

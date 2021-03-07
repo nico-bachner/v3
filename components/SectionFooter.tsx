@@ -9,7 +9,7 @@ export default function SectionFooter(props: {
     const { locale } = useRouter();
 
     return (
-        <div className="flex justify-between p-4 sm:space-x-8">
+        <div className="flex justify-between px-2 py-4 sm:space-x-8">
             {props.children}
             <InternalLink
                 href={props.href}

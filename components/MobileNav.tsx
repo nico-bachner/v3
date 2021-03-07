@@ -12,8 +12,8 @@ export default function MobileNav(props: { pages: Array<Page> }) {
     const { pathname } = useRouter();
 
     return (
-        <nav className="fixed bottom-0 z-50 w-screen bg-white sm:hidden dark:bg-black bg-blur">
-            <ul className="flex py-6 text-sm font-bold justify-evenly">
+        <nav className="fixed bottom-0 z-50 w-screen sm:hidden glass">
+            <ul className="flex py-8 text-sm font-bold justify-evenly">
                 {props.pages.map((page, index) => {
                     return (
                         <li key={index}>
@@ -25,11 +25,9 @@ export default function MobileNav(props: { pages: Array<Page> }) {
                                         : "/"
                                 }
                                 className={
-                                    "p-2" +
-                                    " " +
-                                    (pathname == page.href
-                                        ? "text-gray dark:text-gray-dark"
-                                        : "hover:text-blue")
+                                    pathname == page.href
+                                        ? "p-2 text-gray-light dark:text-gray-dark"
+                                        : "p-2"
                                 }
                             >
                                 {page.title}
