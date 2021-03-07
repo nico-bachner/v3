@@ -9,10 +9,10 @@ import SectionFooter from "../components/SectionFooter";
 import { projects } from "./projects";
 import { articles } from "./articles";
 
-import { homePageTranslations } from "../translations/homePage";
-import { aboutPageTranslations } from "../translations/aboutPage";
-import { projectsPageTranslations } from "../translations/projectsPage";
-import { articlesPageTranslations } from "../translations/articlesPage";
+import { homePageTranslations } from "../content/translations/homePage";
+import { aboutPageTranslations } from "../content/translations/aboutPage";
+import { projectsPageTranslations } from "../content/translations/projectsPage";
+import { articlesPageTranslations } from "../content/translations/articlesPage";
 
 import i18n from "../lib/i18n";
 

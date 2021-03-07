@@ -1,7 +1,7 @@
 import InternalLink from "../components/InternalLink";
 
 import { useRouter } from "next/router";
-import { articlesPageTranslations } from "../translations/articlesPage";
+import { articlesPageTranslations } from "../content/translations/articlesPage";
 import i18n from "../lib/i18n";
 
 export const articles = [

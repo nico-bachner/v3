@@ -1,5 +1,5 @@
 import { useRouter } from "next/router";
-import { aboutPageTranslations } from "../translations/aboutPage";
+import { aboutPageTranslations } from "../content/translations/aboutPage";
 import i18n from "../lib/i18n";
 
 export default function About() {

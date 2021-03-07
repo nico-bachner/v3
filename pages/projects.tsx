@@ -2,7 +2,7 @@ import { useRouter } from "next/router";
 
 import Project from "../components/Project";
 
-import { projectsPageTranslations } from "../translations/projectsPage";
+import { projectsPageTranslations } from "../content/translations/projectsPage";
 
 import i18n from "../lib/i18n";
 

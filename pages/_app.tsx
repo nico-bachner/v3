@@ -14,7 +14,12 @@ import Footer from "../components/Footer";
 import InternalLink from "../components/InternalLink";
 import ExternalLink from "../components/ExternalLink";
 
-import { pagesTranslations } from "../translations/pages";
+import {
+    externalPages,
+    hiddenPages,
+    otherPages,
+    pagesTranslations,
+} from "../content/pages";
 import i18n from "../lib/i18n";
 
 export default function App({ Component, pageProps }: AppProps) {
@@ -77,7 +82,13 @@ export default function App({ Component, pageProps }: AppProps) {
 
                 <footer className="my-24">
                     <hr className="my-12" />
-                    <Footer pages={pages} className="text-gray" />
+                    <Footer
+                        pages={pages}
+                        hiddenPages={hiddenPages}
+                        otherPages={otherPages}
+                        externalPages={externalPages}
+                        className="text-gray"
+                    />
                 </footer>
             </div>
         </>

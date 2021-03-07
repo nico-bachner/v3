@@ -1,61 +1,21 @@
 import InternalLink from "./InternalLink";
 import ExternalLink from "./ExternalLink";
 
-const hiddenPages = [
-    {
-        title: "Source Code",
-        url: "https://github.com/nico-bachner/v3",
-    },
-    {
-        title: "Uses",
-        url: "/uses",
-    },
-    {
-        title: "Repositories",
-        url: "/repos",
-    },
-    {
-        title: "Mac Setup",
-        url: "/setup",
-    },
-];
-const other = [
-    {
-        title: "CV",
-        url: "https://read.cv/nicob",
-    },
-];
-const links = [
-    {
-        title: "GitHub",
-        url: "https://github.com/nico-bachner",
-    },
-    {
-        title: "DEV",
-        url: "https://dev.to/nicob",
-    },
-    {
-        title: "Stack Overflow",
-        url: "https://stackoverflow.com/users/story/13506524",
-    },
-    {
-        title: "Code Golf",
-        url: "https://code.golf/golfers/nico-bachner",
-    },
-];
-
 interface Page {
     title: string;
     href: string;
-    slug: string;
+    slug?: string;
 }
 
-export default function Footer(props: {
+interface Props {
     pages: Array<Page>;
+    hiddenPages: Array<Page>;
+    otherPages: Array<Page>;
+    externalPages: Array<Page>;
     className: string;
-}) {
-    const pages = props.pages;
+}
 
+export default function Footer(props: Props) {
     return (
         <nav
             className={
@@ -65,7 +25,7 @@ export default function Footer(props: {
             }
         >
             <ul>
-                {pages.map((page, index) => {
+                {props.pages.map((page, index) => {
                     return (
                         <li key={index} className="my-4 text-left">
                             <InternalLink
@@ -84,14 +44,14 @@ export default function Footer(props: {
                 })}
             </ul>
             <ul>
-                {hiddenPages.map((item, index) => {
+                {props.hiddenPages.map((item, index) => {
                     return (
                         <li
                             key={index}
                             className="my-4 text-right sm:text-center"
                         >
                             <InternalLink
-                                href={item.url}
+                                href={item.href}
                                 className="hover:text-gray-dark dark:hover:text-gray-light"
                             >
                                 {item.title}
@@ -101,14 +61,14 @@ export default function Footer(props: {
                 })}
             </ul>
             <ul>
-                {other.map((item, index) => {
+                {props.otherPages.map((item, index) => {
                     return (
                         <li
                             key={index}
                             className="my-4 text-left sm:text-center"
                         >
                             <ExternalLink
-                                href={item.url}
+                                href={item.href}
                                 className="hover:text-gray-dark dark:hover:text-gray-light"
                             >
                                 {item.title}
@@ -118,11 +78,11 @@ export default function Footer(props: {
                 })}
             </ul>
             <ul>
-                {links.map((link, index) => {
+                {props.externalPages.map((link, index) => {
                     return (
                         <li key={index} className="my-4 text-right">
                             <ExternalLink
-                                href={link.url}
+                                href={link.href}
                                 className="hover:text-gray-dark dark:hover:text-gray-light"
                             >
                                 {link.title}
