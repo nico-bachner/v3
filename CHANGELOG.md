@@ -2,19 +2,48 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
-### [0.1.3](https://github.com/nico-bachner/v3/compare/v0.1.2...v0.1.3) (2021-02-15)
+### [0.1.4](https://github.com/nico-bachner/v3/compare/v0.1.3...v0.1.4) (2021-03-10)
 
 
 ### Features
 
-* massive refactor, added near-complete i18n ([4d1d270](https://github.com/nico-bachner/v3/commit/4d1d270d6b8819bfbab8467045645d97ec820d38))
-* **structure:** major refactor ([a4cb810](https://github.com/nico-bachner/v3/commit/a4cb8104350a58708f337514014c6094dfd4cabc))
+* added hover shadow transition to project cards ([620e03b](https://github.com/nico-bachner/v3/commit/620e03bffe6a9786955ab7c02fd3b2d39870b5c6))
+* converted codebase to TypeScript ([f4b32eb](https://github.com/nico-bachner/v3/commit/f4b32ebb055390f3cb171a8728816ebdea218090))
+* removed tailwind forms dependency ([39d7057](https://github.com/nico-bachner/v3/commit/39d7057838078a39f51815b2a65fac30af302531))
+* **design:** added subtitle text gradient ([8bf252d](https://github.com/nico-bachner/v3/commit/8bf252dfb2d8f17c87eaa66077ac057f2e6d3e7c))
+* **scripts:** added global format script ([7aa2f23](https://github.com/nico-bachner/v3/commit/7aa2f23eb1f398832162efb34cc8f842901068c7))
+* **structure:** further refactored home section footers ([319e769](https://github.com/nico-bachner/v3/commit/319e769346dec707d01914a0ac0daa9f94b3db90))
+* **structure:** refactored home section footers ([eaf9f4d](https://github.com/nico-bachner/v3/commit/eaf9f4d507661707727afb0a880dc543d7fbd0c6))
 
 
 ### Bug Fixes
 
-* (hopefully) fixed broken build ([3f98ae9](https://github.com/nico-bachner/v3/commit/3f98ae9a2c1349b5b1d5c268710ca1a61096934f))
-* **design:** fixed footer alignment ([2d49c8d](https://github.com/nico-bachner/v3/commit/2d49c8dfa6bed784b8dc9391c475e8b78341d577))
+* **design:** improved some styling ([8f95659](https://github.com/nico-bachner/v3/commit/8f95659ca9cdd81ad43a2512911f2b42ca0c9109))
+* finished conversion to TypeScript ([9a4d945](https://github.com/nico-bachner/v3/commit/9a4d945a1842e563a2243565394a59ffa2146e2b))
+* **content:** streamlined some title translations ([0157996](https://github.com/nico-bachner/v3/commit/0157996d360cda4ccd323f6bc3dee88f14927990))
+* **design:** fixed Firefox style error ([a7c529a](https://github.com/nico-bachner/v3/commit/a7c529aa88c30a04d1003e7f5cfc10b144dbbea8))
+* **design:** fixed language selector style ([c76a641](https://github.com/nico-bachner/v3/commit/c76a64100f89328ce6210b613c9bb58b06962e32))
+* **design:** improved default link styling ([6333633](https://github.com/nico-bachner/v3/commit/6333633893380811d0b1608b283df7c494235de2))
+* **design:** improved language selector style ([bd7b067](https://github.com/nico-bachner/v3/commit/bd7b067d25d93244c9db22a3cb3b4d83bf4a5856))
+* **design:** limited blues to 3 shades ([9fcf672](https://github.com/nico-bachner/v3/commit/9fcf672c8658cc1b4ddd44bc48983e093cf07235))
+* **design:** limited grays to 5 shades ([5d49ba1](https://github.com/nico-bachner/v3/commit/5d49ba14164d63f6b11dcb561684b2fe99260806))
+* improved global font consistency ([1d28dad](https://github.com/nico-bachner/v3/commit/1d28dadfab43f1805e2bbc2e421992394eb4f089))
+* removed unused css class ([08f6bb5](https://github.com/nico-bachner/v3/commit/08f6bb578a85472678fd39439f70f9d530e7265a))
+* upgraded dependencies ([ef70368](https://github.com/nico-bachner/v3/commit/ef7036866b6633d4959c8708a9d0e30a03ed3122))
+* **sitemap:** fixed sitemap generation errors ([c8e7f70](https://github.com/nico-bachner/v3/commit/c8e7f702a74ebe55929a5d5885fdf0756c9b5941))
+* **sitemap:** removed leftover console log ([6225524](https://github.com/nico-bachner/v3/commit/6225524e31e72e82d62a76cdbec9559363e845d9))
+
+### [0.1.3](https://github.com/nico-bachner/v3/compare/v0.1.2...v0.1.3) (2021-02-15)
+
+### Features
+
+-   massive refactor, added near-complete i18n ([4d1d270](https://github.com/nico-bachner/v3/commit/4d1d270d6b8819bfbab8467045645d97ec820d38))
+-   **structure:** major refactor ([a4cb810](https://github.com/nico-bachner/v3/commit/a4cb8104350a58708f337514014c6094dfd4cabc))
+
+### Bug Fixes
+
+-   (hopefully) fixed broken build ([3f98ae9](https://github.com/nico-bachner/v3/commit/3f98ae9a2c1349b5b1d5c268710ca1a61096934f))
+-   **design:** fixed footer alignment ([2d49c8d](https://github.com/nico-bachner/v3/commit/2d49c8dfa6bed784b8dc9391c475e8b78341d577))
 
 ### [0.1.3](https://github.com/nico-bachner/v3/compare/v0.1.2...v0.1.3) (2021-02-15)
 
