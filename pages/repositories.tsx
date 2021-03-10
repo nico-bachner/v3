@@ -1,12 +1,13 @@
 import useSWR from "swr";
-import { swrFetcher } from "../lib/swrFetcher";
 
 import Repos from "../components/Repos";
 
 export default function Repositories() {
-    const { data, error } = useSWR(
-        "https://api.github.com/users/nico-bachner/repos",
-        swrFetcher
+    const {
+        data,
+        error,
+    } = useSWR("https://api.github.com/users/nico-bachner/repos", (args) =>
+        fetch(args).then((res) => res.json())
     );
 
     if (error) return <h1>Failed to load</h1>;

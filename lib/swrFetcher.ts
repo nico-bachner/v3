@@ -1,1 +1,0 @@
-export const swrFetcher = (...args: any) => fetch(...args).then(res => res.json())
