@@ -1,12 +1,15 @@
 interface Translations {
-    en: any
-    da: any
-    fr: any
-    de: any
-    lu: any
+    en: any;
+    da: any;
+    fr: any;
+    de: any;
+    lu: any;
 }
 
-export default function i18n(locale: string | undefined, translations: Translations) {
+export default function i18n(
+    locale: string | undefined,
+    translations: Translations
+) {
     let translation = translations.en;
 
     if (locale == "da") {

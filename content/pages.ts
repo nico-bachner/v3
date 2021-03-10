@@ -97,7 +97,7 @@ export const hiddenPages = [
     },
     {
         title: "Repositories",
-        href: "/repos",
+        href: "/repositories",
     },
     {
         title: "Mac Setup",
