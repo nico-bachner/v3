@@ -1,16 +1,21 @@
-import Project from "./Project";
-
 import { useState } from "react";
 
-type Repo = {
+import Repository from "./Repository";
+import Button from "./Button";
+
+interface Repository {
     name: string;
     description: string;
     html_url: string;
     fork: boolean;
     stargazers_count: number;
-};
+}
 
-export default function Repos(props: { repos: any }) {
+interface Props {
+    repos: Array<Repository>;
+}
+
+export default function Repos(props: Props) {
     const [showAllRepos, setShowAllRepos] = useState(false);
     const [showAllForks, setShowAllForks] = useState(false);
 
@@ -23,70 +28,60 @@ export default function Repos(props: { repos: any }) {
             <section>
                 <h2 className="my-4">Repositories</h2>
                 <div className="grid grid-cols-1 gap-4">
-                    {props.repos.map((repo: Repo, index: number) => {
-                        repo.name = repo.name
-                            .replaceAll("-", " ")
-                            .replaceAll("md", "Markdown");
+                    {props.repos.map((repo: Repository, index: number) => {
                         if (
                             repo.fork != true &&
                             (repo.stargazers_count > 0 || showAllRepos)
                         ) {
                             return (
-                                <Project key={index} href={repo.html_url}>
-                                    <h3 className="text-2xl capitalize">
-                                        {repo.name}
-                                    </h3>
-                                    <p>{repo.description}</p>
-                                </Project>
+                                <Repository
+                                    key={index}
+                                    name={repo.name}
+                                    description={repo.description}
+                                    href={repo.html_url}
+                                />
                             );
                         }
                     })}
                 </div>
-                <button
-                    onClick={() => {
-                        if (showAllRepos != true) {
-                            setShowAllRepos(true);
-                        } else {
-                            setShowAllRepos(false);
-                        }
-                    }}
-                    className="m-4 text-blue hover:text-blue-light"
+                <Button
+                    onClick={() =>
+                        showAllRepos
+                            ? setShowAllRepos(false)
+                            : setShowAllRepos(true)
+                    }
                 >
-                    {showAllRepos == false ? "Show All" : "Show Less"}
-                </button>
+                    {showAllRepos ? "Show Less" : "Show All"}
+                </Button>
             </section>
             <section>
                 <h2 className="my-4">Forks</h2>
                 <div className="grid grid-cols-1 gap-4">
-                    {props.repos.map((repo: Repo, index: number) => {
-                        repo.name = repo.name.replaceAll("-", " ");
+                    {props.repos.map((repo: Repository, index: number) => {
                         if (
                             repo.fork == true &&
                             (repo.stargazers_count > 0 || showAllForks)
                         ) {
                             return (
-                                <Project key={index} href={repo.html_url}>
-                                    <h3 className="text-2xl capitalize">
-                                        {repo.name}
-                                    </h3>
-                                    <p>{repo.description}</p>
-                                </Project>
+                                <Repository
+                                    key={index}
+                                    name={repo.name}
+                                    description={repo.description}
+                                    href={repo.html_url}
+                                />
                             );
                         }
                     })}
                 </div>
-                <button
-                    onClick={() => {
-                        if (showAllForks != true) {
-                            setShowAllForks(true);
-                        } else {
-                            setShowAllForks(false);
-                        }
-                    }}
-                    className="m-4 text-blue hover:text-blue-light"
+                <Button
+                    onClick={() =>
+                        showAllForks
+                            ? setShowAllForks(false)
+                            : setShowAllForks(true)
+                    }
                 >
-                    {showAllForks == false ? "Show All" : "Show Less"}
-                </button>
+                    {showAllForks ? "Show Less" : "Show All"}
+                </Button>
             </section>
         </>
     );

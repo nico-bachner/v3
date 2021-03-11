@@ -1,14 +1,15 @@
 import InternalLink from "./InternalLink";
+import Card from "./Card";
 
-export default function Project(props: {
+interface Props {
     href: string;
     children: React.ReactNode;
-}) {
+}
+
+export default function Project(props: Props) {
     return (
         <InternalLink className="" href={props.href}>
-            <div className="w-full px-6 py-4 text-left transition duration-300 ease-in-out shadow hover:shadow-lg sm:px-8 sm:py-6">
-                {props.children}
-            </div>
+            <Card>{props.children}</Card>
         </InternalLink>
     );
 }
