@@ -2,26 +2,26 @@ export const articlesPageTranslations = {
     en: {
         title: "Articles",
         subtitle:
-            "I haven't gotten around to writing about anything yet, but I plan to do so, and soon.",
+            "Here are some of the most recent articles I have written.",
     },
     da: {
         title: "Artikler",
         subtitle:
-            "Jeg har desvære ikke skrivet nogle artikler inde nu, men jeg planlægger at starte med at skrive snart.",
+            "Her er nogle af mine seneste artikler. Desvære er di kun på engelsk.",
     },
     fr: {
         title: "Articles",
         subtitle:
-            "Je n'ai pas encore publié des articles, mais je suis en traîn de travailler sur mon premier.",
+            "Voici quelques de mes articles. Regrettablement, ils ne sont que disponibles en anglais.",
     },
     de: {
         title: "Artikel",
         subtitle:
-            "Leider habe ich noch keine Artikel geschrieben, aber ich arbeite bereits an meinem ersten.",
+            "Hier sind meine neuesten Artikel. Leider sind sie aber nur auf English verfügbar.",
     },
     lu: {
         title: "Artikelen",
         subtitle:
-            "Leider hun ech nach keng artikel geschriwwen, mee ech fänken glaich domadder un.",
+            "Hei sin e puer vun mengen rezentesten artikelen. Leider sin se nëmmen op englesch disponibel.",
     },
 };

@@ -3,6 +3,7 @@ import { useState } from "react";
 
 import InternalLink from "../components/InternalLink";
 import Project from "../components/Project";
+import Article from "../components/Article";
 import Counter from "../components/Counter";
 import SectionFooter from "../components/SectionFooter";
 
@@ -83,12 +84,7 @@ export default function Home() {
                     {articles.slice(0, articleCount).map((article, index) => {
                         return (
                             <li key={index} className="my-6">
-                                <InternalLink
-                                    href={"/articles/" + article.slug}
-                                >
-                                    <h3 className="text-xl">{article.title}</h3>
-                                    <p>{article.summary}</p>
-                                </InternalLink>
+                                <Article article={article} />
                             </li>
                         );
                     })}

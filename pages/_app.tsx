@@ -73,6 +73,9 @@ export default function App({ Component, pageProps }: AppProps) {
                                     );
                                 }
                             },
+                            img: (props) => {
+                                return <img src={props.src} loading="lazy" />;
+                            },
                             Image,
                         }}
                     >
