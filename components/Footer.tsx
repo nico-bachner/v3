@@ -1,31 +1,22 @@
 import InternalLink from "./InternalLink";
 import ExternalLink from "./ExternalLink";
 
-interface Page {
-    title: string;
-    href: string;
-    slug?: string;
-}
+import type { Page } from "../content/pages";
 
 interface Props {
     pages: Array<Page>;
     hiddenPages: Array<Page>;
     otherPages: Array<Page>;
     externalPages: Array<Page>;
-    className: string;
 }
 
 export default function Footer(props: Props) {
+    const { pages, hiddenPages, otherPages, externalPages } = props;
+
     return (
-        <nav
-            className={
-                "grid grid-cols-2 gap-8 text-center sm:grid-cols-4" +
-                " " +
-                props.className
-            }
-        >
+        <nav className="grid grid-cols-2 gap-8 text-center sm:grid-cols-4 text-gray">
             <ul>
-                {props.pages.map((page, index) => {
+                {pages.map((page, index) => {
                     return (
                         <li key={index} className="my-4 text-left">
                             <InternalLink
@@ -44,7 +35,7 @@ export default function Footer(props: Props) {
                 })}
             </ul>
             <ul>
-                {props.hiddenPages.map((item, index) => {
+                {hiddenPages.map((item, index) => {
                     return (
                         <li
                             key={index}
@@ -61,7 +52,7 @@ export default function Footer(props: Props) {
                 })}
             </ul>
             <ul>
-                {props.otherPages.map((item, index) => {
+                {otherPages.map((item, index) => {
                     return (
                         <li
                             key={index}
@@ -78,7 +69,7 @@ export default function Footer(props: Props) {
                 })}
             </ul>
             <ul>
-                {props.externalPages.map((link, index) => {
+                {externalPages.map((link, index) => {
                     return (
                         <li key={index} className="my-4 text-right">
                             <ExternalLink

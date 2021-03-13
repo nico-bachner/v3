@@ -1,3 +1,9 @@
+export interface Page {
+    title: string;
+    href: string;
+    slug?: string;
+}
+
 export const pagesTranslations = {
     lu: [
         {

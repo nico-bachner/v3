@@ -61,11 +61,10 @@ export default function Home() {
                         return (
                             <Project
                                 key={index}
-                                href={"/projects/" + project.slug}
-                            >
-                                <h3 className="text-2xl">{project.title}</h3>
-                                <p className="sm:text-lg">{project.summary}</p>
-                            </Project>
+                                title={project.title}
+                                slug={project.slug}
+                                summary={project.summary}
+                            />
                         );
                     })}
                 </div>
@@ -83,9 +82,12 @@ export default function Home() {
                 <ul>
                     {articles.slice(0, articleCount).map((article, index) => {
                         return (
-                            <li key={index} className="my-6">
-                                <Article article={article} />
-                            </li>
+                            <Article
+                                key={index}
+                                title={article.title}
+                                slug={article.slug}
+                                summary={article.summary}
+                            />
                         );
                     })}
                 </ul>

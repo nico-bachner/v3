@@ -8,8 +8,7 @@ import { useRouter } from "next/router";
 import type { AppProps } from "next/app";
 
 import Meta from "../components/Meta";
-import NavBar from "../components/NavBar";
-import MobileNav from "../components/MobileNav";
+import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
 import InternalLink from "../components/InternalLink";
 import ExternalLink from "../components/ExternalLink";
@@ -20,6 +19,7 @@ import {
     otherPages,
     pagesTranslations,
 } from "../content/pages";
+
 import i18n from "../lib/i18n";
 
 export default function App({ Component, pageProps }: AppProps) {
@@ -42,8 +42,7 @@ export default function App({ Component, pageProps }: AppProps) {
                 description="High School Student and Aspiring Open Sourcerer living in Luxembourg"
             />
 
-            <NavBar pages={pages} />
-            <MobileNav pages={pages} />
+            <Navigation pages={pages} />
 
             <div className="px-8 mx-auto max-w-prose sm:text-lg">
                 <main
@@ -90,7 +89,6 @@ export default function App({ Component, pageProps }: AppProps) {
                         hiddenPages={hiddenPages}
                         otherPages={otherPages}
                         externalPages={externalPages}
-                        className="text-gray"
                     />
                 </footer>
             </div>

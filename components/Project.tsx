@@ -1,15 +1,19 @@
 import InternalLink from "./InternalLink";
 import Card from "./Card";
 
-interface Props {
-    href: string;
-    children: React.ReactNode;
+interface Project {
+    title: string;
+    slug: string;
+    summary: string;
 }
 
-export default function Project(props: Props) {
+export default function Project(project: Project) {
     return (
-        <InternalLink className="" href={props.href}>
-            <Card>{props.children}</Card>
+        <InternalLink className="" href={"/projects/" + project.slug}>
+            <Card>
+                <h3>{project.title}</h3>
+                <p>{project.summary}</p>
+            </Card>
         </InternalLink>
     );
 }
