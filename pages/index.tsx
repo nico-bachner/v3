@@ -56,7 +56,7 @@ export default function Home() {
             <section>
                 <h2>{projectsPage.title}</h2>
                 <p className="my-4">{projectsPage.subtitle}</p>
-                <div className="grid grid-cols-1 gap-4">
+                <div className="grid gap-4">
                     {projects.slice(0, projectCount).map((project, index) => {
                         return (
                             <Project
@@ -79,7 +79,7 @@ export default function Home() {
             <section>
                 <h2>{articlesPage.title}</h2>
                 <p className="my-4">{articlesPage.subtitle}</p>
-                <ul>
+                <div className="grid gap-4">
                     {articles.slice(0, articleCount).map((article, index) => {
                         return (
                             <Article
@@ -90,7 +90,7 @@ export default function Home() {
                             />
                         );
                     })}
-                </ul>
+                </div>
                 <SectionFooter href="/articles">
                     <Counter
                         items={articles}

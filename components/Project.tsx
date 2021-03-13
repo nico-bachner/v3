@@ -12,7 +12,7 @@ export default function Project(project: Project) {
         <InternalLink className="" href={"/projects/" + project.slug}>
             <Card>
                 <h3>{project.title}</h3>
-                <p>{project.summary}</p>
+                <p className="mt-2">{project.summary}</p>
             </Card>
         </InternalLink>
     );

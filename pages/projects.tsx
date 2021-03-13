@@ -52,66 +52,54 @@ export default function Projects() {
             <p>{projectsPage.subtitle}</p>
             <section>
                 <h2 className="my-4">{projectsPage.web}</h2>
-                <ul className="grid grid-cols-1 gap-4">
+                <div className="grid gap-4">
                     {projects.map((project, index) => {
                         if (project.type == "web") {
                             return (
-                                <li key={index}>
-                                    <Project href={"/projects/" + project.slug}>
-                                        <h3 className="text-2xl">
-                                            {project.title}
-                                        </h3>
-                                        <p className="sm:text-lg">
-                                            {project.summary}
-                                        </p>
-                                    </Project>
-                                </li>
+                                <Project
+                                    key={index}
+                                    title={project.title}
+                                    slug={project.slug}
+                                    summary={project.summary}
+                                />
                             );
                         }
                     })}
-                </ul>
+                </div>
             </section>
             <section>
                 <h2 className="my-4">{projectsPage.games}</h2>
-                <ul className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+                <div className="grid gap-4 sm:grid-cols-2">
                     {projects.map((project, index) => {
                         if (project.type == "game") {
                             return (
-                                <li key={index}>
-                                    <Project href={"/projects/" + project.slug}>
-                                        <h3 className="text-2xl">
-                                            {project.title}
-                                        </h3>
-                                        <p className="sm:text-lg">
-                                            {project.summary}
-                                        </p>
-                                    </Project>
-                                </li>
+                                <Project
+                                    key={index}
+                                    title={project.title}
+                                    slug={project.slug}
+                                    summary={project.summary}
+                                />
                             );
                         }
                     })}
-                </ul>
+                </div>
             </section>
             <section>
                 <h2 className="my-4">{projectsPage.other}</h2>
-                <ul className="grid grid-cols-1 gap-4">
+                <div className="grid gap-4">
                     {projects.map((project, index) => {
                         if (project.type == "other") {
                             return (
-                                <li key={index}>
-                                    <Project href={"/projects/" + project.slug}>
-                                        <h3 className="text-2xl">
-                                            {project.title}
-                                        </h3>
-                                        <p className="sm:text-lg">
-                                            {project.summary}
-                                        </p>
-                                    </Project>
-                                </li>
+                                <Project
+                                    key={index}
+                                    title={project.title}
+                                    slug={project.slug}
+                                    summary={project.summary}
+                                />
                             );
                         }
                     })}
-                </ul>
+                </div>
             </section>
         </>
     );

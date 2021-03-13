@@ -20,16 +20,19 @@ export default function Articles() {
     return (
         <>
             <h1>{articlesPage.title}</h1>
-            <p>{articlesPage.subtitle}</p>
-            <ul>
+            <p className="my-4">{articlesPage.subtitle}</p>
+            <div className="grid gap-4">
                 {articles.map((article, index) => {
                     return (
-                        <li key={index} className="my-8">
-                            <Article article={article} />
-                        </li>
+                        <Article
+                            key={index}
+                            title={article.title}
+                            slug={article.slug}
+                            summary={article.summary}
+                        />
                     );
                 })}
-            </ul>
+            </div>
         </>
     );
 }

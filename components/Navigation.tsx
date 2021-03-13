@@ -13,9 +13,9 @@ export default function Navigation(props: Props) {
     const locale = router.locale;
 
     return (
-        <nav className="z-50">
-            <div className="top-0 flex items-center justify-between max-w-4xl p-8 mx-auto my-4 font-medium sm:my-8 sm:sticky glass">
-                <a href="/">
+        <>
+            <nav className="top-0 z-50 flex items-center justify-between max-w-4xl p-8 mx-auto my-4 font-medium sm:my-8 sm:sticky glass">
+                <a href="/" className="hover:text-gray">
                     <svg
                         role="img"
                         viewBox="0 0 512 512"
@@ -85,30 +85,25 @@ export default function Navigation(props: Props) {
                         );
                     })}
                 </select>
-            </div>
-            <ul className="fixed bottom-0 flex w-screen py-8 text-sm font-bold sm:hidden glass justify-evenly">
+            </nav>
+            <nav className="fixed bottom-0 z-50 flex w-screen py-8 text-sm font-bold sm:hidden glass justify-evenly">
                 {props.pages.map((page, index) => {
                     return (
-                        <li key={index}>
-                            <InternalLink
-                                href={page.href}
-                                as={
-                                    page.slug != undefined
-                                        ? "/" + page.slug
-                                        : "/"
-                                }
-                                className={
-                                    router.pathname == page.href
-                                        ? "p-2 text-gray-light dark:text-gray-dark"
-                                        : "p-2"
-                                }
-                            >
-                                {page.title}
-                            </InternalLink>
-                        </li>
+                        <InternalLink
+                            key={index}
+                            href={page.href}
+                            as={page.slug != undefined ? "/" + page.slug : "/"}
+                            className={
+                                router.pathname == page.href
+                                    ? "p-2 text-gray"
+                                    : "p-2"
+                            }
+                        >
+                            {page.title}
+                        </InternalLink>
                     );
                 })}
-            </ul>
-        </nav>
+            </nav>
+        </>
     );
 }
