@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.0.0](https://github.com/nico-bachner/v3/compare/v0.1.4...v1.0.0) (2021-03-14)
+
+
+### Features
+
+* created custom useI18n hook ([8193df7](https://github.com/nico-bachner/v3/commit/8193df707d35967bb93be9f524ef95052a327199))
+* **content:** added first article ([95ab0cc](https://github.com/nico-bachner/v3/commit/95ab0cc5fa6e214bb6bc96376a450976147b9c39))
+* use SWR for data fetching ([47a838c](https://github.com/nico-bachner/v3/commit/47a838ce086f677697a2723c8e6e60ea3a534bb3))
+
+
+### Bug Fixes
+
+* **structure:** some refactoring ([db0bdf7](https://github.com/nico-bachner/v3/commit/db0bdf707c2b0b893d13d497fc486eba2aa52d24))
+* fixed build errors ([9432968](https://github.com/nico-bachner/v3/commit/943296802317547c11feb9c966d90429f2314a79))
+* **structure:** some refactoring ([a44d889](https://github.com/nico-bachner/v3/commit/a44d889f0c570733aa79bac8c58d6a4717893009))
+* refactored some components for improved readability ([dc63081](https://github.com/nico-bachner/v3/commit/dc630817de7c494423967fd6fdd785258b2e9254))
+* **swr:** fixed type error ([49a76cc](https://github.com/nico-bachner/v3/commit/49a76cce514b32acd51e64db3c2df6ec012ee60c))
+
 ### [0.1.4](https://github.com/nico-bachner/v3/compare/v0.1.3...v0.1.4) (2021-03-10)
 
 
