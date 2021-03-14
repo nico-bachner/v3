@@ -5,7 +5,6 @@ import InternalLink from "../components/InternalLink";
 import Project from "../components/Project";
 import Article from "../components/Article";
 import Counter from "../components/Counter";
-import SectionFooter from "../components/SectionFooter";
 
 import { projects } from "./projects";
 import { articles } from "./articles";
@@ -37,20 +36,19 @@ export default function Home() {
                 <h2>{aboutPage.title}</h2>
                 <p>{aboutPage.preview}</p>
                 <div className="flex p-4">
-                    <InternalLink
-                        href="/about"
-                        className="flex-grow text-right text-blue hover:text-blue-light active:text-blue-dark"
-                    >
-                        {locale == "lu"
-                            ? "Méi liesen"
-                            : locale == "de"
-                            ? "Mehr lesen"
-                            : locale == "fr"
-                            ? "En lire plus"
-                            : locale == "da"
-                            ? "Lese videre"
-                            : "Read more"}
-                    </InternalLink>
+                    <div className="text-right sm:flex-grow">
+                        <InternalLink href="/about">
+                            {locale == "lu"
+                                ? "Méi liesen"
+                                : locale == "de"
+                                ? "Mehr lesen"
+                                : locale == "fr"
+                                ? "En lire plus"
+                                : locale == "da"
+                                ? "Lese videre"
+                                : "Read more"}
+                        </InternalLink>
+                    </div>
                 </div>
             </section>
             <section>
@@ -68,13 +66,18 @@ export default function Home() {
                         );
                     })}
                 </div>
-                <SectionFooter href="/projects">
+                <div className="flex justify-between px-2 py-4 sm:space-x-8">
                     <Counter
                         items={projects}
                         count={projectCount}
                         modifier={setProjectCount}
                     />
-                </SectionFooter>
+                    <div className="text-right sm:flex-grow">
+                        <InternalLink href="/projects">
+                            {homePage.showAll}
+                        </InternalLink>
+                    </div>
+                </div>
             </section>
             <section>
                 <h2>{articlesPage.title}</h2>
@@ -91,13 +94,18 @@ export default function Home() {
                         );
                     })}
                 </div>
-                <SectionFooter href="/articles">
+                <div className="flex justify-between px-2 py-4 sm:space-x-8">
                     <Counter
                         items={articles}
                         count={articleCount}
                         modifier={setArticleCount}
                     />
-                </SectionFooter>
+                    <div className="text-right sm:flex-grow">
+                        <InternalLink href="/articles">
+                            {homePage.showAll}
+                        </InternalLink>
+                    </div>
+                </div>
             </section>
         </>
     );
