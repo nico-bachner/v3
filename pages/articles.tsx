@@ -1,8 +1,8 @@
 import Article from "../components/Article";
 
-import { useRouter } from "next/router";
+import { useI18n } from "../hooks/i18n";
+
 import { articlesPageTranslations } from "../content/translations/articlesPage";
-import i18n from "../lib/i18n";
 
 export const articles = [
     {
@@ -14,8 +14,7 @@ export const articles = [
 ];
 
 export default function Articles() {
-    const { locale } = useRouter();
-    const articlesPage = i18n(locale, articlesPageTranslations);
+    const articlesPage = useI18n(articlesPageTranslations);
 
     return (
         <>

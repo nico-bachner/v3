@@ -1,5 +1,5 @@
-import { useRouter } from "next/router";
 import { useState } from "react";
+import { useI18n } from "../hooks/i18n";
 
 import InternalLink from "../components/InternalLink";
 import Project from "../components/Project";
@@ -14,14 +14,11 @@ import { aboutPageTranslations } from "../content/translations/aboutPage";
 import { projectsPageTranslations } from "../content/translations/projectsPage";
 import { articlesPageTranslations } from "../content/translations/articlesPage";
 
-import i18n from "../lib/i18n";
-
 export default function Home() {
-    const { locale } = useRouter();
-    const homePage = i18n(locale, homePageTranslations);
-    const aboutPage = i18n(locale, aboutPageTranslations);
-    const projectsPage = i18n(locale, projectsPageTranslations);
-    const articlesPage = i18n(locale, articlesPageTranslations);
+    const homePage = useI18n(homePageTranslations);
+    const aboutPage = useI18n(aboutPageTranslations);
+    const projectsPage = useI18n(projectsPageTranslations);
+    const articlesPage = useI18n(articlesPageTranslations);
 
     const [projectCount, setProjectCount] = useState(3);
     const [articleCount, setArticleCount] = useState(1);
@@ -38,15 +35,7 @@ export default function Home() {
                 <div className="flex p-4">
                     <div className="text-right sm:flex-grow">
                         <InternalLink href="/about">
-                            {locale == "lu"
-                                ? "Méi liesen"
-                                : locale == "de"
-                                ? "Mehr lesen"
-                                : locale == "fr"
-                                ? "En lire plus"
-                                : locale == "da"
-                                ? "Lese videre"
-                                : "Read more"}
+                            {homePage.showMore}
                         </InternalLink>
                     </div>
                 </div>

@@ -1,10 +1,8 @@
-import { useRouter } from "next/router";
-
 import Project from "../components/Project";
 
-import { projectsPageTranslations } from "../content/translations/projectsPage";
+import { useI18n } from "../hooks/i18n";
 
-import i18n from "../lib/i18n";
+import { projectsPageTranslations } from "../content/translations/projectsPage";
 
 export const projects = [
     {
@@ -43,8 +41,7 @@ export const projects = [
 ];
 
 export default function Projects() {
-    const { locale } = useRouter();
-    const projectsPage = i18n(locale, projectsPageTranslations);
+    const projectsPage = useI18n(projectsPageTranslations);
 
     return (
         <>

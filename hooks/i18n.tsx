@@ -1,3 +1,5 @@
+import { useRouter } from "next/router";
+
 interface Translations {
     en: any;
     da: any;
@@ -6,10 +8,9 @@ interface Translations {
     lu: any;
 }
 
-export default function i18n(
-    locale: string | undefined,
-    translations: Translations
-) {
+export function useI18n(translations: Translations) {
+    const { locale } = useRouter();
+
     let translation = translations.en;
 
     if (locale == "da") {

@@ -1,17 +1,17 @@
 import "../styles/globals.css";
 
 import Image from "next/image";
-
 import { MDXProvider } from "@mdx-js/react";
-import { useRouter } from "next/router";
-
-import type { AppProps } from "next/app";
 
 import Meta from "../components/Meta";
 import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
 import InternalLink from "../components/InternalLink";
 import ExternalLink from "../components/ExternalLink";
+
+import { useI18n } from "../hooks/i18n";
+
+import type { AppProps } from "next/app";
 
 import {
     externalPages,
@@ -20,11 +20,8 @@ import {
     pagesTranslations,
 } from "../content/pages";
 
-import i18n from "../lib/i18n";
-
 export default function App({ Component, pageProps }: AppProps) {
-    const { locale } = useRouter();
-    const translatedPages = i18n(locale, pagesTranslations);
+    const translatedPages = useI18n(pagesTranslations);
     const pageRoutes = ["/", "/about", "/projects", "/articles"];
     const pages = pageRoutes.map((route, index) => {
         const page = {
