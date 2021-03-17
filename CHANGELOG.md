@@ -63,30 +63,6 @@ All notable changes to this project will be documented in this file. See [standa
 -   (hopefully) fixed broken build ([3f98ae9](https://github.com/nico-bachner/v3/commit/3f98ae9a2c1349b5b1d5c268710ca1a61096934f))
 -   **design:** fixed footer alignment ([2d49c8d](https://github.com/nico-bachner/v3/commit/2d49c8dfa6bed784b8dc9391c475e8b78341d577))
 
-### [0.1.3](https://github.com/nico-bachner/v3/compare/v0.1.2...v0.1.3) (2021-02-15)
-
-### Features
-
--   massive refactor, added near-complete i18n ([4d1d270](https://github.com/nico-bachner/v3/commit/4d1d270d6b8819bfbab8467045645d97ec820d38))
--   **structure:** major refactor ([a4cb810](https://github.com/nico-bachner/v3/commit/a4cb8104350a58708f337514014c6094dfd4cabc))
-
-### Bug Fixes
-
--   (hopefully) fixed broken build ([3f98ae9](https://github.com/nico-bachner/v3/commit/3f98ae9a2c1349b5b1d5c268710ca1a61096934f))
--   **design:** fixed footer alignment ([2d49c8d](https://github.com/nico-bachner/v3/commit/2d49c8dfa6bed784b8dc9391c475e8b78341d577))
-
-## [0.2.0](https://github.com/nico-bachner/v3/compare/v0.1.2...v0.2.0) (2021-02-15)
-
-### Features
-
--   massive refactor, added near-complete i18n ([4d1d270](https://github.com/nico-bachner/v3/commit/4d1d270d6b8819bfbab8467045645d97ec820d38))
--   **structure:** major refactor ([a4cb810](https://github.com/nico-bachner/v3/commit/a4cb8104350a58708f337514014c6094dfd4cabc))
-
-### Bug Fixes
-
--   (hopefully) fixed broken build ([3f98ae9](https://github.com/nico-bachner/v3/commit/3f98ae9a2c1349b5b1d5c268710ca1a61096934f))
--   **design:** fixed footer alignment ([2d49c8d](https://github.com/nico-bachner/v3/commit/2d49c8dfa6bed784b8dc9391c475e8b78341d577))
-
 ### [0.1.2](https://github.com/nico-bachner/v3/compare/v0.1.1...v0.1.2) (2021-02-14)
 
 ### Features
