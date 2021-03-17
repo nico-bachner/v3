@@ -13,9 +13,11 @@
     :root {
         color-scheme: light dark;
     }
+
     html {
         @apply text-black bg-white dark:text-white dark:bg-black;
     }
+
     h1,
     h2,
     h3,
@@ -39,33 +41,10 @@
         @apply text-xl font-medium sm:text-2xl;
     }
 
-    article p {
-        @apply my-4;
-    }
-    article ul {
-        @apply pl-4 my-4 list-disc list-inside;
-    }
-    article ol {
-        @apply pl-4 my-4 list-decimal list-inside;
-    }
-    article code {
-        @apply px-1.5 py-0.5 rounded code;
-    }
-    article pre {
-        @apply px-4 py-2 mt-4 mb-6 overflow-x-scroll rounded code;
-    }
-    article pre > code {
-        @apply p-0;
-    }
-    article img {
-        @apply my-4;
-    }
-}
-
-@layer components {
     hr {
         @apply border border-gray-lightest dark:border-gray-darkest;
     }
+
     select {
         @apply px-3 py-1 ml-8 text-center bg-transparent border rounded appearance-none border-gray-lightest dark:border-gray-darkest;
         background-image: url("/icons/select.svg");
@@ -88,8 +67,5 @@
     }
     .disabled {
         @apply cursor-default text-gray-light dark:text-gray-dark;
-    }
-    .code {
-        @apply font-mono text-gray-darkest bg-gray-lightest dark:text-gray-lightest dark:bg-gray-darkest;
     }
 }

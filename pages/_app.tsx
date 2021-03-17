@@ -1,13 +1,9 @@
 import "../styles/globals.css";
 
-import Image from "next/image";
-import { MDXProvider } from "@mdx-js/react";
-
 import Meta from "../components/Meta";
 import Navigation from "../components/Navigation";
+import MDX from "../components/MDX";
 import Footer from "../components/Footer";
-import InternalLink from "../components/InternalLink";
-import ExternalLink from "../components/ExternalLink";
 
 import { useI18n } from "../hooks/i18n";
 
@@ -46,37 +42,9 @@ export default function App({ Component, pageProps }: AppProps) {
                     id="content"
                     className="text-gray-dark dark:text-gray-light"
                 >
-                    <MDXProvider
-                        components={{
-                            wrapper: (props: { children: React.ReactNode }) => (
-                                <article {...props}>{props.children}</article>
-                            ),
-                            a: (props: {
-                                href: string;
-                                children: React.ReactNode;
-                            }) => {
-                                if (props.href.startsWith("/")) {
-                                    return (
-                                        <InternalLink href={props.href}>
-                                            {props.children}
-                                        </InternalLink>
-                                    );
-                                } else {
-                                    return (
-                                        <ExternalLink href={props.href}>
-                                            {props.children}
-                                        </ExternalLink>
-                                    );
-                                }
-                            },
-                            img: (props) => {
-                                return <img src={props.src} loading="lazy" />;
-                            },
-                            Image,
-                        }}
-                    >
+                    <MDX>
                         <Component {...pageProps} />
-                    </MDXProvider>
+                    </MDX>
                 </main>
 
                 <footer className="my-24">
