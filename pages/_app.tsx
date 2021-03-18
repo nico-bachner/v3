@@ -5,7 +5,7 @@ import Navigation from "../components/Navigation";
 import MDX from "../components/MDX";
 import Footer from "../components/Footer";
 
-import { useI18n } from "../hooks/i18n";
+import { useI18n } from "../lib/i18n";
 
 import type { AppProps } from "next/app";
 
@@ -17,7 +17,7 @@ import {
 } from "../content/pages";
 
 export default function App({ Component, pageProps }: AppProps) {
-    const translatedPages = useI18n(pagesTranslations);
+    const translatedPages = useI18n(pagesTranslations, "en");
     const pageRoutes = ["/", "/about", "/projects", "/articles"];
     const pages = pageRoutes.map((route, index) => {
         const page = {

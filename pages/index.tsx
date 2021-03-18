@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useI18n } from "../hooks/i18n";
+import { useI18n } from "../lib/i18n";
 
 import InternalLink from "../components/InternalLink";
 import Project from "../components/Project";
@@ -25,17 +25,21 @@ export default function Home() {
 
     return (
         <>
-            <h1 className="my-2 text-4xl sm:text-5xl">{homePage.title}</h1>
-            <p className="my-2 text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-green to-blue sm:text-4xl">
-                {homePage.subtitle}
-            </p>
+            <h1 className="my-2 text-4xl sm:text-5xl">
+                {homePage.title}
+                <br />
+                <span className="my-2 text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-green to-blue sm:text-4xl">
+                    {homePage.subtitle}
+                </span>
+            </h1>
+
             <section>
                 <h2>{aboutPage.title}</h2>
                 <p>{aboutPage.preview}</p>
                 <div className="flex p-4">
-                    <div className="text-right sm:flex-grow">
+                    <div className="flex-grow text-right">
                         <InternalLink href="/about">
-                            {homePage.showMore}
+                            {homePage.readMore}
                         </InternalLink>
                     </div>
                 </div>

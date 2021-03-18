@@ -1,4 +1,4 @@
-import { useI18n } from "../hooks/i18n";
+import { useI18n } from "../lib/i18n";
 
 import { aboutPageTranslations } from "../content/translations/aboutPage";
 

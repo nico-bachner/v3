@@ -1,6 +1,6 @@
 import Article from "../components/Article";
 
-import { useI18n } from "../hooks/i18n";
+import { useI18n } from "../lib/i18n";
 
 import { articlesPageTranslations } from "../content/translations/articlesPage";
 

@@ -1,6 +1,6 @@
 import Project from "../components/Project";
 
-import { useI18n } from "../hooks/i18n";
+import { useI18n } from "../lib/i18n";
 
 import { projectsPageTranslations } from "../content/translations/projectsPage";
 
