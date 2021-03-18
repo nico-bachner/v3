@@ -25,13 +25,11 @@ export default function Home() {
 
     return (
         <>
-            <h1 className="my-2 text-4xl sm:text-5xl">
-                {homePage.title}
-                <br />
-                <span className="my-2 text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-green to-blue sm:text-4xl">
-                    {homePage.subtitle}
-                </span>
-            </h1>
+            <h1 className="my-2 text-4xl sm:text-5xl">{homePage.title}</h1>
+
+            <p className="my-2 text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-green to-blue sm:text-4xl">
+                {homePage.subtitle}
+            </p>
 
             <section>
                 <h2>{aboutPage.title}</h2>
