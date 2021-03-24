@@ -23,15 +23,17 @@ export default function Articles() {
 
     if (error) {
         return (
-            <p>
-                Failed to load articles. There may be a problem with the
-                database. Try checking your internet status.
-            </p>
+            <main>
+                <p>
+                    Failed to load articles. There may be a problem with the
+                    database. Try checking your internet status.
+                </p>
+            </main>
         );
     }
 
     return data ? (
-        <>
+        <main>
             <h1>{i18n.articles.title}</h1>
             <p className="my-4">{i18n.articles.subtitle}</p>
             <div className="grid gap-4">
@@ -50,8 +52,11 @@ export default function Articles() {
                     );
                 })}
             </div>
-        </>
+        </main>
     ) : (
-        <p>Loading Articles...</p>
+        <main>
+            <h1>Articles</h1>
+            <p>Loading Articles...</p>
+        </main>
     );
 }

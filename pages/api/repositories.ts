@@ -10,10 +10,12 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
     const articles = GitHubRepositories.map(
         (GitHubRepository: GitHubRepository) => {
             return {
-                name: GitHubRepository.name,
+                name: GitHubRepository.name.replaceAll("-", " "),
+                slug: GitHubRepository.name,
                 description: GitHubRepository.description,
-                url: GitHubRepository.html_url,
-                isFork: GitHubRepository.fork,
+                repo_url: GitHubRepository.html_url,
+                url: GitHubRepository.homepage,
+                is_fork: GitHubRepository.fork,
                 stars: GitHubRepository.stargazers_count,
             };
         }

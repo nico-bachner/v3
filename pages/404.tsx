@@ -2,7 +2,7 @@ import InternalLink from "../components/InternalLink";
 
 export default function Custom404() {
     return (
-        <>
+        <main>
             <h1>404</h1>
             <p className="my-4 text-2xl sm:text-3xl">Page Not Found</p>
             <p className="mb-8">
@@ -16,6 +16,6 @@ export default function Custom404() {
             >
                 Return to Homepage
             </InternalLink>
-        </>
+        </main>
     );
 }

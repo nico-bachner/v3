@@ -19,7 +19,7 @@ interface ImageProps {
 }
 
 const mdxComponents = {
-    wrapper: (props: Props) => <article {...props}>{props.children}</article>,
+    wrapper: (props: Props) => <main {...props}>{props.children}</main>,
     p: (props: Props) => <p className="my-4">{props.children}</p>,
     a: (props: LinkProps) =>
         props.href.startsWith("/") ? (

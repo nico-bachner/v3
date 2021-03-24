@@ -59,9 +59,11 @@ export interface DevArticle {
 
 export interface Repository {
     name: string;
+    slug: string;
     description: string;
     url: string;
-    isFork: boolean;
+    repo_url: string;
+    is_fork: boolean;
     stars: number;
 }
 

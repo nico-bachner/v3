@@ -23,7 +23,7 @@ export default function Logo(props: Props) {
                 </clipPath>
             </defs>
 
-            <circle cx="25" cy="7" r="6" fill="transparent" stroke-width="2" />
+            <circle cx="25" cy="7" r="6" fill="transparent" strokeWidth="2" />
 
             <rect
                 x="16"
@@ -34,8 +34,8 @@ export default function Logo(props: Props) {
                 fill="white"
             />
 
-            <circle cx="7" cy="25" r="6" fill="transparent" stroke-width="2" />
-            <circle cx="16" cy="16" r="6" fill="transparent" stroke-width="2" />
+            <circle cx="7" cy="25" r="6" fill="transparent" strokeWidth="2" />
+            <circle cx="16" cy="16" r="6" fill="transparent" strokeWidth="2" />
 
             <rect
                 x="7"
@@ -51,37 +51,37 @@ export default function Logo(props: Props) {
                 cy="7"
                 r="3"
                 fill="transparent"
-                stroke-width="2"
-                clip-path="url(#1)"
+                strokeWidth="2"
+                clipPath="url(#1)"
             />
             <circle
                 cx="25"
                 cy="16"
                 r="3"
                 fill="transparent"
-                stroke-width="2"
-                clip-path="url(#1)"
+                strokeWidth="2"
+                clipPath="url(#1)"
             />
             <circle
                 cx="7"
                 cy="16"
                 r="3"
                 fill="transparent"
-                stroke-width="2"
-                clip-path="url(#2)"
+                strokeWidth="2"
+                clipPath="url(#2)"
             />
             <circle
                 cx="16"
                 cy="25"
                 r="3"
                 fill="transparent"
-                stroke-width="2"
-                clip-path="url(#2)"
+                strokeWidth="2"
+                clipPath="url(#2)"
             />
 
-            <circle cx="7" cy="25" r="2" fill="transparent" stroke-width="2" />
-            <circle cx="16" cy="16" r="2" fill="transparent" stroke-width="2" />
-            <circle cx="25" cy="7" r="2" fill="transparent" stroke-width="2" />
+            <circle cx="7" cy="25" r="2" fill="transparent" strokeWidth="2" />
+            <circle cx="16" cy="16" r="2" fill="transparent" strokeWidth="2" />
+            <circle cx="25" cy="7" r="2" fill="transparent" strokeWidth="2" />
         </svg>
     );
 }

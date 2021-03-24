@@ -22,15 +22,17 @@ export default function Projects() {
 
     if (error) {
         return (
-            <p>
-                Failed to load projects. There may be a problem with the
-                database connection. Try checking your internet status.
-            </p>
+            <main>
+                <p>
+                    Failed to load projects. There may be a problem with the
+                    database connection. Try checking your internet status.
+                </p>
+            </main>
         );
     }
 
     return data ? (
-        <>
+        <main>
             <h1>{i18n.projects.title}</h1>
             <p>{i18n.projects.subtitle}</p>
             <div className="grid gap-4 pt-8">
@@ -49,12 +51,12 @@ export default function Projects() {
                     );
                 })}
             </div>
-        </>
+        </main>
     ) : (
-        <>
+        <main>
             <h1>{i18n.projects.title}</h1>
             <p>{i18n.projects.subtitle}</p>
             <p>Loading Projects...</p>
-        </>
+        </main>
     );
 }

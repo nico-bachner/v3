@@ -14,6 +14,7 @@ export default function Home() {
                 {i18n.subtitle}
             </p>
             <section>
+                <h2>{i18n.about.title}</h2>
                 <p>{i18n.about.preview}</p>
                 <div className="flex p-4">
                     <div className="flex-grow text-right">
