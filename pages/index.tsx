@@ -32,8 +32,8 @@ export default function Home() {
                 <List apiRoute="/projects" initialCount={3} />
             </section>
             <section>
-                <h2>{i18n.projects.title}</h2>
-                <p className="my-4">{i18n.projects.subtitle}</p>
+                <h2>{i18n.articles.title}</h2>
+                <p className="my-4">{i18n.articles.subtitle}</p>
                 <List apiRoute="/articles" />
             </section>
         </>
