@@ -1,8 +1,28 @@
-export const fr = {
+import type { Translation } from "../i18n";
+
+export const fr: Translation = {
     title: "Je suis Nico,",
     subtitle: "un passionné d'Open Source.",
     showAll: "Montrer Tous",
     readMore: "En lire plus",
+    about: {
+        title: "Sur Moi",
+        preview:
+            "Je suis un dévelopeur hobbyiste et un étudiant au Luxembourg. J'ai travaillé avec de nombreux technologies, surtout dans la branche du dévelopement Web.",
+    },
+    projects: {
+        title: "Projets",
+        subtitle:
+            "Voici quelques projets que j'ai fait récemment. Les projets sont tous Open Source et leur code source se trouve sur GitHub",
+        web: "Applications et Sites Web",
+        games: "Jeux Vidéo",
+        other: "Autres Projets",
+    },
+    articles: {
+        title: "Articles",
+        subtitle:
+            "Voici quelques de mes articles. Regrettablement, ils ne sont que disponibles en anglais.",
+    },
     pages: [
         {
             title: "Accueil",
@@ -20,23 +40,4 @@ export const fr = {
             slug: "articles",
         },
     ],
-    about: {
-        title: "Sur Moi",
-        preview:
-            "Je suis un dévelopeur hobbyiste et un étudiant au Luxembourg. J'ai travaillé avec de nombreux technologies, surtout dans la branche du dévelopement Web.",
-        content: "",
-    },
-    projects: {
-        title: "Projets",
-        subtitle:
-            "Voici quelques projets que j'ai fait récemment. Les projets sont tous Open Source et leur code source se trouve sur GitHub",
-        web: "Applications et Sites Web",
-        games: "Jeux Vidéo",
-        other: "Autres Projets",
-    },
-    articles: {
-        title: "Articles",
-        subtitle:
-            "Voici quelques de mes articles. Regrettablement, ils ne sont que disponibles en anglais.",
-    },
 };

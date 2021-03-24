@@ -1,7 +1,7 @@
 import InternalLink from "./InternalLink";
 import ExternalLink from "./ExternalLink";
 
-import type { Page } from "../types";
+import type { Page } from "../lib/types";
 
 interface Props {
     pages: Page[];

@@ -1,6 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 
-import type { DevArticle } from "../../types";
+import type { DevArticle } from "../../lib/types";
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
     const devArticlesResponse = await fetch(
