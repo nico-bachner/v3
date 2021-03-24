@@ -17,7 +17,7 @@ export default function Repositories() {
     if (error) return <p>Failed to load</p>;
 
     return data ? (
-        <main>
+        <>
             <p>
                 Currently, I have {data.length} public repositories in total
                 (forks included).
@@ -111,7 +111,7 @@ export default function Repositories() {
                     {showAllForks ? "Show Less" : "Show All"}
                 </button>
             </section>
-        </main>
+        </>
     ) : (
         <>
             <h1>GitHub Repositories</h1>
