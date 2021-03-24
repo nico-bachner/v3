@@ -17,8 +17,8 @@ export default function Counter(props: {
                 }}
                 className={
                     props.count < props.items.length - 1
-                        ? "text-blue hover:text-blue-light"
-                        : "disabled"
+                        ? "text-blue"
+                        : "cursor-default text-gray-light dark:text-gray-dark"
                 }
             >
                 {locale == "lu"
@@ -39,8 +39,8 @@ export default function Counter(props: {
                 }}
                 className={
                     props.count > 2
-                        ? "text-blue hover:text-blue-light"
-                        : "disabled"
+                        ? "text-blue"
+                        : "cursor-default text-gray-light dark:text-gray-dark"
                 }
             >
                 {locale == "lu"

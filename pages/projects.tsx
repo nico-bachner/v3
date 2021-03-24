@@ -1,103 +1,60 @@
-import Project from "../components/Project";
+import useSWR from "swr";
 
-import { useI18n } from "../lib/i18n";
+import { useI18n } from "../hooks/i18n";
+import { translations } from "../i18n";
 
-import { projectsPageTranslations } from "../content/translations/projectsPage";
+import InternalLink from "../components/InternalLink";
+import Card from "../components/Card";
 
-export const projects = [
-    {
-        title: "SOS School",
-        slug: "sos-school",
-        type: "web",
-        summary:
-            "A student initiative to help primary school children in Luxembourg affected by COVID-19",
-    },
-    {
-        title: "Career Guru",
-        slug: "career-guru",
-        type: "web",
-        summary:
-            "Collaborative product of a hackathon. It is a platform designed to aid students in discovering their professional orientation",
-    },
-    {
-        title: "Markdown Paper",
-        slug: "md-paper",
-        type: "other",
-        summary:
-            "A command line interface to generate PDFs from scientific papers written in Markdown",
-    },
-    {
-        title: "Find The Polygon",
-        slug: "find-the-polygon",
-        summary: "A Game of Dimensions",
-        type: "game",
-    },
-    {
-        title: "The First Martian",
-        slug: "the-first-martian",
-        summary: "Indie Space Exploration Game",
-        type: "game",
-    },
-];
+interface Project {
+    slug: string;
+    title?: string;
+    description?: string;
+    tags?: string[];
+}
 
 export default function Projects() {
-    const projectsPage = useI18n(projectsPageTranslations);
+    const i18n = useI18n(translations);
 
-    return (
+    const { data, error } = useSWR("/api/projects", (args) =>
+        fetch(args).then((res) => res.json())
+    );
+
+    if (error) {
+        return (
+            <p>
+                Failed to load projects. There may be a problem with the
+                database connection. Try checking your internet status.
+            </p>
+        );
+    }
+
+    return data ? (
         <>
-            <h1>{projectsPage.title}</h1>
-            <p>{projectsPage.subtitle}</p>
-            <section>
-                <h2 className="my-4">{projectsPage.web}</h2>
-                <div className="grid gap-4">
-                    {projects.map((project, index) => {
-                        if (project.type == "web") {
-                            return (
-                                <Project
-                                    key={index}
-                                    title={project.title}
-                                    slug={project.slug}
-                                    summary={project.summary}
-                                />
-                            );
-                        }
-                    })}
-                </div>
-            </section>
-            <section>
-                <h2 className="my-4">{projectsPage.games}</h2>
-                <div className="grid gap-4 sm:grid-cols-2">
-                    {projects.map((project, index) => {
-                        if (project.type == "game") {
-                            return (
-                                <Project
-                                    key={index}
-                                    title={project.title}
-                                    slug={project.slug}
-                                    summary={project.summary}
-                                />
-                            );
-                        }
-                    })}
-                </div>
-            </section>
-            <section>
-                <h2 className="my-4">{projectsPage.other}</h2>
-                <div className="grid gap-4">
-                    {projects.map((project, index) => {
-                        if (project.type == "other") {
-                            return (
-                                <Project
-                                    key={index}
-                                    title={project.title}
-                                    slug={project.slug}
-                                    summary={project.summary}
-                                />
-                            );
-                        }
-                    })}
-                </div>
-            </section>
+            <h1>{i18n.projects.title}</h1>
+            <p>{i18n.projects.subtitle}</p>
+            <div className="grid gap-4 pt-8">
+                {data.map((project: Project, index: number) => {
+                    return (
+                        <InternalLink
+                            className=""
+                            href={"/projects/" + project.slug}
+                            key={index}
+                        >
+                            <Card>
+                                <h3>{project.title ?? project.slug}</h3>
+                                <p className="mt-2">{project.description}</p>
+                            </Card>
+                        </InternalLink>
+                    );
+                })}
+            </div>
+        </>
+    ) : (
+        <>
+            <h1>{i18n.projects.title}</h1>
+            <p>{i18n.projects.subtitle}</p>
+            <p>Loading Projects...</p>
         </>
     );
 }

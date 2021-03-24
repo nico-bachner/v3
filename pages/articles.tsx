@@ -1,37 +1,57 @@
-import Article from "../components/Article";
+import useSWR from "swr";
 
-import { useI18n } from "../lib/i18n";
+import { useI18n } from "../hooks/i18n";
+import { translations } from "../i18n";
 
-import { articlesPageTranslations } from "../content/translations/articlesPage";
+import InternalLink from "../components/InternalLink";
+import Card from "../components/Card";
 
-export const articles = [
-    {
-        title: "SvelteKit is now Open Source",
-        slug: "sveltekit",
-        summary:
-            "As of yesterday (March 12), SvelteKit is Open Source. While not officially in public beta yet, the GitHub repository is now public.",
-    },
-];
+interface Article {
+    slug: string;
+    title?: string;
+    description?: string;
+    tags?: string[];
+    published?: Date;
+}
 
 export default function Articles() {
-    const articlesPage = useI18n(articlesPageTranslations);
+    const i18n = useI18n(translations);
 
-    return (
+    const { data, error } = useSWR("/api/articles", (args) =>
+        fetch(args).then((res) => res.json())
+    );
+
+    if (error) {
+        return (
+            <p>
+                Failed to load articles. There may be a problem with the
+                database. Try checking your internet status.
+            </p>
+        );
+    }
+
+    return data ? (
         <>
-            <h1>{articlesPage.title}</h1>
-            <p className="my-4">{articlesPage.subtitle}</p>
+            <h1>{i18n.articles.title}</h1>
+            <p className="my-4">{i18n.articles.subtitle}</p>
             <div className="grid gap-4">
-                {articles.map((article, index) => {
+                {data.map((article: Article, index: number) => {
                     return (
-                        <Article
+                        <InternalLink
+                            className=""
+                            href={"/articles/" + article.slug}
                             key={index}
-                            title={article.title}
-                            slug={article.slug}
-                            summary={article.summary}
-                        />
+                        >
+                            <Card>
+                                <h3>{article.title ?? article.slug}</h3>
+                                <p className="mt-2">{article.description}</p>
+                            </Card>
+                        </InternalLink>
                     );
                 })}
             </div>
         </>
+    ) : (
+        <p>Loading Articles...</p>
     );
 }

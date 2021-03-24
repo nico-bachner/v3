@@ -1,20 +1,20 @@
 import InternalLink from "./InternalLink";
 import ExternalLink from "./ExternalLink";
 
-import type { Page } from "../content/pages";
+import type { Page } from "../types";
 
 interface Props {
-    pages: Array<Page>;
-    hiddenPages: Array<Page>;
-    otherPages: Array<Page>;
-    externalPages: Array<Page>;
+    pages: Page[];
+    hiddenPages: Page[];
+    otherPages: Page[];
+    externalPages: Page[];
 }
 
 export default function Footer(props: Props) {
     const { pages, hiddenPages, otherPages, externalPages } = props;
 
     return (
-        <nav className="text-center grid grid-cols-2 gap-8 sm:grid-cols-4 text-gray">
+        <nav className="grid grid-cols-2 gap-8 text-center sm:grid-cols-4 text-gray">
             <ul>
                 {pages.map((page, index) => {
                     return (

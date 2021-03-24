@@ -65,7 +65,4 @@
             @apply bg-white dark:bg-black;
         }
     }
-    .disabled {
-        @apply cursor-default text-gray-light dark:text-gray-dark;
-    }
 }

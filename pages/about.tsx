@@ -1,14 +1,13 @@
-import { useI18n } from "../lib/i18n";
-
-import { aboutPageTranslations } from "../content/translations/aboutPage";
+import { useI18n } from "../hooks/i18n";
+import { translations } from "../i18n";
 
 export default function About() {
-    const aboutPage = useI18n(aboutPageTranslations);
+    const i18n = useI18n(translations);
 
     return (
         <>
-            <h1>{aboutPage.title}</h1>
-            <p>{aboutPage.preview}</p>
+            <h1>{i18n.about.title}</h1>
+            <p>{i18n.about.preview}</p>
             <h2>Projects</h2>
             <p>
                 Currently, most of my projects have been web-based, but I want

@@ -1,6 +1,6 @@
 import { useRouter } from "next/router";
 
-import type { Page } from "../content/pages";
+import type { Page } from "../types";
 
 import InternalLink from "./InternalLink";
 import Logo from "./Logo";
