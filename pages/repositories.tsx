@@ -4,19 +4,10 @@ import useSWR from "swr";
 import ExternalLink from "../components/ExternalLink";
 import Card from "../components/Card";
 
-interface Repository {
-    name: string;
-    description: string;
-    html_url: string;
-    fork: boolean;
-    stargazers_count: number;
-}
+import type { Repository } from "../lib/types";
 
 export default function Repositories() {
-    const {
-        data,
-        error,
-    } = useSWR("https://api.github.com/users/nico-bachner/repos", (args) =>
+    const { data, error } = useSWR("/api/repositories", (args) =>
         fetch(args).then((res) => res.json())
     );
 
@@ -45,17 +36,17 @@ export default function Repositories() {
                 <div className="grid grid-cols-1 gap-4">
                     {data
                         .sort((a: Repository, b: Repository) => {
-                            return b.stargazers_count - a.stargazers_count;
+                            return b.stars - a.stars;
                         })
                         .map((repo: Repository, index: number) => {
                             if (
-                                repo.fork != true &&
-                                (repo.stargazers_count > 0 || showAllRepos)
+                                repo.isFork != true &&
+                                (repo.stars > 0 || showAllRepos)
                             ) {
                                 return (
                                     <ExternalLink
                                         className=""
-                                        href={repo.html_url}
+                                        href={repo.url}
                                         key={index}
                                     >
                                         <Card>
@@ -84,14 +75,11 @@ export default function Repositories() {
                 <h2 className="my-4">Forks</h2>
                 <div className="grid grid-cols-1 gap-4">
                     {data.map((repo: Repository, index: number) => {
-                        if (
-                            repo.fork == true &&
-                            (repo.stargazers_count > 0 || showAllForks)
-                        ) {
+                        if (repo.isFork && (repo.stars > 0 || showAllForks)) {
                             return (
                                 <ExternalLink
                                     className=""
-                                    href={repo.html_url}
+                                    href={repo.url}
                                     key={index}
                                 >
                                     <Card>
