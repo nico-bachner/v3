@@ -16,7 +16,7 @@ export default function Navigation(props: Props) {
     return (
         <>
             <nav className="top-0 z-50 flex items-center justify-between max-w-4xl p-8 mx-auto my-4 font-medium sm:my-8 sm:sticky glass">
-                <a href="/" className="hover:text-gray">
+                <a href="/" className="hover:text-gray-light">
                     <Logo className="w-12 h-12" />
                 </a>
                 <ul className="justify-end flex-grow hidden space-x-8 text-lg sm:flex">
@@ -32,7 +32,7 @@ export default function Navigation(props: Props) {
                                     }
                                     className={
                                         router.pathname == page.href
-                                            ? "text-gray-dark cursor-default"
+                                            ? "text-gray-light dark:text-gray-dark cursor-default"
                                             : "hover:text-gray"
                                     }
                                 >

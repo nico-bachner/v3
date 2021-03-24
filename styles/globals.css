@@ -42,11 +42,11 @@
     }
 
     hr {
-        @apply border border-gray-lightest dark:border-gray-darkest;
+        @apply border border-gray-lightest dark:border-gray-dark;
     }
 
     select {
-        @apply px-3 py-1 ml-8 text-center bg-transparent border rounded appearance-none border-gray-lightest dark:border-gray-darkest;
+        @apply px-3 py-1 ml-8 text-center bg-transparent border rounded appearance-none border-gray-lightest dark:border-gray-dark;
         background-image: url("/icons/select.svg");
         background-position: 75% center;
         background-repeat: no-repeat;

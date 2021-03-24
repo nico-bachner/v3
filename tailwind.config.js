@@ -1,10 +1,7 @@
 const { fontFamily, boxShadow } = require("tailwindcss/defaultTheme");
 
 module.exports = {
-    purge: [
-        "./pages/**/*.{js,ts,jsx,tsx}",
-        "./components/**/*.{js,ts,jsx,tsx}",
-    ],
+    purge: ["./pages/**/*.{tsx,mdx}", "./components/*.tsx"],
     darkMode: "media",
     theme: {
         colors: {
@@ -14,10 +11,10 @@ module.exports = {
             white: "white",
             gray: {
                 lightest: "#E5E7EB",
-                light: "#D1D5DB",
-                DEFAULT: "#9CA3AF",
-                dark: "#6B7280",
-                darkest: "#374151",
+                light: "#9CA3AF",
+                DEFAULT: "#6B7280",
+                dark: "#4B5563",
+                darkest: "#1F2937",
             },
             blue: {
                 light: "#93C5FD",
@@ -36,12 +33,6 @@ module.exports = {
             fontFamily: {
                 sans: ["Inter", ...fontFamily.sans],
             },
-        },
-    },
-    variants: {
-        extend: {
-            backgroundOpacity: ["dark"],
-            textColor: ["active"],
         },
     },
 };
