@@ -41,8 +41,8 @@ export default function App({ Component, pageProps }: AppProps) {
                     <Component {...pageProps} />
                 </MDX>
 
-                <footer className="my-24">
-                    <hr className="my-12" />
+                <footer className="my-20">
+                    <hr className="my-16" />
                     <Footer
                         pages={mainPages}
                         hiddenPages={hiddenPages}

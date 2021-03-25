@@ -26,7 +26,7 @@ const mdxComponents = {
             <main {...props}>
                 {props.children}
 
-                <p className="text-center mt-36">
+                <p className="mt-24 text-center">
                     <ExternalLink
                         href={
                             "https://github.com/nico-bachner/v3/edit/main/pages" +
