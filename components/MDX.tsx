@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { useRouter } from "next/router";
 
 import InternalLink from "../components/InternalLink";
 import ExternalLink from "../components/ExternalLink";
@@ -19,7 +20,29 @@ interface ImageProps {
 }
 
 const mdxComponents = {
-    wrapper: (props: Props) => <main {...props}>{props.children}</main>,
+    wrapper: (props: Props) => {
+        const router = useRouter();
+        return (
+            <main {...props}>
+                {props.children}
+
+                <p className="text-center mt-36">
+                    <ExternalLink
+                        href={
+                            "https://github.com/nico-bachner/v3/edit/main/pages" +
+                            router.pathname +
+                            ".mdx"
+                        }
+                    >
+                        Report Typo(s)
+                    </ExternalLink>
+                </p>
+            </main>
+        );
+    },
+    h2: (props: Props) => <h2 className="mt-12 mb-6">{props.children}</h2>,
+    h3: (props: Props) => <h3 className="mt-8">{props.children}</h3>,
+    h4: (props: Props) => <h4 className="mt-6">{props.children}</h4>,
     p: (props: Props) => <p className="my-4">{props.children}</p>,
     a: (props: LinkProps) =>
         props.href.startsWith("/") ? (
