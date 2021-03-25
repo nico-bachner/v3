@@ -4,6 +4,7 @@ import Meta from "../components/Meta";
 import Navigation from "../components/Navigation";
 import MDX from "../components/MDX";
 import Footer from "../components/Footer";
+import MobileNavigation from "../components/MobileNavigation";
 
 import {
     mainPagesRoutes,
@@ -51,6 +52,8 @@ export default function App({ Component, pageProps }: AppProps) {
                     />
                 </footer>
             </div>
+
+            <MobileNavigation pages={mainPages} />
         </>
     );
 }
