@@ -10,7 +10,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
     const articles = GitHubRepositories.map(
         (GitHubRepository: GitHubRepository) => {
             return {
-                name: GitHubRepository.name.replaceAll("-", " "),
+                name: GitHubRepository.name.replaceAll(/-/g, " "),
                 slug: GitHubRepository.name,
                 description: GitHubRepository.description,
                 repo_url: GitHubRepository.html_url,
