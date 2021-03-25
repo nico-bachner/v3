@@ -12,7 +12,7 @@ interface Item {
 }
 
 interface Props {
-    apiRoute: string;
+    route: string;
     initialCount?: number;
 }
 
@@ -20,7 +20,7 @@ export default function List(props: Props) {
     const { locale } = useRouter();
     const [count, setCount] = useState(props.initialCount ?? 1);
 
-    const { data, error } = useSWR("/api" + props.apiRoute, (args) =>
+    const { data, error } = useSWR("/api" + props.route, (args) =>
         fetch(args).then((res) => res.json())
     );
 
@@ -34,7 +34,7 @@ export default function List(props: Props) {
                     return (
                         <InternalLink
                             className=""
-                            href={"/projects/" + item.slug}
+                            href={props.route + "/" + item.slug}
                         >
                             <Card>
                                 <h3>{item.title ?? item.slug}</h3>

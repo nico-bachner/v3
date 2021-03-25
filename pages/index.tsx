@@ -27,12 +27,12 @@ export default function Home() {
             <section>
                 <h2>{i18n.projects.title}</h2>
                 <p className="my-4">{i18n.projects.subtitle}</p>
-                <List apiRoute="/projects" initialCount={3} />
+                <List route="/projects" initialCount={3} />
             </section>
             <section>
                 <h2>{i18n.articles.title}</h2>
                 <p className="my-4">{i18n.articles.subtitle}</p>
-                <List apiRoute="/articles" />
+                <List route="/articles" />
             </section>
         </>
     );
