@@ -1,11 +1,16 @@
+import { useState } from "react";
 import { useI18n } from "../hooks/i18n";
 import { translations } from "../i18n";
 
 import InternalLink from "../components/InternalLink";
-import List from "../components/List";
+import ProjectsList from "../components/ProjectsList";
+import ArticlesList from "../components/ArticlesList";
 
 export default function Home() {
     const i18n = useI18n(translations);
+
+    const [showAllProjects, setShowAllProjects] = useState(false);
+    const [articlesCount, setArticlesCount] = useState(3);
 
     return (
         <>
@@ -17,22 +22,56 @@ export default function Home() {
                 <h2>{i18n.about.title}</h2>
                 <p>{i18n.about.preview}</p>
                 <div className="flex p-4">
-                    <div className="flex-grow text-right">
+                    <p className="flex-grow text-right capitalize">
                         <InternalLink href="/about">
-                            {i18n.readMore}
+                            {i18n.actions.readMore}
                         </InternalLink>
-                    </div>
+                    </p>
                 </div>
             </section>
             <section>
                 <h2>{i18n.projects.title}</h2>
                 <p className="my-4">{i18n.projects.subtitle}</p>
-                <List route="/projects" initialCount={3} />
+                <ProjectsList featured={showAllProjects ? false : true} />
+                <div className="flex justify-between px-2 py-4 sm:space-x-8">
+                    <button
+                        onClick={() =>
+                            showAllProjects
+                                ? setShowAllProjects(false)
+                                : setShowAllProjects(true)
+                        }
+                        className="capitalize text-blue"
+                    >
+                        {showAllProjects
+                            ? i18n.actions.showMore
+                            : i18n.actions.showLess}
+                    </button>
+                    <p className="text-right capitalize sm:flex-grow">
+                        <InternalLink href="/projects">
+                            {i18n.actions.showAll}
+                        </InternalLink>
+                    </p>
+                </div>
             </section>
             <section>
                 <h2>{i18n.articles.title}</h2>
                 <p className="my-4">{i18n.articles.subtitle}</p>
-                <List route="/articles" />
+                <ArticlesList count={articlesCount} />
+                <div className="flex justify-between px-2 py-4 sm:space-x-8">
+                    <button
+                        onClick={() => {
+                            setArticlesCount(articlesCount + 1);
+                        }}
+                        className="capitalize text-blue"
+                    >
+                        {i18n.actions.showMore}
+                    </button>
+                    <p className="text-right capitalize sm:flex-grow">
+                        <InternalLink href="/articles">
+                            {i18n.actions.showAll}
+                        </InternalLink>
+                    </p>
+                </div>
             </section>
         </>
     );

@@ -1,10 +1,8 @@
-import type { Translation } from "../i18n";
+import type { Translation } from "../lib/types";
 
 export const fr: Translation = {
     title: "Je suis Nico,",
     subtitle: "un passionné d'Open Source.",
-    showAll: "Montrer Tous",
-    readMore: "En lire plus",
     about: {
         title: "Sur Moi",
         preview:
@@ -22,6 +20,12 @@ export const fr: Translation = {
         title: "Articles",
         subtitle:
             "Voici quelques de mes articles. Regrettablement, ils ne sont que disponibles en anglais.",
+    },
+    actions: {
+        readMore: "continuer à lire",
+        showAll: "montrer tous",
+        showMore: "montrer plus",
+        showLess: "montrer moins",
     },
     pages: [
         {

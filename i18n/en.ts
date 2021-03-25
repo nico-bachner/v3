@@ -1,10 +1,8 @@
-import type { Translation } from "../i18n";
+import type { Translation } from "../lib/types";
 
 export const en: Translation = {
     title: "Hi, I'm Nico.",
     subtitle: "I'm an Aspiring Open Sourcerer.",
-    showAll: "Show All",
-    readMore: "Read more",
     about: {
         title: "About Me",
         preview:
@@ -21,6 +19,12 @@ export const en: Translation = {
     articles: {
         title: "Articles",
         subtitle: "Here are some of the most recent articles I have written.",
+    },
+    actions: {
+        readMore: "read more",
+        showAll: "show all",
+        showMore: "show more",
+        showLess: "show less",
     },
     pages: [
         {

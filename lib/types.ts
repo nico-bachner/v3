@@ -1,3 +1,46 @@
+export interface Translation {
+    title: string;
+    subtitle: string;
+    about: {
+        title: string;
+        preview: string;
+    };
+    projects: {
+        title: string;
+        subtitle: string;
+        web: string;
+        games: string;
+        other: string;
+    };
+    articles: {
+        title: string;
+        subtitle: string;
+    };
+    actions: {
+        readMore: string;
+        showAll: string;
+        showMore: string;
+        showLess: string;
+    };
+    pages: [
+        {
+            title: string;
+        },
+        {
+            title: string;
+            slug: string;
+        },
+        {
+            title: string;
+            slug: string;
+        },
+        {
+            title: string;
+            slug: string;
+        }
+    ];
+}
+
 export interface Page {
     title: string;
     href: string;
@@ -9,6 +52,7 @@ export interface Project {
     title: string;
     tags: string[];
     description: string;
+    featured: boolean;
 }
 
 export interface Article {

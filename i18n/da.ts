@@ -1,10 +1,8 @@
-import type { Translation } from "../i18n";
+import type { Translation } from "../lib/types";
 
 export const da: Translation = {
-    title: "Hej, jeg er Nico,",
-    subtitle: "en Open Source Entusiast.",
-    showAll: "Vise Alle",
-    readMore: "Lese videre",
+    title: "Hej, jeg er Nico.",
+    subtitle: "Jeg er en Open Source Entusiast.",
     about: {
         title: "Om Mig",
         preview:
@@ -22,6 +20,12 @@ export const da: Translation = {
         title: "Artikler",
         subtitle:
             "Her er nogle af mine seneste artikler. Desvære er di kun på engelsk.",
+    },
+    actions: {
+        readMore: "læse videre",
+        showAll: "vise alle",
+        showMore: "vise flere",
+        showLess: "vise mindre",
     },
     pages: [
         {

@@ -1,10 +1,8 @@
-import type { Translation } from "../i18n";
+import type { Translation } from "../lib/types";
 
 export const lu: Translation = {
     title: "Ech sin den Nico,",
     subtitle: "en Open Source Enthusiast.",
-    showAll: "Alleguer Weisen",
-    readMore: "Méi liesen",
     about: {
         title: "Iwwert mech",
         preview:
@@ -22,6 +20,12 @@ export const lu: Translation = {
         title: "Artikelen",
         subtitle:
             "Hei sin e puer vun mengen rezentesten artikelen. Leider sin se nëmmen op englesch disponibel.",
+    },
+    actions: {
+        readMore: "weider liesen",
+        showAll: "alleguer weisen",
+        showMore: "méi weisen",
+        showLess: "manner weisen",
     },
     pages: [
         {
