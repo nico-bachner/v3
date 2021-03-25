@@ -90,7 +90,7 @@ export default function List(props: Props) {
                         : "Show Less"}
                 </button>
                 <div className="text-right sm:flex-grow">
-                    <InternalLink href="/projects">
+                    <InternalLink href={props.route}>
                         {locale == "lu"
                             ? "Alleguer Weisen"
                             : locale == "de"
