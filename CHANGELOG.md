@@ -2,6 +2,37 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.1.0](https://github.com/nico-bachner/v3/compare/v1.0.0...v1.1.0) (2021-03-25)
+
+
+### Features
+
+* **api:** added api route for my github repositories ([c9777bf](https://github.com/nico-bachner/v3/commit/c9777bf0e7c7cc0dece8f05f40900c54a284244a))
+* **api:** created api to serve data from ([b3f818a](https://github.com/nico-bachner/v3/commit/b3f818a45a9e5b83c7d8bcb832e5d3c830bbb6e2))
+* **content:** added uses page ([c1c13c1](https://github.com/nico-bachner/v3/commit/c1c13c10f050b95780a2c105a51e6f1b1267b409))
+* **design:** improved gray tones ([de3848c](https://github.com/nico-bachner/v3/commit/de3848c5ed3d784f6f32fd0802a585b4b346001b))
+* **design:** make mobile navigation sticky ([40fc1dd](https://github.com/nico-bachner/v3/commit/40fc1dd59c395ccec1e45849bc2fc249e63bf22e))
+* **design:** tightened up some design issues ([e1755f6](https://github.com/nico-bachner/v3/commit/e1755f6fd61c4936367d66f736255dc2e65e1410))
+* **logo:** rebuilt logo from scratch ([f504f1b](https://github.com/nico-bachner/v3/commit/f504f1bd1197c7e8172ed90407a0d9af4c3e7adf))
+
+
+### Bug Fixes
+
+* fixed broken link ([a07179c](https://github.com/nico-bachner/v3/commit/a07179c62c69198c825e16f1af42e6e5280d783a))
+* updated changed external links ([f17f0d7](https://github.com/nico-bachner/v3/commit/f17f0d7f1bc3a30eddac273c0679308c8f2b0dbe))
+* **a11y:** removed duplicate <main> tag ([c157324](https://github.com/nico-bachner/v3/commit/c1573242bc4a15ea8d5e1fe7c37aee8df6552c00))
+* **api:** actually remove replaceAll() ([d2ebf8e](https://github.com/nico-bachner/v3/commit/d2ebf8e410db635daadf3dca0e6e3e21b4abcff5))
+* **api:** removed replaceAll() because it's not yet available in node ([4173b44](https://github.com/nico-bachner/v3/commit/4173b44e8881b47817ada667babb3c835c579db6))
+* **design:** improved spacing near footer ([12df3c8](https://github.com/nico-bachner/v3/commit/12df3c80a03b028903aba2132a83f10671c3481e))
+* fixed broken article link ([6fbb644](https://github.com/nico-bachner/v3/commit/6fbb644cc7bcbe3ccbf0ea95320cb85af3569ad3))
+* fixed faulty type import ([ce1363b](https://github.com/nico-bachner/v3/commit/ce1363bd28b459fadb077280a4a3577e8a3bee65))
+* some minor fixes ([8abf925](https://github.com/nico-bachner/v3/commit/8abf9259955b445402d31ced5b6f9b667e52a86f))
+* whoops, wrong content - fixed now ([4ab7cf1](https://github.com/nico-bachner/v3/commit/4ab7cf1a77a8cbdfcff1117f9cc6aa1ca8811483))
+* **CHANGELOG:** removed duplicate release notes ([21dc161](https://github.com/nico-bachner/v3/commit/21dc161b19e6ee9863a74a9644609e240ad169b8))
+* **release:** bumped unchanged npm version ([fbb18fa](https://github.com/nico-bachner/v3/commit/fbb18fa29607b26ee5b22772f074a8b1e6f6e9f1))
+* **structure:** extracted MDX logic into separate file ([63b7b21](https://github.com/nico-bachner/v3/commit/63b7b21d08b07c630a38472ea0234772ccd84b69))
+* **style:** fixed clipped subheading ([c1ace55](https://github.com/nico-bachner/v3/commit/c1ace55d19241779bb4475d64da52d7c061c4397))
+
 ## [1.0.0](https://github.com/nico-bachner/v3/compare/v0.1.4...v1.0.0) (2021-03-14)
 
 
