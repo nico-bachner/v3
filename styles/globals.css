@@ -15,7 +15,7 @@
     }
 
     html {
-        @apply text-black bg-white dark:text-white dark:bg-black;
+        @apply bg-white text-gray-dark dark:text-gray-light dark:bg-black;
     }
 
     h1,
@@ -46,7 +46,7 @@
     }
 
     select {
-        @apply px-3 py-1 ml-8 text-center bg-transparent border rounded appearance-none border-gray-lightest dark:border-gray-dark;
+        @apply px-3 py-1 ml-8 text-center bg-transparent border rounded appearance-none border-gray-light dark:border-gray-dark;
         background-image: url("/icons/select.svg");
         background-position: 75% center;
         background-repeat: no-repeat;

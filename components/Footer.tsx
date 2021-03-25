@@ -26,7 +26,7 @@ export default function Footer(props: Props) {
                                         ? "/" + page.slug
                                         : "/"
                                 }
-                                className="hover:text-gray-dark dark:hover:text-gray-light"
+                                className="hover:text-gray-darkest dark:hover:text-gray-lightest"
                             >
                                 {page.title}
                             </InternalLink>

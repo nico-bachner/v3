@@ -36,7 +36,7 @@ export default function App({ Component, pageProps }: AppProps) {
 
             <Navigation pages={mainPages} />
 
-            <div className="px-8 mx-auto max-w-prose text-gray-dark dark:text-gray-light sm:text-lg">
+            <div className="px-8 mx-auto max-w-prose sm:text-lg">
                 <MDX>
                     <Component {...pageProps} />
                 </MDX>

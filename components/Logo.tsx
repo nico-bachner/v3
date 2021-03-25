@@ -31,7 +31,8 @@ export default function Logo(props: Props) {
                 width="9"
                 height="9"
                 stroke="none"
-                fill="white"
+                fill="currentColor"
+                className="text-white dark:text-black"
             />
 
             <circle cx="7" cy="25" r="6" fill="transparent" strokeWidth="2" />
@@ -43,7 +44,8 @@ export default function Logo(props: Props) {
                 width="9"
                 height="9"
                 stroke="none"
-                fill="white"
+                fill="currentColor"
+                className="text-white dark:text-black"
             />
 
             <circle
