@@ -21,7 +21,7 @@ export const hiddenPages = [
 export const otherPages = [
     {
         title: "CV",
-        href: "https://read.cv/nicob",
+        href: "https://read.cv/nico_bachner",
     },
 ];
 export const externalPages = [
@@ -31,7 +31,7 @@ export const externalPages = [
     },
     {
         title: "DEV",
-        href: "https://dev.to/nicob",
+        href: "https://dev.to/nico_bachner",
     },
     {
         title: "Twitter",
