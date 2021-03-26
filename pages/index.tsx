@@ -43,8 +43,8 @@ export default function Home() {
                         className="capitalize text-blue"
                     >
                         {showAllProjects
-                            ? i18n.actions.showMore
-                            : i18n.actions.showLess}
+                            ? i18n.actions.showLess
+                            : i18n.actions.showMore}
                     </button>
                     <p className="text-right capitalize sm:flex-grow">
                         <InternalLink href="/projects">

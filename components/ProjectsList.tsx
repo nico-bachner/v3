@@ -24,7 +24,7 @@ export default function ProjectsList(props: Props) {
     }
 
     return data ? (
-        <div className="grid gap-4 mt-8">
+        <div className="grid gap-4 mt-4">
             {data.map((project: Project, index: number) => {
                 if (!props.featured || project.featured) {
                     return (

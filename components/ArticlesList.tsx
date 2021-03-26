@@ -30,7 +30,7 @@ export default function ArticlesList(props: Props) {
         }
 
         return (
-            <div className="grid gap-4 mt-8">
+            <div className="grid gap-4 mt-4">
                 {articles.map((article: Article, index: number) => {
                     return (
                         <InternalLink

@@ -24,15 +24,11 @@ export default function Navigation(props: Props) {
                         <li key={index}>
                             <InternalLink
                                 href={page.href}
-                                as={
-                                    page.slug != undefined
-                                        ? "/" + page.slug
-                                        : "/"
-                                }
+                                as={page.slug ? "/" + page.slug : "/"}
                                 className={
                                     router.pathname == page.href
-                                        ? "text-gray-light dark:text-gray-dark cursor-default"
-                                        : "hover:underline"
+                                        ? "text-gray cursor-default"
+                                        : "hover:text-black dark:hover:text-white"
                                 }
                             >
                                 {page.title}
