@@ -18,25 +18,24 @@
         "build": "next build",
         "start": "next start",
         "release": "standard-version",
-        "format": "prettier --write **/*.{js,jsx,ts,tsx,md,mdx,json}"
+        "format": "prettier --write **/*.{ts,tsx,md,mdx,js,json}"
     },
     "dependencies": {
-        "@mdx-js/loader": "^1.6.22",
         "@mdx-js/react": "^1.6.22",
-        "@next/mdx": "^10.0.8",
-        "@supabase/supabase-js": "^1.6.0",
+        "@next/mdx": "^10.0.9",
+        "@supabase/supabase-js": "^1.7.1",
+        "@tailwindcss/jit": "^0.1.11",
         "autoprefixer": "^10.2.5",
-        "next": "^10.0.8",
+        "next": "^10.0.9",
         "postcss": "^8.2.8",
-        "react": "^17.0.1",
-        "react-dom": "^17.0.1",
-        "swr": "^0.5.0",
-        "tailwindcss": "^2.0.3"
+        "react": "^17.0.2",
+        "react-dom": "^17.0.2",
+        "swr": "^0.5.4",
+        "tailwindcss": "^2.0.4"
     },
     "devDependencies": {
-        "@tailwindcss/jit": "^0.1.8",
         "@types/mdx-js__react": "^1.5.3",
-        "@types/node": "^14.14.33",
+        "@types/node": "^14.14.36",
         "@types/react": "^17.0.3",
         "prettier": "^2.2.1",
         "standard-version": "^9.1.1",

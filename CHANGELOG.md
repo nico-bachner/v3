@@ -4,90 +4,83 @@ All notable changes to this project will be documented in this file. See [standa
 
 ### [1.1.1](https://github.com/nico-bachner/v3/compare/v1.1.0...v1.1.1) (2021-03-26)
 
-
 ### Bug Fixes
 
-* fixed wrong text on homepage ([1276624](https://github.com/nico-bachner/v3/commit/1276624504c14af1acdb536af8954a727ec3c1b0))
+-   fixed wrong text on homepage ([1276624](https://github.com/nico-bachner/v3/commit/1276624504c14af1acdb536af8954a727ec3c1b0))
 
 ## [1.1.0](https://github.com/nico-bachner/v3/compare/v1.0.0...v1.1.0) (2021-03-25)
 
-
 ### Features
 
-* **api:** added api route for my github repositories ([c9777bf](https://github.com/nico-bachner/v3/commit/c9777bf0e7c7cc0dece8f05f40900c54a284244a))
-* **api:** created api to serve data from ([b3f818a](https://github.com/nico-bachner/v3/commit/b3f818a45a9e5b83c7d8bcb832e5d3c830bbb6e2))
-* **content:** added uses page ([c1c13c1](https://github.com/nico-bachner/v3/commit/c1c13c10f050b95780a2c105a51e6f1b1267b409))
-* **design:** improved gray tones ([de3848c](https://github.com/nico-bachner/v3/commit/de3848c5ed3d784f6f32fd0802a585b4b346001b))
-* **design:** make mobile navigation sticky ([40fc1dd](https://github.com/nico-bachner/v3/commit/40fc1dd59c395ccec1e45849bc2fc249e63bf22e))
-* **design:** tightened up some design issues ([e1755f6](https://github.com/nico-bachner/v3/commit/e1755f6fd61c4936367d66f736255dc2e65e1410))
-* **logo:** rebuilt logo from scratch ([f504f1b](https://github.com/nico-bachner/v3/commit/f504f1bd1197c7e8172ed90407a0d9af4c3e7adf))
-
+-   **api:** added api route for my github repositories ([c9777bf](https://github.com/nico-bachner/v3/commit/c9777bf0e7c7cc0dece8f05f40900c54a284244a))
+-   **api:** created api to serve data from ([b3f818a](https://github.com/nico-bachner/v3/commit/b3f818a45a9e5b83c7d8bcb832e5d3c830bbb6e2))
+-   **content:** added uses page ([c1c13c1](https://github.com/nico-bachner/v3/commit/c1c13c10f050b95780a2c105a51e6f1b1267b409))
+-   **design:** improved gray tones ([de3848c](https://github.com/nico-bachner/v3/commit/de3848c5ed3d784f6f32fd0802a585b4b346001b))
+-   **design:** make mobile navigation sticky ([40fc1dd](https://github.com/nico-bachner/v3/commit/40fc1dd59c395ccec1e45849bc2fc249e63bf22e))
+-   **design:** tightened up some design issues ([e1755f6](https://github.com/nico-bachner/v3/commit/e1755f6fd61c4936367d66f736255dc2e65e1410))
+-   **logo:** rebuilt logo from scratch ([f504f1b](https://github.com/nico-bachner/v3/commit/f504f1bd1197c7e8172ed90407a0d9af4c3e7adf))
 
 ### Bug Fixes
 
-* fixed broken link ([a07179c](https://github.com/nico-bachner/v3/commit/a07179c62c69198c825e16f1af42e6e5280d783a))
-* updated changed external links ([f17f0d7](https://github.com/nico-bachner/v3/commit/f17f0d7f1bc3a30eddac273c0679308c8f2b0dbe))
-* **a11y:** removed duplicate <main> tag ([c157324](https://github.com/nico-bachner/v3/commit/c1573242bc4a15ea8d5e1fe7c37aee8df6552c00))
-* **api:** actually remove replaceAll() ([d2ebf8e](https://github.com/nico-bachner/v3/commit/d2ebf8e410db635daadf3dca0e6e3e21b4abcff5))
-* **api:** removed replaceAll() because it's not yet available in node ([4173b44](https://github.com/nico-bachner/v3/commit/4173b44e8881b47817ada667babb3c835c579db6))
-* **design:** improved spacing near footer ([12df3c8](https://github.com/nico-bachner/v3/commit/12df3c80a03b028903aba2132a83f10671c3481e))
-* fixed broken article link ([6fbb644](https://github.com/nico-bachner/v3/commit/6fbb644cc7bcbe3ccbf0ea95320cb85af3569ad3))
-* fixed faulty type import ([ce1363b](https://github.com/nico-bachner/v3/commit/ce1363bd28b459fadb077280a4a3577e8a3bee65))
-* some minor fixes ([8abf925](https://github.com/nico-bachner/v3/commit/8abf9259955b445402d31ced5b6f9b667e52a86f))
-* whoops, wrong content - fixed now ([4ab7cf1](https://github.com/nico-bachner/v3/commit/4ab7cf1a77a8cbdfcff1117f9cc6aa1ca8811483))
-* **CHANGELOG:** removed duplicate release notes ([21dc161](https://github.com/nico-bachner/v3/commit/21dc161b19e6ee9863a74a9644609e240ad169b8))
-* **release:** bumped unchanged npm version ([fbb18fa](https://github.com/nico-bachner/v3/commit/fbb18fa29607b26ee5b22772f074a8b1e6f6e9f1))
-* **structure:** extracted MDX logic into separate file ([63b7b21](https://github.com/nico-bachner/v3/commit/63b7b21d08b07c630a38472ea0234772ccd84b69))
-* **style:** fixed clipped subheading ([c1ace55](https://github.com/nico-bachner/v3/commit/c1ace55d19241779bb4475d64da52d7c061c4397))
+-   fixed broken link ([a07179c](https://github.com/nico-bachner/v3/commit/a07179c62c69198c825e16f1af42e6e5280d783a))
+-   updated changed external links ([f17f0d7](https://github.com/nico-bachner/v3/commit/f17f0d7f1bc3a30eddac273c0679308c8f2b0dbe))
+-   **a11y:** removed duplicate <main> tag ([c157324](https://github.com/nico-bachner/v3/commit/c1573242bc4a15ea8d5e1fe7c37aee8df6552c00))
+-   **api:** actually remove replaceAll() ([d2ebf8e](https://github.com/nico-bachner/v3/commit/d2ebf8e410db635daadf3dca0e6e3e21b4abcff5))
+-   **api:** removed replaceAll() because it's not yet available in node ([4173b44](https://github.com/nico-bachner/v3/commit/4173b44e8881b47817ada667babb3c835c579db6))
+-   **design:** improved spacing near footer ([12df3c8](https://github.com/nico-bachner/v3/commit/12df3c80a03b028903aba2132a83f10671c3481e))
+-   fixed broken article link ([6fbb644](https://github.com/nico-bachner/v3/commit/6fbb644cc7bcbe3ccbf0ea95320cb85af3569ad3))
+-   fixed faulty type import ([ce1363b](https://github.com/nico-bachner/v3/commit/ce1363bd28b459fadb077280a4a3577e8a3bee65))
+-   some minor fixes ([8abf925](https://github.com/nico-bachner/v3/commit/8abf9259955b445402d31ced5b6f9b667e52a86f))
+-   whoops, wrong content - fixed now ([4ab7cf1](https://github.com/nico-bachner/v3/commit/4ab7cf1a77a8cbdfcff1117f9cc6aa1ca8811483))
+-   **CHANGELOG:** removed duplicate release notes ([21dc161](https://github.com/nico-bachner/v3/commit/21dc161b19e6ee9863a74a9644609e240ad169b8))
+-   **release:** bumped unchanged npm version ([fbb18fa](https://github.com/nico-bachner/v3/commit/fbb18fa29607b26ee5b22772f074a8b1e6f6e9f1))
+-   **structure:** extracted MDX logic into separate file ([63b7b21](https://github.com/nico-bachner/v3/commit/63b7b21d08b07c630a38472ea0234772ccd84b69))
+-   **style:** fixed clipped subheading ([c1ace55](https://github.com/nico-bachner/v3/commit/c1ace55d19241779bb4475d64da52d7c061c4397))
 
 ## [1.0.0](https://github.com/nico-bachner/v3/compare/v0.1.4...v1.0.0) (2021-03-14)
 
-
 ### Features
 
-* created custom useI18n hook ([8193df7](https://github.com/nico-bachner/v3/commit/8193df707d35967bb93be9f524ef95052a327199))
-* **content:** added first article ([95ab0cc](https://github.com/nico-bachner/v3/commit/95ab0cc5fa6e214bb6bc96376a450976147b9c39))
-* use SWR for data fetching ([47a838c](https://github.com/nico-bachner/v3/commit/47a838ce086f677697a2723c8e6e60ea3a534bb3))
-
+-   created custom useI18n hook ([8193df7](https://github.com/nico-bachner/v3/commit/8193df707d35967bb93be9f524ef95052a327199))
+-   **content:** added first article ([95ab0cc](https://github.com/nico-bachner/v3/commit/95ab0cc5fa6e214bb6bc96376a450976147b9c39))
+-   use SWR for data fetching ([47a838c](https://github.com/nico-bachner/v3/commit/47a838ce086f677697a2723c8e6e60ea3a534bb3))
 
 ### Bug Fixes
 
-* **structure:** some refactoring ([db0bdf7](https://github.com/nico-bachner/v3/commit/db0bdf707c2b0b893d13d497fc486eba2aa52d24))
-* fixed build errors ([9432968](https://github.com/nico-bachner/v3/commit/943296802317547c11feb9c966d90429f2314a79))
-* **structure:** some refactoring ([a44d889](https://github.com/nico-bachner/v3/commit/a44d889f0c570733aa79bac8c58d6a4717893009))
-* refactored some components for improved readability ([dc63081](https://github.com/nico-bachner/v3/commit/dc630817de7c494423967fd6fdd785258b2e9254))
-* **swr:** fixed type error ([49a76cc](https://github.com/nico-bachner/v3/commit/49a76cce514b32acd51e64db3c2df6ec012ee60c))
+-   **structure:** some refactoring ([db0bdf7](https://github.com/nico-bachner/v3/commit/db0bdf707c2b0b893d13d497fc486eba2aa52d24))
+-   fixed build errors ([9432968](https://github.com/nico-bachner/v3/commit/943296802317547c11feb9c966d90429f2314a79))
+-   **structure:** some refactoring ([a44d889](https://github.com/nico-bachner/v3/commit/a44d889f0c570733aa79bac8c58d6a4717893009))
+-   refactored some components for improved readability ([dc63081](https://github.com/nico-bachner/v3/commit/dc630817de7c494423967fd6fdd785258b2e9254))
+-   **swr:** fixed type error ([49a76cc](https://github.com/nico-bachner/v3/commit/49a76cce514b32acd51e64db3c2df6ec012ee60c))
 
 ### [0.1.4](https://github.com/nico-bachner/v3/compare/v0.1.3...v0.1.4) (2021-03-10)
 
-
 ### Features
 
-* added hover shadow transition to project cards ([620e03b](https://github.com/nico-bachner/v3/commit/620e03bffe6a9786955ab7c02fd3b2d39870b5c6))
-* converted codebase to TypeScript ([f4b32eb](https://github.com/nico-bachner/v3/commit/f4b32ebb055390f3cb171a8728816ebdea218090))
-* removed tailwind forms dependency ([39d7057](https://github.com/nico-bachner/v3/commit/39d7057838078a39f51815b2a65fac30af302531))
-* **design:** added subtitle text gradient ([8bf252d](https://github.com/nico-bachner/v3/commit/8bf252dfb2d8f17c87eaa66077ac057f2e6d3e7c))
-* **scripts:** added global format script ([7aa2f23](https://github.com/nico-bachner/v3/commit/7aa2f23eb1f398832162efb34cc8f842901068c7))
-* **structure:** further refactored home section footers ([319e769](https://github.com/nico-bachner/v3/commit/319e769346dec707d01914a0ac0daa9f94b3db90))
-* **structure:** refactored home section footers ([eaf9f4d](https://github.com/nico-bachner/v3/commit/eaf9f4d507661707727afb0a880dc543d7fbd0c6))
-
+-   added hover shadow transition to project cards ([620e03b](https://github.com/nico-bachner/v3/commit/620e03bffe6a9786955ab7c02fd3b2d39870b5c6))
+-   converted codebase to TypeScript ([f4b32eb](https://github.com/nico-bachner/v3/commit/f4b32ebb055390f3cb171a8728816ebdea218090))
+-   removed tailwind forms dependency ([39d7057](https://github.com/nico-bachner/v3/commit/39d7057838078a39f51815b2a65fac30af302531))
+-   **design:** added subtitle text gradient ([8bf252d](https://github.com/nico-bachner/v3/commit/8bf252dfb2d8f17c87eaa66077ac057f2e6d3e7c))
+-   **scripts:** added global format script ([7aa2f23](https://github.com/nico-bachner/v3/commit/7aa2f23eb1f398832162efb34cc8f842901068c7))
+-   **structure:** further refactored home section footers ([319e769](https://github.com/nico-bachner/v3/commit/319e769346dec707d01914a0ac0daa9f94b3db90))
+-   **structure:** refactored home section footers ([eaf9f4d](https://github.com/nico-bachner/v3/commit/eaf9f4d507661707727afb0a880dc543d7fbd0c6))
 
 ### Bug Fixes
 
-* **design:** improved some styling ([8f95659](https://github.com/nico-bachner/v3/commit/8f95659ca9cdd81ad43a2512911f2b42ca0c9109))
-* finished conversion to TypeScript ([9a4d945](https://github.com/nico-bachner/v3/commit/9a4d945a1842e563a2243565394a59ffa2146e2b))
-* **content:** streamlined some title translations ([0157996](https://github.com/nico-bachner/v3/commit/0157996d360cda4ccd323f6bc3dee88f14927990))
-* **design:** fixed Firefox style error ([a7c529a](https://github.com/nico-bachner/v3/commit/a7c529aa88c30a04d1003e7f5cfc10b144dbbea8))
-* **design:** fixed language selector style ([c76a641](https://github.com/nico-bachner/v3/commit/c76a64100f89328ce6210b613c9bb58b06962e32))
-* **design:** improved default link styling ([6333633](https://github.com/nico-bachner/v3/commit/6333633893380811d0b1608b283df7c494235de2))
-* **design:** improved language selector style ([bd7b067](https://github.com/nico-bachner/v3/commit/bd7b067d25d93244c9db22a3cb3b4d83bf4a5856))
-* **design:** limited blues to 3 shades ([9fcf672](https://github.com/nico-bachner/v3/commit/9fcf672c8658cc1b4ddd44bc48983e093cf07235))
-* **design:** limited grays to 5 shades ([5d49ba1](https://github.com/nico-bachner/v3/commit/5d49ba14164d63f6b11dcb561684b2fe99260806))
-* improved global font consistency ([1d28dad](https://github.com/nico-bachner/v3/commit/1d28dadfab43f1805e2bbc2e421992394eb4f089))
-* removed unused css class ([08f6bb5](https://github.com/nico-bachner/v3/commit/08f6bb578a85472678fd39439f70f9d530e7265a))
-* upgraded dependencies ([ef70368](https://github.com/nico-bachner/v3/commit/ef7036866b6633d4959c8708a9d0e30a03ed3122))
-* **sitemap:** fixed sitemap generation errors ([c8e7f70](https://github.com/nico-bachner/v3/commit/c8e7f702a74ebe55929a5d5885fdf0756c9b5941))
-* **sitemap:** removed leftover console log ([6225524](https://github.com/nico-bachner/v3/commit/6225524e31e72e82d62a76cdbec9559363e845d9))
+-   **design:** improved some styling ([8f95659](https://github.com/nico-bachner/v3/commit/8f95659ca9cdd81ad43a2512911f2b42ca0c9109))
+-   finished conversion to TypeScript ([9a4d945](https://github.com/nico-bachner/v3/commit/9a4d945a1842e563a2243565394a59ffa2146e2b))
+-   **content:** streamlined some title translations ([0157996](https://github.com/nico-bachner/v3/commit/0157996d360cda4ccd323f6bc3dee88f14927990))
+-   **design:** fixed Firefox style error ([a7c529a](https://github.com/nico-bachner/v3/commit/a7c529aa88c30a04d1003e7f5cfc10b144dbbea8))
+-   **design:** fixed language selector style ([c76a641](https://github.com/nico-bachner/v3/commit/c76a64100f89328ce6210b613c9bb58b06962e32))
+-   **design:** improved default link styling ([6333633](https://github.com/nico-bachner/v3/commit/6333633893380811d0b1608b283df7c494235de2))
+-   **design:** improved language selector style ([bd7b067](https://github.com/nico-bachner/v3/commit/bd7b067d25d93244c9db22a3cb3b4d83bf4a5856))
+-   **design:** limited blues to 3 shades ([9fcf672](https://github.com/nico-bachner/v3/commit/9fcf672c8658cc1b4ddd44bc48983e093cf07235))
+-   **design:** limited grays to 5 shades ([5d49ba1](https://github.com/nico-bachner/v3/commit/5d49ba14164d63f6b11dcb561684b2fe99260806))
+-   improved global font consistency ([1d28dad](https://github.com/nico-bachner/v3/commit/1d28dadfab43f1805e2bbc2e421992394eb4f089))
+-   removed unused css class ([08f6bb5](https://github.com/nico-bachner/v3/commit/08f6bb578a85472678fd39439f70f9d530e7265a))
+-   upgraded dependencies ([ef70368](https://github.com/nico-bachner/v3/commit/ef7036866b6633d4959c8708a9d0e30a03ed3122))
+-   **sitemap:** fixed sitemap generation errors ([c8e7f70](https://github.com/nico-bachner/v3/commit/c8e7f702a74ebe55929a5d5885fdf0756c9b5941))
+-   **sitemap:** removed leftover console log ([6225524](https://github.com/nico-bachner/v3/commit/6225524e31e72e82d62a76cdbec9559363e845d9))
 
 ### [0.1.3](https://github.com/nico-bachner/v3/compare/v0.1.2...v0.1.3) (2021-02-15)
 
