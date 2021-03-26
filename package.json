@@ -21,6 +21,7 @@
         "format": "prettier --write **/*.{ts,tsx,md,mdx,js,json}"
     },
     "dependencies": {
+        "@mdx-js/loader": "^1.6.22",
         "@mdx-js/react": "^1.6.22",
         "@next/mdx": "^10.0.9",
         "@supabase/supabase-js": "^1.7.1",
