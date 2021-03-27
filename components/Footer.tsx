@@ -17,7 +17,6 @@ export default function Footer(props: Props) {
                             <p key={index} className="text-left">
                                 <Link
                                     href={page.href}
-                                    as={page.slug ? '/' + page.slug : '/'}
                                     className="hover:text-gray-dark dark:hover:text-gray-light"
                                 >
                                     {page.title}
