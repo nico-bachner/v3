@@ -68,9 +68,21 @@ export default function Home() {
             <section>
                 <h2>Contact</h2>
                 <p>
-                    If you would like to get in touch with me, you can do so via
-                    [email](mailto:yo@nicob.dev). If you insist, you can also
-                    reach me via [telephone](tel:+352621399187).
+                    If you would like to get in touch with me, you can do so via{' '}
+                    <Link
+                        href="mailto:hello@nicob.dev"
+                        className="text-blue hover:underline"
+                    >
+                        email
+                    </Link>
+                    . I am also available on{' '}
+                    <Link
+                        href="https://dev.to/nico_bachner"
+                        className="text-blue hover:underline"
+                    >
+                        DEV
+                    </Link>
+                    .
                 </p>
             </section>
         </>
