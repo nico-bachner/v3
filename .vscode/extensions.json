@@ -1,0 +1,8 @@
+{
+    "recommendations": [
+        "esbenp.prettier-vscode",
+        "bradlc.vscode-tailwindcss",
+        "heybourn.headwind",
+        "silvenon.mdx"
+    ]
+}
