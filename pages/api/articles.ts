@@ -1,11 +1,11 @@
-import type { NextApiRequest, NextApiResponse } from "next";
-import type { DevArticle } from "../../lib/types";
+import type { NextApiRequest, NextApiResponse } from 'next';
+import type { DevArticle } from '../../lib/types';
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
     const devArticlesResponse = await fetch(
-        "https://dev.to/api/articles?username=nico_bachner"
+        'https://dev.to/api/articles?username=nico_bachner'
     );
-    const devArticles = await devArticlesResponse.json();
+    const devArticles: DevArticle[] = await devArticlesResponse.json();
 
     const articles = devArticles.map((devArticle: DevArticle) => {
         return {

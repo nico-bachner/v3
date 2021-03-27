@@ -1,16 +1,16 @@
-import type { NextApiRequest, NextApiResponse } from "next";
-import type { GitHubRepository } from "../../lib/types";
+import type { NextApiRequest, NextApiResponse } from 'next';
+import type { GitHubRepository } from '../../lib/types';
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
     const GitHubRepositoriesResponse = await fetch(
-        "https://api.github.com/users/nico-bachner/repos"
+        'https://api.github.com/users/nico-bachner/repos'
     );
-    const GitHubRepositories = await GitHubRepositoriesResponse.json();
+    const GitHubRepositories: GitHubRepository[] = await GitHubRepositoriesResponse.json();
 
     const articles = GitHubRepositories.map(
         (GitHubRepository: GitHubRepository) => {
             return {
-                name: GitHubRepository.name.replace(/-/g, " "),
+                name: GitHubRepository.name.replace(/-/g, ' '),
                 slug: GitHubRepository.name,
                 description: GitHubRepository.description,
                 repo_url: GitHubRepository.html_url,
