@@ -4,7 +4,7 @@ interface Props {
     href: string;
     as?: string;
     className?: string;
-    children?: React.ReactNode;
+    children: React.ReactNode;
 }
 
 export default function Link(props: Props) {

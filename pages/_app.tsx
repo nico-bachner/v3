@@ -12,7 +12,7 @@ import { translations } from '../i18n';
 import type { AppProps } from 'next/app';
 
 export default function App({ Component, pageProps }: AppProps) {
-    const i18n = useI18n(translations);
+    const i18n = useI18n(translations, 'en');
 
     return (
         <>
@@ -28,7 +28,7 @@ export default function App({ Component, pageProps }: AppProps) {
                     <Component {...pageProps} />
                 </MDX>
 
-                <Footer pages={i18n.pages} />
+                <Footer pages={i18n.pages} links={i18n.links} />
             </div>
 
             <MobileNavigation pages={i18n.pages} />

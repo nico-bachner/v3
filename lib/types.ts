@@ -22,10 +22,13 @@ export interface Translation {
         showMore: string;
         showLess: string;
     };
-    pages: Page[];
+    pages: Links;
+    links: Links;
 }
 
-export interface Page {
+export type Links = Link[];
+
+export interface Link {
     title: string;
     href: string;
 }

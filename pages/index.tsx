@@ -7,7 +7,7 @@ import ProjectsList from '../components/ProjectsList';
 import ArticlesList from '../components/ArticlesList';
 
 export default function Home() {
-    const i18n = useI18n(translations);
+    const i18n = useI18n(translations, 'en');
 
     const [showAllProjects, setShowAllProjects] = useState(false);
     const [articlesCount, setArticlesCount] = useState(3);
@@ -27,7 +27,7 @@ export default function Home() {
             </section>
             <section>
                 <h2>{i18n.projects.title}</h2>
-                <p className="my-4">{i18n.projects.subtitle}</p>
+                <p>{i18n.projects.subtitle}</p>
                 <ProjectsList featured={showAllProjects ? false : true} />
                 <div className="flex justify-between px-2 py-4 sm:space-x-8">
                     <button
@@ -49,7 +49,7 @@ export default function Home() {
             </section>
             <section>
                 <h2>{i18n.articles.title}</h2>
-                <p className="my-4">{i18n.articles.subtitle}</p>
+                <p>{i18n.articles.subtitle}</p>
                 <ArticlesList count={articlesCount} />
                 <div className="flex justify-between px-2 py-4 sm:space-x-8">
                     <button
@@ -64,6 +64,14 @@ export default function Home() {
                         {i18n.actions.showAll}
                     </Link>
                 </div>
+            </section>
+            <section>
+                <h2>Contact</h2>
+                <p>
+                    If you would like to get in touch with me, you can do so via
+                    [email](mailto:yo@nicob.dev). If you insist, you can also
+                    reach me via [telephone](tel:+352621399187).
+                </p>
             </section>
         </>
     );

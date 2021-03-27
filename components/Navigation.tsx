@@ -1,12 +1,12 @@
 import { useRouter } from 'next/router';
 
-import type { Page } from '../lib/types';
+import type { Links } from '../lib/types';
 
 import Link from './Link';
 import Logo from './Logo';
 
 interface Props {
-    pages: Page[];
+    pages: Links;
 }
 
 export default function Navigation(props: Props) {

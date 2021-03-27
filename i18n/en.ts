@@ -44,37 +44,19 @@ export const en: Translation = {
             href: '/articles',
         },
         {
-            title: 'Source Code',
-            href: 'https://github.com/nico-bachner/v3',
-        },
-        {
             title: 'Uses',
             href: '/uses',
-        },
-        {
-            title: 'Repositories',
-            href: '/repositories',
         },
         {
             title: 'Mac Setup',
             href: '/mac-setup',
         },
         {
-            title: 'CV',
-            href: 'https://read.cv/nico_bachner',
+            title: 'Repositories',
+            href: '/repositories',
         },
-        {
-            title: '',
-            href: '',
-        },
-        {
-            title: '',
-            href: '',
-        },
-        {
-            title: '',
-            href: '',
-        },
+    ],
+    links: [
         {
             title: 'GitHub',
             href: 'https://github.com/nico-bachner',
@@ -90,6 +72,14 @@ export const en: Translation = {
         {
             title: 'Code Golf',
             href: 'https://code.golf/golfers/nico-bachner',
+        },
+        {
+            title: 'Source Code',
+            href: 'https://github.com/nico-bachner/v3',
+        },
+        {
+            title: 'CV',
+            href: 'https://read.cv/nico_bachner',
         },
     ],
 };

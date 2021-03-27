@@ -4,7 +4,7 @@ import { translations } from '../i18n';
 import ProjectsList from '../components/ProjectsList';
 
 export default function Projects() {
-    const i18n = useI18n(translations);
+    const i18n = useI18n(translations, 'en');
 
     return (
         <main>

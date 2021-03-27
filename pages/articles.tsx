@@ -4,7 +4,7 @@ import { translations } from '../i18n';
 import ArticlesList from '../components/ArticlesList';
 
 export default function Articles() {
-    const i18n = useI18n(translations);
+    const i18n = useI18n(translations, 'en');
 
     return (
         <main>

@@ -25,7 +25,7 @@ const mdxComponents = {
             <main {...props}>
                 {props.children}
 
-                <p className="mt-24 text-center text-blue">
+                <p className="mt-12 text-right text-blue">
                     <Link
                         href={
                             'https://github.com/nico-bachner/v3/edit/main/pages' +
@@ -33,7 +33,7 @@ const mdxComponents = {
                             '.mdx'
                         }
                     >
-                        Report Typo(s)
+                        Edit on GitHub
                     </Link>
                 </p>
             </main>

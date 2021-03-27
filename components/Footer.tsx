@@ -1,17 +1,21 @@
+import { useRouter } from 'next/router';
 import Link from './Link';
 
-import type { Page } from '../lib/types';
+import type { Links } from '../lib/types';
 
 interface Props {
-    pages: Page[];
+    pages: Links;
+    links: Links;
 }
 
 export default function Footer(props: Props) {
+    const router = useRouter();
+
     return (
-        <footer className="my-24">
-            <hr className="my-20" />
-            <nav className="grid grid-cols-2 gap-y-12 gap-x-4 sm:grid-cols-4 text-gray">
-                <div className="grid gap-4">
+        <footer className="my-12 mb-24 text-gray">
+            <hr />
+            <nav className="grid grid-cols-2 my-16 gap-y-12 gap-x-6 sm:grid-cols-4">
+                <div className="grid grid-flow-col grid-rows-4 gap-4">
                     {props.pages.slice(0, 4).map((page, index) => {
                         return (
                             <p key={index} className="text-left">
@@ -25,39 +29,36 @@ export default function Footer(props: Props) {
                         );
                     })}
                 </div>
-                <div className="grid gap-4">
-                    {props.pages.slice(4, 8).map((item, index) => {
+                <div className="grid grid-flow-col grid-rows-4 gap-4">
+                    {props.pages.slice(4, 8).map((page, index) => {
                         return (
-                            <p
-                                key={index}
-                                className="text-right sm:text-center"
-                            >
+                            <p key={index} className="text-right sm:text-left">
                                 <Link
-                                    href={item.href}
+                                    href={page.href}
                                     className="hover:text-gray-dark dark:hover:text-gray-light"
                                 >
-                                    {item.title}
+                                    {page.title}
                                 </Link>
                             </p>
                         );
                     })}
                 </div>
-                <div className="grid gap-4">
-                    {props.pages.slice(8, 12).map((item, index) => {
+                <div className="grid grid-flow-col grid-rows-4 gap-4">
+                    {props.links.slice(4, 8).map((link, index) => {
                         return (
-                            <p key={index} className="text-left sm:text-center">
+                            <p key={index} className="text-left sm:text-right">
                                 <Link
-                                    href={item.href}
+                                    href={link.href}
                                     className="hover:text-gray-dark dark:hover:text-gray-light"
                                 >
-                                    {item.title}
+                                    {link.title}
                                 </Link>
                             </p>
                         );
                     })}
                 </div>
-                <div className="grid gap-4">
-                    {props.pages.slice(12, 16).map((link, index) => {
+                <div className="grid grid-flow-col grid-rows-4 gap-4">
+                    {props.links.slice(0, 4).map((link, index) => {
                         return (
                             <p key={index} className="text-right">
                                 <Link
