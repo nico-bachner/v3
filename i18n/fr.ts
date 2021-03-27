@@ -30,18 +30,70 @@ export const fr: Translation = {
     pages: [
         {
             title: 'Accueil',
+            href: '/',
         },
         {
             title: 'Sur moi',
+            href: '/about',
             slug: 'sur-moi',
         },
         {
             title: 'Projets',
+            href: '/projects',
             slug: 'projets',
         },
         {
             title: 'Articles',
+            href: '/articles',
             slug: 'articles',
+        },
+        {
+            title: 'Source Code',
+            href: 'https://github.com/nico-bachner/v3',
+        },
+        {
+            title: 'Uses',
+            href: '/uses',
+        },
+        {
+            title: 'Repositories',
+            href: '/repositories',
+        },
+        {
+            title: 'Mac Setup',
+            href: '/mac-setup',
+        },
+        {
+            title: 'CV',
+            href: 'https://read.cv/nico_bachner',
+        },
+        {
+            title: '',
+            href: '',
+        },
+        {
+            title: '',
+            href: '',
+        },
+        {
+            title: '',
+            href: '',
+        },
+        {
+            title: 'GitHub',
+            href: 'https://github.com/nico-bachner',
+        },
+        {
+            title: 'DEV',
+            href: 'https://dev.to/nico_bachner',
+        },
+        {
+            title: 'Twitter',
+            href: 'https://twitter.com/nico_bachner',
+        },
+        {
+            title: 'Code Golf',
+            href: 'https://code.golf/golfers/nico-bachner',
         },
     ],
 };

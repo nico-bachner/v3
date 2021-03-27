@@ -1,8 +1,7 @@
 import { useState } from 'react';
 import useSWR from 'swr';
 
-import ExternalLink from '../components/ExternalLink';
-import Card from '../components/Card';
+import Link from './Link';
 
 import type { Repository } from '../lib/types';
 
@@ -37,7 +36,7 @@ export default function Repositories() {
                                 (repo.stars > 0 || showAllRepos)
                             ) {
                                 return (
-                                    <Card key={index}>
+                                    <div key={index} className="card">
                                         <h3 className="text-2xl text-center capitalize sm:text-3xl">
                                             {repo.name}
                                         </h3>
@@ -45,18 +44,24 @@ export default function Repositories() {
                                             {repo.description}
                                         </p>
                                         <div className="flex mt-4 justify-evenly">
-                                            <ExternalLink href={repo.repo_url}>
+                                            <Link
+                                                href={repo.repo_url}
+                                                className="text-blue"
+                                            >
                                                 GitHub Repository
-                                            </ExternalLink>
+                                            </Link>
                                             {repo.url ? (
-                                                <ExternalLink href={repo.url}>
+                                                <Link
+                                                    href={repo.url}
+                                                    className="text-blue"
+                                                >
                                                     Project Site
-                                                </ExternalLink>
+                                                </Link>
                                             ) : (
                                                 <></>
                                             )}
                                         </div>
-                                    </Card>
+                                    </div>
                                 );
                             }
                         })}
@@ -78,7 +83,7 @@ export default function Repositories() {
                     {data.map((repo: Repository, index: number) => {
                         if (repo.is_fork && (repo.stars > 0 || showAllForks)) {
                             return (
-                                <Card key={index}>
+                                <div key={index} className="card">
                                     <h3 className="text-2xl text-center capitalize sm:text-3xl">
                                         {repo.name}
                                     </h3>
@@ -86,18 +91,24 @@ export default function Repositories() {
                                         {repo.description}
                                     </p>
                                     <div className="flex mt-4 justify-evenly">
-                                        <ExternalLink href={repo.repo_url}>
+                                        <Link
+                                            href={repo.repo_url}
+                                            className="text-blue"
+                                        >
                                             GitHub Repository
-                                        </ExternalLink>
+                                        </Link>
                                         {repo.url ? (
-                                            <ExternalLink href={repo.url}>
+                                            <Link
+                                                href={repo.url}
+                                                className="text-blue"
+                                            >
                                                 Project Site
-                                            </ExternalLink>
+                                            </Link>
                                         ) : (
                                             <></>
                                         )}
                                     </div>
-                                </Card>
+                                </div>
                             );
                         }
                     })}

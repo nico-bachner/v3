@@ -1,7 +1,6 @@
 import useSWR from 'swr';
 
-import InternalLink from './InternalLink';
-import Card from './Card';
+import Link from '../components/Link';
 
 import type { Article } from '../lib/types';
 
@@ -30,23 +29,21 @@ export default function ArticlesList(props: Props) {
         }
 
         return (
-            <div className="mt-4 grid gap-4">
+            <div className="grid gap-4 mt-4">
                 {articles.map((article: Article, index: number) => {
                     return (
-                        <InternalLink
-                            className=""
+                        <Link
                             href={'/articles/' + article.slug}
                             key={index}
+                            className="card"
                         >
-                            <Card>
-                                <h3>{article.title ?? article.slug}</h3>
-                                <p className="mt-2">{article.description}</p>
-                            </Card>
-                        </InternalLink>
+                            <h3>{article.title ?? article.slug}</h3>
+                            <p className="mt-2">{article.description}</p>
+                        </Link>
                     );
                 })}
             </div>
         );
     }
-    return <p className="my-8">Loading Projects...</p>;
+    return <p className="my-8">Loading Articles...</p>;
 }

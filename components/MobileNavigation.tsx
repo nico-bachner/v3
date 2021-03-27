@@ -2,10 +2,10 @@ import { useRouter } from 'next/router';
 
 import type { Page } from '../lib/types';
 
-import InternalLink from './InternalLink';
+import Link from './Link';
 
 interface Props {
-    pages: Array<Page>;
+    pages: Page[];
 }
 
 export default function Navigation(props: Props) {
@@ -13,12 +13,12 @@ export default function Navigation(props: Props) {
 
     return (
         <nav className="sticky bottom-0 z-50 flex w-screen py-8 text-sm font-bold sm:hidden glass justify-evenly">
-            {props.pages.map((page, index) => {
+            {props.pages.slice(0, 4).map((page, index) => {
                 return (
-                    <InternalLink
+                    <Link
                         key={index}
                         href={page.href}
-                        as={page.slug != undefined ? '/' + page.slug : '/'}
+                        as={'/' + page.slug}
                         className={
                             router.pathname == page.href
                                 ? 'p-2 text-gray'
@@ -26,7 +26,7 @@ export default function Navigation(props: Props) {
                         }
                     >
                         {page.title}
-                    </InternalLink>
+                    </Link>
                 );
             })}
         </nav>

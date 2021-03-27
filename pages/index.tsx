@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useI18n } from '../hooks/i18n';
 import { translations } from '../i18n';
 
-import InternalLink from '../components/InternalLink';
+import Link from '../components/Link';
 import ProjectsList from '../components/ProjectsList';
 import ArticlesList from '../components/ArticlesList';
 
@@ -21,13 +21,9 @@ export default function Home() {
             <section>
                 <h2>{i18n.about.title}</h2>
                 <p>{i18n.about.preview}</p>
-                <div className="flex p-4">
-                    <p className="flex-grow text-right capitalize">
-                        <InternalLink href="/about">
-                            {i18n.actions.readMore}
-                        </InternalLink>
-                    </p>
-                </div>
+                <p className="px-2 py-4 text-right capitalize text-blue">
+                    <Link href="/about">{i18n.actions.readMore}</Link>
+                </p>
             </section>
             <section>
                 <h2>{i18n.projects.title}</h2>
@@ -46,11 +42,9 @@ export default function Home() {
                             ? i18n.actions.showLess
                             : i18n.actions.showMore}
                     </button>
-                    <p className="text-right capitalize sm:flex-grow">
-                        <InternalLink href="/projects">
-                            {i18n.actions.showAll}
-                        </InternalLink>
-                    </p>
+                    <Link href="/projects" className="capitalize text-blue">
+                        {i18n.actions.showAll}
+                    </Link>
                 </div>
             </section>
             <section>
@@ -66,11 +60,9 @@ export default function Home() {
                     >
                         {i18n.actions.showMore}
                     </button>
-                    <p className="text-right capitalize sm:flex-grow">
-                        <InternalLink href="/articles">
-                            {i18n.actions.showAll}
-                        </InternalLink>
-                    </p>
+                    <Link href="/articles" className="capitalize text-blue">
+                        {i18n.actions.showAll}
+                    </Link>
                 </div>
             </section>
         </>

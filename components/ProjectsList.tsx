@@ -1,7 +1,6 @@
 import useSWR from 'swr';
 
-import InternalLink from './InternalLink';
-import Card from './Card';
+import Link from '../components/Link';
 
 import type { Project } from '../lib/types';
 
@@ -24,20 +23,18 @@ export default function ProjectsList(props: Props) {
     }
 
     return data ? (
-        <div className="mt-4 grid gap-4">
+        <div className="grid gap-4 mt-4">
             {data.map((project: Project, index: number) => {
                 if (!props.featured || project.featured) {
                     return (
-                        <InternalLink
-                            className=""
+                        <Link
                             href={'/projects/' + project.slug}
                             key={index}
+                            className="card"
                         >
-                            <Card>
-                                <h3>{project.title ?? project.slug}</h3>
-                                <p className="mt-2">{project.description}</p>
-                            </Card>
-                        </InternalLink>
+                            <h3>{project.title ?? project.slug}</h3>
+                            <p className="mt-2">{project.description}</p>
+                        </Link>
                     );
                 }
             })}

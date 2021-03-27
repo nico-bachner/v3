@@ -1,8 +1,7 @@
 import Image from 'next/image';
 import { useRouter } from 'next/router';
 
-import InternalLink from '../components/InternalLink';
-import ExternalLink from '../components/ExternalLink';
+import Link from './Link';
 
 import { MDXProvider } from '@mdx-js/react';
 
@@ -26,8 +25,8 @@ const mdxComponents = {
             <main {...props}>
                 {props.children}
 
-                <p className="mt-24 text-center">
-                    <ExternalLink
+                <p className="mt-24 text-center text-blue">
+                    <Link
                         href={
                             'https://github.com/nico-bachner/v3/edit/main/pages' +
                             router.pathname +
@@ -35,7 +34,7 @@ const mdxComponents = {
                         }
                     >
                         Report Typo(s)
-                    </ExternalLink>
+                    </Link>
                 </p>
             </main>
         );
@@ -44,12 +43,11 @@ const mdxComponents = {
     h3: (props: Props) => <h3 className="mt-8">{props.children}</h3>,
     h4: (props: Props) => <h4 className="mt-6">{props.children}</h4>,
     p: (props: Props) => <p className="my-4">{props.children}</p>,
-    a: (props: LinkProps) =>
-        props.href.startsWith('/') ? (
-            <InternalLink href={props.href}>{props.children}</InternalLink>
-        ) : (
-            <ExternalLink href={props.href}>{props.children}</ExternalLink>
-        ),
+    a: (props: LinkProps) => (
+        <Link href={props.href} className="hover:underline text-blue">
+            {props.children}
+        </Link>
+    ),
     img: (props: ImageProps) => (
         <img src={props.src} className="my-4" loading="lazy" />
     ),

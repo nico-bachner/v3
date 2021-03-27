@@ -4,10 +4,10 @@
 
 @layer base {
     @font-face {
-        font-family: "Inter";
+        font-family: 'Inter';
         font-weight: 100 900;
         font-display: optional;
-        src: url("/fonts/inter.woff2") format("woff2");
+        src: url('/fonts/inter.woff2') format('woff2');
     }
 
     :root {
@@ -44,10 +44,9 @@
     hr {
         @apply border border-gray-lightest dark:border-gray-dark;
     }
-
     select {
-        @apply px-3 py-1 ml-8 text-center bg-transparent border rounded appearance-none border-gray-light dark:border-gray-dark;
-        background-image: url("/icons/select.svg");
+        @apply py-1 pl-3 pr-8 text-center bg-transparent border rounded appearance-none border-gray-light dark:border-gray-dark;
+        background-image: url('/icons/select.svg');
         background-position: 75% center;
         background-repeat: no-repeat;
         background-size: 0.75em 0.75em;
@@ -55,6 +54,17 @@
 }
 
 @layer utilities {
+    @media (prefers-color-scheme: light) {
+        .card {
+            @apply w-full p-6 text-left transition duration-300 ease-in-out shadow hover:shadow-lg sm:px-8;
+        }
+    }
+    @media (prefers-color-scheme: dark) {
+        .card {
+            @apply w-full p-6 text-left border rounded hover:border-gray border-gray-dark sm:px-8;
+        }
+    }
+
     @supports (backdrop-filter: blur()) {
         .glass {
             backdrop-filter: blur(20px);

@@ -1,87 +1,71 @@
-import InternalLink from './InternalLink';
-import ExternalLink from './ExternalLink';
+import Link from './Link';
 
 import type { Page } from '../lib/types';
 
 interface Props {
     pages: Page[];
-    hiddenPages: Page[];
-    otherPages: Page[];
-    externalPages: Page[];
 }
 
 export default function Footer(props: Props) {
-    const { pages, hiddenPages, otherPages, externalPages } = props;
-
     return (
-        <nav className="text-center grid grid-cols-2 gap-8 sm:grid-cols-4 text-gray">
-            <ul>
-                {pages.map((page, index) => {
+        <nav className="grid grid-cols-2 gap-y-12 gap-x-4 sm:grid-cols-4 text-gray">
+            <div className="grid gap-4">
+                {props.pages.slice(0, 4).map((page, index) => {
                     return (
-                        <li key={index} className="my-4 text-left">
-                            <InternalLink
+                        <p key={index} className="text-left">
+                            <Link
                                 href={page.href}
-                                as={
-                                    page.slug != undefined
-                                        ? '/' + page.slug
-                                        : '/'
-                                }
-                                className="hover:text-gray-darkest dark:hover:text-gray-lightest"
+                                as={page.slug ? '/' + page.slug : '/'}
+                                className="hover:text-gray-dark dark:hover:text-gray-light"
                             >
                                 {page.title}
-                            </InternalLink>
-                        </li>
+                            </Link>
+                        </p>
                     );
                 })}
-            </ul>
-            <ul>
-                {hiddenPages.map((item, index) => {
+            </div>
+            <div className="grid gap-4">
+                {props.pages.slice(4, 8).map((item, index) => {
                     return (
-                        <li
-                            key={index}
-                            className="my-4 text-right sm:text-center"
-                        >
-                            <InternalLink
+                        <p key={index} className="text-right sm:text-center">
+                            <Link
                                 href={item.href}
                                 className="hover:text-gray-dark dark:hover:text-gray-light"
                             >
                                 {item.title}
-                            </InternalLink>
-                        </li>
+                            </Link>
+                        </p>
                     );
                 })}
-            </ul>
-            <ul>
-                {otherPages.map((item, index) => {
+            </div>
+            <div className="grid gap-4">
+                {props.pages.slice(8, 12).map((item, index) => {
                     return (
-                        <li
-                            key={index}
-                            className="my-4 text-left sm:text-center"
-                        >
-                            <ExternalLink
+                        <p key={index} className="text-left sm:text-center">
+                            <Link
                                 href={item.href}
                                 className="hover:text-gray-dark dark:hover:text-gray-light"
                             >
                                 {item.title}
-                            </ExternalLink>
-                        </li>
+                            </Link>
+                        </p>
                     );
                 })}
-            </ul>
-            <ul>
-                {externalPages.map((link, index) => {
+            </div>
+            <div className="grid gap-4">
+                {props.pages.slice(12, 16).map((link, index) => {
                     return (
-                        <li key={index} className="my-4 text-right">
-                            <ExternalLink
+                        <p key={index} className="text-right">
+                            <Link
                                 href={link.href}
                                 className="hover:text-gray-dark dark:hover:text-gray-light"
                             >
                                 {link.title}
-                            </ExternalLink>
-                        </li>
+                            </Link>
+                        </p>
                     );
                 })}
-            </ul>
+            </div>
         </nav>
     );
 }

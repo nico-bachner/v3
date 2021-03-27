@@ -22,23 +22,7 @@ export interface Translation {
         showMore: string;
         showLess: string;
     };
-    pages: [
-        {
-            title: string;
-        },
-        {
-            title: string;
-            slug: string;
-        },
-        {
-            title: string;
-            slug: string;
-        },
-        {
-            title: string;
-            slug: string;
-        }
-    ];
+    pages: Page[];
 }
 
 export interface Page {

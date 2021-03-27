@@ -1,4 +1,4 @@
-import InternalLink from '../components/InternalLink';
+import Link from '../components/Link';
 
 export default function Custom404() {
     return (
@@ -10,12 +10,12 @@ export default function Custom404() {
                 should double-check the url to make sure you're looking for the
                 right page.
             </p>
-            <InternalLink
+            <Link
                 href="/"
                 className="px-8 py-4 font-medium text-black border rounded dark:text-white hover:bg-gray-lightest dark:hover:bg-gray-darkest dark:border-gray-dark"
             >
                 Return to Homepage
-            </InternalLink>
+            </Link>
         </main>
     );
 }

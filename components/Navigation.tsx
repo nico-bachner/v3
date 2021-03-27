@@ -2,11 +2,11 @@ import { useRouter } from 'next/router';
 
 import type { Page } from '../lib/types';
 
-import InternalLink from './InternalLink';
+import Link from './Link';
 import Logo from './Logo';
 
 interface Props {
-    pages: Array<Page>;
+    pages: Page[];
 }
 
 export default function Navigation(props: Props) {
@@ -14,29 +14,28 @@ export default function Navigation(props: Props) {
     const locale = router.locale;
 
     return (
-        <nav className="top-0 z-50 flex items-center justify-between max-w-4xl p-8 mx-auto my-4 font-medium sm:my-8 sm:sticky glass">
-            <a href="/">
+        <nav className="top-0 z-50 flex items-center max-w-4xl p-8 mx-auto my-4 space-x-8 font-medium text-gray-darkest dark:text-gray-lightest sm:my-8 sm:sticky glass">
+            <a href="/" className="flex-grow">
                 <Logo className="w-12 h-12" />
             </a>
-            <ul className="justify-end flex-grow hidden text-lg space-x-8 sm:flex">
-                {props.pages.map((page, index) => {
+            <p className="hidden space-x-8 text-lg sm:flex">
+                {props.pages.slice(0, 4).map((page, index) => {
                     return (
-                        <li key={index}>
-                            <InternalLink
-                                href={page.href}
-                                as={page.slug ? '/' + page.slug : '/'}
-                                className={
-                                    router.pathname == page.href
-                                        ? 'text-gray cursor-default'
-                                        : 'hover:text-black dark:hover:text-white'
-                                }
-                            >
-                                {page.title}
-                            </InternalLink>
-                        </li>
+                        <Link
+                            key={index}
+                            href={page.href}
+                            as={'/' + page.slug}
+                            className={
+                                router.pathname == page.href
+                                    ? 'text-gray cursor-default'
+                                    : 'hover:text-black dark:hover:text-white'
+                            }
+                        >
+                            {page.title}
+                        </Link>
                     );
                 })}
-            </ul>
+            </p>
             <label htmlFor="#language-select" className="sr-only">
                 {locale == 'lu'
                     ? 'Sprooch ännern'
@@ -57,7 +56,6 @@ export default function Navigation(props: Props) {
                     });
                 }}
                 defaultValue={router.locale}
-                className="py-1 pr-8 ml-8 text-gray-600 bg-transparent border border-gray-400 rounded dark:text-gray-300 dark:border-gray-700"
             >
                 {router.locales?.map((language, index) => {
                     return (
