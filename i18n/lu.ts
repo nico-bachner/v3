@@ -35,17 +35,14 @@ export const lu: Translation = {
         {
             title: 'Iwwert mech',
             href: '/about',
-            slug: 'iwwert-mech',
         },
         {
             title: 'Projeten',
             href: '/projects',
-            slug: 'projeten',
         },
         {
             title: 'Artikelen',
             href: '/articles',
-            slug: 'artikelen',
         },
         {
             title: 'Source Code',

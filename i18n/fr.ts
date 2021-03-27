@@ -35,20 +35,17 @@ export const fr: Translation = {
         {
             title: 'Sur moi',
             href: '/about',
-            slug: 'sur-moi',
         },
         {
             title: 'Projets',
             href: '/projects',
-            slug: 'projets',
         },
         {
             title: 'Articles',
             href: '/articles',
-            slug: 'articles',
         },
         {
-            title: 'Source Code',
+            title: 'Code Source',
             href: 'https://github.com/nico-bachner/v3',
         },
         {
@@ -56,15 +53,15 @@ export const fr: Translation = {
             href: '/uses',
         },
         {
-            title: 'Repositories',
+            title: 'Repositoires',
             href: '/repositories',
         },
         {
-            title: 'Mac Setup',
+            title: 'Mon Setup Mac',
             href: '/mac-setup',
         },
         {
-            title: 'CV',
+            title: 'Curriculum Vitae',
             href: 'https://read.cv/nico_bachner',
         },
         {

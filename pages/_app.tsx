@@ -28,10 +28,7 @@ export default function App({ Component, pageProps }: AppProps) {
                     <Component {...pageProps} />
                 </MDX>
 
-                <footer className="my-24">
-                    <hr className="my-20" />
-                    <Footer pages={i18n.pages} />
-                </footer>
+                <Footer pages={i18n.pages} />
             </div>
 
             <MobileNavigation pages={i18n.pages} />

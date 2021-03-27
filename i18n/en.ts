@@ -34,17 +34,14 @@ export const en: Translation = {
         {
             title: 'About',
             href: '/about',
-            slug: 'about',
         },
         {
             title: 'Projects',
             href: '/projects',
-            slug: 'projects',
         },
         {
             title: 'Articles',
             href: '/articles',
-            slug: 'articles',
         },
         {
             title: 'Source Code',

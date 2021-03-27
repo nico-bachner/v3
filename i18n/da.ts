@@ -35,17 +35,14 @@ export const da: Translation = {
         {
             title: 'Om Mig',
             href: '/about',
-            slug: 'om-mig',
         },
         {
             title: 'Projekter',
             href: '/projects',
-            slug: 'projekter',
         },
         {
             title: 'Artikler',
             href: '/articles',
-            slug: 'artikler',
         },
         {
             title: 'Source Code',

@@ -28,7 +28,6 @@ export interface Translation {
 export interface Page {
     title: string;
     href: string;
-    slug?: string;
 }
 
 export interface Project {

@@ -24,7 +24,6 @@ export default function Navigation(props: Props) {
                         <Link
                             key={index}
                             href={page.href}
-                            as={'/' + page.slug}
                             className={
                                 router.pathname == page.href
                                     ? 'text-gray cursor-default'
