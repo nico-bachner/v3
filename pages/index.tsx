@@ -1,10 +1,10 @@
-import { useState } from "react";
-import { useI18n } from "../hooks/i18n";
-import { translations } from "../i18n";
+import { useState } from 'react';
+import { useI18n } from '../hooks/i18n';
+import { translations } from '../i18n';
 
-import InternalLink from "../components/InternalLink";
-import ProjectsList from "../components/ProjectsList";
-import ArticlesList from "../components/ArticlesList";
+import InternalLink from '../components/InternalLink';
+import ProjectsList from '../components/ProjectsList';
+import ArticlesList from '../components/ArticlesList';
 
 export default function Home() {
     const i18n = useI18n(translations);

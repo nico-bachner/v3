@@ -1,44 +1,44 @@
-export const mainPagesRoutes = ["/", "/about", "/projects", "/articles"];
+export const mainPagesRoutes = ['/', '/about', '/projects', '/articles'];
 
 export const hiddenPages = [
     {
-        title: "Source Code",
-        href: "https://github.com/nico-bachner/v3",
+        title: 'Source Code',
+        href: 'https://github.com/nico-bachner/v3',
     },
     {
-        title: "Uses",
-        href: "/uses",
+        title: 'Uses',
+        href: '/uses',
     },
     {
-        title: "Repositories",
-        href: "/repositories",
+        title: 'Repositories',
+        href: '/repositories',
     },
     {
-        title: "Mac Setup",
-        href: "/mac-setup",
+        title: 'Mac Setup',
+        href: '/mac-setup',
     },
 ];
 export const otherPages = [
     {
-        title: "CV",
-        href: "https://read.cv/nico_bachner",
+        title: 'CV',
+        href: 'https://read.cv/nico_bachner',
     },
 ];
 export const externalPages = [
     {
-        title: "GitHub",
-        href: "https://github.com/nico-bachner",
+        title: 'GitHub',
+        href: 'https://github.com/nico-bachner',
     },
     {
-        title: "DEV",
-        href: "https://dev.to/nico_bachner",
+        title: 'DEV',
+        href: 'https://dev.to/nico_bachner',
     },
     {
-        title: "Twitter",
-        href: "https://twitter.com/nico_bachner",
+        title: 'Twitter',
+        href: 'https://twitter.com/nico_bachner',
     },
     {
-        title: "Code Golf",
-        href: "https://code.golf/golfers/nico-bachner",
+        title: 'Code Golf',
+        href: 'https://code.golf/golfers/nico-bachner',
     },
 ];

@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from 'next/link';
 
 export default function InternalLink(props: {
     href: string;
@@ -9,7 +9,7 @@ export default function InternalLink(props: {
 }) {
     return (
         <Link href={props.href} as={props.as}>
-            <a className={props.className ?? "text-blue hover:underline"}>
+            <a className={props.className ?? 'text-blue hover:underline'}>
                 {props.children}
             </a>
         </Link>

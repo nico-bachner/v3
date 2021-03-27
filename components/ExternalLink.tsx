@@ -9,7 +9,7 @@ export default function ExternalLink(props: {
             href={props.href}
             target="_blank"
             rel="noopener noreferrer"
-            className={props.className ?? "text-blue hover:underline"}
+            className={props.className ?? 'text-blue hover:underline'}
         >
             {props.children}
         </a>

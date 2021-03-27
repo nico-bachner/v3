@@ -1,10 +1,10 @@
-import Image from "next/image";
-import { useRouter } from "next/router";
+import Image from 'next/image';
+import { useRouter } from 'next/router';
 
-import InternalLink from "../components/InternalLink";
-import ExternalLink from "../components/ExternalLink";
+import InternalLink from '../components/InternalLink';
+import ExternalLink from '../components/ExternalLink';
 
-import { MDXProvider } from "@mdx-js/react";
+import { MDXProvider } from '@mdx-js/react';
 
 interface Props {
     children: React.ReactNode;
@@ -29,9 +29,9 @@ const mdxComponents = {
                 <p className="mt-24 text-center">
                     <ExternalLink
                         href={
-                            "https://github.com/nico-bachner/v3/edit/main/pages" +
+                            'https://github.com/nico-bachner/v3/edit/main/pages' +
                             router.pathname +
-                            ".mdx"
+                            '.mdx'
                         }
                     >
                         Report Typo(s)
@@ -45,7 +45,7 @@ const mdxComponents = {
     h4: (props: Props) => <h4 className="mt-6">{props.children}</h4>,
     p: (props: Props) => <p className="my-4">{props.children}</p>,
     a: (props: LinkProps) =>
-        props.href.startsWith("/") ? (
+        props.href.startsWith('/') ? (
             <InternalLink href={props.href}>{props.children}</InternalLink>
         ) : (
             <ExternalLink href={props.href}>{props.children}</ExternalLink>

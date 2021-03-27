@@ -1,16 +1,16 @@
-import useSWR from "swr";
+import useSWR from 'swr';
 
-import InternalLink from "./InternalLink";
-import Card from "./Card";
+import InternalLink from './InternalLink';
+import Card from './Card';
 
-import type { Article } from "../lib/types";
+import type { Article } from '../lib/types';
 
 interface Props {
     count?: number;
 }
 
 export default function ArticlesList(props: Props) {
-    const { data, error } = useSWR("/api/articles", (args) =>
+    const { data, error } = useSWR('/api/articles', (args) =>
         fetch(args).then((res) => res.json())
     );
 
@@ -30,12 +30,12 @@ export default function ArticlesList(props: Props) {
         }
 
         return (
-            <div className="grid gap-4 mt-4">
+            <div className="mt-4 grid gap-4">
                 {articles.map((article: Article, index: number) => {
                     return (
                         <InternalLink
                             className=""
-                            href={"/articles/" + article.slug}
+                            href={'/articles/' + article.slug}
                             key={index}
                         >
                             <Card>

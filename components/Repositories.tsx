@@ -1,13 +1,13 @@
-import { useState } from "react";
-import useSWR from "swr";
+import { useState } from 'react';
+import useSWR from 'swr';
 
-import ExternalLink from "../components/ExternalLink";
-import Card from "../components/Card";
+import ExternalLink from '../components/ExternalLink';
+import Card from '../components/Card';
 
-import type { Repository } from "../lib/types";
+import type { Repository } from '../lib/types';
 
 export default function Repositories() {
-    const { data, error } = useSWR("/api/repositories", (args) =>
+    const { data, error } = useSWR('/api/repositories', (args) =>
         fetch(args).then((res) => res.json())
     );
 
@@ -69,7 +69,7 @@ export default function Repositories() {
                     }
                     className="m-4 text-blue"
                 >
-                    {showAllRepos ? "Show Less" : "Show All"}
+                    {showAllRepos ? 'Show Less' : 'Show All'}
                 </button>
             </section>
             <section>
@@ -110,7 +110,7 @@ export default function Repositories() {
                             : setShowAllForks(true)
                     }
                 >
-                    {showAllForks ? "Show Less" : "Show All"}
+                    {showAllForks ? 'Show Less' : 'Show All'}
                 </button>
             </section>
         </>

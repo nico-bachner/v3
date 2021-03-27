@@ -1,7 +1,7 @@
-import InternalLink from "./InternalLink";
-import ExternalLink from "./ExternalLink";
+import InternalLink from './InternalLink';
+import ExternalLink from './ExternalLink';
 
-import type { Page } from "../lib/types";
+import type { Page } from '../lib/types';
 
 interface Props {
     pages: Page[];
@@ -14,7 +14,7 @@ export default function Footer(props: Props) {
     const { pages, hiddenPages, otherPages, externalPages } = props;
 
     return (
-        <nav className="grid grid-cols-2 gap-8 text-center sm:grid-cols-4 text-gray">
+        <nav className="text-center grid grid-cols-2 gap-8 sm:grid-cols-4 text-gray">
             <ul>
                 {pages.map((page, index) => {
                     return (
@@ -23,8 +23,8 @@ export default function Footer(props: Props) {
                                 href={page.href}
                                 as={
                                     page.slug != undefined
-                                        ? "/" + page.slug
-                                        : "/"
+                                        ? '/' + page.slug
+                                        : '/'
                                 }
                                 className="hover:text-gray-darkest dark:hover:text-gray-lightest"
                             >

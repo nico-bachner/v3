@@ -1,4 +1,4 @@
-import InternalLink from "../components/InternalLink";
+import InternalLink from '../components/InternalLink';
 
 export default function Custom404() {
     return (

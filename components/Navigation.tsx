@@ -1,9 +1,9 @@
-import { useRouter } from "next/router";
+import { useRouter } from 'next/router';
 
-import type { Page } from "../lib/types";
+import type { Page } from '../lib/types';
 
-import InternalLink from "./InternalLink";
-import Logo from "./Logo";
+import InternalLink from './InternalLink';
+import Logo from './Logo';
 
 interface Props {
     pages: Array<Page>;
@@ -18,17 +18,17 @@ export default function Navigation(props: Props) {
             <a href="/">
                 <Logo className="w-12 h-12" />
             </a>
-            <ul className="justify-end flex-grow hidden space-x-8 text-lg sm:flex">
+            <ul className="justify-end flex-grow hidden text-lg space-x-8 sm:flex">
                 {props.pages.map((page, index) => {
                     return (
                         <li key={index}>
                             <InternalLink
                                 href={page.href}
-                                as={page.slug ? "/" + page.slug : "/"}
+                                as={page.slug ? '/' + page.slug : '/'}
                                 className={
                                     router.pathname == page.href
-                                        ? "text-gray cursor-default"
-                                        : "hover:text-black dark:hover:text-white"
+                                        ? 'text-gray cursor-default'
+                                        : 'hover:text-black dark:hover:text-white'
                                 }
                             >
                                 {page.title}
@@ -38,15 +38,15 @@ export default function Navigation(props: Props) {
                 })}
             </ul>
             <label htmlFor="#language-select" className="sr-only">
-                {locale == "lu"
-                    ? "Sprooch ännern"
-                    : locale == "de"
-                    ? "Sprache ändern"
-                    : locale == "fr"
-                    ? "Changer la langue"
-                    : locale == "da"
-                    ? "Ændrere sprog"
-                    : "Change language"}
+                {locale == 'lu'
+                    ? 'Sprooch ännern'
+                    : locale == 'de'
+                    ? 'Sprache ändern'
+                    : locale == 'fr'
+                    ? 'Changer la langue'
+                    : locale == 'da'
+                    ? 'Ændrere sprog'
+                    : 'Change language'}
             </label>
             <select
                 id="language-select"

@@ -1,16 +1,16 @@
-import useSWR from "swr";
+import useSWR from 'swr';
 
-import InternalLink from "./InternalLink";
-import Card from "./Card";
+import InternalLink from './InternalLink';
+import Card from './Card';
 
-import type { Project } from "../lib/types";
+import type { Project } from '../lib/types';
 
 interface Props {
     featured?: boolean;
 }
 
 export default function ProjectsList(props: Props) {
-    const { data, error } = useSWR("/api/projects", (args) =>
+    const { data, error } = useSWR('/api/projects', (args) =>
         fetch(args).then((res) => res.json())
     );
 
@@ -24,13 +24,13 @@ export default function ProjectsList(props: Props) {
     }
 
     return data ? (
-        <div className="grid gap-4 mt-4">
+        <div className="mt-4 grid gap-4">
             {data.map((project: Project, index: number) => {
                 if (!props.featured || project.featured) {
                     return (
                         <InternalLink
                             className=""
-                            href={"/projects/" + project.slug}
+                            href={'/projects/' + project.slug}
                             key={index}
                         >
                             <Card>

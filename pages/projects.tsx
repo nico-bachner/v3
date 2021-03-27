@@ -1,7 +1,7 @@
-import { useI18n } from "../hooks/i18n";
-import { translations } from "../i18n";
+import { useI18n } from '../hooks/i18n';
+import { translations } from '../i18n';
 
-import ProjectsList from "../components/ProjectsList";
+import ProjectsList from '../components/ProjectsList';
 
 export default function Projects() {
     const i18n = useI18n(translations);

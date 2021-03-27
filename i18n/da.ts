@@ -1,47 +1,47 @@
-import type { Translation } from "../lib/types";
+import type { Translation } from '../lib/types';
 
 export const da: Translation = {
-    title: "Hej, jeg er Nico.",
-    subtitle: "Jeg er en Open Source Entusiast.",
+    title: 'Hej, jeg er Nico.',
+    subtitle: 'Jeg er en Open Source Entusiast.',
     about: {
-        title: "Om Mig",
+        title: 'Om Mig',
         preview:
-            "Jeg er en student og hobby developer som lever i Luxemborg. Jeg har arbejdet med mange forskelige teknologier, i sært i kontexted af internettet.",
+            'Jeg er en student og hobby developer som lever i Luxemborg. Jeg har arbejdet med mange forskelige teknologier, i sært i kontexted af internettet.',
     },
     projects: {
-        title: "Projekter",
+        title: 'Projekter',
         subtitle:
-            "Her er nogle af mine favoritprojekter. Alle projekter er Open Source og deres source code kan blive fundet på GitHub.",
-        web: "Web Development",
-        games: "Spill",
-        other: "Andre Projekter",
+            'Her er nogle af mine favoritprojekter. Alle projekter er Open Source og deres source code kan blive fundet på GitHub.',
+        web: 'Web Development',
+        games: 'Spill',
+        other: 'Andre Projekter',
     },
     articles: {
-        title: "Artikler",
+        title: 'Artikler',
         subtitle:
-            "Her er nogle af mine seneste artikler. Desvære er di kun på engelsk.",
+            'Her er nogle af mine seneste artikler. Desvære er di kun på engelsk.',
     },
     actions: {
-        readMore: "læse videre",
-        showAll: "vise alle",
-        showMore: "vise flere",
-        showLess: "vise mindre",
+        readMore: 'læse videre',
+        showAll: 'vise alle',
+        showMore: 'vise flere',
+        showLess: 'vise mindre',
     },
     pages: [
         {
-            title: "Hjem",
+            title: 'Hjem',
         },
         {
-            title: "Om Mig",
-            slug: "om-mig",
+            title: 'Om Mig',
+            slug: 'om-mig',
         },
         {
-            title: "Projekter",
-            slug: "projekter",
+            title: 'Projekter',
+            slug: 'projekter',
         },
         {
-            title: "Artikler",
-            slug: "artikler",
+            title: 'Artikler',
+            slug: 'artikler',
         },
     ],
 };

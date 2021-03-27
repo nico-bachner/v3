@@ -1,8 +1,8 @@
-import { useRouter } from "next/router";
+import { useRouter } from 'next/router';
 
-import type { Page } from "../lib/types";
+import type { Page } from '../lib/types';
 
-import InternalLink from "./InternalLink";
+import InternalLink from './InternalLink';
 
 interface Props {
     pages: Array<Page>;
@@ -18,11 +18,11 @@ export default function Navigation(props: Props) {
                     <InternalLink
                         key={index}
                         href={page.href}
-                        as={page.slug != undefined ? "/" + page.slug : "/"}
+                        as={page.slug != undefined ? '/' + page.slug : '/'}
                         className={
                             router.pathname == page.href
-                                ? "p-2 text-gray"
-                                : "p-2"
+                                ? 'p-2 text-gray'
+                                : 'p-2'
                         }
                     >
                         {page.title}
