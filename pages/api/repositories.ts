@@ -5,7 +5,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
     const GitHubRepositoriesResponse = await fetch(
         'https://api.github.com/users/nico-bachner/repos'
     );
-    const GitHubRepositories: GitHubRepository[] = await GitHubRepositoriesResponse.json();
+    const GitHubRepositories = await GitHubRepositoriesResponse.json();
 
     const articles = GitHubRepositories.map(
         (GitHubRepository: GitHubRepository) => {

@@ -5,7 +5,7 @@ export const de: Translation = {
     subtitle: 'ein Open Source Enthusiast.',
     about: {
         title: 'Über Mich',
-        preview:
+        content:
             'Ich bin ein Hobbyentwickler und Student in Luxemburg. Ich habe bereits mit virelen Technologien gearbeitet, besonders im Bereich des Web Development.',
     },
     projects: {
@@ -22,6 +22,7 @@ export const de: Translation = {
             'Hier sind meine neuesten Artikel. Leider sind sie aber nur auf English verfügbar.',
     },
     actions: {
+        changeLanguage: 'sprache ändern',
         readMore: 'weiter lesen',
         showAll: 'alle zeigen',
         showMore: 'weitere zeigen',
@@ -31,10 +32,6 @@ export const de: Translation = {
         {
             title: 'Startseite',
             href: '/',
-        },
-        {
-            title: 'Über mich',
-            href: '/about',
         },
         {
             title: 'Projekte',

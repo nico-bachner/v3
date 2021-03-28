@@ -3,7 +3,7 @@ export interface Translation {
     subtitle: string;
     about: {
         title: string;
-        preview: string;
+        content: string;
     };
     projects: {
         title: string;
@@ -17,6 +17,7 @@ export interface Translation {
         subtitle: string;
     };
     actions: {
+        changeLanguage: string;
         readMore: string;
         showAll: string;
         showMore: string;
@@ -34,10 +35,12 @@ export interface Link {
 }
 
 export interface Project {
-    slug: string;
     title: string;
-    tags: string[];
     description: string;
+    slug: string;
+    demo_url: string;
+    github_url: string;
+    tags: string[];
     featured: boolean;
 }
 

@@ -5,7 +5,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
     const devArticlesResponse = await fetch(
         'https://dev.to/api/articles?username=nico_bachner'
     );
-    const devArticles: DevArticle[] = await devArticlesResponse.json();
+    const devArticles = await devArticlesResponse.json();
 
     const articles = devArticles.map((devArticle: DevArticle) => {
         return {

@@ -7,7 +7,7 @@ export default function Articles() {
     const i18n = useI18n(translations, 'en');
 
     return (
-        <main>
+        <main className="mx-auto max-w-prose">
             <h1>{i18n.articles.title}</h1>
             <p>{i18n.articles.subtitle}</p>
             <ArticlesList />

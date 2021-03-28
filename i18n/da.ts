@@ -5,7 +5,7 @@ export const da: Translation = {
     subtitle: 'Jeg er en Open Source Entusiast.',
     about: {
         title: 'Om Mig',
-        preview:
+        content:
             'Jeg er en student og hobby developer som lever i Luxemborg. Jeg har arbejdet med mange forskelige teknologier, i sært i kontexted af internettet.',
     },
     projects: {
@@ -22,6 +22,7 @@ export const da: Translation = {
             'Her er nogle af mine seneste artikler. Desvære er di kun på engelsk.',
     },
     actions: {
+        changeLanguage: 'ændrere sprog',
         readMore: 'læse videre',
         showAll: 'vise alle',
         showMore: 'vise flere',
@@ -31,10 +32,6 @@ export const da: Translation = {
         {
             title: 'Hjem',
             href: '/',
-        },
-        {
-            title: 'Om Mig',
-            href: '/about',
         },
         {
             title: 'Projekter',

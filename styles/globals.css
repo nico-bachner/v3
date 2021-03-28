@@ -25,9 +25,6 @@
         @apply text-black dark:text-white;
     }
 
-    section {
-        @apply my-16;
-    }
     h1 {
         @apply mb-6 text-4xl font-extrabold sm:text-5xl;
     }
@@ -39,6 +36,9 @@
     }
     h4 {
         @apply text-xl font-medium sm:text-2xl;
+    }
+    p {
+        @apply sm:text-lg;
     }
 
     hr {

@@ -5,7 +5,7 @@ export const lb: Translation = {
     subtitle: 'en Open Source Enthusiast.',
     about: {
         title: 'Iwwert mech',
-        preview:
+        content:
             'Ech sin en Hobbyentwéckler an e student zu Lëtzebuerg. Ech hun schon mat villen Technologien geschafft, besonnescht am beräich vum Web Development.',
     },
     projects: {
@@ -22,6 +22,7 @@ export const lb: Translation = {
             'Hei sin e puer vun mengen rezentesten artikelen. Leider sin se nëmmen op englesch disponibel.',
     },
     actions: {
+        changeLanguage: 'sprooch ännern',
         readMore: 'weider liesen',
         showAll: 'alleguer weisen',
         showMore: 'méi weisen',
@@ -31,10 +32,6 @@ export const lb: Translation = {
         {
             title: 'Heem',
             href: '/',
-        },
-        {
-            title: 'Iwwert mech',
-            href: '/about',
         },
         {
             title: 'Projeten',

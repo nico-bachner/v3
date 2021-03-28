@@ -23,7 +23,7 @@ export default function App({ Component, pageProps }: AppProps) {
 
             <Navigation pages={i18n.pages} />
 
-            <div className="px-8 mx-auto max-w-prose sm:text-lg">
+            <div className="mx-8">
                 <MDX>
                     <Component {...pageProps} />
                 </MDX>

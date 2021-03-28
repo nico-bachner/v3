@@ -5,7 +5,7 @@ export const en: Translation = {
     subtitle: "I'm an Aspiring Open Sourcerer.",
     about: {
         title: 'About Me',
-        preview:
+        content:
             "I'm a High School Student, Hobby Developer, and Aspiring Open Sourcerer currently living in Luxembourg. I have worked with various different technologies, especially in the domain of Web Development.",
     },
     projects: {
@@ -21,6 +21,7 @@ export const en: Translation = {
         subtitle: 'Here are some of the most recent articles I have written.',
     },
     actions: {
+        changeLanguage: 'change language',
         readMore: 'read more',
         showAll: 'show all',
         showMore: 'show more',
@@ -30,10 +31,6 @@ export const en: Translation = {
         {
             title: 'Home',
             href: '/',
-        },
-        {
-            title: 'About',
-            href: '/about',
         },
         {
             title: 'Projects',
@@ -48,12 +45,12 @@ export const en: Translation = {
             href: '/uses',
         },
         {
-            title: 'Mac Setup',
-            href: '/mac-setup',
-        },
-        {
             title: 'Repositories',
             href: '/repositories',
+        },
+        {
+            title: 'Mac Setup',
+            href: '/mac-setup',
         },
     ],
     links: [

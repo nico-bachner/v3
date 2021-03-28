@@ -22,10 +22,10 @@ const mdxComponents = {
     wrapper: (props: Props) => {
         const router = useRouter();
         return (
-            <main {...props}>
+            <main {...props} className="mx-auto max-w-prose">
                 {props.children}
 
-                <p className="mt-12 text-right text-blue">
+                <p className="mt-12 text-right text-blue hover:underline">
                     <Link
                         href={
                             'https://github.com/nico-bachner/v3/edit/main/pages' +

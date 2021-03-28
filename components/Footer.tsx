@@ -9,10 +9,8 @@ interface Props {
 }
 
 export default function Footer(props: Props) {
-    const router = useRouter();
-
     return (
-        <footer className="my-12 mb-24 text-gray">
+        <footer className="mx-auto my-12 mb-24 max-w-prose">
             <hr />
             <nav className="grid grid-cols-2 my-16 gap-y-12 gap-x-6 sm:grid-cols-4">
                 <div className="grid grid-flow-col grid-rows-4 gap-4">
@@ -21,7 +19,7 @@ export default function Footer(props: Props) {
                             <p key={index} className="text-left">
                                 <Link
                                     href={page.href}
-                                    className="hover:text-gray-dark dark:hover:text-gray-light"
+                                    className="text-gray hover:text-gray-dark dark:hover:text-gray-light"
                                 >
                                     {page.title}
                                 </Link>
@@ -35,7 +33,7 @@ export default function Footer(props: Props) {
                             <p key={index} className="text-right sm:text-left">
                                 <Link
                                     href={page.href}
-                                    className="hover:text-gray-dark dark:hover:text-gray-light"
+                                    className="text-gray hover:text-gray-dark dark:hover:text-gray-light"
                                 >
                                     {page.title}
                                 </Link>
@@ -49,7 +47,7 @@ export default function Footer(props: Props) {
                             <p key={index} className="text-left sm:text-right">
                                 <Link
                                     href={link.href}
-                                    className="hover:text-gray-dark dark:hover:text-gray-light"
+                                    className="text-gray hover:text-gray-dark dark:hover:text-gray-light"
                                 >
                                     {link.title}
                                 </Link>
@@ -63,7 +61,7 @@ export default function Footer(props: Props) {
                             <p key={index} className="text-right">
                                 <Link
                                     href={link.href}
-                                    className="hover:text-gray-dark dark:hover:text-gray-light"
+                                    className="text-gray hover:text-gray-dark dark:hover:text-gray-light"
                                 >
                                     {link.title}
                                 </Link>
