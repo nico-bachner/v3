@@ -42,7 +42,7 @@ const mdxComponents = {
     h2: (props: Props) => <h2 className="mt-12 mb-6">{props.children}</h2>,
     h3: (props: Props) => <h3 className="mt-8">{props.children}</h3>,
     h4: (props: Props) => <h4 className="mt-6">{props.children}</h4>,
-    p: (props: Props) => <p className="my-4">{props.children}</p>,
+    p: (props: Props) => <p className="my-2">{props.children}</p>,
     a: (props: LinkProps) => (
         <Link href={props.href} className="hover:underline text-blue">
             {props.children}
