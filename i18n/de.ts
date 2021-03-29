@@ -6,12 +6,12 @@ export const de: Translation = {
     about: {
         title: 'Über Mich',
         content:
-            'Ich bin ein Hobbyentwickler und Student in Luxemburg. Ich habe bereits mit virelen Technologien gearbeitet, besonders im Bereich des Web Development.',
+            'Ich bin ein Hobbyentwickler und Student in Luxemburg. Ich habe bereits mit vielen verschiedenen Technologien gearbeitet, besonders im Bereich des Web Development.',
     },
     projects: {
         title: 'Projekte',
         subtitle:
-            'Hier sind ein Paar meiner Projekte. Alle meine Projekte sind Open Source und deren Source Code befindet sich auf GitHub.',
+            'Hier sind welche meiner Projekte. Alle meine Projekte sind Open Source und deren Source Code befindet sich auf GitHub.',
         web: 'Internetanwendungen und Webseiten',
         games: 'Videospiele',
         other: 'Andere Projekte',
