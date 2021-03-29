@@ -64,7 +64,7 @@ export default function Repositories(props: Props) {
                             >
                                 <div className="card">
                                     <h3 className="text-2xl text-center capitalize sm:text-3xl">
-                                        {repository.name.replaceAll('-', ' ')}
+                                        {repository.name.replace(/-/g, ' ')}
                                     </h3>
                                     <p className="mt-2 mb-4 text-center">
                                         {repository.description}
