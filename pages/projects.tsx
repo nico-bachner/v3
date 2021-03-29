@@ -46,14 +46,14 @@ export default function Projects(props: Props) {
                             <h3 className="text-2xl text-center capitalize sm:text-3xl">
                                 {project.title ?? project.slug}
                             </h3>
-                            <p className="mt-2 mb-6 text-center">
+                            <p className="mt-2 mb-4 text-center">
                                 {project.description}
                             </p>
                             <p className="flex flex-wrap space-x-4 leading-8 justify-evenly">
                                 {project.github_url ? (
                                     <Link
                                         href={project.github_url}
-                                        className="text-blue"
+                                        className="text-blue hover:underline"
                                     >
                                         GitHub Repository
                                     </Link>
@@ -62,14 +62,14 @@ export default function Projects(props: Props) {
                                 )}
                                 <Link
                                     href={'/projects/' + project.slug}
-                                    className="text-blue"
+                                    className="text-blue hover:underline"
                                 >
                                     More Information
                                 </Link>
                                 {project.demo_url ? (
                                     <Link
                                         href={project.demo_url}
-                                        className="text-blue"
+                                        className="text-blue hover:underline"
                                     >
                                         Demo / Result
                                     </Link>

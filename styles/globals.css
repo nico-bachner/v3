@@ -61,7 +61,7 @@
     }
     @media (prefers-color-scheme: dark) {
         .card {
-            @apply w-full p-6 text-left border rounded hover:border-gray border-gray-dark sm:px-8;
+            @apply w-full p-6 text-left border rounded-lg hover:border-gray border-gray-dark sm:px-8;
         }
     }
 
