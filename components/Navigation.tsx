@@ -17,7 +17,7 @@ export default function Navigation(props: Props) {
 
     return (
         <nav className="top-0 z-50 my-8 font-medium sm:sticky glass">
-            <div className="flex items-center max-w-4xl p-6 mx-auto space-x-8">
+            <div className="flex items-center max-w-4xl px-6 py-8 mx-auto space-x-8">
                 <a
                     href="/"
                     className="flex-grow text-gray-darkest dark:text-gray-lightest"

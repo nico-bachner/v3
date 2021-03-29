@@ -6,36 +6,24 @@ module.exports = {
     theme: {
         colors: {
             transparent: 'transparent',
-            current: 'currentColor',
             black: 'black',
             white: 'white',
             gray: {
-                lightest: '#F3F4F6',
-                light: '#D1D5DB',
-                DEFAULT: '#9CA3AF',
-                dark: '#4B5563',
-                darkest: '#1F2937',
+                lightest: 'hsl(220, 10%, 95%)',
+                light: 'hsl(220, 10%, 85%)',
+                DEFAULT: 'hsl(220, 10%, 65%)',
+                dark: 'hsl(220, 10%, 35%)',
+                darkest: 'hsl(220, 10%, 20%)',
             },
-            blue: {
-                light: '#93C5FD',
-                DEFAULT: '#60A5FA',
-                dark: '#3B82F6',
-            },
-            green: {
-                DEFAULT: '#6EE7B7',
-            },
+            blue: 'hsl(210, 100%, 60%)',
+            green: 'hsl(150, 80%, 70%)',
         },
         boxShadow: {
             DEFAULT: boxShadow.lg,
             lg: boxShadow['2xl'],
         },
-        extend: {
-            fontFamily: {
-                sans: ['Inter', ...fontFamily.sans],
-            },
-            gridTemplateRows: {
-                8: 'repeat(8, minmax(0, 1fr))',
-            },
+        fontFamily: {
+            sans: ['Inter', ...fontFamily.sans],
         },
     },
 };

@@ -52,46 +52,47 @@ export default function Repositories(props: Props) {
             </section>
             <section className="grid gap-4 mx-auto mt-4 max-w-prose md:max-w-3xl md:grid-cols-5">
                 {props.repositories.map(
-                    (repository: GitHubRepository, index: number) =>
-                        repository.stargazers_count >= minStars ? (
-                            <div
-                                key={index}
-                                className={
-                                    index % 2 == 1
-                                        ? 'md:col-start-3 md:col-end-6'
-                                        : 'md:col-start-1 md:col-end-4'
-                                }
-                            >
-                                <div className="card">
-                                    <h3 className="text-2xl text-center capitalize sm:text-3xl">
-                                        {repository.name.replace(/-/g, ' ')}
-                                    </h3>
-                                    <p className="mt-2 mb-4 text-center">
-                                        {repository.description}
-                                    </p>
-                                    <p className="flex flex-wrap space-x-4 leading-8 justify-evenly">
-                                        <Link
-                                            href={repository.html_url}
-                                            className="text-blue hover:underline"
-                                        >
-                                            GitHub Repository
-                                        </Link>
-                                        {repository.homepage ? (
+                    (repository: GitHubRepository, index: number) => {
+                        if (repository.stargazers_count >= minStars) {
+                            return (
+                                <div
+                                    key={index}
+                                    className={
+                                        index % 2 == 1
+                                            ? 'md:col-start-3 md:col-end-6'
+                                            : 'md:col-start-1 md:col-end-4'
+                                    }
+                                >
+                                    <div className="card">
+                                        <h3 className="text-2xl text-center capitalize sm:text-3xl">
+                                            {repository.name.replace(/-/g, ' ')}
+                                        </h3>
+                                        <p className="mt-2 mb-4 text-center">
+                                            {repository.description}
+                                        </p>
+                                        <p className="flex flex-wrap space-x-4 leading-8 justify-evenly">
                                             <Link
-                                                href={repository.homepage}
+                                                href={repository.html_url}
                                                 className="text-blue hover:underline"
                                             >
-                                                Project Site
+                                                GitHub Repository
                                             </Link>
-                                        ) : (
-                                            <></>
-                                        )}
-                                    </p>
+                                            {repository.homepage ? (
+                                                <Link
+                                                    href={repository.homepage}
+                                                    className="text-blue hover:underline"
+                                                >
+                                                    Project Site
+                                                </Link>
+                                            ) : (
+                                                <></>
+                                            )}
+                                        </p>
+                                    </div>
                                 </div>
-                            </div>
-                        ) : (
-                            <></>
-                        )
+                            );
+                        }
+                    }
                 )}
                 <button
                     onClick={() => {
