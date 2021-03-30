@@ -2,6 +2,27 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.3.0](https://github.com/nico-bachner/v3/compare/v1.2.0...v1.3.0) (2021-03-30)
+
+
+### Features
+
+* **design:** improved repositories page layout ([8889963](https://github.com/nico-bachner/v3/commit/88899632df4d451a05ce5a4ff3a39607b1f77fcb))
+* **design:** localise global page width limit for flexibility ([3511257](https://github.com/nico-bachner/v3/commit/35112574b4c84dba58e639d7fb344f7a8eb89367))
+* **design:** moved colour definitions to css variables ([418f55a](https://github.com/nico-bachner/v3/commit/418f55a34a3acd8c04a37a0a984835436305320b))
+
+
+### Bug Fixes
+
+* **content:** fixed typo ([1ba4785](https://github.com/nico-bachner/v3/commit/1ba4785b9f79ef5f78f9c696cede6841efddd8c4))
+* **content:** improved project descriptions ([a5d00b0](https://github.com/nico-bachner/v3/commit/a5d00b0399e2c891e9f9f318c5ad6df94191efbb))
+* **design:** improved colour consistency by using hsl values ([b696fb3](https://github.com/nico-bachner/v3/commit/b696fb37388356ae1da5f1c3372922dcd76ccd99))
+* **design:** improved margins on small screens ([1c0a853](https://github.com/nico-bachner/v3/commit/1c0a85345830a64e661fa83c5607e9a4acd3c8a7))
+* **design:** improved navigation margins ([7b7c4ff](https://github.com/nico-bachner/v3/commit/7b7c4ffd777cc953d50bef5424b64b09d7504cf9))
+* **design:** reduced paragraph margins ([d455525](https://github.com/nico-bachner/v3/commit/d4555258856adc0104d011a81b1c9ce135d1204a))
+* changed markdown links into proper links so they work ([d7517cd](https://github.com/nico-bachner/v3/commit/d7517cdd820d7625f2ada03fb14a0e756547c2cd))
+* replaced node-incompatible function ([2c7a19d](https://github.com/nico-bachner/v3/commit/2c7a19ddeaed859d8616d87ad162cf3067378e36))
+
 ## [1.2.0](https://github.com/nico-bachner/v3/compare/v1.1.1...v1.2.0) (2021-03-27)
 
 ### Features
