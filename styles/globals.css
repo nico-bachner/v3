@@ -12,17 +12,42 @@
 
     :root {
         color-scheme: light dark;
+        --gray: 65%;
+    }
+
+    @media (prefers-color-scheme: light) {
+        :root {
+            --background: 100%;
+            --lightest: 90%;
+            --light: 80%;
+            --default: 60%;
+            --strong: 40%;
+            --strongest: 20%;
+            --foreground: 0%;
+        }
+    }
+
+    @media (prefers-color-scheme: dark) {
+        :root {
+            --background: 0%;
+            --lightest: 20%;
+            --light: 30%;
+            --default: 50%;
+            --strong: 70%;
+            --strongest: 90%;
+            --foreground: 100%;
+        }
     }
 
     html {
-        @apply bg-white text-gray-dark dark:text-gray-light dark:bg-black;
+        @apply bg-background text-gray-strong;
     }
 
     h1,
     h2,
     h3,
     h4 {
-        @apply text-black dark:text-white;
+        @apply text-foreground;
     }
 
     h1 {
@@ -42,10 +67,10 @@
     }
 
     hr {
-        @apply border border-gray-lightest dark:border-gray-dark;
+        @apply border border-gray-lightest;
     }
     select {
-        @apply py-1 pl-3 pr-8 text-center bg-transparent border rounded appearance-none border-gray-light dark:border-gray-dark;
+        @apply py-1 pl-3 pr-8 text-center bg-transparent border rounded appearance-none cursor-pointer border-gray-light;
         background-image: url('/icons/select.svg');
         background-position: 75% center;
         background-repeat: no-repeat;
@@ -61,7 +86,7 @@
     }
     @media (prefers-color-scheme: dark) {
         .card {
-            @apply w-full p-6 text-left border rounded-lg hover:border-gray border-gray-dark sm:px-8;
+            @apply w-full p-6 text-left border rounded border-gray-light hover:border-gray sm:px-8;
         }
     }
 
@@ -72,7 +97,7 @@
     }
     @supports not (backdrop-filter: blur()) {
         .glass {
-            @apply bg-white dark:bg-black;
+            @apply bg-background;
         }
     }
 }

@@ -31,8 +31,8 @@ export default function Home(props: Props) {
 
     return (
         <main className="mx-auto max-w-prose">
-            <h1 className="my-2 text-4xl sm:text-5xl">{i18n.title}</h1>
-            <p className="my-2 text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-green to-blue sm:text-4xl">
+            <h1 className="my-2">{i18n.title}</h1>
+            <p className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-green to-blue sm:text-4xl">
                 {i18n.subtitle}
             </p>
             <section className="my-16">

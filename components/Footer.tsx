@@ -19,7 +19,7 @@ export default function Footer(props: Props) {
                             <p key={index} className="text-left">
                                 <Link
                                     href={page.href}
-                                    className="text-gray hover:text-gray-dark dark:hover:text-gray-light"
+                                    className="text-gray hover:text-gray-strong"
                                 >
                                     {page.title}
                                 </Link>
@@ -33,7 +33,7 @@ export default function Footer(props: Props) {
                             <p key={index} className="text-right sm:text-left">
                                 <Link
                                     href={page.href}
-                                    className="text-gray hover:text-gray-dark dark:hover:text-gray-light"
+                                    className="text-gray hover:text-gray-strong"
                                 >
                                     {page.title}
                                 </Link>
@@ -47,7 +47,7 @@ export default function Footer(props: Props) {
                             <p key={index} className="text-left sm:text-right">
                                 <Link
                                     href={link.href}
-                                    className="text-gray hover:text-gray-dark dark:hover:text-gray-light"
+                                    className="text-gray hover:text-gray-strong"
                                 >
                                     {link.title}
                                 </Link>
@@ -61,7 +61,7 @@ export default function Footer(props: Props) {
                             <p key={index} className="text-right">
                                 <Link
                                     href={link.href}
-                                    className="text-gray hover:text-gray-dark dark:hover:text-gray-light"
+                                    className="text-gray hover:text-gray-strong"
                                 >
                                     {link.title}
                                 </Link>

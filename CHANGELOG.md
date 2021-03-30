@@ -4,19 +4,17 @@ All notable changes to this project will be documented in this file. See [standa
 
 ## [1.2.0](https://github.com/nico-bachner/v3/compare/v1.1.1...v1.2.0) (2021-03-27)
 
-
 ### Features
 
-* added vscode extensions recommendations ([46a5c73](https://github.com/nico-bachner/v3/commit/46a5c73fb07b589b15ebe8c8e384a12aa73093a5))
-
+-   added vscode extensions recommendations ([46a5c73](https://github.com/nico-bachner/v3/commit/46a5c73fb07b589b15ebe8c8e384a12aa73093a5))
 
 ### Bug Fixes
 
-* **api:** re-added .ts files to next config pageExtensions ([5dc9b8d](https://github.com/nico-bachner/v3/commit/5dc9b8da0a3c733fff1d609ae534c0d533576dec))
-* **deps:** restored missing dependency ([5016755](https://github.com/nico-bachner/v3/commit/50167557ccaa0c9fc1f251f4a7ae18f88f98487b))
-* **deps:** upgraded dependencies ([0c7398b](https://github.com/nico-bachner/v3/commit/0c7398b4229011bd48976ac1f68d792698177c5e))
-* **url:** remove local-based slug to prevent 404s ([cbb3910](https://github.com/nico-bachner/v3/commit/cbb3910401ed2eafc89ef63d97b15447941f6763))
-* **url:** removed slug from footer pages ([664910f](https://github.com/nico-bachner/v3/commit/664910fda633575c996b27288f476a676259fa0d))
+-   **api:** re-added .ts files to next config pageExtensions ([5dc9b8d](https://github.com/nico-bachner/v3/commit/5dc9b8da0a3c733fff1d609ae534c0d533576dec))
+-   **deps:** restored missing dependency ([5016755](https://github.com/nico-bachner/v3/commit/50167557ccaa0c9fc1f251f4a7ae18f88f98487b))
+-   **deps:** upgraded dependencies ([0c7398b](https://github.com/nico-bachner/v3/commit/0c7398b4229011bd48976ac1f68d792698177c5e))
+-   **url:** remove local-based slug to prevent 404s ([cbb3910](https://github.com/nico-bachner/v3/commit/cbb3910401ed2eafc89ef63d97b15447941f6763))
+-   **url:** removed slug from footer pages ([664910f](https://github.com/nico-bachner/v3/commit/664910fda633575c996b27288f476a676259fa0d))
 
 ### [1.1.1](https://github.com/nico-bachner/v3/compare/v1.1.0...v1.1.1) (2021-03-26)
 

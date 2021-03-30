@@ -17,14 +17,14 @@ export default function Navigation(props: Props) {
 
     return (
         <nav className="top-0 z-50 px-6 py-8 my-4 font-medium sm:my-8 sm:sticky glass">
-            <div className="flex items-center max-w-3xl mx-auto space-x-8">
+            <div className="flex items-center justify-between max-w-3xl mx-auto">
                 <a
                     href="/"
-                    className="flex-grow text-gray-darkest dark:text-gray-lightest"
+                    className="text-gray-strongest hover:text-foreground"
                 >
                     <Logo className="w-12 h-12" />
                 </a>
-                <p className="hidden space-x-8 text-lg sm:flex">
+                <p className="justify-end flex-grow hidden mx-8 space-x-8 sm:flex">
                     {props.pages.slice(0, 4).map((page, index) => {
                         return (
                             <Link
@@ -32,8 +32,8 @@ export default function Navigation(props: Props) {
                                 href={page.href}
                                 className={
                                     router.pathname == page.href
-                                        ? 'text-gray cursor-default'
-                                        : 'text-gray-darkest dark:text-gray-lightest hover:text-black dark:hover:text-white'
+                                        ? 'text-gray'
+                                        : 'text-gray-strongest hover:text-foreground'
                                 }
                             >
                                 {page.title}
