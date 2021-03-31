@@ -27,11 +27,10 @@ export default function Projects(props: Props) {
 
     return (
         <main>
-            <section className="mx-auto mb-8 max-w-prose">
+            <section className="max-w-2xl mx-auto mb-8">
                 <h1>{i18n.projects.title}</h1>
                 <p>{i18n.projects.subtitle}</p>
             </section>
-
             <section className="grid gap-4 mx-auto mt-4 max-w-prose md:max-w-3xl md:grid-cols-3">
                 {props.projects.map((project: Project, index: number) => (
                     <div
@@ -53,7 +52,7 @@ export default function Projects(props: Props) {
                                 {project.github_url ? (
                                     <Link
                                         href={project.github_url}
-                                        className="text-blue hover:underline"
+                                        className="text-azure hover:underline"
                                     >
                                         GitHub Repository
                                     </Link>
@@ -62,14 +61,14 @@ export default function Projects(props: Props) {
                                 )}
                                 <Link
                                     href={'/projects/' + project.slug}
-                                    className="text-blue hover:underline"
+                                    className="text-azure hover:underline"
                                 >
                                     More Information
                                 </Link>
                                 {project.demo_url ? (
                                     <Link
                                         href={project.demo_url}
-                                        className="text-blue hover:underline"
+                                        className="text-azure hover:underline"
                                     >
                                         Demo / Result
                                     </Link>

@@ -16,36 +16,45 @@ export default function Logo(props: Props) {
 
             <defs>
                 <clipPath id="1">
-                    <rect x="16" y="7" width="9" height="9" />
+                    <polygon points="0,16 8,16 8,24 16,24 16,32 0,32" />
                 </clipPath>
                 <clipPath id="2">
+                    <polygon points="8,8 8,16 16,16 16,24 24,24 24,8" />
+                </clipPath>
+                <clipPath id="3">
+                    <polygon points="16,0 16,8 24,8 24,16 32,16 32,0" />
+                </clipPath>
+                <clipPath id="4">
+                    <rect x="16" y="7" width="9" height="9" />
+                </clipPath>
+                <clipPath id="5">
                     <rect x="7" y="16" width="9" height="9" />
                 </clipPath>
             </defs>
 
-            <circle cx="25" cy="7" r="6" fill="transparent" strokeWidth="2" />
-
-            <rect
-                x="16"
-                y="7"
-                width="9"
-                height="9"
-                stroke="none"
-                fill="currentColor"
-                className="text-background"
+            <circle
+                cx="7"
+                cy="25"
+                r="6"
+                fill="transparent"
+                strokeWidth="2"
+                clipPath="url(#1)"
             />
-
-            <circle cx="7" cy="25" r="6" fill="transparent" strokeWidth="2" />
-            <circle cx="16" cy="16" r="6" fill="transparent" strokeWidth="2" />
-
-            <rect
-                x="7"
-                y="16"
-                width="9"
-                height="9"
-                stroke="none"
-                fill="currentColor"
-                className="text-background"
+            <circle
+                cx="16"
+                cy="16"
+                r="6"
+                fill="transparent"
+                strokeWidth="2"
+                clipPath="url(#2)"
+            />
+            <circle
+                cx="25"
+                cy="7"
+                r="6"
+                fill="transparent"
+                strokeWidth="2"
+                clipPath="url(#3)"
             />
 
             <circle
@@ -54,7 +63,7 @@ export default function Logo(props: Props) {
                 r="3"
                 fill="transparent"
                 strokeWidth="2"
-                clipPath="url(#1)"
+                clipPath="url(#4)"
             />
             <circle
                 cx="25"
@@ -62,7 +71,7 @@ export default function Logo(props: Props) {
                 r="3"
                 fill="transparent"
                 strokeWidth="2"
-                clipPath="url(#1)"
+                clipPath="url(#4)"
             />
             <circle
                 cx="7"
@@ -70,7 +79,7 @@ export default function Logo(props: Props) {
                 r="3"
                 fill="transparent"
                 strokeWidth="2"
-                clipPath="url(#2)"
+                clipPath="url(#5)"
             />
             <circle
                 cx="16"
@@ -78,7 +87,7 @@ export default function Logo(props: Props) {
                 r="3"
                 fill="transparent"
                 strokeWidth="2"
-                clipPath="url(#2)"
+                clipPath="url(#5)"
             />
 
             <circle cx="7" cy="25" r="2" fill="transparent" strokeWidth="2" />

@@ -23,6 +23,7 @@ export const en: Translation = {
     actions: {
         changeLanguage: 'change language',
         readMore: 'read more',
+        viewAll: 'view all',
         showAll: 'show all',
         showMore: 'show more',
         showLess: 'show less',

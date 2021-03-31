@@ -10,7 +10,7 @@ interface Props {
 
 export default function Footer(props: Props) {
     return (
-        <footer className="mx-auto my-12 mb-24 max-w-prose">
+        <footer className="max-w-2xl mx-auto my-12 mb-24">
             <hr />
             <nav className="grid grid-cols-2 my-16 gap-y-12 gap-x-6 sm:grid-cols-4">
                 <div className="grid grid-flow-col grid-rows-4 gap-4">
@@ -19,7 +19,7 @@ export default function Footer(props: Props) {
                             <p key={index} className="text-left">
                                 <Link
                                     href={page.href}
-                                    className="text-gray hover:text-gray-strong"
+                                    className="text-gray-light hover:text-gray-strong"
                                 >
                                     {page.title}
                                 </Link>
@@ -33,7 +33,7 @@ export default function Footer(props: Props) {
                             <p key={index} className="text-right sm:text-left">
                                 <Link
                                     href={page.href}
-                                    className="text-gray hover:text-gray-strong"
+                                    className="text-gray-light hover:text-gray-strong"
                                 >
                                     {page.title}
                                 </Link>
@@ -47,7 +47,7 @@ export default function Footer(props: Props) {
                             <p key={index} className="text-left sm:text-right">
                                 <Link
                                     href={link.href}
-                                    className="text-gray hover:text-gray-strong"
+                                    className="text-gray-light hover:text-gray-strong"
                                 >
                                     {link.title}
                                 </Link>
@@ -61,7 +61,7 @@ export default function Footer(props: Props) {
                             <p key={index} className="text-right">
                                 <Link
                                     href={link.href}
-                                    className="text-gray hover:text-gray-strong"
+                                    className="text-gray-light hover:text-gray-strong"
                                 >
                                     {link.title}
                                 </Link>

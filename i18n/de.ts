@@ -24,6 +24,7 @@ export const de: Translation = {
     actions: {
         changeLanguage: 'sprache ändern',
         readMore: 'weiter lesen',
+        viewAll: 'alle sehen',
         showAll: 'alle zeigen',
         showMore: 'weitere zeigen',
         showLess: 'weniger zeigen',

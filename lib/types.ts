@@ -19,6 +19,7 @@ export interface Translation {
     actions: {
         changeLanguage: string;
         readMore: string;
+        viewAll: string;
         showAll: string;
         showMore: string;
         showLess: string;
@@ -47,7 +48,7 @@ export interface Project {
 export interface Article {
     title: string;
     slug: string;
-    dev_slug: string;
+    dev_url: string;
     description: string;
     tags: string[];
     published: Date;

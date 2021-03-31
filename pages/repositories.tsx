@@ -36,21 +36,21 @@ export default function Repositories(props: Props) {
 
     return (
         <main>
-            <section className="mx-auto mb-8 max-w-prose">
+            <section className="max-w-2xl mx-auto mb-8">
                 <h1>GitHub Repositories</h1>
                 <p>
                     Here are all {props.repositories.length} of my public GitHub
                     repositories. Obviously, they can all be found on{' '}
                     <Link
                         href="https://github.com/nico-bachner?tab=repositories"
-                        className="text-blue hover:underline"
+                        className="text-azure hover:underline"
                     >
                         GitHub
                     </Link>{' '}
                     as well.
                 </p>
             </section>
-            <section className="grid gap-4 mx-auto mt-4 max-w-prose md:max-w-3xl md:grid-cols-5">
+            <section className="grid gap-4 mx-auto mt-4 max-w-prose md:max-w-3xl md:grid-cols-3">
                 {props.repositories.map(
                     (repository: GitHubRepository, index: number) => {
                         if (repository.stargazers_count >= minStars) {
@@ -58,53 +58,51 @@ export default function Repositories(props: Props) {
                                 <div
                                     key={index}
                                     className={
-                                        index % 2 == 1
-                                            ? 'md:col-start-3 md:col-end-6'
-                                            : 'md:col-start-1 md:col-end-4'
+                                        'card' +
+                                        ' ' +
+                                        (index % 2 == 1
+                                            ? 'md:col-start-2 md:col-end-4'
+                                            : 'md:col-start-1 md:col-end-3')
                                     }
                                 >
-                                    <div className="card">
-                                        <h3 className="text-2xl text-center capitalize sm:text-3xl">
-                                            {repository.name.replace(/-/g, ' ')}
-                                        </h3>
-                                        <p className="mt-2 mb-4 text-center">
-                                            {repository.description}
-                                        </p>
-                                        <p className="flex flex-wrap space-x-4 leading-8 justify-evenly">
+                                    <h3 className="text-2xl text-center capitalize sm:text-3xl">
+                                        {repository.name.replace(/-/g, ' ')}
+                                    </h3>
+                                    <p className="mt-2 mb-4 text-center">
+                                        {repository.description}
+                                    </p>
+                                    <p className="flex flex-wrap space-x-4 leading-8 justify-evenly">
+                                        <Link
+                                            href={repository.html_url}
+                                            className="text-azure hover:underline"
+                                        >
+                                            GitHub Repository
+                                        </Link>
+                                        {repository.homepage ? (
                                             <Link
-                                                href={repository.html_url}
-                                                className="text-blue hover:underline"
+                                                href={repository.homepage}
+                                                className="text-azure hover:underline"
                                             >
-                                                GitHub Repository
+                                                Project Site
                                             </Link>
-                                            {repository.homepage ? (
-                                                <Link
-                                                    href={repository.homepage}
-                                                    className="text-blue hover:underline"
-                                                >
-                                                    Project Site
-                                                </Link>
-                                            ) : (
-                                                <></>
-                                            )}
-                                        </p>
-                                    </div>
+                                        ) : (
+                                            <></>
+                                        )}
+                                    </p>
                                 </div>
                             );
                         }
                     }
                 )}
+            </section>
+            <p className="mt-12 text-center">
                 <button
                     onClick={() => {
                         if (minStars > 0) {
                             return setMinStars(minStars - 1);
                         }
                     }}
-                    className={
-                        'capitalize' +
-                        ' ' +
-                        (minStars > 0 ? 'text-blue' : 'text-gray')
-                    }
+                    className="capitalize text-azure"
                 >
                     {minStars > 0
                         ? minStars > 1
@@ -112,7 +110,7 @@ export default function Repositories(props: Props) {
                             : i18n.actions.showAll
                         : ''}
                 </button>
-            </section>
+            </p>
         </main>
     );
 }

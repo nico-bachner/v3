@@ -17,14 +17,14 @@ export default function Navigation(props: Props) {
 
     return (
         <nav className="top-0 z-50 px-6 py-8 my-4 font-medium sm:my-8 sm:sticky glass">
-            <div className="flex items-center justify-between max-w-3xl mx-auto">
+            <div className="flex items-center justify-between max-w-[52rem] mx-auto">
                 <a
                     href="/"
-                    className="text-gray-strongest hover:text-foreground"
+                    className="text-gray-stronger hover:text-gray-strongest"
                 >
                     <Logo className="w-12 h-12" />
                 </a>
-                <p className="justify-end flex-grow hidden mx-8 space-x-8 sm:flex">
+                <div className="justify-end flex-grow hidden mx-8 space-x-8 text-lg sm:flex">
                     {props.pages.slice(0, 4).map((page, index) => {
                         return (
                             <Link
@@ -32,15 +32,15 @@ export default function Navigation(props: Props) {
                                 href={page.href}
                                 className={
                                     router.pathname == page.href
-                                        ? 'text-gray'
-                                        : 'text-gray-strongest hover:text-foreground'
+                                        ? 'text-gray-light'
+                                        : 'text-gray-stronger hover:text-gray-strongest'
                                 }
                             >
                                 {page.title}
                             </Link>
                         );
                     })}
-                </p>
+                </div>
                 <label htmlFor="#language-select" className="sr-only">
                     {i18n.actions.changeLanguage}
                 </label>

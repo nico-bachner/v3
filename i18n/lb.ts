@@ -24,6 +24,7 @@ export const lb: Translation = {
     actions: {
         changeLanguage: 'sprooch ännern',
         readMore: 'weider liesen',
+        viewAll: 'alleguer gesin',
         showAll: 'alleguer weisen',
         showMore: 'méi weisen',
         showLess: 'manner weisen',

@@ -23,6 +23,7 @@ export const fr: Translation = {
     },
     actions: {
         changeLanguage: 'changer la langue',
+        viewAll: 'en voir tous',
         readMore: 'continuer à lire',
         showAll: 'montrer tous',
         showMore: 'montrer plus',
