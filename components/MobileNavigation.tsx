@@ -12,16 +12,18 @@ export default function Navigation(props: Props) {
     const router = useRouter();
 
     return (
-        <nav className="sticky bottom-0 z-50 flex w-full py-8 text-sm font-bold text-gray-strong sm:hidden glass justify-evenly">
+        <nav className="sticky bottom-0 z-50 flex w-full py-8 sm:hidden glass justify-evenly">
             {props.pages.slice(0, 4).map((page, index) => {
                 return (
                     <Link
                         key={index}
                         href={page.href}
                         className={
-                            router.pathname == page.href
-                                ? 'p-2 text-gray'
-                                : 'p-2'
+                            'p-2 text-sm font-bold' +
+                            ' ' +
+                            (router.pathname == page.href
+                                ? 'text-gray-light'
+                                : 'text-gray-strong')
                         }
                     >
                         {page.title}
