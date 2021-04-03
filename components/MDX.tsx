@@ -58,12 +58,12 @@ const mdxComponents = {
         <ol className="pl-4 my-4 list-decimal list-inside">{props.children}</ol>
     ),
     pre: (props: Props) => (
-        <pre className="px-4 py-2 mt-4 mb-6 overflow-x-scroll font-mono rounded text-gray-strongest bg-gray-lightest">
+        <pre className="px-4 py-2 mt-4 mb-6 overflow-x-scroll font-mono rounded text-gray-stronger bg-gray-lighter">
             {props.children}
         </pre>
     ),
     inlineCode: (props: Props) => (
-        <code className="px-1.5 py-0.5 rounded font-mono text-gray-strongest bg-gray-lightest">
+        <code className="px-1.5 py-0.5 rounded font-mono text-gray-stronger bg-gray-lighter">
             {props.children}
         </code>
     ),
