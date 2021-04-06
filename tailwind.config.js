@@ -1,6 +1,7 @@
-const { fontFamily, boxShadow } = require('tailwindcss/defaultTheme');
+const { fontFamily, boxShadow } = require('tailwindcss/defaultTheme')
 
 module.exports = {
+    mode: 'jit',
     purge: ['./pages/**/*.{tsx,mdx}', './components/*.tsx'],
     theme: {
         colors: {
@@ -34,4 +35,4 @@ module.exports = {
             sans: ['Inter', ...fontFamily.sans],
         },
     },
-};
+}
