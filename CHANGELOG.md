@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.4.0](https://github.com/nico-bachner/v3/compare/v1.3.0...v1.4.0) (2021-04-07)
+
+
+### Features
+
+* improved colours, layout, and performance ([4e58ee7](https://github.com/nico-bachner/v3/commit/4e58ee7e7341dc656de01016bd663f65c37d581d))
+
+
+### Bug Fixes
+
+* **deps:** leverage tailwind core jit mode ([b95eff5](https://github.com/nico-bachner/v3/commit/b95eff5f014db258a4dd1523b5034f155c1633c2))
+* **design:** fixed code block colours ([da4667b](https://github.com/nico-bachner/v3/commit/da4667b9125954dbe5a1ce13a79e6a0ede05a379))
+* **design:** improved project links layout on homepage ([727314b](https://github.com/nico-bachner/v3/commit/727314b0ebc1f8eb67303760bdf0a6b29a9e352a))
+* **design:** improved projects and repos pages layouts ([d8c7418](https://github.com/nico-bachner/v3/commit/d8c7418ac41cc761f6f3d1b149d71bf0b3687b45))
+* **design:** restored mobile current page indication ([8017b7b](https://github.com/nico-bachner/v3/commit/8017b7b46aefd5f31ea80452118647e6d7583827))
+
 ## [1.3.0](https://github.com/nico-bachner/v3/compare/v1.2.0...v1.3.0) (2021-03-30)
 
 
