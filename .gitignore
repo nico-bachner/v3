@@ -1,28 +1,20 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # dependencies
-/node_modules
-/.pnp
-.pnp.js
-
-# testing
-/coverage
+node_modules/
 
 # next.js
-/.next/
-/out/
+.next/
+out/
 
 # production
-/build
+build/
 
-# misc
+# miscellaneous
 .DS_Store
-*.pem
 
 # debug
 npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
 
 # local env files
 .env.local
@@ -32,6 +24,3 @@ yarn-error.log*
 
 # vercel
 .vercel
-
-# sitemap is generated on server
-public/sitemap.xml
