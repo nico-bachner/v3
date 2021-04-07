@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 1.4.3 (2021-04-07)
+
+
+### Bug Fixes
+
+* **design:** improved footer style ([79b8dcc](https://github.com/nico-bachner/v3/commit/79b8dcc9f436ff9a89e87440944631f60fe53d05))
+
 ### 1.4.2 (2021-04-07)
 
 
