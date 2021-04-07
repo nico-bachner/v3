@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 1.4.1 (2021-04-07)
+
+
+### Bug Fixes
+
+* **actions:** add git push ([1933006](https://github.com/nico-bachner/v3/commit/193300671c72b3bd07e418f96e91724c827a51c3))
+
 ## [1.4.0](https://github.com/nico-bachner/v3/compare/v1.3.0...v1.4.0) (2021-04-07)
 
 
