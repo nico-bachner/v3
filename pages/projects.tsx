@@ -49,22 +49,22 @@ export default function Projects(props: Props) {
                                 {project.description}
                             </p>
                             <p className="flex flex-wrap space-x-4 leading-8 justify-evenly">
-                                {project.github_url ? (
-                                    <Link
-                                        href={project.github_url}
-                                        className="text-azure hover:underline"
-                                    >
-                                        GitHub Repository
-                                    </Link>
-                                ) : (
-                                    <></>
-                                )}
                                 <Link
                                     href={'/projects/' + project.slug}
                                     className="text-azure hover:underline"
                                 >
                                     More Information
                                 </Link>
+                                {project.github_url ? (
+                                    <Link
+                                        href={project.github_url}
+                                        className="text-azure hover:underline"
+                                    >
+                                        Source Code
+                                    </Link>
+                                ) : (
+                                    <></>
+                                )}
                                 {project.demo_url ? (
                                     <Link
                                         href={project.demo_url}
