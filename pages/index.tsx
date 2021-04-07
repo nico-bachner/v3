@@ -67,32 +67,28 @@ export default function Home(props: Props) {
                                 {project.title ?? project.slug}
                             </h3>
                             <p className="mt-2 mb-4">{project.description}</p>
-                            <p className="flex flex-wrap space-x-4 leading-8">
+                            <p className="flex flex-wrap justify-between leading-8 sm:justify-start sm:space-x-8">
                                 <Link
                                     href={'/projects/' + project.slug}
                                     className="text-azure hover:underline"
                                 >
                                     More Information
                                 </Link>
-                                {project.github_url ? (
+                                {project.github_url && (
                                     <Link
                                         href={project.github_url}
                                         className="text-azure hover:underline"
                                     >
-                                        GitHub Repository
+                                        Source Code
                                     </Link>
-                                ) : (
-                                    <></>
                                 )}
-                                {project.demo_url ? (
+                                {project.demo_url && (
                                     <Link
                                         href={project.demo_url}
                                         className="text-azure hover:underline"
                                     >
                                         Demo / Result
                                     </Link>
-                                ) : (
-                                    <></>
                                 )}
                             </p>
                         </div>
@@ -112,7 +108,7 @@ export default function Home(props: Props) {
                                 {article.title}
                             </h3>
                             <p className="mt-2 mb-4">{article.description}</p>
-                            <p className="flex space-x-8">
+                            <p className="flex justify-between sm:justify-start sm:space-x-8">
                                 <Link
                                     href={article.dev_url}
                                     className="text-azure hover:underline"
