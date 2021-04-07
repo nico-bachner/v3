@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 1.4.2 (2021-04-07)
+
+
+### Bug Fixes
+
+* **gitignore:** removed unused options ([7bf7691](https://github.com/nico-bachner/v3/commit/7bf7691a4bbf052d7673b43dc492a861d18df6ed))
+
 ### 1.4.1 (2021-04-07)
 
 
