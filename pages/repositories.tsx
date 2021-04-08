@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useI18n } from '../hooks/i18n';
 
 import Link from '../components/Link';
+import Card from '../components/Card';
 
 import { translations } from '../i18n';
 
@@ -51,35 +52,35 @@ export default function Repositories(props: Props) {
                 </p>
             </section>
             <section className="grid grid-cols-1 gap-4 mx-auto mt-4 max-w-prose md:max-w-4xl md:grid-cols-7">
-                {props.repositories.map(
-                    (repository: GitHubRepository, index: number) => {
-                        if (repository.stargazers_count >= minStars) {
-                            return (
-                                <Link
-                                    href={repository.html_url}
-                                    className={
-                                        'card md:col-span-3' +
-                                        ' ' +
-                                        (index % 3 == 0
-                                            ? 'md:col-start-1'
-                                            : index % 3 == 1
-                                            ? 'md:col-start-3'
-                                            : 'md:col-start-5')
-                                    }
-                                >
-                                    <h3 className="text-2xl text-center capitalize sm:text-3xl">
-                                        {repository.name.replace(/-/g, ' ')}
-                                    </h3>
-                                    <p className="mt-2 text-center">
-                                        {repository.description}
-                                    </p>
-                                </Link>
-                            );
-                        }
-                    }
-                )}
+                {props.repositories
+                    .filter(
+                        (repository: GitHubRepository) =>
+                            repository.stargazers_count >= minStars
+                    )
+                    .map((repository: GitHubRepository, index: number) => (
+                        <Card
+                            key={index}
+                            className={
+                                'md:col-span-3' +
+                                ' ' +
+                                (index % 3 == 0
+                                    ? 'md:col-start-1'
+                                    : index % 3 == 1
+                                    ? 'md:col-start-3'
+                                    : 'md:col-start-5')
+                            }
+                            href={repository.html_url}
+                        >
+                            <h3 className="text-2xl text-center capitalize sm:text-3xl">
+                                {repository.name.replace(/-/g, ' ')}
+                            </h3>
+                            <p className="mt-2 mb-0 text-center">
+                                {repository.description}
+                            </p>
+                        </Card>
+                    ))}
             </section>
-            <p className="mt-12 text-center">
+            <p className="my-20 text-center">
                 <button
                     onClick={() => {
                         if (minStars > 0) {

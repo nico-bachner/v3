@@ -23,7 +23,7 @@ export default function Navigation(props: Props) {
                             ' ' +
                             (router.pathname == page.href
                                 ? 'text-gray-light'
-                                : 'text-gray-strong')
+                                : 'text-gray-stronger')
                         }
                     >
                         {page.title}

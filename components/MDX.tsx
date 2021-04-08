@@ -25,7 +25,7 @@ const mdxComponents = {
             <main {...props} className="max-w-2xl mx-auto">
                 {props.children}
 
-                <p className="mt-12 text-right text-azure hover:underline">
+                <p className="my-20 text-right text-azure hover:underline">
                     <Link
                         href={
                             'https://github.com/nico-bachner/v3/edit/main/pages' +
@@ -39,15 +39,10 @@ const mdxComponents = {
             </main>
         );
     },
-    h2: (props: Props) => <h2 className="mt-12 mb-6">{props.children}</h2>,
-    h3: (props: Props) => <h3 className="mt-8">{props.children}</h3>,
-    h4: (props: Props) => <h4 className="mt-6">{props.children}</h4>,
-    p: (props: Props) => <p className="my-2">{props.children}</p>,
-    a: (props: LinkProps) => (
-        <Link href={props.href} className="hover:underline text-azure">
-            {props.children}
-        </Link>
-    ),
+    h2: (props: Props) => <h2 className="mt-16">{props.children}</h2>,
+    h3: (props: Props) => <h3 className="mt-12">{props.children}</h3>,
+    h4: (props: Props) => <h4 className="mt-8">{props.children}</h4>,
+    a: (props: LinkProps) => <Link href={props.href}>{props.children}</Link>,
     img: (props: ImageProps) => (
         <img src={props.src} className="my-4" loading="lazy" />
     ),
@@ -63,7 +58,7 @@ const mdxComponents = {
         </pre>
     ),
     inlineCode: (props: Props) => (
-        <code className="px-1.5 py-0.5 rounded font-mono text-gray-stronger bg-gray-lighter">
+        <code className="px-1.5 py-0.5 rounded font-mono text-gray-stronger text-base bg-gray-lighter">
             {props.children}
         </code>
     ),

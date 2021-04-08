@@ -23,12 +23,14 @@ export default function App({ Component, pageProps }: AppProps) {
 
             <Navigation pages={i18n.pages} />
 
-            <div className="mx-6 sm:text-lg">
+            <div className="mx-6">
                 <MDX>
                     <Component {...pageProps} />
                 </MDX>
-
-                <Footer pages={i18n.pages} links={i18n.links} />
+                <div className="max-w-2xl mx-auto my-20">
+                    <hr className="border border-gray-lighter" />
+                    <Footer pages={i18n.pages} links={i18n.links} />
+                </div>
             </div>
 
             <MobileNavigation pages={i18n.pages} />

@@ -2,108 +2,96 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
-    @font-face {
-        font-family: 'Inter';
-        font-weight: 100 900;
-        font-display: optional;
-        src: url('/fonts/inter.woff2') format('woff2');
-    }
+:root {
+    color-scheme: light dark;
+}
 
+@media (prefers-color-scheme: light) {
     :root {
-        color-scheme: light dark;
+        --lightest: 100%;
+        --lighter: 80%;
+        --light: 60%;
+        --strong: 40%;
+        --stronger: 20%;
+        --strongest: 0%;
     }
+}
 
-    @media (prefers-color-scheme: light) {
-        :root {
-            --lightest: 100%;
-            --lighter: 80%;
-            --light: 60%;
-            --strong: 40%;
-            --stronger: 20%;
-            --strongest: 0%;
-        }
+@media (prefers-color-scheme: dark) {
+    :root {
+        --lightest: 0%;
+        --lighter: 20%;
+        --light: 40%;
+        --strong: 60%;
+        --stronger: 80%;
+        --strongest: 100%;
     }
+}
 
-    @media (prefers-color-scheme: dark) {
-        :root {
-            --lightest: 0%;
-            --lighter: 20%;
-            --light: 40%;
-            --strong: 60%;
-            --stronger: 80%;
-            --strongest: 100%;
-        }
-    }
+@font-face {
+    font-family: 'Inter';
+    font-weight: 100 900;
+    font-display: optional;
+    src: url('/fonts/Inter.woff2') format('woff2');
+}
 
+@font-face {
+    font-family: 'Fira Code';
+    font-weight: 100 900;
+    font-display: optional;
+    src: url('/fonts/FiraCode.woff2') format('woff2');
+}
+
+#language-select {
+    background-image: url('/icons/select.svg');
+    background-position: 75% center;
+    background-repeat: no-repeat;
+    background-size: 0.75em 0.75em;
+}
+
+@layer base {
     html {
-        @apply bg-gray-lightest text-gray-stronger;
+        @apply antialiased bg-gray-lightest text-gray-stronger;
     }
 
     h1,
     h2,
     h3,
-    h4 {
+    h4,
+    h5,
+    h6 {
         @apply text-gray-strongest;
     }
 
     h1 {
-        @apply mb-6 text-4xl font-extrabold sm:text-5xl;
+        @apply text-4xl font-extrabold sm:text-5xl;
     }
     h2 {
-        @apply mb-4 text-3xl font-bold sm:text-4xl;
+        @apply text-3xl font-bold sm:text-4xl;
     }
-    h3 {
+    h3,
+    h4 {
         @apply text-2xl font-semibold sm:text-3xl;
     }
-    h4 {
+    h5,
+    h6 {
         @apply text-xl font-medium sm:text-2xl;
     }
 
-    hr {
-        @apply border border-gray-lighter;
-    }
-    select {
-        @apply py-1 pl-3 pr-8 text-center bg-transparent border rounded appearance-none cursor-pointer border-gray-lighter;
-        background-image: url('/icons/select.svg');
-        background-position: 75% center;
-        background-repeat: no-repeat;
-        background-size: 0.75em 0.75em;
+    p {
+        @apply my-4 sm:text-lg;
     }
 }
 
 @layer utilities {
-    @media (prefers-color-scheme: light) {
-        .card {
-            @apply w-full p-6 text-left transition duration-300 ease-in-out shadow hover:shadow-lg sm:px-8;
-        }
-    }
-    @media (prefers-color-scheme: dark) {
-        .card {
-            @apply w-full p-6 text-left border rounded border-gray-lighter hover:border-gray-light sm:px-8;
-        }
-    }
-
     @supports (backdrop-filter: blur()) {
         .glass {
-            backdrop-filter: blur(20px);
+            @apply backdrop-filter backdrop-blur-lg;
         }
     }
     @supports not (backdrop-filter: blur()) {
         .glass {
             @apply bg-gray-lightest;
-        }
-    }
-
-    .fade\-in {
-        animation: fade-in 20s forwards;
-    }
-    @keyframes fade-in {
-        0% {
-            @apply opacity-0;
-        }
-        50% {
-            @apply opacity-50;
         }
     }
 }

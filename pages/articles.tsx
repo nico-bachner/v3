@@ -2,6 +2,7 @@ import { useI18n } from '../hooks/i18n';
 import { translations } from '../i18n';
 
 import Link from '../components/Link';
+import Card from '../components/Card';
 
 import type { DevArticle, Article } from '../lib/types';
 
@@ -39,28 +40,20 @@ export default function Articles(props: Props) {
         <main className="max-w-2xl mx-auto">
             <h1>{i18n.articles.title}</h1>
             <p>{i18n.articles.subtitle}</p>
-            <div className="grid gap-4 mt-4">
+            <div className="grid my-8 gap-y-8">
                 {props.articles.map((article: Article, index: number) => (
-                    <div key={index} className="card">
+                    <Card key={index}>
                         <h3 className="text-2xl capitalize sm:text-3xl">
                             {article.title}
                         </h3>
                         <p className="mt-2 mb-4">{article.description}</p>
-                        <p className="flex space-x-8">
-                            <Link
-                                href={article.dev_url}
-                                className="text-azure hover:underline"
-                            >
-                                Read on DEV
-                            </Link>
-                            <Link
-                                href={'/articles/' + article.slug}
-                                className="text-azure hover:underline"
-                            >
+                        <nav className="flex space-x-8">
+                            <Link href={article.dev_url}>Read on DEV</Link>
+                            <Link href={'/articles/' + article.slug}>
                                 Read Here
                             </Link>
-                        </p>
-                    </div>
+                        </nav>
+                    </Card>
                 ))}
             </div>
         </main>

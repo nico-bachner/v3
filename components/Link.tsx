@@ -11,7 +11,14 @@ export default function Link(props: Props) {
     if (props.href.startsWith('/')) {
         return (
             <NextLink href={props.href} as={props.as}>
-                <a className={props.className}>{props.children}</a>
+                <a
+                    className={
+                        props.className ??
+                        'text-azure hover:underline sm:text-lg'
+                    }
+                >
+                    {props.children}
+                </a>
             </NextLink>
         );
     }
@@ -20,7 +27,9 @@ export default function Link(props: Props) {
             href={props.href}
             target="_blank"
             rel="noopener noreferrer"
-            className={props.className}
+            className={
+                props.className ?? 'text-azure hover:underline sm:text-lg'
+            }
         >
             {props.children}
         </a>
