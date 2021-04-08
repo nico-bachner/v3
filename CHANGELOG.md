@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 1.4.4 (2021-04-08)
+
+
+### Bug Fixes
+
+* **git:** merge origin branch into head ([1f6a999](https://github.com/nico-bachner/v3/commit/1f6a999e55811a0b8d13789f7ca88ee2bf716313))
+
 ### 1.4.3 (2021-04-07)
 
 
