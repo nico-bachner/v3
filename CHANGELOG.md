@@ -11,19 +11,11 @@ All notable changes to this project will be documented in this file. See [standa
 
 ## 1.6.0 (2021-04-08)
 
-
-### Features
-
-* overall improvements to codebase, especially design ([b3bd9cf](https://github.com/nico-bachner/v3/commit/b3bd9cf9e74ee69671b855d5a78fce4493ae8fb2))
-
+This release should have been 1.5.1, but there was an issue generating the changelog.
 
 ### Bug Fixes
 
 * fix for failing deployment ([4929f9b](https://github.com/nico-bachner/v3/commit/4929f9bc464ce8a57e228893dfe3091a8ba4bc65))
-* **actions:** increase git history length ([b71a76c](https://github.com/nico-bachner/v3/commit/b71a76c38d1152cdd777225975971c8a4d969f2e))
-* **design:** improved footer style ([79b8dcc](https://github.com/nico-bachner/v3/commit/79b8dcc9f436ff9a89e87440944631f60fe53d05))
-* **git:** merge origin branch into head ([1f6a999](https://github.com/nico-bachner/v3/commit/1f6a999e55811a0b8d13789f7ca88ee2bf716313))
-* **gitignore:** removed unused options ([7bf7691](https://github.com/nico-bachner/v3/commit/7bf7691a4bbf052d7673b43dc492a861d18df6ed))
 
 ## 1.5.0 (2021-04-08)
 
@@ -36,11 +28,7 @@ All notable changes to this project will be documented in this file. See [standa
 ### Bug Fixes
 
 * **actions:** add git config ([af2c635](https://github.com/nico-bachner/v3/commit/af2c63512ba832373407054821072deccc079351))
-* **actions:** add git push ([1933006](https://github.com/nico-bachner/v3/commit/193300671c72b3bd07e418f96e91724c827a51c3))
 * **actions:** increase git history length ([b71a76c](https://github.com/nico-bachner/v3/commit/b71a76c38d1152cdd777225975971c8a4d969f2e))
-* **design:** improved footer style ([79b8dcc](https://github.com/nico-bachner/v3/commit/79b8dcc9f436ff9a89e87440944631f60fe53d05))
-* **git:** merge origin branch into head ([1f6a999](https://github.com/nico-bachner/v3/commit/1f6a999e55811a0b8d13789f7ca88ee2bf716313))
-* **gitignore:** removed unused options ([7bf7691](https://github.com/nico-bachner/v3/commit/7bf7691a4bbf052d7673b43dc492a861d18df6ed))
 
 ### 1.4.4 (2021-04-08)
 
