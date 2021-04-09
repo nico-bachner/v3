@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 1.6.2 (2021-04-09)
+
+
+### Bug Fixes
+
+* **changelog:** removed duplicate commit notes ([52a2d4a](https://github.com/nico-bachner/v3/commit/52a2d4acb44a95658ff2f572a662fb6f07cdbb83))
+
 ### 1.6.1 (2021-04-09)
 
 
