@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 1.6.1 (2021-04-09)
+
+
+### Bug Fixes
+
+* **actions:** reduce git history to 2 ([3def6f7](https://github.com/nico-bachner/v3/commit/3def6f73a7e794f28fe1f57a71b1e2ae824ae877))
+
 ## 1.6.0 (2021-04-08)
 
 
