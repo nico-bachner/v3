@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 1.6.3 (2021-04-09)
+
+
+### Bug Fixes
+
+* **design:** removed card border in light mode ([2952233](https://github.com/nico-bachner/v3/commit/295223303cb94ad1be7ac3225cd40fe68b2153cd))
+
 ### 1.6.2 (2021-04-09)
 
 
