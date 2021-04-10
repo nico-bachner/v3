@@ -32,14 +32,14 @@
     font-family: 'Inter';
     font-weight: 100 900;
     font-display: optional;
-    src: url('/fonts/Inter.woff2') format('woff2');
+    src: url('/fonts/inter.woff2') format('woff2');
 }
 
 @font-face {
     font-family: 'Fira Code';
     font-weight: 100 900;
     font-display: optional;
-    src: url('/fonts/FiraCode.woff2') format('woff2');
+    src: url('/fonts/fira-code.woff2') format('woff2');
 }
 
 #language-select {
@@ -80,6 +80,9 @@
 
     p {
         @apply my-4 sm:text-lg;
+    }
+    a {
+        @apply sm:text-lg;
     }
 }
 

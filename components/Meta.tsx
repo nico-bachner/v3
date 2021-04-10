@@ -26,14 +26,14 @@ export default function Meta(props: { title: string; description: string }) {
             <link
                 crossOrigin="anonymous"
                 rel="preload"
-                href="/fonts/Inter.woff2"
+                href="/fonts/inter.woff2"
                 as="font"
                 type="font/woff2"
             />
             <link
                 crossOrigin="anonymous"
                 rel="preload"
-                href="/fonts/FiraCode.woff2"
+                href="/fonts/fira-code.woff2"
                 as="font"
                 type="font/woff2"
             />

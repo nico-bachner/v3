@@ -2,11 +2,14 @@ import { useI18n } from '../hooks/i18n';
 import { useSupabase } from '../hooks/supabase';
 
 import Link from '../components/Link';
-import Card from '../components/Card';
+import ProjectCard from '../components/ProjectCard';
+import ArticleCard from '../components/ArticleCard';
 
 import { translations } from '../i18n';
 
-import type { Project, DevArticle, Article } from '../lib/types';
+import { getArticles } from '../lib/getArticles';
+
+import type { Project, Article } from '../lib/types';
 
 export async function getStaticProps() {
     const projectsResponse = await useSupabase('projects');
@@ -14,25 +17,7 @@ export async function getStaticProps() {
         (project: Project) => project.featured
     );
 
-    const devArticlesResponse = await fetch(
-        'https://dev.to/api/articles?username=nico_bachner'
-    );
-    const devArticles = await devArticlesResponse.json();
-    const articles = devArticles
-        .sort(
-            (a: DevArticle, b: DevArticle) =>
-                new Date(b.published_at).getTime() -
-                new Date(a.published_at).getTime()
-        )
-        .map((devArticle: DevArticle) => {
-            return {
-                title: devArticle.title,
-                slug: devArticle.slug.slice(0, devArticle.slug.length - 5),
-                dev_url: devArticle.url,
-                description: devArticle.description,
-                published: devArticle.published_at,
-            };
-        });
+    const articles = await getArticles();
 
     return {
         props: {
@@ -54,7 +39,7 @@ export default function Home(props: Props) {
     return (
         <main className="max-w-2xl mx-auto">
             <h1>{i18n.title}</h1>
-            <p className="mt-2 text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-br from-spring to-azure sm:text-4xl">
+            <p className="mt-2 text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-tr from-cyan to-azure sm:text-4xl">
                 {i18n.subtitle}
             </p>
             <section className="my-20">
@@ -66,27 +51,7 @@ export default function Home(props: Props) {
                 <p>{i18n.projects.subtitle}</p>
                 <div className="grid gap-4">
                     {props.projects.map((project: Project, index: number) => (
-                        <Card key={index}>
-                            <h3 className="capitalize ">
-                                {project.title ?? project.slug}
-                            </h3>
-                            <p className="mt-2 mb-4">{project.description}</p>
-                            <nav className="flex flex-wrap justify-between leading-8 sm:justify-start sm:space-x-8">
-                                <Link href={'/projects/' + project.slug}>
-                                    More Information
-                                </Link>
-                                {project.github_url && (
-                                    <Link href={project.github_url}>
-                                        Source Code
-                                    </Link>
-                                )}
-                                {project.demo_url && (
-                                    <Link href={project.demo_url}>
-                                        Demo / Result
-                                    </Link>
-                                )}
-                            </nav>
-                        </Card>
+                        <ProjectCard {...project} />
                     ))}
                 </div>
                 <p className="mt-8 text-right capitalize text-azure hover:underline">
@@ -98,18 +63,7 @@ export default function Home(props: Props) {
                 <p>{i18n.articles.subtitle}</p>
                 <div className="grid gap-4">
                     {props.articles.map((article: Article, index: number) => (
-                        <Card key={index}>
-                            <h3 className="text-2xl capitalize sm:text-3xl">
-                                {article.title}
-                            </h3>
-                            <p className="mt-2 mb-4">{article.description}</p>
-                            <nav className="flex justify-between sm:justify-start sm:space-x-8">
-                                <Link href={article.dev_url}>Read on DEV</Link>
-                                <Link href={'/articles/' + article.slug}>
-                                    Read Here
-                                </Link>
-                            </nav>
-                        </Card>
+                        <ArticleCard key={index} {...article} />
                     ))}
                 </div>
                 <p className="mt-8 text-right capitalize myt-8 text-azure hover:underline">

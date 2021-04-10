@@ -2,7 +2,7 @@ import { useI18n } from '../hooks/i18n';
 import { useSupabase } from '../hooks/supabase';
 
 import Link from '../components/Link';
-import Card from '../components/Card';
+import ProjectCard from '../components/ProjectCard';
 
 import { translations } from '../i18n';
 
@@ -42,33 +42,7 @@ export default function Projects(props: Props) {
                                 : 'md:col-start-1 md:col-end-3'
                         }
                     >
-                        <Card>
-                            <h3 className="text-2xl text-center capitalize sm:text-3xl">
-                                {project.title ?? project.slug}
-                            </h3>
-                            <p className="mt-2 mb-4 text-center">
-                                {project.description}
-                            </p>
-                            <nav className="flex flex-wrap space-x-4 leading-8 justify-evenly">
-                                <Link href={'/projects/' + project.slug}>
-                                    More Information
-                                </Link>
-                                {project.github_url ? (
-                                    <Link href={project.github_url}>
-                                        Source Code
-                                    </Link>
-                                ) : (
-                                    <></>
-                                )}
-                                {project.demo_url ? (
-                                    <Link href={project.demo_url}>
-                                        Demo / Result
-                                    </Link>
-                                ) : (
-                                    <></>
-                                )}
-                            </nav>
-                        </Card>
+                        <ProjectCard {...project} />
                     </div>
                 ))}
             </section>
