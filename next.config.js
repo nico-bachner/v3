@@ -8,4 +8,7 @@ module.exports = withMDX({
         locales: ['en', 'da', 'fr', 'de', 'lb'],
         defaultLocale: 'en',
     },
+    future: {
+        webpack5: true,
+    },
 });

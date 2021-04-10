@@ -1,7 +1,7 @@
-import Image from 'next/image';
 import { useRouter } from 'next/router';
 
 import Link from './Link';
+import Image from 'next/image';
 
 import { MDXProvider } from '@mdx-js/react';
 
@@ -22,10 +22,10 @@ const mdxComponents = {
     wrapper: (props: Props) => {
         const router = useRouter();
         return (
-            <main {...props} className="max-w-2xl mx-auto">
+            <main>
                 {props.children}
 
-                <p className="my-20 text-right text-azure hover:underline">
+                <p className="max-w-2xl mx-auto my-20 text-right">
                     <Link
                         href={
                             'https://github.com/nico-bachner/v3/edit/main/pages' +
@@ -39,30 +39,53 @@ const mdxComponents = {
             </main>
         );
     },
-    h2: (props: Props) => <h2 className="mt-16">{props.children}</h2>,
-    h3: (props: Props) => <h3 className="mt-12">{props.children}</h3>,
-    h4: (props: Props) => <h4 className="mt-8">{props.children}</h4>,
+    h1: (props: Props) => (
+        <h1 className="max-w-2xl mx-auto">{props.children}</h1>
+    ),
+    h2: (props: Props) => (
+        <h2 className="max-w-2xl mx-auto mt-16">{props.children}</h2>
+    ),
+    h3: (props: Props) => (
+        <h3 className="max-w-2xl mx-auto mt-12">{props.children}</h3>
+    ),
+    h4: (props: Props) => (
+        <h4 className="max-w-2xl mx-auto mt-8">{props.children}</h4>
+    ),
+    p: (props: Props) => <p className="max-w-2xl mx-auto">{props.children}</p>,
     a: (props: LinkProps) => <Link href={props.href}>{props.children}</Link>,
     img: (props: ImageProps) => (
-        <img src={props.src} className="my-4" loading="lazy" />
+        <img
+            src={props.src}
+            className="max-w-2xl mx-auto my-4"
+            loading="lazy"
+        />
     ),
     ul: (props: Props) => (
-        <ul className="pl-4 my-4 list-disc list-inside">{props.children}</ul>
+        <ul className="max-w-2xl pl-4 mx-auto my-4 list-disc list-inside">
+            {props.children}
+        </ul>
     ),
     ol: (props: Props) => (
-        <ol className="pl-4 my-4 list-decimal list-inside">{props.children}</ol>
+        <ol className="max-w-2xl pl-4 mx-auto my-4 list-decimal list-inside">
+            {props.children}
+        </ol>
     ),
+    li: (props: Props) => <li className="my-1">{props.children}</li>,
     pre: (props: Props) => (
-        <pre className="px-4 py-2 mt-4 mb-6 overflow-x-scroll font-mono rounded text-gray-stronger bg-gray-lighter">
+        <pre className="max-w-2xl px-3 py-1.5 mx-auto my-2 overflow-x-scroll font-mono border rounded">
             {props.children}
         </pre>
     ),
     inlineCode: (props: Props) => (
-        <code className="px-1.5 py-0.5 rounded font-mono text-gray-stronger text-base bg-gray-lighter">
+        <code className="px-1 py-0.5 rounded border font-mono text-base">
             {props.children}
         </code>
     ),
-    Image,
+    Image: (props: any) => (
+        <div className="max-w-3xl mx-auto my-8 sm:my-12">
+            <Image {...props} />
+        </div>
+    ),
 };
 
 export default function MDX(props: Props) {

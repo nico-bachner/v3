@@ -84,6 +84,26 @@
 }
 
 @layer utilities {
+    .base-card {
+        @apply w-full p-6 text-left transition duration-300 ease-in-out sm:px-8;
+    }
+    @media (prefers-color-scheme: light) {
+        .card {
+            @apply shadow base-card;
+        }
+        .link-card {
+            @apply shadow base-card hover:shadow-lg;
+        }
+    }
+    @media (prefers-color-scheme: dark) {
+        .card {
+            @apply border rounded base-card;
+        }
+        .link-card {
+            @apply border rounded base-card hover:border-strong;
+        }
+    }
+
     @supports (backdrop-filter: blur()) {
         .glass {
             @apply backdrop-filter backdrop-blur-lg;
