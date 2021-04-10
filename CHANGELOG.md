@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## 1.7.0 (2021-04-10)
+
+
+### Features
+
+* **design:** improved image positioning on mdx pages ([6200cd0](https://github.com/nico-bachner/v3/commit/6200cd0303217984f4d0e8b4516d73c7accf9187))
+
 ### 1.6.3 (2021-04-09)
 
 
