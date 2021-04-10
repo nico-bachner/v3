@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## 1.8.0 (2021-04-10)
+
+
+### Features
+
+* refactored a lot ([741ae93](https://github.com/nico-bachner/v3/commit/741ae938a2afabb5252062784c0e02bb64f18b66))
+
 ## 1.7.0 (2021-04-10)
 
 
