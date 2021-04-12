@@ -1,16 +1,21 @@
 import NextLink from 'next/link';
 
-interface Props {
+export interface LinkProps {
     href: string;
     as?: string;
     className?: string;
-    children: React.ReactNode;
+    replace?: boolean;
+    scroll?: boolean;
+    shallow?: boolean;
+    passHref?: boolean;
+    prefetch?: boolean;
+    locale?: string | false;
 }
 
-export default function Link(props: Props) {
+export default function Link(props: React.PropsWithChildren<LinkProps>) {
     if (props.href.startsWith('/')) {
         return (
-            <NextLink href={props.href} as={props.as}>
+            <NextLink {...props}>
                 <a className={props.className ?? 'text-azure hover:underline'}>
                     {props.children}
                 </a>

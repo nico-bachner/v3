@@ -1,8 +1,9 @@
-const { fontFamily, boxShadow, spacing } = require('tailwindcss/defaultTheme');
+const { fontFamily, boxShadow } = require('tailwindcss/defaultTheme');
 
 module.exports = {
     mode: 'jit',
     purge: ['./pages/**/*.{tsx,mdx}', './components/*.tsx'],
+    darkMode: 'media',
     theme: {
         colors: {
             transparent: 'transparent',

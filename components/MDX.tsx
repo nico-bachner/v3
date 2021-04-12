@@ -1,21 +1,12 @@
 import { useRouter } from 'next/router';
 
-import Link from './Link';
-import Image from 'next/image';
+import Link, { LinkProps } from './Link';
+import Image, { ImageProps } from './Image';
 
 import { MDXProvider } from '@mdx-js/react';
 
 interface Props {
     children: React.ReactNode;
-}
-
-interface LinkProps {
-    href: string;
-    children: React.ReactNode;
-}
-
-interface ImageProps {
-    src: string;
 }
 
 const mdxComponents = {
@@ -52,13 +43,8 @@ const mdxComponents = {
         <h4 className="max-w-2xl mx-auto mt-8">{props.children}</h4>
     ),
     p: (props: Props) => <p className="max-w-2xl mx-auto">{props.children}</p>,
-    a: (props: LinkProps) => <Link href={props.href}>{props.children}</Link>,
-    img: (props: ImageProps) => (
-        <img
-            src={props.src}
-            className="max-w-2xl mx-auto my-4"
-            loading="lazy"
-        />
+    a: (props: React.PropsWithChildren<LinkProps>) => (
+        <Link {...props}>{props.children}</Link>
     ),
     ul: (props: Props) => (
         <ul className="max-w-2xl pl-4 mx-auto my-4 list-disc list-inside">
@@ -81,10 +67,8 @@ const mdxComponents = {
             {props.children}
         </code>
     ),
-    Image: (props: any) => (
-        <div className="max-w-3xl mx-auto my-8 sm:my-12">
-            <Image {...props} />
-        </div>
+    Image: (props: ImageProps) => (
+        <Image {...props} className="max-w-3xl mx-auto my-8 sm:my-12" />
     ),
 };
 

@@ -1,10 +1,10 @@
 import Link from './Link';
 
-import type { Links } from '../lib/types';
+import type { Page } from '../lib/types';
 
 interface Props {
-    pages: Links;
-    links: Links;
+    pages: Page[];
+    links: Page[];
 }
 
 export default function Footer(props: Props) {

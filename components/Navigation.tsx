@@ -2,13 +2,13 @@ import { useRouter } from 'next/router';
 import { useI18n } from '../hooks/i18n';
 import { translations } from '../i18n';
 
-import type { Links } from '../lib/types';
+import type { Page } from '../lib/types';
 
-import Link from 'next/link';
+import Link from './Link';
 import Logo from './Logo';
 
 interface Props {
-    pages: Links;
+    pages: Page[];
 }
 
 export default function Navigation(props: Props) {
@@ -20,23 +20,23 @@ export default function Navigation(props: Props) {
             <div className="flex items-center justify-between max-w-[52rem] mx-auto">
                 <a
                     href="/"
-                    className="transition duration-300 ease-in-out transform text-gray-stronger hover:-translate-y-0.5"
+                    className="transition duration-300 ease-in-out transform hover:text-gray-stronger hover:-translate-y-0.5"
                 >
                     <Logo className="w-12 h-12" />
                 </a>
-                <div className="justify-end flex-grow hidden mx-8 space-x-8 text-lg sm:flex">
+                <div className="justify-end flex-grow hidden mx-8 space-x-8 sm:flex">
                     {props.pages.slice(0, 4).map((page, index) => {
                         return (
-                            <Link key={index} href={page.href}>
-                                <a
-                                    className={
-                                        router.pathname == page.href
-                                            ? 'text-gray-light cursor-default'
-                                            : 'text-gray-stronger transition duration-300 ease-in-out transform hover:-translate-y-0.5'
-                                    }
-                                >
-                                    {page.title}
-                                </a>
+                            <Link
+                                key={index}
+                                href={page.href}
+                                className={
+                                    router.pathname == page.href
+                                        ? 'text-gray-light cursor-default'
+                                        : 'hover:text-gray-stronger transition duration-300 ease-in-out transform hover:-translate-y-0.5'
+                                }
+                            >
+                                {page.title}
                             </Link>
                         );
                     })}

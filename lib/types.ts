@@ -24,13 +24,11 @@ export interface Translation {
         showMore: string;
         showLess: string;
     };
-    pages: Links;
-    links: Links;
+    pages: Page[];
+    links: Page[];
 }
 
-export type Links = Link[];
-
-export interface Link {
+export interface Page {
     title: string;
     href: string;
 }
