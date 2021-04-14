@@ -24,7 +24,7 @@ export default function Navigation(props: Props) {
                 >
                     <Logo className="w-12 h-12" />
                 </a>
-                <div className="justify-end flex-grow hidden mx-8 space-x-8 sm:flex">
+                <div className="justify-end flex-grow hidden mx-8 space-x-8 sm:flex sm:text-lg">
                     {props.pages.slice(0, 4).map((page, index) => {
                         return (
                             <Link

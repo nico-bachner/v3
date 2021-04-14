@@ -44,14 +44,14 @@ export default function Home(props: Props) {
             </p>
             <section className="my-20">
                 <h2>{i18n.about.title}</h2>
-                <p>{i18n.about.content}</p>
+                <p className="mt-4">{i18n.about.content}</p>
             </section>
             <section className="my-20">
                 <h2>{i18n.projects.title}</h2>
-                <p>{i18n.projects.subtitle}</p>
+                <p className="my-4">{i18n.projects.subtitle}</p>
                 <div className="grid gap-4">
                     {props.projects.map((project: Project, index: number) => (
-                        <ProjectCard {...project} />
+                        <ProjectCard key={index} {...project} />
                     ))}
                 </div>
                 <p className="mt-8 text-right capitalize text-azure hover:underline">
@@ -60,7 +60,7 @@ export default function Home(props: Props) {
             </section>
             <section className="max-w-2xl mx-auto my-20">
                 <h2>{i18n.articles.title}</h2>
-                <p>{i18n.articles.subtitle}</p>
+                <p className="my-4">{i18n.articles.subtitle}</p>
                 <div className="grid gap-4">
                     {props.articles.map((article: Article, index: number) => (
                         <ArticleCard key={index} {...article} />
@@ -72,7 +72,7 @@ export default function Home(props: Props) {
             </section>
             <section className="max-w-2xl mx-auto my-20">
                 <h2>Contact</h2>
-                <p>
+                <p className="mt-4">
                     If you would like to get in touch with me, you can do so via{' '}
                     <Link href="mailto:hello@nicob.dev">email</Link>. I am also
                     available on{' '}

@@ -49,6 +49,8 @@
     background-size: 0.75em 0.75em;
 }
 
+/* Tailwind past here */
+
 @layer base {
     html {
         @apply antialiased bg-gray-lightest text-gray-stronger;
@@ -77,12 +79,11 @@
     h6 {
         @apply text-xl font-medium sm:text-2xl;
     }
-
     p {
-        @apply my-4 sm:text-lg;
-    }
-    a {
         @apply sm:text-lg;
+    }
+    code {
+        @apply font-mono text-sm sm:text-base;
     }
 }
 

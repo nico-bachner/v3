@@ -30,7 +30,7 @@ export default function Projects(props: Props) {
         <main>
             <section className="max-w-2xl mx-auto">
                 <h1>{i18n.projects.title}</h1>
-                <p>{i18n.projects.subtitle}</p>
+                <p className="mt-4">{i18n.projects.subtitle}</p>
             </section>
             <section className="grid grid-cols-1 mx-auto my-8 gap-y-8 max-w-prose md:max-w-3xl md:grid-cols-3">
                 {props.projects.map((project: Project, index: number) => (

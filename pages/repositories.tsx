@@ -39,7 +39,7 @@ export default function Repositories(props: Props) {
         <main>
             <section className="max-w-2xl mx-auto mb-8">
                 <h1>GitHub Repositories</h1>
-                <p>
+                <p className="mt-4">
                     Here are all {props.repositories.length} of my public GitHub
                     repositories. Obviously, they can all be found on{' '}
                     <Link

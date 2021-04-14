@@ -2,11 +2,17 @@ import { useRouter } from 'next/router';
 
 import Link, { LinkProps } from './Link';
 import Image, { ImageProps } from './Image';
+import Code, { CodeProps } from './Code';
 
 import { MDXProvider } from '@mdx-js/react';
 
 interface Props {
     children: React.ReactNode;
+}
+
+interface MDXCodeProps {
+    className?: string;
+    children: string;
 }
 
 const mdxComponents = {
@@ -42,9 +48,8 @@ const mdxComponents = {
     h4: (props: Props) => (
         <h4 className="max-w-2xl mx-auto mt-8">{props.children}</h4>
     ),
-    p: (props: Props) => <p className="max-w-2xl mx-auto">{props.children}</p>,
-    a: (props: React.PropsWithChildren<LinkProps>) => (
-        <Link {...props}>{props.children}</Link>
+    p: (props: Props) => (
+        <p className="max-w-2xl mx-auto my-4">{props.children}</p>
     ),
     ul: (props: Props) => (
         <ul className="max-w-2xl pl-4 mx-auto my-4 list-disc list-inside">
@@ -57,18 +62,24 @@ const mdxComponents = {
         </ol>
     ),
     li: (props: Props) => <li className="my-1">{props.children}</li>,
-    pre: (props: Props) => (
-        <pre className="max-w-2xl px-3 py-1.5 mx-auto my-2 overflow-x-scroll font-mono border rounded">
-            {props.children}
-        </pre>
-    ),
     inlineCode: (props: Props) => (
-        <code className="px-1 py-0.5 rounded border font-mono text-base">
+        <code className="inline-block px-1 border rounded">
             {props.children}
         </code>
     ),
+    code: (props: MDXCodeProps) =>
+        props.className ? (
+            <Code language={props.className.replace('language-', '')}>
+                {props.children}
+            </Code>
+        ) : (
+            <Code>{props.children}</Code>
+        ),
+    a: Link,
     Image: (props: ImageProps) => (
-        <Image {...props} className="max-w-3xl mx-auto my-8 sm:my-12" />
+        <div className="max-w-3xl mx-auto my-8 sm:my-12">
+            <Image {...props} className="mx-auto max-w-max" />
+        </div>
     ),
 };
 

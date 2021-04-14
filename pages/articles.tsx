@@ -28,7 +28,7 @@ export default function Articles(props: Props) {
     return (
         <main className="max-w-2xl mx-auto">
             <h1>{i18n.articles.title}</h1>
-            <p>{i18n.articles.subtitle}</p>
+            <p className="mt-4">{i18n.articles.subtitle}</p>
             <div className="grid my-8 gap-y-8">
                 {props.articles.map((article: Article, index: number) => (
                     <ArticleCard key={index} {...article} />

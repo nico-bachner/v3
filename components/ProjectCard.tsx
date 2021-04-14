@@ -21,7 +21,7 @@ export default function ProjectCard(props: Props) {
                     </Link>
                 </span>
             </p>
-            <nav className="space-x-8">
+            <p className="space-x-8">
                 <Link
                     href={props.github_url ?? '/'}
                     className={
@@ -42,7 +42,7 @@ export default function ProjectCard(props: Props) {
                 >
                     Demo / Result
                 </Link>
-            </nav>
+            </p>
         </Card>
     );
 }
