@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.9.0](https://github.com/nico-bachner/v3/compare/v1.8.0...v1.9.0) (2021-04-16)
+
+
+### Features
+
+* **structure:** switched to next-mdx-remote for projects and articles ([3410862](https://github.com/nico-bachner/v3/commit/3410862acd98e6a002081519d6fd085b6dc5edcc))
+
+
+### Bug Fixes
+
+* **actions:** removed standard-version action ([a348e60](https://github.com/nico-bachner/v3/commit/a348e60837c19fa0e2365f56eb80a92a66cb27bd))
+* **design:** improved image styling in dark mode ([73bcf7e](https://github.com/nico-bachner/v3/commit/73bcf7ef3f7f808f43cf686370d1f3d0dc8ee6e3))
+* **design:** improved mdx design ([119663a](https://github.com/nico-bachner/v3/commit/119663a5016825548e2f387ed11e2d6bcca61745))
+* **design:** moved project links to project page ([51e037c](https://github.com/nico-bachner/v3/commit/51e037c700b230d1bfa69c7c2e14f0cb750ae039))
+* **meta:** add different meta descriptions for each page ([4d1a4d8](https://github.com/nico-bachner/v3/commit/4d1a4d8c90cf28d780636161be3f3ed75b1a0d4d))
+
 ## 1.8.0 (2021-04-10)
 
 
