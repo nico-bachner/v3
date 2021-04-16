@@ -8,7 +8,7 @@ import {
     getReadingTime,
 } from '../../lib/mdx';
 
-import Head from 'next/head';
+import Meta from '../../components/Meta';
 import Link from '../../components/Link';
 import { ArticleProps } from '../../components/ArticleCard';
 
@@ -59,9 +59,10 @@ export default function Article(article: ArticleProps) {
 
     return (
         <main>
-            <Head>
-                <title>{article.data.title} | Nico Bachner</title>
-            </Head>
+            <Meta
+                title={article.data.title}
+                description={article.data.summary}
+            />
             <article>
                 <h1 className="max-w-2xl mx-auto">{article.data.title}</h1>
                 <div className="flex justify-between max-w-2xl mx-auto my-8 text-gray-light">

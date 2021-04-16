@@ -8,7 +8,7 @@ import {
     getReadingTime,
 } from '../../lib/mdx';
 
-import Head from 'next/head';
+import Meta from '../../components/Meta';
 import Link from '../../components/Link';
 import { ProjectProps } from '../../components/ProjectCard';
 
@@ -57,9 +57,10 @@ export default function Project(project: ProjectProps) {
 
     return (
         <main>
-            <Head>
-                <title>{project.data.title} | Nico Bachner</title>
-            </Head>
+            <Meta
+                title={project.data.title}
+                description={project.data.summary}
+            />
             <article>
                 <h1 className="max-w-2xl mx-auto">{project.data.title}</h1>
                 {content}

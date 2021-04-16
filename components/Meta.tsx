@@ -2,7 +2,12 @@ import Head from 'next/head';
 
 import { useRouter } from 'next/router';
 
-export default function Meta(props: { title: string; description: string }) {
+interface MetaProps {
+    title?: string;
+    description?: string;
+}
+
+export default function Meta(meta: MetaProps) {
     const { pathname } = useRouter();
 
     const pageRoute = pathname.split('/');
@@ -20,7 +25,9 @@ export default function Meta(props: { title: string; description: string }) {
     return (
         <Head>
             <title>
-                {pageRoute[1] == '' ? props.title : `${page} | Nico Bachner`}
+                {pathname == '/'
+                    ? 'Nico Bachner - Aspiring Open Sourcerer'
+                    : `${meta.title ?? page} | Nico Bachner`}
             </title>
             <link rel="icon" href="/icon.svg" />
             <link
@@ -37,9 +44,21 @@ export default function Meta(props: { title: string; description: string }) {
                 as="font"
                 type="font/woff2"
             />
-            <meta name="description" content={props.description} />
+            <meta
+                name="description"
+                content={
+                    meta.description ??
+                    'High School Student and Aspiring Open Sourcerer currently living in Luxembourg'
+                }
+            />
             <meta property="og:type" content="website" />
-            <meta property="og:description" content={props.description} />
+            <meta
+                property="og:description"
+                content={
+                    meta.description ??
+                    'High School Student and Aspiring Open Sourcerer currently living in Luxembourg'
+                }
+            />
         </Head>
     );
 }

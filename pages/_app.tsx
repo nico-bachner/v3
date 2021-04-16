@@ -16,10 +16,7 @@ export default function App({ Component, pageProps }: AppProps) {
 
     return (
         <>
-            <Meta
-                title="Nico Bachner - Aspiring Open Sourcerer"
-                description="High School Student and Aspiring Open Sourcerer currently living in Luxembourg"
-            />
+            <Meta />
 
             <Navigation pages={i18n.pages} />
 
