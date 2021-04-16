@@ -122,4 +122,12 @@
             @apply bg-gray-lightest;
         }
     }
+
+    .alternate > :nth-child(even) {
+        @apply md:col-start-2 md:col-end-4;
+    }
+
+    .alternate > :nth-child(odd) {
+        @apply md:col-start-1 md:col-end-3;
+    }
 }

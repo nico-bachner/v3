@@ -17,11 +17,11 @@ export default function ArticleCard(article: ArticleProps) {
     return (
         <Card href={'/articles/' + article.slug} locale="en">
             <h3 className="capitalize">{article.data.title}</h3>
-            <p className="my-2">
-                {article.data.summary}
-                <span className="ml-4 text-azure">Read More {'->'}</span>
-            </p>
-            <p className="text-gray-strong">{article.time} minute read</p>
+            <p className="my-2">{article.data.summary}</p>
+            <div className="flex justify-between">
+                <p className="text-azure">Read More {'->'}</p>
+                <p className="text-gray-strong">{article.time} minute read</p>
+            </div>
         </Card>
     );
 }

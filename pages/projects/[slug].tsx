@@ -63,6 +63,16 @@ export default function Project(project: ProjectProps) {
             />
             <article>
                 <h1 className="max-w-2xl mx-auto">{project.data.title}</h1>
+                <p className="max-w-2xl mx-auto my-8 space-x-8">
+                    {project.data.url && (
+                        <Link href={project.data.url}>Demo</Link>
+                    )}
+                    {project.data.github_url && (
+                        <Link href={project.data.github_url}>
+                            GitHub Repository
+                        </Link>
+                    )}
+                </p>
                 {content}
             </article>
             <p className="max-w-2xl mx-auto my-20 text-right">

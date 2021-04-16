@@ -16,18 +16,9 @@ export default function Projects({ projects }: Props) {
         <main>
             <h1 className="max-w-2xl mx-auto">{i18n.projects.title}</h1>
             <p className="max-w-2xl mx-auto mt-4">{i18n.projects.subtitle}</p>
-            <div className="grid grid-cols-1 mx-auto my-8 gap-y-8 max-w-prose md:max-w-3xl md:grid-cols-3">
+            <div className="grid max-w-2xl gap-8 mx-auto my-8 md:max-w-3xl md:grid-cols-3 alternate">
                 {projects.map((project: ProjectProps, index: number) => (
-                    <div
-                        key={index}
-                        className={
-                            index % 2 == 1
-                                ? 'md:col-start-2 md:col-end-4'
-                                : 'md:col-start-1 md:col-end-3'
-                        }
-                    >
-                        <ProjectCard {...project} />
-                    </div>
+                    <ProjectCard key={index} {...project} />
                 ))}
             </div>
         </main>
