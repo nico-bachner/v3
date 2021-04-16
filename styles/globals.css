@@ -53,7 +53,11 @@
 
 @layer base {
     html {
-        @apply antialiased bg-gray-lightest text-gray-stronger;
+        @apply antialiased bg-gray-lightest text-gray-strong;
+    }
+
+    main {
+        @apply text-gray-stronger;
     }
 
     h1,

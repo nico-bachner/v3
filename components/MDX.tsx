@@ -2,7 +2,6 @@ import { useRouter } from 'next/router';
 
 import Link, { LinkProps } from './Link';
 import Image, { ImageProps } from './Image';
-import Code, { CodeProps } from './Code';
 
 import { MDXProvider } from '@mdx-js/react';
 
@@ -10,32 +9,8 @@ interface Props {
     children: React.ReactNode;
 }
 
-interface MDXCodeProps {
-    className?: string;
-    children: string;
-}
-
-const mdxComponents = {
-    wrapper: (props: Props) => {
-        const router = useRouter();
-        return (
-            <main>
-                {props.children}
-
-                <p className="max-w-2xl mx-auto my-20 text-right">
-                    <Link
-                        href={
-                            'https://github.com/nico-bachner/v3/edit/main/pages' +
-                            router.pathname +
-                            '.mdx'
-                        }
-                    >
-                        Edit on GitHub
-                    </Link>
-                </p>
-            </main>
-        );
-    },
+export const mdxComponents = {
+    wrapper: (props: Props) => <>{props.children}</>,
     h1: (props: Props) => (
         <h1 className="max-w-2xl mx-auto">{props.children}</h1>
     ),
@@ -67,14 +42,11 @@ const mdxComponents = {
             {props.children}
         </code>
     ),
-    code: (props: MDXCodeProps) =>
-        props.className ? (
-            <Code language={props.className.replace('language-', '')}>
-                {props.children}
-            </Code>
-        ) : (
-            <Code>{props.children}</Code>
-        ),
+    code: (props: Props) => (
+        <pre className="relative max-w-2xl px-3 py-1.5 mx-auto my-2 overflow-x-scroll border rounded">
+            <code>{props.children}</code>
+        </pre>
+    ),
     a: Link,
     Image: (props: ImageProps) => (
         <div className="max-w-3xl mx-auto my-8 sm:my-12">
@@ -83,8 +55,38 @@ const mdxComponents = {
     ),
 };
 
+const components = {
+    ...mdxComponents,
+    wrapper: (props: Props) => {
+        const router = useRouter();
+
+        return (
+            <main>
+                {props.children}
+                <p className="max-w-2xl mx-auto my-20 text-right">
+                    <Link
+                        href={
+                            'https://github.com/nico-bachner/v3/edit/main/pages' +
+                            router.pathname +
+                            '.mdx'
+                        }
+                    >
+                        Edit on GitHub
+                    </Link>
+                </p>
+            </main>
+        );
+    },
+};
+
 export default function MDX(props: Props) {
+    const router = useRouter();
+
     return (
-        <MDXProvider components={mdxComponents}>{props.children}</MDXProvider>
+        <MDXProvider
+            components={router.query == {} ? mdxComponents : components}
+        >
+            {props.children}
+        </MDXProvider>
     );
 }

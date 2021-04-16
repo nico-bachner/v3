@@ -2,7 +2,7 @@ import { useRouter } from 'next/router';
 import { useI18n } from '../hooks/i18n';
 import { translations } from '../i18n';
 
-import type { Page } from '../lib/types';
+import type { Page } from '../i18n';
 
 import Link from './Link';
 import Logo from './Logo';
@@ -20,7 +20,7 @@ export default function Navigation(props: Props) {
             <div className="flex items-center justify-between max-w-[52rem] mx-auto">
                 <a
                     href="/"
-                    className="transition duration-300 ease-in-out transform hover:text-gray-stronger hover:-translate-y-0.5"
+                    className="transition duration-300 ease-in-out transform text-gray-stronger hover:-translate-y-0.5"
                 >
                     <Logo className="w-12 h-12" />
                 </a>
@@ -33,7 +33,7 @@ export default function Navigation(props: Props) {
                                 className={
                                     router.pathname == page.href
                                         ? 'text-gray-light cursor-default'
-                                        : 'hover:text-gray-stronger transition duration-300 ease-in-out transform hover:-translate-y-0.5'
+                                        : 'text-gray-stronger transition duration-300 ease-in-out transform hover:-translate-y-0.5'
                                 }
                             >
                                 {page.title}

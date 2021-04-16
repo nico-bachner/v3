@@ -1,4 +1,4 @@
-import type { Translation } from '../lib/types';
+import type { Translation } from '../i18n';
 
 export const de: Translation = {
     title: 'Ich bin Nico,',

@@ -2,6 +2,7 @@ import Link from './Link';
 
 interface Props {
     href?: string;
+    locale?: string;
     className?: string;
     children: React.ReactNode;
 }
@@ -9,7 +10,11 @@ interface Props {
 export default function Card(props: Props) {
     if (props.href) {
         return (
-            <Link href={props.href} className={`link-card ${props.className}`}>
+            <Link
+                href={props.href}
+                locale={props.locale}
+                className={`link-card ${props.className}`}
+            >
                 {props.children}
             </Link>
         );

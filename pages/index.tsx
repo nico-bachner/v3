@@ -1,21 +1,16 @@
 import { useI18n } from '../hooks/i18n';
-import { useSupabase } from '../hooks/supabase';
-
-import Link from '../components/Link';
-import ProjectCard from '../components/ProjectCard';
-import ArticleCard from '../components/ArticleCard';
 
 import { translations } from '../i18n';
 
-import { getArticles } from '../lib/getArticles';
+import Link from '../components/Link';
+import ProjectCard, { ProjectProps } from '../components/ProjectCard';
+import ArticleCard, { ArticleProps } from '../components/ArticleCard';
 
-import type { Project, Article } from '../lib/types';
+import { getProjects, getArticles } from '../lib/mdx';
 
 export async function getStaticProps() {
-    const projectsResponse = await useSupabase('projects');
-    const projects = await projectsResponse?.filter(
-        (project: Project) => project.featured
-    );
+    const allProjects = await getProjects();
+    const projects = allProjects.filter((project) => project.data.featured);
 
     const articles = await getArticles();
 
@@ -29,8 +24,8 @@ export async function getStaticProps() {
 }
 
 interface Props {
-    projects: Project[];
-    articles: Article[];
+    projects: ProjectProps[];
+    articles: ArticleProps[];
 }
 
 export default function Home(props: Props) {
@@ -50,9 +45,11 @@ export default function Home(props: Props) {
                 <h2>{i18n.projects.title}</h2>
                 <p className="my-4">{i18n.projects.subtitle}</p>
                 <div className="grid gap-4">
-                    {props.projects.map((project: Project, index: number) => (
-                        <ProjectCard key={index} {...project} />
-                    ))}
+                    {props.projects.map(
+                        (project: ProjectProps, index: number) => (
+                            <ProjectCard key={index} {...project} />
+                        )
+                    )}
                 </div>
                 <p className="mt-8 text-right capitalize text-azure hover:underline">
                     <Link href="/projects">{i18n.actions.viewAll}</Link>
@@ -62,9 +59,11 @@ export default function Home(props: Props) {
                 <h2>{i18n.articles.title}</h2>
                 <p className="my-4">{i18n.articles.subtitle}</p>
                 <div className="grid gap-4">
-                    {props.articles.map((article: Article, index: number) => (
-                        <ArticleCard key={index} {...article} />
-                    ))}
+                    {props.articles.map(
+                        (article: ArticleProps, index: number) => (
+                            <ArticleCard key={index} {...article} />
+                        )
+                    )}
                 </div>
                 <p className="mt-8 text-right capitalize myt-8 text-azure hover:underline">
                     <Link href="/articles">{i18n.actions.viewAll}</Link>

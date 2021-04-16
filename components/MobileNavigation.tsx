@@ -1,6 +1,6 @@
 import { useRouter } from 'next/router';
 
-import type { Page } from '../lib/types';
+import type { Page } from '../i18n';
 
 import Link from './Link';
 

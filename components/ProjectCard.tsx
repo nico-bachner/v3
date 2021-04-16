@@ -1,31 +1,37 @@
 import Card from './Card';
 import Link from './Link';
 
-interface Props {
-    slug: string;
-    title?: string;
-    description?: string;
+interface Data {
+    title: string;
+    summary: string;
+    featured?: boolean;
+    url?: string;
     github_url?: string;
-    demo_url?: string;
 }
 
-export default function ProjectCard(props: Props) {
+export interface ProjectProps {
+    slug: string;
+    data: Data;
+    mdx: any;
+}
+
+export default function ProjectCard(project: ProjectProps) {
     return (
         <Card>
-            <h3 className="capitalize">{props.title ?? props.slug}</h3>
+            <h3 className="capitalize">{project.data.title}</h3>
             <p className="mt-2 mb-4">
-                {props.description}{' '}
-                <span className="inline-block">
-                    <Link href={'/projects/' + props.slug}>
-                        {'->'}more information
+                {project.data.summary}{' '}
+                <span className="ml-2">
+                    <Link href={'/projects/' + project.slug} locale="en">
+                        More Information {'->'}
                     </Link>
                 </span>
             </p>
             <p className="space-x-8">
                 <Link
-                    href={props.github_url ?? '/'}
+                    href={project.data.github_url ?? '/'}
                     className={
-                        props.github_url
+                        project.data.github_url
                             ? 'text-azure hover:underline'
                             : 'cursor-default text-gray-light'
                     }
@@ -33,9 +39,9 @@ export default function ProjectCard(props: Props) {
                     Source Code
                 </Link>
                 <Link
-                    href={props.demo_url ?? '/'}
+                    href={project.data.url ?? '/'}
                     className={
-                        props.demo_url
+                        project.data.url
                             ? 'text-azure hover:underline'
                             : 'cursor-default text-gray-light'
                     }

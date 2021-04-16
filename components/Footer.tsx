@@ -1,6 +1,6 @@
 import Link from './Link';
 
-import type { Page } from '../lib/types';
+import type { Page } from '../i18n';
 
 interface Props {
     pages: Page[];
@@ -17,7 +17,7 @@ export default function Footer(props: Props) {
                             key={index}
                             href={page.href}
                             className={
-                                'sm:text-lg transition duration-300 ease-in-out transform text-gray-light hover:text-gray-strong hover:-translate-y-0.5' +
+                                'sm:text-lg transition duration-300 ease-in-out transform hover:text-gray-stronger hover:-translate-y-0.5' +
                                 ' ' +
                                 (index < 4
                                     ? 'text-left'
@@ -36,7 +36,7 @@ export default function Footer(props: Props) {
                             key={index}
                             href={link.href}
                             className={
-                                'sm:text-lg transition duration-300 ease-in-out transform text-gray-light hover:text-gray-strong hover:-translate-y-0.5' +
+                                'sm:text-lg transition duration-300 ease-in-out transform hover:text-gray-stronger hover:-translate-y-0.5' +
                                 ' ' +
                                 (index < 4
                                     ? 'text-left sm:text-center'
