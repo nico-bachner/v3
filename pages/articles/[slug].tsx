@@ -1,19 +1,17 @@
-import hydrate from 'next-mdx-remote/hydrate';
-
 import {
     getSlugs,
     getFile,
     getFileData,
-    getMDX,
+    getContent,
     getReadingTime,
 } from '../../lib/mdx';
 
+import { useMDX } from '../../hooks/mdx';
+
 import Meta from '../../components/Meta';
 import Link from '../../components/Link';
+
 import { ArticleProps } from '../../components/ArticleCard';
-
-import { mdxComponents } from '../../components/MDX';
-
 import { GetStaticPaths, GetStaticProps } from 'next';
 
 export const getStaticPaths: GetStaticPaths = async () => {
@@ -36,12 +34,12 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 
     const file = await getFile('articles', slug);
 
-    const mdx = await getMDX(file);
+    const content = await getContent(file);
     const data = getFileData(file);
     const time = getReadingTime(file);
 
     const article = {
-        mdx,
+        content,
         data,
         time,
         slug,
@@ -51,11 +49,9 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 };
 
 export default function Article(article: ArticleProps) {
-    const content = hydrate(article.mdx, {
-        components: mdxComponents,
-    });
-
     const published = new Date(article.data.published).toLocaleDateString();
+
+    const mdx = useMDX(article.content);
 
     return (
         <main>
@@ -69,8 +65,7 @@ export default function Article(article: ArticleProps) {
                     <p>Published {published}</p>
                     <p>{article.time} minute read</p>
                 </div>
-
-                {content}
+                {mdx}
             </article>
             <p className="max-w-2xl mx-auto my-20 text-right">
                 <Link

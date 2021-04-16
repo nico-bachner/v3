@@ -10,7 +10,7 @@ export interface ArticleProps {
     slug: string;
     data: Data;
     time: number;
-    mdx: any;
+    content: any;
 }
 
 export default function ArticleCard(article: ArticleProps) {
@@ -20,7 +20,7 @@ export default function ArticleCard(article: ArticleProps) {
             <p className="my-2">{article.data.summary}</p>
             <div className="flex justify-between">
                 <p className="text-azure">Read More {'->'}</p>
-                <p className="text-gray-strong">{article.time} minute read</p>
+                <p className="text-gray-light">{article.time} minute read</p>
             </div>
         </Card>
     );

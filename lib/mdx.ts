@@ -2,7 +2,7 @@ import { promises as fs } from 'fs';
 import matter from 'gray-matter';
 import readingTime from 'reading-time';
 import renderToString from 'next-mdx-remote/render-to-string';
-import { mdxComponents } from '../components/MDX';
+import { MDXComponents } from '../components/MDXComponents';
 
 export async function getSlugs(directory: string) {
     const files = await fs.readdir(process.cwd() + '/' + directory);
@@ -41,13 +41,12 @@ export function getReadingTime(file: string) {
     return time;
 }
 
-export async function getMDX(file: string) {
-    const content = getFileContent(file);
-    const mdx = await renderToString(content, {
-        components: mdxComponents,
+export async function getContent(file: string) {
+    const content = await renderToString(getFileContent(file), {
+        components: MDXComponents,
     });
 
-    return mdx;
+    return content;
 }
 
 export async function getArticles() {
@@ -89,11 +88,3 @@ export async function getProjects() {
 
     return articles;
 }
-
-/*export function hydrate(mdx: string) {
-    const content = hydrate(mdx, {
-        components: mdxComponents,
-    });
-
-    return file;
-}*/

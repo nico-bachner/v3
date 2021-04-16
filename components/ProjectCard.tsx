@@ -12,7 +12,7 @@ interface Data {
 export interface ProjectProps {
     slug: string;
     data: Data;
-    mdx: any;
+    content: any;
 }
 
 export default function ProjectCard(project: ProjectProps) {

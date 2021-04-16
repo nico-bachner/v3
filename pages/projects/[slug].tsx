@@ -4,15 +4,15 @@ import {
     getSlugs,
     getFile,
     getFileData,
-    getMDX,
+    getContent,
     getReadingTime,
 } from '../../lib/mdx';
+
+import { useMDX } from '../../hooks/mdx';
 
 import Meta from '../../components/Meta';
 import Link from '../../components/Link';
 import { ProjectProps } from '../../components/ProjectCard';
-
-import { mdxComponents } from '../../components/MDX';
 
 import { GetStaticPaths, GetStaticProps } from 'next';
 
@@ -36,12 +36,12 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 
     const file = await getFile('projects', slug);
 
-    const mdx = await getMDX(file);
+    const content = await getContent(file);
     const data = getFileData(file);
     const time = getReadingTime(file);
 
     const project = {
-        mdx,
+        content,
         data,
         time,
         slug,
@@ -51,9 +51,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 };
 
 export default function Project(project: ProjectProps) {
-    const content = hydrate(project.mdx, {
-        components: mdxComponents,
-    });
+    const mdx = useMDX(project.content);
 
     return (
         <main>
@@ -73,7 +71,7 @@ export default function Project(project: ProjectProps) {
                         </Link>
                     )}
                 </p>
-                {content}
+                {mdx}
             </article>
             <p className="max-w-2xl mx-auto my-20 text-right">
                 <Link
