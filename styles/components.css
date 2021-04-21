@@ -20,4 +20,21 @@
             @apply border rounded base-card hover:border-strong;
         }
     }
+
+    .logo-circles-centre {
+        stroke-dasharray: 15;
+        stroke-dashoffset: 15;
+        animation: draw 0.5s linear 1s forwards;
+    }
+
+    .logo-circles-edge {
+        stroke-dasharray: 40;
+        stroke-dashoffset: 40;
+        animation: draw 1s linear 0s forwards;
+    }
+    .logo-helpers-edge {
+        stroke-dasharray: 20;
+        stroke-dashoffset: 20;
+        animation: draw 0.5s linear 0.3s forwards;
+    }
 }

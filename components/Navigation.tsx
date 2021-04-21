@@ -16,13 +16,13 @@ export default function Navigation(props: Props) {
     const router = useRouter();
 
     return (
-        <nav className="top-0 z-50 px-6 py-8 my-4 font-medium sm:my-8 sm:sticky glass">
+        <nav className="sticky top-0 z-50 px-6 py-8 my-8 font-medium glass">
             <div className="flex items-center justify-between max-w-[52rem] mx-auto">
                 <a
                     href="/"
-                    className="transition duration-300 ease-in-out transform text-gray-stronger hover:-translate-y-0.5"
+                    className="transition duration-300 w-12 h-12 ease-in-out transform text-gray-stronger hover:-translate-y-0.5"
                 >
-                    <Logo className="w-12 h-12" />
+                    <Logo />
                 </a>
                 <div className="justify-end flex-grow hidden mx-8 space-x-8 sm:flex sm:text-lg">
                     {props.pages.slice(0, 4).map((page, index) => {

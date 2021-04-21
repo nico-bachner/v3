@@ -1,6 +1,8 @@
+import '../styles/root.css';
 import '../styles/base.css';
 import '../styles/components.css';
 import '../styles/utilities.css';
+import '../styles/animations.css';
 
 import Meta from '../components/Meta';
 import Navigation from '../components/Navigation';
