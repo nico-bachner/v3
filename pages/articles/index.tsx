@@ -3,21 +3,22 @@ import { translations } from '../../i18n';
 
 import { getArticles } from '../../lib/mdx';
 
-import ArticleCard, { ArticleProps } from '../../components/ArticleCard';
+import { ArticleProps } from '../../components/Article';
+import ArticleCard from '../../components/ArticleCard';
 
 interface Props {
     articles: ArticleProps[];
 }
 
-export default function Articles(props: Props) {
+export default function Articles({ articles }: Props) {
     const i18n = useI18n(translations, 'en');
 
     return (
         <main className="max-w-2xl mx-auto">
             <h1>{i18n.articles.title}</h1>
             <p className="mt-4">{i18n.articles.subtitle}</p>
-            <div className="grid my-8 gap-y-8">
-                {props.articles.map((article: ArticleProps, index: number) => (
+            <div className="grid gap-8 my-8">
+                {articles.map((article: ArticleProps, index: number) => (
                     <ArticleCard key={index} {...article} />
                 ))}
             </div>

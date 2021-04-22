@@ -8,18 +8,14 @@ interface WrapperProps {
     height: number;
 }
 
-const Wrapper = ({
-    width,
-    height,
-    children,
-}: React.PropsWithChildren<WrapperProps>) => (
+const Wrapper = (props: React.PropsWithChildren<WrapperProps>) => (
     <svg
-        viewBox={`0 0 ${width} ${height}`}
+        viewBox={`0 0 ${props.width} ${props.height}`}
         fill="currentColor"
         stroke="currentColor"
         className="w-full h-full"
     >
-        {children}
+        {props.children}
     </svg>
 );
 
@@ -32,14 +28,14 @@ interface CircleProps {
     className?: string;
 }
 
-const Circle = ({ center, radius, stroke, fill, clip }: CircleProps) => (
+const Circle = (props: CircleProps) => (
     <circle
-        cx={`${center.x}`}
-        cy={`${center.y}`}
-        r={`${radius ?? 1}`}
-        fill={fill ? 'currentColor' : 'transparent'}
-        strokeWidth={`${stroke ?? 1}`}
-        clipPath={`url(#clip-${clip})`}
+        cx={`${props.center.x}`}
+        cy={`${props.center.y}`}
+        r={`${props.radius ?? 1}`}
+        fill={props.fill ? 'currentColor' : 'transparent'}
+        strokeWidth={`${props.stroke ?? 1}`}
+        clipPath={`url(#clip-${props.clip})`}
     />
 );
 

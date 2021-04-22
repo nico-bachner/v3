@@ -16,7 +16,7 @@ export default function Navigation(props: Props) {
     const router = useRouter();
 
     return (
-        <nav className="sticky top-0 z-50 px-6 py-8 my-8 font-medium glass">
+        <nav className="sticky top-0 z-50 px-6 py-4 my-8 font-medium sm:py-8 glass">
             <div className="flex items-center justify-between max-w-[52rem] mx-auto">
                 <a
                     href="/"

@@ -1,23 +1,24 @@
+import React from 'react';
 import Link from './Link';
 
-interface Props {
+export interface CardProps {
     href?: string;
-    locale?: string;
-    className?: string;
-    children: React.ReactNode;
+    locale?: string | false;
 }
 
-export default function Card(props: Props) {
-    if (props.href) {
+const Card = (card: React.PropsWithChildren<CardProps>) => {
+    if (card.href) {
         return (
             <Link
-                href={props.href}
-                locale={props.locale}
-                className={`link-card ${props.className}`}
+                href={card.href}
+                locale={card.locale ?? false}
+                className="link-card"
             >
-                {props.children}
+                {card.children}
             </Link>
         );
     }
-    return <div className={`card ${props.className}`}>{props.children}</div>;
-}
+    return <div className="card">{card.children}</div>;
+};
+
+export default Card;

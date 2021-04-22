@@ -8,7 +8,7 @@ interface Props {
     pages: Page[];
 }
 
-export default function Navigation(props: Props) {
+export default function MobileNavigation(props: Props) {
     const router = useRouter();
 
     return (

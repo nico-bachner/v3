@@ -12,11 +12,32 @@
         }
     }
 
-    .alternate > :nth-child(even) {
-        @apply md:col-start-2 md:col-end-4;
+    .alternate-2 {
+        @apply md:grid-cols-3;
+    }
+    .alternate-2 > * {
+        @apply md:col-span-2;
+    }
+    .alternate-2 > :nth-child(odd) {
+        @apply md:col-start-1;
+    }
+    .alternate-2 > :nth-child(even) {
+        @apply md:col-start-2;
     }
 
-    .alternate > :nth-child(odd) {
-        @apply md:col-start-1 md:col-end-3;
+    .alternate-4 {
+        @apply md:grid-cols-7;
+    }
+    .alternate-4 > * {
+        @apply md:col-span-3;
+    }
+    .alternate-4 > :nth-child(4n + 1) {
+        @apply md:col-start-1;
+    }
+    .alternate-4 > :nth-child(2n) {
+        @apply md:col-start-3;
+    }
+    .alternate-4 > :nth-child(4n + 3) {
+        @apply md:col-start-5;
     }
 }

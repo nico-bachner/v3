@@ -12,7 +12,7 @@ export interface LinkProps {
     locale?: string | false;
 }
 
-export default function Link(props: React.PropsWithChildren<LinkProps>) {
+const Link = (props: React.PropsWithChildren<LinkProps>) => {
     if (props.href.startsWith('/')) {
         return (
             <NextLink {...props}>
@@ -21,15 +21,18 @@ export default function Link(props: React.PropsWithChildren<LinkProps>) {
                 </a>
             </NextLink>
         );
+    } else {
+        return (
+            <a
+                href={props.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={props.className ?? 'text-azure hover:underline'}
+            >
+                {props.children}
+            </a>
+        );
     }
-    return (
-        <a
-            href={props.href}
-            target="_blank"
-            rel="noopener noreferrer"
-            className={props.className ?? 'text-azure hover:underline'}
-        >
-            {props.children}
-        </a>
-    );
-}
+};
+
+export default Link;

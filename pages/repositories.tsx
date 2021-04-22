@@ -3,6 +3,7 @@ import { useI18n } from '../hooks/i18n';
 
 import Link from '../components/Link';
 import Card from '../components/Card';
+import Section from '../components/Section';
 
 import { translations } from '../i18n';
 
@@ -37,49 +38,35 @@ export default function Repositories(props: Props) {
 
     return (
         <main>
-            <section className="max-w-2xl mx-auto mb-8">
-                <h1>GitHub Repositories</h1>
-                <p className="mt-4">
-                    Here are all {props.repositories.length} of my public GitHub
-                    repositories. Obviously, they can all be found on{' '}
-                    <Link
-                        href="https://github.com/nico-bachner?tab=repositories"
-                        className="text-azure hover:underline"
-                    >
-                        GitHub
-                    </Link>{' '}
-                    as well.
-                </p>
-            </section>
-            <section className="grid grid-cols-1 gap-4 mx-auto mt-4 max-w-prose md:max-w-4xl md:grid-cols-7">
+            <h1 className="max-w-2xl mx-auto">GitHub Repositories</h1>
+            <p className="max-w-2xl mx-auto mt-4 mb-8">
+                Here are all {props.repositories.length} of my public GitHub
+                repositories. Obviously, they can all be found on{' '}
+                <Link
+                    href="https://github.com/nico-bachner?tab=repositories"
+                    className="text-azure hover:underline"
+                >
+                    GitHub
+                </Link>{' '}
+                as well.
+            </p>
+            <div className="grid mx-auto mt-4 gap-y-8 gap-x-20 max-w-prose md:max-w-4xl alternate-4">
                 {props.repositories
                     .filter(
                         (repository: GitHubRepository) =>
                             repository.stargazers_count >= minStars
                     )
                     .map((repository: GitHubRepository, index: number) => (
-                        <Card
-                            key={index}
-                            className={
-                                'md:col-span-3' +
-                                ' ' +
-                                (index % 3 == 0
-                                    ? 'md:col-start-1'
-                                    : index % 3 == 1
-                                    ? 'md:col-start-3'
-                                    : 'md:col-start-5')
-                            }
-                            href={repository.html_url}
-                        >
-                            <h3 className="text-2xl text-center capitalize sm:text-3xl">
+                        <Card key={index} href={repository.html_url}>
+                            <h3 className="text-2xl capitalize sm:text-3xl">
                                 {repository.name.replace(/-/g, ' ')}
                             </h3>
-                            <p className="mt-2 mb-0 text-center">
+                            <p className="mt-2 mb-0">
                                 {repository.description}
                             </p>
                         </Card>
                     ))}
-            </section>
+            </div>
             <p className="my-20 text-center">
                 <button
                     onClick={() => {

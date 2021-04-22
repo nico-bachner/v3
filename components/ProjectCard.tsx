@@ -1,26 +1,13 @@
 import Card from './Card';
-import Link from './Link';
 
-interface Data {
-    title: string;
-    summary: string;
-    featured?: boolean;
-    url?: string;
-    github_url?: string;
-}
+import { ProjectProps } from './Project';
 
-export interface ProjectProps {
-    slug: string;
-    data: Data;
-    content: any;
-}
+const ProjectCard = (project: ProjectProps) => (
+    <Card href={'/projects/' + project.slug}>
+        <h3 className="capitalize">{project.title}</h3>
+        <p className="my-2">{project.summary}</p>
+        <p className="text-azure">More Information {'->'}</p>
+    </Card>
+);
 
-export default function ProjectCard(project: ProjectProps) {
-    return (
-        <Card href={'/projects/' + project.slug} locale="en">
-            <h3 className="capitalize">{project.data.title}</h3>
-            <p className="my-2">{project.data.summary}</p>
-            <p className="text-azure">More Information {'->'}</p>
-        </Card>
-    );
-}
+export default ProjectCard;

@@ -2,7 +2,10 @@ import { promises as fs } from 'fs';
 import matter from 'gray-matter';
 import readingTime from 'reading-time';
 import renderToString from 'next-mdx-remote/render-to-string';
+
 import { MDXComponents } from '../components/MDXComponents';
+import { ArticleProps, MDXArticleProps } from '../components/Article';
+import { ProjectProps, MDXProjectProps } from '../components/Project';
 
 export async function getSlugs(directory: string) {
     const files = await fs.readdir(process.cwd() + '/' + directory);
@@ -21,17 +24,23 @@ export async function getFile(directory: string, slug: string) {
     return file;
 }
 
-export function getFileData(file: string) {
+export const getFileData = (file: string, type: 'article' | 'project') => {
     const { data } = matter(file);
 
-    return data;
-}
+    const fileData: MDXProjectProps | MDXArticleProps = {
+        ...data,
+        title: data.title,
+        summary: data.summary,
+    };
 
-export function getFileContent(file: string) {
+    return fileData;
+};
+
+export const getFileContent = (file: string) => {
     const { content } = matter(file);
 
     return content;
-}
+};
 
 export function getReadingTime(file: string) {
     const content = getFileContent(file);
@@ -49,6 +58,27 @@ export async function getContent(file: string) {
     return content;
 }
 
+export const getProjects = async () => {
+    const slugs = await getSlugs('projects');
+
+    const projects = await Promise.all(
+        slugs.map(async (slug) => {
+            const file = await getFile('projects', slug);
+
+            const data: MDXProjectProps = getFileData(file, 'project');
+
+            const project: ProjectProps = {
+                ...data,
+                slug,
+            };
+
+            return project;
+        })
+    );
+
+    return projects;
+};
+
 export async function getArticles() {
     const slugs = await getSlugs('articles');
 
@@ -56,33 +86,16 @@ export async function getArticles() {
         slugs.map(async (slug) => {
             const file = await getFile('articles', slug);
 
-            const data = getFileData(file);
+            const data: MDXArticleProps = getFileData(file, 'article');
             const time = getReadingTime(file);
 
-            return {
+            const article: ArticleProps = {
+                ...data,
                 slug,
                 time,
-                data,
             };
-        })
-    );
 
-    return articles;
-}
-
-export async function getProjects() {
-    const slugs = await getSlugs('projects');
-
-    const articles = await Promise.all(
-        slugs.map(async (slug) => {
-            const file = await getFile('projects', slug);
-
-            const data = getFileData(file);
-
-            return {
-                slug,
-                data,
-            };
+            return article;
         })
     );
 
