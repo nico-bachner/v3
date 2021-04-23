@@ -1,6 +1,10 @@
 @tailwind base;
 
 @layer base {
+    :root {
+        color-scheme: light dark;
+    }
+
     html {
         @apply antialiased bg-gray-lightest text-gray-strong;
     }

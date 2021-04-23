@@ -1,7 +1,3 @@
-:root {
-    color-scheme: light dark;
-}
-
 @media (prefers-color-scheme: light) {
     :root {
         --lightest: 100%;
@@ -22,18 +18,4 @@
         --stronger: 80%;
         --strongest: 100%;
     }
-}
-
-@font-face {
-    font-family: 'Inter';
-    font-weight: 100 900;
-    font-display: optional;
-    src: url('/fonts/inter.woff2') format('woff2');
-}
-
-@font-face {
-    font-family: 'Fira Code';
-    font-weight: 100 900;
-    font-display: optional;
-    src: url('/fonts/fira-code.woff2') format('woff2');
 }
