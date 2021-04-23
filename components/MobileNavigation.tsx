@@ -8,12 +8,12 @@ interface Props {
     pages: Page[];
 }
 
-export default function MobileNavigation(props: Props) {
+const MobileNavigation = ({ pages }: Props) => {
     const router = useRouter();
 
     return (
         <nav className="sticky bottom-0 z-50 flex w-full py-8 sm:hidden glass justify-evenly">
-            {props.pages.slice(0, 4).map((page, index) => {
+            {pages.slice(0, 4).map((page, index) => {
                 return (
                     <Link
                         key={index}
@@ -30,4 +30,6 @@ export default function MobileNavigation(props: Props) {
             })}
         </nav>
     );
-}
+};
+
+export default MobileNavigation;

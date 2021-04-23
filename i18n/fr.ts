@@ -11,7 +11,7 @@ export const fr: Translation = {
     projects: {
         title: 'Projets',
         subtitle:
-            "Voici quelques projets que j'ai fait récemment. Les projets sont tous Open Source et leur code source se trouve sur GitHub",
+            "Voici quelques projets sur lesquels j'ai travaillé récemment. Les projets sont tous Source Libre et leur code source se trouve sur GitHub",
         web: 'Applications et Sites Web',
         games: 'Jeux Vidéo',
         other: 'Autres Projets',
@@ -19,7 +19,7 @@ export const fr: Translation = {
     articles: {
         title: 'Articles',
         subtitle:
-            'Voici quelques de mes articles. Regrettablement, ils ne sont que disponibles en anglais.',
+            "Voici quelques articles que j'ai écrit récemment. Regrettablement, ils ne sont que disponibles en anglais.",
     },
     actions: {
         changeLanguage: 'changer la langue',

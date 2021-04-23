@@ -1,4 +1,5 @@
 import { getSlugs, getFile, getFileData, getContent } from '../../lib/mdx';
+import { useMDX } from '../../hooks/mdx';
 
 import Meta from '../../components/Meta';
 import Link from '../../components/Link';
@@ -7,10 +8,12 @@ import Project, { ProjectProps } from '../../components/Project';
 import { GetStaticPaths, GetStaticProps } from 'next';
 
 export default function ProjectPage(project: ProjectProps & { content: any }) {
+    const mdx = useMDX(project.content);
+
     return (
         <main>
             <Meta title={project.title} description={project.summary} />
-            <Project {...project} />
+            <Project {...project}>{mdx}</Project>
             <p className="max-w-2xl mx-auto my-20 text-right">
                 <Link
                     href={

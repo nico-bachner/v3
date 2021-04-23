@@ -11,7 +11,7 @@ interface Props {
     pages: Page[];
 }
 
-export default function Navigation(props: Props) {
+const Navigation = ({ pages }: Props) => {
     const i18n = useI18n(translations, 'en');
     const router = useRouter();
 
@@ -25,7 +25,7 @@ export default function Navigation(props: Props) {
                     <Logo />
                 </a>
                 <div className="justify-end flex-grow hidden mx-8 space-x-8 sm:flex sm:text-lg">
-                    {props.pages.slice(0, 4).map((page, index) => {
+                    {pages.slice(0, 4).map((page, index) => {
                         return (
                             <Link
                                 key={index}
@@ -66,4 +66,6 @@ export default function Navigation(props: Props) {
             </div>
         </nav>
     );
-}
+};
+
+export default Navigation;

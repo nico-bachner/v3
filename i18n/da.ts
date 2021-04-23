@@ -11,7 +11,7 @@ export const da: Translation = {
     projects: {
         title: 'Projekter',
         subtitle:
-            'Her er nogle af mine favoritprojekter. Alle projekter er Open Source og deres source code kan blive fundet på GitHub.',
+            'Her er nogle af mine favoritprojekter. Alle projekter er Open Source og deres source code kan findes på GitHub.',
         web: 'Web Development',
         games: 'Spill',
         other: 'Andre Projekter',

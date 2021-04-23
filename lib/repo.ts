@@ -1,14 +1,4 @@
-export interface Repository {
-    name: string;
-    slug: string;
-    description: string;
-    url: string;
-    repo_url: string;
-    is_fork: boolean;
-    stars: number;
-}
-
-export interface GitHubUser {
+interface GitHubUser {
     login: string;
     id: number;
     node_id: string;
@@ -104,3 +94,40 @@ export interface GitHubRepository {
     watchers: number;
     default_branch: string;
 }
+
+export interface Repository {
+    name: string;
+    slug: string;
+    description: string;
+    repo_url: string;
+    url: string;
+    stars: number;
+}
+
+const getRepos = async () => {
+    const GitHubRepositoriesResponse = await fetch(
+        'https://api.github.com/users/nico-bachner/repos'
+    );
+    const GitHubRepositories = await GitHubRepositoriesResponse.json();
+
+    const repositories = GitHubRepositories.filter(
+        (x: GitHubRepository) => !x.fork
+    ).map((GitHubRepository: GitHubRepository) => {
+        const repository: Repository = {
+            name: GitHubRepository.name.replace(/-/g, ' '),
+            slug: GitHubRepository.name,
+            description: GitHubRepository.description,
+            repo_url: GitHubRepository.html_url,
+            url: GitHubRepository.homepage,
+            stars: GitHubRepository.stargazers_count,
+        };
+
+        return repository;
+    });
+
+    return repositories.sort((a: Repository, b: Repository) => {
+        return b.stars - a.stars;
+    });
+};
+
+export default getRepos;

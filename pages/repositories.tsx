@@ -3,44 +3,35 @@ import { useI18n } from '../hooks/i18n';
 
 import Link from '../components/Link';
 import Card from '../components/Card';
-import Section from '../components/Section';
 
 import { translations } from '../i18n';
 
-import type { GitHubRepository } from '../lib/types';
+import getRepos, { Repository } from '../lib/repo';
 
 export async function getStaticProps() {
-    const GitHubRepositoriesResponse = await fetch(
-        'https://api.github.com/users/nico-bachner/repos'
-    );
-    const GitHubRepositories = await GitHubRepositoriesResponse.json();
-    const repositories = await GitHubRepositories.filter(
-        (x: GitHubRepository) => !x.fork
-    ).sort((a: GitHubRepository, b: GitHubRepository) => {
-        return b.stargazers_count - a.stargazers_count;
-    });
+    const repositories = await getRepos();
 
     return {
         props: {
             repositories,
         },
-        revalidate: 1,
+        revalidate: 60,
     };
 }
 
 interface Props {
-    repositories: GitHubRepository[];
+    repositories: Repository[];
 }
 
-export default function Repositories(props: Props) {
+export default function Repositories({ repositories }: Props) {
     const i18n = useI18n(translations, 'en');
     const [minStars, setMinStars] = useState(2);
 
     return (
         <main>
             <h1 className="max-w-2xl mx-auto">GitHub Repositories</h1>
-            <p className="max-w-2xl mx-auto mt-4 mb-8">
-                Here are all {props.repositories.length} of my public GitHub
+            <p className="max-w-2xl mx-auto mt-4">
+                Here are all {repositories.length} of my public GitHub
                 repositories. Obviously, they can all be found on{' '}
                 <Link
                     href="https://github.com/nico-bachner?tab=repositories"
@@ -50,20 +41,15 @@ export default function Repositories(props: Props) {
                 </Link>{' '}
                 as well.
             </p>
-            <div className="grid mx-auto mt-4 gap-y-8 gap-x-20 max-w-prose md:max-w-4xl alternate-4">
-                {props.repositories
+            <div className="grid mx-auto my-12 gap-y-8 gap-x-20 max-w-prose md:max-w-4xl alternate-4">
+                {repositories
                     .filter(
-                        (repository: GitHubRepository) =>
-                            repository.stargazers_count >= minStars
+                        (repository: Repository) => repository.stars >= minStars
                     )
-                    .map((repository: GitHubRepository, index: number) => (
-                        <Card key={index} href={repository.html_url}>
-                            <h3 className="text-2xl capitalize sm:text-3xl">
-                                {repository.name.replace(/-/g, ' ')}
-                            </h3>
-                            <p className="mt-2 mb-0">
-                                {repository.description}
-                            </p>
+                    .map((repository: Repository, index: number) => (
+                        <Card key={index} href={repository.repo_url}>
+                            <h3 className="capitalize">{repository.name}</h3>
+                            <p className="mt-2">{repository.description}</p>
                         </Card>
                     ))}
             </div>

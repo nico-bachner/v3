@@ -11,12 +11,12 @@ interface Props {
 
 const components = {
     ...MDXComponents,
-    wrapper: (props: Props) => {
+    wrapper: ({ children }: Props) => {
         const router = useRouter();
 
         return (
             <main>
-                {props.children}
+                {children}
                 <p className="max-w-2xl mx-auto my-20 text-right">
                     <Link
                         href={
@@ -33,14 +33,16 @@ const components = {
     },
 };
 
-export default function MDX(props: Props) {
+const MDX = ({ children }: Props) => {
     const router = useRouter();
 
     return (
         <MDXProvider
             components={router.query == {} ? MDXComponents : components}
         >
-            {props.children}
+            {children}
         </MDXProvider>
     );
-}
+};
+
+export default MDX;
