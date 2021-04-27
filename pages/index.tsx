@@ -1,5 +1,5 @@
+import { getProjects, getArticles } from '../lib/mdx';
 import { useI18n } from '../hooks/i18n';
-
 import { translations } from '../i18n';
 
 import Link from '../components/Link';
@@ -7,29 +7,30 @@ import Section from '../components/Section';
 import ProjectCard from '../components/ProjectCard';
 import ArticleCard from '../components/ArticleCard';
 
-import { ProjectProps } from '../components/Project';
-import { ArticleProps } from '../components/Article';
+import type { NextPage, GetStaticProps } from 'next';
+import type { ProjectProps } from '../components/Project';
+import type { ArticleProps } from '../components/Article';
 
-import { getProjects, getArticles } from '../lib/mdx';
-
-export async function getStaticProps() {
-    const projects = await getProjects();
-    const articles = await getArticles();
-
-    return {
-        props: {
-            projects: projects.filter((project) => project.featured),
-            articles,
-        },
-    };
-}
-
-interface HomeProps {
+interface Props {
     projects: ProjectProps[];
     articles: ArticleProps[];
 }
 
-export default function Home({ projects, articles }: HomeProps) {
+export const getStaticProps: GetStaticProps = async () => {
+    const projects = await getProjects();
+    const articles = await getArticles();
+
+    const props: Props = {
+        projects: projects.filter((project) => project.featured),
+        articles,
+    };
+
+    return {
+        props,
+    };
+};
+
+const Home: NextPage<Props> = ({ projects, articles }) => {
     const i18n = useI18n(translations, 'en');
 
     return (
@@ -73,4 +74,6 @@ export default function Home({ projects, articles }: HomeProps) {
             </Section>
         </main>
     );
-}
+};
+
+export default Home;
