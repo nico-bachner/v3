@@ -4,142 +4,93 @@ All notable changes to this project will be documented in this file. See [standa
 
 ## [1.9.0](https://github.com/nico-bachner/v3/compare/v1.8.0...v1.9.0) (2021-04-16)
 
+### Features
+
+-   **structure:** switched to next-mdx-remote for projects and articles ([3410862](https://github.com/nico-bachner/v3/commit/3410862acd98e6a002081519d6fd085b6dc5edcc))
+
+### Bug Fixes
+
+-   **actions:** removed standard-version action ([a348e60](https://github.com/nico-bachner/v3/commit/a348e60837c19fa0e2365f56eb80a92a66cb27bd))
+-   **design:** improved image styling in dark mode ([73bcf7e](https://github.com/nico-bachner/v3/commit/73bcf7ef3f7f808f43cf686370d1f3d0dc8ee6e3))
+-   **design:** improved mdx design ([119663a](https://github.com/nico-bachner/v3/commit/119663a5016825548e2f387ed11e2d6bcca61745))
+-   **design:** moved project links to project page ([51e037c](https://github.com/nico-bachner/v3/commit/51e037c700b230d1bfa69c7c2e14f0cb750ae039))
+-   **meta:** add different meta descriptions for each page ([4d1a4d8](https://github.com/nico-bachner/v3/commit/4d1a4d8c90cf28d780636161be3f3ed75b1a0d4d))
+
+## [1.8.0](https://github.com/nico-bachner/v3/compare/v1.7.0...v1.8.0) (2021-04-10)
 
 ### Features
 
-* **structure:** switched to next-mdx-remote for projects and articles ([3410862](https://github.com/nico-bachner/v3/commit/3410862acd98e6a002081519d6fd085b6dc5edcc))
+-   refactored a lot ([741ae93](https://github.com/nico-bachner/v3/commit/741ae938a2afabb5252062784c0e02bb64f18b66))
 
-
-### Bug Fixes
-
-* **actions:** removed standard-version action ([a348e60](https://github.com/nico-bachner/v3/commit/a348e60837c19fa0e2365f56eb80a92a66cb27bd))
-* **design:** improved image styling in dark mode ([73bcf7e](https://github.com/nico-bachner/v3/commit/73bcf7ef3f7f808f43cf686370d1f3d0dc8ee6e3))
-* **design:** improved mdx design ([119663a](https://github.com/nico-bachner/v3/commit/119663a5016825548e2f387ed11e2d6bcca61745))
-* **design:** moved project links to project page ([51e037c](https://github.com/nico-bachner/v3/commit/51e037c700b230d1bfa69c7c2e14f0cb750ae039))
-* **meta:** add different meta descriptions for each page ([4d1a4d8](https://github.com/nico-bachner/v3/commit/4d1a4d8c90cf28d780636161be3f3ed75b1a0d4d))
-
-## 1.8.0 (2021-04-10)
-
+## [1.7.0](https://github.com/nico-bachner/v3/compare/v1.6.0...v1.7.0) (2021-04-10)
 
 ### Features
 
-* refactored a lot ([741ae93](https://github.com/nico-bachner/v3/commit/741ae938a2afabb5252062784c0e02bb64f18b66))
-
-## 1.7.0 (2021-04-10)
-
-
-### Features
-
-* **design:** improved image positioning on mdx pages ([6200cd0](https://github.com/nico-bachner/v3/commit/6200cd0303217984f4d0e8b4516d73c7accf9187))
-
-### 1.6.3 (2021-04-09)
-
+-   **design:** improved image positioning on mdx pages ([6200cd0](https://github.com/nico-bachner/v3/commit/6200cd0303217984f4d0e8b4516d73c7accf9187))
 
 ### Bug Fixes
 
-* **design:** removed card border in light mode ([2952233](https://github.com/nico-bachner/v3/commit/295223303cb94ad1be7ac3225cd40fe68b2153cd))
+-   **design:** removed card border in light mode ([2952233](https://github.com/nico-bachner/v3/commit/295223303cb94ad1be7ac3225cd40fe68b2153cd))
+-   **changelog:** removed duplicate commit notes ([52a2d4a](https://github.com/nico-bachner/v3/commit/52a2d4acb44a95658ff2f572a662fb6f07cdbb83))
+-   **actions:** reduce git history to 2 ([3def6f7](https://github.com/nico-bachner/v3/commit/3def6f73a7e794f28fe1f57a71b1e2ae824ae877))
 
-### 1.6.2 (2021-04-09)
-
-
-### Bug Fixes
-
-* **changelog:** removed duplicate commit notes ([52a2d4a](https://github.com/nico-bachner/v3/commit/52a2d4acb44a95658ff2f572a662fb6f07cdbb83))
-
-### 1.6.1 (2021-04-09)
-
-
-### Bug Fixes
-
-* **actions:** reduce git history to 2 ([3def6f7](https://github.com/nico-bachner/v3/commit/3def6f73a7e794f28fe1f57a71b1e2ae824ae877))
-
-## 1.6.0 (2021-04-08)
+## [1.6.0](https://github.com/nico-bachner/v3/compare/v1.5.0...v1.6.0) (2021-04-08)
 
 This release should have been 1.5.1, but there was an issue generating the changelog.
 
 ### Bug Fixes
 
-* fix for failing deployment ([4929f9b](https://github.com/nico-bachner/v3/commit/4929f9bc464ce8a57e228893dfe3091a8ba4bc65))
+-   fix for failing deployment ([4929f9b](https://github.com/nico-bachner/v3/commit/4929f9bc464ce8a57e228893dfe3091a8ba4bc65))
 
-## 1.5.0 (2021-04-08)
-
+## [1.5.0](https://github.com/nico-bachner/v3/compare/v1.4.0...v1.5.0)(2021-04-08)
 
 ### Features
 
-* overall improvements to codebase, especially design ([b3bd9cf](https://github.com/nico-bachner/v3/commit/b3bd9cf9e74ee69671b855d5a78fce4493ae8fb2))
-
-
-### Bug Fixes
-
-* **actions:** add git config ([af2c635](https://github.com/nico-bachner/v3/commit/af2c63512ba832373407054821072deccc079351))
-* **actions:** increase git history length ([b71a76c](https://github.com/nico-bachner/v3/commit/b71a76c38d1152cdd777225975971c8a4d969f2e))
-
-### 1.4.4 (2021-04-08)
-
+-   overall improvements to codebase, especially design ([b3bd9cf](https://github.com/nico-bachner/v3/commit/b3bd9cf9e74ee69671b855d5a78fce4493ae8fb2))
 
 ### Bug Fixes
 
-* **git:** merge origin branch into head ([1f6a999](https://github.com/nico-bachner/v3/commit/1f6a999e55811a0b8d13789f7ca88ee2bf716313))
-
-### 1.4.3 (2021-04-07)
-
-
-### Bug Fixes
-
-* **design:** improved footer style ([79b8dcc](https://github.com/nico-bachner/v3/commit/79b8dcc9f436ff9a89e87440944631f60fe53d05))
-
-### 1.4.2 (2021-04-07)
-
-
-### Bug Fixes
-
-* **gitignore:** removed unused options ([7bf7691](https://github.com/nico-bachner/v3/commit/7bf7691a4bbf052d7673b43dc492a861d18df6ed))
-
-### 1.4.1 (2021-04-07)
-
-
-### Bug Fixes
-
-* **actions:** add git push ([1933006](https://github.com/nico-bachner/v3/commit/193300671c72b3bd07e418f96e91724c827a51c3))
+-   **actions:** add git config ([af2c635](https://github.com/nico-bachner/v3/commit/af2c63512ba832373407054821072deccc079351))
+-   **actions:** increase git history length ([b71a76c](https://github.com/nico-bachner/v3/commit/b71a76c38d1152cdd777225975971c8a4d969f2e))
+-   **git:** merge origin branch into head ([1f6a999](https://github.com/nico-bachner/v3/commit/1f6a999e55811a0b8d13789f7ca88ee2bf716313))
+-   **design:** improved footer style ([79b8dcc](https://github.com/nico-bachner/v3/commit/79b8dcc9f436ff9a89e87440944631f60fe53d05))
+-   **gitignore:** removed unused options ([7bf7691](https://github.com/nico-bachner/v3/commit/7bf7691a4bbf052d7673b43dc492a861d18df6ed))
+-   **actions:** add git push ([1933006](https://github.com/nico-bachner/v3/commit/193300671c72b3bd07e418f96e91724c827a51c3))
 
 ## [1.4.0](https://github.com/nico-bachner/v3/compare/v1.3.0...v1.4.0) (2021-04-07)
 
-
 ### Features
 
-* improved colours, layout, and performance ([4e58ee7](https://github.com/nico-bachner/v3/commit/4e58ee7e7341dc656de01016bd663f65c37d581d))
-
+-   improved colours, layout, and performance ([4e58ee7](https://github.com/nico-bachner/v3/commit/4e58ee7e7341dc656de01016bd663f65c37d581d))
 
 ### Bug Fixes
 
-* **deps:** leverage tailwind core jit mode ([b95eff5](https://github.com/nico-bachner/v3/commit/b95eff5f014db258a4dd1523b5034f155c1633c2))
-* **design:** fixed code block colours ([da4667b](https://github.com/nico-bachner/v3/commit/da4667b9125954dbe5a1ce13a79e6a0ede05a379))
-* **design:** improved project links layout on homepage ([727314b](https://github.com/nico-bachner/v3/commit/727314b0ebc1f8eb67303760bdf0a6b29a9e352a))
-* **design:** improved projects and repos pages layouts ([d8c7418](https://github.com/nico-bachner/v3/commit/d8c7418ac41cc761f6f3d1b149d71bf0b3687b45))
-* **design:** restored mobile current page indication ([8017b7b](https://github.com/nico-bachner/v3/commit/8017b7b46aefd5f31ea80452118647e6d7583827))
+-   **deps:** leverage tailwind core jit mode ([b95eff5](https://github.com/nico-bachner/v3/commit/b95eff5f014db258a4dd1523b5034f155c1633c2))
+-   **design:** fixed code block colours ([da4667b](https://github.com/nico-bachner/v3/commit/da4667b9125954dbe5a1ce13a79e6a0ede05a379))
+-   **design:** improved project links layout on homepage ([727314b](https://github.com/nico-bachner/v3/commit/727314b0ebc1f8eb67303760bdf0a6b29a9e352a))
+-   **design:** improved projects and repos pages layouts ([d8c7418](https://github.com/nico-bachner/v3/commit/d8c7418ac41cc761f6f3d1b149d71bf0b3687b45))
+-   **design:** restored mobile current page indication ([8017b7b](https://github.com/nico-bachner/v3/commit/8017b7b46aefd5f31ea80452118647e6d7583827))
 
 ## [1.3.0](https://github.com/nico-bachner/v3/compare/v1.2.0...v1.3.0) (2021-03-30)
 
-
 ### Features
 
-* **design:** improved repositories page layout ([8889963](https://github.com/nico-bachner/v3/commit/88899632df4d451a05ce5a4ff3a39607b1f77fcb))
-* **design:** localise global page width limit for flexibility ([3511257](https://github.com/nico-bachner/v3/commit/35112574b4c84dba58e639d7fb344f7a8eb89367))
-* **design:** moved colour definitions to css variables ([418f55a](https://github.com/nico-bachner/v3/commit/418f55a34a3acd8c04a37a0a984835436305320b))
-
+-   **design:** improved repositories page layout ([8889963](https://github.com/nico-bachner/v3/commit/88899632df4d451a05ce5a4ff3a39607b1f77fcb))
+-   **design:** localise global page width limit for flexibility ([3511257](https://github.com/nico-bachner/v3/commit/35112574b4c84dba58e639d7fb344f7a8eb89367))
+-   **design:** moved colour definitions to css variables ([418f55a](https://github.com/nico-bachner/v3/commit/418f55a34a3acd8c04a37a0a984835436305320b))
 
 ### Bug Fixes
 
-* **content:** fixed typo ([1ba4785](https://github.com/nico-bachner/v3/commit/1ba4785b9f79ef5f78f9c696cede6841efddd8c4))
-* **content:** improved project descriptions ([a5d00b0](https://github.com/nico-bachner/v3/commit/a5d00b0399e2c891e9f9f318c5ad6df94191efbb))
-* **design:** improved colour consistency by using hsl values ([b696fb3](https://github.com/nico-bachner/v3/commit/b696fb37388356ae1da5f1c3372922dcd76ccd99))
-* **design:** improved margins on small screens ([1c0a853](https://github.com/nico-bachner/v3/commit/1c0a85345830a64e661fa83c5607e9a4acd3c8a7))
-* **design:** improved navigation margins ([7b7c4ff](https://github.com/nico-bachner/v3/commit/7b7c4ffd777cc953d50bef5424b64b09d7504cf9))
-* **design:** reduced paragraph margins ([d455525](https://github.com/nico-bachner/v3/commit/d4555258856adc0104d011a81b1c9ce135d1204a))
-* changed markdown links into proper links so they work ([d7517cd](https://github.com/nico-bachner/v3/commit/d7517cdd820d7625f2ada03fb14a0e756547c2cd))
-* replaced node-incompatible function ([2c7a19d](https://github.com/nico-bachner/v3/commit/2c7a19ddeaed859d8616d87ad162cf3067378e36))
+-   **content:** fixed typo ([1ba4785](https://github.com/nico-bachner/v3/commit/1ba4785b9f79ef5f78f9c696cede6841efddd8c4))
+-   **content:** improved project descriptions ([a5d00b0](https://github.com/nico-bachner/v3/commit/a5d00b0399e2c891e9f9f318c5ad6df94191efbb))
+-   **design:** improved colour consistency by using hsl values ([b696fb3](https://github.com/nico-bachner/v3/commit/b696fb37388356ae1da5f1c3372922dcd76ccd99))
+-   **design:** improved margins on small screens ([1c0a853](https://github.com/nico-bachner/v3/commit/1c0a85345830a64e661fa83c5607e9a4acd3c8a7))
+-   **design:** improved navigation margins ([7b7c4ff](https://github.com/nico-bachner/v3/commit/7b7c4ffd777cc953d50bef5424b64b09d7504cf9))
+-   **design:** reduced paragraph margins ([d455525](https://github.com/nico-bachner/v3/commit/d4555258856adc0104d011a81b1c9ce135d1204a))
+-   changed markdown links into proper links so they work ([d7517cd](https://github.com/nico-bachner/v3/commit/d7517cdd820d7625f2ada03fb14a0e756547c2cd))
+-   replaced node-incompatible function ([2c7a19d](https://github.com/nico-bachner/v3/commit/2c7a19ddeaed859d8616d87ad162cf3067378e36))
 
-## [1.2.0](https://github.com/nico-bachner/v3/compare/v1.1.1...v1.2.0) (2021-03-27)
+## [1.2.0](https://github.com/nico-bachner/v3/compare/v1.1.0...v1.2.0) (2021-03-27)
 
 ### Features
 
@@ -152,11 +103,6 @@ This release should have been 1.5.1, but there was an issue generating the chang
 -   **deps:** upgraded dependencies ([0c7398b](https://github.com/nico-bachner/v3/commit/0c7398b4229011bd48976ac1f68d792698177c5e))
 -   **url:** remove local-based slug to prevent 404s ([cbb3910](https://github.com/nico-bachner/v3/commit/cbb3910401ed2eafc89ef63d97b15447941f6763))
 -   **url:** removed slug from footer pages ([664910f](https://github.com/nico-bachner/v3/commit/664910fda633575c996b27288f476a676259fa0d))
-
-### [1.1.1](https://github.com/nico-bachner/v3/compare/v1.1.0...v1.1.1) (2021-03-26)
-
-### Bug Fixes
-
 -   fixed wrong text on homepage ([1276624](https://github.com/nico-bachner/v3/commit/1276624504c14af1acdb536af8954a727ec3c1b0))
 
 ## [1.1.0](https://github.com/nico-bachner/v3/compare/v1.0.0...v1.1.0) (2021-03-25)

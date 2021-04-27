@@ -4,6 +4,8 @@ import { fr } from './fr';
 import { de } from './de';
 import { lb } from './lb';
 
+export const translations = { en, da, fr, de, lb };
+
 export interface Page {
     title: string;
     href: string;
@@ -38,11 +40,3 @@ export interface Translation {
     pages: Page[];
     links: Page[];
 }
-
-export const translations = {
-    en: en,
-    da: da,
-    fr: fr,
-    de: de,
-    lb: lb,
-};
