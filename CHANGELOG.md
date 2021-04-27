@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.10.0](https://github.com/nico-bachner/v3/compare/v1.9.0...v1.10.0) (2021-04-27)
+
+
+### Features
+
+* **design:** added animation to logo on page load ([9ae9738](https://github.com/nico-bachner/v3/commit/9ae9738cd5b05e6c1247e67f2d9a8b0cc3cf9ba4))
+
+
+### Bug Fixes
+
+* **performance:** conclude font optimisation experimentation ([481a64f](https://github.com/nico-bachner/v3/commit/481a64faf1a09e09812c1c2fcc84ec5bdcde5a48))
+
 ## [1.9.0](https://github.com/nico-bachner/v3/compare/v1.8.0...v1.9.0) (2021-04-16)
 
 ### Features
