@@ -1,7 +1,13 @@
 import { useRouter } from 'next/router';
 
-export function useI18n(translations: any, fallback: string) {
+import { translations } from '../content/i18n';
+
+export function useI18n(customTranslations?: any, fallback?: string) {
     const { locale } = useRouter();
 
-    return translations[locale ?? fallback];
+    if (translations) {
+        return customTranslations[locale ?? fallback ?? 'en'];
+    }
+
+    return translations[locale ?? 'en'];
 }

@@ -1,6 +1,6 @@
 import { getArticles } from '../../lib/mdx';
 import { useI18n } from '../../hooks/i18n';
-import { translations } from '../../i18n';
+import { translations } from '../../content/i18n';
 
 import ArticleCard from '../../components/ArticleCard';
 

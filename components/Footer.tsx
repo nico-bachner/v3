@@ -1,6 +1,6 @@
 import Link from './Link';
 
-import type { Page } from '../i18n';
+import type { Page } from '../content/i18n';
 
 interface Props {
     pages: Page[];

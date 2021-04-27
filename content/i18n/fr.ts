@@ -1,45 +1,45 @@
-import type { Translation } from '../i18n';
+import type { Translation } from '.';
 
-export const lb: Translation = {
-    title: 'Ech sin den Nico,',
-    subtitle: 'en Open Source Enthusiast.',
+export const fr: Translation = {
+    title: 'Je suis Nico,',
+    subtitle: "un passionné d'Open Source.",
     about: {
-        title: 'Iwwert mech',
+        title: 'Sur Moi',
         content:
-            'Ech sin en Hobbyentwéckler an e student zu Lëtzebuerg. Ech hun schon mat villen Technologien geschafft, besonnescht am beräich vum Web Development.',
+            "Je suis un dévelopeur hobbyiste et un étudiant au Luxembourg. J'ai travaillé avec de nombreux technologies, surtout dans la branche du dévelopement Web.",
     },
     projects: {
-        title: 'Projeten',
+        title: 'Projets',
         subtitle:
-            'Hei sin e puer vun mengen projeten. Se sin all Open Source an all projet hir Source Code befënnt sech of GitHub',
-        web: 'Web Applicatiounen an Siten',
-        games: 'Spiller',
-        other: 'Aner Projeten',
+            "Voici quelques projets sur lesquels j'ai travaillé récemment. Les projets sont tous Source Libre et leur code source se trouve sur GitHub",
+        web: 'Applications et Sites Web',
+        games: 'Jeux Vidéo',
+        other: 'Autres Projets',
     },
     articles: {
-        title: 'Artikelen',
+        title: 'Articles',
         subtitle:
-            'Hei sin e puer vun mengen rezentesten artikelen. Leider sin se nëmmen op englesch disponibel.',
+            "Voici quelques articles que j'ai écrit récemment. Regrettablement, ils ne sont que disponibles en anglais.",
     },
     actions: {
-        changeLanguage: 'sprooch ännern',
-        readMore: 'weider liesen',
-        viewAll: 'alleguer gesin',
-        showAll: 'alleguer weisen',
-        showMore: 'méi weisen',
-        showLess: 'manner weisen',
+        changeLanguage: 'changer la langue',
+        viewAll: 'en voir tous',
+        readMore: 'continuer à lire',
+        showAll: 'montrer tous',
+        showMore: 'montrer plus',
+        showLess: 'montrer moins',
     },
     pages: [
         {
-            title: 'Heem',
+            title: 'Accueil',
             href: '/',
         },
         {
-            title: 'Projeten',
+            title: 'Projets',
             href: '/projects',
         },
         {
-            title: 'Artikelen',
+            title: 'Articles',
             href: '/articles',
         },
         {
@@ -73,7 +73,7 @@ export const lb: Translation = {
             href: 'https://code.golf/golfers/nico-bachner',
         },
         {
-            title: 'Source Code',
+            title: 'Code Source',
             href: 'https://github.com/nico-bachner/v3',
         },
         {

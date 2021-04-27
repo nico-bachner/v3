@@ -4,7 +4,7 @@ import { useI18n } from '../hooks/i18n';
 import Link from '../components/Link';
 import Card from '../components/Card';
 
-import { translations } from '../i18n';
+import { translations } from '../content/i18n';
 
 import getRepos, { Repository } from '../lib/repo';
 

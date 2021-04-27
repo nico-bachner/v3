@@ -41,9 +41,5 @@
         "@types/react": ">=17",
         "prettier": ">=2.2",
         "standard-version": ">=9.2"
-    },
-    "prettier": {
-        "tabWidth": 4,
-        "singleQuote": true
     }
 }

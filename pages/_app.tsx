@@ -12,7 +12,7 @@ import Footer from '../components/Footer';
 import MobileNavigation from '../components/MobileNavigation';
 
 import { useI18n } from '../hooks/i18n';
-import { translations } from '../i18n';
+import { translations } from '../content/i18n';
 
 import type { AppProps } from 'next/app';
 

@@ -11,7 +11,7 @@ import type { ProjectProps } from '../../components/Project';
 type Props = ProjectProps & { content: any };
 
 export const getStaticPaths: GetStaticPaths = async () => {
-    const slugs = await getSlugs('projects');
+    const slugs = await getSlugs('content/projects/');
 
     return {
         paths: slugs.map((slug) => {
@@ -28,7 +28,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 export const getStaticProps: GetStaticProps = async ({ params }) => {
     const slug = params?.slug ? params?.slug.toString() : '';
 
-    const file = await getFile('projects', slug);
+    const file = await getFile('content/projects/', slug);
 
     const content = await getContent(file);
     const data = getFileData(file, 'project');

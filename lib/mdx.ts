@@ -59,11 +59,11 @@ export async function getContent(file: string) {
 }
 
 export const getProjects = async () => {
-    const slugs = await getSlugs('projects');
+    const slugs = await getSlugs('content/projects/');
 
     const projects = await Promise.all(
         slugs.map(async (slug) => {
-            const file = await getFile('projects', slug);
+            const file = await getFile('content/projects/', slug);
 
             const data: MDXProjectProps = getFileData(file, 'project');
 
@@ -80,11 +80,11 @@ export const getProjects = async () => {
 };
 
 export async function getArticles() {
-    const slugs = await getSlugs('articles');
+    const slugs = await getSlugs('content/articles/');
 
     const articles = await Promise.all(
         slugs.map(async (slug) => {
-            const file = await getFile('articles', slug);
+            const file = await getFile('content/articles/', slug);
 
             const data: MDXArticleProps = getFileData(file, 'article');
             const time = getReadingTime(file);

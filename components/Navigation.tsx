@@ -1,8 +1,8 @@
 import { useRouter } from 'next/router';
 import { useI18n } from '../hooks/i18n';
-import { translations } from '../i18n';
+import { translations } from '../content/i18n';
 
-import type { Page } from '../i18n';
+import type { Page } from '../content/i18n';
 
 import Link from './Link';
 import Logo from './Logo';

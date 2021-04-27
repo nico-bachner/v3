@@ -1,4 +1,4 @@
-import type { Translation } from '../i18n';
+import type { Translation } from '.';
 
 export const da: Translation = {
     title: 'Hej, jeg er Nico.',

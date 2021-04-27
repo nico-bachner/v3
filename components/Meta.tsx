@@ -29,7 +29,7 @@ export default function Meta(meta: MetaProps) {
                     ? 'Nico Bachner - Aspiring Open Sourcerer'
                     : `${meta.title ?? page} | Nico Bachner`}
             </title>
-            <link rel="icon" href="/icon.svg" />
+            <link rel="icon" href="/favicon.svg" />
             <link
                 crossOrigin="anonymous"
                 rel="preload"

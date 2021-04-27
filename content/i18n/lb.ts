@@ -1,45 +1,45 @@
-import type { Translation } from '../i18n';
+import type { Translation } from '.';
 
-export const de: Translation = {
-    title: 'Ich bin Nico,',
-    subtitle: 'ein Open Source Enthusiast.',
+export const lb: Translation = {
+    title: 'Ech sin den Nico,',
+    subtitle: 'en Open Source Enthusiast.',
     about: {
-        title: 'Über Mich',
+        title: 'Iwwert mech',
         content:
-            'Ich bin ein Hobbyentwickler und Student in Luxemburg. Ich habe bereits mit vielen verschiedenen Technologien gearbeitet, besonders im Bereich des Web Development.',
+            'Ech sin en Hobbyentwéckler an e student zu Lëtzebuerg. Ech hun schon mat villen Technologien geschafft, besonnescht am beräich vum Web Development.',
     },
     projects: {
-        title: 'Projekte',
+        title: 'Projeten',
         subtitle:
-            'Hier sind welche meiner Projekte. Alle meine Projekte sind Open Source und deren Source Code befindet sich auf GitHub.',
-        web: 'Internetanwendungen und Webseiten',
-        games: 'Videospiele',
-        other: 'Andere Projekte',
+            'Hei sin e puer vun mengen projeten. Se sin all Open Source an all projet hir Source Code befënnt sech of GitHub',
+        web: 'Web Applicatiounen an Siten',
+        games: 'Spiller',
+        other: 'Aner Projeten',
     },
     articles: {
-        title: 'Artikel',
+        title: 'Artikelen',
         subtitle:
-            'Hier sind meine neuesten Artikel. Leider sind sie aber nur auf English verfügbar.',
+            'Hei sin e puer vun mengen rezentesten artikelen. Leider sin se nëmmen op englesch disponibel.',
     },
     actions: {
-        changeLanguage: 'sprache ändern',
-        readMore: 'weiter lesen',
-        viewAll: 'alle sehen',
-        showAll: 'alle zeigen',
-        showMore: 'weitere zeigen',
-        showLess: 'weniger zeigen',
+        changeLanguage: 'sprooch ännern',
+        readMore: 'weider liesen',
+        viewAll: 'alleguer gesin',
+        showAll: 'alleguer weisen',
+        showMore: 'méi weisen',
+        showLess: 'manner weisen',
     },
     pages: [
         {
-            title: 'Startseite',
+            title: 'Heem',
             href: '/',
         },
         {
-            title: 'Projekte',
+            title: 'Projeten',
             href: '/projects',
         },
         {
-            title: 'Artikel',
+            title: 'Artikelen',
             href: '/articles',
         },
         {
