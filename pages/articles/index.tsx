@@ -1,16 +1,29 @@
+import { getArticles } from '../../lib/mdx';
 import { useI18n } from '../../hooks/i18n';
 import { translations } from '../../i18n';
 
-import { getArticles } from '../../lib/mdx';
-
-import { ArticleProps } from '../../components/Article';
 import ArticleCard from '../../components/ArticleCard';
+
+import type { NextPage, GetStaticProps } from 'next';
+import type { ArticleProps } from '../../components/Article';
 
 interface Props {
     articles: ArticleProps[];
 }
 
-export default function Articles({ articles }: Props) {
+export const getStaticProps: GetStaticProps = async () => {
+    const articles = await getArticles();
+
+    const props: Props = {
+        articles,
+    };
+
+    return {
+        props,
+    };
+};
+
+const Articles: NextPage<Props> = ({ articles }) => {
     const i18n = useI18n(translations, 'en');
 
     return (
@@ -24,14 +37,6 @@ export default function Articles({ articles }: Props) {
             </div>
         </main>
     );
-}
+};
 
-export async function getStaticProps() {
-    const articles = await getArticles();
-
-    return {
-        props: {
-            articles,
-        },
-    };
-}
+export default Articles;

@@ -1,17 +1,27 @@
+import { getProjects } from '../../lib/mdx';
 import { useI18n } from '../../hooks/i18n';
 import { translations } from '../../i18n';
 
-import { getProjects } from '../../lib/mdx';
-
 import ProjectCard from '../../components/ProjectCard';
 
-import { ProjectProps } from '../../components/Project';
+import type { NextPage, GetStaticProps } from 'next';
+import type { ProjectProps } from '../../components/Project';
 
 interface Props {
     projects: ProjectProps[];
 }
 
-export default function Projects({ projects }: Props) {
+export const getStaticProps: GetStaticProps = async () => {
+    const projects = await getProjects();
+
+    const props: Props = {
+        projects,
+    };
+
+    return { props };
+};
+
+const Projects: NextPage<Props> = ({ projects }) => {
     const i18n = useI18n(translations, 'en');
 
     return (
@@ -27,14 +37,6 @@ export default function Projects({ projects }: Props) {
             </div>
         </main>
     );
-}
+};
 
-export async function getStaticProps() {
-    const projects = await getProjects();
-
-    return {
-        props: {
-            projects,
-        },
-    };
-}
+export default Projects;

@@ -25,9 +25,7 @@ export const getStaticProps: GetStaticProps = async () => {
         articles,
     };
 
-    return {
-        props,
-    };
+    return { props };
 };
 
 const Home: NextPage<Props> = ({ projects, articles }) => {
