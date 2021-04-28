@@ -6,11 +6,11 @@
     }
 
     html {
-        @apply antialiased bg-gray-lightest text-gray-strong;
+        @apply antialiased bg-lightest text-strong;
     }
 
     main {
-        @apply text-gray-stronger;
+        @apply text-stronger;
     }
 
     h1,
@@ -19,7 +19,7 @@
     h4,
     h5,
     h6 {
-        @apply text-gray-strongest;
+        @apply text-strongest;
     }
 
     h1 {
@@ -44,6 +44,7 @@
     }
 
     select {
+        @apply py-1 pl-3 pr-8 text-center transition duration-100 ease-in-out bg-transparent border rounded appearance-none cursor-pointer hover:border-strong;
         background-image: url('/icons/select.svg');
         background-position: 75% center;
         background-repeat: no-repeat;

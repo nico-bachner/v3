@@ -30,7 +30,7 @@ export default function App({ Component, pageProps }: AppProps) {
                     <Component {...pageProps} />
                 </MDX>
                 <div className="max-w-2xl mx-auto my-20">
-                    <hr className="border border-gray-lighter" />
+                    <hr className="border" />
                     <Footer pages={i18n.pages} links={i18n.links} />
                 </div>
             </div>

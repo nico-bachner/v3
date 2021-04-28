@@ -20,8 +20,8 @@ const MobileNavigation = ({ pages }: Props) => {
                         href={page.href}
                         className={`p-2 text-sm font-bold ${
                             router.pathname == page.href
-                                ? 'text-gray-light'
-                                : 'text-gray-stronger'
+                                ? 'text-light'
+                                : 'text-stronger'
                         }`}
                     >
                         {page.title}

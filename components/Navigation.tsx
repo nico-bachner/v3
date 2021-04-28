@@ -16,11 +16,11 @@ const Navigation = ({ pages }: Props) => {
     const router = useRouter();
 
     return (
-        <nav className="sticky top-0 z-50 px-6 py-4 my-8 font-medium sm:py-8 glass">
+        <nav className="top-0 z-50 px-6 py-4 my-8 font-medium sm:sticky sm:py-8 glass text-stronger">
             <div className="flex items-center justify-between max-w-[52rem] mx-auto">
                 <a
                     href="/"
-                    className="transition duration-300 w-12 h-12 ease-in-out transform text-gray-stronger hover:-translate-y-0.5"
+                    className="w-12 h-12 transition duration-300 ease-in-out transform hover:-translate-y-1"
                 >
                     <Logo />
                 </a>
@@ -32,8 +32,8 @@ const Navigation = ({ pages }: Props) => {
                                 href={page.href}
                                 className={
                                     router.pathname == page.href
-                                        ? 'text-gray-light cursor-default'
-                                        : 'text-gray-stronger transition duration-300 ease-in-out transform hover:-translate-y-0.5'
+                                        ? 'text-light cursor-default'
+                                        : 'transition duration-300 ease-in-out transform hover:-translate-y-1'
                                 }
                             >
                                 {page.title}
@@ -46,7 +46,6 @@ const Navigation = ({ pages }: Props) => {
                 </label>
                 <select
                     id="language-select"
-                    className="py-1 pl-3 pr-8 text-center bg-transparent border rounded appearance-none cursor-pointer hover:border-strong"
                     onChange={(item) => {
                         const locale = item.target.value;
                         router.push(router.pathname, router.pathname, {

@@ -8,7 +8,7 @@
     }
     @supports not (backdrop-filter: blur()) {
         .glass {
-            @apply bg-gray-lightest;
+            @apply bg-lightest;
         }
     }
 

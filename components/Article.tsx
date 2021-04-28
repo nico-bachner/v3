@@ -12,7 +12,7 @@ export type ArticleProps = MDXArticleProps & {
 const Article = (article: React.PropsWithChildren<ArticleProps>) => (
     <article>
         <h1 className="max-w-2xl mx-auto">{article.title}</h1>
-        <div className="flex justify-between max-w-2xl mx-auto my-8 text-gray-light">
+        <div className="flex justify-between max-w-2xl mx-auto my-8 text-light">
             {article.published && (
                 <p>
                     Published {new Date(article.published).toLocaleDateString()}

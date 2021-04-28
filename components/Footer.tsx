@@ -16,7 +16,7 @@ const Footer = ({ pages, links }: Props) => (
                         key={index}
                         href={page.href}
                         className={
-                            'sm:text-lg transition duration-300 ease-in-out transform hover:text-gray-stronger hover:-translate-y-0.5' +
+                            'sm:text-lg transition duration-300 ease-in-out transform hover:text-stronger hover:-translate-y-0.5' +
                             ' ' +
                             (index < 4
                                 ? 'text-left'
@@ -35,7 +35,7 @@ const Footer = ({ pages, links }: Props) => (
                         key={index}
                         href={link.href}
                         className={
-                            'sm:text-lg transition duration-300 ease-in-out transform hover:text-gray-stronger hover:-translate-y-0.5' +
+                            'sm:text-lg transition duration-300 ease-in-out transform hover:text-stronger hover:-translate-y-0.5' +
                             ' ' +
                             (index < 4
                                 ? 'text-left sm:text-center'
