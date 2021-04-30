@@ -1,17 +1,9 @@
 {
     "name": "v3",
-    "description": "Personal Website",
     "version": "1.10.0",
-    "author": {
-        "name": "Nico Bachner",
-        "email": "yo@nicob.dev",
-        "url": "https://v3.nicob.dev"
-    },
-    "license": "MPL-2.0",
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/nico-bachner/v3.git"
-    },
+    "author": "Nico Bachner",
+    "homepage": "https://v3.nicob.dev",
+    "repository": "https://github.com/nico-bachner/v3",
     "private": true,
     "scripts": {
         "dev": "next dev",
@@ -23,10 +15,11 @@
     "dependencies": {
         "@mdx-js/loader": ">=1.6",
         "@mdx-js/react": ">=1.6",
-        "@next/mdx": ">=10.1",
+        "@next/mdx": ">=10.2",
+        "@tailwindcss/line-clamp": "^0.2.0",
         "autoprefixer": ">=10.2",
         "gray-matter": ">=4",
-        "next": ">=10.1",
+        "next": ">=10.2",
         "next-mdx-remote": ">=2.1",
         "postcss": ">=8.2",
         "react": ">=17",

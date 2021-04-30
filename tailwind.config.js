@@ -31,4 +31,5 @@ module.exports = {
             mono: ['Fira Code', ...fontFamily.mono],
         },
     },
+    plugins: [require('@tailwindcss/line-clamp')],
 };
