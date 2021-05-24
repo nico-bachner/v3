@@ -3,6 +3,7 @@ import { useI18n } from '@lib/hooks/i18n';
 
 import Link from './Link';
 import Logo from './Logo';
+import Select from './Select';
 
 interface Props {
     pages: Page[];
@@ -35,27 +36,21 @@ const Navigation: React.VFC<Props> = ({ pages }) => {
                         );
                     })}
                 </div>
-                <label htmlFor="#language-select" className="sr-only">
-                    {i18n.actions.changeLanguage}
-                </label>
-                <select
+                <Select
                     id="language-select"
                     onChange={(item) => {
-                        const locale = item.target.value;
                         router.push(router.pathname, router.pathname, {
-                            locale,
+                            locale: item.target.value,
                         });
                     }}
-                    defaultValue={router.locale}
+                    default={router.locale}
                 >
-                    {router.locales?.map((language, index) => {
-                        return (
-                            <option key={index} value={language}>
-                                {language.toUpperCase()}
-                            </option>
-                        );
-                    })}
-                </select>
+                    {router.locales?.map((language, index) => (
+                        <option key={index} value={language}>
+                            {language.toUpperCase()}
+                        </option>
+                    ))}
+                </Select>
             </div>
         </nav>
     );

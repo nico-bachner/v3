@@ -94,12 +94,4 @@
     :not(pre) > code {
         @apply text-crimson;
     }
-
-    select {
-        @apply py-1 pl-3 pr-8 text-center transition duration-100 ease-in-out bg-transparent border rounded appearance-none cursor-pointer hover:border-strong;
-        background-image: url('/icons/select.svg');
-        background-position: right 0.75rem center;
-        background-repeat: no-repeat;
-        background-size: 0.75em 0.75em;
-    }
 }

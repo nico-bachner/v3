@@ -1,0 +1,9 @@
+.select {
+    appearance: none;
+    cursor: pointer;
+    background-color: transparent;
+    background-image: url('/icons/select.svg');
+    background-position: right 0.75rem center;
+    background-repeat: no-repeat;
+    background-size: 0.75em 0.75em;
+}
