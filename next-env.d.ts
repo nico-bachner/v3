@@ -25,7 +25,7 @@ type PageProps = MDXProps<PageData>;
 type ProjectData = PageData & {
     featured?: boolean;
     url?: string;
-    github_url?: string;
+    github?: string;
 };
 type ProjectCardProps = ProjectData & {
     slug: string;
