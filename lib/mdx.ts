@@ -52,7 +52,7 @@ export const getContent = async (file: string) => {
     return content;
 };
 
-export const getProjects = async () => {
+export const getProjectsData = async () => {
     const slugs = await getSlugs('content/projects/');
 
     const projects = await Promise.all(
@@ -81,12 +81,12 @@ export async function getArticles() {
             const file = await getFile('content/articles/', slug);
 
             const data: ArticleData = getFileData(file);
-            const time = getReadingTime(file);
+            const reading_time = getReadingTime(file);
 
-            const article: ArticleData & { slug: string; time: number } = {
+            const article: ArticleCardProps = {
                 ...data,
                 slug,
-                time,
+                reading_time,
             };
 
             return article;

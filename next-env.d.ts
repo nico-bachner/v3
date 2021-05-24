@@ -26,6 +26,9 @@ type ProjectData = PageData & {
     url?: string;
     github_url?: string;
 };
+type ProjectCardProps = ProjectData & {
+    slug: string;
+};
 type ProjectProps = MDXProps<ProjectData>;
 
 // Article Types
@@ -33,5 +36,9 @@ type ArticleData = PageData & {
     date_published?: string;
     date_updated?: string;
     canonical_url?: string;
+};
+type ArticleCardProps = ArticleData & {
+    slug: string;
+    reading_time: number;
 };
 type ArticleProps = MDXProps<ArticleData & { time: number }>;

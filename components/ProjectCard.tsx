@@ -1,6 +1,6 @@
 import Card from './Card';
 
-const ProjectCard: React.FC<ProjectProps> = (project) => (
+const ProjectCard: React.FC<ProjectCardProps> = (project) => (
     <Card href={'/projects/' + project.slug}>
         <h3>{project.title}</h3>
         <p className="my-2 line-clamp-3">{project.description}</p>

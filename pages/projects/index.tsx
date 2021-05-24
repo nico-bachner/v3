@@ -1,4 +1,4 @@
-import { getProjects } from '@lib/mdx';
+import { getProjectsData } from '@lib/mdx';
 import { useI18n } from '@lib/hooks/i18n';
 import { translations } from '@content/i18n';
 
@@ -7,11 +7,11 @@ import ProjectCard from '@components/ProjectCard';
 import type { NextPage, GetStaticProps } from 'next';
 
 interface ProjectsProps {
-    projects: ProjectProps[];
+    projects: ProjectCardProps[];
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-    const projects = await getProjects();
+    const projects = await getProjectsData();
 
     const props: ProjectsProps = {
         projects,

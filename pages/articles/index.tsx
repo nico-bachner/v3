@@ -6,14 +6,14 @@ import ArticleCard from '../../components/ArticleCard';
 
 import type { NextPage, GetStaticProps } from 'next';
 
-interface Props {
-    articles: ArticleProps[];
+interface ArticlesProps {
+    articles: ArticleCardProps[];
 }
 
 export const getStaticProps: GetStaticProps = async () => {
     const articles = await getArticles();
 
-    const props: Props = {
+    const props: ArticlesProps = {
         articles,
     };
 
@@ -22,7 +22,7 @@ export const getStaticProps: GetStaticProps = async () => {
     };
 };
 
-const Articles: NextPage<Props> = ({ articles }) => {
+const Articles: NextPage<ArticlesProps> = ({ articles }) => {
     const i18n = useI18n(translations, 'en');
 
     return (
@@ -30,8 +30,8 @@ const Articles: NextPage<Props> = ({ articles }) => {
             <h1>{i18n.articles.title}</h1>
             <p className="mt-4">{i18n.articles.subtitle}</p>
             <div className="grid gap-8 my-8">
-                {articles.map((article: ArticleProps, index: number) => (
-                    <ArticleCard key={index} {...article} />
+                {articles.map((article) => (
+                    <ArticleCard key={article.slug} {...article} />
                 ))}
             </div>
         </main>
