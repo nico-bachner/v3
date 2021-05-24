@@ -48,7 +48,7 @@ const Project: NextPage<PageProps> = (page) => {
 
             <MDX content={page.content} />
 
-            <p className="flex justify-between max-w-2xl mx-auto my-20 text-strong">
+            <p className="flex justify-between max-w-2xl mx-auto my-16 text-strong">
                 Last updated: {new Date(page.date_updated).toLocaleDateString()}
                 <Link
                     href={`https://github.com/nico-bachner/v3/edit/main/content/pages/${page.slug}.mdx`}

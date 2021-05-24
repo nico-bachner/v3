@@ -59,7 +59,7 @@ const Article: NextPage<ArticleProps> = (article) => {
 
             <MDX content={article.content} />
 
-            <p className="flex justify-between max-w-2xl mx-auto my-20">
+            <p className="flex justify-between max-w-2xl mx-auto my-16 text-strong">
                 Last updated:{' '}
                 {new Date(article.date_updated).toLocaleDateString()}
                 <Link

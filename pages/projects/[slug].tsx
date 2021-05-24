@@ -48,7 +48,7 @@ const Project: NextPage<ProjectProps> = (project) => {
 
             <MDX content={project.content} />
 
-            <p className="flex justify-between max-w-2xl mx-auto my-20 text-strong">
+            <p className="flex justify-between max-w-2xl mx-auto my-16 text-strong">
                 Last updated:{' '}
                 {new Date(project.date_updated).toLocaleDateString()}
                 <Link

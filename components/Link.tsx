@@ -12,24 +12,24 @@ export interface LinkProps {
     locale?: string | false;
 }
 
-const Link: React.FC<LinkProps> = (props) => {
-    if (props.href.startsWith('/')) {
+const Link: React.FC<LinkProps> = (link) => {
+    if (link.href.startsWith('/') || link.href.startsWith('#')) {
         return (
-            <NextLink {...props}>
-                <a className={props.className ?? 'text-azure hover:underline'}>
-                    {props.children}
+            <NextLink {...link}>
+                <a className={link.className ?? 'text-azure hover:underline'}>
+                    {link.children}
                 </a>
             </NextLink>
         );
     } else {
         return (
             <a
-                href={props.href}
+                href={link.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={props.className ?? 'text-azure hover:underline'}
+                className={link.className ?? 'text-azure hover:underline'}
             >
-                {props.children}
+                {link.children}
             </a>
         );
     }

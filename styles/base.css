@@ -74,8 +74,25 @@
     h4 {
         @apply text-xl font-medium sm:text-2xl;
     }
-    p {
+    p,
+    li {
         @apply sm:text-lg;
+    }
+    ul,
+    ol {
+        @apply pl-4 list-inside;
+    }
+    ul {
+        @apply list-disc;
+    }
+    ol {
+        @apply list-decimal;
+    }
+    code {
+        @apply font-mono text-sm sm:text-base;
+    }
+    :not(pre) > code {
+        @apply text-crimson;
     }
 
     select {
@@ -84,41 +101,5 @@
         background-position: right 0.75rem center;
         background-repeat: no-repeat;
         background-size: 0.75em 0.75em;
-    }
-
-    .mdx > * {
-        @apply max-w-2xl mx-auto;
-    }
-    .mdx > h2 {
-        @apply mt-16;
-    }
-    .mdx > h3 {
-        @apply mt-12;
-    }
-    .mdx > h4 {
-        @apply mt-8;
-    }
-    .mdx > p {
-        @apply mt-4;
-    }
-    .mdx > ul,
-    .mdx > ol {
-        @apply pl-4 list-inside;
-    }
-    .mdx > ul {
-        @apply list-disc;
-    }
-    .mdx > ol {
-        @apply list-decimal;
-    }
-    .mdx > pre {
-        @apply relative px-3 py-1 my-2 overflow-x-scroll border rounded;
-    }
-    .mdx :not(pre) > code::before,
-    .mdx :not(pre) > code::after {
-        content: '`';
-    }
-    .mdx :not(pre) > code {
-        @apply font-mono text-sm text-crimson sm:text-base;
     }
 }

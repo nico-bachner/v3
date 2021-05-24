@@ -1,6 +1,4 @@
-import NextImage, { ImageProps as NextImageProps } from 'next/image';
-
-export type ImageProps = NextImageProps;
+import NextImage, { ImageProps } from 'next/image';
 
 const Image: React.VFC<ImageProps> = (image) => {
     return (
