@@ -1,21 +1,21 @@
 export interface SectionProps {
-    variant: 'h1' | 'h2';
+    variant: 'h2' | 'h3';
     title: string;
 }
 
 const Section: React.FC<SectionProps> = (section) => {
     switch (section.variant) {
-        case 'h1':
+        case 'h2':
             return (
-                <section className="my-16 sm:my-20">
-                    <h1 className="mb-4">{section.title}</h1>
+                <section className="my-16 sm:my-24">
+                    <h2 className="mb-4">{section.title}</h2>
                     {section.children}
                 </section>
             );
-        case 'h2':
+        case 'h3':
             return (
-                <section className="my-16 sm:my-20">
-                    <h2 className="mb-4">{section.title}</h2>
+                <section className="my-12 sm:my-16">
+                    <h3 className="mb-4">{section.title}</h3>
                     {section.children}
                 </section>
             );

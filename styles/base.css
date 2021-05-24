@@ -6,7 +6,7 @@
         font-style: normal;
         font-weight: 100 900;
         font-display: swap;
-        src: url('/fonts/inter.woff2') format('woff2');
+        src: url('/fonts/Inter.woff2') format('woff2');
     }
 
     @font-face {
@@ -14,7 +14,7 @@
         font-style: normal;
         font-weight: 400;
         font-display: swap;
-        src: url('/fonts/fira-code.woff2') format('woff2');
+        src: url('/fonts/FiraCode.woff2') format('woff2');
     }
 
     @keyframes draw {
@@ -78,14 +78,6 @@
         @apply sm:text-lg;
     }
 
-    :not(pre) > code::before,
-    :not(pre) > code::after {
-        content: '`';
-    }
-    :not(pre) > code {
-        @apply text-highlight font-mono text-sm sm:text-base;
-    }
-
     select {
         @apply py-1 pl-3 pr-8 text-center transition duration-100 ease-in-out bg-transparent border rounded appearance-none cursor-pointer hover:border-strong;
         background-image: url('/icons/select.svg');
@@ -120,6 +112,13 @@
         @apply list-decimal;
     }
     .mdx > pre {
-        @apply relative px-3 py-1.5 my-2 overflow-x-scroll border rounded;
+        @apply relative px-3 py-1 my-2 overflow-x-scroll border rounded;
+    }
+    .mdx :not(pre) > code::before,
+    .mdx :not(pre) > code::after {
+        content: '`';
+    }
+    .mdx :not(pre) > code {
+        @apply font-mono text-sm text-crimson sm:text-base;
     }
 }

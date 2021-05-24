@@ -32,7 +32,7 @@ const App: NextPage<AppProps> = ({ Component, pageProps }) => {
 
             <div className="mx-6">
                 <Component {...pageProps} />
-                <div className="max-w-2xl mx-auto my-20">
+                <div className="max-w-2xl mx-auto my-16">
                     <hr className="border" />
                     <Footer pages={i18n.pages} links={i18n.links} />
                 </div>

@@ -4,6 +4,7 @@ import Link from './Link';
 export interface CardProps {
     href?: string;
     locale?: string | false;
+    className?: string;
 }
 
 const Card: React.FC<CardProps> = (card) => {
@@ -12,13 +13,13 @@ const Card: React.FC<CardProps> = (card) => {
             <Link
                 href={card.href}
                 locale={card.locale ?? false}
-                className="link-card"
+                className={`link-card ${card.className}`}
             >
                 {card.children}
             </Link>
         );
     }
-    return <div className="card">{card.children}</div>;
+    return <div className={`card ${card.className}`}>{card.children}</div>;
 };
 
 export default Card;

@@ -12,19 +12,6 @@
         }
     }
 
-    .alternate-2 {
-        @apply md:grid-cols-3;
-    }
-    .alternate-2 > * {
-        @apply md:col-span-2;
-    }
-    .alternate-2 > :nth-child(odd) {
-        @apply md:col-start-1;
-    }
-    .alternate-2 > :nth-child(even) {
-        @apply md:col-start-2;
-    }
-
     .alternate-4 {
         @apply md:grid-cols-7;
     }

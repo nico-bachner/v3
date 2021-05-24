@@ -33,9 +33,13 @@ const Projects: NextPage<ProjectsProps> = ({ projects }) => {
             <p className="max-w-2xl mx-auto mt-4 mb-8">
                 {i18n.projects.subtitle}
             </p>
-            <div className="grid max-w-2xl mx-auto gap-y-8 gap-x-20 md:max-w-3xl alternate-2">
+            <div className="grid max-w-2xl mx-auto md:grid-cols-3 gap-y-8 gap-x-24 md:max-w-3xl">
                 {projects.map((project) => (
-                    <ProjectCard key={project.slug} {...project} />
+                    <ProjectCard
+                        key={project.slug}
+                        {...project}
+                        className="md:col-span-2 md:odd:col-start-1 md:even:col-start-2"
+                    />
                 ))}
             </div>
         </main>
