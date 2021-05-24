@@ -73,7 +73,7 @@ export const getProjectsData = async () => {
     return projects;
 };
 
-export async function getArticles() {
+export const getArticlesData = async () => {
     const slugs = await getSlugs('content/articles/');
 
     const articles = await Promise.all(
@@ -94,4 +94,4 @@ export async function getArticles() {
     );
 
     return articles;
-}
+};

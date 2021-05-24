@@ -1,4 +1,4 @@
-import { getProjects, getArticles } from '../lib/mdx';
+import { getProjectsData, getArticlesData } from '../lib/mdx';
 import { useI18n } from '../lib/hooks/i18n';
 import { translations } from '../content/i18n';
 
@@ -10,13 +10,13 @@ import ArticleCard from '../components/ArticleCard';
 import type { NextPage, GetStaticProps } from 'next';
 
 interface HomeProps {
-    projects: ProjectProps[];
-    articles: ArticleProps[];
+    projects: ProjectCardProps[];
+    articles: ArticleCardProps[];
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-    const projects = await getProjects();
-    const articles = await getArticles();
+    const projects = await getProjectsData();
+    const articles = await getArticlesData();
 
     const props: HomeProps = {
         projects: projects.filter((project) => project.featured),
@@ -41,8 +41,8 @@ const Home: NextPage<HomeProps> = ({ projects, articles }) => {
             <Section variant="h2" title={i18n.projects.title}>
                 <p>{i18n.projects.subtitle}</p>
                 <div className="grid gap-4 my-4">
-                    {projects.map((project: ProjectProps, index: number) => (
-                        <ProjectCard key={index} {...project} />
+                    {projects.map((project) => (
+                        <ProjectCard key={project.slug} {...project} />
                     ))}
                 </div>
                 <p className="mt-8 text-right capitalize text-azure hover:underline">
@@ -52,8 +52,8 @@ const Home: NextPage<HomeProps> = ({ projects, articles }) => {
             <Section variant="h2" title={i18n.articles.title}>
                 <p>{i18n.articles.subtitle}</p>
                 <div className="grid gap-4 my-4">
-                    {articles.map((article: ArticleProps, index: number) => (
-                        <ArticleCard key={index} {...article} />
+                    {articles.map((article) => (
+                        <ArticleCard key={article.slug} {...article} />
                     ))}
                 </div>
                 <p className="mt-8 text-right capitalize myt-8 text-azure hover:underline">

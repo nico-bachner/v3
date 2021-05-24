@@ -1,4 +1,4 @@
-import { getArticles } from '../../lib/mdx';
+import { getArticlesData } from '../../lib/mdx';
 import { useI18n } from '../../lib/hooks/i18n';
 import { translations } from '../../content/i18n';
 
@@ -11,7 +11,7 @@ interface ArticlesProps {
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-    const articles = await getArticles();
+    const articles = await getArticlesData();
 
     const props: ArticlesProps = {
         articles,
