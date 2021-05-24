@@ -25,7 +25,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 export const getStaticProps: GetStaticProps = async ({ params }) => {
     const slug = params?.slug ? params?.slug.toString() : '';
 
-    // const date_updated = await getUpdated('content/pages/', slug);
+    const date_updated = await getUpdated('content/pages/', slug);
     const file = await getFile('content/pages/', slug);
 
     const content = await getContent(file);
@@ -35,7 +35,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
         ...data,
         content,
         slug,
-        // date_updated,
+        date_updated,
     };
 
     return { props };
