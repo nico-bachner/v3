@@ -22,7 +22,7 @@ const App: NextPage<AppProps> = ({ Component, pageProps }) => {
                 <link
                     crossOrigin="anonymous"
                     rel="preload"
-                    href="/fonts/Inter.woff2"
+                    href="/fonts/inter.woff2"
                     as="font"
                     type="font/woff2"
                 />
