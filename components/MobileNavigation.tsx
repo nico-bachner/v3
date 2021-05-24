@@ -1,14 +1,12 @@
 import { useRouter } from 'next/router';
 
-import type { Page } from '../content/i18n';
-
 import Link from './Link';
 
 interface Props {
     pages: Page[];
 }
 
-const MobileNavigation = ({ pages }: Props) => {
+const MobileNavigation: React.VFC<Props> = ({ pages }) => {
     const router = useRouter();
 
     return (

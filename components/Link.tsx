@@ -1,4 +1,4 @@
-import NextLink, { LinkProps as NextLinkProps } from 'next/link';
+import NextLink from 'next/link';
 
 export interface LinkProps {
     href: string;

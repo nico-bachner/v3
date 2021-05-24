@@ -3,12 +3,9 @@ import { useI18n } from '@lib/hooks/i18n';
 
 import Link from '@components/Link';
 import Card from '@components/Card';
-
-import { translations } from '@content/i18n';
+import Head from '@components/Head';
 
 import { getRepos } from '@lib/github';
-
-import type { Repository } from '@lib/github';
 
 export async function getStaticProps() {
     const repositories = await getRepos();
@@ -26,19 +23,20 @@ interface Props {
 }
 
 export default function Repositories({ repositories }: Props) {
-    const i18n = useI18n(translations, 'en');
+    const i18n = useI18n();
     const [minStars, setMinStars] = useState(2);
 
     return (
         <main>
+            <Head
+                title="Repositories | Nico Bachner"
+                description="Nico Bachner's GitHub repositories"
+            />
             <h1 className="max-w-2xl mx-auto">GitHub Repositories</h1>
             <p className="max-w-2xl mx-auto mt-4">
                 Here are all {repositories.length} of my public GitHub
                 repositories. Obviously, they can all be found on{' '}
-                <Link
-                    href="https://github.com/nico-bachner?tab=repositories"
-                    className="text-azure hover:underline"
-                >
+                <Link href="https://github.com/nico-bachner?tab=repositories">
                     GitHub
                 </Link>{' '}
                 as well.

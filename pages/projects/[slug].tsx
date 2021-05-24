@@ -1,7 +1,7 @@
 import { getSlugs, getFile, getFileData, getContent } from '@lib/mdx';
 import { getUpdated } from '@lib/github';
 
-import Head from 'next/head';
+import Head from '@components/Head';
 import MDX from '@components/MDX';
 import Link from '@components/Link';
 
@@ -44,14 +44,11 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 const Project: NextPage<ProjectProps> = (project) => {
     return (
         <main>
-            <Head>
-                <title>{project.title}</title>
-                <meta name="description" content={project.description} />
-            </Head>
+            <Head title={project.title} description={project.description} />
 
             <MDX content={project.content} />
 
-            <p className="max-w-2xl mx-auto my-20 flex justify-between text-strong">
+            <p className="flex justify-between max-w-2xl mx-auto my-20 text-strong">
                 Last updated:{' '}
                 {new Date(project.date_updated).toLocaleDateString()}
                 <Link

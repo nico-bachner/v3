@@ -8,12 +8,12 @@ import Footer from '@components/Footer';
 import MobileNavigation from '@components/MobileNavigation';
 
 import { useI18n } from '@lib/hooks/i18n';
-import { translations } from '@content/i18n';
 
+import type { NextPage } from 'next';
 import type { AppProps } from 'next/app';
 
-export default function App({ Component, pageProps }: AppProps) {
-    const i18n = useI18n(translations, 'en');
+const App: NextPage<AppProps> = ({ Component, pageProps }) => {
+    const i18n = useI18n();
 
     return (
         <>
@@ -41,4 +41,6 @@ export default function App({ Component, pageProps }: AppProps) {
             <MobileNavigation pages={i18n.pages} />
         </>
     );
-}
+};
+
+export default App;

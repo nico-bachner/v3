@@ -1,8 +1,5 @@
 import { useRouter } from 'next/router';
 import { useI18n } from '@lib/hooks/i18n';
-import { translations } from '@content/i18n';
-
-import type { Page } from '@content/i18n';
 
 import Link from './Link';
 import Logo from './Logo';
@@ -11,16 +8,16 @@ interface Props {
     pages: Page[];
 }
 
-const Navigation = ({ pages }: Props) => {
-    const i18n = useI18n(translations, 'en');
+const Navigation: React.VFC<Props> = ({ pages }) => {
+    const i18n = useI18n();
     const router = useRouter();
 
     return (
         <nav className="top-0 z-50 px-6 py-4 my-8 font-medium sm:sticky sm:py-8 glass text-stronger">
             <div className="flex items-center justify-between max-w-[52rem] mx-auto">
-                <a href="/" className="w-12 h-12">
+                <Link href="/" className="w-12 h-12">
                     <Logo />
-                </a>
+                </Link>
                 <div className="justify-end flex-grow hidden mx-8 space-x-8 sm:flex sm:text-lg">
                     {pages.slice(0, 4).map((page, index) => {
                         return (

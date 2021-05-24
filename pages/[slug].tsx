@@ -1,7 +1,7 @@
 import { getSlugs, getFile, getFileData, getContent } from '@lib/mdx';
 import { getUpdated } from '@lib/github';
 
-import Head from 'next/head';
+import Head from '@components/Head';
 import MDX from '@components/MDX';
 import Link from '@components/Link';
 
@@ -44,14 +44,11 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 const Project: NextPage<PageProps> = (page) => {
     return (
         <main>
-            <Head>
-                <title>{page.title}</title>
-                <meta name="description" content={page.description} />
-            </Head>
+            <Head title={page.title} description={page.description} />
 
             <MDX content={page.content} />
 
-            <p className="max-w-2xl mx-auto my-20 flex justify-between text-strong">
+            <p className="flex justify-between max-w-2xl mx-auto my-20 text-strong">
                 Last updated: {new Date(page.date_updated).toLocaleDateString()}
                 <Link
                     href={`https://github.com/nico-bachner/v3/edit/main/content/pages/${page.slug}.mdx`}

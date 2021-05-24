@@ -1,7 +1,7 @@
 import { getProjectsData, getArticlesData } from '../lib/mdx';
 import { useI18n } from '../lib/hooks/i18n';
-import { translations } from '../content/i18n';
 
+import Head from '@components/Head';
 import Link from '../components/Link';
 import Section from '../components/Section';
 import ProjectCard from '../components/ProjectCard';
@@ -27,10 +27,14 @@ export const getStaticProps: GetStaticProps = async () => {
 };
 
 const Home: NextPage<HomeProps> = ({ projects, articles }) => {
-    const i18n = useI18n(translations, 'en');
+    const i18n = useI18n();
 
     return (
         <main className="max-w-2xl mx-auto">
+            <Head
+                title="Nico Bachner - Aspiring Open Sourcerer"
+                description="High School Student, Hobby Developer, and Aspiring Open Sourcerer currently living in Luxembourg"
+            />
             <h1>{i18n.title}</h1>
             <p className="mt-2 text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-tr from-cyan to-azure sm:text-4xl">
                 {i18n.subtitle}

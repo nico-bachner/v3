@@ -1,13 +1,11 @@
 import Link from './Link';
 
-import type { Page } from '../content/i18n';
-
-interface Props {
+interface FooterProps {
     pages: Page[];
     links: Page[];
 }
 
-const Footer = ({ pages, links }: Props) => (
+const Footer: React.VFC<FooterProps> = ({ pages, links }) => (
     <footer className="grid gap-12 mx-auto mt-20 mb-28 sm:grid-cols-2">
         <nav className="grid grid-flow-col grid-cols-2 grid-rows-4 gap-4">
             {pages.map((page, index) => {

@@ -3,7 +3,7 @@ export interface SectionProps {
     title: string;
 }
 
-const Section = (section: React.PropsWithChildren<SectionProps>) => {
+const Section: React.FC<SectionProps> = (section) => {
     switch (section.variant) {
         case 'h1':
             return (

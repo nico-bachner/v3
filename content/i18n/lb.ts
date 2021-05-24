@@ -1,5 +1,3 @@
-import type { Translation } from '.';
-
 export const lb: Translation = {
     title: 'Ech sin den Nico,',
     subtitle: 'en Open Source Enthusiast.',

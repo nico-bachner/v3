@@ -1,21 +1,23 @@
+import React from 'react';
+
 interface Coordinate {
     x: number;
     y: number;
 }
 
-interface WrapperProps {
+interface SVGProps {
     width: number;
     height: number;
 }
 
-const Wrapper = (props: React.PropsWithChildren<WrapperProps>) => (
+const SVG: React.FC<SVGProps> = (svg) => (
     <svg
-        viewBox={`0 0 ${props.width} ${props.height}`}
+        viewBox={`0 0 ${svg.width} ${svg.height}`}
         fill="currentColor"
         stroke="currentColor"
         className="w-full h-full"
     >
-        {props.children}
+        {svg.children}
     </svg>
 );
 
@@ -28,17 +30,15 @@ interface CircleProps {
     className?: string;
 }
 
-const Circle = (props: CircleProps) => (
+export const Circle: React.VFC<CircleProps> = (circle) => (
     <circle
-        cx={`${props.center.x}`}
-        cy={`${props.center.y}`}
-        r={`${props.radius ?? 1}`}
-        fill={props.fill ? 'currentColor' : 'transparent'}
-        strokeWidth={`${props.stroke ?? 1}`}
-        clipPath={`url(#clip-${props.clip})`}
+        cx={`${circle.center.x}`}
+        cy={`${circle.center.y}`}
+        r={`${circle.radius ?? 1}`}
+        fill={circle.fill ? 'currentColor' : 'transparent'}
+        strokeWidth={`${circle.stroke ?? 1}`}
+        clipPath={`url(#clip-${circle.clip})`}
     />
 );
-
-const SVG = { Wrapper, Circle };
 
 export default SVG;

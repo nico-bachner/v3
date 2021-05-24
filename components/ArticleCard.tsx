@@ -1,6 +1,6 @@
 import Card from './Card';
 
-const ArticleCard: React.FC<ArticleCardProps> = (article) => (
+const ArticleCard: React.VFC<ArticleCardProps> = (article) => (
     <Card href={'/articles/' + article.slug}>
         <h3>{article.title}</h3>
         <p className="my-2 line-clamp-3">{article.description}</p>

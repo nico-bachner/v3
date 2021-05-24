@@ -1,7 +1,7 @@
-import SVG from './SVG';
+import SVG, { Circle } from './SVG';
 
-const Logo = () => (
-    <SVG.Wrapper width={32} height={32}>
+const Logo: React.VFC = () => (
+    <SVG width={32} height={32}>
         <title>Nico Logo</title>
         <desc>A minimalistic rendering of a bike chain</desc>
 
@@ -25,19 +25,19 @@ const Logo = () => (
 
         <g className="logo-edge">
             <g className="logo-circles-edge">
-                <SVG.Circle
+                <Circle
                     center={{ x: 7, y: 25 }}
                     radius={6}
                     stroke={2}
                     clip="bottom-left-edge"
                 />
-                <SVG.Circle
+                <Circle
                     center={{ x: 16, y: 16 }}
                     radius={6}
                     stroke={2}
                     clip="centre-edge"
                 />
-                <SVG.Circle
+                <Circle
                     center={{ x: 25, y: 7 }}
                     radius={6}
                     stroke={2}
@@ -46,25 +46,25 @@ const Logo = () => (
             </g>
 
             <g className="logo-helpers-edge">
-                <SVG.Circle
+                <Circle
                     center={{ x: 16, y: 7 }}
                     radius={3}
                     stroke={2}
                     clip="4"
                 />
-                <SVG.Circle
+                <Circle
                     center={{ x: 25, y: 16 }}
                     radius={3}
                     stroke={2}
                     clip="4"
                 />
-                <SVG.Circle
+                <Circle
                     center={{ x: 7, y: 16 }}
                     radius={3}
                     stroke={2}
                     clip="5"
                 />
-                <SVG.Circle
+                <Circle
                     center={{ x: 16, y: 25 }}
                     radius={3}
                     stroke={2}
@@ -74,11 +74,11 @@ const Logo = () => (
         </g>
 
         <g className="logo-circles-centre">
-            <SVG.Circle center={{ x: 7, y: 25 }} radius={2} stroke={2} />
-            <SVG.Circle center={{ x: 16, y: 16 }} radius={2} stroke={2} />
-            <SVG.Circle center={{ x: 25, y: 7 }} radius={2} stroke={2} />
+            <Circle center={{ x: 7, y: 25 }} radius={2} stroke={2} />
+            <Circle center={{ x: 16, y: 16 }} radius={2} stroke={2} />
+            <Circle center={{ x: 25, y: 7 }} radius={2} stroke={2} />
         </g>
-    </SVG.Wrapper>
+    </SVG>
 );
 
 export default Logo;

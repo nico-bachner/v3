@@ -1,5 +1,3 @@
-import type { Translation } from '.';
-
 export const de: Translation = {
     title: 'Ich bin Nico,',
     subtitle: 'ein Open Source Enthusiast.',

@@ -6,7 +6,7 @@ export interface CardProps {
     locale?: string | false;
 }
 
-const Card = (card: React.PropsWithChildren<CardProps>) => {
+const Card: React.FC<CardProps> = (card) => {
     if (card.href) {
         return (
             <Link

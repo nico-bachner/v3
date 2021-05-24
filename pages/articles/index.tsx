@@ -1,8 +1,8 @@
-import { getArticlesData } from '../../lib/mdx';
-import { useI18n } from '../../lib/hooks/i18n';
-import { translations } from '../../content/i18n';
+import { getArticlesData } from '@lib/mdx';
+import { useI18n } from '@lib/hooks/i18n';
 
-import ArticleCard from '../../components/ArticleCard';
+import Head from '@components/Head';
+import ArticleCard from '@components/ArticleCard';
 
 import type { NextPage, GetStaticProps } from 'next';
 
@@ -23,10 +23,14 @@ export const getStaticProps: GetStaticProps = async () => {
 };
 
 const Articles: NextPage<ArticlesProps> = ({ articles }) => {
-    const i18n = useI18n(translations, 'en');
+    const i18n = useI18n();
 
     return (
         <main className="max-w-2xl mx-auto">
+            <Head
+                title="Articles | Nico Bachner"
+                description="Nico Bachner's Articles"
+            />
             <h1>{i18n.articles.title}</h1>
             <p className="mt-4">{i18n.articles.subtitle}</p>
             <div className="grid gap-8 my-8">

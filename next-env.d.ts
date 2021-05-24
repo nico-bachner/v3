@@ -1,6 +1,7 @@
 /// <reference types="next" />
 /// <reference types="next/types/global" />
 
+// MDX Stuff
 interface MDXContent {
     compiledSource: string;
 }
@@ -42,3 +43,48 @@ type ArticleCardProps = ArticleData & {
     reading_time: number;
 };
 type ArticleProps = MDXProps<ArticleData & { time: number }>;
+
+// Other
+interface Repository {
+    name: string;
+    slug: string;
+    description: string;
+    repo_url: string;
+    url: string;
+    stars: number;
+}
+
+interface Page {
+    title: string;
+    href: string;
+}
+
+interface Translation {
+    title: string;
+    subtitle: string;
+    about: {
+        title: string;
+        content: string;
+    };
+    projects: {
+        title: string;
+        subtitle: string;
+        web: string;
+        games: string;
+        other: string;
+    };
+    articles: {
+        title: string;
+        subtitle: string;
+    };
+    actions: {
+        changeLanguage: string;
+        readMore: string;
+        viewAll: string;
+        showAll: string;
+        showMore: string;
+        showLess: string;
+    };
+    pages: Page[];
+    links: Page[];
+}

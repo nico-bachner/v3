@@ -7,7 +7,7 @@ import {
 } from '@lib/mdx';
 import { getUpdated } from '@lib/github';
 
-import Head from 'next/head';
+import Head from '@components/Head';
 import Link from '@components/Link';
 import MDX from '@components/MDX';
 
@@ -52,23 +52,14 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 const Article: NextPage<ArticleProps> = (article) => {
     return (
         <main>
-            <Head>
-                <title>{article.title}</title>
-                <meta name="description" content={article.description} />
-                {article.canonical_url && (
-                    <>
-                        <link rel="canonical" href={article.canonical_url} />
-                        <meta
-                            property="og:url"
-                            content={article.canonical_url}
-                        />
-                    </>
-                )}
+            <Head title={article.title} description={article.description}>
+                <link rel="canonical" href={article.canonical_url} />
+                <meta property="og:url" content={article.canonical_url} />
             </Head>
 
             <MDX content={article.content} />
 
-            <p className="max-w-2xl mx-auto my-20 flex justify-between">
+            <p className="flex justify-between max-w-2xl mx-auto my-20">
                 Last updated:{' '}
                 {new Date(article.date_updated).toLocaleDateString()}
                 <Link

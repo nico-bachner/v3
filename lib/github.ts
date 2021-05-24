@@ -95,15 +95,6 @@ export interface GitHubRepository {
     default_branch: string;
 }
 
-export interface Repository {
-    name: string;
-    slug: string;
-    description: string;
-    repo_url: string;
-    url: string;
-    stars: number;
-}
-
 export const getUpdated = async (directory: string, slug: string) => {
     const urlPath = encodeURIComponent(`${directory}/${slug}.mdx`);
 
