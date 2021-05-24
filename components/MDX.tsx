@@ -1,48 +1,30 @@
-import { useRouter } from 'next/router';
+import { MDXRemote } from 'next-mdx-remote';
 
 import Link from './Link';
+import Image, { ImageProps } from './Image';
 
-import { MDXComponents } from './MDXComponents';
-import { MDXProvider } from '@mdx-js/react';
+const MDXImage: React.VFC<ImageProps> = (props) => (
+    <div className="max-w-3xl mx-auto my-8 sm:my-12">
+        <Image {...props} className="mx-auto max-w-max" />
+    </div>
+);
 
-interface Props {
-    children: React.ReactNode;
+const MDXWrapper: React.FC = ({ children }) => (
+    <article className="mdx">{children}</article>
+);
+
+const MDXComponents = {
+    wrapper: MDXWrapper,
+    a: Link,
+    Image: MDXImage,
+};
+
+interface MDXProps {
+    content: MDXContent;
 }
 
-const components = {
-    ...MDXComponents,
-    wrapper: ({ children }: Props) => {
-        const router = useRouter();
-
-        return (
-            <main>
-                {children}
-                <p className="max-w-2xl mx-auto my-20 text-right">
-                    <Link
-                        href={
-                            'https://github.com/nico-bachner/v3/edit/main/pages' +
-                            router.pathname +
-                            '.mdx'
-                        }
-                    >
-                        Edit on GitHub
-                    </Link>
-                </p>
-            </main>
-        );
-    },
-};
-
-const MDX = ({ children }: Props) => {
-    const router = useRouter();
-
-    return (
-        <MDXProvider
-            components={router.query == {} ? MDXComponents : components}
-        >
-            {children}
-        </MDXProvider>
-    );
-};
+const MDX: React.VFC<MDXProps> = ({ content }) => (
+    <MDXRemote {...content} components={MDXComponents} />
+);
 
 export default MDX;

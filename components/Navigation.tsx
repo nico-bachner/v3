@@ -1,8 +1,8 @@
 import { useRouter } from 'next/router';
-import { useI18n } from '../hooks/i18n';
-import { translations } from '../content/i18n';
+import { useI18n } from '@lib/hooks/i18n';
+import { translations } from '@content/i18n';
 
-import type { Page } from '../content/i18n';
+import type { Page } from '@content/i18n';
 
 import Link from './Link';
 import Logo from './Logo';
@@ -18,10 +18,7 @@ const Navigation = ({ pages }: Props) => {
     return (
         <nav className="top-0 z-50 px-6 py-4 my-8 font-medium sm:sticky sm:py-8 glass text-stronger">
             <div className="flex items-center justify-between max-w-[52rem] mx-auto">
-                <a
-                    href="/"
-                    className="w-12 h-12 transition duration-300 ease-in-out transform hover:-translate-y-1"
-                >
+                <a href="/" className="w-12 h-12">
                     <Logo />
                 </a>
                 <div className="justify-end flex-grow hidden mx-8 space-x-8 sm:flex sm:text-lg">
@@ -33,7 +30,7 @@ const Navigation = ({ pages }: Props) => {
                                 className={
                                     router.pathname == page.href
                                         ? 'text-light cursor-default'
-                                        : 'transition duration-300 ease-in-out transform hover:-translate-y-1'
+                                        : 'hover:underline'
                                 }
                             >
                                 {page.title}

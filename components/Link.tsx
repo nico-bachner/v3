@@ -1,4 +1,4 @@
-import NextLink from 'next/link';
+import NextLink, { LinkProps as NextLinkProps } from 'next/link';
 
 export interface LinkProps {
     href: string;
@@ -12,7 +12,7 @@ export interface LinkProps {
     locale?: string | false;
 }
 
-const Link = (props: React.PropsWithChildren<LinkProps>) => {
+const Link: React.FC<LinkProps> = (props) => {
     if (props.href.startsWith('/')) {
         return (
             <NextLink {...props}>

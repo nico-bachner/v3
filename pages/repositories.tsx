@@ -1,12 +1,14 @@
 import { useState } from 'react';
-import { useI18n } from '../hooks/i18n';
+import { useI18n } from '@lib/hooks/i18n';
 
-import Link from '../components/Link';
-import Card from '../components/Card';
+import Link from '@components/Link';
+import Card from '@components/Card';
 
-import { translations } from '../content/i18n';
+import { translations } from '@content/i18n';
 
-import getRepos, { Repository } from '../lib/repo';
+import { getRepos } from '@lib/github';
+
+import type { Repository } from '@lib/github';
 
 export async function getStaticProps() {
     const repositories = await getRepos();

@@ -15,8 +15,9 @@ module.exports = {
             stronger: 'hsl(220, 10%, var(--stronger))',
             strongest: 'hsl(220, 10%, var(--strongest))',
 
-            cyan: 'hsl(180, 100%, 50%)',
             azure: 'hsl(210, 100%, 50%)',
+            cyan: 'hsl(180, 100%, 50%)',
+            highlight: 'hsl(330, 100%, 50%)',
         },
         borderColor: {
             DEFAULT: 'hsl(220, 10%, var(--lighter))',

@@ -1,27 +1,26 @@
-import { getProjects } from '../../lib/mdx';
-import { useI18n } from '../../hooks/i18n';
-import { translations } from '../../content/i18n';
+import { getProjects } from '@lib/mdx';
+import { useI18n } from '@lib/hooks/i18n';
+import { translations } from '@content/i18n';
 
-import ProjectCard from '../../components/ProjectCard';
+import ProjectCard from '@components/ProjectCard';
 
 import type { NextPage, GetStaticProps } from 'next';
-import type { ProjectProps } from '../../components/Project';
 
-interface Props {
+interface ProjectsProps {
     projects: ProjectProps[];
 }
 
 export const getStaticProps: GetStaticProps = async () => {
     const projects = await getProjects();
 
-    const props: Props = {
+    const props: ProjectsProps = {
         projects,
     };
 
     return { props };
 };
 
-const Projects: NextPage<Props> = ({ projects }) => {
+const Projects: NextPage<ProjectsProps> = ({ projects }) => {
     const i18n = useI18n(translations, 'en');
 
     return (
@@ -31,8 +30,8 @@ const Projects: NextPage<Props> = ({ projects }) => {
                 {i18n.projects.subtitle}
             </p>
             <div className="grid max-w-2xl mx-auto gap-y-8 gap-x-20 md:max-w-3xl alternate-2">
-                {projects.map((project: ProjectProps, index: number) => (
-                    <ProjectCard key={index} {...project} />
+                {projects.map((project) => (
+                    <ProjectCard key={project.slug} {...project} />
                 ))}
             </div>
         </main>

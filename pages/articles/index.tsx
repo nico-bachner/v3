@@ -1,11 +1,10 @@
 import { getArticles } from '../../lib/mdx';
-import { useI18n } from '../../hooks/i18n';
+import { useI18n } from '../../lib/hooks/i18n';
 import { translations } from '../../content/i18n';
 
 import ArticleCard from '../../components/ArticleCard';
 
 import type { NextPage, GetStaticProps } from 'next';
-import type { ArticleProps } from '../../components/Article';
 
 interface Props {
     articles: ArticleProps[];

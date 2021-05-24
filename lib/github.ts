@@ -104,7 +104,20 @@ export interface Repository {
     stars: number;
 }
 
-const getRepos = async () => {
+export const getUpdated = async (directory: string, slug: string) => {
+    const urlPath = encodeURIComponent(`${directory}/${slug}.mdx`);
+
+    const GitHubFileHistoryResponse = await fetch(
+        `https://api.github.com/repos/nico-bachner/v3/commits?path=${urlPath}&page=1&per_page=1`
+    );
+    const GitHubFileHistory = await GitHubFileHistoryResponse.json();
+
+    const updated: string = GitHubFileHistory[0].commit.committer.date;
+
+    return updated;
+};
+
+export const getRepos = async () => {
     const GitHubRepositoriesResponse = await fetch(
         'https://api.github.com/users/nico-bachner/repos'
     );
@@ -129,5 +142,3 @@ const getRepos = async () => {
         return b.stars - a.stars;
     });
 };
-
-export default getRepos;

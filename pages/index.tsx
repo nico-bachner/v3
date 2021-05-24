@@ -1,5 +1,5 @@
 import { getProjects, getArticles } from '../lib/mdx';
-import { useI18n } from '../hooks/i18n';
+import { useI18n } from '../lib/hooks/i18n';
 import { translations } from '../content/i18n';
 
 import Link from '../components/Link';
@@ -8,10 +8,8 @@ import ProjectCard from '../components/ProjectCard';
 import ArticleCard from '../components/ArticleCard';
 
 import type { NextPage, GetStaticProps } from 'next';
-import type { ProjectProps } from '../components/Project';
-import type { ArticleProps } from '../components/Article';
 
-interface Props {
+interface HomeProps {
     projects: ProjectProps[];
     articles: ArticleProps[];
 }
@@ -20,7 +18,7 @@ export const getStaticProps: GetStaticProps = async () => {
     const projects = await getProjects();
     const articles = await getArticles();
 
-    const props: Props = {
+    const props: HomeProps = {
         projects: projects.filter((project) => project.featured),
         articles,
     };
@@ -28,7 +26,7 @@ export const getStaticProps: GetStaticProps = async () => {
     return { props };
 };
 
-const Home: NextPage<Props> = ({ projects, articles }) => {
+const Home: NextPage<HomeProps> = ({ projects, articles }) => {
     const i18n = useI18n(translations, 'en');
 
     return (

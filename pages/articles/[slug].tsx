@@ -4,17 +4,14 @@ import {
     getFileData,
     getContent,
     getReadingTime,
-} from '../../lib/mdx';
-import { useMDX } from '../../hooks/mdx';
+} from '@lib/mdx';
+import { getUpdated } from '@lib/github';
 
-import Meta from '../../components/Meta';
-import Link from '../../components/Link';
-import Article from '../../components/Article';
+import Head from 'next/head';
+import Link from '@components/Link';
+import MDX from '@components/MDX';
 
 import type { NextPage, GetStaticPaths, GetStaticProps } from 'next';
-import type { ArticleProps } from '../../components/Article';
-
-type Props = ArticleProps & { content: any };
 
 export const getStaticPaths: GetStaticPaths = async () => {
     const slugs = await getSlugs('content/articles/');
@@ -34,36 +31,48 @@ export const getStaticPaths: GetStaticPaths = async () => {
 export const getStaticProps: GetStaticProps = async ({ params }) => {
     const slug = params?.slug ? params?.slug.toString() : '';
 
+    const date_updated = await getUpdated('content/articles/', slug);
     const file = await getFile('content/articles/', slug);
 
     const content = await getContent(file);
-    const data = getFileData(file, 'article');
+    const data = getFileData(file);
     const time = getReadingTime(file);
 
-    const props: Props = {
+    const props: ArticleProps = {
         ...data,
         content,
         slug,
         time,
+        date_updated,
     };
 
     return { props };
 };
 
-const ArticlePage: NextPage<Props> = (article) => {
-    const mdx = useMDX(article.content);
-
+const Article: NextPage<ArticleProps> = (article) => {
     return (
         <main>
-            <Meta title={article.title} description={article.summary} />
-            <Article {...article}>{mdx}</Article>
-            <p className="max-w-2xl mx-auto my-20 text-right">
+            <Head>
+                <title>{article.title}</title>
+                <meta name="description" content={article.description} />
+                {article.canonical_url && (
+                    <>
+                        <link rel="canonical" href={article.canonical_url} />
+                        <meta
+                            property="og:url"
+                            content={article.canonical_url}
+                        />
+                    </>
+                )}
+            </Head>
+
+            <MDX content={article.content} />
+
+            <p className="max-w-2xl mx-auto my-20 flex justify-between">
+                Last updated:{' '}
+                {new Date(article.date_updated).toLocaleDateString()}
                 <Link
-                    href={
-                        'https://github.com/nico-bachner/v3/edit/main/articles/' +
-                        article.slug +
-                        '.mdx'
-                    }
+                    href={`https://github.com/nico-bachner/v3/edit/main/content/articles/${article.slug}.mdx`}
                 >
                     Edit on GitHub
                 </Link>
@@ -72,4 +81,4 @@ const ArticlePage: NextPage<Props> = (article) => {
     );
 };
 
-export default ArticlePage;
+export default Article;
