@@ -3,11 +3,6 @@ import matter from 'gray-matter';
 import readingTime from 'reading-time';
 import { serialize } from 'next-mdx-remote/serialize';
 
-// @ts-expect-error
-import slug from 'remark-slug';
-// @ts-expect-error
-import headings from 'remark-autolink-headings';
-
 export const getSlugs = async (directory: string) => {
     const files = await fs.readdir(process.cwd() + '/' + directory);
 
@@ -52,9 +47,19 @@ export const getReadingTime = (file: string) => {
 };
 
 export const getContent = async (file: string) => {
-    const content = await serialize(getFileContent(file), {
-        mdxOptions: { remarkPlugins: [slug] },
-    });
+    const content = await serialize(
+        getFileContent(file)
+        /* , {
+            mdxOptions: {
+                remarkPlugins: [
+                    require('remark-slug'),
+                    require('remark-autolink-headings'),
+                    require('remark-code-titles'),
+                ],
+                rehypePlugins: [require('mdx-prism')],
+            },
+        } */
+    );
 
     return content;
 };
