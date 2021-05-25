@@ -5,6 +5,7 @@ module.exports = {
         domains: [
             {
                 domain: 'nicobachner.com',
+                locales: ['da', 'fr', 'lb'],
                 defaultLocale: 'en',
             },
             {
