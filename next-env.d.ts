@@ -1,48 +1,54 @@
 /// <reference types="next" />
 /// <reference types="next/types/global" />
 
+interface DefaultProps {
+    id?: string;
+    className?: string;
+}
+
 // MDX Stuff
 interface MDXContent {
     compiledSource: string;
 }
-
-type MDXProps<T> = T & {
+interface MDXProps {
     slug: string;
     content: MDXContent;
     date_updated: string;
+}
+type FileData = PageData & {
+    [key: string]: any;
 };
-
-type FileData = PageData | ProjectData | ArticleData;
 
 // General Page Types
 interface PageData {
     title: string;
     description: string;
 }
-type PageProps = MDXProps<PageData>;
+type PageProps = PageData & MDXProps;
 
 // Project Types
-type ProjectData = PageData & {
+type ProjectRawData = PageData & {
+    period: string;
     featured?: boolean;
     url?: string;
     github?: string;
 };
-type ProjectCardProps = ProjectData & {
-    slug: string;
-};
-type ProjectProps = MDXProps<ProjectData>;
+type ProjectData = ProjectRawData;
+type ProjectProps = ProjectData & MDXProps;
 
 // Article Types
-type ArticleData = PageData & {
-    date_published?: string;
-    date_updated?: string;
+type ArticleRawData = PageData & {
+    date_published: string;
+    featured?: boolean;
     canonical_url?: string;
 };
-type ArticleCardProps = ArticleData & {
+type ArticleData = ArticleRawData & { reading_time: number };
+type ArticleProps = ArticleData & MDXProps;
+
+// Card Types
+type CardProps<T> = T & {
     slug: string;
-    reading_time: number;
 };
-type ArticleProps = MDXProps<ArticleData & { time: number }>;
 
 // Other
 interface Repository {

@@ -1,7 +1,8 @@
 ---
 title: SvelteKit Theme Switch
 description: A tutorial on how to build a Theme Switch using SvelteKit
-canonical_url: 'https://dev.to/nico_bachner/sveltekit-theme-switch-a58'
+date_published: '2021-05-19'
+canonical_url: https://dev.to/nico_bachner/sveltekit-theme-switch-a58
 ---
 
 # SvelteKit Theme Switch
@@ -37,9 +38,7 @@ The `'system'` value here is important: we want the user to be greeted with thei
 
 Now that we've got type definitions out of the way, we can move on to the heart of the theme switch: the theme store. The theme store is a [Svelte Store](https://svelte.dev/docs#svelte_store).
 
-```ts
-// src/lib/stores.ts (or .js)
-
+```ts:src/lib/stores.ts (or .js)
 import { writable } from 'svelte/store';
 
 export const theme = writable('system');
@@ -52,7 +51,6 @@ Here, we're creating a Svelte Store called `theme` and assigning it the default 
 We can now use the Svelte Store we created in our Theme Switch Component.
 
 ```html:src/lib/components/ThemeSwitch.svelte
-
 <script lang="ts">
     import { theme } from '$lib/stores';
 
@@ -91,7 +89,6 @@ We now have a Svelte Store that stores the theme value, and a Theme Switch compo
 The way I went about this is swapping stylesheets in the `<head>` of the generated document.
 
 ```html:src/routes/__layout.svelte
-
 <script lang="ts">
     import { theme } from '$lib/stores';
 </script>
@@ -130,7 +127,6 @@ static
 In `light.css` and `dark.css` (or whatever you choose to call you themes), we style our project accordingly. An example:
 
 ```css:light.css
-
 :root {
     --lightest: 100%;
     --lighter: 80%;
@@ -144,7 +140,6 @@ In `light.css` and `dark.css` (or whatever you choose to call you themes), we st
 While these are straightforward, the file that requires more attention is `system.css`. This is because there we need to worry about system preferences. While it is easy to access the user's preference using the `prefers-color-scheme` media query, we need to keep in mind here that there are only two predefined choices, `light` and `dark`. Hence we need to style accordingly:
 
 ```css:system.css
-
 @media (prefers-color-scheme: light) {
     :root {
         --lightest: 100%;

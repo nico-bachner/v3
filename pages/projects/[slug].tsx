@@ -1,5 +1,5 @@
 import { getSlugs, getFile, getFileData, getContent } from '@lib/mdx';
-import { getUpdated } from '@lib/github';
+import { getProjectProps } from '@lib/projects';
 
 import Head from '@components/Head';
 import MDX from '@components/MDX';
@@ -23,22 +23,14 @@ export const getStaticPaths: GetStaticPaths = async () => {
 };
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-    const slug = params?.slug ? params?.slug.toString() : '';
+    if (typeof params?.slug == 'string') {
+        const articleProps = await getProjectProps(params.slug);
 
-    const date_updated = await getUpdated('content/projects/', slug);
-    const file = await getFile('content/projects/', slug);
-
-    const content = await getContent(file);
-    const data = getFileData(file);
-
-    const props: ProjectProps = {
-        ...data,
-        content,
-        slug,
-        date_updated,
+        return { props: articleProps };
+    }
+    return {
+        notFound: true,
     };
-
-    return { props };
 };
 
 const Project: NextPage<ProjectProps> = (project) => {

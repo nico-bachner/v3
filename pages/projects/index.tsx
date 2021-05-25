@@ -1,4 +1,4 @@
-import { getProjectsData } from '@lib/mdx';
+import { getOrderedProjectsData } from '@lib/projects';
 import { useI18n } from '@lib/hooks/i18n';
 
 import Head from '@components/Head';
@@ -7,11 +7,11 @@ import ProjectCard from '@components/ProjectCard';
 import type { NextPage, GetStaticProps } from 'next';
 
 interface ProjectsProps {
-    projects: ProjectCardProps[];
+    projects: CardProps<ProjectData>[];
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-    const projects = await getProjectsData();
+    const projects = await getOrderedProjectsData();
 
     const props: ProjectsProps = {
         projects,

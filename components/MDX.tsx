@@ -5,8 +5,16 @@ import CodeBlock from './CodeBlock';
 import Link from './Link';
 import Image from './Image';
 
+import type { LinkProps } from './Link';
+
 const MDXWrapper: React.FC = ({ children }) => (
     <article className="max-w-2xl mx-auto mdx">{children}</article>
+);
+
+const MDXLink: React.FC<LinkProps> = ({ href, children }) => (
+    <Link href={href} className="text-azure hover:underline">
+        {children}
+    </Link>
 );
 
 /*
@@ -26,7 +34,7 @@ const MDXComponents = {
     wrapper: MDXWrapper,
     inlineCode: Code,
     code: CodeBlock,
-    a: Link,
+    a: MDXLink,
 
     // add custom components
     Image,

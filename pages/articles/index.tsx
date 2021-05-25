@@ -1,4 +1,4 @@
-import { getArticlesData } from '@lib/mdx';
+import { getOrderedArticlesData } from '@lib/articles';
 import { useI18n } from '@lib/hooks/i18n';
 
 import Head from '@components/Head';
@@ -6,14 +6,14 @@ import ArticleCard from '@components/ArticleCard';
 
 import type { NextPage, GetStaticProps } from 'next';
 
-interface ArticlesProps {
-    articles: ArticleCardProps[];
+interface ArticlesPageProps {
+    articles: CardProps<ArticleData>[];
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-    const articles = await getArticlesData();
+    const articles = await getOrderedArticlesData();
 
-    const props: ArticlesProps = {
+    const props: ArticlesPageProps = {
         articles,
     };
 
@@ -22,7 +22,7 @@ export const getStaticProps: GetStaticProps = async () => {
     };
 };
 
-const Articles: NextPage<ArticlesProps> = ({ articles }) => {
+const Articles: NextPage<ArticlesPageProps> = ({ articles }) => {
     const i18n = useI18n();
 
     return (

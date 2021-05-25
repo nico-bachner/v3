@@ -3,7 +3,6 @@ import NextLink from 'next/link';
 export interface LinkProps {
     href: string;
     as?: string;
-    className?: string;
     replace?: boolean;
     scroll?: boolean;
     shallow?: boolean;
@@ -12,11 +11,11 @@ export interface LinkProps {
     locale?: string | false;
 }
 
-const Link: React.FC<LinkProps> = (link) => {
+const Link: React.FC<LinkProps & DefaultProps> = (link) => {
     if (link.href.startsWith('/') || link.href.startsWith('#')) {
         return (
             <NextLink {...link}>
-                <a className={link.className ?? 'text-azure hover:underline'}>
+                <a id={link.id} className={link.className}>
                     {link.children}
                 </a>
             </NextLink>
@@ -27,7 +26,8 @@ const Link: React.FC<LinkProps> = (link) => {
                 href={link.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={link.className ?? 'text-azure hover:underline'}
+                id={link.id}
+                className={link.className}
             >
                 {link.children}
             </a>

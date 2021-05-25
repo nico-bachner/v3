@@ -1,11 +1,6 @@
-import {
-    getSlugs,
-    getFile,
-    getFileData,
-    getContent,
-    getReadingTime,
-} from '@lib/mdx';
+import { getSlugs, getFile, getContent, getReadingTime } from '@lib/mdx';
 import { getUpdated } from '@lib/github';
+import { getArticleProps } from '@lib/articles';
 
 import Head from '@components/Head';
 import Link from '@components/Link';
@@ -29,24 +24,14 @@ export const getStaticPaths: GetStaticPaths = async () => {
 };
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-    const slug = params?.slug ? params?.slug.toString() : '';
+    if (typeof params?.slug == 'string') {
+        const articleProps = await getArticleProps(params.slug);
 
-    const date_updated = await getUpdated('content/articles/', slug);
-    const file = await getFile('content/articles/', slug);
-
-    const content = await getContent(file);
-    const data = getFileData(file);
-    const time = getReadingTime(file);
-
-    const props: ArticleProps = {
-        ...data,
-        content,
-        slug,
-        time,
-        date_updated,
+        return { props: articleProps };
+    }
+    return {
+        notFound: true,
     };
-
-    return { props };
 };
 
 const Article: NextPage<ArticleProps> = (article) => {

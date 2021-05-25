@@ -1,9 +1,9 @@
 import Card from './Card';
 
-type Props = ArticleCardProps & { className?: string };
+type ArticleCardProps = CardProps<ArticleData> & DefaultProps;
 
-const ArticleCard: React.VFC<Props> = (article) => (
-    <Card href={'/articles/' + article.slug} className={article.className}>
+const ArticleCard: React.VFC<ArticleCardProps> = (article) => (
+    <Card href={'/articles/' + article.slug} {...article}>
         <h3>{article.title}</h3>
         <p className="my-2 line-clamp-3">{article.description}</p>
         <div className="flex justify-between">

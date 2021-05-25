@@ -6,9 +6,7 @@ import { serialize } from 'next-mdx-remote/serialize';
 export const getSlugs = async (directory: string) => {
     const files = await fs.readdir(process.cwd() + '/' + directory);
 
-    const slugs = files.map((file) => file.replace(/\.mdx/, ''));
-
-    return slugs;
+    return files.map((file) => file.replace(/\.mdx/, ''));
 };
 
 export const getFile = async (directory: string, slug: string) => {
@@ -20,23 +18,17 @@ export const getFile = async (directory: string, slug: string) => {
     return file;
 };
 
-export const getFileData = (file: string) => {
+export const getFileData = (file: string): FileData => {
     const { data } = matter(file);
 
-    const fileData: FileData = {
+    return {
         ...data,
         title: data.title,
         description: data.description,
     };
-
-    return fileData;
 };
 
-export const getFileContent = (file: string) => {
-    const { content } = matter(file);
-
-    return content;
-};
+export const getFileContent = (file: string) => matter(file).content;
 
 export const getReadingTime = (file: string) => {
     const content = getFileContent(file);
@@ -62,48 +54,4 @@ export const getContent = async (file: string) => {
     );
 
     return content;
-};
-
-export const getProjectsData = async () => {
-    const slugs = await getSlugs('content/projects/');
-
-    const projects = await Promise.all(
-        slugs.map(async (slug) => {
-            const file = await getFile('content/projects/', slug);
-
-            const data: ProjectData = getFileData(file);
-
-            const project: ProjectData & { slug: string } = {
-                ...data,
-                slug,
-            };
-
-            return project;
-        })
-    );
-
-    return projects;
-};
-
-export const getArticlesData = async () => {
-    const slugs = await getSlugs('content/articles/');
-
-    const articles = await Promise.all(
-        slugs.map(async (slug) => {
-            const file = await getFile('content/articles/', slug);
-
-            const data: ArticleData = getFileData(file);
-            const reading_time = getReadingTime(file);
-
-            const article: ArticleCardProps = {
-                ...data,
-                slug,
-                reading_time,
-            };
-
-            return article;
-        })
-    );
-
-    return articles;
 };
