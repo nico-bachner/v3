@@ -21,7 +21,7 @@ export const getStaticProps: GetStaticProps = async () => {
 
     const props: HomeProps = {
         projects: projects.filter((project) => project.featured),
-        articles: articles.filter((article) => article.featured),
+        articles,
     };
 
     return { props };
