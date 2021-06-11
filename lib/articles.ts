@@ -55,8 +55,8 @@ export const getOrderedArticlesData = async () => {
 
     const ordered_articles = articles.sort(
         (a, b) =>
-            new Date(b.date_published).getHours() -
-            new Date(a.date_published).getHours()
+            new Date(b.date_published).getTime() -
+            new Date(a.date_published).getTime()
     );
 
     return ordered_articles;
