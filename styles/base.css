@@ -99,6 +99,9 @@
     }
 
     /* mdx */
+    .mdx {
+        @apply max-w-2xl mx-auto leading-relaxed;
+    }
     .mdx h1 {
         @apply mb-4;
     }
@@ -112,7 +115,7 @@
         @apply mt-8 mb-4;
     }
     .mdx p {
-        @apply my-4 leading-relaxed;
+        @apply my-4;
     }
 
     /* prism */

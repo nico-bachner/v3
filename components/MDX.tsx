@@ -8,7 +8,7 @@ import Image from './Image';
 import type { LinkProps } from './Link';
 
 const MDXWrapper: React.FC = ({ children }) => (
-    <article className="max-w-2xl mx-auto mdx">{children}</article>
+    <article className="mdx">{children}</article>
 );
 
 const MDXLink: React.FC<LinkProps> = ({ href, children }) => (
