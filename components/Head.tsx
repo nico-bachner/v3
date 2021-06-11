@@ -11,6 +11,12 @@ const Head: React.FC<HeadProps> = (head) => (
         <meta name="og:title" content={head.title} />
         <meta name="description" content={head.description} />
         <meta name="og:description" content={head.description} />
+        <meta
+            name="og:image"
+            content={`https://og-image.vercel.app/${encodeURIComponent(
+                head.title
+            )}.png`}
+        />
     </NextHead>
 );
 
