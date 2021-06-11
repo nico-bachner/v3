@@ -1,5 +1,4 @@
-import { getSlugs, getFile, getContent, getReadingTime } from '@lib/mdx';
-import { getUpdated } from '@lib/github';
+import { getSlugs } from '@lib/mdx';
 import { getArticleProps } from '@lib/articles';
 
 import Head from '@components/Head';
@@ -35,6 +34,11 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 };
 
 const Article: NextPage<ArticleProps> = (article) => {
+    const date_updated =
+        article.date_updated == 'undefined'
+            ? new Date()
+            : new Date(article.date_updated);
+
     return (
         <main>
             <Head title={article.title} description={article.description}>
@@ -45,8 +49,7 @@ const Article: NextPage<ArticleProps> = (article) => {
             <MDX content={article.content} />
 
             <p className="flex justify-between max-w-2xl mx-auto my-16 text-strong">
-                Last updated:{' '}
-                {new Date(article.date_updated).toLocaleDateString()}
+                Last updated: {date_updated.toLocaleDateString()}
                 <Link
                     href={`https://github.com/nico-bachner/v3/edit/main/content/articles/${article.slug}.mdx`}
                 >

@@ -112,7 +112,7 @@
         @apply mt-8 mb-4;
     }
     .mdx p {
-        @apply my-4;
+        @apply my-4 leading-relaxed;
     }
 
     /* prism */
