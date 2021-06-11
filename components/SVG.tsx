@@ -5,8 +5,9 @@ interface SVGProps {
     height: number;
 }
 
-const SVG: React.FC<SVGProps> = (svg) => (
+const SVG: React.FC<SVGProps & DefaultProps> = (svg) => (
     <svg
+        {...svg}
         viewBox={`0 0 ${svg.width} ${svg.height}`}
         fill="currentColor"
         stroke="currentColor"
@@ -27,15 +28,15 @@ interface Coordinate {
 
 interface PathProps {
     commands: string[];
-    stroke?: number;
+    strokeWidth?: number;
     fill?: string;
 }
 
-export const Path: React.VFC<PathProps> = (path) => (
+export const Path: React.VFC<PathProps & DefaultProps> = (path) => (
     <path
+        {...path}
         d={path.commands.join(' ')}
         stroke="currentColor"
-        strokeWidth={path.stroke}
         fill={path.fill ?? 'none'}
     />
 );
@@ -43,19 +44,19 @@ export const Path: React.VFC<PathProps> = (path) => (
 interface CircleProps {
     centre: Coordinate;
     radius: number;
-    stroke?: number;
+    strokeWidth?: number;
     fill?: string;
     clip?: string;
     className?: string;
 }
 
-export const Circle: React.VFC<CircleProps> = (circle) => (
+export const Circle: React.VFC<CircleProps & DefaultProps> = (circle) => (
     <circle
+        {...circle}
         cx={circle.centre.x}
         cy={circle.centre.y}
         r={circle.radius ?? 1}
         fill={circle.fill ?? 'none'}
-        strokeWidth={circle.stroke ?? 1}
         clipPath={`url(#clip-${circle.clip})`}
     />
 );
