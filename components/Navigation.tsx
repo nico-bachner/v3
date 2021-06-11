@@ -16,7 +16,7 @@ const Navigation: React.VFC<Props> = ({ pages }) => {
     return (
         <nav className="top-0 z-50 px-6 py-4 my-8 font-medium sm:sticky sm:py-8 glass text-stronger">
             <div className="flex items-center justify-between max-w-[52rem] mx-auto">
-                <Link href="/" className="w-12 h-12">
+                <Link href="/" className="w-[3.4rem]">
                     <Logo />
                 </Link>
                 <div className="justify-end flex-grow hidden mx-8 space-x-8 sm:flex sm:text-lg">

@@ -1,9 +1,4 @@
-import React from 'react';
-
-interface Coordinate {
-    x: number;
-    y: number;
-}
+/* ---- svg wrapper ---- */
 
 interface SVGProps {
     width: number;
@@ -21,24 +16,46 @@ const SVG: React.FC<SVGProps> = (svg) => (
     </svg>
 );
 
+export default SVG;
+
+/* ---- svg elements ---- */
+
+interface Coordinate {
+    x: number;
+    y: number;
+}
+
+interface PathProps {
+    commands: string[];
+    stroke?: number;
+    fill?: string;
+}
+
+export const Path: React.VFC<PathProps> = (path) => (
+    <path
+        d={path.commands.join(' ')}
+        stroke="currentColor"
+        strokeWidth={path.stroke}
+        fill={path.fill ?? 'none'}
+    />
+);
+
 interface CircleProps {
-    center: Coordinate;
+    centre: Coordinate;
     radius: number;
     stroke?: number;
-    fill?: boolean;
+    fill?: string;
     clip?: string;
     className?: string;
 }
 
 export const Circle: React.VFC<CircleProps> = (circle) => (
     <circle
-        cx={`${circle.center.x}`}
-        cy={`${circle.center.y}`}
-        r={`${circle.radius ?? 1}`}
-        fill={circle.fill ? 'currentColor' : 'transparent'}
-        strokeWidth={`${circle.stroke ?? 1}`}
+        cx={circle.centre.x}
+        cy={circle.centre.y}
+        r={circle.radius ?? 1}
+        fill={circle.fill ?? 'none'}
+        strokeWidth={circle.stroke ?? 1}
         clipPath={`url(#clip-${circle.clip})`}
     />
 );
-
-export default SVG;
