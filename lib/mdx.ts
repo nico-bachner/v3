@@ -39,19 +39,12 @@ export const getReadingTime = (file: string) => {
 };
 
 export const getContent = async (file: string) => {
-    const content = await serialize(
-        getFileContent(file)
-        /* , {
-            mdxOptions: {
-                remarkPlugins: [
-                    require('remark-slug'),
-                    require('remark-autolink-headings'),
-                    require('remark-code-titles'),
-                ],
-                rehypePlugins: [require('mdx-prism')],
-            },
-        } */
-    );
+    const content = await serialize(getFileContent(file), {
+        mdxOptions: {
+            remarkPlugins: [require('remark-code-titles')],
+            rehypePlugins: [require('mdx-prism')],
+        },
+    });
 
     return content;
 };

@@ -1,6 +1,7 @@
 import '../styles/base.css';
 import '../styles/components.css';
 import '../styles/utilities.css';
+import '../styles/mdx.css';
 
 import Head from 'next/head';
 import Navigation from '@components/Navigation';

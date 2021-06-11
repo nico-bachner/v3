@@ -28,20 +28,23 @@ For those unfamiliar with the command line:
 #### Installing
 
 -   With [Homebrew](https://brew.sh):
-    ```
-    brew tap nico-bachner/formulae
-    brew install md-paper
-    ```
+
+```bash
+brew tap nico-bachner/formulae
+brew install md-paper
+```
+
 -   With `curl`:
-    ```
-    curl https://md-paper.nicob.dev/install.sh | sh
-    ```
+
+```bash
+curl https://md-paper.nicob.dev/install.sh | sh
+```
 
 #### Version Check
 
 When installed, you can check which version you are on:
 
-```
+```bash
 md-paper --version
 ```
 
@@ -58,7 +61,7 @@ Shorthand: `-v`
 
 Create a folder for your project if you haven't already and navigate into your project folder.
 
-```
+```bash
 mkdir FOLDER_NAME
 cd FOLDER_NAME
 ```
@@ -71,7 +74,7 @@ Now you can generate your pdf using `md-paper`.
 
 The following is the base command for pdf generation:
 
-```
+```bash
 md-paper
 ```
 
@@ -84,7 +87,7 @@ This base command can be extended by adding one or more of the following argumen
 
 For example, the following would keep all the logs generated while building the pdf:
 
-```
+```bash
 md-paper --log --aux
 ```
 
@@ -100,11 +103,11 @@ There are quite a few options for customisation, so not all will be listed here.
 
 Customisation can be done in a YAML header which is an extra section above the content of your document:
 
-```yaml
+```yml
 ---
-YAML HEADER # formatting
+# YAML HEADER (for formatting)
 ---
-MARKDOWN # content
+# MARKDOWN (the content)
 ```
 
 #### Document types
@@ -150,7 +153,7 @@ packages:
 
 If your TeX distribution doesn't include the full CTAN archive, non-standard packages will have to be downloaded individually before building:
 
-```
+```bash
 md-paper install PACKAGE_NAME # shorthand: `i`
 ```
 
@@ -165,7 +168,7 @@ However, this is good enough for a quick fix if you can't wait long enough the [
 
 ### Uninstalling
 
-```
+```bash
 md-paper uninstall
 ```
 
@@ -173,7 +176,7 @@ or `md-paper u`
 
 ### Reinstalling
 
-```
+```bash
 md-paper reinstall
 ```
 
@@ -181,7 +184,7 @@ or `md-paper r`
 
 ### Demo
 
-```YAML
+```yml
 ---
 document-type: article
 title-page: true

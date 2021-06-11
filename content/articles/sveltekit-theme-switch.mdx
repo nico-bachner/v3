@@ -38,7 +38,7 @@ The `'system'` value here is important: we want the user to be greeted with thei
 
 Now that we've got type definitions out of the way, we can move on to the heart of the theme switch: the theme store. The theme store is a [Svelte Store](https://svelte.dev/docs#svelte_store).
 
-```ts:src/lib/stores.ts (or .js)
+```ts:src/lib/stores.ts
 import { writable } from 'svelte/store';
 
 export const theme = writable('system');
@@ -95,7 +95,8 @@ The way I went about this is swapping stylesheets in the `<head>` of the generat
 
 <svelte:head>
     <meta name="color-scheme" content={$theme == 'system' ? 'light dark' :
-    $theme} /> <link rel="stylesheet" href={`/theme/${$theme}.css`} />
+    $theme} />
+    <link rel="stylesheet" href={`/theme/${$theme}.css`} />
 </svelte:head>
 
 <slot />

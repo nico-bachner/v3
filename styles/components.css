@@ -6,10 +6,10 @@
     }
     @media (prefers-color-scheme: light) {
         .card {
-            @apply shadow-lg base-card;
+            @apply shadow base-card;
         }
         .link-card {
-            @apply shadow-lg base-card hover:shadow-2xl;
+            @apply shadow-lg base-card hover:shadow-xl;
         }
     }
     @media (prefers-color-scheme: dark) {
