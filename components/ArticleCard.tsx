@@ -1,6 +1,6 @@
 import Card from './Card';
 
-const ArticleCard: React.VFC<CardProps<ArticleData> & DefaultProps> = ({
+const ArticleCard: React.VFC<CardProps<ArticleData>> = ({
     slug,
     title,
     description,

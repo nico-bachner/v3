@@ -1,6 +1,6 @@
 import Card from './Card';
 
-const ProjectCard: React.VFC<CardProps<ProjectData> & DefaultProps> = ({
+const ProjectCard: React.VFC<CardProps<ProjectData>> = ({
     slug,
     title,
     description,

@@ -12,6 +12,10 @@
         }
     }
 
+    .alternate-2 > * {
+        @apply md:col-span-2 md:odd:col-start-1 md:even:col-start-2;
+    }
+
     .alternate-4 {
         @apply md:grid-cols-7;
     }
