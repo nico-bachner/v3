@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.12.0](https://github.com/nico-bachner/v3/compare/v1.11.0...v1.12.0) (2021-06-11)
+
+
+### Features
+
+* add code syntax highlighting ([03513e4](https://github.com/nico-bachner/v3/commit/03513e4a3a21d44cc2b540c42130bdc06db51e70))
+* add dynamic og:image ([d4d6643](https://github.com/nico-bachner/v3/commit/d4d6643757b8dd4874942251056b7f794030450a))
+* added animation to logo ([1946c23](https://github.com/nico-bachner/v3/commit/1946c2341572e5bee7c27942a6281b9e46883abc))
+* rebuild logo ([263195f](https://github.com/nico-bachner/v3/commit/263195fe024827bbb5334824a192c8ae76eddfef))
+
+
+### Bug Fixes
+
+* correctly sort articles by date ([c478009](https://github.com/nico-bachner/v3/commit/c4780091f8a46679a8080c9ad868b7f7f805d994))
+* **logo:** added changes to SVG component ([eef6876](https://github.com/nico-bachner/v3/commit/eef68768aada14dd9d1a96f8d21e4edde402ddd4))
+* **style:** loosen line height for all mdx components ([f2a6719](https://github.com/nico-bachner/v3/commit/f2a6719e0d4d175333982af2e7349413c8dcb833))
+* resolve error when remote file doesn't exist ([92e0d99](https://github.com/nico-bachner/v3/commit/92e0d99e7f863d11fc2840da6b8cefd0cec50ba0))
+
 ## [1.11.0](https://github.com/nico-bachner/v3/compare/v1.10.0...v1.11.0) (2021-05-25)
 
 
