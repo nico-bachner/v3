@@ -4,65 +4,59 @@ All notable changes to this project will be documented in this file. See [standa
 
 ## [1.12.0](https://github.com/nico-bachner/v3/compare/v1.11.0...v1.12.0) (2021-06-11)
 
-
 ### Features
 
-* add code syntax highlighting ([03513e4](https://github.com/nico-bachner/v3/commit/03513e4a3a21d44cc2b540c42130bdc06db51e70))
-* add dynamic og:image ([d4d6643](https://github.com/nico-bachner/v3/commit/d4d6643757b8dd4874942251056b7f794030450a))
-* added animation to logo ([1946c23](https://github.com/nico-bachner/v3/commit/1946c2341572e5bee7c27942a6281b9e46883abc))
-* rebuild logo ([263195f](https://github.com/nico-bachner/v3/commit/263195fe024827bbb5334824a192c8ae76eddfef))
-
+-   add code syntax highlighting ([03513e4](https://github.com/nico-bachner/v3/commit/03513e4a3a21d44cc2b540c42130bdc06db51e70))
+-   add dynamic og:image ([d4d6643](https://github.com/nico-bachner/v3/commit/d4d6643757b8dd4874942251056b7f794030450a))
+-   added animation to logo ([1946c23](https://github.com/nico-bachner/v3/commit/1946c2341572e5bee7c27942a6281b9e46883abc))
+-   rebuild logo ([263195f](https://github.com/nico-bachner/v3/commit/263195fe024827bbb5334824a192c8ae76eddfef))
 
 ### Bug Fixes
 
-* correctly sort articles by date ([c478009](https://github.com/nico-bachner/v3/commit/c4780091f8a46679a8080c9ad868b7f7f805d994))
-* **logo:** added changes to SVG component ([eef6876](https://github.com/nico-bachner/v3/commit/eef68768aada14dd9d1a96f8d21e4edde402ddd4))
-* **style:** loosen line height for all mdx components ([f2a6719](https://github.com/nico-bachner/v3/commit/f2a6719e0d4d175333982af2e7349413c8dcb833))
-* resolve error when remote file doesn't exist ([92e0d99](https://github.com/nico-bachner/v3/commit/92e0d99e7f863d11fc2840da6b8cefd0cec50ba0))
+-   correctly sort articles by date ([c478009](https://github.com/nico-bachner/v3/commit/c4780091f8a46679a8080c9ad868b7f7f805d994))
+-   **logo:** added changes to SVG component ([eef6876](https://github.com/nico-bachner/v3/commit/eef68768aada14dd9d1a96f8d21e4edde402ddd4))
+-   **style:** loosen line height for all mdx components ([f2a6719](https://github.com/nico-bachner/v3/commit/f2a6719e0d4d175333982af2e7349413c8dcb833))
+-   resolve error when remote file doesn't exist ([92e0d99](https://github.com/nico-bachner/v3/commit/92e0d99e7f863d11fc2840da6b8cefd0cec50ba0))
 
 ## [1.11.0](https://github.com/nico-bachner/v3/compare/v1.10.0...v1.11.0) (2021-05-25)
 
-
 ### Features
 
-* **i18n:** added domain-based routing ([94adade](https://github.com/nico-bachner/v3/commit/94adade4139089d80387fae3c2ec28987345c07a))
-* added ordering for articles and projects ([0297bd2](https://github.com/nico-bachner/v3/commit/0297bd2a098d7dd508455a0b15c12321f8be83a3))
-* **components:** added Select component ([843f862](https://github.com/nico-bachner/v3/commit/843f862c31e4aa3a7e839a53918c137d72339338))
-* **components:** added Text component ([e5d8563](https://github.com/nico-bachner/v3/commit/e5d8563e2ba699da830faa71555db73b852ba7e0))
-* **content:** added article SvelteKit Theme Switch ([6ff84ba](https://github.com/nico-bachner/v3/commit/6ff84bafd6f9ebdd8c19718ff3a6d47a789fd601))
-* **content:** added project Slidev Theme Geist ([5a96f9c](https://github.com/nico-bachner/v3/commit/5a96f9c4d1d6a80616f15c169ad3d376a498c206))
-* **design:** tighten up design system ([93c1f96](https://github.com/nico-bachner/v3/commit/93c1f963ead1f12bfdce47f147728ea246309419))
-* add eslint ([edff725](https://github.com/nico-bachner/v3/commit/edff725d2979ca1fcff7118de04889caa463773f))
-* add Head component ([80514a5](https://github.com/nico-bachner/v3/commit/80514a57698dfef6cbb1b888105dcf073ec31b49))
-* improved logo design ([cc611a5](https://github.com/nico-bachner/v3/commit/cc611a5c1697d2985b38fa2ecd56cc2313306de3))
-* refactored mdx pages and updated next-mdx-remote to v3 ([8e17d79](https://github.com/nico-bachner/v3/commit/8e17d792f025a58c7ab4a9eea45d914840f1bf42))
-* **documentation:** added ARCHITECTURE.md ([d07754f](https://github.com/nico-bachner/v3/commit/d07754f09c1b4a8bfe7122ef4dd9c5d60e29d13e))
-* **documentation:** improve README ([edfc824](https://github.com/nico-bachner/v3/commit/edfc824196825b0c2997d63e02facfddb1fa525e))
-
+-   **i18n:** added domain-based routing ([94adade](https://github.com/nico-bachner/v3/commit/94adade4139089d80387fae3c2ec28987345c07a))
+-   added ordering for articles and projects ([0297bd2](https://github.com/nico-bachner/v3/commit/0297bd2a098d7dd508455a0b15c12321f8be83a3))
+-   **components:** added Select component ([843f862](https://github.com/nico-bachner/v3/commit/843f862c31e4aa3a7e839a53918c137d72339338))
+-   **components:** added Text component ([e5d8563](https://github.com/nico-bachner/v3/commit/e5d8563e2ba699da830faa71555db73b852ba7e0))
+-   **content:** added article SvelteKit Theme Switch ([6ff84ba](https://github.com/nico-bachner/v3/commit/6ff84bafd6f9ebdd8c19718ff3a6d47a789fd601))
+-   **content:** added project Slidev Theme Geist ([5a96f9c](https://github.com/nico-bachner/v3/commit/5a96f9c4d1d6a80616f15c169ad3d376a498c206))
+-   **design:** tighten up design system ([93c1f96](https://github.com/nico-bachner/v3/commit/93c1f963ead1f12bfdce47f147728ea246309419))
+-   add eslint ([edff725](https://github.com/nico-bachner/v3/commit/edff725d2979ca1fcff7118de04889caa463773f))
+-   add Head component ([80514a5](https://github.com/nico-bachner/v3/commit/80514a57698dfef6cbb1b888105dcf073ec31b49))
+-   improved logo design ([cc611a5](https://github.com/nico-bachner/v3/commit/cc611a5c1697d2985b38fa2ecd56cc2313306de3))
+-   refactored mdx pages and updated next-mdx-remote to v3 ([8e17d79](https://github.com/nico-bachner/v3/commit/8e17d792f025a58c7ab4a9eea45d914840f1bf42))
+-   **documentation:** added ARCHITECTURE.md ([d07754f](https://github.com/nico-bachner/v3/commit/d07754f09c1b4a8bfe7122ef4dd9c5d60e29d13e))
+-   **documentation:** improve README ([edfc824](https://github.com/nico-bachner/v3/commit/edfc824196825b0c2997d63e02facfddb1fa525e))
 
 ### Bug Fixes
 
-* removed unnecessary filter function for articles ([04f85be](https://github.com/nico-bachner/v3/commit/04f85be8bd634c3b3e78186a67a53508c41df770))
-* **i18n:** add locales for main domain ([d49d579](https://github.com/nico-bachner/v3/commit/d49d5796481d8d16b6a3485b83ae7b46dab9e91c))
-* roll back mdx remark plugin usage ([9905e99](https://github.com/nico-bachner/v3/commit/9905e99bc4ad3d409198af808b3afa300368c7da))
-* **fonts:** fixed font casing issue ([ed7fdc2](https://github.com/nico-bachner/v3/commit/ed7fdc2f07b30736172911a6b79d3f1f5b38b526))
-* fix remaining build errors ([09b1ef8](https://github.com/nico-bachner/v3/commit/09b1ef899936c25b4ac45ce004cb346c04672207))
-* **types:** add Card-specific types ([104873a](https://github.com/nico-bachner/v3/commit/104873aef220b9b47ec16f0871bc060370839878))
-* make 404 page a react component ([3aa2807](https://github.com/nico-bachner/v3/commit/3aa28072ea7274283ee3b5eed3f5477d93149e6a))
-* uncomment date_updated for pages ([bb4ee2d](https://github.com/nico-bachner/v3/commit/bb4ee2d4c7ce25d55132bffa9ff65eec7d07a400))
-* **design:** added line clamp to cards ([76ef6ca](https://github.com/nico-bachner/v3/commit/76ef6ca68dd99699c38a82abfe45ad83270007ba))
+-   removed unnecessary filter function for articles ([04f85be](https://github.com/nico-bachner/v3/commit/04f85be8bd634c3b3e78186a67a53508c41df770))
+-   **i18n:** add locales for main domain ([d49d579](https://github.com/nico-bachner/v3/commit/d49d5796481d8d16b6a3485b83ae7b46dab9e91c))
+-   roll back mdx remark plugin usage ([9905e99](https://github.com/nico-bachner/v3/commit/9905e99bc4ad3d409198af808b3afa300368c7da))
+-   **fonts:** fixed font casing issue ([ed7fdc2](https://github.com/nico-bachner/v3/commit/ed7fdc2f07b30736172911a6b79d3f1f5b38b526))
+-   fix remaining build errors ([09b1ef8](https://github.com/nico-bachner/v3/commit/09b1ef899936c25b4ac45ce004cb346c04672207))
+-   **types:** add Card-specific types ([104873a](https://github.com/nico-bachner/v3/commit/104873aef220b9b47ec16f0871bc060370839878))
+-   make 404 page a react component ([3aa2807](https://github.com/nico-bachner/v3/commit/3aa28072ea7274283ee3b5eed3f5477d93149e6a))
+-   uncomment date_updated for pages ([bb4ee2d](https://github.com/nico-bachner/v3/commit/bb4ee2d4c7ce25d55132bffa9ff65eec7d07a400))
+-   **design:** added line clamp to cards ([76ef6ca](https://github.com/nico-bachner/v3/commit/76ef6ca68dd99699c38a82abfe45ad83270007ba))
 
 ## [1.10.0](https://github.com/nico-bachner/v3/compare/v1.9.0...v1.10.0) (2021-04-27)
 
-
 ### Features
 
-* **design:** added animation to logo on page load ([9ae9738](https://github.com/nico-bachner/v3/commit/9ae9738cd5b05e6c1247e67f2d9a8b0cc3cf9ba4))
-
+-   **design:** added animation to logo on page load ([9ae9738](https://github.com/nico-bachner/v3/commit/9ae9738cd5b05e6c1247e67f2d9a8b0cc3cf9ba4))
 
 ### Bug Fixes
 
-* **performance:** conclude font optimisation experimentation ([481a64f](https://github.com/nico-bachner/v3/commit/481a64faf1a09e09812c1c2fcc84ec5bdcde5a48))
+-   **performance:** conclude font optimisation experimentation ([481a64f](https://github.com/nico-bachner/v3/commit/481a64faf1a09e09812c1c2fcc84ec5bdcde5a48))
 
 ## [1.9.0](https://github.com/nico-bachner/v3/compare/v1.8.0...v1.9.0) (2021-04-16)
 
