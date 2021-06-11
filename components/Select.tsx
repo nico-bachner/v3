@@ -20,7 +20,7 @@ const ArticleCard: React.FC<SelectProps> = (select) => {
                 id={select.id}
                 onChange={select.onChange}
                 defaultValue={select.default}
-                className={`py-1 pl-3 pr-8 text-center transition duration-100 ease-in-out border rounded hover:border-strong ${styles.select}`}
+                className={`py-1 pl-3 pr-8 text-center transition border rounded hover:border-strong ${styles.select}`}
             >
                 {select.children}
             </select>

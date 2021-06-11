@@ -45,7 +45,7 @@ const Home: NextPage<HomeProps> = ({ projects, articles }) => {
             </Section>
             <Section variant="h2" title={i18n.projects.title}>
                 <p>{i18n.projects.subtitle}</p>
-                <div className="grid gap-4 my-4">
+                <div className="grid gap-4 my-6">
                     {projects.map((project) => (
                         <ProjectCard key={project.slug} {...project} />
                     ))}
@@ -56,7 +56,7 @@ const Home: NextPage<HomeProps> = ({ projects, articles }) => {
             </Section>
             <Section variant="h2" title={i18n.articles.title}>
                 <p>{i18n.articles.subtitle}</p>
-                <div className="grid gap-4 my-4">
+                <div className="grid gap-4 my-6">
                     {articles.map((article) => (
                         <ArticleCard key={article.slug} {...article} />
                     ))}
@@ -68,9 +68,20 @@ const Home: NextPage<HomeProps> = ({ projects, articles }) => {
             <Section variant="h2" title="Contact">
                 <p>
                     If you would like to get in touch with me, you can do so via{' '}
-                    <Link href="mailto:hello@nicob.dev">email</Link>. I am also
-                    available on{' '}
-                    <Link href="https://dev.to/nico_bachner">DEV</Link>.
+                    <Link
+                        href="mailto:hello@nicob.dev"
+                        className="text-azure hover:underline"
+                    >
+                        email
+                    </Link>
+                    . I am also available on{' '}
+                    <Link
+                        href="https://dev.to/nico_bachner"
+                        className="text-azure hover:underline"
+                    >
+                        DEV
+                    </Link>
+                    .
                 </p>
             </Section>
         </main>

@@ -33,7 +33,7 @@ const Articles: NextPage<ArticlesPageProps> = ({ articles }) => {
             />
             <h1>{i18n.articles.title}</h1>
             <p className="mt-4">{i18n.articles.subtitle}</p>
-            <div className="grid gap-8 my-8">
+            <div className="grid gap-4 my-6">
                 {articles.map((article) => (
                     <ArticleCard key={article.slug} {...article} />
                 ))}

@@ -2,7 +2,7 @@
 
 @layer components {
     .base-card {
-        @apply w-full p-6 text-left transition duration-300 ease-in-out sm:px-8;
+        @apply w-full p-6 text-left transition duration-300 sm:px-8;
     }
     @media (prefers-color-scheme: light) {
         .card {

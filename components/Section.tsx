@@ -7,7 +7,7 @@ const Section: React.FC<SectionProps> = (section) => {
     switch (section.variant) {
         case 'h2':
             return (
-                <section className="my-16 sm:my-24">
+                <section className="my-16 sm:my-20">
                     <h2 className="mb-4">{section.title}</h2>
                     {section.children}
                 </section>
