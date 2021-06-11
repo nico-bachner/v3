@@ -3,7 +3,6 @@ import '../styles/components.css';
 import '../styles/utilities.css';
 import '../styles/mdx.css';
 
-import Head from 'next/head';
 import Navigation from '@components/Navigation';
 import Footer from '@components/Footer';
 import MobileNavigation from '@components/MobileNavigation';
@@ -18,17 +17,6 @@ const App: NextPage<AppProps> = ({ Component, pageProps }) => {
 
     return (
         <>
-            <Head>
-                <link rel="icon" href="/favicon.svg" />
-                <link
-                    crossOrigin="anonymous"
-                    rel="preload"
-                    href="/fonts/inter.woff2"
-                    as="font"
-                    type="font/woff2"
-                />
-            </Head>
-
             <Navigation pages={i18n.pages} />
 
             <div className="mx-6">
