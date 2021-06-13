@@ -8,7 +8,6 @@ const getProjectData = async (slug: string) => {
 
     const project: CardProps<ProjectData> = {
         ...data,
-        period: data.period,
         slug,
     };
 
@@ -44,17 +43,22 @@ export const getOrderedProjectsData = async () => {
     const projects = await getProjectsData();
 
     const ordered_projects = projects.sort((a, b) => {
-        const [a_start_date, a_end_date] = a.period.split('|');
-        const [b_start_date, b_end_date] = b.period.split('|');
+        const [a_start_date, a_end_date] = (a.period ?? '|').split('|');
+        const [b_start_date, b_end_date] = (b.period ?? '|').split('|');
 
         if (a_end_date && b_end_date) {
             return (
                 new Date(b_end_date).getTime() - new Date(a_end_date).getTime()
             );
         }
-        return (
-            new Date(b_start_date).getTime() - new Date(a_start_date).getTime()
-        );
+        if (a_start_date && b_start_date) {
+            return (
+                new Date(b_start_date).getTime() -
+                new Date(a_start_date).getTime()
+            );
+        }
+
+        return 0;
     });
 
     return ordered_projects;

@@ -8,12 +8,12 @@ import Head from '@components/Head';
 import { getRepos } from '@lib/github';
 
 export async function getStaticProps() {
-    const repositories = await getRepos();
+    const props: Props = {
+        repositories: await getRepos(),
+    };
 
     return {
-        props: {
-            repositories,
-        },
+        props,
         revalidate: 60,
     };
 }

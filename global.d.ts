@@ -25,7 +25,7 @@ type PageProps = PageData & MDXProps;
 
 // Project Types
 type ProjectRawData = PageData & {
-    period: string;
+    period?: string;
     featured?: boolean;
     url?: string;
     github?: string;
@@ -35,7 +35,7 @@ type ProjectProps = ProjectData & MDXProps;
 
 // Article Types
 type ArticleRawData = PageData & {
-    date_published: string;
+    date_published?: string;
     featured?: boolean;
     canonical_url?: string;
 };
@@ -120,7 +120,7 @@ interface GitHubUser {
     site_admin: boolean;
 }
 
-interface GitHubRepository {
+interface GitHubRepo {
     id: number;
     node_id: string;
     name: string;

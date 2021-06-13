@@ -33,9 +33,11 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 };
 
 const Article: NextPage<ArticleProps> = (article) => {
-    const date_updated = new Date(
-        article.date_updated ?? article.date_published
-    );
+    const date_updated = article.date_updated
+        ? new Date(article.date_updated)
+        : article.date_published
+        ? new Date(article.date_published)
+        : new Date();
 
     return (
         <main>

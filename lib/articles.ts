@@ -16,7 +16,6 @@ const getArticleData = async (slug: string) => {
     const article: CardProps<ArticleData> = {
         ...data,
         slug,
-        date_published: data.date_published,
         reading_time,
     };
 
@@ -55,8 +54,8 @@ export const getOrderedArticlesData = async () => {
 
     const ordered_articles = articles.sort(
         (a, b) =>
-            new Date(b.date_published).getTime() -
-            new Date(a.date_published).getTime()
+            new Date(b.date_published ?? 0).getTime() -
+            new Date(a.date_published ?? 0).getTime()
     );
 
     return ordered_articles;

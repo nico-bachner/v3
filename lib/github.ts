@@ -1,40 +1,44 @@
 export const getUpdated = async (directory: string, slug: string) => {
     const urlPath = encodeURIComponent(`${directory}/${slug}.mdx`);
 
-    const GitHubHistoryResponse = await fetch(
+    const res = await fetch(
         `https://api.github.com/repos/nico-bachner/v3/commits?path=${urlPath}`
     );
-    const GitHubHistory: GitHubHistory[] = await GitHubHistoryResponse.json();
+    const history: GitHubHistory[] = await res.json();
 
-    if (GitHubHistory.length) {
-        return GitHubHistory[0].commit.author.date;
+    if (history && history.length > 0) {
+        return (history[0] as GitHubHistory).commit.author.date;
     }
 
     return null;
 };
 
 export const getRepos = async () => {
-    const GitHubRepositoriesResponse = await fetch(
-        'https://api.github.com/users/nico-bachner/repos'
+    const res = await fetch('https://api.github.com/users/nico-bachner/repos');
+    const repos: GitHubRepo[] = await res.json();
+
+    const repositories = repos
+        .filter((x: GitHubRepo) => !x.fork)
+        .map((repo) => {
+            const repository: Repository = {
+                name: repo.name.replace(/-/g, ' '),
+                slug: repo.name,
+                description: repo.description,
+                repo_url: repo.html_url,
+                url: repo.homepage,
+                stars: repo.stargazers_count,
+            };
+
+            return repository;
+        }) as Repository[];
+
+    console.log(repositories);
+
+    const sortedRepositories = repositories.sort(
+        (a: Repository, b: Repository) => {
+            return b.stars - a.stars;
+        }
     );
-    const GitHubRepositories = await GitHubRepositoriesResponse.json();
 
-    const repositories = GitHubRepositories.filter(
-        (x: GitHubRepository) => !x.fork
-    ).map((GitHubRepository: GitHubRepository) => {
-        const repository: Repository = {
-            name: GitHubRepository.name.replace(/-/g, ' '),
-            slug: GitHubRepository.name,
-            description: GitHubRepository.description,
-            repo_url: GitHubRepository.html_url,
-            url: GitHubRepository.homepage,
-            stars: GitHubRepository.stargazers_count,
-        };
-
-        return repository;
-    });
-
-    return repositories.sort((a: Repository, b: Repository) => {
-        return b.stars - a.stars;
-    });
+    return sortedRepositories;
 };

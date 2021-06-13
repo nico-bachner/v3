@@ -15,8 +15,8 @@ export const getViews = async (slug: string, type: string) => {
         .eq('slug', slug)
         .eq('type', type);
 
-    if (data?.length) {
-        return data[0].views;
+    if (data && data.length) {
+        return (data[0] as ViewItem).views;
     }
 
     await db
@@ -34,5 +34,5 @@ export const getUpdatedViews = async (slug: string, type: string) => {
         .update({ views: views + 1 })
         .match({ slug: slug });
 
-    return data?.length ? data[0].views : views;
+    return data?.length ? (data[0] as ViewItem).views : views;
 };
