@@ -1,13 +1,15 @@
-import { useState } from 'react';
-import { useI18n } from '@lib/hooks/i18n';
-
 import Link from '@components/Link';
 import Card from '@components/Card';
 import Head from '@components/Head';
+import ShowMore from '@components/ShowMore';
 
+import { useState } from 'react';
+import { useI18n } from '@lib/hooks/i18n';
 import { getRepos } from '@lib/github';
 
-export async function getStaticProps() {
+import type { NextPage, GetStaticProps } from 'next';
+
+export const getStaticProps: GetStaticProps = async () => {
     const props: Props = {
         repositories: await getRepos(),
     };
@@ -16,15 +18,21 @@ export async function getStaticProps() {
         props,
         revalidate: 60,
     };
-}
+};
 
 interface Props {
     repositories: Repository[];
 }
 
-export default function Repositories({ repositories }: Props) {
+const Repositories: NextPage<Props> = ({ repositories }) => {
     const i18n = useI18n();
-    const [minStars, setMinStars] = useState(2);
+    const [showAll, setShowAll] = useState(false);
+
+    const repos = showAll
+        ? repositories
+        : repositories.filter(
+              (repository: Repository) => repository.stars >= 2
+          );
 
     return (
         <main>
@@ -43,33 +51,25 @@ export default function Repositories({ repositories }: Props) {
                 as well.
             </p>
             <div className="grid mx-auto my-12 gap-y-8 gap-x-20 max-w-prose md:max-w-4xl alternate-4">
-                {repositories
-                    .filter(
-                        (repository: Repository) => repository.stars >= minStars
-                    )
-                    .map((repository: Repository, index: number) => (
-                        <Card key={index} href={repository.repo_url}>
-                            <h3 className="capitalize">{repository.name}</h3>
-                            <p className="mt-2">{repository.description}</p>
-                        </Card>
-                    ))}
+                {repos.map((repository) => (
+                    <Card key={repository.slug} href={repository.repo_url}>
+                        <h3 className="capitalize">{repository.name}</h3>
+                        <p className="mt-2">{repository.description}</p>
+                    </Card>
+                ))}
             </div>
             <p className="my-20 text-center">
-                <button
+                <ShowMore
+                    expanded={showAll}
                     onClick={() => {
-                        if (minStars > 0) {
-                            return setMinStars(minStars - 1);
-                        }
+                        setShowAll(!showAll);
                     }}
-                    className="capitalize text-azure"
                 >
-                    {minStars > 0
-                        ? minStars > 1
-                            ? i18n.actions.showMore
-                            : i18n.actions.showAll
-                        : ''}
-                </button>
+                    {showAll ? i18n.actions.showLess : i18n.actions.showMore}
+                </ShowMore>
             </p>
         </main>
     );
-}
+};
+
+export default Repositories;
