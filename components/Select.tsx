@@ -1,31 +1,17 @@
 import styles from './Select.module.css';
 
-import { useI18n } from '@lib/hooks/i18n';
-
 interface SelectProps {
-    id: string;
     onChange?: React.ChangeEventHandler<HTMLSelectElement>;
-    default?: string | number | readonly string[];
+    defaultValue?: string | number;
 }
 
-const ArticleCard: React.FC<SelectProps> = (select) => {
-    const i18n = useI18n();
+const Select: React.FC<SelectProps & DefaultProps> = (select) => (
+    <select
+        {...select}
+        className={`py-1 pl-3 pr-8 text-center transition border rounded hover:border-strong ${styles.select}`}
+    >
+        {select.children}
+    </select>
+);
 
-    return (
-        <>
-            <label htmlFor={'#' + select.id} className="sr-only">
-                {i18n.actions.changeLanguage}
-            </label>
-            <select
-                id={select.id}
-                onChange={select.onChange}
-                defaultValue={select.default}
-                className={`py-1 pl-3 pr-8 text-center transition border rounded hover:border-strong ${styles.select}`}
-            >
-                {select.children}
-            </select>
-        </>
-    );
-};
-
-export default ArticleCard;
+export default Select;

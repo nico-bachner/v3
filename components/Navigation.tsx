@@ -36,6 +36,9 @@ const Navigation: React.VFC<Props> = ({ pages }) => {
                         );
                     })}
                 </div>
+                <label htmlFor="#language-select" className="sr-only">
+                    {i18n.actions.changeLanguage}
+                </label>
                 <Select
                     id="language-select"
                     onChange={(item) => {
@@ -43,7 +46,7 @@ const Navigation: React.VFC<Props> = ({ pages }) => {
                             locale: item.target.value,
                         });
                     }}
-                    default={router.locale}
+                    defaultValue={router.locale}
                 >
                     {router.locales?.map((language, index) => (
                         <option key={index} value={language}>
