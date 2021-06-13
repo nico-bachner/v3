@@ -6,7 +6,10 @@ interface SelectProps {
 }
 
 const ShowMore: React.FC<SelectProps & DefaultProps> = (props) => (
-    <button {...props} className={styles.showMore}>
+    <button
+        {...props}
+        className={props.expanded ? styles.expanded : styles.default}
+    >
         {props.children}
     </button>
 );
