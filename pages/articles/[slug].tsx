@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { getSlugs } from '@lib/mdx';
 import { getArticleProps } from '@lib/articles';
 
@@ -36,6 +37,12 @@ const Article: NextPage<ArticleProps> = (article) => {
         article.date_updated == 'undefined'
             ? new Date()
             : new Date(article.date_updated);
+
+    useEffect(() => {
+        fetch(`/api/views/${article.slug}`, {
+            method: 'POST',
+        });
+    }, [article.slug]);
 
     return (
         <main>

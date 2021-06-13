@@ -5,7 +5,6 @@ import {
     getReadingTime,
     getSlugs,
 } from './mdx';
-import { getViews, getUpdatedViews } from './views';
 import { getUpdated } from './github';
 
 const getArticleData = async (slug: string) => {
@@ -13,14 +12,12 @@ const getArticleData = async (slug: string) => {
 
     const data = getFileData(file);
     const reading_time = getReadingTime(file);
-    const views = await getViews(slug);
 
     const article: CardProps<ArticleData> = {
         ...data,
         slug,
         date_published: data.date_published,
         reading_time,
-        views,
     };
 
     return article;
@@ -31,8 +28,6 @@ export const getArticleProps = async (slug: string): Promise<ArticleProps> => {
     const date_updated = await getUpdated('content/articles/', slug);
     const file = await getFile('content/articles/', slug);
 
-    const views = await getUpdatedViews(slug);
-
     const content = await getContent(file);
     const reading_time = getReadingTime(file);
 
@@ -40,7 +35,6 @@ export const getArticleProps = async (slug: string): Promise<ArticleProps> => {
         ...data,
         slug,
         content,
-        views,
         date_updated,
         reading_time,
     };

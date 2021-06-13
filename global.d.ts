@@ -36,7 +36,6 @@ type ProjectProps = ProjectData & MDXProps;
 // Article Types
 type ArticleRawData = PageData & {
     date_published: string;
-    views: number;
     featured?: boolean;
     canonical_url?: string;
 };
