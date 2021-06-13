@@ -6,10 +6,7 @@ interface SelectProps {
 }
 
 const Select: React.FC<SelectProps & DefaultProps> = (select) => (
-    <select
-        {...select}
-        className={`py-1 pl-3 pr-8 text-center transition border rounded hover:border-strong ${styles.select}`}
-    >
+    <select {...select} className={styles.select}>
         {select.children}
     </select>
 );

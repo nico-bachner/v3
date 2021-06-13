@@ -1,9 +1,7 @@
-.select {
-    appearance: none;
-    cursor: pointer;
-    background-color: transparent;
+.showMore {
     background-image: url('/icons/arrow-down.svg');
-    background-position: right 0.75rem center;
+    background-position: right 1rem center;
     background-repeat: no-repeat;
     background-size: 0.75em 0.75em;
+    @apply py-2 pl-4 pr-8 text-xs uppercase transition rounded-full shadow text-strong dark:border dark:hover:border-strong hover:shadow-lg;
 }

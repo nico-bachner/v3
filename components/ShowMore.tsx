@@ -6,10 +6,7 @@ interface SelectProps {
 }
 
 const ShowMore: React.FC<SelectProps & DefaultProps> = (props) => (
-    <button
-        {...props}
-        className="px-4 py-2 text-xs uppercase transition rounded-full shadow text-strong dark:border dark:hover:border-strong hover:shadow-lg"
-    >
+    <button {...props} className={styles.showMore}>
         {props.children}
     </button>
 );
