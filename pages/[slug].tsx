@@ -42,6 +42,9 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 };
 
 const Project: NextPage<PageProps> = (page) => {
+    const date_updated =
+        page.date_updated == null ? new Date() : new Date(page.date_updated);
+
     return (
         <main>
             <Head title={page.title} description={page.description} />
@@ -49,7 +52,7 @@ const Project: NextPage<PageProps> = (page) => {
             <MDX content={page.content} />
 
             <p className="flex justify-between max-w-2xl mx-auto my-16 text-strong">
-                Last updated: {new Date(page.date_updated).toLocaleDateString()}
+                Last updated: {date_updated.toLocaleDateString()}
                 <Link
                     href={`https://github.com/nico-bachner/v3/edit/main/content/pages/${page.slug}.mdx`}
                 >
