@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { getSlugs } from '@lib/mdx';
 import { getProjectProps } from '@lib/projects';
 
@@ -33,7 +34,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 
 const Project: NextPage<ProjectProps> = (project) => {
     const date_updated =
-        project.date_updated == 'undefined'
+        project.date_updated == null
             ? new Date()
             : new Date(project.date_updated);
 

@@ -10,7 +10,7 @@ export const getUpdated = async (directory: string, slug: string) => {
         return GitHubHistory[0].commit.author.date;
     }
 
-    return 'undefined';
+    return null;
 };
 
 export const getRepos = async () => {

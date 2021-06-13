@@ -33,10 +33,9 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 };
 
 const Article: NextPage<ArticleProps> = (article) => {
-    const date_updated =
-        article.date_updated == 'undefined'
-            ? new Date()
-            : new Date(article.date_updated);
+    const date_updated = new Date(
+        article.date_updated ?? article.date_published
+    );
 
     useEffect(() => {
         fetch(`/api/views/${article.slug}`, {

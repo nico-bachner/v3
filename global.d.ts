@@ -10,7 +10,7 @@ interface MDXContent {
 interface MDXProps {
     slug: string;
     content: MDXContent;
-    date_updated: string;
+    date_updated: string | null;
 }
 type FileData = PageData & {
     [key: string]: any;
