@@ -36,6 +36,7 @@ type ProjectProps = ProjectData & MDXProps;
 // Article Types
 type ArticleRawData = PageData & {
     date_published: string;
+    views: number;
     featured?: boolean;
     canonical_url?: string;
 };
@@ -46,6 +47,12 @@ type ArticleProps = ArticleData & MDXProps;
 type CardProps<T> = T & {
     slug: string;
 };
+
+// Database Types
+interface ViewItem {
+    slug: string;
+    views: number;
+}
 
 // Other
 interface Repository {

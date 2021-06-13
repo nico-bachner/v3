@@ -24,9 +24,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
     if (typeof params?.slug == 'string') {
-        const articleProps = await getArticleProps(params.slug);
-
-        return { props: articleProps };
+        return { props: await getArticleProps(params.slug) };
     }
     return {
         notFound: true,
