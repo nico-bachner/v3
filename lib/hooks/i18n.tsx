@@ -11,6 +11,5 @@ export const translations = { en, da, fr, de, lb };
 export const useI18n = () => {
     const { locale } = useRouter();
 
-    // @ts-ignore
-    return translations[locale];
+    return translations[locale as Locale];
 };

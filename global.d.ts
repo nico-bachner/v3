@@ -69,6 +69,7 @@ interface Page {
     href: string;
 }
 
+type Locale = 'en' | 'da' | 'fr' | 'de' | 'lb';
 interface Translation {
     title: string;
     subtitle: string;
