@@ -47,7 +47,12 @@ const Project: NextPage<PageProps> = (page) => {
 
     return (
         <main>
-            <Head title={page.title} description={page.description} />
+            <Head
+                title={page.title}
+                description={page.description}
+                slug={page.slug}
+                type="page"
+            />
 
             <MDX content={page.content} />
 

@@ -35,6 +35,7 @@ const Home: NextPage<HomeProps> = ({ projects, articles }) => {
             <Head
                 title="Nico Bachner - Aspiring Open Sourcerer"
                 description="High School Student, Hobby Developer, and Aspiring Open Sourcerer currently living in Luxembourg"
+                slug="home"
             />
             <h1>{i18n.title}</h1>
             <p className="mt-2 text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-tr from-cyan to-azure sm:text-4xl">

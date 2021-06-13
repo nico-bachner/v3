@@ -28,6 +28,7 @@ const Projects: NextPage<ProjectsProps> = ({ projects }) => {
             <Head
                 title="Projects | Nico Bachner"
                 description="Nico Bachner's Articles"
+                slug="projects"
             />
             <h1 className="max-w-2xl mx-auto">{i18n.projects.title}</h1>
             <p className="max-w-2xl mx-auto mt-4 mb-8">

@@ -1,39 +1,38 @@
 import db from '@lib/supabase';
 
 export const getViewsData = async () => {
-    const { data: viewItems, error } = await db
+    const { data } = await db
         .from<ViewItem>('views')
-        .select('slug, views');
+        .select('slug, type, views');
 
-    if (viewItems && !error) {
-        return viewItems;
-    }
+    return data;
 };
 
-export const getViews = async (slug: string) => {
-    const { data: viewItems, error } = await db
+export const getViews = async (slug: string, type: string) => {
+    const { data } = await db
         .from<ViewItem>('views')
-        .select('slug, views')
-        .eq('slug', slug);
+        .select('slug, type, views')
+        .eq('slug', slug)
+        .eq('type', type);
 
-    if (viewItems && !error) {
-        return viewItems[0].views;
+    if (data?.length) {
+        return data[0].views;
     }
+
+    await db
+        .from<ViewItem>('views')
+        .insert([{ slug: slug, type: type, views: 0 }]);
 
     return 0;
 };
 
-export const getUpdatedViews = async (slug: string) => {
-    const views = await getViews(slug);
+export const getUpdatedViews = async (slug: string, type: string) => {
+    const views = await getViews(slug, type);
 
-    const { data: updatedViewItems, error } = await db
+    const { data } = await db
         .from<ViewItem>('views')
         .update({ views: views + 1 })
         .match({ slug: slug });
 
-    if (updatedViewItems && !error) {
-        return updatedViewItems[0].views;
-    }
-
-    return 0;
+    return data?.length ? data[0].views : views;
 };

@@ -40,7 +40,12 @@ const Project: NextPage<ProjectProps> = (project) => {
 
     return (
         <main>
-            <Head title={project.title} description={project.description} />
+            <Head
+                title={project.title}
+                description={project.description}
+                slug={project.slug}
+                type="project"
+            />
 
             <MDX content={project.content} />
 

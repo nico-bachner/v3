@@ -50,6 +50,7 @@ type CardProps<T> = T & {
 // Database Types
 interface ViewItem {
     slug: string;
+    type: string;
     views: number;
 }
 

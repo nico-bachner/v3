@@ -30,6 +30,7 @@ const Articles: NextPage<ArticlesPageProps> = ({ articles }) => {
             <Head
                 title="Articles | Nico Bachner"
                 description="Nico Bachner's Articles"
+                slug="articles"
             />
             <h1>{i18n.articles.title}</h1>
             <p className="mt-4">{i18n.articles.subtitle}</p>

@@ -3,32 +3,30 @@ import { getViews, getUpdatedViews } from '@lib/views';
 import { NextApiHandler } from 'next';
 
 const apiHandler: NextApiHandler = async (req, res) => {
-    const { slug } = req.query;
+    const { slug, type } = req.query;
 
-    if (Array.isArray(slug)) {
-        return res.status(400).send('');
+    if (!slug || Array.isArray(slug)) {
+        return res.status(400).send(null);
+    }
+
+    if (Array.isArray(type)) {
+        return res.status(400).send(null);
     }
 
     if (req.method == 'POST') {
-        const views = await getUpdatedViews(slug);
-
-        const json = {
+        return res.status(200).json({
             slug,
-            views,
-        };
-
-        return res.status(200).json(json);
+            type: type ?? 'page',
+            views: await getUpdatedViews(slug, type ?? 'page'),
+        });
     }
 
     if (req.method == 'GET') {
-        const views = await getViews(slug);
-
-        const json = {
+        return res.status(200).json({
             slug,
-            views,
-        };
-
-        return res.status(200).json(json);
+            type: type ?? 'page',
+            views: await getViews(slug, type ?? 'page'),
+        });
     }
 };
 

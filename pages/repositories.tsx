@@ -31,6 +31,7 @@ export default function Repositories({ repositories }: Props) {
             <Head
                 title="Repositories | Nico Bachner"
                 description="Nico Bachner's GitHub repositories"
+                slug="repositories"
             />
             <h1 className="max-w-2xl mx-auto">GitHub Repositories</h1>
             <p className="max-w-2xl mx-auto mt-4">

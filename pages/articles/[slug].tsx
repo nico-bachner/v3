@@ -37,15 +37,14 @@ const Article: NextPage<ArticleProps> = (article) => {
         article.date_updated ?? article.date_published
     );
 
-    useEffect(() => {
-        fetch(`/api/views/${article.slug}`, {
-            method: 'POST',
-        });
-    }, [article.slug]);
-
     return (
         <main>
-            <Head title={article.title} description={article.description}>
+            <Head
+                title={article.title}
+                description={article.description}
+                slug={article.slug}
+                type="article"
+            >
                 <link rel="canonical" href={article.canonical_url} />
                 <meta property="og:url" content={article.canonical_url} />
             </Head>
