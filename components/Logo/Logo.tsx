@@ -1,4 +1,4 @@
-import SVG, { Path, Circle } from './SVG';
+import SVG, { Path, Circle } from '../SVG';
 
 import styles from './Logo.module.css';
 

@@ -1,6 +1,6 @@
 import styles from './Footer.module.css';
 
-import Link from './Link';
+import Link from '../Link';
 
 interface FooterProps {
     pages: Page[];
