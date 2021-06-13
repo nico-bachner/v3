@@ -23,6 +23,8 @@
 }
 
 @tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 @layer base {
     ::selection {
@@ -72,5 +74,18 @@
     }
     ol {
         @apply list-decimal;
+    }
+}
+
+@layer utilities {
+    @supports (backdrop-filter: blur()) {
+        .glass {
+            @apply backdrop-filter backdrop-blur-lg;
+        }
+    }
+    @supports not (backdrop-filter: blur()) {
+        .glass {
+            @apply bg-lightest;
+        }
     }
 }

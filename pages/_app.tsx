@@ -1,6 +1,4 @@
-import '../styles/base.css';
-import '../styles/components.css';
-import '../styles/utilities.css';
+import '../styles/global.css';
 import '../styles/mdx.css';
 
 import Navigation from '@components/Navigation';
@@ -19,12 +17,9 @@ const App: NextPage<AppProps> = ({ Component, pageProps }) => {
         <>
             <Navigation pages={i18n.pages} />
 
-            <div className="mx-6">
+            <div className="px-6">
                 <Component {...pageProps} />
-                <div className="max-w-2xl mx-auto my-16">
-                    <hr className="border" />
-                    <Footer pages={i18n.pages} links={i18n.links} />
-                </div>
+                <Footer pages={i18n.pages} links={i18n.links} />
             </div>
 
             <MobileNavigation pages={i18n.pages} />

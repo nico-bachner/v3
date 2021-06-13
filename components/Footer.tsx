@@ -1,3 +1,5 @@
+import styles from './Footer.module.css';
+
 import Link from './Link';
 
 interface FooterProps {
@@ -6,40 +8,36 @@ interface FooterProps {
 }
 
 const Footer: React.VFC<FooterProps> = ({ pages, links }) => (
-    <footer className="grid gap-12 mx-auto mt-20 mb-32 sm:grid-cols-2">
-        <nav className="grid grid-flow-col grid-cols-2 grid-rows-4 gap-4">
-            {pages.map((page, index) => {
-                return (
-                    <Link
-                        key={index}
-                        href={page.href}
-                        className={`sm:text-lg transition duration-300 transform hover:text-stronger hover:-translate-y-1 ${
-                            index < 4
-                                ? 'text-left'
-                                : 'text-right sm:text-center'
-                        }`}
-                    >
-                        {page.title}
-                    </Link>
-                );
-            })}
+    <footer className={styles.footer}>
+        <nav className={styles.nav}>
+            {pages.map((page, index) => (
+                <Link
+                    key={page.href}
+                    href={page.href}
+                    className={
+                        styles.link +
+                        ' ' +
+                        (index < 4 ? 'text-left' : 'text-right sm:text-center')
+                    }
+                >
+                    {page.title}
+                </Link>
+            ))}
         </nav>
-        <nav className="grid grid-flow-col grid-cols-2 grid-rows-4 gap-4">
-            {links.map((link, index) => {
-                return (
-                    <Link
-                        key={index}
-                        href={link.href}
-                        className={`sm:text-lg transition duration-300 transform hover:text-stronger hover:-translate-y-1 ${
-                            index < 4
-                                ? 'text-left sm:text-center'
-                                : 'text-right'
-                        }`}
-                    >
-                        {link.title}
-                    </Link>
-                );
-            })}
+        <nav className={styles.nav}>
+            {links.map((link, index) => (
+                <Link
+                    key={link.href}
+                    href={link.href}
+                    className={
+                        styles.link +
+                        ' ' +
+                        (index < 4 ? 'text-left sm:text-center' : 'text-right')
+                    }
+                >
+                    {link.title}
+                </Link>
+            ))}
         </nav>
     </footer>
 );

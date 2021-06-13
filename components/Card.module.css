@@ -1,0 +1,7 @@
+.default {
+    @apply w-full p-6 text-left transition duration-300 shadow dark:border dark:rounded sm:px-8;
+}
+
+.link {
+    @apply w-full p-6 text-left transition duration-300 shadow-lg hover:shadow-xl dark:border dark:rounded sm:px-8 dark:hover:border-strong;
+}

@@ -5,18 +5,32 @@ export interface LinkProps {
     locale?: string;
 }
 
-const Link: React.FC<LinkProps & DefaultProps> = (link) => {
-    switch (link.href.startsWith('/') || link.href.startsWith('#')) {
+const Link: React.FC<LinkProps & DefaultProps> = ({
+    id,
+    href,
+    locale,
+    className,
+    children,
+}) => {
+    switch (href.startsWith('/') || href.startsWith('#')) {
         case true:
             return (
-                <NextLink href={link.href} locale={link.locale}>
-                    <a {...link}>{link.children}</a>
+                <NextLink href={href} locale={locale}>
+                    <a id={id} className={className}>
+                        {children}
+                    </a>
                 </NextLink>
             );
         case false:
             return (
-                <a {...link} target="_blank" rel="noopener noreferrer">
-                    {link.children}
+                <a
+                    id={id}
+                    href={href}
+                    className={className}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    {children}
                 </a>
             );
     }

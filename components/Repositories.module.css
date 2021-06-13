@@ -1,0 +1,17 @@
+.repositories {
+    @apply grid my-12 gap-y-8 gap-x-20 md:grid-cols-3;
+}
+
+.repository {
+    @apply md:col-span-2;
+}
+
+.repository:nth-child(4n + 1) {
+    @apply md:col-start-1;
+}
+.repository:nth-child(2n) {
+    @apply md:col-start-3;
+}
+.repository:nth-child(4n + 3) {
+    @apply md:col-start-5;
+}

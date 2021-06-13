@@ -2,7 +2,7 @@
 .mdx {
     @apply max-w-2xl mx-auto leading-relaxed;
 }
-.mdx a {
+.mdx p > a {
     @apply text-azure hover:underline;
 }
 .mdx > h1 {
