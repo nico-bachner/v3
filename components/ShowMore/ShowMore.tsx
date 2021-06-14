@@ -5,16 +5,10 @@ interface SelectProps {
     onClick(): void;
 }
 
-const ShowMore: React.FC<SelectProps & DefaultProps> = ({
-    id,
-    onClick,
-    expanded,
-    children,
-}) => (
+const ShowMore: React.FC<SelectProps> = ({ onClick, expanded, children }) => (
     <div className="flex">
         <hr className="flex-grow my-4" />
         <button
-            id={id}
             onClick={onClick}
             className={expanded ? styles.expanded : styles.default}
         >

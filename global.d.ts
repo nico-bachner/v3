@@ -1,8 +1,3 @@
-interface DefaultProps {
-    id?: string;
-    className?: string;
-}
-
 // MDX Stuff
 interface MDXContent {
     compiledSource: string;

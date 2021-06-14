@@ -5,26 +5,20 @@ import styles from './Card.module.css';
 export interface CardProps {
     href?: string;
     locale?: string;
+    className?: string;
 }
 
-const Card: React.FC<CardProps & DefaultProps> = (card) => {
-    if (card.href) {
-        return (
-            <Link
-                id={card.id}
-                href={card.href}
-                locale={card.locale}
-                className={`${styles.link} ${card.className}`}
-            >
-                {card.children}
-            </Link>
-        );
-    }
-    return (
-        <div {...card} className={`${styles.default} ${card.className}`}>
-            {card.children}
-        </div>
+const Card: React.FC<CardProps> = ({ href, locale, className, children }) =>
+    href ? (
+        <Link
+            href={href}
+            locale={locale}
+            className={`${styles.link} ${className}`}
+        >
+            {children}
+        </Link>
+    ) : (
+        <div className={`${styles.default} ${className}`}>{children}</div>
     );
-};
 
 export default Card;

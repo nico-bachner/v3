@@ -5,15 +5,14 @@ interface SVGProps {
     height: number;
 }
 
-const SVG: React.FC<SVGProps & DefaultProps> = (svg) => (
+const SVG: React.FC<SVGProps> = ({ width, height, children }) => (
     <svg
-        {...svg}
-        viewBox={`0 0 ${svg.width} ${svg.height}`}
+        viewBox={`0 0 ${width} ${height}`}
         fill="currentColor"
         stroke="currentColor"
         className="w-full h-full"
     >
-        {svg.children}
+        {children}
     </svg>
 );
 
@@ -37,26 +36,28 @@ interface PathProps {
     commands: Command[];
     stroke?: string;
     strokeWidth?: number;
+    strokeLinecap?: 'butt' | 'round' | 'square';
     fill?: string;
+    className?: string;
 }
 
-export const Path: React.VFC<PathProps & DefaultProps> = ({
-    id,
-    className,
+export const Path: React.VFC<PathProps> = ({
     commands,
     stroke,
     strokeWidth,
+    strokeLinecap,
     fill,
+    className,
 }) => (
     <path
-        id={id}
-        className={className}
         d={commands
             .map((command) => [command.type, ...command.args].join(' '))
             .join(' ')}
         stroke={stroke ?? 'currentColor'}
         strokeWidth={strokeWidth}
+        strokeLinecap={strokeLinecap}
         fill={fill ?? 'none'}
+        className={className}
     />
 );
 
@@ -65,17 +66,22 @@ interface CircleProps {
     radius: number;
     strokeWidth?: number;
     fill?: string;
-    clip?: string;
     className?: string;
 }
 
-export const Circle: React.VFC<CircleProps & DefaultProps> = (circle) => (
+export const Circle: React.VFC<CircleProps> = ({
+    centre,
+    radius,
+    strokeWidth,
+    fill,
+    className,
+}) => (
     <circle
-        {...circle}
-        cx={circle.centre.x}
-        cy={circle.centre.y}
-        r={circle.radius ?? 1}
-        fill={circle.fill ?? 'none'}
-        clipPath={`url(#clip-${circle.clip})`}
+        cx={centre.x}
+        cy={centre.y}
+        r={radius}
+        strokeWidth={strokeWidth ?? 1}
+        fill={fill ?? 'none'}
+        className={className}
     />
 );
