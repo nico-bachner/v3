@@ -11,18 +11,17 @@ const MobileNavigation: React.VFC = () => {
 
     return (
         <nav className={styles.nav}>
-            {i18n.pages.slice(0, 4).map((page, index) => (
-                <Link
-                    key={index}
-                    href={page.href}
-                    className={`p-2 text-sm font-bold ${
-                        router.pathname == page.href
-                            ? 'text-light'
-                            : 'text-stronger'
-                    }`}
-                >
-                    {page.title}
-                </Link>
+            {i18n.pages.slice(0, 4).map(({ href, title }) => (
+                <p key={href} className="text-sm font-bold">
+                    <Link
+                        href={href}
+                        variant={
+                            router.pathname != href ? 'primary' : 'disabled'
+                        }
+                    >
+                        <div className="px-3 py-2">{title}</div>
+                    </Link>
+                </p>
             ))}
         </nav>
     );

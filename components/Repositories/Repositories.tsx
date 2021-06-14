@@ -1,8 +1,11 @@
+import Link from '@components/Link';
 import Card from '@components/Card';
 import ShowMore from '@components/ShowMore';
 
 import { useState, useEffect } from 'react';
 import { useI18n } from '@lib/hooks/i18n';
+
+import styles from './Repositories.module.css';
 
 const Repositories: React.VFC = () => {
     const [repositories, setRepositories] = useState<Repository[]>([]);
@@ -28,16 +31,14 @@ const Repositories: React.VFC = () => {
 
     return (
         <>
-            <div className="grid mb-8 md:grid-cols-3 gap-y-4 gap-x-24">
+            <div className={styles.repositories}>
                 {repos.map((repository) => (
-                    <Card
-                        key={repository.slug}
-                        href={repository.repo_url}
-                        className="md:col-span-2 md:odd:col-start-1 md:even:col-start-2"
-                    >
-                        <h3 className="capitalize">{repository.name}</h3>
-                        <p className="mt-2">{repository.description}</p>
-                    </Card>
+                    <Link key={repository.slug} href={repository.repo_url}>
+                        <Card>
+                            <h3 className="capitalize">{repository.name}</h3>
+                            <p className="mt-2">{repository.description}</p>
+                        </Card>
+                    </Link>
                 ))}
             </div>
             <ShowMore

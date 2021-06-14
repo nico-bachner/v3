@@ -15,17 +15,15 @@ const getProjectData = async (slug: string) => {
 };
 
 export const getProjectProps = async (slug: string): Promise<ProjectProps> => {
-    const data = await getProjectData(slug);
-    const date_updated = await getUpdated('content/projects/', slug);
     const file = await getFile('content/projects/', slug);
-
-    const content = await getContent(file);
+    const data = await getProjectData(slug);
 
     return {
         ...data,
         slug,
-        content,
-        date_updated,
+        content: await getContent(file),
+        date_updated: await getUpdated('content/projects/', slug),
+        editUrl: `https://github.com/nico-bachner/v3/edit/main/content/projects/${slug}.mdx`,
     };
 };
 

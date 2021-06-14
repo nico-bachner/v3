@@ -1,0 +1,15 @@
+.highlight {
+    @apply text-azure hover:underline;
+}
+
+.primary {
+    @apply hover:underline text-stronger;
+}
+
+.secondary {
+    @apply transition text-strong hover:text-stronger;
+}
+
+.disabled {
+    @apply cursor-default text-light;
+}

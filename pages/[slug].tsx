@@ -32,26 +32,26 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     };
 };
 
-const Project: NextPage<PageProps> = (page) => {
-    const date_updated =
-        page.date_updated == null ? new Date() : new Date(page.date_updated);
+const Project: NextPage<PageProps> = ({
+    title,
+    description,
+    slug,
+    content,
+    date_updated,
+    editUrl,
+}) => {
+    const dateUpdated =
+        date_updated == null ? new Date() : new Date(date_updated);
 
     return (
         <main>
-            <Head
-                title={page.title}
-                description={page.description}
-                slug={page.slug}
-            />
+            <Head title={title} description={description} slug={slug} />
 
-            <MDX content={page.content} />
+            <MDX content={content} />
 
             <p className="flex justify-between max-w-2xl mx-auto my-16 text-strong">
-                Last updated: {date_updated.toLocaleDateString()}
-                <Link
-                    href={`https://github.com/nico-bachner/v3/edit/main/content/pages/${page.slug}.mdx`}
-                    className="text-azure hover:underline"
-                >
+                Last updated: {dateUpdated.toLocaleDateString()}
+                <Link href={editUrl} variant="highlight">
                     Edit on GitHub
                 </Link>
             </p>

@@ -6,6 +6,7 @@ interface MDXProps {
     slug: string;
     content: MDXContent;
     date_updated: string | null;
+    editUrl: string;
 }
 type FileData = PageData & {
     [key: string]: any;

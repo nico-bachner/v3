@@ -5,7 +5,3 @@
 .nav {
     @apply grid grid-rows-4 gap-4;
 }
-
-.link {
-    @apply transition duration-300 transform sm:text-lg hover:text-stronger hover:-translate-y-1;
-}

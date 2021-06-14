@@ -32,33 +32,39 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     };
 };
 
-const Article: NextPage<ArticleProps> = (article) => {
-    const date_updated = article.date_updated
-        ? new Date(article.date_updated)
-        : article.date_published
-        ? new Date(article.date_published)
+const Article: NextPage<ArticleProps> = ({
+    title,
+    description,
+    slug,
+    content,
+    canonical_url,
+    date_published,
+    date_updated,
+    editUrl,
+}) => {
+    const dateUpdated = date_updated
+        ? new Date(date_updated)
+        : date_published
+        ? new Date(date_published)
         : new Date();
 
     return (
         <main>
             <Head
-                title={article.title}
-                description={article.description}
-                slug={article.slug}
+                title={title}
+                description={description}
+                slug={slug}
                 type="article"
             >
-                <link rel="canonical" href={article.canonical_url} />
-                <meta property="og:url" content={article.canonical_url} />
+                <link rel="canonical" href={canonical_url} />
+                <meta property="og:url" content={canonical_url} />
             </Head>
 
-            <MDX content={article.content} />
+            <MDX content={content} />
 
             <p className="flex justify-between max-w-2xl mx-auto my-16 text-strong">
-                Last updated: {date_updated.toLocaleDateString()}
-                <Link
-                    href={`https://github.com/nico-bachner/v3/edit/main/content/articles/${article.slug}.mdx`}
-                    className="text-azure hover:underline"
-                >
+                Last updated: {dateUpdated.toLocaleDateString()}
+                <Link href={editUrl} variant="highlight">
                     Edit on GitHub
                 </Link>
             </p>

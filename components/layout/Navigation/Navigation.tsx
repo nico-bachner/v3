@@ -17,18 +17,17 @@ const Navigation: React.VFC = () => {
                 <Logo />
             </Link>
             <div>
-                {i18n.pages.map((page, index) => (
-                    <Link
-                        key={index}
-                        href={page.href}
-                        className={
-                            router.pathname == page.href
-                                ? 'text-light cursor-default'
-                                : 'hover:underline'
-                        }
-                    >
-                        {page.title}
-                    </Link>
+                {i18n.pages.map(({ href, title }) => (
+                    <p key={href}>
+                        <Link
+                            href={href}
+                            variant={
+                                router.pathname != href ? 'primary' : 'disabled'
+                            }
+                        >
+                            {title}
+                        </Link>
+                    </p>
                 ))}
             </div>
             <label htmlFor="#language-select" className="sr-only">

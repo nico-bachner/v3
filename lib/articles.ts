@@ -23,19 +23,16 @@ const getArticleData = async (slug: string) => {
 };
 
 export const getArticleProps = async (slug: string): Promise<ArticleProps> => {
-    const data = await getArticleData(slug);
-    const date_updated = await getUpdated('content/articles/', slug);
     const file = await getFile('content/articles/', slug);
-
-    const content = await getContent(file);
-    const reading_time = getReadingTime(file);
+    const data = await getArticleData(slug);
 
     return {
         ...data,
         slug,
-        content,
-        date_updated,
-        reading_time,
+        content: await getContent(file),
+        date_updated: await getUpdated('content/articles/', slug),
+        reading_time: getReadingTime(file),
+        editUrl: `https://github.com/nico-bachner/v3/edit/main/content/articles/${slug}.mdx`,
     };
 };
 

@@ -25,48 +25,39 @@ const Footer: React.VFC = () => {
     return (
         <footer className={styles.footer}>
             <nav className={styles.nav}>
-                {i18n.pages.map((page, index) => (
-                    <Link
-                        key={index}
-                        href={page.href}
-                        className={`${styles.link} text-left`}
-                    >
-                        {page.title}
-                    </Link>
+                {i18n.pages.map(({ href, title }) => (
+                    <p key={href} className="text-left">
+                        <Link href={href} variant="secondary">
+                            {title}
+                        </Link>
+                    </p>
                 ))}
             </nav>
             <nav className={styles.nav}>
-                {mdxPages.map((page, index) => (
-                    <Link
-                        key={index}
-                        href={page.href}
-                        locale="en"
-                        className={`${styles.link} text-right sm:text-center`}
-                    >
-                        {page.title}
-                    </Link>
+                {mdxPages.map(({ href, title }) => (
+                    <p key={href} className="text-right sm:text-center">
+                        <Link href={href} locale="en" variant="secondary">
+                            {title}
+                        </Link>
+                    </p>
                 ))}
             </nav>
             <nav className={styles.nav}>
-                {i18n.links.map((link, index) => (
-                    <Link
-                        key={index}
-                        href={link.href}
-                        className={`${styles.link} text-left sm:text-center`}
-                    >
-                        {link.title}
-                    </Link>
+                {i18n.links.map(({ href, title }) => (
+                    <p key={href} className="text-left sm:text-center">
+                        <Link href={href} variant="secondary" external>
+                            {title}
+                        </Link>
+                    </p>
                 ))}
             </nav>
             <nav className={styles.nav}>
-                {i18n.other.map((link, index) => (
-                    <Link
-                        key={index}
-                        href={link.href}
-                        className={`${styles.link} text-right`}
-                    >
-                        {link.title}
-                    </Link>
+                {i18n.other.map(({ href, title }) => (
+                    <p key={href} className="text-right">
+                        <Link href={href} variant="secondary" external>
+                            {title}
+                        </Link>
+                    </p>
                 ))}
             </nav>
         </footer>

@@ -1,11 +1,25 @@
-.main {
+.home {
     @apply max-w-2xl mx-auto;
 }
 
-.main > section {
-    @apply my-16 sm:my-20;
+.home > p:first-of-type {
+    @apply mt-2 text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-tr from-cyan to-azure sm:text-4xl;
 }
 
-.main h2 {
+.home > section {
+    @apply my-16 sm:my-20;
+}
+.home > section > h2 {
     @apply mb-4;
+}
+
+.home > #projects > p:last-child,
+.home > #articles > p:last-child {
+    @apply text-right capitalize;
+}
+.home > #contact > p:last-child {
+    @apply flex mt-4 space-x-4;
+}
+.home > #contact > p:last-child > :first-child {
+    @apply flex-grow;
 }

@@ -15,17 +15,15 @@ const getPageData = async (slug: string) => {
 };
 
 export const getPageProps = async (slug: string): Promise<PageProps> => {
-    const data = await getPageData(slug);
-    const date_updated = await getUpdated('content/pages/', slug);
     const file = await getFile('content/pages/', slug);
-
-    const content = await getContent(file);
+    const data = await getPageData(slug);
 
     return {
         ...data,
         slug,
-        content,
-        date_updated,
+        content: await getContent(file),
+        date_updated: await getUpdated('content/pages/', slug),
+        editUrl: `https://github.com/nico-bachner/v3/edit/main/content/pages/${slug}.mdx`,
     };
 };
 
