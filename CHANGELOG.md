@@ -2,6 +2,29 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.13.0](https://github.com/nico-bachner/v3/compare/v1.12.0...v1.13.0) (2021-06-14)
+
+
+### Features
+
+* **components:** added ShowMore component ([a392c09](https://github.com/nico-bachner/v3/commit/a392c097c5eae45c860241f0337abc821622114a))
+* **style:** added up arrow to ShowMore component ([bcea5f9](https://github.com/nico-bachner/v3/commit/bcea5f9a713af9c09d230be234f011b8b3a2da87))
+* added view counter ([2d59644](https://github.com/nico-bachner/v3/commit/2d596443ab7df22766b280c9aee749b79408882b))
+
+
+### Bug Fixes
+
+* fixed 404 errors on main pages ([873ef50](https://github.com/nico-bachner/v3/commit/873ef504d5a187aed4372835bc0f4ed0f08d7451))
+* **build:** added missing changes ([19afe6d](https://github.com/nico-bachner/v3/commit/19afe6da719a23bd28e567b448d194afd813fd25))
+* **build:** fixed breaking types ([dc6f75b](https://github.com/nico-bachner/v3/commit/dc6f75b26411bb96f674b25426f033d5c2e42e1d))
+* **mdx:** fix date_updated for remaining pages ([c56dab2](https://github.com/nico-bachner/v3/commit/c56dab25a1590c656b1991bb52322ff4a2b68d0a))
+* **style:** fixed broken highighting in sveltekit-theme-switch article ([d24f608](https://github.com/nico-bachner/v3/commit/d24f608b202c415522d501c5bb6055788a6c16c1))
+* **style:** fixed broken layout on projects page ([df7d9d0](https://github.com/nico-bachner/v3/commit/df7d9d09f04d16ea55e89a4ce720735655f25278))
+* **types:** force Locale type for locale ([a4e5930](https://github.com/nico-bachner/v3/commit/a4e5930514255bdd4c66a5770d849031c59551af))
+* **views:** finalise view count feature ([2624d7e](https://github.com/nico-bachner/v3/commit/2624d7e70a573303fcc561cbb4cd5f2c1dbb6b48))
+* **views:** update views on each page visit ([160065d](https://github.com/nico-bachner/v3/commit/160065dc669f3d785eb3c5bb7d13a089ce7a1e6d))
+* force 'en' routing for projects & articles ([ec61dd9](https://github.com/nico-bachner/v3/commit/ec61dd962a3b2b841d1abcde20c3c630e9f8e830))
+
 ## [1.12.0](https://github.com/nico-bachner/v3/compare/v1.11.0...v1.12.0) (2021-06-11)
 
 ### Features
