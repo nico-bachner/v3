@@ -70,24 +70,17 @@ interface Page {
 }
 
 type Locale = 'en' | 'da' | 'fr' | 'de' | 'lb';
+interface Topic {
+    title: string;
+    content: string;
+}
 interface Translation {
     title: string;
     subtitle: string;
-    about: {
-        title: string;
-        content: string;
-    };
-    projects: {
-        title: string;
-        subtitle: string;
-        web: string;
-        games: string;
-        other: string;
-    };
-    articles: {
-        title: string;
-        subtitle: string;
-    };
+    about: Topic;
+    projects: Topic;
+    articles: Topic;
+    contact: Topic;
     actions: {
         changeLanguage: string;
         readMore: string;
@@ -98,6 +91,7 @@ interface Translation {
     };
     pages: Page[];
     links: Page[];
+    other: Page[];
 }
 
 interface GitHubUser {

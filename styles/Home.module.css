@@ -1,0 +1,11 @@
+.main {
+    @apply max-w-2xl mx-auto;
+}
+
+.main > section {
+    @apply my-16 sm:my-20;
+}
+
+.main h2 {
+    @apply mb-4;
+}

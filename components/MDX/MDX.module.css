@@ -1,0 +1,32 @@
+/* mdx */
+.mdx {
+    @apply max-w-2xl mx-auto leading-relaxed;
+}
+.mdx p > a {
+    @apply text-azure hover:underline;
+}
+.mdx > h1 {
+    @apply mb-4;
+}
+.mdx > h2 {
+    @apply mt-16 mb-4;
+}
+.mdx > h3 {
+    @apply mt-12 mb-4;
+}
+.mdx > h4 {
+    @apply mt-8 mb-4;
+}
+.mdx > p {
+    @apply my-4;
+}
+.mdx > pre {
+    @apply px-6 py-4 overflow-scroll rounded shadow dark:border;
+}
+.mdx > :not(pre) > code {
+    @apply font-mono text-sm text-crimson sm:text-base;
+}
+.mdx > :not(pre) > code::before,
+.mdx > :not(pre) > code::after {
+    content: '`';
+}

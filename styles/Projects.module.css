@@ -1,0 +1,15 @@
+.main > h1 {
+    @apply max-w-2xl mx-auto mb-4;
+}
+
+.main > p {
+    @apply max-w-2xl mx-auto my-4;
+}
+
+.main > div {
+    @apply grid max-w-2xl gap-4 mx-auto my-6 md:grid-cols-3 md:gap-6 md:max-w-3xl;
+}
+
+.main > div > * {
+    @apply md:col-span-2 md:odd:col-start-1 md:even:col-start-2;
+}

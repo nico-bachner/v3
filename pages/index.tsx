@@ -1,12 +1,12 @@
-import { getOrderedProjectsData } from '../lib/projects';
-import { getOrderedArticlesData } from '../lib/articles';
-import { useI18n } from '../lib/hooks/i18n';
+import { getOrderedProjectsData } from '@lib/projects';
+import { getOrderedArticlesData } from '@lib/articles';
+import { useI18n } from '@lib/hooks/i18n';
 
 import Head from '@components/Head';
-import Link from '../components/Link';
-import Section from '../components/Section';
-import ProjectCard from '../components/ProjectCard';
-import ArticleCard from '../components/ArticleCard';
+import Link from '@components/Link';
+import { ProjectCard, ArticleCard } from '@components/Card';
+
+import styles from '@styles/Home.module.css';
 
 import type { NextPage, GetStaticProps } from 'next';
 
@@ -31,7 +31,7 @@ const Home: NextPage<HomeProps> = ({ projects, articles }) => {
     const i18n = useI18n();
 
     return (
-        <main className="max-w-2xl mx-auto">
+        <main className={styles.main}>
             <Head
                 title="Nico Bachner - Aspiring Open Sourcerer"
                 description="High School Student, Hobby Developer, and Aspiring Open Sourcerer currently living in Luxembourg"
@@ -41,50 +41,58 @@ const Home: NextPage<HomeProps> = ({ projects, articles }) => {
             <p className="mt-2 text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-tr from-cyan to-azure sm:text-4xl">
                 {i18n.subtitle}
             </p>
-            <Section variant="h2" title={i18n.about.title}>
+            <section>
+                <h2>{i18n.about.title}</h2>
                 <p>{i18n.about.content}</p>
-            </Section>
-            <Section variant="h2" title={i18n.projects.title}>
-                <p>{i18n.projects.subtitle}</p>
+            </section>
+            <section>
+                <h2>{i18n.projects.title}</h2>
+                <p>{i18n.projects.content}</p>
                 <div className="grid gap-4 my-6">
                     {projects.map((project) => (
                         <ProjectCard key={project.slug} {...project} />
                     ))}
                 </div>
-                <p className="mt-8 text-right capitalize text-azure hover:underline">
+                <p className="text-right capitalize text-azure hover:underline">
                     <Link href="/projects">{i18n.actions.viewAll}</Link>
                 </p>
-            </Section>
-            <Section variant="h2" title={i18n.articles.title}>
-                <p>{i18n.articles.subtitle}</p>
+            </section>
+            <section>
+                <h2>{i18n.articles.title}</h2>
+                <p>{i18n.articles.content}</p>
                 <div className="grid gap-4 my-6">
                     {articles.map((article) => (
                         <ArticleCard key={article.slug} {...article} />
                     ))}
                 </div>
-                <p className="mt-8 text-right capitalize myt-8 text-azure hover:underline">
+                <p className="text-right capitalize text-azure hover:underline">
                     <Link href="/articles">{i18n.actions.viewAll}</Link>
                 </p>
-            </Section>
-            <Section variant="h2" title="Contact">
-                <p>
-                    If you would like to get in touch with me, you can do so via{' '}
+            </section>
+            <section>
+                <h2>{i18n.contact.title}</h2>
+                <p>{i18n.contact.content}</p>
+                <p className="flex mt-4 space-x-4">
                     <Link
                         href="mailto:hello@nicob.dev"
-                        className="text-azure hover:underline"
+                        className="flex-grow text-azure hover:underline"
                     >
-                        email
+                        hello@nicob.dev
                     </Link>
-                    . I am also available on{' '}
                     <Link
                         href="https://dev.to/nico_bachner"
                         className="text-azure hover:underline"
                     >
-                        DEV
+                        DEV.to
                     </Link>
-                    .
+                    <Link
+                        href="https://twitter.com/nico_bachner"
+                        className="text-azure hover:underline"
+                    >
+                        Twitter
+                    </Link>
                 </p>
-            </Section>
+            </section>
         </main>
     );
 };

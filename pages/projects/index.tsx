@@ -2,7 +2,9 @@ import { getOrderedProjectsData } from '@lib/projects';
 import { useI18n } from '@lib/hooks/i18n';
 
 import Head from '@components/Head';
-import ProjectCard from '@components/ProjectCard';
+import { ProjectCard } from '@components/Card';
+
+import styles from '@styles/Projects.module.css';
 
 import type { NextPage, GetStaticProps } from 'next';
 
@@ -24,23 +26,17 @@ const Projects: NextPage<ProjectsProps> = ({ projects }) => {
     const i18n = useI18n();
 
     return (
-        <main>
+        <main className={styles.main}>
             <Head
                 title="Projects | Nico Bachner"
                 description="Nico Bachner's Articles"
                 slug="projects"
             />
-            <h1 className="max-w-2xl mx-auto">{i18n.projects.title}</h1>
-            <p className="max-w-2xl mx-auto mt-4 mb-8">
-                {i18n.projects.subtitle}
-            </p>
-            <div className="grid max-w-2xl mx-auto md:grid-cols-3 gap-y-8 gap-x-24 md:max-w-3xl">
-                {projects.map((project) => (
-                    <ProjectCard
-                        key={project.slug}
-                        className="md:col-span-2 md:odd:col-start-1 md:even:col-start-2"
-                        {...project}
-                    />
+            <h1>{i18n.projects.title}</h1>
+            <p>{i18n.projects.content}</p>
+            <div>
+                {projects.map((project, index) => (
+                    <ProjectCard key={index} {...project} />
                 ))}
             </div>
         </main>

@@ -1,30 +1,21 @@
 import '../styles/global.css';
-import '../styles/mdx.css';
 
-import Navigation from '@components/Navigation';
-import Footer from '@components/Footer';
-import MobileNavigation from '@components/MobileNavigation';
-
-import { useI18n } from '@lib/hooks/i18n';
+import { Footer, Navigation, MobileNavigation } from '@components/layout';
 
 import type { NextPage } from 'next';
 import type { AppProps } from 'next/app';
 
-const App: NextPage<AppProps> = ({ Component, pageProps }) => {
-    const i18n = useI18n();
+const App: NextPage<AppProps> = ({ Component, pageProps }) => (
+    <>
+        <Navigation />
 
-    return (
-        <>
-            <Navigation pages={i18n.pages} />
+        <div className="px-6">
+            <Component {...pageProps} />
+            <Footer />
+        </div>
 
-            <div className="px-6">
-                <Component {...pageProps} />
-                <Footer pages={i18n.pages} links={i18n.links} />
-            </div>
-
-            <MobileNavigation pages={i18n.pages} />
-        </>
-    );
-};
+        <MobileNavigation />
+    </>
+);
 
 export default App;

@@ -1,0 +1,15 @@
+.main {
+    @apply max-w-2xl mx-auto;
+}
+
+.main > h1 {
+    @apply mb-4;
+}
+
+.main > p {
+    @apply my-4;
+}
+
+.main > div {
+    @apply grid gap-4 my-6;
+}

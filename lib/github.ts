@@ -32,8 +32,6 @@ export const getRepos = async () => {
             return repository;
         }) as Repository[];
 
-    console.log(repositories);
-
     const sortedRepositories = repositories.sort(
         (a: Repository, b: Repository) => {
             return b.stars - a.stars;

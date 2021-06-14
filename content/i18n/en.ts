@@ -8,15 +8,17 @@ export const en: Translation = {
     },
     projects: {
         title: 'Projects',
-        subtitle:
+        content:
             'Here are some of my most cherished projects. All of my code-based projects are Open Source and their source code can be found on GitHub, where you can also find some of my less noteworthy projects.',
-        web: 'Web Development',
-        games: 'Games',
-        other: 'Other Projects',
     },
     articles: {
         title: 'Articles',
-        subtitle: 'Here are some of the most recent articles I have written.',
+        content: 'Here are some of the most recent articles I have written.',
+    },
+    contact: {
+        title: 'Contact',
+        content:
+            'If you wish to get in touch, feel free to send me an email. I am also available via DM on DEV and on Twitter.',
     },
     actions: {
         changeLanguage: 'change language',
@@ -39,18 +41,6 @@ export const en: Translation = {
             title: 'Articles',
             href: '/articles',
         },
-        {
-            title: 'Uses',
-            href: '/uses',
-        },
-        {
-            title: 'Repositories',
-            href: '/repositories',
-        },
-        {
-            title: 'Mac Setup',
-            href: '/mac-setup',
-        },
     ],
     links: [
         {
@@ -65,10 +55,8 @@ export const en: Translation = {
             title: 'Twitter',
             href: 'https://twitter.com/nico_bachner',
         },
-        {
-            title: 'Code Golf',
-            href: 'https://code.golf/golfers/nico-bachner',
-        },
+    ],
+    other: [
         {
             title: 'Source Code',
             href: 'https://github.com/nico-bachner/v3',

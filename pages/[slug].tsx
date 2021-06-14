@@ -1,4 +1,5 @@
 import { getSlugs, getFile, getFileData, getContent } from '@lib/mdx';
+import { getPageProps } from '@lib/pages';
 import { getUpdated } from '@lib/github';
 
 import Head from '@components/Head';
@@ -23,22 +24,12 @@ export const getStaticPaths: GetStaticPaths = async () => {
 };
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-    const slug = params?.slug ? params?.slug.toString() : '';
-
-    const date_updated = await getUpdated('content/pages/', slug);
-    const file = await getFile('content/pages/', slug);
-
-    const content = await getContent(file);
-    const data = getFileData(file);
-
-    const props: PageProps = {
-        ...data,
-        content,
-        slug,
-        date_updated,
+    if (typeof params?.slug == 'string') {
+        return { props: await getPageProps(params.slug) };
+    }
+    return {
+        notFound: true,
     };
-
-    return { props };
 };
 
 const Project: NextPage<PageProps> = (page) => {
@@ -51,7 +42,6 @@ const Project: NextPage<PageProps> = (page) => {
                 title={page.title}
                 description={page.description}
                 slug={page.slug}
-                type="page"
             />
 
             <MDX content={page.content} />
@@ -60,6 +50,7 @@ const Project: NextPage<PageProps> = (page) => {
                 Last updated: {date_updated.toLocaleDateString()}
                 <Link
                     href={`https://github.com/nico-bachner/v3/edit/main/content/pages/${page.slug}.mdx`}
+                    className="text-azure hover:underline"
                 >
                     Edit on GitHub
                 </Link>

@@ -1,15 +1,11 @@
 import { useRouter } from 'next/router';
 import { useI18n } from '@lib/hooks/i18n';
 
-import Link from './Link';
-import Logo from './Logo';
-import Select from './Select';
+import Link from '../Link';
+import Logo from '../Logo';
+import Select from '../Select';
 
-interface Props {
-    pages: Page[];
-}
-
-const Navigation: React.VFC<Props> = ({ pages }) => {
+const Navigation: React.VFC = () => {
     const i18n = useI18n();
     const router = useRouter();
 
@@ -19,22 +15,20 @@ const Navigation: React.VFC<Props> = ({ pages }) => {
                 <Link href="/" className="w-[3.4rem]">
                     <Logo />
                 </Link>
-                <div className="justify-end flex-grow hidden mx-8 space-x-8 sm:flex sm:text-lg">
-                    {pages.slice(0, 4).map((page, index) => {
-                        return (
-                            <Link
-                                key={index}
-                                href={page.href}
-                                className={
-                                    router.pathname == page.href
-                                        ? 'text-light cursor-default'
-                                        : 'hover:underline'
-                                }
-                            >
-                                {page.title}
-                            </Link>
-                        );
-                    })}
+                <div className="justify-end flex-grow hidden mx-8 space-x-8 text-lg sm:flex">
+                    {i18n.pages.slice(0, 4).map((page, index) => (
+                        <Link
+                            key={index}
+                            href={page.href}
+                            className={
+                                router.pathname == page.href
+                                    ? 'text-light cursor-default'
+                                    : 'hover:underline'
+                            }
+                        >
+                            {page.title}
+                        </Link>
+                    ))}
                 </div>
                 <label htmlFor="#language-select" className="sr-only">
                     {i18n.actions.changeLanguage}

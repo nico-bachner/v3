@@ -8,16 +8,18 @@ export const lb: Translation = {
     },
     projects: {
         title: 'Projeten',
-        subtitle:
+        content:
             'Hei sin e puer vun mengen projeten. Se sin all Open Source an all projet hir Source Code befënnt sech of GitHub',
-        web: 'Web Applicatiounen an Siten',
-        games: 'Spiller',
-        other: 'Aner Projeten',
     },
     articles: {
         title: 'Artikelen',
-        subtitle:
+        content:
             'Hei sin e puer vun mengen rezentesten artikelen. Leider sin se nëmmen op englesch disponibel.',
+    },
+    contact: {
+        title: 'Kontakt',
+        content:
+            'Wann dir mech erreeschen wëllt, dann kënnt dir mir eng email schécken. Soss sin ech och nach op DEV an op Twitter via DM disponibel.',
     },
     actions: {
         changeLanguage: 'sprooch ännern',
@@ -40,18 +42,6 @@ export const lb: Translation = {
             title: 'Artikelen',
             href: '/articles',
         },
-        {
-            title: 'Uses',
-            href: '/uses',
-        },
-        {
-            title: 'Mac Setup',
-            href: '/mac-setup',
-        },
-        {
-            title: 'Repositories',
-            href: '/repositories',
-        },
     ],
     links: [
         {
@@ -66,10 +56,8 @@ export const lb: Translation = {
             title: 'Twitter',
             href: 'https://twitter.com/nico_bachner',
         },
-        {
-            title: 'Code Golf',
-            href: 'https://code.golf/golfers/nico-bachner',
-        },
+    ],
+    other: [
         {
             title: 'Source Code',
             href: 'https://github.com/nico-bachner/v3',

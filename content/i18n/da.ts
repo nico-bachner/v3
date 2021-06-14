@@ -8,16 +8,18 @@ export const da: Translation = {
     },
     projects: {
         title: 'Projekter',
-        subtitle:
+        content:
             'Her er nogle af mine favoritprojekter. Alle projekter er Open Source og deres source code kan findes på GitHub.',
-        web: 'Web Development',
-        games: 'Spill',
-        other: 'Andre Projekter',
     },
     articles: {
         title: 'Artikler',
-        subtitle:
+        content:
             'Her er nogle af mine seneste artikler. Desvære er di kun på engelsk.',
+    },
+    contact: {
+        title: 'Kontakt',
+        content:
+            'Hvis du har lyst til at komme i kontakt med mig, så kan du sende mig en email. Jeg er også åben til DMs på DEV og Twitter.',
     },
     actions: {
         changeLanguage: 'ændrere sprog',
@@ -40,18 +42,6 @@ export const da: Translation = {
             title: 'Artikler',
             href: '/articles',
         },
-        {
-            title: 'Uses',
-            href: '/uses',
-        },
-        {
-            title: 'Mac Setup',
-            href: '/mac-setup',
-        },
-        {
-            title: 'Repositories',
-            href: '/repositories',
-        },
     ],
     links: [
         {
@@ -66,10 +56,8 @@ export const da: Translation = {
             title: 'Twitter',
             href: 'https://twitter.com/nico_bachner',
         },
-        {
-            title: 'Code Golf',
-            href: 'https://code.golf/golfers/nico-bachner',
-        },
+    ],
+    other: [
         {
             title: 'Source Code',
             href: 'https://github.com/nico-bachner/v3',

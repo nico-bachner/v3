@@ -53,6 +53,7 @@ const Project: NextPage<ProjectProps> = (project) => {
                 Last updated: {date_updated.toLocaleDateString()}
                 <Link
                     href={`https://github.com/nico-bachner/v3/edit/main/content/projects/${project.slug}.mdx`}
+                    className="text-azure hover:underline"
                 >
                     Edit on GitHub
                 </Link>

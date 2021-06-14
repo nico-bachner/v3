@@ -57,6 +57,7 @@ const Article: NextPage<ArticleProps> = (article) => {
                 Last updated: {date_updated.toLocaleDateString()}
                 <Link
                     href={`https://github.com/nico-bachner/v3/edit/main/content/articles/${article.slug}.mdx`}
+                    className="text-azure hover:underline"
                 >
                     Edit on GitHub
                 </Link>

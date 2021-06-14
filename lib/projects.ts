@@ -32,11 +32,11 @@ export const getProjectProps = async (slug: string): Promise<ProjectProps> => {
 const getProjectsData = async () => {
     const slugs = await getSlugs('content/projects/');
 
-    const articles = await Promise.all(
+    const projects = await Promise.all(
         slugs.map(async (slug) => getProjectData(slug))
     );
 
-    return articles;
+    return projects;
 };
 
 export const getOrderedProjectsData = async () => {
