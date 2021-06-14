@@ -34,10 +34,3 @@
 .mdx > pre {
     @apply px-6 py-4 overflow-scroll rounded shadow dark:border;
 }
-.mdx > :not(pre) > code {
-    @apply font-mono text-sm text-crimson sm:text-base;
-}
-.mdx > :not(pre) > code::before,
-.mdx > :not(pre) > code::after {
-    content: '`';
-}

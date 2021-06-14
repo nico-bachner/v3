@@ -1,0 +1,8 @@
+.code {
+    @apply font-mono text-sm text-crimson sm:text-base;
+}
+
+.code::before,
+.code::after {
+    content: '`';
+}

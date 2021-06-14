@@ -1,6 +1,8 @@
 import { MDXRemote } from 'next-mdx-remote';
 
 import Link from '@components/Link';
+import Code from '@components/Code';
+
 import Image from '@components/Image';
 import Repositories from '@components/Repositories';
 import FileTree, { Folder, File } from '@components/FileTree';
@@ -34,6 +36,7 @@ const MDXComponents = {
     // override mdx default components
     wrapper: Wrapper,
     a: MDXLink,
+    inlineCode: Code,
 
     // add custom components
     Image,
