@@ -6,15 +6,10 @@ interface SelectProps {
 }
 
 const ShowMore: React.FC<SelectProps> = ({ onClick, expanded, children }) => (
-    <div className="flex">
-        <hr className="flex-grow my-4" />
-        <button
-            onClick={onClick}
-            className={expanded ? styles.expanded : styles.default}
-        >
-            {children}
-        </button>
-        <hr className="flex-grow my-4" />
+    <div className={expanded ? styles.expanded : styles.default}>
+        <hr />
+        <button onClick={onClick}>{children}</button>
+        <hr />
     </div>
 );
 

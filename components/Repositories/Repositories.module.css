@@ -1,7 +1,15 @@
 .repositories {
-    @apply grid mb-8 md:grid-cols-3 gap-y-4 gap-x-24;
+    @apply grid mb-6 gap-y-6 gap-x-20 md:grid-cols-3;
 }
 
-.repositories > a > div {
+.repositories > a {
     @apply md:col-span-2 md:odd:col-start-1 md:even:col-start-2;
+}
+
+.repositories h3 {
+    @apply capitalize;
+}
+
+.repositories p {
+    @apply mt-2;
 }

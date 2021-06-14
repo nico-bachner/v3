@@ -35,8 +35,8 @@ const Repositories: React.VFC = () => {
                 {repos.map((repository) => (
                     <Link key={repository.slug} href={repository.repo_url}>
                         <Card>
-                            <h3 className="capitalize">{repository.name}</h3>
-                            <p className="mt-2">{repository.description}</p>
+                            <h3>{repository.name}</h3>
+                            <p>{repository.description}</p>
                         </Card>
                     </Link>
                 ))}

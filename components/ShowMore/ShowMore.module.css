@@ -1,15 +1,25 @@
-.default {
-    background-image: url('/icons/arrow-down.svg');
+.default,
+.expanded {
+    @apply flex;
+}
+
+.default > hr,
+.expanded > hr {
+    @apply flex-grow my-4;
+}
+
+.default > button,
+.expanded > button {
     background-position: right 1rem center;
     background-repeat: no-repeat;
     background-size: 0.75em 0.75em;
     @apply py-2 pl-4 pr-8 text-xs uppercase transition rounded-full shadow text-strong dark:border dark:hover:border-strong hover:shadow-lg;
 }
 
-.expanded {
+.default > button {
+    background-image: url('/icons/arrow-down.svg');
+}
+
+.expanded > button {
     background-image: url('/icons/arrow-up.svg');
-    background-position: right 1rem center;
-    background-repeat: no-repeat;
-    background-size: 0.75em 0.75em;
-    @apply py-2 pl-4 pr-8 text-xs uppercase transition rounded-full shadow text-strong dark:border dark:hover:border-strong hover:shadow-lg;
 }

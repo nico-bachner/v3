@@ -9,28 +9,23 @@ interface HeadProps {
     type?: string;
 }
 
-const Head: React.FC<HeadProps> = (head) => {
+const Head: React.FC<HeadProps> = ({ title, description, slug, type }) => {
     useEffect(() => {
-        fetch(
-            head.type
-                ? `/api/views/${head.slug}?type=${head.type}`
-                : `/api/views/${head.slug}`,
-            {
-                method: 'POST',
-            }
-        );
-    }, [head]);
+        fetch(type ? `/api/views/${slug}?type=${type}` : `/api/views/${slug}`, {
+            method: 'POST',
+        });
+    }, [slug, type]);
 
     return (
         <NextHead>
-            <title>{head.title}</title>
-            <meta name="og:title" content={head.title} />
-            <meta name="description" content={head.description} />
-            <meta name="og:description" content={head.description} />
+            <title>{title}</title>
+            <meta name="og:title" content={title} />
+            <meta name="description" content={description} />
+            <meta name="og:description" content={description} />
             <meta
                 name="og:image"
                 content={`https://og-image.vercel.app/${encodeURIComponent(
-                    head.title
+                    title
                 )}.png`}
             />
         </NextHead>
