@@ -1,8 +1,8 @@
 {
     "compilerOptions": {
-        "target": "es5",
+        "target": "es2020",
         "lib": ["dom", "dom.iterable", "esnext"],
-        "allowJs": true,
+        "allowJs": false,
         "skipLibCheck": true,
         "strict": true,
         "forceConsistentCasingInFileNames": true,
@@ -16,12 +16,20 @@
         "jsx": "preserve",
         "baseUrl": ".",
         "paths": {
-            "@components/*": ["components/*"],
             "@lib/*": ["lib/*"],
+            "@hooks/*": ["hooks/*"],
+            "@components/*": ["components/*"],
             "@content/*": ["content/*"],
             "@styles/*": ["styles/*"]
         }
     },
-    "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+    "include": [
+        "next-env.d.ts",
+        "global.d.ts",
+        "pages/**/*.tsx",
+        "lib/**/*.ts",
+        "hooks/**/*.tsx",
+        "components/**/*.{ts,tsx}"
+    ],
     "exclude": ["node_modules"]
 }

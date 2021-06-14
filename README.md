@@ -46,8 +46,8 @@ To deploy the project to ▲Vercel, click the button below
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https%3A%2F%2Fgithub.com%2Fnico-bachner%2Fv3)
 
-## Acknowledgements
+## Inspiration
 
--   [Vercel](https://vercel.com)
--   [Lee Robinson](https://github.com/leerob)
--   [Conventional Commits](https://www.conventionalcommits.org)
+-   [Vercel Design](https://vercel.com/design)
+-   [Lee Robinson](https://leerob.io)
+-   [Nicolás Garro](https://evilrabb.it)

@@ -2,7 +2,7 @@ import Link from '../../Link';
 
 import styles from './Footer.module.css';
 
-import { useI18n } from '@lib/hooks/i18n';
+import { useI18n } from '@hooks/i18n';
 
 const Footer: React.VFC = () => {
     const i18n = useI18n();

@@ -3,7 +3,7 @@ import Card from '@components/Card';
 import ShowMore from '@components/ShowMore';
 
 import { useState, useEffect } from 'react';
-import { useI18n } from '@lib/hooks/i18n';
+import { useI18n } from '@hooks/i18n';
 
 import styles from './Repositories.module.css';
 

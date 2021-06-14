@@ -1,5 +1,5 @@
 import { useRouter } from 'next/router';
-import { useI18n } from '@lib/hooks/i18n';
+import { useI18n } from '@hooks/i18n';
 
 import Link from '@components/Link';
 import Logo from '@components/icons/Logo';

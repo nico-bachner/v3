@@ -1,5 +1,5 @@
 import { useRouter } from 'next/router';
-import { useI18n } from '@lib/hooks/i18n';
+import { useI18n } from '@hooks/i18n';
 
 import Link from '@components/Link';
 
@@ -19,7 +19,7 @@ const MobileNavigation: React.VFC = () => {
                             router.pathname != href ? 'primary' : 'disabled'
                         }
                     >
-                        <div className="px-3 py-2">{title}</div>
+                        {title}
                     </Link>
                 </p>
             ))}

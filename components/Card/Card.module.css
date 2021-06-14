@@ -1,7 +1,12 @@
+.default,
+.interactive {
+    @apply w-full p-6 text-left transition duration-300 dark:rounded sm:px-8 dark:border;
+}
+
 .default {
-    @apply w-full p-6 text-left transition duration-300 shadow dark:border dark:rounded sm:px-8;
+    @apply shadow;
 }
 
 .interactive {
-    @apply w-full p-6 text-left transition duration-300 shadow-lg hover:shadow-xl dark:border dark:rounded sm:px-8 dark:hover:border-strong;
+    @apply shadow-lg hover:shadow-xl dark:hover:border-strong;
 }

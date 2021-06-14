@@ -1,6 +1,6 @@
 import { getOrderedProjectsData } from '@lib/projects';
 import { getOrderedArticlesData } from '@lib/articles';
-import { useI18n } from '@lib/hooks/i18n';
+import { useI18n } from '@hooks/i18n';
 
 import Head from '@components/Head';
 import Link from '@components/Link';

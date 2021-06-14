@@ -1,5 +1,5 @@
 import { getOrderedProjectsData } from '@lib/projects';
-import { useI18n } from '@lib/hooks/i18n';
+import { useI18n } from '@hooks/i18n';
 
 import Head from '@components/Head';
 import { ProjectCard } from '@components/Card';

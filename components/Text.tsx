@@ -14,7 +14,6 @@ interface TextProps {
         | 'strongest';
     color?: 'gray' | 'azure' | 'cyan';
     className?: string;
-    style?: React.CSSProperties;
 }
 
 const Text: React.FC<TextProps> = ({
@@ -28,7 +27,6 @@ const Text: React.FC<TextProps> = ({
     shade,
     color,
     className,
-    style,
 }) => {
     let styles: string[] = [];
 
@@ -142,35 +140,15 @@ const Text: React.FC<TextProps> = ({
 
     switch (as) {
         case 'h1':
-            return (
-                <h1 className={classes} style={style}>
-                    {children}
-                </h1>
-            );
+            return <h1 className={classes}>{children}</h1>;
         case 'h2':
-            return (
-                <h2 className={classes} style={style}>
-                    {children}
-                </h2>
-            );
+            return <h2 className={classes}>{children}</h2>;
         case 'h3':
-            return (
-                <h3 className={classes} style={style}>
-                    {children}
-                </h3>
-            );
+            return <h3 className={classes}>{children}</h3>;
         case 'h4':
-            return (
-                <h4 className={classes} style={style}>
-                    {children}
-                </h4>
-            );
+            return <h4 className={classes}>{children}</h4>;
         case undefined:
-            return (
-                <p className={classes} style={style}>
-                    {children}
-                </p>
-            );
+            return <p className={classes}>{children}</p>;
     }
 };
 
