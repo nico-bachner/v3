@@ -26,18 +26,37 @@ interface Coordinate {
     y: number;
 }
 
+type CommandType = 'M' | 'L' | 'Q' | 'A' | 'Z';
+
+interface Command {
+    type: CommandType;
+    args: number[];
+}
+
 interface PathProps {
-    commands: string[];
+    commands: Command[];
+    stroke?: string;
     strokeWidth?: number;
     fill?: string;
 }
 
-export const Path: React.VFC<PathProps & DefaultProps> = (path) => (
+export const Path: React.VFC<PathProps & DefaultProps> = ({
+    id,
+    className,
+    commands,
+    stroke,
+    strokeWidth,
+    fill,
+}) => (
     <path
-        {...path}
-        d={path.commands.join(' ')}
-        stroke="currentColor"
-        fill={path.fill ?? 'none'}
+        id={id}
+        className={className}
+        d={commands
+            .map((command) => [command.type, ...command.args].join(' '))
+            .join(' ')}
+        stroke={stroke ?? 'currentColor'}
+        strokeWidth={strokeWidth}
+        fill={fill ?? 'none'}
     />
 );
 

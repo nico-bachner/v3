@@ -1,0 +1,56 @@
+import { useRouter } from 'next/router';
+import { useI18n } from '@lib/hooks/i18n';
+
+import Link from '@components/Link';
+import Logo from '@components/icons/Logo';
+import Select from '@components/Select';
+
+import styles from './Navigation.module.css';
+
+const Navigation: React.VFC = () => {
+    const i18n = useI18n();
+    const router = useRouter();
+
+    return (
+        <nav className={styles.nav}>
+            <Link href="/">
+                <Logo />
+            </Link>
+            <div>
+                {i18n.pages.map((page, index) => (
+                    <Link
+                        key={index}
+                        href={page.href}
+                        className={
+                            router.pathname == page.href
+                                ? 'text-light cursor-default'
+                                : 'hover:underline'
+                        }
+                    >
+                        {page.title}
+                    </Link>
+                ))}
+            </div>
+            <label htmlFor="#language-select" className="sr-only">
+                {i18n.actions.changeLanguage}
+            </label>
+            <Select
+                id="language-select"
+                onChange={(item) => {
+                    router.push(router.pathname, router.pathname, {
+                        locale: item.target.value,
+                    });
+                }}
+                defaultValue={router.locale}
+            >
+                {(router.locales as Locale[]).map((language, index) => (
+                    <option key={index} value={language}>
+                        {language.toUpperCase()}
+                    </option>
+                ))}
+            </Select>
+        </nav>
+    );
+};
+
+export default Navigation;

@@ -1,0 +1,11 @@
+.folder > button {
+    @apply flex my-2 cursor-pointer hover:text-strong;
+}
+
+.folder > button > span:first-child {
+    @apply inline-block w-6 h-6 mr-2 leading-6;
+}
+
+.folder > ul {
+    @apply ml-8;
+}

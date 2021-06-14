@@ -18,7 +18,21 @@
     @apply mt-8 mb-4;
 }
 .mdx > p {
-    @apply my-4;
+    @apply my-4 sm:text-lg;
+}
+.mdx > ul > li,
+.mdx > ol > li {
+    @apply my-2 sm:text-lg;
+}
+.mdx > ul,
+.mdx > ol {
+    @apply pl-4 list-inside;
+}
+.mdx > ul {
+    @apply list-disc;
+}
+.mdx > ol {
+    @apply list-decimal;
 }
 .mdx > pre {
     @apply px-6 py-4 overflow-scroll rounded shadow dark:border;

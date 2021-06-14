@@ -1,0 +1,14 @@
+@supports (backdrop-filter: blur()) {
+    .nav {
+        @apply backdrop-filter backdrop-blur-lg;
+    }
+}
+@supports not (backdrop-filter: blur()) {
+    .nav {
+        @apply bg-lightest;
+    }
+}
+
+.nav {
+    @apply sticky bottom-0 z-50 flex w-full py-8 sm:hidden justify-evenly;
+}

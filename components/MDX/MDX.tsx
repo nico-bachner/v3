@@ -1,8 +1,9 @@
 import { MDXRemote } from 'next-mdx-remote';
 
-import Link from '../Link';
-import Image from '../Image';
-import Repositories from '../Repositories';
+import Link from '@components/Link';
+import Image from '@components/Image';
+import Repositories from '@components/Repositories';
+import FileTree, { Folder, File } from '@components/FileTree';
 
 import styles from './MDX.module.css';
 
@@ -18,6 +19,9 @@ const MDXComponents = {
     // add custom components
     Image,
     Repositories,
+    FileTree,
+    Folder,
+    File,
 };
 
 interface MDXProps {

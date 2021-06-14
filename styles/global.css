@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 :root {
     color-scheme: light dark;
 }
@@ -22,72 +26,39 @@
     }
 }
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-@layer base {
-    ::selection {
-        @apply bg-cyan text-strongest;
-    }
-
-    html {
-        @apply antialiased bg-lightest text-strong;
-    }
-
-    main {
-        @apply text-stronger;
-    }
-
-    h1,
-    h2,
-    h3,
-    h4 {
-        @apply text-strongest;
-    }
-
-    h1 {
-        @apply text-4xl font-extrabold sm:text-5xl;
-    }
-    h2 {
-        @apply text-3xl font-bold sm:text-4xl;
-    }
-    h3 {
-        @apply text-2xl font-semibold sm:text-3xl;
-    }
-    h4 {
-        @apply text-xl font-medium sm:text-2xl;
-    }
-    p,
-    li {
-        @apply sm:text-lg;
-    }
-    li {
-        @apply my-2;
-    }
-    ul,
-    ol {
-        @apply pl-4 list-inside;
-    }
-    ul {
-        @apply list-disc;
-    }
-    ol {
-        @apply list-decimal;
-    }
+::selection {
+    @apply bg-cyan text-strongest;
 }
 
-@layer utilities {
-    @supports (backdrop-filter: blur()) {
-        .glass {
-            @apply backdrop-filter backdrop-blur-lg;
-        }
-    }
-    @supports not (backdrop-filter: blur()) {
-        .glass {
-            @apply bg-lightest;
-        }
-    }
+html {
+    @apply antialiased bg-lightest text-strong;
+}
+
+main {
+    @apply text-stronger;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    @apply text-strongest;
+}
+
+h1 {
+    @apply text-4xl font-extrabold sm:text-5xl;
+}
+h2 {
+    @apply text-3xl font-bold sm:text-4xl;
+}
+h3 {
+    @apply text-2xl font-semibold sm:text-3xl;
+}
+h4 {
+    @apply text-xl font-medium sm:text-2xl;
+}
+p {
+    @apply sm:text-lg;
 }
 
 /* remark */
