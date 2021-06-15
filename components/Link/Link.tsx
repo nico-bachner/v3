@@ -1,20 +1,17 @@
-import NextLink from 'next/link';
+import NextLink, { LinkProps as NextLinkProps } from 'next/link';
 
 import styles from './Link.module.css';
 
-export interface LinkProps {
-    href: string;
-    locale?: string;
+interface LinkProps {
     variant?: 'highlight' | 'primary' | 'secondary' | 'disabled';
     external?: boolean;
 }
 
-const Link: React.FC<LinkProps> = ({
-    href,
-    locale,
+const Link: React.FC<LinkProps & NextLinkProps> = ({
     variant,
     external,
     children,
+    ...link
 }) => {
     const externalProps = external && {
         target: '_blank',
@@ -22,7 +19,7 @@ const Link: React.FC<LinkProps> = ({
     };
 
     return (
-        <NextLink href={href} locale={locale}>
+        <NextLink {...link}>
             <a className={styles[variant ?? 'default']} {...externalProps}>
                 {children}
             </a>

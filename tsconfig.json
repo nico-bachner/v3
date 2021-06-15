@@ -20,7 +20,8 @@
             "@hooks/*": ["hooks/*"],
             "@components/*": ["components/*"],
             "@content/*": ["content/*"],
-            "@styles/*": ["styles/*"]
+            "@styles/*": ["styles/*"],
+            "@images/*": ["images/*"]
         }
     },
     "include": [
@@ -31,5 +32,5 @@
         "hooks/**/*.tsx",
         "components/**/*.{ts,tsx}"
     ],
-    "exclude": ["node_modules"]
+    "exclude": ["node_modules/"]
 }

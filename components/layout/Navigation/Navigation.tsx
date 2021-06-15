@@ -40,7 +40,7 @@ const Navigation: React.VFC = () => {
                         locale: item.target.value,
                     });
                 }}
-                defaultValue={router.locale}
+                value={router.locale}
             >
                 {(router.locales as Locale[]).map((language, index) => (
                     <option key={index} value={language}>

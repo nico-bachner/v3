@@ -74,8 +74,8 @@ const Home: NextPage<HomeProps> = ({ projects, articles }) => {
             <section id="contact">
                 <h2>{i18n.contact.title}</h2>
                 <p>{i18n.contact.content}</p>
-                <p className="flex mt-4 space-x-4">
-                    <div className="flex-grow">
+                <div className="flex mt-4 space-x-4">
+                    <p className="flex-grow">
                         <Link
                             href="mailto:hello@nicob.dev"
                             variant="highlight"
@@ -83,22 +83,26 @@ const Home: NextPage<HomeProps> = ({ projects, articles }) => {
                         >
                             hello@nicob.dev
                         </Link>
-                    </div>
-                    <Link
-                        href="https://dev.to/nico_bachner"
-                        variant="highlight"
-                        external
-                    >
-                        DEV.to
-                    </Link>
-                    <Link
-                        href="https://twitter.com/nico_bachner"
-                        variant="highlight"
-                        external
-                    >
-                        Twitter
-                    </Link>
-                </p>
+                    </p>
+                    <p>
+                        <Link
+                            href="https://dev.to/nico_bachner"
+                            variant="highlight"
+                            external
+                        >
+                            DEV.to
+                        </Link>
+                    </p>
+                    <p>
+                        <Link
+                            href="https://twitter.com/nico_bachner"
+                            variant="highlight"
+                            external
+                        >
+                            Twitter
+                        </Link>
+                    </p>
+                </div>
             </section>
         </main>
     );
