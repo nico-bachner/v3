@@ -9,7 +9,7 @@ import styles from '@styles/Articles.module.css';
 import type { NextPage, GetStaticProps } from 'next';
 
 interface ArticlesPageProps {
-    articles: CardProps<ArticleData>[];
+    articles: ArticleData[];
 }
 
 export const getStaticProps: GetStaticProps = async () => {

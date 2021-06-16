@@ -3,28 +3,34 @@ import { getUpdated } from './github';
 
 const getProjectData = async (slug: string) => {
     const file = await getFile('content/projects/', slug);
+    const { title, description, featured, from, to } = getFileData(file);
 
-    const data = getFileData(file);
-
-    const project: CardProps<ProjectData> = {
-        ...data,
+    const data: ProjectData = {
+        title: title as string,
+        description: description as string,
         slug,
+        featured: (featured as boolean | undefined) ?? false,
+        from: (from as Date | undefined) ? from.toDateString() : null,
+        to: (to as Date | undefined) ? to.toDateString() : null,
     };
 
-    return project;
+    return data;
 };
 
-export const getProjectProps = async (slug: string): Promise<ProjectProps> => {
+export const getProjectProps = async (slug: string) => {
     const file = await getFile('content/projects/', slug);
-    const data = await getProjectData(slug);
+    const { title, description } = await getProjectData(slug);
 
-    return {
-        ...data,
+    const props: ProjectProps = {
+        title: title as string,
+        description: description as string,
         slug,
         content: await getContent(file),
         date_updated: await getUpdated('content/projects/', slug),
-        editUrl: `https://github.com/nico-bachner/v3/edit/main/content/projects/${slug}.mdx`,
+        edit_url: `https://github.com/nico-bachner/v3/edit/main/content/projects/${slug}.mdx`,
     };
+
+    return props;
 };
 
 const getProjectsData = async () => {
@@ -40,24 +46,14 @@ const getProjectsData = async () => {
 export const getOrderedProjectsData = async () => {
     const projects = await getProjectsData();
 
-    const ordered_projects = projects.sort((a, b) => {
-        const [a_start_date, a_end_date] = (a.period ?? '|').split('|');
-        const [b_start_date, b_end_date] = (b.period ?? '|').split('|');
-
-        if (a_end_date && b_end_date) {
-            return (
-                new Date(b_end_date).getTime() - new Date(a_end_date).getTime()
-            );
+    return projects.sort((a, b) => {
+        if (a.to && b.to) {
+            return new Date(b.to).getTime() - new Date(a.to).getTime();
         }
-        if (a_start_date && b_start_date) {
-            return (
-                new Date(b_start_date).getTime() -
-                new Date(a_start_date).getTime()
-            );
+        if (a.from && b.from) {
+            return new Date(b.from).getTime() - new Date(a.from).getTime();
         }
 
         return 0;
     });
-
-    return ordered_projects;
 };

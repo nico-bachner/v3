@@ -1,11 +1,7 @@
 import Card from './Card';
 import Link from '@components/Link';
 
-const ProjectCard: React.VFC<CardProps<ProjectData>> = ({
-    slug,
-    title,
-    description,
-}) => (
+const ProjectCard: React.VFC<ProjectData> = ({ slug, title, description }) => (
     <Link href={'/projects/' + slug} locale="en">
         <Card variant="interactive">
             <h3>{title}</h3>

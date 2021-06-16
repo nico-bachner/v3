@@ -9,31 +9,37 @@ import { getUpdated } from './github';
 
 const getArticleData = async (slug: string) => {
     const file = await getFile('content/articles/', slug);
+    const { title, description, date_published, featured } = getFileData(file);
 
-    const data = getFileData(file);
-    const reading_time = getReadingTime(file);
-
-    const article: CardProps<ArticleData> = {
-        ...data,
+    const data: ArticleData = {
+        title: title as string,
+        description: description as string,
         slug,
-        reading_time,
+        date_published: (date_published as Date).toDateString(),
+        featured: (featured as boolean | undefined) ?? false,
+        reading_time: getReadingTime(file),
     };
 
-    return article;
+    return data;
 };
 
-export const getArticleProps = async (slug: string): Promise<ArticleProps> => {
+export const getArticleProps = async (slug: string) => {
     const file = await getFile('content/articles/', slug);
-    const data = await getArticleData(slug);
+    const { title, description, date_published, canonical_url } =
+        getFileData(file);
 
-    return {
-        ...data,
+    const props: ArticleProps = {
+        title: title as string,
+        description: description as string,
         slug,
+        date_published: (date_published as Date).toDateString(),
+        canonical_url: canonical_url as string,
         content: await getContent(file),
         date_updated: await getUpdated('content/articles/', slug),
-        reading_time: getReadingTime(file),
-        editUrl: `https://github.com/nico-bachner/v3/edit/main/content/articles/${slug}.mdx`,
+        edit_url: `https://github.com/nico-bachner/v3/edit/main/content/articles/${slug}.mdx`,
     };
+
+    return props;
 };
 
 const getArticlesData = async () => {
@@ -49,11 +55,9 @@ const getArticlesData = async () => {
 export const getOrderedArticlesData = async () => {
     const articles = await getArticlesData();
 
-    const ordered_articles = articles.sort(
+    return articles.sort(
         (a, b) =>
             new Date(b.date_published ?? 0).getTime() -
             new Date(a.date_published ?? 0).getTime()
     );
-
-    return ordered_articles;
 };

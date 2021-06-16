@@ -1,6 +1,5 @@
-import { getSlugs, getFile, getFileData, getContent } from '@lib/mdx';
+import { getSlugs } from '@lib/mdx';
 import { getPageProps } from '@lib/pages';
-import { getUpdated } from '@lib/github';
 
 import Head from '@components/Head';
 import MDX from '@components/MDX';
@@ -38,7 +37,7 @@ const Project: NextPage<PageProps> = ({
     slug,
     content,
     date_updated,
-    editUrl,
+    edit_url,
 }) => {
     const dateUpdated =
         date_updated == null ? new Date() : new Date(date_updated);
@@ -51,7 +50,7 @@ const Project: NextPage<PageProps> = ({
 
             <p className="flex justify-between max-w-2xl mx-auto my-16 text-strong">
                 Last updated: {dateUpdated.toLocaleDateString()}
-                <Link href={editUrl} variant="highlight">
+                <Link href={edit_url} variant="highlight">
                     Edit on GitHub
                 </Link>
             </p>

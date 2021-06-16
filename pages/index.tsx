@@ -11,8 +11,8 @@ import styles from '@styles/Home.module.css';
 import type { NextPage, GetStaticProps } from 'next';
 
 interface HomeProps {
-    projects: CardProps<ProjectData>[];
-    articles: CardProps<ArticleData>[];
+    projects: ProjectData[];
+    articles: ArticleData[];
 }
 
 export const getStaticProps: GetStaticProps = async () => {
@@ -21,7 +21,7 @@ export const getStaticProps: GetStaticProps = async () => {
 
     const props: HomeProps = {
         projects: projects.filter((project) => project.featured),
-        articles,
+        articles: articles.filter((article) => article.featured),
     };
 
     return { props };

@@ -1,8 +1,9 @@
 ---
 title: SvelteKit Theme Switch
 description: A tutorial on how to build a Theme Switch using SvelteKit
-date_published: '2021-05-19'
+date_published: 2021-05-19
 canonical_url: https://dev.to/nico_bachner/sveltekit-theme-switch-a58
+featured: true
 ---
 
 # SvelteKit Theme Switch
@@ -63,7 +64,7 @@ We can now use the Svelte Store we created in our Theme Switch Component.
 
 <select bind:value="{$theme}">
     {#each themes as { value, title }}
-    <option {value}>{title}</option>
+        <option {value}>{title}</option>
     {/each}
 </select>
 

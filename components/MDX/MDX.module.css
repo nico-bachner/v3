@@ -32,5 +32,6 @@
     @apply list-decimal;
 }
 .mdx > pre {
+    tab-size: 4;
     @apply px-6 py-4 overflow-scroll rounded shadow dark:border;
 }

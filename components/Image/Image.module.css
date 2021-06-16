@@ -1,3 +1,3 @@
 .image {
-    @apply transition duration-300 filter dark:brightness-75 dark:hover:brightness-100;
+    @apply transition duration-300 filter grayscale hover:grayscale-0 dark:brightness-75 dark:hover:brightness-100;
 }

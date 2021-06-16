@@ -1,7 +1,7 @@
-import { promises as fs } from 'fs';
 import matter from 'gray-matter';
 import readingTime from 'reading-time';
 import { serialize } from 'next-mdx-remote/serialize';
+import { promises as fs } from 'fs';
 
 export const getSlugs = async (directory: string) => {
     const files = await fs.readdir(process.cwd() + '/' + directory);
@@ -18,15 +18,7 @@ export const getFile = async (directory: string, slug: string) => {
     return file;
 };
 
-export const getFileData = (file: string): FileData => {
-    const { data } = matter(file);
-
-    return {
-        ...data,
-        title: data.title,
-        description: data.description,
-    };
-};
+export const getFileData = (file: string) => matter(file).data;
 
 export const getFileContent = (file: string) => matter(file).content;
 
@@ -42,7 +34,11 @@ export const getContent = async (file: string) => {
     const content = await serialize(getFileContent(file), {
         mdxOptions: {
             remarkPlugins: [require('remark-code-titles')],
-            rehypePlugins: [require('mdx-prism')],
+            rehypePlugins: [
+                require('mdx-prism'),
+                require('rehype-slug'),
+                require('rehype-katex'),
+            ],
         },
     });
 
