@@ -55,11 +55,9 @@ const getArticlesData = async () => {
 export const getOrderedArticlesData = async () => {
     const articles = await getArticlesData();
 
-    const ordered_articles = articles.sort(
+    return articles.sort(
         (a, b) =>
             new Date(b.date_published ?? 0).getTime() -
             new Date(a.date_published ?? 0).getTime()
     );
-
-    return ordered_articles;
 };

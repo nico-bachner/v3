@@ -19,7 +19,8 @@ type PageProps = MDXProps;
 
 // Project Types
 type ProjectData = MDXData & {
-    period: string;
+    from: string | null;
+    to: string | null;
     featured: boolean;
 };
 type ProjectProps = MDXProps;
