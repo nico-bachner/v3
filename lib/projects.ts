@@ -3,28 +3,33 @@ import { getUpdated } from './github';
 
 const getProjectData = async (slug: string) => {
     const file = await getFile('content/projects/', slug);
+    const { title, description, period, featured } = getFileData(file);
 
-    const data = getFileData(file);
-
-    const project: CardProps<ProjectData> = {
-        ...data,
+    const data: ProjectData = {
+        title: title as string,
+        description: description as string,
         slug,
+        period: period as string,
+        featured: (featured as boolean | undefined) ?? false,
     };
 
-    return project;
+    return data;
 };
 
-export const getProjectProps = async (slug: string): Promise<ProjectProps> => {
+export const getProjectProps = async (slug: string) => {
     const file = await getFile('content/projects/', slug);
-    const data = await getProjectData(slug);
+    const { title, description } = await getProjectData(slug);
 
-    return {
-        ...data,
+    const props: ProjectProps = {
+        title: title as string,
+        description: description as string,
         slug,
         content: await getContent(file),
         date_updated: await getUpdated('content/projects/', slug),
-        editUrl: `https://github.com/nico-bachner/v3/edit/main/content/projects/${slug}.mdx`,
+        edit_url: `https://github.com/nico-bachner/v3/edit/main/content/projects/${slug}.mdx`,
     };
+
+    return props;
 };
 
 const getProjectsData = async () => {

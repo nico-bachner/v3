@@ -1,10 +1,10 @@
 import Card from './Card';
 import Link from '@components/Link';
 
-const ArticleCard: React.VFC<CardProps<ArticleData>> = ({
-    slug,
+const ArticleCard: React.VFC<ArticleData> = ({
     title,
     description,
+    slug,
     reading_time,
 }) => (
     <Link href={'/articles/' + slug} locale="en">

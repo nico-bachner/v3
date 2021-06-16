@@ -3,28 +3,31 @@ import { getUpdated } from './github';
 
 const getPageData = async (slug: string) => {
     const file = await getFile('content/pages/', slug);
+    const { title, description } = getFileData(file);
 
-    const data = getFileData(file);
-
-    const project: CardProps<PageData> = {
-        ...data,
+    const data: PageData = {
+        title: title as string,
+        description: description as string,
         slug,
     };
 
-    return project;
+    return data;
 };
 
-export const getPageProps = async (slug: string): Promise<PageProps> => {
+export const getPageProps = async (slug: string) => {
     const file = await getFile('content/pages/', slug);
-    const data = await getPageData(slug);
+    const { title, description } = await getPageData(slug);
 
-    return {
-        ...data,
+    const props: PageProps = {
+        title: title as string,
+        description: description as string,
         slug,
         content: await getContent(file),
         date_updated: await getUpdated('content/pages/', slug),
-        editUrl: `https://github.com/nico-bachner/v3/edit/main/content/pages/${slug}.mdx`,
+        edit_url: `https://github.com/nico-bachner/v3/edit/main/content/pages/${slug}.mdx`,
     };
+
+    return props;
 };
 
 export const getPagesData = async () => {

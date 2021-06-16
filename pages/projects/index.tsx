@@ -9,7 +9,7 @@ import styles from '@styles/Projects.module.css';
 import type { NextPage, GetStaticProps } from 'next';
 
 interface ProjectsProps {
-    projects: CardProps<ProjectData>[];
+    projects: ProjectData[];
 }
 
 export const getStaticProps: GetStaticProps = async () => {

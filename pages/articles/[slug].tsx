@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 import { getSlugs } from '@lib/mdx';
 import { getArticleProps } from '@lib/articles';
 
@@ -33,14 +32,12 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 };
 
 const Article: NextPage<ArticleProps> = ({
-    title,
-    description,
-    slug,
     content,
     canonical_url,
     date_published,
     date_updated,
-    editUrl,
+    edit_url,
+    ...head
 }) => {
     const dateUpdated = date_updated
         ? new Date(date_updated)
@@ -50,12 +47,7 @@ const Article: NextPage<ArticleProps> = ({
 
     return (
         <main>
-            <Head
-                title={title}
-                description={description}
-                slug={slug}
-                type="article"
-            >
+            <Head {...head} type="article">
                 <link rel="canonical" href={canonical_url} />
                 <meta property="og:url" content={canonical_url} />
             </Head>
@@ -64,7 +56,7 @@ const Article: NextPage<ArticleProps> = ({
 
             <p className="flex justify-between max-w-2xl mx-auto my-16 text-strong">
                 Last updated: {dateUpdated.toLocaleDateString()}
-                <Link href={editUrl} variant="highlight">
+                <Link href={edit_url} variant="highlight">
                     Edit on GitHub
                 </Link>
             </p>

@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 import { getSlugs } from '@lib/mdx';
 import { getProjectProps } from '@lib/projects';
 
@@ -38,7 +37,7 @@ const Project: NextPage<ProjectProps> = ({
     slug,
     content,
     date_updated,
-    editUrl,
+    edit_url,
 }) => {
     const dateUpdated =
         date_updated == null ? new Date() : new Date(date_updated);
@@ -56,7 +55,7 @@ const Project: NextPage<ProjectProps> = ({
 
             <p className="flex justify-between max-w-2xl mx-auto my-16 text-strong">
                 Last updated: {dateUpdated.toLocaleDateString()}
-                <Link href={editUrl} variant="highlight">
+                <Link href={edit_url} variant="highlight">
                     Edit on GitHub
                 </Link>
             </p>

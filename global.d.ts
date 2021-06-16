@@ -2,45 +2,37 @@
 interface MDXContent {
     compiledSource: string;
 }
-interface MDXProps {
+interface MDXData {
+    title: string;
+    description: string;
     slug: string;
+}
+type MDXProps = MDXData & {
     content: MDXContent;
     date_updated: string | null;
-    editUrl: string;
-}
-type FileData = PageData & {
-    [key: string]: any;
+    edit_url: string;
 };
 
 // General Page Types
-interface PageData {
-    title: string;
-    description: string;
-}
-type PageProps = PageData & MDXProps;
+type PageData = MDXData;
+type PageProps = MDXProps;
 
 // Project Types
-type ProjectRawData = PageData & {
-    period?: string;
-    featured?: boolean;
-    url?: string;
-    github?: string;
+type ProjectData = MDXData & {
+    period: string;
+    featured: boolean;
 };
-type ProjectData = ProjectRawData;
-type ProjectProps = ProjectData & MDXProps;
+type ProjectProps = MDXProps;
 
 // Article Types
-type ArticleRawData = PageData & {
-    date_published?: string;
-    featured?: boolean;
-    canonical_url?: string;
+type ArticleData = MDXData & {
+    date_published: string;
+    reading_time: number;
+    featured: boolean;
 };
-type ArticleData = ArticleRawData & { reading_time: number };
-type ArticleProps = ArticleData & MDXProps;
-
-// Card Types
-type CardProps<T> = T & {
-    slug: string;
+type ArticleProps = MDXProps & {
+    date_published: string;
+    canonical_url: string;
 };
 
 // Database Types

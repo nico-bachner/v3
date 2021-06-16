@@ -1,4 +1,5 @@
 import '../styles/global.css';
+import '../styles/code.css';
 
 import { Footer, Navigation, MobileNavigation } from '@components/layout';
 
