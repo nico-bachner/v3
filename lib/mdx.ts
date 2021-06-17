@@ -1,4 +1,5 @@
 import { serialize } from 'next-mdx-remote/serialize';
+import { promises as fs } from 'fs';
 
 import { getFileData, getFileContent } from './file';
 import { getUpdated, getEditUrl } from './github';
