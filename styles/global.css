@@ -27,7 +27,7 @@
 }
 
 ::selection {
-    @apply bg-cyan text-strongest;
+    @apply bg-cyan dark:bg-magenta text-strongest;
 }
 
 html {
