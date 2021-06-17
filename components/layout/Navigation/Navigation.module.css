@@ -1,6 +1,6 @@
 @supports (backdrop-filter: blur()) {
     .nav {
-        @apply backdrop-filter backdrop-blur-lg;
+        @apply backdrop-blur-lg;
     }
 }
 @supports not (backdrop-filter: blur()) {
