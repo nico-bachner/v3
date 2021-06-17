@@ -8,8 +8,8 @@ interface MDXData {
     slug: string;
 }
 type MDXProps = MDXData & {
-    content: MDXContent;
-    date_updated: string | null;
+    mdx_content: MDXContent;
+    updated: string | null;
     edit_url: string;
 };
 
@@ -18,8 +18,8 @@ type PageData = MDXData;
 type PageProps = MDXProps;
 
 // Project Types
-type ProjectData = MDXData & {
-    from: string | null;
+type ProjectData = ProjectBase & {
+    from: string;
     to: string | null;
     featured: boolean;
 };
@@ -27,12 +27,11 @@ type ProjectProps = MDXProps;
 
 // Article Types
 type ArticleData = MDXData & {
-    date_published: string;
-    reading_time: number;
     featured: boolean;
+    reading_time: number;
+    published: string;
 };
 type ArticleProps = MDXProps & {
-    date_published: string;
     canonical_url: string;
 };
 

@@ -1,37 +1,43 @@
-import matter from 'gray-matter';
-import readingTime from 'reading-time';
 import { serialize } from 'next-mdx-remote/serialize';
 import { promises as fs } from 'fs';
 
-export const getSlugs = async (directory: string) => {
-    const files = await fs.readdir(process.cwd() + '/' + directory);
+import { getFileData, getFileContent } from './file';
+import { getUpdated, getEditUrl } from './github';
 
-    return files.map((file) => file.replace(/\.mdx/, ''));
+export const getMDXData = async (file: string, slug: string) => {
+    const { title, description } = getFileData(file);
+
+    if (typeof title != 'string') {
+        throw new Error(`'title' should be a string (${slug})`);
+    }
+    if (typeof description != 'string') {
+        throw new Error(`'description' should be a string (${slug})`);
+    }
+
+    const data: MDXData = {
+        title,
+        description,
+        slug,
+    };
+
+    return data;
 };
 
-export const getFile = async (directory: string, slug: string) => {
-    const file = await fs.readFile(
-        process.cwd() + `/${directory}/${slug}.mdx`,
-        'utf8'
-    );
+export const getMDXProps = async (file: string, slug: string, path: string) => {
+    const mdx_data = await getMDXData(file, slug);
 
-    return file;
+    const data: MDXProps = {
+        ...mdx_data,
+        updated: (await getUpdated(path)) ?? null,
+        edit_url: getEditUrl(path),
+        mdx_content: await getMDXContent(file),
+    };
+
+    return data;
 };
 
-export const getFileData = (file: string) => matter(file).data;
-
-export const getFileContent = (file: string) => matter(file).content;
-
-export const getReadingTime = (file: string) => {
-    const content = getFileContent(file);
-    const { minutes } = readingTime(content);
-    const time = Math.round(minutes);
-
-    return time;
-};
-
-export const getContent = async (file: string) => {
-    const content = await serialize(getFileContent(file), {
+export const getMDXContent = async (file: string) =>
+    await serialize(getFileContent(file), {
         mdxOptions: {
             remarkPlugins: [require('remark-code-titles')],
             rehypePlugins: [
@@ -41,6 +47,3 @@ export const getContent = async (file: string) => {
             ],
         },
     });
-
-    return content;
-};

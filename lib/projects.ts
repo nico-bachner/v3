@@ -1,59 +1,60 @@
-import { getFile, getFileData, getContent, getSlugs } from './mdx';
-import { getUpdated } from './github';
+import { getFile, getSlugs } from './fs';
+import { getFileData } from './file';
+import { getMDXData, getMDXProps } from './mdx';
+
+const getPath = (slug: string) => `content/projects/${slug}.mdx`;
 
 const getProjectData = async (slug: string) => {
-    const file = await getFile('content/projects/', slug);
-    const { title, description, featured, from, to } = getFileData(file);
+    const path = getPath(slug);
+    const file = await getFile(path);
+    const mdx_data = await getMDXData(file, slug);
+
+    const { featured, from, to } = getFileData(file);
+
+    if (typeof featured != 'boolean' && typeof featured != 'undefined') {
+        throw new Error(`'featured', if used, should be a boolean (${path})`);
+    }
+    if (!(from instanceof Date)) {
+        throw new Error(`'from' should be a Date (${path})`);
+    }
+    if (!(to instanceof Date) && typeof to != 'undefined') {
+        throw new Error(`'to', if used, should be a Date (${path})`);
+    }
 
     const data: ProjectData = {
-        title: title as string,
-        description: description as string,
-        slug,
-        featured: (featured as boolean | undefined) ?? false,
-        from: (from as Date | undefined) ? from.toDateString() : null,
-        to: (to as Date | undefined) ? to.toDateString() : null,
+        ...mdx_data,
+        featured: featured ?? false,
+        from: from.toDateString(),
+        to: to ? to.toDateString() : null,
     };
 
     return data;
 };
 
-export const getProjectProps = async (slug: string) => {
-    const file = await getFile('content/projects/', slug);
-    const { title, description } = await getProjectData(slug);
-
-    const props: ProjectProps = {
-        title: title as string,
-        description: description as string,
-        slug,
-        content: await getContent(file),
-        date_updated: await getUpdated('content/projects/', slug),
-        edit_url: `https://github.com/nico-bachner/v3/edit/main/content/projects/${slug}.mdx`,
-    };
-
-    return props;
-};
-
-const getProjectsData = async () => {
-    const slugs = await getSlugs('content/projects/');
+export const getProjectsData = async () => {
+    const slugs = await getSlugs('content/projects/', 'mdx');
 
     const projects = await Promise.all(
-        slugs.map(async (slug) => getProjectData(slug))
+        slugs.map(async (slug) => await getProjectData(slug))
     );
-
-    return projects;
-};
-
-export const getOrderedProjectsData = async () => {
-    const projects = await getProjectsData();
 
     return projects.sort((a, b) => {
         if (a.to && b.to) {
             return new Date(b.to).getTime() - new Date(a.to).getTime();
         }
-        if (a.from && b.from) {
-            return new Date(b.from).getTime() - new Date(a.from).getTime();
-        }
 
-        return 0;
+        return new Date(b.from).getTime() - new Date(a.from).getTime();
     });
+};
+
+export const getProjectProps = async (slug: string) => {
+    const path = getPath(slug);
+    const file = await getFile(path);
+    const mdx_props = await getMDXProps(file, slug, path);
+
+    const props: ProjectProps = {
+        ...mdx_props,
+    };
+
+    return props;
 };

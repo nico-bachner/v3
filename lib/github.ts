@@ -1,5 +1,8 @@
-export const getUpdated = async (directory: string, slug: string) => {
-    const urlPath = encodeURIComponent(`${directory}/${slug}.mdx`);
+export const getEditUrl = (path: string) =>
+    `https://github.com/nico-bachner/v3/edit/main/${path}`;
+
+export const getUpdated = async (path: string) => {
+    const urlPath = encodeURIComponent(path);
 
     const res = await fetch(
         `https://api.github.com/repos/nico-bachner/v3/commits?path=${urlPath}`
@@ -9,8 +12,6 @@ export const getUpdated = async (directory: string, slug: string) => {
     if (history && history.length > 0) {
         return (history[0] as GitHubHistory).commit.author.date;
     }
-
-    return null;
 };
 
 export const getRepos = async () => {

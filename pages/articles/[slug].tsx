@@ -1,4 +1,4 @@
-import { getSlugs } from '@lib/mdx';
+import { getSlugs } from '@lib/fs';
 import { getArticleProps } from '@lib/articles';
 
 import Head from '@components/Head';
@@ -8,7 +8,7 @@ import MDX from '@components/MDX';
 import type { NextPage, GetStaticPaths, GetStaticProps } from 'next';
 
 export const getStaticPaths: GetStaticPaths = async () => {
-    const slugs = await getSlugs('content/articles/');
+    const slugs = await getSlugs('content/articles/', 'mdx');
 
     return {
         paths: slugs.map((slug) => {
@@ -23,45 +23,47 @@ export const getStaticPaths: GetStaticPaths = async () => {
 };
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-    if (typeof params?.slug == 'string') {
-        return { props: await getArticleProps(params.slug) };
+    if (params && typeof params.slug == 'string') {
+        const props = await getArticleProps(params.slug);
+
+        return { props };
     }
+
     return {
         notFound: true,
     };
 };
 
 const Article: NextPage<ArticleProps> = ({
-    content,
-    canonical_url,
-    date_published,
-    date_updated,
+    title,
+    description,
+    slug,
+    mdx_content,
+    updated,
     edit_url,
-    ...head
-}) => {
-    const dateUpdated = date_updated
-        ? new Date(date_updated)
-        : date_published
-        ? new Date(date_published)
-        : new Date();
+    canonical_url,
+}) => (
+    <main>
+        <Head
+            title={title}
+            description={description}
+            slug={slug}
+            type="article"
+        >
+            <link rel="canonical" href={canonical_url} />
+            <meta property="og:url" content={canonical_url} />
+        </Head>
 
-    return (
-        <main>
-            <Head {...head} type="article">
-                <link rel="canonical" href={canonical_url} />
-                <meta property="og:url" content={canonical_url} />
-            </Head>
+        <MDX content={mdx_content} />
 
-            <MDX content={content} />
-
-            <p className="flex justify-between max-w-2xl mx-auto my-16 text-strong">
-                Last updated: {dateUpdated.toLocaleDateString()}
-                <Link href={edit_url} variant="highlight">
-                    Edit on GitHub
-                </Link>
-            </p>
-        </main>
-    );
-};
+        <p className="flex justify-between max-w-2xl mx-auto my-16 text-strong">
+            Last updated:{' '}
+            {updated ? new Date(updated).toLocaleDateString() : 'Never'}
+            <Link href={edit_url} variant="highlight">
+                Edit on GitHub
+            </Link>
+        </p>
+    </main>
+);
 
 export default Article;

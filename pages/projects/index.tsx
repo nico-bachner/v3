@@ -1,4 +1,4 @@
-import { getOrderedProjectsData } from '@lib/projects';
+import { getProjectsData } from '@lib/projects';
 import { useI18n } from '@hooks/i18n';
 
 import Head from '@components/Head';
@@ -13,7 +13,7 @@ interface ProjectsProps {
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-    const projects = await getOrderedProjectsData();
+    const projects = await getProjectsData();
 
     const props: ProjectsProps = {
         projects,
@@ -35,8 +35,8 @@ const Projects: NextPage<ProjectsProps> = ({ projects }) => {
             <h1>{i18n.projects.title}</h1>
             <p>{i18n.projects.content}</p>
             <div>
-                {projects.map((project, index) => (
-                    <ProjectCard key={index} {...project} />
+                {projects.map((project) => (
+                    <ProjectCard key={project.slug} {...project} />
                 ))}
             </div>
         </main>

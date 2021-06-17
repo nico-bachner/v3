@@ -1,63 +1,63 @@
-import {
-    getFile,
-    getFileData,
-    getContent,
-    getReadingTime,
-    getSlugs,
-} from './mdx';
-import { getUpdated } from './github';
+import { getFile, getSlugs } from './fs';
+import { getFileData } from './file';
+import { getMDXData, getMDXProps } from './mdx';
+import { getReadingTime } from './reading-time';
+
+const getPath = (slug: string) => `content/articles/${slug}.mdx`;
 
 const getArticleData = async (slug: string) => {
-    const file = await getFile('content/articles/', slug);
-    const { title, description, date_published, featured } = getFileData(file);
+    const path = getPath(slug);
+    const file = await getFile(path);
+    const mdx_data = await getMDXData(file, slug);
+
+    const { published, featured } = getFileData(file);
+
+    if (!(published instanceof Date)) {
+        throw new Error(`'published' should be a Date (${slug})`);
+    }
+    if (typeof featured != 'boolean' && typeof featured != 'undefined') {
+        throw new Error(`'featured', if used, should be a boolean (${slug})`);
+    }
 
     const data: ArticleData = {
-        title: title as string,
-        description: description as string,
-        slug,
-        date_published: (date_published as Date).toDateString(),
-        featured: (featured as boolean | undefined) ?? false,
+        ...mdx_data,
+        featured: featured ?? false,
+        published: published.toDateString(),
         reading_time: getReadingTime(file),
     };
 
     return data;
 };
 
-export const getArticleProps = async (slug: string) => {
-    const file = await getFile('content/articles/', slug);
-    const { title, description, date_published, canonical_url } =
-        getFileData(file);
-
-    const props: ArticleProps = {
-        title: title as string,
-        description: description as string,
-        slug,
-        date_published: (date_published as Date).toDateString(),
-        canonical_url: canonical_url as string,
-        content: await getContent(file),
-        date_updated: await getUpdated('content/articles/', slug),
-        edit_url: `https://github.com/nico-bachner/v3/edit/main/content/articles/${slug}.mdx`,
-    };
-
-    return props;
-};
-
-const getArticlesData = async () => {
-    const slugs = await getSlugs('content/articles/');
+export const getArticlesData = async () => {
+    const slugs = await getSlugs('content/articles/', 'mdx');
 
     const articles = await Promise.all(
-        slugs.map(async (slug) => getArticleData(slug))
+        slugs.map(async (slug) => await getArticleData(slug))
     );
-
-    return articles;
-};
-
-export const getOrderedArticlesData = async () => {
-    const articles = await getArticlesData();
 
     return articles.sort(
         (a, b) =>
-            new Date(b.date_published ?? 0).getTime() -
-            new Date(a.date_published ?? 0).getTime()
+            new Date(b.published ?? 0).getTime() -
+            new Date(a.published ?? 0).getTime()
     );
+};
+
+export const getArticleProps = async (slug: string) => {
+    const path = getPath(slug);
+    const file = await getFile(path);
+    const mdx_props = await getMDXProps(file, slug, path);
+
+    const { canonical_url } = getFileData(file);
+
+    if (typeof canonical_url != 'string') {
+        throw new Error(`'canonical_url' should be a string (${path})`);
+    }
+
+    const props: ArticleProps = {
+        ...mdx_props,
+        canonical_url,
+    };
+
+    return props;
 };
