@@ -1,4 +1,4 @@
-import { getSlugs } from '@lib/mdx';
+import { getSlugs } from '@lib/fs';
 import { getPageProps } from '@lib/pages';
 
 import Head from '@components/Head';
@@ -8,7 +8,7 @@ import Link from '@components/Link';
 import type { NextPage, GetStaticPaths, GetStaticProps } from 'next';
 
 export const getStaticPaths: GetStaticPaths = async () => {
-    const slugs = await getSlugs('content/pages/');
+    const slugs = await getSlugs('content/pages/', 'mdx');
 
     return {
         paths: slugs.map((slug) => {
@@ -23,9 +23,11 @@ export const getStaticPaths: GetStaticPaths = async () => {
 };
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-    if (typeof params?.slug == 'string') {
-        return { props: await getPageProps(params.slug) };
+    if (params && typeof params.slug == 'string') {
+        const props = await getPageProps(params.slug);
+        return { props };
     }
+
     return {
         notFound: true,
     };
@@ -35,27 +37,23 @@ const Project: NextPage<PageProps> = ({
     title,
     description,
     slug,
-    content,
-    date_updated,
+    mdx_content,
+    updated,
     edit_url,
-}) => {
-    const dateUpdated =
-        date_updated == null ? new Date() : new Date(date_updated);
+}) => (
+    <main>
+        <Head title={title} description={description} slug={slug} />
 
-    return (
-        <main>
-            <Head title={title} description={description} slug={slug} />
+        <MDX content={mdx_content} />
 
-            <MDX content={content} />
-
-            <p className="flex justify-between max-w-2xl mx-auto my-16 text-strong">
-                Last updated: {dateUpdated.toLocaleDateString()}
-                <Link href={edit_url} variant="highlight">
-                    Edit on GitHub
-                </Link>
-            </p>
-        </main>
-    );
-};
+        <p className="flex justify-between max-w-2xl mx-auto my-16 text-strong">
+            Last updated:{' '}
+            {updated ? new Date(updated).toLocaleDateString() : 'Never'}
+            <Link href={edit_url} variant="highlight">
+                Edit on GitHub
+            </Link>
+        </p>
+    </main>
+);
 
 export default Project;

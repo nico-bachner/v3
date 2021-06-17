@@ -1,4 +1,4 @@
-import { getOrderedArticlesData } from '@lib/articles';
+import { getArticlesData } from '@lib/articles';
 import { useI18n } from '@hooks/i18n';
 
 import Head from '@components/Head';
@@ -13,7 +13,7 @@ interface ArticlesPageProps {
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-    const articles = await getOrderedArticlesData();
+    const articles = await getArticlesData();
 
     const props: ArticlesPageProps = {
         articles,
@@ -37,8 +37,8 @@ const Articles: NextPage<ArticlesPageProps> = ({ articles }) => {
             <h1>{i18n.articles.title}</h1>
             <p>{i18n.articles.content}</p>
             <div>
-                {articles.map((article, index) => (
-                    <ArticleCard key={index} {...article} />
+                {articles.map((article) => (
+                    <ArticleCard key={article.slug} {...article} />
                 ))}
             </div>
         </main>

@@ -1,14 +1,14 @@
-import { getSlugs } from '@lib/mdx';
+import { getSlugs } from '@lib/fs';
 import { getProjectProps } from '@lib/projects';
 
 import Head from '@components/Head';
-import MDX from '@components/MDX';
 import Link from '@components/Link';
+import MDX from '@components/MDX';
 
 import type { NextPage, GetStaticPaths, GetStaticProps } from 'next';
 
 export const getStaticPaths: GetStaticPaths = async () => {
-    const slugs = await getSlugs('content/projects/');
+    const slugs = await getSlugs('content/projects/', 'mdx');
 
     return {
         paths: slugs.map((slug) => {
@@ -23,9 +23,12 @@ export const getStaticPaths: GetStaticPaths = async () => {
 };
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-    if (typeof params?.slug == 'string') {
-        return { props: await getProjectProps(params.slug) };
+    if (params && typeof params.slug == 'string') {
+        const props = await getProjectProps(params.slug);
+
+        return { props };
     }
+
     return {
         notFound: true,
     };
@@ -35,32 +38,28 @@ const Project: NextPage<ProjectProps> = ({
     title,
     description,
     slug,
-    content,
-    date_updated,
+    mdx_content,
+    updated,
     edit_url,
-}) => {
-    const dateUpdated =
-        date_updated == null ? new Date() : new Date(date_updated);
+}) => (
+    <main>
+        <Head
+            title={title}
+            description={description}
+            slug={slug}
+            type="project"
+        />
 
-    return (
-        <main>
-            <Head
-                title={title}
-                description={description}
-                slug={slug}
-                type="project"
-            />
+        <MDX content={mdx_content} />
 
-            <MDX content={content} />
-
-            <p className="flex justify-between max-w-2xl mx-auto my-16 text-strong">
-                Last updated: {dateUpdated.toLocaleDateString()}
-                <Link href={edit_url} variant="highlight">
-                    Edit on GitHub
-                </Link>
-            </p>
-        </main>
-    );
-};
+        <p className="flex justify-between max-w-2xl mx-auto my-16 text-strong">
+            Last updated:{' '}
+            {updated ? new Date(updated).toLocaleDateString() : 'Never'}
+            <Link href={edit_url} variant="highlight">
+                Edit on GitHub
+            </Link>
+        </p>
+    </main>
+);
 
 export default Project;
