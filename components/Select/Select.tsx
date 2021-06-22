@@ -1,8 +1,8 @@
 import styles from './Select.module.css';
 
 interface SelectProps {
-    id?: string;
     value?: string;
+    // eslint-disable-next-line no-unused-vars
     onChange?: (event: React.ChangeEvent<SelectProps>) => void;
 }
 

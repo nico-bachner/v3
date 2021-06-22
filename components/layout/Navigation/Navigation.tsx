@@ -10,6 +10,7 @@ import styles from './Navigation.module.css';
 const Navigation: React.VFC = () => {
     const i18n = useI18n();
     const router = useRouter();
+    const { pathname, query, locale, locales } = router;
 
     return (
         <nav className={styles.nav}>
@@ -21,33 +22,30 @@ const Navigation: React.VFC = () => {
                     <p key={href}>
                         <Link
                             href={href}
-                            variant={
-                                router.pathname != href ? 'primary' : 'disabled'
-                            }
+                            variant={pathname != href ? 'primary' : 'disabled'}
                         >
                             {title}
                         </Link>
                     </p>
                 ))}
             </div>
-            <label htmlFor="#language-select" className="sr-only">
-                {i18n.actions.changeLanguage}
+            <label>
+                <div className="sr-only">{i18n.actions.changeLanguage}</div>
+                <Select
+                    value={locale}
+                    onChange={({ target }) => {
+                        router.push({ pathname, query }, pathname, {
+                            locale: target.value,
+                        });
+                    }}
+                >
+                    {(locales as Locale[]).map((locale) => (
+                        <option key={locale} value={locale}>
+                            {locale.toUpperCase()}
+                        </option>
+                    ))}
+                </Select>
             </label>
-            <Select
-                id="language-select"
-                onChange={(item) => {
-                    router.push(router.pathname, router.pathname, {
-                        locale: item.target.value,
-                    });
-                }}
-                value={router.locale}
-            >
-                {(router.locales as Locale[]).map((language, index) => (
-                    <option key={index} value={language}>
-                        {language.toUpperCase()}
-                    </option>
-                ))}
-            </Select>
         </nav>
     );
 };

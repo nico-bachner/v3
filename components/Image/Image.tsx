@@ -7,11 +7,10 @@ interface ImageProps {
     alt: string;
     width: number;
     height: number;
-    className?: string;
 }
 
-const Image: React.VFC<ImageProps> = ({ className, ...image }) => (
-    <div className={[styles.image, className].join(' ')}>
+const Image: React.VFC<ImageProps> = (image) => (
+    <div className={styles.image}>
         <NextImage {...image} />
     </div>
 );

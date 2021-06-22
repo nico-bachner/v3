@@ -10,7 +10,7 @@ export const getUpdated = async (path: string) => {
     const history: GitHubHistory[] = await res.json();
 
     if (history && history.length > 0) {
-        return (history[0] as GitHubHistory).commit.author.date;
+        return new Date((history[0] as GitHubHistory).commit.author.date);
     }
 };
 

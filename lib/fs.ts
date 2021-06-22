@@ -9,14 +9,14 @@ export const getSlugs = async (path: string, extension?: string) => {
         return files
             .filter((file) => file.includes(extension))
             .map((file) => {
-                const [slug, extension] = file.split('.');
+                const [slug] = file.split('.');
 
                 return slug as string;
             });
     }
 
     return files.map((file) => {
-        const [slug, extension] = file.split('.');
+        const [slug] = file.split('.');
 
         return slug as string;
     });

@@ -1,5 +1,4 @@
-import { getSlugs } from '@lib/fs';
-import { getPageProps } from '@lib/pages';
+import { getPageSlugs, getPageProps } from '@lib/pages';
 
 import Head from '@components/Head';
 import MDX from '@components/MDX';
@@ -7,25 +6,16 @@ import Link from '@components/Link';
 
 import type { NextPage, GetStaticPaths, GetStaticProps } from 'next';
 
-export const getStaticPaths: GetStaticPaths = async () => {
-    const slugs = await getSlugs('content/pages/', 'mdx');
-
+export const getStaticPaths: GetStaticPaths = async ({ locales }) => {
     return {
-        paths: slugs.map((slug) => {
-            return {
-                params: {
-                    slug,
-                },
-            };
-        }),
+        paths: await getPageSlugs(locales as Locale[]),
         fallback: false,
     };
 };
 
-export const getStaticProps: GetStaticProps = async ({ params }) => {
-    if (params && typeof params.slug == 'string') {
-        const props = await getPageProps(params.slug);
-        return { props };
+export const getStaticProps: GetStaticProps = async ({ params, locale }) => {
+    if (params && locale && typeof params.slug == 'string') {
+        return { props: await getPageProps(params.slug, locale as Locale) };
     }
 
     return {
@@ -38,7 +28,7 @@ const Project: NextPage<PageProps> = ({
     description,
     slug,
     mdx_content,
-    updated,
+    last_updated,
     edit_url,
 }) => (
     <main>
@@ -47,8 +37,7 @@ const Project: NextPage<PageProps> = ({
         <MDX content={mdx_content} />
 
         <p className="flex justify-between max-w-2xl mx-auto my-16 text-strong">
-            Last updated:{' '}
-            {updated ? new Date(updated).toLocaleDateString() : 'Never'}
+            Last updated: {last_updated}
             <Link href={edit_url} variant="highlight">
                 Edit on GitHub
             </Link>

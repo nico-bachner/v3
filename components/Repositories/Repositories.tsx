@@ -43,7 +43,7 @@ const Repositories: React.VFC = () => {
             </div>
             <ShowMore
                 expanded={showAll}
-                onClick={() => {
+                onToggle={() => {
                     setShowAll(!showAll);
                 }}
             >
