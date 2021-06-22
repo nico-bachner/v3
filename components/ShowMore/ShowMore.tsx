@@ -1,14 +1,18 @@
 import styles from './ShowMore.module.css';
 
-interface SelectProps {
+interface ShowMoreProps {
     expanded: boolean;
-    onClick(): void;
+    onToggle?: () => void;
 }
 
-const ShowMore: React.FC<SelectProps> = ({ onClick, expanded, children }) => (
+const ShowMore: React.FC<ShowMoreProps> = ({
+    children,
+    expanded,
+    onToggle,
+}) => (
     <div className={expanded ? styles.expanded : styles.default}>
         <hr />
-        <button onClick={onClick}>{children}</button>
+        <button onClick={onToggle}>{children}</button>
         <hr />
     </div>
 );

@@ -8,7 +8,7 @@ const getPath = (slug: string) => `content/articles/${slug}.mdx`;
 const getArticleData = async (slug: string) => {
     const path = getPath(slug);
     const file = await getFile(path);
-    const mdx_data = await getMDXData(file, slug);
+    const mdx_data = await getMDXData(file, slug, path);
 
     const { published, featured } = getFileData(file);
 
@@ -22,7 +22,7 @@ const getArticleData = async (slug: string) => {
     const data: ArticleData = {
         ...mdx_data,
         featured: featured ?? false,
-        published: published.toDateString(),
+        published: published.getTime(),
         reading_time: getReadingTime(file),
     };
 
@@ -36,17 +36,27 @@ export const getArticlesData = async () => {
         slugs.map(async (slug) => await getArticleData(slug))
     );
 
-    return articles.sort(
-        (a, b) =>
-            new Date(b.published ?? 0).getTime() -
-            new Date(a.published ?? 0).getTime()
-    );
+    return articles.sort((a, b) => b.published - a.published);
 };
 
-export const getArticleProps = async (slug: string) => {
+export const getArticleSlugs = async (locales: Locale[]) =>
+    (await getSlugs('content/articles/', 'mdx'))
+        .map((slug) =>
+            locales.map((locale) => {
+                return {
+                    params: {
+                        slug,
+                    },
+                    locale,
+                };
+            })
+        )
+        .flat();
+
+export const getArticleProps = async (slug: string, locale: Locale) => {
     const path = getPath(slug);
     const file = await getFile(path);
-    const mdx_props = await getMDXProps(file, slug, path);
+    const mdx_props = await getMDXProps(file, slug, path, locale);
 
     const { canonical_url } = getFileData(file);
 

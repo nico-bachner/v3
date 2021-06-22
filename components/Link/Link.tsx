@@ -8,23 +8,22 @@ interface LinkProps {
 }
 
 const Link: React.FC<LinkProps & NextLinkProps> = ({
+    children,
     variant,
     external,
-    children,
     ...link
-}) => {
-    const externalProps = external && {
-        target: '_blank',
-        rel: 'noopener noreferrer',
-    };
-
-    return (
-        <NextLink {...link}>
-            <a className={styles[variant ?? 'default']} {...externalProps}>
-                {children}
-            </a>
-        </NextLink>
-    );
-};
+}) => (
+    <NextLink {...link}>
+        <a
+            className={styles[variant ?? 'default']}
+            {...(external && {
+                target: '_blank',
+                rel: 'noopener noreferrer',
+            })}
+        >
+            {children}
+        </a>
+    </NextLink>
+);
 
 export default Link;

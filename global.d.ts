@@ -9,7 +9,7 @@ interface MDXData {
 }
 type MDXProps = MDXData & {
     mdx_content: MDXContent;
-    updated: string | null;
+    last_updated: string;
     edit_url: string;
 };
 
@@ -18,9 +18,9 @@ type PageData = MDXData;
 type PageProps = MDXProps;
 
 // Project Types
-type ProjectData = ProjectBase & {
-    from: string;
-    to: string | null;
+type ProjectData = MDXData & {
+    from: number;
+    to: number | null;
     featured: boolean;
 };
 type ProjectProps = MDXProps;
@@ -29,7 +29,7 @@ type ProjectProps = MDXProps;
 type ArticleData = MDXData & {
     featured: boolean;
     reading_time: number;
-    published: string;
+    published: number;
 };
 type ArticleProps = MDXProps & {
     canonical_url: string;

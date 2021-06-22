@@ -28,6 +28,7 @@
         "rehype-katex": "5",
         "rehype-slug": "4",
         "remark-code-titles": "0.1",
+        "remark-footnotes": "2",
         "tailwind-preset": "1.2",
         "tailwindcss": "2.2",
         "typescript": "4.3"
