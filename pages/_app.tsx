@@ -1,5 +1,6 @@
 import '../styles/global.css';
-import '../styles/code.css';
+import '../styles/remark.css';
+import '../styles/rehype.css';
 
 import { Footer, Navigation, MobileNavigation } from '@components/layout';
 

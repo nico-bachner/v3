@@ -13,10 +13,10 @@ const getArticleData = async (slug: string) => {
     const { published, featured } = getFileData(file);
 
     if (!(published instanceof Date)) {
-        throw new Error(`'published' should be a Date (${slug})`);
+        throw new Error(`'published' should be a Date (${path})`);
     }
     if (typeof featured != 'boolean' && typeof featured != 'undefined') {
-        throw new Error(`'featured', if used, should be a boolean (${slug})`);
+        throw new Error(`'featured', if used, should be a boolean (${path})`);
     }
 
     const data: ArticleData = {

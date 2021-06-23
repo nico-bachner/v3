@@ -1,9 +1,4 @@
-/* ---- remark ---- */
-.remark-code-title {
-    @apply mx-4 my-2 text-right text-strong;
-}
-
-/* ---- prism ---- */
+/* ---- mdx-prism ---- */
 .token.comment {
     @apply text-light;
 }
@@ -35,7 +30,7 @@
     @apply text-crimson;
 }
 
-/* YAML */
+/* yaml */
 .language-yml {
     color: hsl(170, 100%, 35%);
 }
@@ -45,3 +40,6 @@
 .language-yml .token.punctuation {
     @apply text-stronger;
 }
+
+/* ---- rehype-katex ---- */
+@import url(https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css);

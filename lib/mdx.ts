@@ -26,6 +26,7 @@ export const getMDXContent = async (file: string) =>
     await serialize(getFileContent(file), {
         mdxOptions: {
             remarkPlugins: [
+                require('remark-math'),
                 require('remark-footnotes'),
                 require('remark-code-titles'),
             ],

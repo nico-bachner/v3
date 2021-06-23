@@ -16,7 +16,7 @@
 
 .nav > :first-child {
     width: 3.4rem;
-    @apply mr-4;
+    @apply mr-4 transition duration-300 hover:scale-105;
 }
 
 .nav > div {

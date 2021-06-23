@@ -8,9 +8,10 @@ export const getUpdated = async (path: string) => {
         `https://api.github.com/repos/nico-bachner/v3/commits?path=${urlPath}`
     );
     const history: GitHubHistory[] = await res.json();
+    const latest: GitHubHistory | undefined = history[0];
 
-    if (history && history.length > 0) {
-        return new Date((history[0] as GitHubHistory).commit.author.date);
+    if (latest) {
+        return new Date(latest.commit.author.date);
     }
 };
 
@@ -18,7 +19,7 @@ export const getRepos = async () => {
     const res = await fetch('https://api.github.com/users/nico-bachner/repos');
     const repos: GitHubRepo[] = await res.json();
 
-    const repositories = repos
+    const repositories: Repository[] = repos
         .filter((x: GitHubRepo) => !x.fork)
         .map((repo) => {
             const repository: Repository = {
@@ -31,13 +32,9 @@ export const getRepos = async () => {
             };
 
             return repository;
-        }) as Repository[];
+        });
 
-    const sortedRepositories = repositories.sort(
-        (a: Repository, b: Repository) => {
-            return b.stars - a.stars;
-        }
-    );
-
-    return sortedRepositories;
+    return repositories.sort((a: Repository, b: Repository) => {
+        return b.stars - a.stars;
+    });
 };

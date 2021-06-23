@@ -1,17 +1,15 @@
 // MDX Stuff
-interface MDXContent {
-    compiledSource: string;
-}
 interface MDXData {
     title: string;
     description: string;
     slug: string;
 }
-type MDXProps = MDXData & {
-    mdx_content: MDXContent;
+interface MDXContent {
+    mdx_content: { compiledSource: string };
     last_updated: string;
     edit_url: string;
-};
+}
+type MDXProps = MDXData & MDXContent;
 
 // General Page Types
 type PageData = MDXData;
@@ -21,6 +19,7 @@ type PageProps = MDXProps;
 type ProjectData = MDXData & {
     from: number;
     to: number | null;
+    period: string;
     featured: boolean;
 };
 type ProjectProps = MDXProps;
