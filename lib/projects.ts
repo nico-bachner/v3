@@ -1,6 +1,7 @@
 import { getFile, getSlugs } from './fs';
 import { getFileData } from './file';
 import { getMDXData, getMDXProps } from './mdx';
+import { getPeriod } from './period';
 
 const getPath = (slug: string) => `content/projects/${slug}.mdx`;
 
@@ -26,6 +27,7 @@ const getProjectData = async (slug: string) => {
         featured: featured ?? false,
         from: from.getTime(),
         to: to ? to.getTime() : null,
+        period: getPeriod(from, to),
     };
 
     return data;

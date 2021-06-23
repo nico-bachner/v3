@@ -2,7 +2,6 @@ import { getPageSlugs, getPageProps } from '@lib/pages';
 
 import Head from '@components/Head';
 import MDX from '@components/MDX';
-import Link from '@components/Link';
 
 import type { NextPage, GetStaticPaths, GetStaticProps } from 'next';
 
@@ -13,7 +12,10 @@ export const getStaticPaths: GetStaticPaths = async ({ locales }) => {
     };
 };
 
-export const getStaticProps: GetStaticProps = async ({ params, locale }) => {
+export const getStaticProps: GetStaticProps<PageProps> = async ({
+    params,
+    locale,
+}) => {
     if (params && locale && typeof params.slug == 'string') {
         return { props: await getPageProps(params.slug, locale as Locale) };
     }
@@ -34,14 +36,11 @@ const Project: NextPage<PageProps> = ({
     <main>
         <Head title={title} description={description} slug={slug} />
 
-        <MDX content={mdx_content} />
-
-        <p className="flex justify-between max-w-2xl mx-auto my-16 text-strong">
-            Last updated: {last_updated}
-            <Link href={edit_url} variant="highlight">
-                Edit on GitHub
-            </Link>
-        </p>
+        <MDX
+            mdx_content={mdx_content}
+            last_updated={last_updated}
+            edit_url={edit_url}
+        />
     </main>
 );
 

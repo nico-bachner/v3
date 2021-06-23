@@ -7,7 +7,7 @@ const ArticleCard: React.VFC<ArticleData> = ({
     slug,
     reading_time,
 }) => (
-    <Link href={'/articles/' + slug}>
+    <Link href={`/articles/${slug}`}>
         <Card variant="interactive">
             <h3>{title}</h3>
             <p className="my-2 line-clamp-3">{description}</p>
