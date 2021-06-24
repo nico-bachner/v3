@@ -10,7 +10,7 @@ const getProjectData = async (slug: string) => {
     const file = await getFile(path);
     const mdx_data = await getMDXData(file, slug, path);
 
-    const { featured = false, from, to = null } = getFileData(file);
+    const { featured = false, from, to } = getFileData(file);
 
     if (typeof featured != 'boolean') {
         throw new Error(`'featured', if used, should be a boolean (${path})`);
@@ -18,7 +18,7 @@ const getProjectData = async (slug: string) => {
     if (!(from instanceof Date)) {
         throw new Error(`'from' should be a Date (${path})`);
     }
-    if (!(to instanceof Date)) {
+    if (!(to instanceof Date) && typeof to != 'undefined') {
         throw new Error(`'to', if used, should be a Date (${path})`);
     }
 
@@ -26,7 +26,7 @@ const getProjectData = async (slug: string) => {
         ...mdx_data,
         featured,
         from: from.getTime(),
-        to: to.getTime(),
+        to: to ? to.getTime() : null,
         period: getPeriod(from, to),
     };
 
