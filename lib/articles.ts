@@ -10,18 +10,18 @@ const getArticleData = async (slug: string) => {
     const file = await getFile(path);
     const mdx_data = await getMDXData(file, slug, path);
 
-    const { published, featured } = getFileData(file);
+    const { published, featured = false } = getFileData(file);
 
     if (!(published instanceof Date)) {
         throw new Error(`'published' should be a Date (${path})`);
     }
-    if (typeof featured != 'boolean' && typeof featured != 'undefined') {
+    if (typeof featured != 'boolean') {
         throw new Error(`'featured', if used, should be a boolean (${path})`);
     }
 
     const data: ArticleData = {
         ...mdx_data,
-        featured: featured ?? false,
+        featured,
         published: published.getTime(),
         reading_time: getReadingTime(file),
     };
