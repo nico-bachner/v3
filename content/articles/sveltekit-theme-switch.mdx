@@ -113,17 +113,19 @@ What we're doing here loading a CSS stylesheet dynamically based on the current 
 
 ## Theme Styles
 
-The only thing that remains now is to define the styles of our project. We can do this anywhere in the `static/` directory, as long as we remember to adjust the path in `<link rel="stylesheet" href={'/theme/${$theme}.css'} />` accordingly.
+The only thing that remains now is to define the styles of our project. We can do this anywhere in the `static/` directory, as long as we remember to adjust the path in the stylesheet link accordingly.
 
 If we follow the path convention I set up, we get the following structure:
 
-```
-static
-└── theme
-    ├── system.css
-    ├── light.css
-    └── dark.css
-```
+<Tree>
+    <Folder name="static" open>
+        <Folder name="theme" open>
+            <File name="system.css" />
+            <File name="light.css" />
+            <File name="dark.css" />
+        </Folder>
+    </Folder>
+</Tree>
 
 In `light.css` and `dark.css` (or whatever you choose to call you themes), we style our project accordingly. An example:
 

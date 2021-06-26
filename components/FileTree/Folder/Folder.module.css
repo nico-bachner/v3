@@ -1,11 +1,17 @@
-.folder > button {
-    @apply flex my-2 cursor-pointer hover:text-strong;
+.folder {
+    @apply my-2;
 }
 
-.folder > button > span:first-child {
-    @apply inline-block w-6 h-6 mr-2 leading-6;
+.folder > button {
+    @apply z-10 flex items-center space-x-4;
+}
+
+.folder > hr {
+    @apply z-0 w-16 origin-left;
+    transform: translateX(3.25rem) rotate(90deg);
 }
 
 .folder > ul {
-    @apply ml-8;
+    margin-left: 2.5rem;
+    @apply z-20;
 }

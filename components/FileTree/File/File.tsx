@@ -1,4 +1,4 @@
-import { FileIcon } from '@components/icons';
+import { File as FileIcon } from '@components/icons';
 
 import styles from './File.module.css';
 

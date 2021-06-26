@@ -4,13 +4,13 @@ import dynamic from 'next/dynamic';
 import Link from '@components/Link';
 import Code from '@components/Code';
 import Image from '@components/Image';
-import FileTree, { Folder, File } from '@components/FileTree';
+import * as FileTree from '@components/FileTree';
 
 import styles from './MDX.module.css';
 
-interface MDXLinkProps {
+type MDXLinkProps = {
     href: string;
-}
+};
 
 const MDXLink: React.FC<MDXLinkProps> = ({ href, children }) => {
     if (href.startsWith('/') || href.startsWith('#')) {
@@ -20,6 +20,7 @@ const MDXLink: React.FC<MDXLinkProps> = ({ href, children }) => {
             </Link>
         );
     }
+
     return (
         <Link href={href} variant="highlight" external>
             {children}
@@ -34,9 +35,7 @@ const MDXComponents = {
 
     // add custom components
     Image,
-    FileTree,
-    Folder,
-    File,
+    ...FileTree,
     Repositories: dynamic(() => import('@components/Repositories')),
 };
 

@@ -1,8 +1,16 @@
 import SVG, { Path } from '@components/SVG';
 
-interface ArrowProps {
+type Coordinate = {
+    x: number;
+    y: number;
+};
+
+const Move = (to: Coordinate) => ['M', to.x, to.y].join(' ');
+const Line = (to: Coordinate) => ['L', to.x, to.y].join(' ');
+
+type ArrowProps = {
     variant: 'up' | 'down' | 'right';
-}
+};
 
 const Arrow: React.VFC<ArrowProps> = ({ variant }) => {
     switch (variant) {
@@ -11,9 +19,9 @@ const Arrow: React.VFC<ArrowProps> = ({ variant }) => {
                 <SVG width={20} height={20}>
                     <Path
                         commands={[
-                            { type: 'M', args: [2, 15] },
-                            { type: 'L', args: [10, 5] },
-                            { type: 'L', args: [18, 15] },
+                            Move({ x: 2, y: 15 }),
+                            Line({ x: 10, y: 5 }),
+                            Line({ x: 18, y: 15 }),
                         ]}
                     />
                 </SVG>
@@ -23,9 +31,9 @@ const Arrow: React.VFC<ArrowProps> = ({ variant }) => {
                 <SVG width={20} height={20}>
                     <Path
                         commands={[
-                            { type: 'M', args: [2, 5] },
-                            { type: 'L', args: [10, 15] },
-                            { type: 'L', args: [18, 5] },
+                            Move({ x: 2, y: 5 }),
+                            Line({ x: 10, y: 15 }),
+                            Line({ x: 18, y: 5 }),
                         ]}
                     />
                 </SVG>
@@ -35,9 +43,9 @@ const Arrow: React.VFC<ArrowProps> = ({ variant }) => {
                 <SVG width={20} height={20}>
                     <Path
                         commands={[
-                            { type: 'M', args: [5, 2] },
-                            { type: 'L', args: [15, 10] },
-                            { type: 'L', args: [5, 18] },
+                            Move({ x: 5, y: 2 }),
+                            Line({ x: 15, y: 10 }),
+                            Line({ x: 5, y: 18 }),
                         ]}
                     />
                 </SVG>

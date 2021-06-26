@@ -31,7 +31,7 @@
         "pages/api/**/*.ts",
         "lib/**/*.ts",
         "hooks/**/*.tsx",
-        "components/**/*.tsx"
+        "components/**/*.{ts,tsx}"
     ],
     "exclude": ["node_modules/"]
 }

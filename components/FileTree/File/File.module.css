@@ -1,7 +1,3 @@
 .file {
-    @apply flex my-2;
-}
-
-.file > span:first-child {
-    @apply inline-block w-6 h-6 mr-2 leading-6;
+    @apply flex items-center my-2 ml-12 space-x-4;
 }
