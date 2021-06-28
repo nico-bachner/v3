@@ -2,7 +2,7 @@ module.exports = {
     mode: 'jit',
     purge: ['./pages/**/*.tsx', './components/**/*.tsx'],
     darkMode: 'media',
-    presets: [require('tailwind-preset')],
+    presets: [require('@nico-bachner/tailwind-preset')],
     theme: {
         borderColor: {
             DEFAULT: 'hsl(220, 10%, var(--lighter))',
