@@ -8,7 +8,7 @@
         "start": "next start",
         "lint": "next lint",
         "release": "standard-version",
-        "format": "prettier --write **/*.{ts,tsx,mdx,css}"
+        "format": "prettier --write **/*.{ts,tsx,mdx} && stylelint **/*.css --fix"
     },
     "dependencies": {
         "@nico-bachner/tailwind-preset": "^0.1.0",
@@ -34,9 +34,13 @@
     "devDependencies": {
         "@types/node": "^14.17.4",
         "@types/react": "^17.0.11",
+        "@types/react-dom": "^17.0.8",
         "eslint": "^7.29.0",
         "eslint-config-next": "^11.0.1",
         "prettier": "^2.3.2",
-        "standard-version": "^9.3.0"
+        "standard-version": "^9.3.0",
+        "stylelint": "^13.13.1",
+        "stylelint-config-standard": "^22.0.0",
+        "stylelint-order": "^4.1.0"
     }
 }
