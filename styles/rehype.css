@@ -1,26 +1,34 @@
+/* ---- rehype-katex ---- */
+@import url(https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css);
+
 /* ---- mdx-prism ---- */
 .token.comment {
     @apply text-light;
 }
+
 .token.attr-equals {
     @apply text-stronger;
 }
+
 .token.keyword,
 .token.selector,
 .token.unit,
 .token.atrule {
     @apply text-crimson;
 }
+
 .token.function,
 .token.class-name,
 .token.tag,
 .token.number {
     @apply text-azure;
 }
+
 .token.string,
 .token.attr-value {
     color: hsl(170, 100%, 35%);
 }
+
 .token.attr-name {
     color: hsl(40, 100%, 35%);
 }
@@ -34,12 +42,11 @@
 .language-yml {
     color: hsl(170, 100%, 35%);
 }
+
 .language-yml .token.key {
     @apply text-azure;
 }
+
 .language-yml .token.punctuation {
     @apply text-stronger;
 }
-
-/* ---- rehype-katex ---- */
-@import url(https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css);

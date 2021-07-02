@@ -3,6 +3,7 @@
         @apply backdrop-blur-lg;
     }
 }
+
 @supports not (backdrop-filter: blur()) {
     .nav {
         @apply bg-lightest;

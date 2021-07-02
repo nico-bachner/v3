@@ -1,18 +1,31 @@
 .mdx {
     @apply max-w-2xl mx-auto leading-relaxed;
 }
+
 .mdx > h1 {
+    scroll-padding-top: 10rem;
+
     @apply mb-4;
 }
+
 .mdx > h2 {
+    scroll-padding-top: 10rem;
+
     @apply mt-16 mb-4;
 }
+
 .mdx > h3 {
+    scroll-padding-top: 10rem;
+
     @apply mt-12 mb-4;
 }
+
 .mdx > h4 {
+    scroll-padding-top: 10rem;
+
     @apply mt-8 mb-4;
 }
+
 .mdx > p {
     @apply my-4 sm:text-lg;
 }
@@ -21,18 +34,23 @@
 .mdx > ol > li {
     @apply my-2 sm:text-lg;
 }
+
 .mdx > ul,
 .mdx > ol {
     @apply pl-4 list-inside;
 }
+
 .mdx > ul {
     @apply list-disc;
 }
+
 .mdx > ol {
     @apply list-decimal;
 }
+
 .mdx > pre {
     tab-size: 4;
+
     @apply px-6 py-4 overflow-scroll border rounded;
 }
 

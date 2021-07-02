@@ -2,7 +2,7 @@ import { useRouter } from 'next/router';
 import { useI18n } from '@hooks/i18n';
 
 import Link from '@components/Link';
-import Logo from '@components/Logo';
+import Logo from '@icons/Logo';
 import Select from '@components/Select';
 
 import styles from './Navigation.module.css';

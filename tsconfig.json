@@ -3,7 +3,7 @@
         "target": "es2020",
         "lib": ["dom", "dom.iterable", "esnext"],
         "allowJs": false,
-        "skipLibCheck": true,
+        "skipLibCheck": false,
         "strict": true,
         "forceConsistentCasingInFileNames": true,
         "noUncheckedIndexedAccess": true,
@@ -19,9 +19,11 @@
             "@lib/*": ["lib/*"],
             "@hooks/*": ["hooks/*"],
             "@components/*": ["components/*"],
+            "@layout": ["components/layout"],
             "@content/*": ["content/*"],
             "@styles/*": ["styles/*"],
-            "@images/*": ["images/*"]
+            "@images/*": ["images/*"],
+            "@icons/*": ["components/icons/*"]
         }
     },
     "include": [
@@ -29,8 +31,8 @@
         "global.d.ts",
         "pages/**/*.tsx",
         "pages/api/**/*.ts",
-        "lib/**/*.ts",
-        "hooks/**/*.tsx",
+        "lib/*.ts",
+        "hooks/*.tsx",
         "components/**/*.{ts,tsx}"
     ],
     "exclude": ["node_modules/"]

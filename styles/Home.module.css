@@ -9,6 +9,7 @@
 .home > section {
     @apply my-16 sm:my-20;
 }
+
 .home > section > h2 {
     @apply mb-4;
 }
@@ -17,9 +18,11 @@
 .home > #articles > p:last-child {
     @apply text-right capitalize;
 }
+
 .home > #contact > p:last-child {
     @apply flex mt-4 space-x-4;
 }
+
 .home > #contact > p:last-child > :first-child {
     @apply flex-grow;
 }

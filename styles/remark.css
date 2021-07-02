@@ -7,9 +7,11 @@
 .footnotes {
     @apply my-8 text-strong;
 }
+
 .footnotes ol {
     @apply my-4 ml-8 list-decimal;
 }
+
 .footnotes li {
     @apply my-2;
 }

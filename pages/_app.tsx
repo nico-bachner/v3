@@ -1,8 +1,8 @@
-import '../styles/global.css';
-import '../styles/remark.css';
-import '../styles/rehype.css';
+import '@styles/global.css';
+import '@styles/remark.css';
+import '@styles/rehype.css';
 
-import { Footer, Navigation, MobileNavigation } from '@components/layout';
+import { Footer, Navigation, MobileNavigation } from '@layout';
 
 import type { NextPage } from 'next';
 import type { AppProps } from 'next/app';
