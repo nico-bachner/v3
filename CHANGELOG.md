@@ -2,6 +2,34 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.14.0](https://github.com/nico-bachner/v3/compare/v1.13.0...v1.14.0) (2021-07-03)
+
+
+### Features
+
+* **components:** added Code component ([b503b41](https://github.com/nico-bachner/v3/commit/b503b4159e6c58a21a07292226cf21ae2f4df205))
+* **components:** added FileTree component ([eb8600f](https://github.com/nico-bachner/v3/commit/eb8600f230d953fb4ce1097b21d41896d7204d99))
+* **components:** restructured Link component ([6f36724](https://github.com/nico-bachner/v3/commit/6f3672412d38077c0865680aff23daeaa1be602d))
+* **formatting:** added stylelint ([be21148](https://github.com/nico-bachner/v3/commit/be2114811dbbb4e8deffaa48b594c321016b7601))
+* **icons:** added Plus and Minus icons ([0c46676](https://github.com/nico-bachner/v3/commit/0c466769515fe5509f8172a5b089214f97ebb7d7))
+* **Image:** enforce `alt` tag ([56931c7](https://github.com/nico-bachner/v3/commit/56931c7be9885794699478bb763e99a91e30e9bc))
+* **mdx:** added i18n support for dynamic mdx pages ([#5](https://github.com/nico-bachner/v3/issues/5)) ([715d187](https://github.com/nico-bachner/v3/commit/715d18736f1b32db5b2c45ba303014218d7372c9))
+* **mdx:** added math support ([#6](https://github.com/nico-bachner/v3/issues/6)) ([0e8c9c4](https://github.com/nico-bachner/v3/commit/0e8c9c497c8a3b54707e0d8edbed0cb4588e1370))
+* Next.js 11 ([07abb8b](https://github.com/nico-bachner/v3/commit/07abb8b36e83e8d75f2d983c103ea1ac342a4a49))
+
+
+### Bug Fixes
+
+* cleanup after adding stylelint ([42882b5](https://github.com/nico-bachner/v3/commit/42882b5defbe92754567a1b42db20471a75bb125))
+* **deps:** force postcss >=8.3 ([b7777e6](https://github.com/nico-bachner/v3/commit/b7777e6bb5ab65330c180028c73c8b08ca066bd2))
+* **deps:** set @types/node to v14 ([3a915da](https://github.com/nico-bachner/v3/commit/3a915da7dca7cfae126d5a881929e0c0bd5b3a21))
+* **deps:** upgraded dependencies ([7354d81](https://github.com/nico-bachner/v3/commit/7354d814ce02e714e1183c19b1ac075401c02eb8))
+* **mdx:** use external Link for external urls ([d5c1019](https://github.com/nico-bachner/v3/commit/d5c1019cb47ba476a837e0988d1ffb8bbb667784))
+* **style:** fixed broken styles in MobileNavigation ([a2e380c](https://github.com/nico-bachner/v3/commit/a2e380cc3a35e1f088362536f3f88eace365d365))
+* **style:** fixed broken styles in Repositories ([51fc95f](https://github.com/nico-bachner/v3/commit/51fc95fbc3e8a83608e9c6d367aa515dc0bed856))
+* **types:** remove ambiguous `DefaultProps` type ([0adb66a](https://github.com/nico-bachner/v3/commit/0adb66aa7b9d0725a08b72e79008a380f5283fcb))
+* **types:** revert to default to null ([033f4f7](https://github.com/nico-bachner/v3/commit/033f4f71209c35dd6322024cc12761f34137176d))
+
 ## [1.13.0](https://github.com/nico-bachner/v3/compare/v1.12.0...v1.13.0) (2021-06-14)
 
 
