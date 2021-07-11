@@ -1,5 +1,5 @@
 .highlight {
-    @apply text-azure hover:underline;
+    @apply text-primary hover:underline;
 }
 
 .primary {

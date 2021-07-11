@@ -2,7 +2,6 @@ import { MDXRemote } from 'next-mdx-remote';
 import dynamic from 'next/dynamic';
 
 import Link from '@components/Link';
-import Code from '@components/Code';
 import Image from '@components/Image';
 import * as FileTree from '@components/FileTree';
 
@@ -31,7 +30,6 @@ const MDXLink: React.FC<MDXLinkProps> = ({ href, children }) => {
 const MDXComponents = {
     // override mdx default components
     a: MDXLink,
-    inlineCode: Code,
 
     // add custom components
     Image,

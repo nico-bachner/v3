@@ -1,6 +1,6 @@
+import '@nico-bachner/colors';
 import '@styles/global.css';
-import '@styles/remark.css';
-import '@styles/rehype.css';
+import '@nico-bachner/mdx/styles.css';
 
 import { Footer, Navigation, MobileNavigation } from '@layout';
 

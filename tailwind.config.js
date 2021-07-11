@@ -5,22 +5,12 @@ module.exports = {
     presets: [require('@nico-bachner/tailwind-preset')],
     theme: {
         borderColor: {
-            DEFAULT: 'hsl(220, 10%, var(--lighter))',
-            strong: 'hsl(220, 10%, var(--light))',
+            DEFAULT: 'var(--color-lighter)',
+            strong: 'var(--color-light)',
         },
         fontFamily: {
             sans: ['Inter', 'sans-serif'],
             mono: ['Fira Code', 'monospace'],
-        },
-        extend: {
-            colors: {
-                lightest: 'hsl(220, 10%, var(--lightest))',
-                lighter: 'hsl(220, 10%, var(--lighter))',
-                light: 'hsl(220, 10%, var(--light))',
-                strong: 'hsl(220, 10%, var(--strong))',
-                stronger: 'hsl(220, 10%, var(--stronger))',
-                strongest: 'hsl(220, 10%, var(--strongest))',
-            },
         },
     },
 };
