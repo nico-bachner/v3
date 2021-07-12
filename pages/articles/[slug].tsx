@@ -40,10 +40,8 @@ const Article: NextPage<ArticleProps> = ({
             description={description}
             slug={slug}
             type="article"
-        >
-            <link rel="canonical" href={canonical_url} />
-            <meta property="og:url" content={canonical_url} />
-        </Head>
+            canonical_url={canonical_url ?? undefined}
+        />
 
         <MDX
             mdx_content={mdx_content}

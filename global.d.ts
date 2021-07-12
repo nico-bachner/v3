@@ -1,3 +1,7 @@
+type YAML = {
+    [key: string]: string | number | boolean | Date;
+};
+
 // MDX Stuff
 interface MDXData {
     title: string;
@@ -31,7 +35,7 @@ type ArticleData = MDXData & {
     published: number;
 };
 type ArticleProps = MDXProps & {
-    canonical_url: string;
+    canonical_url: string | null;
 };
 
 // Database Types

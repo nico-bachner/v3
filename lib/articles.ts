@@ -60,13 +60,16 @@ export const getArticleProps = async (slug: string, locale: Locale) => {
 
     const { canonical_url } = getFileData(file);
 
-    if (typeof canonical_url != 'string') {
+    if (
+        typeof canonical_url != 'string' &&
+        typeof canonical_url != 'undefined'
+    ) {
         throw new Error(`'canonical_url' should be a string (${path})`);
     }
 
     const props: ArticleProps = {
         ...mdx_props,
-        canonical_url,
+        canonical_url: canonical_url ?? null,
     };
 
     return props;
