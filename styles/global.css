@@ -2,10 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-::selection {
-    @apply bg-highlight text-strongest;
-}
-
 html {
     @apply antialiased bg-lightest text-strong;
 }

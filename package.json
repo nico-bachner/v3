@@ -11,11 +11,11 @@
         "format": "prettier --write **/*.{ts,tsx,mdx} && stylelint **/*.css --fix"
     },
     "dependencies": {
-        "@nico-bachner/colors": "^0.4.1",
+        "@nico-bachner/colors": "^0.4.2",
         "@nico-bachner/mdx": "^0.3.0",
         "@nico-bachner/tailwind-preset": "^0.3.1",
         "@supabase/supabase-js": "^1.18.1",
-        "autoprefixer": "^10.3.0",
+        "autoprefixer": "^10.3.1",
         "gray-matter": "^4.0.3",
         "mdx-prism": "^0.3.3",
         "next": "^11.0.1",
