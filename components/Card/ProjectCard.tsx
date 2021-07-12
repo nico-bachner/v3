@@ -12,7 +12,7 @@ const ProjectCard: React.VFC<ProjectData> = ({
             <h3>{title}</h3>
             <p className="my-2 line-clamp-3">{description}</p>
             <div className="flex justify-between">
-                <p className="text-azure">More Information →</p>
+                <p className="text-primary">More Information →</p>
                 <p className="text-light">{period}</p>
             </div>
         </Card>

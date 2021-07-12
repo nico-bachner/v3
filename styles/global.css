@@ -42,5 +42,5 @@ p {
 }
 
 :not(pre) > code {
-    @apply text-highlight-strong;
+    @apply text-highlight;
 }
