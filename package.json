@@ -1,5 +1,5 @@
 {
-    "name": "v3",
+    "name": "@nico-bachner/v3",
     "version": "1.14.0",
     "private": true,
     "scripts": {
@@ -11,9 +11,9 @@
         "format": "prettier --write **/*.{ts,tsx,mdx} && stylelint **/*.css --fix"
     },
     "dependencies": {
-        "@nico-bachner/colors": "^0.2.0",
+        "@nico-bachner/colors": "^0.3.0",
         "@nico-bachner/mdx": "^0.2.0",
-        "@nico-bachner/tailwind-preset": "^0.2.0",
+        "@nico-bachner/tailwind-preset": "^0.2.1",
         "@supabase/supabase-js": "^1.18.1",
         "autoprefixer": "^10.3.0",
         "gray-matter": "^4.0.3",
