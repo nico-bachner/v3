@@ -1,4 +1,5 @@
-import Card from './Card';
+import styles from './Card.module.css';
+
 import Link from '@components/Link';
 
 const ProjectCard: React.VFC<ProjectData> = ({
@@ -8,14 +9,18 @@ const ProjectCard: React.VFC<ProjectData> = ({
     period,
 }) => (
     <Link href={`/projects/${slug}`}>
-        <Card variant="interactive">
+        <div
+            className={[styles.base, styles.interactive, styles.article].join(
+                ' '
+            )}
+        >
             <h3>{title}</h3>
-            <p className="my-2 line-clamp-3">{description}</p>
-            <div className="flex justify-between">
-                <p className="text-primary">More Information →</p>
-                <p className="text-light">{period}</p>
+            <p className={styles.description}>{description}</p>
+            <div className={styles.footer}>
+                <p className={styles.more}>More Information →</p>
+                <p className={styles.info}>{period}</p>
             </div>
-        </Card>
+        </div>
     </Link>
 );
 

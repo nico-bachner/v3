@@ -1,12 +1,63 @@
-.default,
-.interactive {
-    @apply w-full p-6 text-left transition duration-300 dark:rounded sm:px-8 dark:border;
+.base {
+    width: 100%;
+    padding: 1.5rem;
 }
 
-.default {
-    @apply shadow;
+@media (min-width: 640px) {
+    .base {
+        padding: 1.5rem 2rem;
+    }
 }
 
-.interactive {
-    @apply shadow-lg hover:shadow-xl dark:hover:border-strong;
+@media (prefers-color-scheme: light) {
+    .base {
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    }
+
+    .interactive {
+        transition: box-shadow 200ms ease;
+    }
+
+    .interactive:hover {
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    .base {
+        border: 1px solid var(--color-lighter);
+    }
+
+    .interactive {
+        transition: border-color 200ms ease;
+    }
+
+    .interactive:hover {
+        border-color: var(--color-light);
+    }
+}
+
+.project,
+.article {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.description {
+    margin: 0.5rem 0;
+    line-clamp: 3;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+}
+
+.more {
+    color: var(--color-primary);
+}
+
+.info {
+    color: var(--color-light);
 }
