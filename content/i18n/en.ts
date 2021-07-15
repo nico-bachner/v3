@@ -4,16 +4,16 @@ export const en: Translation = {
     about: {
         title: 'About Me',
         content:
-            "I'm a High School Student, Hobby Developer, and Aspiring Open Sourcerer currently living in Luxembourg. I have worked with various different technologies, especially in the domain of Web Development.",
+            "I am a student, self-taught developer, and Open Source enthusiast from Luxembourg. I have a passion for clean, reusable code, and I'm also fascinated by design - especially design systems.",
     },
     projects: {
         title: 'Projects',
         content:
-            'Here are some of my most cherished projects. All of my code-based projects are Open Source and their source code can be found on GitHub, where you can also find some of my less noteworthy projects.',
+            'Here are some of my most cherished projects. All my code-based projects are open source, and their source code is on GitHub, along with some of my perhaps slightly less noteworthy projects.',
     },
     articles: {
         title: 'Articles',
-        content: 'Here are some of the most recent articles I have written.',
+        content: 'Here are some technical articles I have written.',
     },
     contact: {
         title: 'Contact',

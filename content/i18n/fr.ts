@@ -4,17 +4,17 @@ export const fr: Translation = {
     about: {
         title: 'Sur Moi',
         content:
-            "Je suis un dévelopeur hobbyiste et un étudiant au Luxembourg. J'ai travaillé avec de nombreux technologies, surtout dans la branche du dévelopement Web.",
+            "Je suis un étudiant, un développeur autodidacte, et un passionné d'Open Source venant du Luxembourg. J'ai une passion pour du software propre et réutilisable, et je suis également fasciné par le design, particulièrement par des systèmes de design.",
     },
     projects: {
         title: 'Projets',
         content:
-            "Voici quelques projets sur lesquels j'ai travaillé récemment. Les projets sont tous Source Libre et leur code source se trouve sur GitHub",
+            'Voici quelques de mes meilleurs projets. Tous mes projets qui sont basés sur le code, sont source libre. Leur code source se trouve sur GitHub, avec mes autres projets peut-être un peu moins remarquables.',
     },
     articles: {
         title: 'Articles',
         content:
-            "Voici quelques articles que j'ai écrit récemment. Regrettablement, ils ne sont que disponibles en anglais.",
+            "Voici quelques articles techniques que j'ai écrit récemment. Regrettablement, ils ne sont qu'en anglais.",
     },
     contact: {
         title: 'Contact',

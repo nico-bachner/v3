@@ -1,20 +1,20 @@
 export const da: Translation = {
-    title: 'Hej, jeg er Nico.',
-    subtitle: 'Jeg er en Open Source Entusiast.',
+    title: 'Hej, jeg er Nico,',
+    subtitle: 'en Open Source Entusiast.',
     about: {
         title: 'Om Mig',
         content:
-            'Jeg er en student og hobby developer som lever i Luxemborg. Jeg har arbejdet med mange forskelige teknologier, i sært i kontexted af internettet.',
+            'Jeg er en studerende, selvlærende udvikler og open source entusiast fra Luxembourg. Jeg har en passion for ren, genanvendelig kode, og jeg er også fascineret af design - især designsystemer.',
     },
     projects: {
         title: 'Projekter',
         content:
-            'Her er nogle af mine favoritprojekter. Alle projekter er Open Source og deres source code kan findes på GitHub.',
+            'Her er nogle af mine beste projekter. Alle mine kodebaserede projekter er open source, og deres kildekode er på Github, sammen med nogle af mine måske lidt mindre bemærkelsesværdige projekter.',
     },
     articles: {
         title: 'Artikler',
         content:
-            'Her er nogle af mine seneste artikler. Desvære er di kun på engelsk.',
+            'Her er nogle tekniske artikler, jeg har skrevet. Desvære er de kun på engelsk.',
     },
     contact: {
         title: 'Kontakt',
