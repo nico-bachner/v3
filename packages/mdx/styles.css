@@ -1,0 +1,74 @@
+/* ---- rehype-katex ---- */
+@import url(https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css);
+
+/* ---- remark-code-titles ---- */
+.remark-code-title {
+    margin: 1.5rem 0.75rem;
+    text-align: right;
+    color: var(--color-strong);
+}
+
+/* ---- remark-footnotes ---- */
+.footnotes {
+    margin: 2rem 0;
+    color: var(--color-strong);
+}
+
+.footnotes ol {
+    margin: 1rem 0;
+    padding-left: 2em;
+    list-style: decimal inside;
+}
+
+.footnotes li {
+    margin: 0.5em 0;
+}
+
+/* ---- mdx-prism ---- */
+pre {
+    tab-size: 4;
+    width: 100%;
+    border: 1px solid var(--color-lighter);
+    border-radius: 0.25rem;
+    padding: 1rem 1.5rem;
+    overflow: scroll;
+}
+
+.token.plain-text,
+.token.attr-equals,
+.language-yml .token.punctuation {
+    color: var(--color-stronger);
+}
+
+.token.comment {
+    color: var(--color-light);
+}
+
+.token.keyword,
+.token.selector,
+.token.unit,
+.token.atrule,
+.language-bash .token.operator {
+    color: hsl(330deg, 100%, 50%);
+}
+
+.token.function,
+.token.class-name,
+.token.tag,
+.language-yml .token.key {
+    color: hsl(210deg, 100%, 50%);
+}
+
+.token.number {
+    color: hsl(180deg, 50%, 50%);
+}
+
+.token.string,
+.token.attr-value,
+.language-yml {
+    color: hsl(120deg, 50%, 50%);
+}
+
+.token.attr-name {
+    color: hsl(30deg, 100%, 40%);
+}

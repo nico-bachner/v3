@@ -1,0 +1,35 @@
+:root {
+    --color-highlight: hsl(330deg, 100%, 50%);
+    --color-primary: hsl(210deg, 100%, 50%);
+    --color-secondary: hsl(180deg, 100%, 50%);
+}
+
+@supports (color: lch(0% 0 0deg / 0)) {
+    :root {
+        --color-highlight: lch(50% 200 0deg);
+        --color-primary: lch(50% 200 240deg);
+        --color-secondary: lch(80% 200 240deg);
+    }
+}
+
+@media (prefers-color-scheme: light) {
+    :root {
+        --color-lightest: hsl(210deg, 5%, 100%);
+        --color-lighter: hsl(210deg, 5%, 90%);
+        --color-light: hsl(210deg, 5%, 65%);
+        --color-strong: hsl(210deg, 5%, 35%);
+        --color-stronger: hsl(210deg, 5%, 20%);
+        --color-strongest: hsl(210deg, 5%, 0%);
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --color-lightest: hsl(210deg, 5%, 0%);
+        --color-lighter: hsl(210deg, 5%, 20%);
+        --color-light: hsl(210deg, 5%, 35%);
+        --color-strong: hsl(210deg, 5%, 70%);
+        --color-stronger: hsl(210deg, 5%, 85%);
+        --color-strongest: hsl(210deg, 5%, 100%);
+    }
+}

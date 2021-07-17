@@ -1,0 +1,14 @@
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.description {
+    line-clamp: 3;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+}

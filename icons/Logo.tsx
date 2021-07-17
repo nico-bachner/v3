@@ -1,6 +1,4 @@
-import SVG, { Path } from 'components/SVG';
-
-// import styles from './Logo.module.css';
+import { SVG, Path } from '@nico-bachner/svg';
 
 type Coordinate = {
     x: number;

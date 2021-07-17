@@ -2,8 +2,7 @@ import styles from './Footer.module.css';
 
 import { useI18n } from 'hooks/i18n';
 
-import Link from 'components/Link';
-import Text from 'components/Text';
+import { Link, Text } from '@nico-bachner/components';
 
 const Footer = () => {
     const i18n = useI18n();
@@ -46,7 +45,7 @@ const Footer = () => {
             <nav className={styles.nav}>
                 {i18n.links.map(({ href, title }) => (
                     <Text key={href} className={styles.center_right}>
-                        <Link href={href} variant="secondary" external>
+                        <Link href={href} variant="secondary">
                             {title}
                         </Link>
                     </Text>
@@ -55,7 +54,7 @@ const Footer = () => {
             <nav className={styles.nav}>
                 {i18n.other.map(({ href, title }) => (
                     <Text key={href} className={styles.right}>
-                        <Link href={href} variant="secondary" external>
+                        <Link href={href} variant="secondary">
                             {title}
                         </Link>
                     </Text>

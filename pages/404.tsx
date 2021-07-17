@@ -1,6 +1,5 @@
 import Head from 'components/Head';
-import Link from 'components/Link';
-import Text from 'components/Text';
+import { Link, Text } from '@nico-bachner/components';
 
 import type { NextPage } from 'next';
 

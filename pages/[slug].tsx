@@ -1,7 +1,11 @@
+import styles from 'styles/Page.module.css';
+
+import dynamic from 'next/dynamic';
 import { getPageSlugs, getPageProps } from 'lib/pages';
 
+import { Link, Text } from '@nico-bachner/components';
+import MDX from '@nico-bachner/mdx';
 import Head from 'components/Head';
-import MDX from 'components/MDX';
 
 import type { NextPage, GetStaticPaths, GetStaticProps } from 'next';
 
@@ -25,7 +29,7 @@ export const getStaticProps: GetStaticProps<PageProps> = async ({
     };
 };
 
-const Project: NextPage<PageProps> = ({
+const Page: NextPage<PageProps> = ({
     title,
     description,
     slug,
@@ -33,15 +37,25 @@ const Project: NextPage<PageProps> = ({
     last_updated,
     edit_url,
 }) => (
-    <main>
+    <main className={styles.page}>
         <Head title={title} description={description} slug={slug} />
 
         <MDX
-            mdx_content={mdx_content}
-            last_updated={last_updated}
-            edit_url={edit_url}
+            content={mdx_content}
+            components={{
+                Repositories: dynamic(() => import('layout/Repositories')),
+            }}
         />
+
+        <div className={styles.bottom}>
+            <Text>Last updated: {last_updated}</Text>
+            <Text>
+                <Link href={edit_url} variant="highlight">
+                    Edit on GitHub
+                </Link>
+            </Text>
+        </div>
     </main>
 );
 
-export default Project;
+export default Page;

@@ -4,70 +4,64 @@ All notable changes to this project will be documented in this file. See [standa
 
 ## [1.15.0](https://github.com/nico-bachner/v3/compare/v1.14.0...v1.15.0) (2021-07-17)
 
-
 ### Features
 
-* add Text component ([8c4f15e](https://github.com/nico-bachner/v3/commit/8c4f15e488f4ee3b39d97a3ee2da73fe1c5190e8))
-* **content:** add project 'Design' ([0ce81a8](https://github.com/nico-bachner/v3/commit/0ce81a8c3953c9792a1ef774b3d21d71f4b3af8d))
-* **design:** use @nico-bachner/colors ([33b9394](https://github.com/nico-bachner/v3/commit/33b9394da35cdc90d056323d77e4073f9f920a20))
-
+-   add Text component ([8c4f15e](https://github.com/nico-bachner/v3/commit/8c4f15e488f4ee3b39d97a3ee2da73fe1c5190e8))
+-   **content:** add project 'Design' ([0ce81a8](https://github.com/nico-bachner/v3/commit/0ce81a8c3953c9792a1ef774b3d21d71f4b3af8d))
+-   **design:** use @nico-bachner/colors ([33b9394](https://github.com/nico-bachner/v3/commit/33b9394da35cdc90d056323d77e4073f9f920a20))
 
 ### Bug Fixes
 
-* **colors:** upgrade dependencies and remove ::selection color ([734fb87](https://github.com/nico-bachner/v3/commit/734fb873e1e38bcddb434ca7a63f245f9299f152))
-* **design:** fix broken colours ([d26c883](https://github.com/nico-bachner/v3/commit/d26c883a067e54511dea7328fdba8e2ff3c58ccb))
-* make canonical urls optional ([32681e4](https://github.com/nico-bachner/v3/commit/32681e4c23ac93f79e03ababa72de1296a255b1a))
+-   **colors:** upgrade dependencies and remove ::selection color ([734fb87](https://github.com/nico-bachner/v3/commit/734fb873e1e38bcddb434ca7a63f245f9299f152))
+-   **design:** fix broken colours ([d26c883](https://github.com/nico-bachner/v3/commit/d26c883a067e54511dea7328fdba8e2ff3c58ccb))
+-   make canonical urls optional ([32681e4](https://github.com/nico-bachner/v3/commit/32681e4c23ac93f79e03ababa72de1296a255b1a))
 
 ## [1.14.0](https://github.com/nico-bachner/v3/compare/v1.13.0...v1.14.0) (2021-07-03)
 
-
 ### Features
 
-* **components:** added Code component ([b503b41](https://github.com/nico-bachner/v3/commit/b503b4159e6c58a21a07292226cf21ae2f4df205))
-* **components:** added FileTree component ([eb8600f](https://github.com/nico-bachner/v3/commit/eb8600f230d953fb4ce1097b21d41896d7204d99))
-* **components:** restructured Link component ([6f36724](https://github.com/nico-bachner/v3/commit/6f3672412d38077c0865680aff23daeaa1be602d))
-* **formatting:** added stylelint ([be21148](https://github.com/nico-bachner/v3/commit/be2114811dbbb4e8deffaa48b594c321016b7601))
-* **icons:** added Plus and Minus icons ([0c46676](https://github.com/nico-bachner/v3/commit/0c466769515fe5509f8172a5b089214f97ebb7d7))
-* **Image:** enforce `alt` tag ([56931c7](https://github.com/nico-bachner/v3/commit/56931c7be9885794699478bb763e99a91e30e9bc))
-* **mdx:** added i18n support for dynamic mdx pages ([#5](https://github.com/nico-bachner/v3/issues/5)) ([715d187](https://github.com/nico-bachner/v3/commit/715d18736f1b32db5b2c45ba303014218d7372c9))
-* **mdx:** added math support ([#6](https://github.com/nico-bachner/v3/issues/6)) ([0e8c9c4](https://github.com/nico-bachner/v3/commit/0e8c9c497c8a3b54707e0d8edbed0cb4588e1370))
-* Next.js 11 ([07abb8b](https://github.com/nico-bachner/v3/commit/07abb8b36e83e8d75f2d983c103ea1ac342a4a49))
-
+-   **components:** added Code component ([b503b41](https://github.com/nico-bachner/v3/commit/b503b4159e6c58a21a07292226cf21ae2f4df205))
+-   **components:** added FileTree component ([eb8600f](https://github.com/nico-bachner/v3/commit/eb8600f230d953fb4ce1097b21d41896d7204d99))
+-   **components:** restructured Link component ([6f36724](https://github.com/nico-bachner/v3/commit/6f3672412d38077c0865680aff23daeaa1be602d))
+-   **formatting:** added stylelint ([be21148](https://github.com/nico-bachner/v3/commit/be2114811dbbb4e8deffaa48b594c321016b7601))
+-   **icons:** added Plus and Minus icons ([0c46676](https://github.com/nico-bachner/v3/commit/0c466769515fe5509f8172a5b089214f97ebb7d7))
+-   **Image:** enforce `alt` tag ([56931c7](https://github.com/nico-bachner/v3/commit/56931c7be9885794699478bb763e99a91e30e9bc))
+-   **mdx:** added i18n support for dynamic mdx pages ([#5](https://github.com/nico-bachner/v3/issues/5)) ([715d187](https://github.com/nico-bachner/v3/commit/715d18736f1b32db5b2c45ba303014218d7372c9))
+-   **mdx:** added math support ([#6](https://github.com/nico-bachner/v3/issues/6)) ([0e8c9c4](https://github.com/nico-bachner/v3/commit/0e8c9c497c8a3b54707e0d8edbed0cb4588e1370))
+-   Next.js 11 ([07abb8b](https://github.com/nico-bachner/v3/commit/07abb8b36e83e8d75f2d983c103ea1ac342a4a49))
 
 ### Bug Fixes
 
-* cleanup after adding stylelint ([42882b5](https://github.com/nico-bachner/v3/commit/42882b5defbe92754567a1b42db20471a75bb125))
-* **deps:** force postcss >=8.3 ([b7777e6](https://github.com/nico-bachner/v3/commit/b7777e6bb5ab65330c180028c73c8b08ca066bd2))
-* **deps:** set @types/node to v14 ([3a915da](https://github.com/nico-bachner/v3/commit/3a915da7dca7cfae126d5a881929e0c0bd5b3a21))
-* **deps:** upgraded dependencies ([7354d81](https://github.com/nico-bachner/v3/commit/7354d814ce02e714e1183c19b1ac075401c02eb8))
-* **mdx:** use external Link for external urls ([d5c1019](https://github.com/nico-bachner/v3/commit/d5c1019cb47ba476a837e0988d1ffb8bbb667784))
-* **style:** fixed broken styles in MobileNavigation ([a2e380c](https://github.com/nico-bachner/v3/commit/a2e380cc3a35e1f088362536f3f88eace365d365))
-* **style:** fixed broken styles in Repositories ([51fc95f](https://github.com/nico-bachner/v3/commit/51fc95fbc3e8a83608e9c6d367aa515dc0bed856))
-* **types:** remove ambiguous `DefaultProps` type ([0adb66a](https://github.com/nico-bachner/v3/commit/0adb66aa7b9d0725a08b72e79008a380f5283fcb))
-* **types:** revert to default to null ([033f4f7](https://github.com/nico-bachner/v3/commit/033f4f71209c35dd6322024cc12761f34137176d))
+-   cleanup after adding stylelint ([42882b5](https://github.com/nico-bachner/v3/commit/42882b5defbe92754567a1b42db20471a75bb125))
+-   **deps:** force postcss >=8.3 ([b7777e6](https://github.com/nico-bachner/v3/commit/b7777e6bb5ab65330c180028c73c8b08ca066bd2))
+-   **deps:** set @types/node to v14 ([3a915da](https://github.com/nico-bachner/v3/commit/3a915da7dca7cfae126d5a881929e0c0bd5b3a21))
+-   **deps:** upgraded dependencies ([7354d81](https://github.com/nico-bachner/v3/commit/7354d814ce02e714e1183c19b1ac075401c02eb8))
+-   **mdx:** use external Link for external urls ([d5c1019](https://github.com/nico-bachner/v3/commit/d5c1019cb47ba476a837e0988d1ffb8bbb667784))
+-   **style:** fixed broken styles in MobileNavigation ([a2e380c](https://github.com/nico-bachner/v3/commit/a2e380cc3a35e1f088362536f3f88eace365d365))
+-   **style:** fixed broken styles in Repositories ([51fc95f](https://github.com/nico-bachner/v3/commit/51fc95fbc3e8a83608e9c6d367aa515dc0bed856))
+-   **types:** remove ambiguous `DefaultProps` type ([0adb66a](https://github.com/nico-bachner/v3/commit/0adb66aa7b9d0725a08b72e79008a380f5283fcb))
+-   **types:** revert to default to null ([033f4f7](https://github.com/nico-bachner/v3/commit/033f4f71209c35dd6322024cc12761f34137176d))
 
 ## [1.13.0](https://github.com/nico-bachner/v3/compare/v1.12.0...v1.13.0) (2021-06-14)
 
-
 ### Features
 
-* **components:** added ShowMore component ([a392c09](https://github.com/nico-bachner/v3/commit/a392c097c5eae45c860241f0337abc821622114a))
-* **style:** added up arrow to ShowMore component ([bcea5f9](https://github.com/nico-bachner/v3/commit/bcea5f9a713af9c09d230be234f011b8b3a2da87))
-* added view counter ([2d59644](https://github.com/nico-bachner/v3/commit/2d596443ab7df22766b280c9aee749b79408882b))
-
+-   **components:** added ShowMore component ([a392c09](https://github.com/nico-bachner/v3/commit/a392c097c5eae45c860241f0337abc821622114a))
+-   **style:** added up arrow to ShowMore component ([bcea5f9](https://github.com/nico-bachner/v3/commit/bcea5f9a713af9c09d230be234f011b8b3a2da87))
+-   added view counter ([2d59644](https://github.com/nico-bachner/v3/commit/2d596443ab7df22766b280c9aee749b79408882b))
 
 ### Bug Fixes
 
-* fixed 404 errors on main pages ([873ef50](https://github.com/nico-bachner/v3/commit/873ef504d5a187aed4372835bc0f4ed0f08d7451))
-* **build:** added missing changes ([19afe6d](https://github.com/nico-bachner/v3/commit/19afe6da719a23bd28e567b448d194afd813fd25))
-* **build:** fixed breaking types ([dc6f75b](https://github.com/nico-bachner/v3/commit/dc6f75b26411bb96f674b25426f033d5c2e42e1d))
-* **mdx:** fix date_updated for remaining pages ([c56dab2](https://github.com/nico-bachner/v3/commit/c56dab25a1590c656b1991bb52322ff4a2b68d0a))
-* **style:** fixed broken highighting in sveltekit-theme-switch article ([d24f608](https://github.com/nico-bachner/v3/commit/d24f608b202c415522d501c5bb6055788a6c16c1))
-* **style:** fixed broken layout on projects page ([df7d9d0](https://github.com/nico-bachner/v3/commit/df7d9d09f04d16ea55e89a4ce720735655f25278))
-* **types:** force Locale type for locale ([a4e5930](https://github.com/nico-bachner/v3/commit/a4e5930514255bdd4c66a5770d849031c59551af))
-* **views:** finalise view count feature ([2624d7e](https://github.com/nico-bachner/v3/commit/2624d7e70a573303fcc561cbb4cd5f2c1dbb6b48))
-* **views:** update views on each page visit ([160065d](https://github.com/nico-bachner/v3/commit/160065dc669f3d785eb3c5bb7d13a089ce7a1e6d))
-* force 'en' routing for projects & articles ([ec61dd9](https://github.com/nico-bachner/v3/commit/ec61dd962a3b2b841d1abcde20c3c630e9f8e830))
+-   fixed 404 errors on main pages ([873ef50](https://github.com/nico-bachner/v3/commit/873ef504d5a187aed4372835bc0f4ed0f08d7451))
+-   **build:** added missing changes ([19afe6d](https://github.com/nico-bachner/v3/commit/19afe6da719a23bd28e567b448d194afd813fd25))
+-   **build:** fixed breaking types ([dc6f75b](https://github.com/nico-bachner/v3/commit/dc6f75b26411bb96f674b25426f033d5c2e42e1d))
+-   **mdx:** fix date_updated for remaining pages ([c56dab2](https://github.com/nico-bachner/v3/commit/c56dab25a1590c656b1991bb52322ff4a2b68d0a))
+-   **style:** fixed broken highighting in sveltekit-theme-switch article ([d24f608](https://github.com/nico-bachner/v3/commit/d24f608b202c415522d501c5bb6055788a6c16c1))
+-   **style:** fixed broken layout on projects page ([df7d9d0](https://github.com/nico-bachner/v3/commit/df7d9d09f04d16ea55e89a4ce720735655f25278))
+-   **types:** force Locale type for locale ([a4e5930](https://github.com/nico-bachner/v3/commit/a4e5930514255bdd4c66a5770d849031c59551af))
+-   **views:** finalise view count feature ([2624d7e](https://github.com/nico-bachner/v3/commit/2624d7e70a573303fcc561cbb4cd5f2c1dbb6b48))
+-   **views:** update views on each page visit ([160065d](https://github.com/nico-bachner/v3/commit/160065dc669f3d785eb3c5bb7d13a089ce7a1e6d))
+-   force 'en' routing for projects & articles ([ec61dd9](https://github.com/nico-bachner/v3/commit/ec61dd962a3b2b841d1abcde20c3c630e9f8e830))
 
 ## [1.12.0](https://github.com/nico-bachner/v3/compare/v1.11.0...v1.12.0) (2021-06-11)
 

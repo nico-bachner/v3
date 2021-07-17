@@ -1,0 +1,7 @@
+{
+    "name": "@nico-bachner/icons",
+    "version": "0.2.0",
+    "dependencies": {
+        "@nico-bachner/svg": "workspace:*"
+    }
+}

@@ -1,6 +1,6 @@
-import '@nico-bachner/colors';
+import styles from 'styles/App.module.css';
+
 import 'styles/global.css';
-import '@nico-bachner/mdx/styles.css';
 
 import { Footer, Navigation, MobileNavigation } from 'layout';
 
@@ -11,7 +11,7 @@ const App: NextPage<AppProps> = ({ Component, pageProps }) => (
     <>
         <Navigation />
 
-        <div className="px-6">
+        <div className={styles.app}>
             <Component {...pageProps} />
             <Footer />
         </div>

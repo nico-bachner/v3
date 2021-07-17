@@ -3,9 +3,9 @@ import styles from 'styles/Projects.module.css';
 import { getProjectsData } from 'lib/projects';
 import { useI18n } from 'hooks/i18n';
 
+import { Text } from '@nico-bachner/components';
 import Head from 'components/Head';
-import Text from 'components/Text';
-import { ProjectCard } from 'components/Card';
+import ProjectCard from 'components/ProjectCard';
 
 import type { NextPage, GetStaticProps } from 'next';
 

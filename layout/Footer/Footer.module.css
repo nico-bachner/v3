@@ -9,7 +9,9 @@
 }
 
 .nav {
-    @apply grid grid-rows-4 gap-4;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    gap: 1rem;
 }
 
 .left,

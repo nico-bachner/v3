@@ -1,3 +1,0 @@
-.image {
-    @apply transition duration-300 grayscale hover:scale-105 hover:grayscale-0 dark:brightness-75 dark:hover:brightness-100;
-}

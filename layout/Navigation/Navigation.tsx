@@ -3,9 +3,7 @@ import styles from './Navigation.module.css';
 import { useRouter } from 'next/router';
 import { useI18n } from 'hooks/i18n';
 
-import Link from 'components/Link';
-import Text from 'components/Text';
-import Select from 'components/Select';
+import { Link, Text, Select } from '@nico-bachner/components';
 import Logo from 'icons/Logo';
 
 const Navigation: React.VFC = () => {

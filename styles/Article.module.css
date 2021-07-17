@@ -1,0 +1,10 @@
+.page {
+    max-width: 42rem;
+    margin: auto;
+}
+
+.bottom {
+    display: flex;
+    justify-content: space-between;
+    margin: 5rem 0;
+}

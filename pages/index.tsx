@@ -4,10 +4,10 @@ import { getProjectsData } from 'lib/projects';
 import { getArticlesData } from 'lib/articles';
 import { useI18n } from 'hooks/i18n';
 
+import { Link, Text } from '@nico-bachner/components';
 import Head from 'components/Head';
-import Link from 'components/Link';
-import Text from 'components/Text';
-import { ProjectCard, ArticleCard } from 'components/Card';
+import ProjectCard from 'components/ProjectCard';
+import ArticleCard from 'components/ArticleCard';
 
 import type { NextPage, GetStaticProps } from 'next';
 
@@ -54,7 +54,7 @@ const Home: NextPage<HomeProps> = ({ projects, articles }) => {
             <section id="projects">
                 <Text type="h2">{i18n.projects.title}</Text>
                 <Text margin="prose">{i18n.projects.content}</Text>
-                <div className="grid gap-4 my-6">
+                <div className={styles.grid}>
                     {projects.map((project) => (
                         <ProjectCard key={project.slug} {...project} />
                     ))}
@@ -68,7 +68,7 @@ const Home: NextPage<HomeProps> = ({ projects, articles }) => {
             <section id="articles">
                 <Text type="h2">{i18n.articles.title}</Text>
                 <Text margin="prose">{i18n.articles.content}</Text>
-                <div className="grid gap-4 my-6">
+                <div className={styles.grid}>
                     {articles.map((article) => (
                         <ArticleCard key={article.slug} {...article} />
                     ))}

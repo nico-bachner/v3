@@ -1,13 +1,63 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import url('@nico-bachner/colors');
+@import url('@nico-bachner/css');
+@import url('@nico-bachner/mdx/styles.css');
 
 html {
     -webkit-font-smoothing: antialiased;
+    font-family: 'Inter', sans-serif;
     color: var(--color-strong);
     background-color: var(--color-lightest);
 }
 
 h1 {
     scroll-padding-top: 10rem;
+}
+
+ul,
+ol {
+    padding-left: 1em;
+    list-style-position: inside;
+}
+
+ul > li,
+ol > li {
+    margin: 0.5em 0;
+}
+
+li::marker {
+    color: var(--color-strongest);
+}
+
+.mdx {
+    max-width: 42rem;
+    margin: auto;
+}
+
+.mdx > ul > li,
+.mdx > ol > li {
+    @apply my-2 sm:text-lg;
+}
+
+.mdx > ul,
+.mdx > ol {
+    @apply pl-4 list-inside;
+}
+
+.mdx > ul {
+    @apply list-disc;
+}
+
+.mdx > ol {
+    @apply list-decimal;
+}
+
+.mdx > pre {
+    tab-size: 4;
+
+    @apply px-6 py-4 overflow-scroll border rounded;
+}
+
+/* footer */
+.mdx > p:last-child {
+    @apply flex justify-between my-20 text-strong;
 }

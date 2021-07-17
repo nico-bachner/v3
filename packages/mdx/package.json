@@ -1,0 +1,16 @@
+{
+    "name": "@nico-bachner/mdx",
+    "version": "0.3.1",
+    "dependencies": {
+        "@nico-bachner/components": "workspace:*",
+        "gray-matter": "^4.0.3",
+        "mdx-prism": "^0.3.3",
+        "next-mdx-remote": "^3.0.2",
+        "rehype": "^11.0.0",
+        "rehype-katex": "^5.0.0",
+        "rehype-slug": "^4.0.1",
+        "remark-code-titles": "^0.1.2",
+        "remark-footnotes": "^2.0.0",
+        "remark-math": "^3.0.1"
+    }
+}

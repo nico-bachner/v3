@@ -1,0 +1,19 @@
+.image {
+    transition: all 300ms ease;
+    filter: grayscale(1);
+}
+
+.image:hover {
+    filter: grayscale(0);
+    transform: scale(1.05);
+}
+
+@media (prefers-color-scheme: dark) {
+    .image {
+        filter: brightness(75%);
+    }
+
+    .image:hover {
+        filter: brightness(100%);
+    }
+}

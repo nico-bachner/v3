@@ -1,7 +1,10 @@
+import styles from 'styles/Article.module.css';
+
 import { getArticleSlugs, getArticleProps } from 'lib/articles';
 
+import { Link, Text } from '@nico-bachner/components';
+import MDX from '@nico-bachner/mdx';
 import Head from 'components/Head';
-import MDX from 'components/MDX';
 
 import type { NextPage, GetStaticPaths, GetStaticProps } from 'next';
 
@@ -34,7 +37,7 @@ const Article: NextPage<ArticleProps> = ({
     edit_url,
     canonical_url,
 }) => (
-    <main>
+    <main className={styles.page}>
         <Head
             title={title}
             description={description}
@@ -43,11 +46,16 @@ const Article: NextPage<ArticleProps> = ({
             canonical_url={canonical_url ?? undefined}
         />
 
-        <MDX
-            mdx_content={mdx_content}
-            last_updated={last_updated}
-            edit_url={edit_url}
-        />
+        <MDX content={mdx_content} />
+
+        <div className={styles.bottom}>
+            <Text>Last updated: {last_updated}</Text>
+            <Text>
+                <Link href={edit_url} variant="highlight">
+                    Edit on GitHub
+                </Link>
+            </Text>
+        </div>
     </main>
 );
 
