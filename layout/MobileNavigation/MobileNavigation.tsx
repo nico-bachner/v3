@@ -1,9 +1,10 @@
-import { useRouter } from 'next/router';
-import { useI18n } from '@hooks/i18n';
-
-import Link from '@components/Link';
-
 import styles from './MobileNavigation.module.css';
+
+import { useRouter } from 'next/router';
+import { useI18n } from 'hooks/i18n';
+
+import Link from 'components/Link';
+import Text from 'components/Text';
 
 const MobileNavigation: React.VFC = () => {
     const router = useRouter();
@@ -12,7 +13,7 @@ const MobileNavigation: React.VFC = () => {
     return (
         <nav className={styles.nav}>
             {i18n.pages.slice(0, 4).map(({ href, title }) => (
-                <p key={href} className="text-sm font-bold">
+                <Text key={href} size="sm" weight="bolder">
                     <Link
                         href={href}
                         variant={
@@ -21,7 +22,7 @@ const MobileNavigation: React.VFC = () => {
                     >
                         {title}
                     </Link>
-                </p>
+                </Text>
             ))}
         </nav>
     );

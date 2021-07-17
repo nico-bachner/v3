@@ -1,15 +1,42 @@
+/* highlight */
 .highlight {
-    @apply text-primary hover:underline;
+    text-decoration: none;
+    color: var(--color-primary);
 }
 
+.highlight:hover {
+    text-decoration: underline;
+}
+
+/* primary */
 .primary {
-    @apply hover:underline text-stronger;
+    text-decoration: none;
+    color: var(--color-stronger);
 }
 
+.primary:hover {
+    text-decoration: underline;
+}
+
+/* secondary */
 .secondary {
-    @apply transition text-strong hover:text-stronger;
+    text-decoration: none;
+    color: var(--color-strong);
 }
 
+.secondary:hover {
+    color: var(--color-stronger);
+}
+
+/* disabled */
 .disabled {
-    @apply cursor-default text-light;
+    text-decoration: none;
+    cursor: default;
+    color: var(--color-light);
+}
+
+/* default */
+.default {
+    text-decoration: none;
+    color: inherit;
 }

@@ -1,15 +1,10 @@
 .main {
-    @apply max-w-2xl mx-auto;
+    max-width: 42rem;
+    margin: auto;
 }
 
-.main > h1 {
-    @apply mb-4;
-}
-
-.main > p {
-    @apply my-4;
-}
-
-.main > div {
-    @apply grid gap-4 my-6;
+.grid {
+    display: grid;
+    gap: 1rem;
+    margin: 2rem auto;
 }

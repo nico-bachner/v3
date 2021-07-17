@@ -1,0 +1,34 @@
+.footer {
+    display: grid;
+    max-width: 42rem;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    padding: 5rem 0 0 0;
+    margin: 5rem auto;
+    border-top: 1px solid var(--color-lighter);
+}
+
+.nav {
+    @apply grid grid-rows-4 gap-4;
+}
+
+.left,
+.center_right {
+    text-align: left;
+}
+
+.right,
+.center_left {
+    text-align: right;
+}
+
+@media (min-width: 640px) {
+    .footer {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+
+    .center_left,
+    .center_right {
+        text-align: center;
+    }
+}

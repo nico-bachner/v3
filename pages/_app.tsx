@@ -1,8 +1,8 @@
 import '@nico-bachner/colors';
-import '@styles/global.css';
+import 'styles/global.css';
 import '@nico-bachner/mdx/styles.css';
 
-import { Footer, Navigation, MobileNavigation } from '@layout';
+import { Footer, Navigation, MobileNavigation } from 'layout';
 
 import type { NextPage } from 'next';
 import type { AppProps } from 'next/app';

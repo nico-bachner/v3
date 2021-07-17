@@ -1,10 +1,11 @@
-import { getProjectsData } from '@lib/projects';
-import { useI18n } from '@hooks/i18n';
+import styles from 'styles/Projects.module.css';
 
-import Head from '@components/Head';
-import { ProjectCard } from '@components/Card';
+import { getProjectsData } from 'lib/projects';
+import { useI18n } from 'hooks/i18n';
 
-import styles from '@styles/Projects.module.css';
+import Head from 'components/Head';
+import Text from 'components/Text';
+import { ProjectCard } from 'components/Card';
 
 import type { NextPage, GetStaticProps } from 'next';
 
@@ -32,9 +33,13 @@ const Projects: NextPage<ProjectsProps> = ({ projects }) => {
                 description="Nico Bachner's Articles"
                 slug="projects"
             />
-            <h1>{i18n.projects.title}</h1>
-            <p>{i18n.projects.content}</p>
-            <div>
+            <Text type="h1" className={styles.center}>
+                {i18n.projects.title}
+            </Text>
+            <Text margin="prose" className={styles.center}>
+                {i18n.projects.content}
+            </Text>
+            <div className={styles.grid}>
                 {projects.map((project) => (
                     <ProjectCard key={project.slug} {...project} />
                 ))}

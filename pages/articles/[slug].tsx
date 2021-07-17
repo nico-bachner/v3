@@ -1,7 +1,7 @@
-import { getArticleSlugs, getArticleProps } from '@lib/articles';
+import { getArticleSlugs, getArticleProps } from 'lib/articles';
 
-import Head from '@components/Head';
-import MDX from '@components/MDX';
+import Head from 'components/Head';
+import MDX from 'components/MDX';
 
 import type { NextPage, GetStaticPaths, GetStaticProps } from 'next';
 

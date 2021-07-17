@@ -1,4 +1,4 @@
-import SVG, { Path, Circle } from '@components/SVG';
+import SVG, { Path } from 'components/SVG';
 
 // import styles from './Logo.module.css';
 

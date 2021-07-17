@@ -3,40 +3,11 @@
 @tailwind utilities;
 
 html {
-    @apply antialiased bg-lightest text-strong;
-}
-
-main {
-    @apply text-stronger;
-}
-
-h1,
-h2,
-h3,
-h4 {
-    @apply text-strongest;
+    -webkit-font-smoothing: antialiased;
+    color: var(--color-strong);
+    background-color: var(--color-lightest);
 }
 
 h1 {
-    @apply text-4xl font-extrabold sm:text-5xl;
-}
-
-h2 {
-    @apply text-3xl font-bold sm:text-4xl;
-}
-
-h3 {
-    @apply text-2xl font-semibold sm:text-3xl;
-}
-
-h4 {
-    @apply text-xl font-medium sm:text-2xl;
-}
-
-p {
-    @apply sm:text-lg;
-}
-
-:not(pre) > code {
-    @apply text-highlight;
+    scroll-padding-top: 10rem;
 }

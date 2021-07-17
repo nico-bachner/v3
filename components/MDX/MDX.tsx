@@ -1,17 +1,15 @@
 import { MDXRemote } from 'next-mdx-remote';
 import dynamic from 'next/dynamic';
 
-import Link from '@components/Link';
-import Image from '@components/Image';
-import * as FileTree from '@components/FileTree';
+import Link from 'components/Link';
+import Text from 'components/Text';
+import Image from 'components/Image';
 
 import styles from './MDX.module.css';
 
-type MDXLinkProps = {
+const A: React.FC<{
     href: string;
-};
-
-const MDXLink: React.FC<MDXLinkProps> = ({ href, children }) => {
+}> = ({ href, children }) => {
     if (href.startsWith('/') || href.startsWith('#')) {
         return (
             <Link href={href} variant="highlight">
@@ -27,14 +25,37 @@ const MDXLink: React.FC<MDXLinkProps> = ({ href, children }) => {
     );
 };
 
+const H1: React.FC = ({ children }) => (
+    <Text type="h1" margin="tight">
+        {children}
+    </Text>
+);
+
+const H2: React.FC = ({ children }) => (
+    <Text type="h2" margin="prose">
+        {children}
+    </Text>
+);
+
+const H3: React.FC = ({ children }) => (
+    <Text type="h3" margin="prose">
+        {children}
+    </Text>
+);
+
+const P: React.FC = ({ children }) => <Text margin="prose">{children}</Text>;
+
 const MDXComponents = {
     // override mdx default components
-    a: MDXLink,
+    h1: H1,
+    h2: H2,
+    h3: H3,
+    p: P,
+    a: A,
 
     // add custom components
     Image,
-    ...FileTree,
-    Repositories: dynamic(() => import('@components/Repositories')),
+    Repositories: dynamic(() => import('components/Repositories')),
 };
 
 const MDX: React.VFC<MDXContent> = ({
@@ -44,12 +65,12 @@ const MDX: React.VFC<MDXContent> = ({
 }) => (
     <article className={styles.mdx}>
         <MDXRemote {...mdx_content} components={MDXComponents} />
-        <p>
+        <Text>
             Last updated: {last_updated}
             <Link href={edit_url} variant="highlight">
                 Edit on GitHub
             </Link>
-        </p>
+        </Text>
     </article>
 );
 

@@ -1,5 +1,6 @@
-import Head from '@components/Head';
-import Link from '@components/Link';
+import Head from 'components/Head';
+import Link from 'components/Link';
+import Text from 'components/Text';
 
 import type { NextPage } from 'next';
 
@@ -10,16 +11,20 @@ const NotFound: NextPage = () => (
             description="Page Not Found"
             slug="404"
         />
-        <h1 className="mb-4">404 - Page Not Found</h1>
-        <p>
+        <Text type="h1" margin="tight">
+            404 - Page Not Found
+        </Text>
+        <Text>
             It seems the page you were looking for does not exist. You should
             double-check the url to make sure you are looking for the right
             page.
-        </p>
-        <p>
+        </Text>
+        <Text>
             In the meantime, why not return to the{' '}
-            <Link href="/">Homepage</Link>
-        </p>
+            <Link href="/" variant="highlight">
+                Homepage
+            </Link>
+        </Text>
     </main>
 );
 

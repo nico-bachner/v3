@@ -1,11 +1,12 @@
-import Link from '@components/Link';
-import Card from '@components/Card';
-import ShowMore from '@components/ShowMore';
+import styles from './Repositories.module.css';
 
 import { useState, useEffect } from 'react';
-import { useI18n } from '@hooks/i18n';
+import { useI18n } from 'hooks/i18n';
 
-import styles from './Repositories.module.css';
+import Link from 'components/Link';
+import Text from 'components/Text';
+import Card from 'components/Card';
+import ShowMore from 'components/ShowMore';
 
 const Repositories: React.VFC = () => {
     const [repositories, setRepositories] = useState<Repository[]>([]);
@@ -35,8 +36,8 @@ const Repositories: React.VFC = () => {
                 {repos.map((repository) => (
                     <Link key={repository.slug} href={repository.repo_url}>
                         <Card>
-                            <h3>{repository.name}</h3>
-                            <p>{repository.description}</p>
+                            <Text type="h3">{repository.name}</Text>
+                            <Text>{repository.description}</Text>
                         </Card>
                     </Link>
                 ))}

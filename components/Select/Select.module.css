@@ -1,8 +1,18 @@
 .select {
-    background-image: url('/icons/arrow-down.svg');
+    appearance: none;
+    cursor: pointer;
+    background-image: url("/icons/arrow-down.svg");
     background-position: right 0.75rem center;
     background-repeat: no-repeat;
     background-size: 0.75em 0.75em;
+    text-align: center;
+    padding: 0.25rem 2rem 0.25rem 0.75rem;
+    transition: border-color 150ms ease-in-out;
+    background-color: transparent;
+    border: 1px solid var(--color-lighter);
+    border-radius: 0.25rem;
+}
 
-    @apply py-1 pl-3 pr-8 text-center transition bg-transparent border rounded appearance-none cursor-pointer hover:border-strong;
+.select:hover {
+    border: 1px solid var(--color-light);
 }

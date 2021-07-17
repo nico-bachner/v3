@@ -1,4 +1,4 @@
-import SVG, { Line, Rect } from '@components/SVG';
+import SVG, { Line, Rect } from 'components/SVG';
 
 const Minus = ({ width = 24, height = 24, padding = 8, sign = 4 }) => (
     <SVG width={width} height={height}>

@@ -1,9 +1,9 @@
 import styles from './ShowMore.module.css';
 
-interface ShowMoreProps {
+type ShowMoreProps = {
     expanded: boolean;
     onToggle?: () => void;
-}
+};
 
 const ShowMore: React.FC<ShowMoreProps> = ({
     children,

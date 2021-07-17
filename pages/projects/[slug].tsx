@@ -1,7 +1,7 @@
-import { getProjectSlugs, getProjectProps } from '@lib/projects';
+import { getProjectSlugs, getProjectProps } from 'lib/projects';
 
-import Head from '@components/Head';
-import MDX from '@components/MDX';
+import Head from 'components/Head';
+import MDX from 'components/MDX';
 
 import type { NextPage, GetStaticPaths, GetStaticProps } from 'next';
 

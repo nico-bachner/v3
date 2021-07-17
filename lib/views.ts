@@ -1,4 +1,4 @@
-import db from '@lib/supabase';
+import db from 'lib/supabase';
 
 export const getViewsData = async () => {
     const { data } = await db

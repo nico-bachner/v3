@@ -1,7 +1,7 @@
-import { getPageSlugs, getPageProps } from '@lib/pages';
+import { getPageSlugs, getPageProps } from 'lib/pages';
 
-import Head from '@components/Head';
-import MDX from '@components/MDX';
+import Head from 'components/Head';
+import MDX from 'components/MDX';
 
 import type { NextPage, GetStaticPaths, GetStaticProps } from 'next';
 

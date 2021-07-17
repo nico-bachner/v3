@@ -1,4 +1,4 @@
-import { getRepos } from '@lib/github';
+import { getRepos } from 'lib/github';
 
 import { NextApiHandler } from 'next';
 

@@ -1,6 +1,6 @@
-import NextHead from 'next/head';
-
 import { useEffect } from 'react';
+
+import NextHead from 'next/head';
 
 interface HeadProps {
     title: string;

@@ -45,19 +45,10 @@
 }
 
 .description {
-    margin: 0.5rem 0;
     line-clamp: 3;
 }
 
 .footer {
     display: flex;
     justify-content: space-between;
-}
-
-.more {
-    color: var(--color-primary);
-}
-
-.info {
-    color: var(--color-light);
 }

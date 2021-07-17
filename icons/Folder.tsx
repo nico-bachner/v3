@@ -1,4 +1,4 @@
-import SVG, { Path } from '@components/SVG';
+import SVG, { Path } from 'components/SVG';
 
 type Coordinate = {
     x: number;

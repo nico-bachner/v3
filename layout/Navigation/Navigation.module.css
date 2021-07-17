@@ -1,0 +1,52 @@
+@supports (backdrop-filter: blur()) {
+    .nav {
+        backdrop-filter: blur(16px);
+    }
+}
+
+@supports not (backdrop-filter: blur()) {
+    .nav {
+        background-color: var(--color-lightest);
+    }
+}
+
+.nav {
+    z-index: 50;
+    inset: 0;
+    max-width: 52rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 1.5rem;
+    margin: 2rem auto;
+    color: var(--color-stronger);
+}
+
+.nav > :first-child {
+    width: 3.4rem;
+    margin-right: 1rem;
+    transition: transform 200ms ease;
+}
+
+.nav > :first-child:hover {
+    transform: scale(1.05);
+}
+
+.links {
+    display: none;
+}
+
+@media (min-width: 640px) {
+    .nav {
+        position: sticky;
+        padding: 2rem 1.5rem;
+    }
+
+    .links {
+        display: flex;
+    }
+
+    .links > * {
+        margin: 0 1rem;
+    }
+}

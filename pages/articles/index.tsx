@@ -1,10 +1,11 @@
-import { getArticlesData } from '@lib/articles';
-import { useI18n } from '@hooks/i18n';
+import styles from 'styles/Articles.module.css';
 
-import Head from '@components/Head';
-import { ArticleCard } from '@components/Card';
+import { getArticlesData } from 'lib/articles';
+import { useI18n } from 'hooks/i18n';
 
-import styles from '@styles/Articles.module.css';
+import Head from 'components/Head';
+import Text from 'components/Text';
+import { ArticleCard } from 'components/Card';
 
 import type { NextPage, GetStaticProps } from 'next';
 
@@ -34,9 +35,9 @@ const Articles: NextPage<ArticlesPageProps> = ({ articles }) => {
                 description="Nico Bachner's Articles"
                 slug="articles"
             />
-            <h1>{i18n.articles.title}</h1>
-            <p>{i18n.articles.content}</p>
-            <div>
+            <Text type="h1">{i18n.articles.title}</Text>
+            <Text margin="prose">{i18n.articles.content}</Text>
+            <div className={styles.grid}>
                 {articles.map((article) => (
                     <ArticleCard key={article.slug} {...article} />
                 ))}

@@ -1,0 +1,31 @@
+@supports (backdrop-filter: blur()) {
+    .nav {
+        backdrop-filter: blur(16px);
+    }
+}
+
+@supports not (backdrop-filter: blur()) {
+    .nav {
+        background-color: var(--color-lightest);
+    }
+}
+
+.nav {
+    z-index: 50;
+    position: sticky;
+    bottom: 0;
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    padding: 2rem 0;
+}
+
+.nav > p > a {
+    padding: 0.5rem;
+}
+
+@media (min-width: 640px) {
+    .nav {
+        display: none;
+    }
+}

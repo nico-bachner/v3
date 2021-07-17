@@ -1,33 +1,6 @@
 .mdx {
-    @apply max-w-2xl mx-auto leading-relaxed;
-}
-
-.mdx > h1 {
-    scroll-padding-top: 10rem;
-
-    @apply mb-4;
-}
-
-.mdx > h2 {
-    scroll-padding-top: 10rem;
-
-    @apply mt-16 mb-4;
-}
-
-.mdx > h3 {
-    scroll-padding-top: 10rem;
-
-    @apply mt-12 mb-4;
-}
-
-.mdx > h4 {
-    scroll-padding-top: 10rem;
-
-    @apply mt-8 mb-4;
-}
-
-.mdx > p {
-    @apply my-4 sm:text-lg;
+    max-width: 42rem;
+    margin: auto;
 }
 
 .mdx > ul > li,

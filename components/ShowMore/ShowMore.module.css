@@ -1,11 +1,12 @@
 .default,
 .expanded {
-    @apply flex;
+    display: flex;
 }
 
 .default > hr,
 .expanded > hr {
-    @apply flex-grow my-4;
+    flex-grow: 1;
+    margin: 1rem 0;
 }
 
 .default > button,
@@ -13,14 +14,36 @@
     background-position: right 1rem center;
     background-repeat: no-repeat;
     background-size: 0.75em 0.75em;
-
-    @apply py-2 pl-4 pr-8 text-xs uppercase transition rounded-full shadow text-strong dark:border dark:hover:border-strong hover:shadow-lg;
+    color: var(--color-strong);
+    padding: 0.5rem 2rem 0.5rem 1rem;
+    font-size: 0.75em;
+    text-transform: uppercase;
+    transition: all 150ms ease-in-out;
+    border-radius: 100%;
+    box-shadow: 0 2px 8px hsla(210, 0%, 0%, 0.1);
 }
 
 .default > button {
-    background-image: url('/icons/arrow-down.svg');
+    background-image: url("/icons/arrow-down.svg");
 }
 
 .expanded > button {
-    background-image: url('/icons/arrow-up.svg');
+    background-image: url("/icons/arrow-up.svg");
+}
+
+.default > button:hover,
+.expanded > button:hover {
+    box-shadow: 0 4px 16px hsla(210, 0%, 0%, 0.2);
+}
+
+@media (prefers-color-scheme: dark) {
+    .default > button,
+    .expanded > button {
+        border: 1px solid var(--color-lighter);
+    }
+
+    .default > button:hover,
+    .expanded > button:hover {
+        border: 1px solid var(--color-light);
+    }
 }

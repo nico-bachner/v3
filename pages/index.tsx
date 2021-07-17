@@ -1,12 +1,13 @@
-import { getProjectsData } from '@lib/projects';
-import { getArticlesData } from '@lib/articles';
-import { useI18n } from '@hooks/i18n';
+import styles from 'styles/Home.module.css';
 
-import Head from '@components/Head';
-import Link from '@components/Link';
-import { ProjectCard, ArticleCard } from '@components/Card';
+import { getProjectsData } from 'lib/projects';
+import { getArticlesData } from 'lib/articles';
+import { useI18n } from 'hooks/i18n';
 
-import styles from '@styles/Home.module.css';
+import Head from 'components/Head';
+import Link from 'components/Link';
+import Text from 'components/Text';
+import { ProjectCard, ArticleCard } from 'components/Card';
 
 import type { NextPage, GetStaticProps } from 'next';
 
@@ -37,45 +38,52 @@ const Home: NextPage<HomeProps> = ({ projects, articles }) => {
                 description={i18n.about.content}
                 slug="home"
             />
-            <h1>{i18n.title}</h1>
-            <p>{i18n.subtitle}</p>
+            <Text type="h1">{i18n.title}</Text>
+            <Text
+                size="3xl"
+                space="tight"
+                weight="bolder"
+                className={styles.gradient}
+            >
+                {i18n.subtitle}
+            </Text>
             <section id="about">
-                <h2>{i18n.about.title}</h2>
-                <p>{i18n.about.content}</p>
+                <Text type="h2">{i18n.about.title}</Text>
+                <Text margin="prose">{i18n.about.content}</Text>
             </section>
             <section id="projects">
-                <h2>{i18n.projects.title}</h2>
-                <p>{i18n.projects.content}</p>
+                <Text type="h2">{i18n.projects.title}</Text>
+                <Text margin="prose">{i18n.projects.content}</Text>
                 <div className="grid gap-4 my-6">
                     {projects.map((project) => (
                         <ProjectCard key={project.slug} {...project} />
                     ))}
                 </div>
-                <p className="text-right capitalize">
+                <Text align="right" transform="capitalize">
                     <Link href="/projects" variant="highlight">
                         {i18n.actions.viewAll}
                     </Link>
-                </p>
+                </Text>
             </section>
             <section id="articles">
-                <h2>{i18n.articles.title}</h2>
-                <p>{i18n.articles.content}</p>
+                <Text type="h2">{i18n.articles.title}</Text>
+                <Text margin="prose">{i18n.articles.content}</Text>
                 <div className="grid gap-4 my-6">
                     {articles.map((article) => (
                         <ArticleCard key={article.slug} {...article} />
                     ))}
                 </div>
-                <p className="text-right capitalize">
-                    <Link href="/articles" variant="highlight">
+                <Text align="right" transform="capitalize">
+                    <Link href="/projects" variant="highlight">
                         {i18n.actions.viewAll}
                     </Link>
-                </p>
+                </Text>
             </section>
             <section id="contact">
-                <h2>{i18n.contact.title}</h2>
-                <p>{i18n.contact.content}</p>
-                <div className="flex mt-4 space-x-4">
-                    <p className="flex-grow">
+                <Text type="h2">{i18n.contact.title}</Text>
+                <Text margin="prose">{i18n.contact.content}</Text>
+                <div className={styles.contact_links}>
+                    <Text className="flex-grow">
                         <Link
                             href="mailto:hello@nicob.dev"
                             variant="highlight"
@@ -83,8 +91,8 @@ const Home: NextPage<HomeProps> = ({ projects, articles }) => {
                         >
                             hello@nicob.dev
                         </Link>
-                    </p>
-                    <p>
+                    </Text>
+                    <Text>
                         <Link
                             href="https://dev.to/nico_bachner"
                             variant="highlight"
@@ -92,8 +100,8 @@ const Home: NextPage<HomeProps> = ({ projects, articles }) => {
                         >
                             DEV.to
                         </Link>
-                    </p>
-                    <p>
+                    </Text>
+                    <Text>
                         <Link
                             href="https://twitter.com/nico_bachner"
                             variant="highlight"
@@ -101,7 +109,7 @@ const Home: NextPage<HomeProps> = ({ projects, articles }) => {
                         >
                             Twitter
                         </Link>
-                    </p>
+                    </Text>
                 </div>
             </section>
         </main>
