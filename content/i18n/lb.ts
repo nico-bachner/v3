@@ -9,7 +9,7 @@ export const lb: Translation = {
     projects: {
         title: 'Projeten',
         content:
-            'Hei sinn e puer vun mengen beschten projeten. All menge projeten, déi op code baséiert sin, sin Open Source. Den source code befënnt sëch op GitHub, wou de rescht vun mengen projeter och sin.',
+            'Hei sinn e puer vun mengen beschten projeten. All meng projeten, déi op code baséiert sin, sin Open Source. Den source code befënnt sëch op GitHub, wou de rescht vun mengen projeter och sin.',
     },
     articles: {
         title: 'Artikelen',
