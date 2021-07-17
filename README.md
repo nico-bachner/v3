@@ -5,14 +5,23 @@ The third iteration of my personal website.
 ## Features
 
 -   Light & Dark mode (based on system preferences)
--   [i18n](https://en.wikipedia.org/wiki/Internationalization_and_localization)
+-   Internationalisation (i18n)
+-   [Markdown](https://daringfireball.net/projects/markdown/) content
 
 ## Tech Stack
 
--   [Next.js](https://nextjs.org)
 -   [Typescript](https://www.typescriptlang.org)
+-   [React](https://reactjs.org)
+-   [Next.js](https://nextjs.org)
+-   [CSS Modules](https://github.com/css-modules/css-modules)
 -   [MDX](https://mdxjs.com)
--   [TailwindCSS](https://tailwindcss.com)
+
+## Tooling
+
+-   [ESLint](https://eslint.org)
+-   [Prettier](https://prettier.io)
+-   [Stylelint](https://stylelint.io)
+-   [Standard Version](https://github.com/conventional-changelog/standard-version)
 
 ## Architecture
 
