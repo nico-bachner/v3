@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.15.0](https://github.com/nico-bachner/v3/compare/v1.14.0...v1.15.0) (2021-07-17)
+
+
+### Features
+
+* add Text component ([8c4f15e](https://github.com/nico-bachner/v3/commit/8c4f15e488f4ee3b39d97a3ee2da73fe1c5190e8))
+* **content:** add project 'Design' ([0ce81a8](https://github.com/nico-bachner/v3/commit/0ce81a8c3953c9792a1ef774b3d21d71f4b3af8d))
+* **design:** use @nico-bachner/colors ([33b9394](https://github.com/nico-bachner/v3/commit/33b9394da35cdc90d056323d77e4073f9f920a20))
+
+
+### Bug Fixes
+
+* **colors:** upgrade dependencies and remove ::selection color ([734fb87](https://github.com/nico-bachner/v3/commit/734fb873e1e38bcddb434ca7a63f245f9299f152))
+* **design:** fix broken colours ([d26c883](https://github.com/nico-bachner/v3/commit/d26c883a067e54511dea7328fdba8e2ff3c58ccb))
+* make canonical urls optional ([32681e4](https://github.com/nico-bachner/v3/commit/32681e4c23ac93f79e03ababa72de1296a255b1a))
+
 ## [1.14.0](https://github.com/nico-bachner/v3/compare/v1.13.0...v1.14.0) (2021-07-03)
 
 
