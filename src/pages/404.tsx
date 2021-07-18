@@ -1,10 +1,12 @@
+import styles from 'styles/404.module.css';
+
 import Head from 'components/Head';
 import { Link, Text } from '@nico-bachner/components';
 
 import type { NextPage } from 'next';
 
 const NotFound: NextPage = () => (
-    <main className="max-w-2xl mx-auto">
+    <main className={styles.main}>
         <Head
             title="404 | Nico Bachner"
             description="Page Not Found"

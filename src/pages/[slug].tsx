@@ -40,12 +40,7 @@ const Page: NextPage<PageProps> = ({
     <main className={styles.page}>
         <Head title={title} description={description} slug={slug} />
 
-        <MDX
-            content={mdx_content}
-            components={{
-                Repositories: dynamic(() => import('layout/Repositories')),
-            }}
-        />
+        <MDX content={mdx_content} />
 
         <div className={styles.bottom}>
             <Text>Last updated: {last_updated}</Text>

@@ -13,10 +13,6 @@ const Footer = () => {
             href: '/uses',
         },
         {
-            title: 'Repositories',
-            href: '/repositories',
-        },
-        {
             title: 'Mac Setup',
             href: '/mac-setup',
         },
