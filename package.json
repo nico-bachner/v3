@@ -7,8 +7,9 @@
         "build": "next build",
         "start": "next start",
         "lint": "next lint",
+        "format": "prettier --write **/*.{ts,tsx,mdx} && stylelint **/*.css --fix",
         "release": "standard-version",
-        "format": "prettier --write **/*.{ts,tsx,mdx} && stylelint **/*.css --fix"
+        "publish": "pnpm -r publish --access public"
     },
     "dependencies": {
         "@nico-bachner/colors": "workspace:*",
