@@ -1,37 +1,42 @@
+/* base defaults */
 .link {
     color: inherit;
     cursor: pointer;
     text-decoration: none;
 }
 
-/* highlight */
+/* variant defaults */
 .highlight {
+    transition: border 150ms ease;
     color: var(--color-primary);
+    border-bottom: 1pt solid;
+    border-bottom-color: transparent;
 }
 
 .highlight:hover {
-    text-decoration: underline;
+    border-bottom-color: var(--color-primary);
 }
 
-/* primary */
 .primary {
-    color: var(--color-stronger);
+    transition: border 150ms ease;
+    color: var(--color-strongest);
+    border-bottom: 1pt solid;
+    border-bottom-color: transparent;
 }
 
 .primary:hover {
-    text-decoration: underline;
+    border-bottom-color: var(--color-strongest);
 }
 
-/* secondary */
 .secondary {
+    transition: color 150ms ease;
     color: var(--color-strong);
 }
 
 .secondary:hover {
-    color: var(--color-stronger);
+    color: var(--color-strongest);
 }
 
-/* disabled */
 .disabled {
     cursor: default;
     color: var(--color-light);
