@@ -1,8 +1,8 @@
-import styles from 'styles/App.module.css';
+import styles from '$lib/styles/App.module.css';
 
-import 'styles/global.css';
+import '$lib/styles/global.css';
 
-import { Footer, Navigation, MobileNavigation } from 'layout';
+import { Footer, Navigation, MobileNavigation } from '$lib/layout';
 
 import type { NextPage } from 'next';
 import type { AppProps } from 'next/app';

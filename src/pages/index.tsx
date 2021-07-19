@@ -1,13 +1,13 @@
-import styles from 'styles/Home.module.css';
+import styles from '$lib/styles/Home.module.css';
 
-import { getProjectsData } from 'lib/projects';
-import { getArticlesData } from 'lib/articles';
-import { useI18n } from 'hooks/i18n';
+import { getProjectsData } from '$lib/utils/projects';
+import { getArticlesData } from '$lib/utils/articles';
+import { useI18n } from '$lib/hooks/i18n';
 
 import { Link, Text } from '@nico-bachner/components';
-import Head from 'components/Head';
-import ProjectCard from 'components/ProjectCard';
-import ArticleCard from 'components/ArticleCard';
+import Head from '$lib/components/Head';
+import ProjectCard from '$lib/components/ProjectCard';
+import ArticleCard from '$lib/components/ArticleCard';
 
 import type { NextPage, GetStaticProps } from 'next';
 
@@ -84,11 +84,7 @@ const Home: NextPage<HomeProps> = ({ projects, articles }) => {
                 <Text margin="prose">{i18n.contact.content}</Text>
                 <div className={styles.contact_links}>
                     <Text className="flex-grow">
-                        <Link
-                            href="mailto:hello@nicob.dev"
-                            variant="highlight"
-                            external
-                        >
+                        <Link href="mailto:hello@nicob.dev" variant="highlight">
                             hello@nicob.dev
                         </Link>
                     </Text>
@@ -96,7 +92,6 @@ const Home: NextPage<HomeProps> = ({ projects, articles }) => {
                         <Link
                             href="https://dev.to/nico_bachner"
                             variant="highlight"
-                            external
                         >
                             DEV.to
                         </Link>
@@ -105,7 +100,6 @@ const Home: NextPage<HomeProps> = ({ projects, articles }) => {
                         <Link
                             href="https://twitter.com/nico_bachner"
                             variant="highlight"
-                            external
                         >
                             Twitter
                         </Link>

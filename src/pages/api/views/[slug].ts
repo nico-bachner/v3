@@ -1,4 +1,4 @@
-import { getViews, getUpdatedViews } from 'lib/views';
+import { getViews, getUpdatedViews } from '$lib/utils/views';
 
 import { NextApiHandler } from 'next';
 

@@ -1,10 +1,10 @@
-import styles from 'styles/Project.module.css';
+import styles from '$lib/styles/Project.module.css';
 
-import { getProjectSlugs, getProjectProps } from 'lib/projects';
+import { getProjectSlugs, getProjectProps } from '$lib/utils/projects';
 
 import { Link, Text } from '@nico-bachner/components';
 import MDX from '@nico-bachner/mdx';
-import Head from 'components/Head';
+import Head from '$lib/components/Head';
 
 import type { NextPage, GetStaticPaths, GetStaticProps } from 'next';
 

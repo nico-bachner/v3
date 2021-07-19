@@ -1,6 +1,6 @@
-import styles from 'styles/404.module.css';
+import styles from '$lib/styles/404.module.css';
 
-import Head from 'components/Head';
+import Head from '$lib/components/Head';
 import { Link, Text } from '@nico-bachner/components';
 
 import type { NextPage } from 'next';

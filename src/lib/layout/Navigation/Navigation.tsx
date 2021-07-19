@@ -1,10 +1,10 @@
 import styles from './Navigation.module.css';
 
 import { useRouter } from 'next/router';
-import { useI18n } from 'hooks/i18n';
+import { useI18n } from '$lib/hooks/i18n';
 
 import { Link, Text, Select } from '@nico-bachner/components';
-import Logo from 'icons/Logo';
+import Logo from '$lib/icons/Logo';
 
 const Navigation: React.VFC = () => {
     const i18n = useI18n();

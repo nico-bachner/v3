@@ -1,11 +1,11 @@
-import styles from 'styles/Page.module.css';
+import styles from '$lib/styles/Page.module.css';
 
 import dynamic from 'next/dynamic';
-import { getPageSlugs, getPageProps } from 'lib/pages';
+import { getPageSlugs, getPageProps } from '$lib/utils/pages';
 
 import { Link, Text } from '@nico-bachner/components';
 import MDX from '@nico-bachner/mdx';
-import Head from 'components/Head';
+import Head from '$lib/components/Head';
 
 import type { NextPage, GetStaticPaths, GetStaticProps } from 'next';
 

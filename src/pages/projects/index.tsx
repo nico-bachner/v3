@@ -1,11 +1,11 @@
-import styles from 'styles/Projects.module.css';
+import styles from '$lib/styles/Projects.module.css';
 
-import { getProjectsData } from 'lib/projects';
-import { useI18n } from 'hooks/i18n';
+import { getProjectsData } from '$lib/utils/projects';
+import { useI18n } from '$lib/hooks/i18n';
 
 import { Text } from '@nico-bachner/components';
-import Head from 'components/Head';
-import ProjectCard from 'components/ProjectCard';
+import Head from '$lib/components/Head';
+import ProjectCard from '$lib/components/ProjectCard';
 
 import type { NextPage, GetStaticProps } from 'next';
 

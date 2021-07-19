@@ -1,11 +1,11 @@
-import styles from 'styles/Articles.module.css';
+import styles from '$lib/styles/Articles.module.css';
 
-import { getArticlesData } from 'lib/articles';
-import { useI18n } from 'hooks/i18n';
+import { getArticlesData } from '$lib/utils/articles';
+import { useI18n } from '$lib/hooks/i18n';
 
 import { Text } from '@nico-bachner/components';
-import Head from 'components/Head';
-import ArticleCard from 'components/ArticleCard';
+import Head from '$lib/components/Head';
+import ArticleCard from '$lib/components/ArticleCard';
 
 import type { NextPage, GetStaticProps } from 'next';
 

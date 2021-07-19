@@ -1,7 +1,7 @@
 import styles from './MobileNavigation.module.css';
 
 import { useRouter } from 'next/router';
-import { useI18n } from 'hooks/i18n';
+import { useI18n } from '$lib/hooks/i18n';
 
 import { Link, Text } from '@nico-bachner/components';
 

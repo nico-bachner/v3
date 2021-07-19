@@ -1,10 +1,10 @@
-import styles from 'styles/Article.module.css';
+import styles from '$lib/styles/Article.module.css';
 
-import { getArticleSlugs, getArticleProps } from 'lib/articles';
+import { getArticleSlugs, getArticleProps } from '$lib/utils/articles';
 
 import { Link, Text } from '@nico-bachner/components';
 import MDX from '@nico-bachner/mdx';
-import Head from 'components/Head';
+import Head from '$lib/components/Head';
 
 import type { NextPage, GetStaticPaths, GetStaticProps } from 'next';
 
