@@ -3,7 +3,6 @@
         "dbaeumer.vscode-eslint",
         "esbenp.prettier-vscode",
         "stylelint.vscode-stylelint",
-        "bradlc.vscode-tailwindcss",
         "silvenon.mdx"
     ]
 }
