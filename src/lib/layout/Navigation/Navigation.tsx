@@ -7,7 +7,7 @@ import { Link, Text, Select } from '@nico-bachner/components';
 import Logo from '$lib/icons/Logo';
 
 const Navigation: React.VFC = () => {
-    const i18n = useI18n();
+    const { pages } = useI18n();
     const router = useRouter();
     const { pathname, query, locale, locales } = router;
 
@@ -17,7 +17,7 @@ const Navigation: React.VFC = () => {
                 <Logo />
             </Link>
             <div className={styles.links}>
-                {i18n.pages.map(({ href, title }) => (
+                {pages.main.map(({ href, title }) => (
                     <Text key={href} weight="bold">
                         <Link
                             href={href}

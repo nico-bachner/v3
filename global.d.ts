@@ -80,9 +80,14 @@ interface Translation {
         showMore: string;
         showLess: string;
     };
-    pages: Page[];
-    links: Page[];
-    other: Page[];
+    pages: {
+        main: Page[];
+        other: Page[];
+    };
+    links: {
+        social: Page[];
+        other: Page[];
+    };
 }
 
 interface GitHubUser {

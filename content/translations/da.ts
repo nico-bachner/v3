@@ -29,42 +29,56 @@ export const da: Translation = {
         showMore: 'vise flere',
         showLess: 'vise mindre',
     },
-    pages: [
-        {
-            title: 'Hjem',
-            href: '/',
-        },
-        {
-            title: 'Projekter',
-            href: '/projects',
-        },
-        {
-            title: 'Artikler',
-            href: '/articles',
-        },
-    ],
-    links: [
-        {
-            title: 'GitHub',
-            href: 'https://github.com/nico-bachner',
-        },
-        {
-            title: 'DEV',
-            href: 'https://dev.to/nico_bachner',
-        },
-        {
-            title: 'Twitter',
-            href: 'https://twitter.com/nico_bachner',
-        },
-    ],
-    other: [
-        {
-            title: 'Source Code',
-            href: 'https://github.com/nico-bachner/v3',
-        },
-        {
-            title: 'CV',
-            href: 'https://read.cv/nico_bachner',
-        },
-    ],
+    pages: {
+        main: [
+            {
+                title: 'Hjem',
+                href: '/',
+            },
+            {
+                title: 'Projekter',
+                href: '/projects',
+            },
+            {
+                title: 'Artikler',
+                href: '/articles',
+            },
+        ],
+        other: [
+            {
+                title: 'Design',
+                href: '/design',
+            },
+            {
+                title: 'Mac Konfiguration',
+                href: '/mac-setup',
+            },
+        ],
+    },
+    links: {
+        social: [
+            {
+                title: 'GitHub',
+                href: 'https://github.com/nico-bachner',
+            },
+            {
+                title: 'Twitter',
+                href: 'https://twitter.com/nico_bachner',
+            },
+            {
+                title: 'Polywork',
+                href: 'https://www.polywork.com/nico_b',
+            },
+        ],
+        other: [
+            {
+                title: 'Source Code',
+                href: 'https://github.com/nico-bachner/v3',
+            },
+            {
+                title: 'CV',
+                href: 'https://read.cv/nico_bachner',
+            },
+        ],
+    },
 };
