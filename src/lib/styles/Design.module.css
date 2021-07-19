@@ -1,0 +1,24 @@
+.main {
+    max-width: 42rem;
+    margin: auto;
+}
+
+.main > section {
+    margin: 6rem 0;
+}
+
+.main > section > * {
+    margin: 3rem 0;
+}
+
+.list {
+    display: grid;
+    gap: 2rem;
+}
+
+.table {
+    display: grid;
+    grid-template-columns: max-content auto;
+    gap: 2rem 5rem;
+    align-items: center;
+}
