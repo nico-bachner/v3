@@ -9,27 +9,29 @@
 .h2,
 .h3 {
     color: var(--color-neutral-8);
-    line-height: var(--line-height-tight);
 }
 
 .h1 {
     font-size: var(--font-size-5xl);
+    line-height: var(--line-height-5xs);
     font-weight: var(--font-weight-boldest);
 }
 
 .h2 {
     font-size: var(--font-size-3xl);
+    line-height: var(--line-height-3xs);
     font-weight: var(--font-weight-bolder);
 }
 
 .h3 {
     font-size: var(--font-size-xl);
+    line-height: var(--line-height-xs);
     font-weight: var(--font-weight-bold);
 }
 
 .p {
-    font-size: var(--font-size);
-    font-weight: var(--font-weight);
-    line-height: var(--line-height);
     color: var(--color-neutral-5);
+    font-size: var(--font-size);
+    line-height: var(--line-height);
+    font-weight: var(--font-weight);
 }

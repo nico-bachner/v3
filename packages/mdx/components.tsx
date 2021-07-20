@@ -13,11 +13,7 @@ const MDXLink: React.FC<MDXLinkProps> = ({ href, children }) => (
     </Link>
 );
 
-const H1: React.FC = ({ children }) => (
-    <Text type="h1" margin="prose">
-        {children}
-    </Text>
-);
+const H1: React.FC = ({ children }) => <Text type="h1">{children}</Text>;
 
 const H2: React.FC = ({ children }) => (
     <Text type="h2" margin="prose">

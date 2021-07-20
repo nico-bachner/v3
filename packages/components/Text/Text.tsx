@@ -6,7 +6,7 @@ type TextProps = {
     size?: FontSize;
     weight?: FontWeight;
     space?: 'tight' | 'prose' | 'loose';
-    margin?: 'tight' | 'prose' | 'loose';
+    margin?: TextMargin;
     align?: 'left' | 'center' | 'right';
     transform?: 'capitalize' | 'uppercase' | 'lowercase';
     className?: string;
@@ -30,7 +30,7 @@ const Text: React.FC<TextProps> = ({
         // @ts-ignore (csstype expects a number, not a css custom property)
         fontWeight: weight ? `var(--font-weight-${weight}) ` : undefined,
         lineHeight: space ? `var(--line-height-${space}) ` : undefined,
-        marginBlock: margin ? `var(--margin-${margin}) ` : undefined,
+        margin: margin ? `var(--text-margin-${margin}) ` : undefined,
         textAlign: align,
         textTransform: transform,
     };
