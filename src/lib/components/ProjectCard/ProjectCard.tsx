@@ -11,9 +11,7 @@ const ProjectCard: React.VFC<ProjectData> = ({
     <Link href={`/projects/${slug}`}>
         <Card variant="interactive" className={styles.card}>
             <Text type="h3">{title}</Text>
-            <Text margin="tight" className={styles.description}>
-                {description}
-            </Text>
+            <Text className={styles.description}>{description}</Text>
             <div className={styles.footer}>
                 <Text color="primary">More Information →</Text>
                 <Text color="neutral-3">{period}</Text>

@@ -5,6 +5,7 @@
 }
 
 .description {
+    margin-block: 1rem;
     line-clamp: 3;
 }
 

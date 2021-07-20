@@ -39,12 +39,7 @@ const Home: NextPage<HomeProps> = ({ projects, articles }) => {
                 slug="home"
             />
             <Text type="h1">{i18n.title}</Text>
-            <Text
-                size="3xl"
-                space="tight"
-                weight="bolder"
-                className={styles.gradient}
-            >
+            <Text size="3xl" weight="bolder" className={styles.gradient}>
                 {i18n.subtitle}
             </Text>
             <section id="about">
