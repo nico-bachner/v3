@@ -12,10 +12,8 @@ const NotFound: NextPage = () => (
             description="Page Not Found"
             slug="404"
         />
-        <Text type="h1" space="loose">
-            404 - Page Not Found
-        </Text>
-        <Text>
+        <Text type="h1">404 - Page Not Found</Text>
+        <Text margin="prose">
             It seems the page you were looking for does not exist. You should
             double-check the url to make sure you are looking for the right
             page.
