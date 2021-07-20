@@ -25,7 +25,8 @@
 
 @media (prefers-color-scheme: dark) {
     .card {
-        border: 1px solid var(--color-lighter);
+        border: 1px solid var(--color-neutral-2);
+        border-radius: 0.5rem;
     }
 
     .interactive {
@@ -33,6 +34,6 @@
     }
 
     .interactive:hover {
-        border-color: var(--color-light);
+        border-color: var(--color-neutral-3);
     }
 }

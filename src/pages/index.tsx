@@ -39,7 +39,7 @@ const Home: NextPage<HomeProps> = ({ projects, articles }) => {
                 slug="home"
             />
             <Text type="h1">{i18n.title}</Text>
-            <Text size="3xl" weight="bolder" className={styles.gradient}>
+            <Text size="3xl" weight="bolder" className={styles.subtitle}>
                 {i18n.subtitle}
             </Text>
             <section id="about">
@@ -78,26 +78,17 @@ const Home: NextPage<HomeProps> = ({ projects, articles }) => {
                 <Text type="h2">{i18n.contact.title}</Text>
                 <Text margin="prose">{i18n.contact.content}</Text>
                 <div className={styles.contact_links}>
-                    <Text className="flex-grow">
+                    <Text className={styles.mail}>
                         <Link href="mailto:hello@nicob.dev" variant="highlight">
                             hello@nicob.dev
                         </Link>
                     </Text>
-                    <Text>
-                        <Link
-                            href="https://dev.to/nico_bachner"
-                            variant="highlight"
-                        >
-                            DEV.to
-                        </Link>
-                    </Text>
-                    <Text>
-                        <Link
-                            href="https://twitter.com/nico_bachner"
-                            variant="highlight"
-                        >
-                            Twitter
-                        </Link>
+                    <Text className={styles.social}>
+                        {i18n.links.social.map(({ title, href }) => (
+                            <Link key={href} href={href} variant="highlight">
+                                {title}
+                            </Link>
+                        ))}
                     </Text>
                 </div>
             </section>

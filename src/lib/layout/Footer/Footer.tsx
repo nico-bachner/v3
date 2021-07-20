@@ -9,42 +9,38 @@ const Footer = () => {
 
     return (
         <footer className={styles.footer}>
-            <nav className={styles.nav}>
+            <Text className={styles.left}>
+                <Text type="strong">Main</Text>
                 {pages.main.map(({ href, title }) => (
-                    <Text key={href} className={styles.left}>
-                        <Link href={href} variant="secondary">
-                            {title}
-                        </Link>
-                    </Text>
+                    <Link key={href} href={href} variant="secondary">
+                        {title}
+                    </Link>
                 ))}
-            </nav>
-            <nav className={styles.nav}>
+            </Text>
+            <Text className={styles.right_center}>
+                <Text type="strong">Assorted</Text>
                 {pages.other.map(({ href, title }) => (
-                    <Text key={href} className={styles.center_left}>
-                        <Link href={href} locale="en" variant="secondary">
-                            {title}
-                        </Link>
-                    </Text>
+                    <Link key={href} href={href} variant="secondary">
+                        {title}
+                    </Link>
                 ))}
-            </nav>
-            <nav className={styles.nav}>
+            </Text>
+            <Text className={styles.left_center}>
+                <Text type="strong">Social</Text>
                 {links.social.map(({ href, title }) => (
-                    <Text key={href} className={styles.center_right}>
-                        <Link href={href} variant="secondary">
-                            {title}
-                        </Link>
-                    </Text>
+                    <Link key={href} href={href} variant="secondary">
+                        {title}
+                    </Link>
                 ))}
-            </nav>
-            <nav className={styles.nav}>
+            </Text>
+            <Text className={styles.right}>
+                <Text type="strong">Other</Text>
                 {links.other.map(({ href, title }) => (
-                    <Text key={href} className={styles.right}>
-                        <Link href={href} variant="secondary">
-                            {title}
-                        </Link>
-                    </Text>
+                    <Link key={href} href={href} variant="secondary">
+                        {title}
+                    </Link>
                 ))}
-            </nav>
+            </Text>
         </footer>
     );
 };

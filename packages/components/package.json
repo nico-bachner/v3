@@ -1,6 +1,6 @@
 {
     "name": "@nico-bachner/components",
-    "version": "0.5.1",
+    "version": "0.5.2",
     "dependencies": {
         "@nico-bachner/hooks": "workspace:*",
         "@nico-bachner/icons": "workspace:*"

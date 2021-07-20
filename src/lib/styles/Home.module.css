@@ -3,7 +3,8 @@
     margin: auto;
 }
 
-.gradient {
+.subtitle {
+    margin-top: 0.5rem;
     color: transparent;
     background:
         linear-gradient(
@@ -21,14 +22,21 @@
 .grid {
     display: grid;
     gap: 1rem;
-    margin: 1.5rem 0;
+    margin: 2rem 0;
 }
 
 .contact_links {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
 }
 
-.contact_links > * {
-    margin: 1rem;
+.mail {
+    flex-grow: 1;
+}
+
+.social {
+    display: flex;
+    gap: 1rem;
 }
