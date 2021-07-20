@@ -15,12 +15,8 @@ const ArticleCard: React.VFC<ArticleData> = ({
                 {description}
             </Text>
             <div className={styles.footer}>
-                <Text color="primary" className={styles.more}>
-                    More Information →
-                </Text>
-                <Text color="light" className={styles.info}>
-                    {reading_time} minute read
-                </Text>
+                <Text color="primary">More Information →</Text>
+                <Text color="neutral-3">{reading_time} minute read</Text>
             </div>
         </Card>
     </Link>

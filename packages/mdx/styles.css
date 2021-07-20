@@ -3,15 +3,17 @@
 
 /* ---- remark-code-titles ---- */
 .remark-code-title {
-    margin: 1.5rem 0.75rem;
-    text-align: right;
-    color: var(--color-strong);
+    font-family: var(--font-sans);
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-bold);
+    margin: 2rem 1rem 1rem;
+    color: var(--color-neutral-8);
 }
 
 /* ---- remark-footnotes ---- */
 .footnotes {
     margin: 2rem 0;
-    color: var(--color-strong);
+    color: var(--color-text);
 }
 
 .footnotes ol {
@@ -26,9 +28,13 @@
 
 /* ---- mdx-prism ---- */
 pre {
+    font-family: var(--font-mono);
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight);
     tab-size: 4;
+    line-height: var(--line-height);
     width: 100%;
-    border: 1px solid var(--color-lighter);
+    border: 1px solid var(--color-neutral-2);
     border-radius: 0.25rem;
     padding: 1rem 1.5rem;
     overflow: scroll;

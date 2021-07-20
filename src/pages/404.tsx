@@ -12,7 +12,7 @@ const NotFound: NextPage = () => (
             description="Page Not Found"
             slug="404"
         />
-        <Text type="h1" margin="tight">
+        <Text type="h1" space="loose">
             404 - Page Not Found
         </Text>
         <Text>

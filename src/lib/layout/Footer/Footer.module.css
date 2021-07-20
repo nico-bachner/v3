@@ -3,9 +3,9 @@
     max-width: 42rem;
     grid-template-columns: 1fr 1fr;
     gap: 3rem;
-    padding: 5rem 0 0 0;
-    margin: 5rem auto;
-    border-top: 1px solid var(--color-lighter);
+    padding-top: 5rem;
+    margin: 8rem auto;
+    border-top: 1px solid var(--color-neutral-2);
 }
 
 .nav {

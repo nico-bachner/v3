@@ -12,5 +12,9 @@
         "remark-code-titles": "^0.1.2",
         "remark-footnotes": "^2.0.0",
         "remark-math": "^3.0.1"
+    },
+    "peerDependencies": {
+        "@nico-bachner/colors": ">=0.5.0",
+        "@nico-bachner/typography": ">=0.4.0"
     }
 }

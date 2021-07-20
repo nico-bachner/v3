@@ -6,7 +6,7 @@
 
 @supports not (backdrop-filter: blur()) {
     .nav {
-        background-color: var(--color-lightest);
+        background-color: var(--color-neutral-0);
     }
 }
 

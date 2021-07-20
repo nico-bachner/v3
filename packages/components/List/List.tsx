@@ -1,11 +1,7 @@
 import styles from './List.module.css';
 
-type ListProps = {
-    variant?: 'hierarchy' | 'regular' | 'unstyled';
-};
-
-const List: React.FC<ListProps> = ({ children, variant = 'regular' }) => (
-    <ul className={styles[variant]}>{children}</ul>
+const List: React.FC = ({ children }) => (
+    <ul className={styles.list}>{children}</ul>
 );
 
 export default List;

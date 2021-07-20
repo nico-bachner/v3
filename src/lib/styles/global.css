@@ -1,10 +1,9 @@
 @import url('@nico-bachner/colors');
+@import url('@nico-bachner/typography');
 @import url('@nico-bachner/css');
 @import url('@nico-bachner/mdx/styles.css');
 
 html {
-    -webkit-font-smoothing: antialiased;
-    font-family: 'Inter', sans-serif;
     color: var(--color-strong);
     background-color: var(--color-lightest);
 }

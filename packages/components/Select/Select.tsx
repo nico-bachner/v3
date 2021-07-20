@@ -1,13 +1,23 @@
 import styles from './Select.module.css';
 
-interface SelectProps {
-    value?: string;
-    onChange?: (event: React.ChangeEvent<SelectProps>) => void;
-}
+type Option = {
+    value: string | number;
+    content?: string | number;
+};
 
-const Select: React.FC<SelectProps> = ({ children, ...select }) => (
-    <select className={styles.select} {...select}>
-        {children}
+type SelectProps = {
+    options: Option[];
+    value?: string;
+    onChange?: React.ChangeEventHandler<HTMLSelectElement>;
+};
+
+const Select: React.VFC<SelectProps> = ({ options, value, onChange }) => (
+    <select className={styles.select} value={value} onChange={onChange}>
+        {options.map(({ value, content }) => (
+            <option key={value} value={value}>
+                {content}
+            </option>
+        ))}
     </select>
 );
 

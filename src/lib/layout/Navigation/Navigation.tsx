@@ -29,19 +29,19 @@ const Navigation: React.VFC = () => {
                 ))}
             </div>
             <Select
+                options={(locales as Locale[]).map((locale) => {
+                    return {
+                        value: locale,
+                        content: locale.toUpperCase(),
+                    };
+                })}
                 value={locale}
                 onChange={({ target }) => {
                     router.push({ pathname, query }, pathname, {
                         locale: target.value,
                     });
                 }}
-            >
-                {(locales as Locale[]).map((locale) => (
-                    <option key={locale} value={locale}>
-                        {locale.toUpperCase()}
-                    </option>
-                ))}
-            </Select>
+            />
         </nav>
     );
 };

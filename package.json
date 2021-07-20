@@ -18,6 +18,7 @@
         "@nico-bachner/icons": "workspace:*",
         "@nico-bachner/mdx": "workspace:*",
         "@nico-bachner/svg": "workspace:*",
+        "@nico-bachner/typography": "workspace:*",
         "@supabase/supabase-js": "^1.19.0",
         "gray-matter": "^4.0.3",
         "mdx-prism": "^0.3.3",

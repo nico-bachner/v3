@@ -6,7 +6,7 @@
 
 @supports not (backdrop-filter: blur()) {
     .nav {
-        background-color: var(--color-lightest);
+        background-color: var(--color-neutral-0);
     }
 }
 
@@ -19,7 +19,6 @@
     justify-content: space-between;
     padding: 1rem 1.5rem;
     margin: 2rem auto;
-    color: var(--color-stronger);
 }
 
 .nav > :first-child {

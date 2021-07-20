@@ -1,7 +1,8 @@
 .select {
     appearance: none;
     cursor: pointer;
-    color: var(--color-strong);
+    font-family: var(--font-sans);
+    color: var(--color-text);
     background-color: transparent;
     background-image: url('/icons/arrow-down.svg');
     background-position: right 0.8rem center;
@@ -9,12 +10,12 @@
     background-size: 0.8rem;
     text-align: center;
     padding: 0.4rem 2rem 0.4rem 0.8rem;
-    transition: border-color 150ms ease-in-out;
+    transition: border-color 150ms ease;
     border: 1px solid;
     border-radius: 0.25rem;
-    border-color: var(--color-lighter);
+    border-color: var(--color-neutral-2);
 }
 
 .select:hover {
-    border-color: var(--color-light);
+    border-color: var(--color-neutral-4);
 }

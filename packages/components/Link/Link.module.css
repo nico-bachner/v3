@@ -8,36 +8,36 @@
 /* variant defaults */
 .highlight {
     transition: border 150ms ease;
-    color: var(--color-primary);
-    border-bottom: 1pt solid;
+    color: var(--color-blue-4);
+    border-bottom: 0.09em solid;
     border-bottom-color: transparent;
 }
 
 .highlight:hover {
-    border-bottom-color: var(--color-primary);
+    border-bottom-color: var(--color-blue-4);
 }
 
 .primary {
     transition: border 150ms ease;
-    color: var(--color-strongest);
-    border-bottom: 1pt solid;
+    color: var(--color-neutral-8);
+    border-bottom: 0.09em solid;
     border-bottom-color: transparent;
 }
 
 .primary:hover {
-    border-bottom-color: var(--color-strongest);
+    border-bottom-color: var(--color-neutral-8);
 }
 
 .secondary {
     transition: color 150ms ease;
-    color: var(--color-strong);
+    color: var(--color-neutral-4);
 }
 
 .secondary:hover {
-    color: var(--color-strongest);
+    color: var(--color-neutral-6);
 }
 
 .disabled {
     cursor: default;
-    color: var(--color-light);
+    color: var(--color-neutral-4);
 }

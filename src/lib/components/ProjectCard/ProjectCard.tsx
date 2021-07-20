@@ -15,12 +15,8 @@ const ProjectCard: React.VFC<ProjectData> = ({
                 {description}
             </Text>
             <div className={styles.footer}>
-                <Text color="primary" className={styles.more}>
-                    More Information →
-                </Text>
-                <Text color="light" className={styles.info}>
-                    {period}
-                </Text>
+                <Text color="primary">More Information →</Text>
+                <Text color="neutral-3">{period}</Text>
             </div>
         </Card>
     </Link>
