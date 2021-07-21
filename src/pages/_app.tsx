@@ -1,23 +1,23 @@
-import styles from '$lib/styles/App.module.css';
-
 import '$lib/styles/global.css';
 
-import { Footer, Navigation, MobileNavigation } from '$lib/layout';
+import { DefaultLayout } from '$lib/layouts';
 
 import type { NextPage } from 'next';
-import type { AppProps } from 'next/app';
+import type { AppProps as NextAppProps } from 'next/app';
 
-const App: NextPage<AppProps> = ({ Component, pageProps }) => (
-    <>
-        <Navigation />
+type GetLayout = (page: NextPage | React.ReactElement<any, any>) => JSX.Element;
 
-        <div className={styles.app}>
-            <Component {...pageProps} />
-            <Footer />
-        </div>
+type AppProps = {
+    Component: NextAppProps['Component'] & { getLayout: GetLayout };
+    pageProps: NextAppProps['pageProps'];
+};
 
-        <MobileNavigation />
-    </>
-);
+const App: React.VFC<AppProps> = ({ Component, pageProps }) => {
+    const getLayout =
+        Component.getLayout ??
+        ((page: NextPage) => <DefaultLayout>{page}</DefaultLayout>);
+
+    return getLayout(<Component {...pageProps} />);
+};
 
 export default App;

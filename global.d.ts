@@ -1,3 +1,7 @@
+import { NextPage } from 'next';
+
+type GetLayout = (page: NextPage) => JSX.Element;
+
 type YAML = {
     [key: string]: string | number | boolean | Date;
 };
