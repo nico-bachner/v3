@@ -18,14 +18,16 @@ export const getFile: Get<string> = async ({ basePath, path, extension }) => {
     return file;
 };
 
-export const getDirs = async (path: string[]) =>
-    (await fs.readdir([process.cwd(), ...path].join('/'), 'utf-8')).map(
-        (file) => {
-            if (file.split('.').length == 1) {
-                return file;
-            }
-        }
+export const getDirs: Get<string[][]> = async ({ basePath, path }) => {
+    const files = await fs.readdir(
+        [process.cwd(), ...basePath, ...path].join('/'),
+        'utf-8'
     );
+
+    return files
+        .filter((file) => file.split('.').length == 1)
+        .map((file) => [...path, file]);
+};
 
 export const getPaths: Get<string[][]> = async ({
     basePath,

@@ -1,7 +1,7 @@
 import styles from '$lib/styles/Page.module.css';
 
 import { getMDXContent } from 'packages/mdx/content';
-import { getFile, getPaths } from '$lib/utils/fs';
+import { getFile, getDirs, getPaths } from '$lib/utils/fs';
 import { getFileData, getFileContent } from '$lib/utils/file';
 import { getUpdated } from '$lib/utils/github';
 
@@ -30,16 +30,22 @@ export const getStaticPaths: GetStaticPaths = async ({ locales }) => {
         path: [],
         extension,
     });
-    const projectPaths = await getPaths({
+    const dirPaths = await getDirs({
         basePath,
-        path: ['projects'],
-        extension,
+        path: [],
     });
-    const articlePaths = await getPaths({
-        basePath,
-        path: ['articles'],
-        extension,
-    });
+    const otherPaths = (
+        await Promise.all(
+            dirPaths.map(
+                async (path) =>
+                    await getPaths({
+                        basePath,
+                        path,
+                        extension,
+                    })
+            )
+        )
+    ).flat();
 
     type Path = {
         params: {
@@ -48,7 +54,7 @@ export const getStaticPaths: GetStaticPaths = async ({ locales }) => {
         locale: string;
     };
 
-    const paths: Path[] = [...pagePaths, ...projectPaths, ...articlePaths]
+    const paths: Path[] = [...pagePaths, ...otherPaths]
         .map((path) =>
             (locales as Locale[]).map((locale) => {
                 return {
