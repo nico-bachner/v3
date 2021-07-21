@@ -2,6 +2,34 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.16.0](https://github.com/nico-bachner/v3/compare/v1.15.0...v1.16.0) (2021-07-21)
+
+
+### Features
+
+* added Design page ([bfb4e4e](https://github.com/nico-bachner/v3/commit/bfb4e4e22872dcc48cfac95775c97c14c8c3b680))
+* **colors:** extended color palette ([5adaecd](https://github.com/nico-bachner/v3/commit/5adaecd83efe99c94f4df0c0a8206cfab0586307))
+* **components:** added transitions to Link component ([bb38be2](https://github.com/nico-bachner/v3/commit/bb38be2ab75e04e4ff319a6237bfe60bee7cc509))
+* **components:** extended margin options ([5fe70a8](https://github.com/nico-bachner/v3/commit/5fe70a83beb9a0625bb4bba36eb97d18a2d62f85))
+* **design:** merged with design monorepo ([0e79f4e](https://github.com/nico-bachner/v3/commit/0e79f4e91fc07a5b3cbd4e1788cd235994f787de))
+
+
+### Bug Fixes
+
+* **build:** update 404 page ([159a255](https://github.com/nico-bachner/v3/commit/159a25524b100745b2af2aa4929af139a24102f1))
+* **design:** adjust some margins ([b79a3cb](https://github.com/nico-bachner/v3/commit/b79a3cb8fbaefeaa1eafd40a1e170082fbc3a94a))
+* **design:** adjusted Select text color ([f35c89b](https://github.com/nico-bachner/v3/commit/f35c89b20c70b3c665c1500d45e2614b31f85f9e))
+* **design:** fix broken footer styles ([0570a56](https://github.com/nico-bachner/v3/commit/0570a5603baae535af51939cc068644fdf5dc89a))
+* **design:** fix footer layout ([24eac2d](https://github.com/nico-bachner/v3/commit/24eac2ddaf38692447a2c6acc35e055198d868ad))
+* **design:** fix footer layout (again) ([fb69a42](https://github.com/nico-bachner/v3/commit/fb69a422b8cf655f426483e45541eb651cf1d647))
+* remove design redirect ([380d8a8](https://github.com/nico-bachner/v3/commit/380d8a8b1790c41b432c247798b0b6a350d70a17))
+* remove Repositories ([549ae50](https://github.com/nico-bachner/v3/commit/549ae507883223e450d41dbb31e3d0e576ca96cf))
+* **styles:** remove unused styles ([a3f4a81](https://github.com/nico-bachner/v3/commit/a3f4a8151608023b0e20f5c7b04d879b67e6d0a0))
+* **tooling:** fixed TypeScript config ([89af343](https://github.com/nico-bachner/v3/commit/89af3432f134684670847219dbaa2dff8c548dbd))
+* **tooling:** remove vscode tailwind extension recommendation ([a4f18b6](https://github.com/nico-bachner/v3/commit/a4f18b628d0cd583a2a83b2073aaea17bd70b2f9))
+* **typography:** adjust line heights and margins ([3a17a4a](https://github.com/nico-bachner/v3/commit/3a17a4ad94feb4596582f017597aa1d676bc1e4a))
+* **typography:** increase base line height ([ae8291d](https://github.com/nico-bachner/v3/commit/ae8291da1a29631fded9df0d566c7d4c5d91cd2d))
+
 ## [1.15.0](https://github.com/nico-bachner/v3/compare/v1.14.0...v1.15.0) (2021-07-17)
 
 ### Features
