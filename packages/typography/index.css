@@ -54,13 +54,6 @@ html {
     --font-weight-bold: calc(1.27 * var(--font-weight));
     --font-weight-bolder: calc(1.62 * var(--font-weight));
     --font-weight-boldest: calc(2.06 * var(--font-weight));
-
-    /* margins */
-    --text-margin-tighter: 0.62em 0 0.38em 0;
-    --text-margin-tight: 1em 0 0.62em 0;
-    --text-margin-prose: 1.62em 0 1em 0;
-    --text-margin-loose: 2.62em 0 1.62em 0;
-    --text-margin-looser: 4.25em 0 2.62em 0;
 }
 
 @media (min-width: 640px) {

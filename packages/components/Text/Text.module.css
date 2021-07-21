@@ -5,44 +5,44 @@
 }
 
 /* ---- Individual Defaults ---- */
-.h1,
-.h2,
-.h3 {
+.type-h1,
+.type-h2,
+.type-h3 {
     color: var(--color-neutral-8);
 }
 
-.h1 {
+.type-h1 {
     font-size: var(--font-size-5xl);
     line-height: var(--line-height-5xs);
     font-weight: var(--font-weight-boldest);
 }
 
-.h2 {
+.type-h2 {
     font-size: var(--font-size-3xl);
     line-height: var(--line-height-3xs);
     font-weight: var(--font-weight-bolder);
 }
 
-.h3 {
+.type-h3 {
     font-size: var(--font-size-xl);
     line-height: var(--line-height-xs);
     font-weight: var(--font-weight-bold);
 }
 
-.strong {
+.type-strong {
     color: var(--color-neutral-8);
     font-size: inherit;
     font-weight: var(--font-weight-bolder);
 }
 
-.p {
+.type-p {
     color: var(--color-neutral-5);
     font-size: var(--font-size);
     line-height: var(--line-height);
     font-weight: var(--font-weight);
 }
 
-/* ---- Individual Defaults ---- */
+/* ---- Sizing ---- */
 .size-5xs {
     font-size: var(--font-size-5xs);
     line-height: var(--line-height-5xl);
@@ -106,4 +106,22 @@
 .size-5xl {
     font-size: var(--font-size-5xl);
     line-height: var(--line-height-5xs);
+}
+
+/* ---- Spacing ---- */
+.margin-prose {
+    margin-block-start: 1.62em;
+    margin-block-end: 1em;
+}
+
+.margin-tight {
+    margin-block: 0.5rem;
+}
+
+.margin-regular {
+    margin-block: 1rem;
+}
+
+.margin-loose {
+    margin-block: 2rem;
 }

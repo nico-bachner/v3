@@ -27,5 +27,3 @@ type FontWeight =
     | 'bold'
     | 'bolder'
     | 'boldest';
-
-type TextMargin = 'tighter' | 'tight' | 'prose' | 'loose' | 'looser';

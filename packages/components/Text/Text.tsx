@@ -5,7 +5,7 @@ type TextProps = {
     color?: Color;
     size?: FontSize | 'base';
     weight?: FontWeight;
-    margin?: TextMargin;
+    margin?: 'prose' | 'tight' | 'regular' | 'loose';
     align?: 'left' | 'center' | 'right';
     transform?: 'capitalize' | 'uppercase' | 'lowercase';
     className?: string;
@@ -24,87 +24,41 @@ const Text: React.FC<TextProps> = ({
     className,
     style,
 }) => {
-    const styles: React.CSSProperties = {
-        color: color ? `var(--color-${color}) ` : undefined,
-        // @ts-ignore (csstype expects a number, not a css custom property)
-        fontWeight: weight ? `var(--font-weight-${weight}) ` : undefined,
-        margin: margin ? `var(--text-margin-${margin}) ` : undefined,
-        textAlign: align,
-        textTransform: transform,
-        ...style,
+    type Styling = {
+        className: string;
+        style: React.CSSProperties;
+    };
+
+    const styling: Styling = {
+        style: {
+            color: color ? `var(--color-${color}) ` : undefined,
+            // @ts-ignore
+            fontWeight: weight ? `var(--font-weight-${weight}) ` : undefined,
+            textAlign: align,
+            textTransform: transform,
+            ...style,
+        },
+        className: [
+            classes.text,
+            classes[`type-${type}`],
+            classes[`size-${size}`],
+            classes[`weight-${weight}`],
+            classes[`margin-${margin}`],
+            className,
+        ].join(' '),
     };
 
     switch (type) {
         case 'h1':
-            return (
-                <h1
-                    style={styles}
-                    className={[
-                        classes.text,
-                        classes.h1,
-                        classes[`size-${size}`],
-                        className,
-                    ].join(' ')}
-                >
-                    {children}
-                </h1>
-            );
+            return <h1 {...styling}>{children}</h1>;
         case 'h2':
-            return (
-                <h2
-                    style={styles}
-                    className={[
-                        classes.text,
-                        classes.h2,
-                        classes[`size-${size}`],
-                        className,
-                    ].join(' ')}
-                >
-                    {children}
-                </h2>
-            );
+            return <h2 {...styling}>{children}</h2>;
         case 'h3':
-            return (
-                <h3
-                    style={styles}
-                    className={[
-                        classes.text,
-                        classes.h3,
-                        classes[`size-${size}`],
-                        className,
-                    ].join(' ')}
-                >
-                    {children}
-                </h3>
-            );
+            return <h3 {...styling}>{children}</h3>;
         case 'strong':
-            return (
-                <strong
-                    style={styles}
-                    className={[
-                        classes.text,
-                        classes.strong,
-                        classes[`size-${size}`],
-                        className,
-                    ].join(' ')}
-                >
-                    {children}
-                </strong>
-            );
+            return <strong {...styling}>{children}</strong>;
         case 'p':
-            return (
-                <p
-                    style={styles}
-                    className={[
-                        classes.text,
-                        classes.p,
-                        classes[`size-${size}`],
-                        className,
-                    ].join(' ')}
-                >
-                    {children}
-                </p>
-            );
+            return <p {...styling}>{children}</p>;
     }
 };
 
