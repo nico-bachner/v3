@@ -1,9 +1,41 @@
 import { promises as fs } from 'fs';
 
-export const getFile = async (path: string) => await fs.readFile(path, 'utf-8');
+type Props = {
+    basePath: string[];
+    path: string[];
+    extension?: string;
+};
 
-export const getSlugs = async (path: string, extension?: string) => {
-    const files = await fs.readdir(process.cwd() + '/' + path, 'utf-8');
+type Get<T> = (props: Props) => Promise<T>;
+
+export const getFile: Get<string> = async ({ basePath, path, extension }) => {
+    const fullPath = [...basePath, ...path].join('/');
+
+    const fullFilePath = [fullPath, extension].join('.');
+
+    const file = await fs.readFile(fullFilePath, 'utf-8');
+
+    return file;
+};
+
+export const getDirs = async (path: string[]) =>
+    (await fs.readdir([process.cwd(), ...path].join('/'), 'utf-8')).map(
+        (file) => {
+            if (file.split('.').length == 1) {
+                return file;
+            }
+        }
+    );
+
+export const getPaths: Get<string[][]> = async ({
+    basePath,
+    path,
+    extension,
+}) => {
+    const files = await fs.readdir(
+        [process.cwd(), ...basePath, ...path].join('/'),
+        'utf-8'
+    );
 
     if (extension) {
         return files
@@ -11,13 +43,13 @@ export const getSlugs = async (path: string, extension?: string) => {
             .map((file) => {
                 const [slug] = file.split('.');
 
-                return slug as string;
+                return [...path, slug as string];
             });
     }
 
     return files.map((file) => {
         const [slug] = file.split('.');
 
-        return slug as string;
+        return [...path, slug as string];
     });
 };

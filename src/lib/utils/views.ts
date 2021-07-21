@@ -1,5 +1,11 @@
 import db from './supabase';
 
+type ViewItem = {
+    slug: string;
+    type: string;
+    views: number;
+};
+
 export const getViewsData = async () => {
     const { data } = await db
         .from<ViewItem>('views')

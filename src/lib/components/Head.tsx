@@ -5,7 +5,7 @@ import NextHead from 'next/head';
 interface HeadProps {
     title: string;
     description: string;
-    slug: string;
+    slug?: string;
     type?: string;
     canonical_url?: string;
 }

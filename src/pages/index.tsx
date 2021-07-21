@@ -1,7 +1,7 @@
 import styles from '$lib/styles/Home.module.css';
 
-import { getProjectsData } from '$lib/utils/projects';
-import { getArticlesData } from '$lib/utils/articles';
+import { getProjects } from '$lib/utils/data/projects';
+import { getArticles } from '$lib/utils/data/articles';
 import { useI18n } from '$lib/hooks/i18n';
 
 import { Link, Text } from '@nico-bachner/components';
@@ -17,8 +17,8 @@ interface HomeProps {
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-    const projects = await getProjectsData();
-    const articles = await getArticlesData();
+    const projects = await getProjects();
+    const articles = await getArticles();
 
     const props: HomeProps = {
         projects: projects.filter((project) => project.featured),
@@ -51,7 +51,7 @@ const Home: NextPage<HomeProps> = ({ projects, articles }) => {
                 <Text margin="prose">{i18n.projects.content}</Text>
                 <div className={styles.grid}>
                     {projects.map((project) => (
-                        <ProjectCard key={project.slug} {...project} />
+                        <ProjectCard key={project.title} {...project} />
                     ))}
                 </div>
                 <Text align="right" transform="capitalize">
@@ -65,7 +65,7 @@ const Home: NextPage<HomeProps> = ({ projects, articles }) => {
                 <Text margin="prose">{i18n.articles.content}</Text>
                 <div className={styles.grid}>
                     {articles.map((article) => (
-                        <ArticleCard key={article.slug} {...article} />
+                        <ArticleCard key={article.title} {...article} />
                     ))}
                 </div>
                 <Text align="right" transform="capitalize">

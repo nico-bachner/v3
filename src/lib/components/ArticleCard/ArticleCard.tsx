@@ -3,12 +3,12 @@ import styles from './ArticleCard.module.css';
 import { Link, Text, Card } from '@nico-bachner/components';
 
 const ArticleCard: React.VFC<ArticleData> = ({
+    path,
     title,
     description,
-    slug,
     reading_time,
 }) => (
-    <Link href={`/articles/${slug}`}>
+    <Link href={`/${path.join('/')}`}>
         <Card variant="interactive" className={styles.card}>
             <Text type="h3">{title}</Text>
             <Text margin="tighter">{description}</Text>

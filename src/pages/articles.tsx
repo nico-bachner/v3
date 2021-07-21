@@ -1,6 +1,6 @@
 import styles from '$lib/styles/Articles.module.css';
 
-import { getArticlesData } from '$lib/utils/articles';
+import { getArticles } from '$lib/utils/data/articles';
 import { useI18n } from '$lib/hooks/i18n';
 
 import { Text } from '@nico-bachner/components';
@@ -14,7 +14,7 @@ interface ArticlesPageProps {
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-    const articles = await getArticlesData();
+    const articles = await getArticles();
 
     const props: ArticlesPageProps = {
         articles,
@@ -39,7 +39,7 @@ const Articles: NextPage<ArticlesPageProps> = ({ articles }) => {
             <Text margin="prose">{i18n.articles.content}</Text>
             <div className={styles.grid}>
                 {articles.map((article) => (
-                    <ArticleCard key={article.slug} {...article} />
+                    <ArticleCard key={article.title} {...article} />
                 ))}
             </div>
         </main>

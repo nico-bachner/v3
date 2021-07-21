@@ -1,6 +1,6 @@
 import styles from '$lib/styles/Projects.module.css';
 
-import { getProjectsData } from '$lib/utils/projects';
+import { getProjects } from '$lib/utils/data/projects';
 import { useI18n } from '$lib/hooks/i18n';
 
 import { Text } from '@nico-bachner/components';
@@ -14,7 +14,7 @@ interface ProjectsProps {
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-    const projects = await getProjectsData();
+    const projects = await getProjects();
 
     const props: ProjectsProps = {
         projects,
@@ -41,7 +41,7 @@ const Projects: NextPage<ProjectsProps> = ({ projects }) => {
             </Text>
             <div className={styles.grid}>
                 {projects.map((project) => (
-                    <ProjectCard key={project.slug} {...project} />
+                    <ProjectCard key={project.title} {...project} />
                 ))}
             </div>
         </main>

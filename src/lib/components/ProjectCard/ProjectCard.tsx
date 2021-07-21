@@ -3,12 +3,12 @@ import styles from './ProjectCard.module.css';
 import { Link, Text, Card } from '@nico-bachner/components';
 
 const ProjectCard: React.VFC<ProjectData> = ({
-    slug,
+    path,
     title,
     description,
     period,
 }) => (
-    <Link href={`/projects/${slug}`}>
+    <Link href={`/${path.join('/')}`}>
         <Card variant="interactive" className={styles.card}>
             <Text type="h3">{title}</Text>
             <Text margin="tighter">{description}</Text>
