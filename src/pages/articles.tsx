@@ -33,7 +33,6 @@ const Articles: NextPage<ArticlesPageProps> = ({ articles }) => {
             <Head
                 title="Articles | Nico Bachner"
                 description="Nico Bachner's Articles"
-                slug="articles"
             />
             <Text type="h1">{i18n.articles.title}</Text>
             <Text margin="prose">{i18n.articles.content}</Text>

@@ -7,11 +7,7 @@ import type { NextPage } from 'next';
 
 const NotFound: NextPage = () => (
     <main className={styles.main}>
-        <Head
-            title="404 | Nico Bachner"
-            description="Page Not Found"
-            slug="404"
-        />
+        <Head title="404 | Nico Bachner" description="Page Not Found" />
         <Text type="h1">404 - Page Not Found</Text>
         <Text margin="prose">
             It seems the page you were looking for does not exist. You should

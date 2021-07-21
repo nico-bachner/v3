@@ -16,7 +16,6 @@ const Design = () => (
         <Head
             title="Design | Nico Bachner"
             description="Nico Bachner's Design System"
-            slug="home"
         />
         <Text type="h1">Design</Text>
         <Text size="lg" margin="tight">
