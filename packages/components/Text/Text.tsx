@@ -5,7 +5,7 @@ type TextProps = {
     color?: Color;
     size?: FontSize | 'base';
     weight?: FontWeight;
-    margin?: 'prose' | 'tight' | 'regular' | 'loose';
+    margin?: 'prose' | 'tighter' | 'tight' | 'regular' | 'loose' | 'looser';
     align?: 'left' | 'center' | 'right';
     transform?: 'capitalize' | 'uppercase' | 'lowercase';
     className?: string;

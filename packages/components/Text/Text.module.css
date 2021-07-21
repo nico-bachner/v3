@@ -114,8 +114,12 @@
     margin-block-end: 1em;
 }
 
+.margin-tighter {
+    margin-block: 0.62rem;
+}
+
 .margin-tight {
-    margin-block: 0.5rem;
+    margin-block: 0.79rem;
 }
 
 .margin-regular {
@@ -123,5 +127,9 @@
 }
 
 .margin-loose {
-    margin-block: 2rem;
+    margin-block: 1.27rem;
+}
+
+.margin-looser {
+    margin-block: 1.62rem;
 }
