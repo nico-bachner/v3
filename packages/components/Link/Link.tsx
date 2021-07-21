@@ -16,7 +16,7 @@ const Link: React.FC<LinkProps> = ({
     ...link
 }) => (
     <NextLink {...link}>
-        {link.href.toString().startsWith('') ? (
+        {link.href.toString().startsWith('/') ? (
             <a className={[styles.link, styles[variant], className].join(' ')}>
                 {children}
             </a>
