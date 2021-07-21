@@ -33,11 +33,7 @@ const Home: NextPage<HomeProps> = ({ projects, articles }) => {
 
     return (
         <main className={styles.home}>
-            <Head
-                title="Nico Bachner"
-                description={i18n.about.content}
-                slug="home"
-            />
+            <Head title="Nico Bachner" description={i18n.about.content} />
             <Text type="h1">{i18n.title}</Text>
             <Text size="3xl" weight="bolder" className={styles.subtitle}>
                 {i18n.subtitle}
