@@ -1,9 +1,9 @@
 {
     "name": "@nico-bachner/components-react",
-    "version": "0.1.1",
+    "version": "0.1.2",
     "dependencies": {
-        "@nico-bachner/react-hooks": "workspace:*",
-        "@nico-bachner/icons-react": "workspace:*"
+        "@nico-bachner/icons-react": "workspace:*",
+        "@nico-bachner/react-hooks": "workspace:*"
     },
     "peerDependencies": {
         "@nico-bachner/colors": ">=0.5.1",

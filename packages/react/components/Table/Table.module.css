@@ -1,5 +1,8 @@
 .table {
+    color: var(--color-text);
     font-family: var(--font-sans);
+    font-size: var(--font-size-sm);
+    line-height: var(--line-height-lg);
     width: 100%;
     table-layout: fixed;
     border-collapse: collapse;
