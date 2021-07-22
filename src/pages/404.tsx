@@ -1,7 +1,7 @@
 import styles from '$lib/styles/404.module.css';
 
 import Head from '$lib/components/Head';
-import { Link, Text } from '@nico-bachner/components';
+import { Link, Text } from '@nico-bachner/components-react';
 
 import type { NextPage } from 'next';
 

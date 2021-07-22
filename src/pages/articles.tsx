@@ -3,7 +3,7 @@ import styles from '$lib/styles/Articles.module.css';
 import { getArticles } from '$lib/utils/data/articles';
 import { useI18n } from '$lib/hooks/i18n';
 
-import { Text } from '@nico-bachner/components';
+import { Text } from '@nico-bachner/components-react';
 import Head from '$lib/components/Head';
 import ArticleCard from '$lib/components/ArticleCard';
 

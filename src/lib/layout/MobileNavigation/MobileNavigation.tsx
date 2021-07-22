@@ -3,7 +3,7 @@ import styles from './MobileNavigation.module.css';
 import { useRouter } from 'next/router';
 import { useI18n } from '$lib/hooks/i18n';
 
-import { Link, Text } from '@nico-bachner/components';
+import { Link, Text } from '@nico-bachner/components-react';
 
 const MobileNavigation: React.VFC = () => {
     const router = useRouter();

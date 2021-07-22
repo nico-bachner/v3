@@ -1,0 +1,13 @@
+{
+    "name": "@nico-bachner/icons-react",
+    "version": "0.1.0",
+    "dependencies": {
+        "@nico-bachner/svg-react": "workspace:*"
+    },
+    "peerDependencies": {
+        "next": ">=11",
+        "react": ">=17",
+        "react-dom": ">=17",
+        "typescript": ">=4.3"
+    }
+}

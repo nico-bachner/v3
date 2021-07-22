@@ -1,6 +1,6 @@
 import styles from './ProjectCard.module.css';
 
-import { Link, Text, Card } from '@nico-bachner/components';
+import { Link, Text, Card } from '@nico-bachner/components-react';
 
 const ProjectCard: React.VFC<ProjectData> = ({
     path,

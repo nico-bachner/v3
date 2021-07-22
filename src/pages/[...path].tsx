@@ -1,16 +1,16 @@
 import styles from '$lib/styles/Page.module.css';
 
-import { getMDXContent } from 'packages/mdx/content';
+import { getMDXContent } from 'packages/react/mdx/content';
 import { getFile, getDirs, getPaths } from '$lib/utils/fs';
 import { getFileData, getFileContent } from '$lib/utils/file';
 import { getUpdated } from '$lib/utils/github';
 
-import { Link, Text } from '@nico-bachner/components';
+import { Link, Text } from '@nico-bachner/components-react';
 import MDX from '@nico-bachner/mdx';
 import Head from '$lib/components/Head';
 
 import type { NextPage, GetStaticPaths, GetStaticProps } from 'next';
-import { MDXContent } from 'packages/mdx/types';
+import { MDXContent } from 'packages/react/mdx/types';
 
 type PageProps = {
     title: string;

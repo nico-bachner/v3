@@ -8,7 +8,7 @@ import {
     List,
     Select,
     Text,
-} from '@nico-bachner/components';
+} from '@nico-bachner/components-react';
 import Head from '$lib/components/Head';
 
 const Design = () => (

@@ -2,7 +2,7 @@ import styles from './Footer.module.css';
 
 import { useI18n } from '$lib/hooks/i18n';
 
-import { Link, Text } from '@nico-bachner/components';
+import { Link, Text } from '@nico-bachner/components-react';
 
 const Footer = () => {
     const { pages, links } = useI18n();

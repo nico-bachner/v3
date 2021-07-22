@@ -3,8 +3,8 @@ import styles from './Navigation.module.css';
 import { useRouter } from 'next/router';
 import { useI18n } from '$lib/hooks/i18n';
 
-import { Link, Text, Select } from '@nico-bachner/components';
-import Logo from '$lib/icons/Logo';
+import { Link, Text, Select } from '@nico-bachner/components-react';
+import { Logo } from '@nico-bachner/icons-react';
 
 const Navigation: React.VFC = () => {
     const { pages } = useI18n();

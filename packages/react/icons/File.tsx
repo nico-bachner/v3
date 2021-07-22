@@ -1,4 +1,4 @@
-import { SVG, Path } from '@nico-bachner/svg';
+import { SVG, Path } from '@nico-bachner/svg-react';
 
 type Coordinate = {
     x: number;

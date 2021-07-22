@@ -2,7 +2,7 @@ import styles from '$lib/styles/Views.module.css';
 
 import { useState, useEffect } from 'react';
 
-import { Table, Text } from '@nico-bachner/components';
+import { Table, Text } from '@nico-bachner/components-react';
 import Head from '$lib/components/Head';
 
 const Views = () => {

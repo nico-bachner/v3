@@ -1,4 +1,4 @@
-import { SVG, Line, Rectangle } from '@nico-bachner/svg';
+import { SVG, Line, Rectangle } from '@nico-bachner/svg-react';
 
 const Plus = ({ width = 24, height = 24, padding = 8, sign = 4 }) => (
     <SVG width={width} height={height}>

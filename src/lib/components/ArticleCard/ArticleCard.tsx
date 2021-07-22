@@ -1,6 +1,6 @@
 import styles from './ArticleCard.module.css';
 
-import { Link, Text, Card } from '@nico-bachner/components';
+import { Link, Text, Card } from '@nico-bachner/components-react';
 
 const ArticleCard: React.VFC<ArticleData> = ({
     path,
