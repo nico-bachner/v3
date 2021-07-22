@@ -1,5 +1,5 @@
 import dynamic from 'next/dynamic';
-import * as components from '@nico-bachner/components';
+import * as components from '@nico-bachner/components-react';
 
 import {
     Code,
