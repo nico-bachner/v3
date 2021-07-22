@@ -1,4 +1,4 @@
-import db from '../supabase';
+import db from '$lib/utils/supabase';
 
 export const getAllViews = async () => {
     const { data } = await db.from<ViewItem>('views').select('path, views');
