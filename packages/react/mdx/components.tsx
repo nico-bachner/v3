@@ -1,7 +1,13 @@
 import dynamic from 'next/dynamic';
 import * as components from '@nico-bachner/components';
 
-import { Code, CodeBlock, List, Link, Text } from '@nico-bachner/components';
+import {
+    Code,
+    CodeBlock,
+    List,
+    Link,
+    Text,
+} from '@nico-bachner/components-react';
 
 const H1: React.FC = ({ children }) => <Text type="h1">{children}</Text>;
 
