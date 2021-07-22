@@ -18,11 +18,24 @@ type InputProps = {
         | 'text'
         | 'time'
         | 'url';
-    placeholder: string;
+    value: string;
+    onChange?: React.ChangeEventHandler<HTMLInputElement>;
+    placeholder?: string;
 };
 
-const Input: React.VFC<InputProps> = ({ type, placeholder }) => (
-    <input className={styles.input} type={type} placeholder={placeholder} />
+const Input: React.VFC<InputProps> = ({
+    type,
+    value,
+    onChange,
+    placeholder,
+}) => (
+    <input
+        type={type}
+        value={value}
+        onChange={onChange}
+        placeholder={placeholder}
+        className={styles.input}
+    />
 );
 
 export default Input;

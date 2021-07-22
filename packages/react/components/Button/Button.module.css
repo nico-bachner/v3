@@ -1,0 +1,17 @@
+.button {
+    cursor: pointer;
+    padding: 0.5em 1em;
+    color: var(--color-neutral-0);
+    background-color: var(--color-neutral-8);
+    font-family: var(--font-sans);
+    font-size: var(--font-size-sm);
+    line-height: var(--line-height-lg);
+    border: 1px solid var(--color-neutral-8);
+    border-radius: 0.38em;
+    transition: color 300ms ease, background-color 300ms ease;
+}
+
+.button:hover {
+    color: var(--color-neutral-8);
+    background-color: var(--color-neutral-0);
+}
