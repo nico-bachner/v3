@@ -26,7 +26,7 @@ const Link: React.FC<LinkProps> = ({
                 rel="noopener noreferrer"
                 className={[styles.link, styles[variant], className].join(' ')}
             >
-                {children}
+                {children} →
             </a>
         )}
     </NextLink>

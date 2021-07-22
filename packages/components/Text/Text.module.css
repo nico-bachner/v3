@@ -1,6 +1,7 @@
 /* ---- Global Defaults ---- */
 .text {
     font-family: var(--font-sans);
+    font-feature-settings: var(--font-features-sans);
     margin: 0;
 }
 
