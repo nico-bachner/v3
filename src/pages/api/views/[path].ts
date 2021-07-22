@@ -2,7 +2,7 @@ import { getViews, getUpdatedViews } from '$lib/utils/views';
 
 import { NextApiHandler } from 'next';
 
-const apiHandler: NextApiHandler = async (req, res) => {
+const Views: NextApiHandler = async (req, res) => {
     const { path: pathString } = req.query;
 
     const path = decodeURIComponent(pathString as string);
@@ -22,4 +22,4 @@ const apiHandler: NextApiHandler = async (req, res) => {
     }
 };
 
-export default apiHandler;
+export default Views;
