@@ -1,22 +1,24 @@
 .list {
+    color: var(--color-text);
     font-family: var(--font-sans);
     font-size: var(--font-size);
-    color: var(--color-text);
-    list-style: none;
-    padding: 0;
-    margin: 2em 0;
+    line-height: var(--line-height);
+    padding-left: 2.5rem;
+    margin: 2rem 0;
 }
 
 .list > * {
-    margin: 1em 0;
-}
-
-.list > *::before {
-    content: '–';
-    color: var(--color-neutral-3);
-    padding: 0 1em;
+    margin: 0.5em 0;
 }
 
 .list > *::marker {
     color: var(--color-neutral-3);
+}
+
+.ordered {
+    list-style-type: decimal;
+}
+
+.unordered {
+    list-style-type: circle;
 }

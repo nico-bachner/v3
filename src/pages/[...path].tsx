@@ -156,7 +156,7 @@ const Page: NextPage<PageProps> = ({
             <Text color="neutral-4">Last updated: {lastUpdated}</Text>
             <Text>
                 <Link href={editUrl} variant="highlight">
-                    Edit on GitHub
+                    Edit on GitHub →
                 </Link>
             </Text>
         </div>

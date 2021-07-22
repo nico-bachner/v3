@@ -1,6 +1,6 @@
 {
     "name": "@nico-bachner/typography",
-    "version": "0.6.2",
+    "version": "0.6.3",
     "main": "index.css",
     "peerDependencies": {
         "@nico-bachner/colors": ">=0.5.1"

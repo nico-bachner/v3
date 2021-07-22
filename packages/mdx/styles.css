@@ -13,33 +13,13 @@
 /* ---- remark-footnotes ---- */
 .footnotes {
     margin: 2rem 0;
-    color: var(--color-text);
 }
 
-.footnotes ol {
-    margin: 1rem 0;
-    padding-left: 2em;
-    list-style: decimal inside;
-}
-
-.footnotes li {
-    margin: 0.5em 0;
+.footnotes > hr {
+    border: 1px solid var(--color-neutral-1);
 }
 
 /* ---- mdx-prism ---- */
-pre {
-    font-family: var(--font-mono);
-    font-size: var(--font-size-sm);
-    font-weight: var(--font-weight);
-    tab-size: 4;
-    line-height: var(--line-height);
-    width: 100%;
-    border: 1px solid var(--color-neutral-2);
-    border-radius: 0.25rem;
-    padding: 1rem 1.5rem;
-    overflow: scroll;
-}
-
 .token.plain-text,
 .token.attr-equals,
 .language-yml .token.punctuation {

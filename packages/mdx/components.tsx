@@ -1,17 +1,7 @@
 import dynamic from 'next/dynamic';
 import * as components from '@nico-bachner/components';
 
-import { Code, List, Link, Text } from '@nico-bachner/components';
-
-type MDXLinkProps = {
-    href: string;
-};
-
-const MDXLink: React.FC<MDXLinkProps> = ({ href, children }) => (
-    <Link href={href} variant="highlight">
-        {children}
-    </Link>
-);
+import { Code, CodeBlock, List, Link, Text } from '@nico-bachner/components';
 
 const H1: React.FC = ({ children }) => <Text type="h1">{children}</Text>;
 
@@ -33,6 +23,20 @@ const P: React.FC = ({ children }) => (
     </Text>
 );
 
+type MDXLinkProps = {
+    href: string;
+};
+
+const MDXLink: React.FC<MDXLinkProps> = ({ href, children }) => (
+    <Link href={href} variant="highlight">
+        {children}
+    </Link>
+);
+
+const OrderedList: React.FC = ({ children }) => (
+    <List type="ordered">{children}</List>
+);
+
 export const MDXComponents = {
     // override mdx default components
     h1: H1,
@@ -41,7 +45,9 @@ export const MDXComponents = {
     p: P,
     a: MDXLink,
     inlineCode: Code,
+    pre: CodeBlock,
     ul: List,
+    ol: OrderedList,
 
     // add custom components
     ...components,

@@ -1,6 +1,6 @@
 {
     "name": "@nico-bachner/mdx",
-    "version": "0.3.1",
+    "version": "0.3.2",
     "dependencies": {
         "@nico-bachner/components": "workspace:*",
         "gray-matter": "^4.0.3",
