@@ -41,7 +41,11 @@ const Views: NextPage<Props> = ({ views }) => (
                     .map(({ path, views }) => [path, views])}
             />
             <div className={styles.bottom}>
-                <Button onClick={() => supabase.auth.signOut()}>
+                <Button
+                    onClick={() => {
+                        supabase.auth.signOut();
+                    }}
+                >
                     Sign Out
                 </Button>
             </div>
