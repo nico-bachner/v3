@@ -2,7 +2,7 @@ import styles from '$lib/styles/Home.module.css';
 
 import { getProjects } from '$lib/utils/data/projects';
 import { getArticles } from '$lib/utils/data/articles';
-import { useI18n } from '$lib/hooks/i18n';
+import { useI18n } from '$lib/hooks/useI18n';
 
 import { Link, Text } from '@nico-bachner/components-react';
 import Head from '$lib/components/Head';

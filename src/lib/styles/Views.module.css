@@ -2,3 +2,10 @@
     max-width: 42rem;
     margin: auto;
 }
+
+.bottom {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 3rem 0;
+}

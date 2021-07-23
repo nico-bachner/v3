@@ -1,29 +1,52 @@
 import styles from '$lib/styles/Views.module.css';
 
-import { useState, useEffect } from 'react';
+import { getAllViews } from '$lib/utils/views';
 import supabase from '$lib/utils/supabase';
 
+import { Button, Table, Text } from '@nico-bachner/components-react';
 import Head from '$lib/components/Head';
 import Auth from '$lib/components/Auth';
-import ViewsComponent from '$lib/components/Views';
 
-const Views = () => {
-    const [session, setSession] = useState<Session | null>(null);
+import type { NextPage, GetStaticProps } from 'next';
 
-    useEffect(() => {
-        setSession(supabase.auth.session());
-    }, []);
+type Props = {
+    views: ViewItem[];
+};
 
-    return (
+export const getStaticProps: GetStaticProps = async () => {
+    const views = await getAllViews();
+
+    const props: Props = {
+        views,
+    };
+
+    return {
+        props,
+    };
+};
+
+const Views: NextPage<Props> = ({ views }) => (
+    <Auth>
         <main className={styles.main}>
             <Head
                 title="Views | Nico Bachner"
                 description="Nico Bachner's Page Views"
             />
-
-            {session ? <ViewsComponent /> : <Auth />}
+            <Text type="h1">Views</Text>
+            <Text margin="tight">Page Views</Text>
+            <Table
+                head={['Path', 'Views']}
+                body={views
+                    .sort((a, b) => b.views - a.views)
+                    .map(({ path, views }) => [path, views])}
+            />
+            <div className={styles.bottom}>
+                <Button onClick={() => supabase.auth.signOut()}>
+                    Sign Out
+                </Button>
+            </div>
         </main>
-    );
-};
+    </Auth>
+);
 
 export default Views;

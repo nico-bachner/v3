@@ -1,6 +1,6 @@
 import styles from './Footer.module.css';
 
-import { useI18n } from '$lib/hooks/i18n';
+import { useI18n } from '$lib/hooks/useI18n';
 
 import { Link, Text } from '@nico-bachner/components-react';
 

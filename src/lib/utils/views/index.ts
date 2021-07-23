@@ -1,9 +1,11 @@
 import db from '$lib/utils/supabase';
 
 export const getAllViews = async () => {
-    const { data } = await db.from<ViewItem>('views').select('path, views');
+    const { data: views } = await db
+        .from<ViewItem>('views')
+        .select('path, views');
 
-    return data;
+    return views ?? [];
 };
 
 export const getViews = async (path: string) => {

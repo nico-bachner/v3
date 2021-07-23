@@ -1,7 +1,7 @@
 import styles from '$lib/styles/Projects.module.css';
 
 import { getProjects } from '$lib/utils/data/projects';
-import { useI18n } from '$lib/hooks/i18n';
+import { useI18n } from '$lib/hooks/useI18n';
 
 import { Text } from '@nico-bachner/components-react';
 import Head from '$lib/components/Head';
