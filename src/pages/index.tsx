@@ -75,8 +75,11 @@ const Home: NextPage<HomeProps> = ({ projects, articles }) => {
                 <Text margin="prose">{i18n.contact.content}</Text>
                 <div className={styles.contact_links}>
                     <Text className={styles.mail}>
-                        <Link href="mailto:hello@nicob.dev" variant="highlight">
-                            hello@nicob.dev
+                        <Link
+                            href="mailto:mail@nicobachner.com"
+                            variant="highlight"
+                        >
+                            mail@nicobachner.com
                         </Link>
                     </Text>
                     <Text className={styles.social}>
