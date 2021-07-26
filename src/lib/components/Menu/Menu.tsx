@@ -82,9 +82,17 @@ const Menu: React.VFC = () => {
 
                 <div className={styles.item}>
                     <div className={styles.center}>
-                        <Link href="/login">
-                            <Button>{session ? 'Sign Out' : 'Sign In'}</Button>
-                        </Link>
+                        <Button
+                            onClick={() => {
+                                if (session) {
+                                    setSession(null);
+                                }
+
+                                push('/login');
+                            }}
+                        >
+                            {session ? 'Sign Out' : 'Sign In'}
+                        </Button>
                     </div>
                 </div>
             </div>

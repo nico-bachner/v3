@@ -15,12 +15,12 @@ const Login: NextPage = () => {
 
     if (auth) {
         return (
-            <>
+            <main className={styles.main}>
                 <Text type="h1">Login</Text>
                 <Text size="lg" margin="tight">
                     Logged In!
                 </Text>
-            </>
+            </main>
         );
     }
 

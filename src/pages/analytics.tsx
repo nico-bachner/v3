@@ -35,26 +35,19 @@ const Analytics: NextPage<Props> = ({ views }) => {
     return (
         <main className={styles.main}>
             <Head
-                title="Views | Nico Bachner"
-                description="Nico Bachner's Page Views"
+                title="Analytics | Nico Bachner"
+                description="Nico Bachner's Analytics"
             />
-            <Text type="h1">Views</Text>
-            <Text margin="tight">Page Views</Text>
+            <Text type="h1">Analytics</Text>
+            <Text margin="tight">Statistics about page views, etc.</Text>
+
+            <Text type="h2">Page Views</Text>
             <Table
                 head={['Path', 'Views']}
                 body={views
                     .sort((a, b) => b.views - a.views)
                     .map(({ path, views }) => [path, views])}
             />
-            <div className={styles.bottom}>
-                <Button
-                    onClick={() => {
-                        supabase.auth.signOut();
-                    }}
-                >
-                    Sign Out
-                </Button>
-            </div>
         </main>
     );
 };
