@@ -1,6 +1,7 @@
 import styles from '$lib/styles/Login.module.css';
 
 import { useState } from 'react';
+import { useAuth } from '$lib/hooks/useAuth';
 import supabase from '$lib/utils/supabase';
 
 import { Button, Text, Input } from '@nico-bachner/components-react';
@@ -9,6 +10,19 @@ import type { NextPage } from 'next';
 
 const Login: NextPage = () => {
     const [email, setEmail] = useState('');
+
+    const auth = useAuth();
+
+    if (auth) {
+        return (
+            <>
+                <Text type="h1">Login</Text>
+                <Text size="lg" margin="tight">
+                    Logged In!
+                </Text>
+            </>
+        );
+    }
 
     return (
         <main className={styles.main}>

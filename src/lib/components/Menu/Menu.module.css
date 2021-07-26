@@ -1,0 +1,36 @@
+.menu {
+    position: absolute;
+    top: 7rem;
+    right: 1.5rem;
+    z-index: 100;
+    width: max-content;
+    background-color: var(--color-neutral-0);
+    border-radius: 0.5rem;
+}
+
+@media (prefers-color-scheme: light) {
+    .menu {
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    .menu {
+        border: 1px solid var(--color-neutral-2);
+    }
+}
+
+.item {
+    margin: 1.5rem 2rem;
+}
+
+.label {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+}

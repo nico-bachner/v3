@@ -1,11 +1,11 @@
-import styles from '$lib/styles/Views.module.css';
+import styles from '$lib/styles/Analytics.module.css';
 
+import { useAuth } from '$lib/hooks/useAuth';
 import { getAllViews } from '$lib/utils/views';
 import supabase from '$lib/utils/supabase';
 
 import { Button, Table, Text } from '@nico-bachner/components-react';
 import Head from '$lib/components/Head';
-import Auth from '$lib/components/Auth';
 
 import type { NextPage, GetServerSideProps } from 'next';
 
@@ -25,8 +25,14 @@ export const getServerSideProps: GetServerSideProps = async () => {
     };
 };
 
-const Views: NextPage<Props> = ({ views }) => (
-    <Auth>
+const Analytics: NextPage<Props> = ({ views }) => {
+    const auth = useAuth();
+
+    if (!auth) {
+        return <> </>;
+    }
+
+    return (
         <main className={styles.main}>
             <Head
                 title="Views | Nico Bachner"
@@ -50,7 +56,7 @@ const Views: NextPage<Props> = ({ views }) => (
                 </Button>
             </div>
         </main>
-    </Auth>
-);
+    );
+};
 
-export default Views;
+export default Analytics;

@@ -21,13 +21,12 @@
     margin: 2rem auto;
 }
 
-.nav > :first-child {
+.logo {
     width: 3.4rem;
-    margin-right: 1rem;
     transition: transform 200ms ease;
 }
 
-.nav > :first-child:hover {
+.logo:hover {
     transform: scale(1.05);
 }
 

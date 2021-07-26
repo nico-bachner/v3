@@ -1,6 +1,6 @@
 import styles from './Table.module.css';
 
-type TableData = string | number;
+type TableData = React.ReactChild;
 
 type TableRow = TableData[];
 

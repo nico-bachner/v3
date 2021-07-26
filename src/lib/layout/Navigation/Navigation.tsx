@@ -3,17 +3,17 @@ import styles from './Navigation.module.css';
 import { useRouter } from 'next/router';
 import { useI18n } from '$lib/hooks/useI18n';
 
-import { Link, Text, Select } from '@nico-bachner/components-react';
+import { Link, Text } from '@nico-bachner/components-react';
 import { Logo } from '@nico-bachner/icons-react';
+import Menu from '$lib/components/Menu';
 
 const Navigation: React.VFC = () => {
+    const { pathname } = useRouter();
     const { pages } = useI18n();
-    const router = useRouter();
-    const { pathname, query, locale, locales } = router;
 
     return (
         <nav className={styles.nav}>
-            <Link href="/">
+            <Link href="/" className={styles.logo}>
                 <Logo />
             </Link>
             <div className={styles.links}>
@@ -28,20 +28,7 @@ const Navigation: React.VFC = () => {
                     </Text>
                 ))}
             </div>
-            <Select
-                options={(locales as Locale[]).map((locale) => {
-                    return {
-                        value: locale,
-                        content: locale.toUpperCase(),
-                    };
-                })}
-                value={locale}
-                onChange={({ target }) => {
-                    router.push({ pathname, query }, pathname, {
-                        locale: target.value,
-                    });
-                }}
-            />
+            <Menu />
         </nav>
     );
 };

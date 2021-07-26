@@ -1,6 +1,5 @@
 .button {
     cursor: pointer;
-    padding: 0.5em 1em;
     color: var(--color-neutral-0);
     background-color: var(--color-neutral-8);
     font-family: var(--font-sans);
@@ -8,10 +7,27 @@
     line-height: var(--line-height-lg);
     border: 1px solid var(--color-neutral-8);
     border-radius: 0.38em;
-    transition: color 300ms ease, background-color 300ms ease;
+    transition-property: color, background-color;
+    transition-timing-function: ease;
 }
 
 .button:hover {
     color: var(--color-neutral-8);
     background-color: var(--color-neutral-0);
+}
+
+/* sizes */
+.sm {
+    padding: 0 0.62em;
+    transition-duration: 100ms;
+}
+
+.md {
+    padding: 0.38em 1em;
+    transition-duration: 200ms;
+}
+
+.lg {
+    padding: 0.62em 1.62em;
+    transition-duration: 300ms;
 }

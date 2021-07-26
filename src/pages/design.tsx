@@ -7,6 +7,7 @@ import {
     Link,
     List,
     Select,
+    Table,
     Text,
 } from '@nico-bachner/components-react';
 import Head from '$lib/components/Head';
@@ -90,19 +91,50 @@ const Design = () => (
             <Text type="h2" margin="prose">
                 Select
             </Text>
-            <Select
-                options={[
-                    { value: 1, content: 'Option 1' },
-                    { value: 2, content: 'Option 2' },
-                    { value: 3, content: 'Option 3' },
-                ]}
-            />
+            <div className={styles.column}>
+                <Select
+                    size="sm"
+                    options={[
+                        { value: 1, content: 'Option 1' },
+                        { value: 2, content: 'Option 2' },
+                        { value: 3, content: 'Option 3' },
+                    ]}
+                />
+                <Select
+                    options={[
+                        { value: 1, content: 'Option 1' },
+                        { value: 2, content: 'Option 2' },
+                        { value: 3, content: 'Option 3' },
+                    ]}
+                />
+                <Select
+                    size="lg"
+                    options={[
+                        { value: 1, content: 'Option 1' },
+                        { value: 2, content: 'Option 2' },
+                        { value: 3, content: 'Option 3' },
+                    ]}
+                />
+            </div>
         </section>
         <section>
             <Text type="h2" margin="prose">
                 List
             </Text>
-            <List>
+
+            <Text type="h3" margin="prose">
+                Ordered
+            </Text>
+            <List type="ordered">
+                <li>Item 1</li>
+                <li>Item 2</li>
+                <li>Item 3</li>
+            </List>
+
+            <Text type="h3" margin="prose">
+                Unordered
+            </Text>
+            <List type="unordered">
                 <li>Item 1</li>
                 <li>Item 2</li>
                 <li>Item 3</li>
