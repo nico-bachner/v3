@@ -88,6 +88,8 @@ const Menu: React.VFC = () => {
                                     setSession(null);
                                 }
 
+                                supabase.auth.signOut();
+
                                 push('/login');
                             }}
                         >
