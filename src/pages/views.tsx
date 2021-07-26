@@ -7,13 +7,13 @@ import { Button, Table, Text } from '@nico-bachner/components-react';
 import Head from '$lib/components/Head';
 import Auth from '$lib/components/Auth';
 
-import type { NextPage, GetStaticProps } from 'next';
+import type { NextPage, GetServerSideProps } from 'next';
 
 type Props = {
     views: ViewItem[];
 };
 
-export const getStaticProps: GetStaticProps = async () => {
+export const getServerSideProps: GetServerSideProps = async () => {
     const views = await getAllViews();
 
     const props: Props = {
