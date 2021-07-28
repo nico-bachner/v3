@@ -6,7 +6,7 @@
 
 @supports not (backdrop-filter: blur()) {
     .nav {
-        background-color: var(--color-neutral-0);
+        background-color: var(--color-neutral-1);
     }
 }
 
@@ -17,11 +17,11 @@
     display: flex;
     justify-content: space-evenly;
     width: 100%;
-    padding: 2rem 0;
+    padding: var(--space-8) 0;
 }
 
 .nav > p > a {
-    padding: 0.5rem;
+    padding: var(--space-3);
 }
 
 @media (min-width: 640px) {

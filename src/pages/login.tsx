@@ -11,13 +11,13 @@ import type { NextPage } from 'next';
 const Login: NextPage = () => {
     const [email, setEmail] = useState('');
 
-    const auth = useAuth();
+    const { session } = useAuth();
 
-    if (auth) {
+    if (session) {
         return (
             <main className={styles.main}>
                 <Text type="h1">Login</Text>
-                <Text size="lg" margin="tight">
+                <Text size={6} marginStart={6} marginEnd={5}>
                     Logged In!
                 </Text>
             </main>
@@ -27,20 +27,19 @@ const Login: NextPage = () => {
     return (
         <main className={styles.main}>
             <Text type="h1">Login</Text>
-            <Text size="lg" margin="tight">
+            <Text size={6} marginStart={2}>
                 Sign in to see more content
             </Text>
 
             <div className={styles.methods}>
                 <section className={styles.oauth}>
-                    <Text type="h2" margin="tight">
-                        OAuth
-                    </Text>
-                    <Text margin="tight">
+                    <Text type="h2">OAuth</Text>
+                    <Text marginStart={3} marginEnd={5}>
                         Sign in via one of the providers below
                     </Text>
                     <div className={styles.providers}>
                         <Button
+                            variant="secondary"
                             type="submit"
                             onClick={() => {
                                 supabase.auth.signIn({ provider: 'github' });
@@ -51,13 +50,9 @@ const Login: NextPage = () => {
                     </div>
                 </section>
 
-                <hr />
-
                 <section className={styles.email}>
-                    <Text type="h2" margin="tight">
-                        Email
-                    </Text>
-                    <Text margin="tight">
+                    <Text type="h2">Email</Text>
+                    <Text marginStart={3} marginEnd={5}>
                         Sign in via magic link with your email below
                     </Text>
                     <form className={styles.form}>
@@ -68,6 +63,7 @@ const Login: NextPage = () => {
                             onChange={({ target }) => setEmail(target.value)}
                         />
                         <Button
+                            variant="primary"
                             type="submit"
                             onClick={() => {
                                 supabase.auth.signIn({ email });

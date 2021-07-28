@@ -9,22 +9,7 @@ type Link = {
 type Translation = {
     title: string;
     subtitle: string;
-    about: {
-        title: string;
-        content: string;
-    };
-    projects: {
-        title: string;
-        content: string;
-    };
-    articles: {
-        title: string;
-        content: string;
-    };
-    contact: {
-        title: string;
-        content: string;
-    };
+    description: string;
     actions: {
         changeLanguage: string;
         readMore: string;

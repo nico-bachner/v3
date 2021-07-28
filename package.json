@@ -17,6 +17,8 @@
         "@nico-bachner/css": "workspace:*",
         "@nico-bachner/icons-react": "workspace:*",
         "@nico-bachner/mdx": "workspace:*",
+        "@nico-bachner/scale": "workspace:*",
+        "@nico-bachner/spacing": "workspace:*",
         "@nico-bachner/typography": "workspace:*",
         "@supabase/supabase-js": "^1.21.0",
         "gray-matter": "^4.0.3",

@@ -1,11 +1,12 @@
 .card {
+    box-sizing: border-box;
     width: 100%;
-    padding: 1.5rem;
+    padding: var(--space-root-7);
 }
 
 @media (min-width: 640px) {
     .card {
-        padding: 1.5rem 2rem;
+        padding: var(--space-root-7) var(--space-root-8);
     }
 }
 

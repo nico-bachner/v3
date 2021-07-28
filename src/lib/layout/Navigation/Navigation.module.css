@@ -6,19 +6,20 @@
 
 @supports not (backdrop-filter: blur()) {
     .nav {
-        background-color: var(--color-neutral-0);
+        background-color: var(--color-neutral-1);
     }
 }
 
 .nav {
+    box-sizing: border-box;
     z-index: 50;
     inset: 0;
     max-width: 52rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 1rem 1.5rem;
-    margin: 2rem auto;
+    padding: var(--space-5) var(--space-6);
+    margin: var(--space-8)  auto;
 }
 
 .logo {
@@ -37,7 +38,7 @@
 @media (min-width: 640px) {
     .nav {
         position: sticky;
-        padding: 2rem 1.5rem;
+        padding: var(--space-8) var(--space-7);
     }
 
     .links {
@@ -47,4 +48,9 @@
     .links > * {
         margin: 0 1rem;
     }
+}
+
+.button {
+    font-size: var(--font-size-6);
+    line-height: var(--line-height-3);
 }

@@ -1,33 +1,54 @@
 .button {
     cursor: pointer;
-    color: var(--color-neutral-0);
-    background-color: var(--color-neutral-8);
     font-family: var(--font-sans);
-    font-size: var(--font-size-sm);
-    line-height: var(--line-height-lg);
-    border: 1px solid var(--color-neutral-8);
-    border-radius: 0.38em;
-    transition-property: color, background-color;
-    transition-timing-function: ease;
+    font-size: var(--font-size-4);
+    line-height: var(--line-height-6);
+    padding-block: var(--space-root-1);
+    padding-inline: var(--space-root-4);
+    border-radius: var(--space-root-1);
+    transition: all 200ms ease;
 }
 
-.button:hover {
-    color: var(--color-neutral-8);
-    background-color: var(--color-neutral-0);
+.primary,
+.secondary {
+    border: 1px solid var(--color-neutral-9);
 }
 
-/* sizes */
-.sm {
-    padding: 0 0.62em;
-    transition-duration: 100ms;
+.primary {
+    color: var(--color-neutral-1);
+    background-color: var(--color-neutral-9);
 }
 
-.md {
-    padding: 0.38em 1em;
-    transition-duration: 200ms;
+.primary:hover {
+    color: var(--color-neutral-9);
+    background-color: var(--color-neutral-1);
 }
 
-.lg {
-    padding: 0.62em 1.62em;
-    transition-duration: 300ms;
+.secondary {
+    color: var(--color-neutral-9);
+    background-color: var(--color-neutral-1);
+}
+
+.secondary:hover {
+    color: var(--color-neutral-1);
+    background-color: var(--color-neutral-9);
+}
+
+.minimal {
+    color: inherit;
+    border: none;
+    background: none;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+@media (prefers-color-scheme: light) {
+    .minimal:hover {
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    .minimal:hover {
+        background-color: var(--color-neutral-2);
+    }
 }

@@ -1,8 +1,9 @@
 {
     "name": "@nico-bachner/typography",
-    "version": "0.6.3",
+    "version": "0.7.0",
     "main": "index.css",
     "peerDependencies": {
-        "@nico-bachner/colors": ">=0.5.1"
+        "@nico-bachner/colors": ">=0.6.0",
+        "@nico-bachner/scale": ">=0.1.0"
     }
 }

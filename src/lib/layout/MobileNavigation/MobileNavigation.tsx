@@ -12,11 +12,11 @@ const MobileNavigation: React.VFC = () => {
     return (
         <nav className={styles.nav}>
             {pages.main.map(({ href, title }) => (
-                <Text key={href} size="sm" weight="bolder">
+                <Text key={href} size={4} weight={7}>
                     <Link
                         href={href}
                         variant={
-                            router.pathname != href ? 'primary' : 'disabled'
+                            router.pathname != href ? 'secondary' : 'disabled'
                         }
                     >
                         {title}

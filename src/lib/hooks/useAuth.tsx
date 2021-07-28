@@ -1,17 +1,25 @@
-import { useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
-import { useSession } from '$lib/hooks/useSession';
 import supabase from '$lib/utils/supabase';
 
 export const useAuth = () => {
-    const session = useSession();
     const router = useRouter();
 
+    const [session, setSession] = useState<Session | null>(null);
+
     useEffect(() => {
-        if (!supabase.auth.session()) {
+        if (!supabase.auth.session() && router.asPath != '/login') {
             router.push('/login');
         }
-    });
 
-    return session ? true : false;
+        setSession(supabase.auth.session());
+
+        supabase.auth.onAuthStateChange((_event, session) => {
+            setSession(session);
+        });
+    }, [router]);
+
+    return {
+        session,
+    };
 };

@@ -1,48 +1,53 @@
 import styles from '$lib/styles/Articles.module.css';
 
+import { getMDXContent } from '@nico-bachner/mdx/content';
+import { getFile } from '$lib/utils/fs';
 import { getArticles } from '$lib/utils/data/articles';
-import { useI18n } from '$lib/hooks/useI18n';
 
-import { Text } from '@nico-bachner/components-react';
+import MDX from '@nico-bachner/mdx';
 import Head from '$lib/components/Head';
-import ArticleCard from '$lib/components/ArticleCard';
+import Card from '$lib/components/ArticleCard';
 
 import type { NextPage, GetStaticProps } from 'next';
+import type { MDXContent } from '@nico-bachner/mdx/types';
 
-interface ArticlesPageProps {
+type ArticlesProps = {
+    content: MDXContent;
     articles: ArticleData[];
-}
-
-export const getStaticProps: GetStaticProps = async () => {
-    const articles = await getArticles();
-
-    const props: ArticlesPageProps = {
-        articles,
-    };
-
-    return {
-        props,
-    };
 };
 
-const Articles: NextPage<ArticlesPageProps> = ({ articles }) => {
-    const i18n = useI18n();
+export const getStaticProps: GetStaticProps = async ({ locale }) => {
+    const file = await getFile({
+        basePath: ['translations'],
+        path: [locale as string, 'articles'],
+        extension: 'mdx',
+    });
 
-    return (
-        <main className={styles.main}>
-            <Head
-                title="Articles | Nico Bachner"
-                description="Nico Bachner's Articles"
-            />
-            <Text type="h1">{i18n.articles.title}</Text>
-            <Text margin="prose">{i18n.articles.content}</Text>
-            <div className={styles.grid}>
-                {articles.map((article) => (
-                    <ArticleCard key={article.title} {...article} />
-                ))}
-            </div>
-        </main>
-    );
+    const props: ArticlesProps = {
+        content: await getMDXContent(file),
+        articles: await getArticles(),
+    };
+
+    return { props };
 };
+
+const Articles: NextPage<ArticlesProps> = ({ content, articles }) => (
+    <main className={styles.main}>
+        <Head
+            title="Articles | Nico Bachner"
+            description="Nico Bachner's Articles"
+        />
+
+        <div className={styles.center}>
+            <MDX content={content} />
+        </div>
+
+        <div className={styles.grid}>
+            {articles.map((article) => (
+                <Card key={article.title} type="h2" {...article} />
+            ))}
+        </div>
+    </main>
+);
 
 export default Articles;

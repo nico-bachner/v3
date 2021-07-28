@@ -1,13 +1,13 @@
 {
     "name": "@nico-bachner/components-react",
-    "version": "0.1.2",
+    "version": "0.2.0",
     "dependencies": {
         "@nico-bachner/icons-react": "workspace:*",
         "@nico-bachner/react-hooks": "workspace:*"
     },
     "peerDependencies": {
-        "@nico-bachner/colors": ">=0.5.1",
-        "@nico-bachner/typography": ">=0.6.3",
+        "@nico-bachner/colors": ">=0.6.0",
+        "@nico-bachner/typography": ">=0.7.0",
         "next": ">=11",
         "react": ">=17",
         "react-dom": ">=17",

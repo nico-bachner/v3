@@ -2,135 +2,119 @@
 .text {
     font-family: var(--font-sans);
     font-feature-settings: var(--font-features-sans);
-    margin: 0;
+    margin-block: 0;
 }
 
 /* ---- Individual Defaults ---- */
 .type-h1,
 .type-h2,
-.type-h3 {
-    color: var(--color-neutral-8);
+.type-h3,
+.type-strong {
+    color: var(--color-neutral-9);
 }
 
 .type-h1 {
-    font-size: var(--font-size-5xl);
-    line-height: var(--line-height-5xs);
-    font-weight: var(--font-weight-boldest);
+    font-size: var(--font-size-9);
+    line-height: var(--line-height-1);
+    font-weight: var(--font-weight-8);
 }
 
 .type-h2 {
-    font-size: var(--font-size-3xl);
-    line-height: var(--line-height-3xs);
-    font-weight: var(--font-weight-bolder);
+    font-size: var(--font-size-8);
+    line-height: var(--line-height-2);
+    font-weight: var(--font-weight-7);
 }
 
 .type-h3 {
-    font-size: var(--font-size-xl);
-    line-height: var(--line-height-xs);
-    font-weight: var(--font-weight-bold);
+    font-size: var(--font-size-7);
+    line-height: var(--line-height-3);
+    font-weight: var(--font-weight-6);
 }
 
 .type-strong {
-    color: var(--color-neutral-8);
     font-size: inherit;
-    font-weight: var(--font-weight-bolder);
+    line-height: inherit;
+    font-weight: var(--font-weight-7);
 }
 
 .type-p {
-    color: var(--color-neutral-5);
-    font-size: var(--font-size);
-    line-height: var(--line-height);
-    font-weight: var(--font-weight);
+    color: var(--color-neutral-6);
+    font-size: var(--font-size-5);
+    line-height: var(--line-height-5);
+    font-weight: var(--font-weight-5);
 }
 
 /* ---- Sizing ---- */
-.size-5xs {
-    font-size: var(--font-size-5xs);
-    line-height: var(--line-height-5xl);
+.size-1 {
+    font-size: var(--font-size-1);
+    line-height: var(--line-height-9);
 }
 
-.size-4xs {
-    font-size: var(--font-size-4xs);
-    line-height: var(--line-height-4xl);
+.size-2 {
+    font-size: var(--font-size-2);
+    line-height: var(--line-height-8);
 }
 
-.size-3xs {
-    font-size: var(--font-size-3xs);
-    line-height: var(--line-height-3xl);
+.size-3 {
+    font-size: var(--font-size-3);
+    line-height: var(--line-height-7);
 }
 
-.size-2xs {
-    font-size: var(--font-size-2xs);
-    line-height: var(--line-height-2xl);
+.size-4 {
+    font-size: var(--font-size-4);
+    line-height: var(--line-height-6);
 }
 
-.size-xs {
-    font-size: var(--font-size-xs);
-    line-height: var(--line-height-xl);
+.size-5 {
+    font-size: var(--font-size-5);
+    line-height: var(--line-height-5);
 }
 
-.size-sm {
-    font-size: var(--font-size-sm);
-    line-height: var(--line-height-lg);
+.size-6 {
+    font-size: var(--font-size-6);
+    line-height: var(--line-height-4);
 }
 
-.size-base {
-    font-size: var(--font-size);
-    line-height: var(--line-height);
+.size-7 {
+    font-size: var(--font-size-7);
+    line-height: var(--line-height-3);
 }
 
-.size-lg {
-    font-size: var(--font-size-lg);
-    line-height: var(--line-height-sm);
+.size-8 {
+    font-size: var(--font-size-8);
+    line-height: var(--line-height-2);
 }
 
-.size-xl {
-    font-size: var(--font-size-xl);
-    line-height: var(--line-height-xs);
+.size-9 {
+    font-size: var(--font-size-9);
+    line-height: var(--line-height-1);
 }
 
-.size-2xl {
-    font-size: var(--font-size-2xl);
-    line-height: var(--line-height-2xs);
+/* weights */
+.weight-2 {
+    font-weight: var(--font-weight-2);
 }
 
-.size-3xl {
-    font-size: var(--font-size-3xl);
-    line-height: var(--line-height-3xs);
+.weight-3 {
+    font-weight: var(--font-weight-3);
 }
 
-.size-4xl {
-    font-size: var(--font-size-4xl);
-    line-height: var(--line-height-4xs);
+.weight-4 {
+    font-weight: var(--font-weight-4);
 }
 
-.size-5xl {
-    font-size: var(--font-size-5xl);
-    line-height: var(--line-height-5xs);
+.weight-5 {
+    font-weight: var(--font-weight-5);
 }
 
-/* ---- Spacing ---- */
-.margin-prose {
-    margin-block-start: 1.62em;
-    margin-block-end: 1em;
+.weight-6 {
+    font-weight: var(--font-weight-6);
 }
 
-.margin-tighter {
-    margin-block: 0.62rem;
+.weight-7 {
+    font-weight: var(--font-weight-7);
 }
 
-.margin-tight {
-    margin-block: 0.79rem;
-}
-
-.margin-regular {
-    margin-block: 1rem;
-}
-
-.margin-loose {
-    margin-block: 1.27rem;
-}
-
-.margin-looser {
-    margin-block: 1.62rem;
+.weight-8 {
+    font-weight: var(--font-weight-8);
 }

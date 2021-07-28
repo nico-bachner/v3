@@ -1,4 +1,6 @@
+@import url('@nico-bachner/scale');
 @import url('@nico-bachner/colors');
+@import url('@nico-bachner/spacing');
 @import url('@nico-bachner/typography');
 @import url('@nico-bachner/css');
 @import url('@nico-bachner/mdx/styles.css');

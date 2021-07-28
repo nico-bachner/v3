@@ -9,12 +9,17 @@ type SelectProps = {
     options: Option[];
     value?: string;
     onChange?: React.ChangeEventHandler<HTMLSelectElement>;
-    size?: 'sm' | 'md' | 'lg';
+    className?: string;
 };
 
-const Select: React.VFC<SelectProps> = ({ options, value, onChange, size }) => (
+const Select: React.VFC<SelectProps> = ({
+    options,
+    value,
+    onChange,
+    className,
+}) => (
     <select
-        className={[styles.select, styles[`size-${size}`]].join(' ')}
+        className={[styles.select, className].join(' ')}
         value={value}
         onChange={onChange}
     >

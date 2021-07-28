@@ -1,26 +1,54 @@
 import styles from '$lib/styles/Home.module.css';
 
+import { getMDXContent } from '@nico-bachner/mdx/content';
+import { getFile } from '$lib/utils/fs';
 import { getProjects } from '$lib/utils/data/projects';
 import { getArticles } from '$lib/utils/data/articles';
 import { useI18n } from '$lib/hooks/useI18n';
 
 import { Link, Text } from '@nico-bachner/components-react';
+import MDX from '@nico-bachner/mdx';
 import Head from '$lib/components/Head';
 import ProjectCard from '$lib/components/ProjectCard';
 import ArticleCard from '$lib/components/ArticleCard';
 
 import type { NextPage, GetStaticProps } from 'next';
+import type { MDXContent } from '@nico-bachner/mdx/types';
 
-interface HomeProps {
+type HomeProps = {
+    content: {
+        about: MDXContent;
+        projects: MDXContent;
+        articles: MDXContent;
+        contact: MDXContent;
+    };
     projects: ProjectData[];
     articles: ArticleData[];
-}
+};
 
-export const getStaticProps: GetStaticProps = async () => {
+export const getStaticProps: GetStaticProps = async ({ locale }) => {
+    const getTranslation = async (path: string[]) => {
+        const file = await getFile({
+            basePath: ['translations'],
+            path: [locale as string, 'home', ...path],
+            extension: 'mdx',
+        });
+
+        const content = await getMDXContent(file);
+
+        return content;
+    };
+
     const projects = await getProjects();
     const articles = await getArticles();
 
     const props: HomeProps = {
+        content: {
+            about: await getTranslation(['about']),
+            projects: await getTranslation(['projects']),
+            articles: await getTranslation(['articles']),
+            contact: await getTranslation(['contact']),
+        },
         projects: projects.filter((project) => project.featured),
         articles: articles.filter((article) => article.featured),
     };
@@ -28,26 +56,31 @@ export const getStaticProps: GetStaticProps = async () => {
     return { props };
 };
 
-const Home: NextPage<HomeProps> = ({ projects, articles }) => {
+const Home: NextPage<HomeProps> = ({ content, projects, articles }) => {
     const i18n = useI18n();
 
     return (
         <main className={styles.home}>
-            <Head title="Nico Bachner" description={i18n.about.content} />
+            <Head title="Nico Bachner" description={i18n.description} />
+
             <Text type="h1">{i18n.title}</Text>
-            <Text size="3xl" weight="bolder" className={styles.subtitle}>
+            <Text size={8} weight={7} className={styles.subtitle}>
                 {i18n.subtitle}
             </Text>
+
             <section id="about">
-                <Text type="h2">{i18n.about.title}</Text>
-                <Text margin="prose">{i18n.about.content}</Text>
+                <MDX content={content.about} />
             </section>
+
             <section id="projects">
-                <Text type="h2">{i18n.projects.title}</Text>
-                <Text margin="prose">{i18n.projects.content}</Text>
+                <MDX content={content.projects} />
                 <div className={styles.grid}>
                     {projects.map((project) => (
-                        <ProjectCard key={project.title} {...project} />
+                        <ProjectCard
+                            key={project.title}
+                            type="h3"
+                            {...project}
+                        />
                     ))}
                 </div>
                 <Text align="right" transform="capitalize">
@@ -56,12 +89,16 @@ const Home: NextPage<HomeProps> = ({ projects, articles }) => {
                     </Link>
                 </Text>
             </section>
+
             <section id="articles">
-                <Text type="h2">{i18n.articles.title}</Text>
-                <Text margin="prose">{i18n.articles.content}</Text>
+                <MDX content={content.articles} />
                 <div className={styles.grid}>
                     {articles.map((article) => (
-                        <ArticleCard key={article.title} {...article} />
+                        <ArticleCard
+                            key={article.title}
+                            type="h3"
+                            {...article}
+                        />
                     ))}
                 </div>
                 <Text align="right" transform="capitalize">
@@ -70,26 +107,9 @@ const Home: NextPage<HomeProps> = ({ projects, articles }) => {
                     </Link>
                 </Text>
             </section>
+
             <section id="contact">
-                <Text type="h2">{i18n.contact.title}</Text>
-                <Text margin="prose">{i18n.contact.content}</Text>
-                <div className={styles.contact_links}>
-                    <Text className={styles.mail}>
-                        <Link
-                            href="mailto:mail@nicobachner.com"
-                            variant="highlight"
-                        >
-                            mail@nicobachner.com
-                        </Link>
-                    </Text>
-                    <Text className={styles.social}>
-                        {i18n.links.social.map(({ title, href }) => (
-                            <Link key={href} href={href} variant="highlight">
-                                {title}
-                            </Link>
-                        ))}
-                    </Text>
-                </div>
+                <MDX content={content.contact} />
             </section>
         </main>
     );

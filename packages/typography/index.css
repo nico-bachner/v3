@@ -23,58 +23,43 @@ html {
     /* ---- defaults ---- */
 
     --font-sans: 'Inter', sans-serif;
-    --font-features-sans: "frac", "ss01", "cv01", "cv07", "cv10";
     --font-mono: 'Fira Code', monospace;
+    --font-features-sans: "frac", "ss01", "cv01", "cv07", "cv10";
     --font-features-mono: "frac" 0;
-    --font-size: 12pt;
+    --font-size: clamp(12pt, 2vw, 14pt);
     --font-weight: 400;
     --line-height: 1.76;
-    --color-text: var(--color-neutral-5);
 
     /* ---- variants ---- */
 
     /* font sizes */
-    --font-size-5xs: calc(0.38 * var(--font-size));
-    --font-size-4xs: calc(0.45 * var(--font-size));
-    --font-size-3xs: calc(0.53 * var(--font-size));
-    --font-size-2xs: calc(0.62 * var(--font-size));
-    --font-size-xs: calc(0.72 * var(--font-size));
-    --font-size-sm: calc(0.85 * var(--font-size));
-
-    --font-size-lg: calc(1.17 * var(--font-size));
-    --font-size-xl: calc(1.38 * var(--font-size));
-    --font-size-2xl: calc(1.62 * var(--font-size));
-    --font-size-3xl: calc(1.9 * var(--font-size));
-    --font-size-4xl: calc(2.23 * var(--font-size));
-    --font-size-5xl: calc(2.62 * var(--font-size));
+    --font-size-1: calc(var(--scale-1) * var(--font-size));
+    --font-size-2: calc(var(--scale-2) * var(--font-size));
+    --font-size-3: calc(var(--scale-3) * var(--font-size));
+    --font-size-4: calc(var(--scale-4) * var(--font-size));
+    --font-size-5: calc(var(--scale-5) * var(--font-size));
+    --font-size-6: calc(var(--scale-6) * var(--font-size));
+    --font-size-7: calc(var(--scale-7) * var(--font-size));
+    --font-size-8: calc(var(--scale-8) * var(--font-size));
+    --font-size-9: calc(var(--scale-9) * var(--font-size));
 
     /* line heights */
-    --line-height-5xs: calc(0.62 * var(--line-height));
-    --line-height-4xs: calc(0.67 * var(--line-height));
-    --line-height-3xs: calc(0.72 * var(--line-height));
-    --line-height-2xs: calc(0.79 * var(--line-height));
-    --line-height-xs: calc(0.85 * var(--line-height));
-    --line-height-sm: calc(0.92 * var(--line-height));
-
-    --line-height-lg: calc(1.08 * var(--line-height));
-    --line-height-xl: calc(1.17 * var(--line-height));
-    --line-height-2xl: calc(1.27 * var(--line-height));
-    --line-height-3xl: calc(1.38 * var(--line-height));
-    --line-height-4xl: calc(1.49 * var(--line-height));
-    --line-height-5xl: calc(1.62 * var(--line-height));
+    --line-height-1: calc(var(--scale-3) * var(--line-height));
+    --line-height-2: calc(0.7 * var(--line-height));
+    --line-height-3: calc(var(--scale-4) * var(--line-height));
+    --line-height-4: calc(0.89 * var(--line-height));
+    --line-height-5: calc(var(--scale-5) * var(--line-height));
+    --line-height-6: calc(1.13 * var(--line-height));
+    --line-height-7: calc(var(--scale-6) * var(--line-height));
+    --line-height-8: calc(1.44 * var(--line-height));
+    --line-height-9: calc(var(--scale-7) * var(--line-height));
 
     /* font weights */
-    --font-weight-thinnest: calc(0.48 * var(--font-weight));
-    --font-weight-thinner: calc(0.62 * var(--font-weight));
-    --font-weight-thin: calc(0.79 * var(--font-weight));
-
-    --font-weight-bold: calc(1.27 * var(--font-weight));
-    --font-weight-bolder: calc(1.62 * var(--font-weight));
-    --font-weight-boldest: calc(2.06 * var(--font-weight));
-}
-
-@media (min-width: 640px) {
-    :root {
-        --font-size: 14pt;
-    }
+    --font-weight-2: calc(var(--scale-2) * var(--font-weight));
+    --font-weight-3: calc(var(--scale-3) * var(--font-weight));
+    --font-weight-4: calc(var(--scale-4) * var(--font-weight));
+    --font-weight-5: calc(var(--scale-5) * var(--font-weight));
+    --font-weight-6: calc(var(--scale-6) * var(--font-weight));
+    --font-weight-7: calc(var(--scale-7) * var(--font-weight));
+    --font-weight-8: calc(var(--scale-8) * var(--font-weight));
 }

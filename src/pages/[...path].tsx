@@ -10,7 +10,7 @@ import MDX from '@nico-bachner/mdx';
 import Head from '$lib/components/Head';
 
 import type { NextPage, GetStaticPaths, GetStaticProps } from 'next';
-import { MDXContent } from '@nico-bachner/mdx/types';
+import type { MDXContent } from '@nico-bachner/mdx/types';
 
 type PageProps = {
     title: string;
@@ -153,7 +153,7 @@ const Page: NextPage<PageProps> = ({
         <MDX content={mdx} />
 
         <div className={styles.bottom}>
-            <Text color="neutral-4">Last updated: {lastUpdated}</Text>
+            <Text color="neutral-5">Last updated: {lastUpdated}</Text>
             <Text>
                 <Link href={editUrl} variant="highlight">
                     Edit on GitHub →

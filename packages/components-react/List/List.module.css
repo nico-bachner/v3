@@ -1,18 +1,17 @@
 .list {
-    color: var(--color-text);
+    color: var(--color-neutral-6);
     font-family: var(--font-sans);
     font-size: var(--font-size);
     line-height: var(--line-height);
-    padding-left: 2.5rem;
-    margin: 2rem 0;
+    padding-left: var(--space-9);
 }
 
 .list > * {
-    margin: 0.5em 0;
+    margin: var(--space-3) 0;
 }
 
 .list > *::marker {
-    color: var(--color-neutral-3);
+    color: var(--color-neutral-4);
 }
 
 .ordered {

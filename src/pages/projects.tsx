@@ -1,50 +1,53 @@
 import styles from '$lib/styles/Projects.module.css';
 
+import { getMDXContent } from '@nico-bachner/mdx/content';
+import { getFile } from '$lib/utils/fs';
 import { getProjects } from '$lib/utils/data/projects';
-import { useI18n } from '$lib/hooks/useI18n';
 
-import { Text } from '@nico-bachner/components-react';
+import MDX from '@nico-bachner/mdx';
 import Head from '$lib/components/Head';
-import ProjectCard from '$lib/components/ProjectCard';
+import Card from '$lib/components/ProjectCard';
 
 import type { NextPage, GetStaticProps } from 'next';
+import type { MDXContent } from '@nico-bachner/mdx/types';
 
-interface ProjectsProps {
+type ProjectsProps = {
+    content: MDXContent;
     projects: ProjectData[];
-}
+};
 
-export const getStaticProps: GetStaticProps = async () => {
-    const projects = await getProjects();
+export const getStaticProps: GetStaticProps = async ({ locale }) => {
+    const file = await getFile({
+        basePath: ['translations'],
+        path: [locale as string, 'projects'],
+        extension: 'mdx',
+    });
 
     const props: ProjectsProps = {
-        projects,
+        content: await getMDXContent(file),
+        projects: await getProjects(),
     };
 
     return { props };
 };
 
-const Projects: NextPage<ProjectsProps> = ({ projects }) => {
-    const i18n = useI18n();
+const Projects: NextPage<ProjectsProps> = ({ content, projects }) => (
+    <main className={styles.main}>
+        <Head
+            title="Projects | Nico Bachner"
+            description="Nico Bachner's Projects"
+        />
 
-    return (
-        <main className={styles.main}>
-            <Head
-                title="Projects | Nico Bachner"
-                description="Nico Bachner's Articles"
-            />
-            <Text type="h1" className={styles.center}>
-                {i18n.projects.title}
-            </Text>
-            <Text margin="prose" className={styles.center}>
-                {i18n.projects.content}
-            </Text>
-            <div className={styles.grid}>
-                {projects.map((project) => (
-                    <ProjectCard key={project.title} {...project} />
-                ))}
-            </div>
-        </main>
-    );
-};
+        <div className={styles.center}>
+            <MDX content={content} />
+        </div>
+
+        <div className={styles.grid}>
+            {projects.map((project) => (
+                <Card key={project.title} type="h2" {...project} />
+            ))}
+        </div>
+    </main>
+);
 
 export default Projects;

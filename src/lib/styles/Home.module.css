@@ -4,12 +4,13 @@
 }
 
 .subtitle {
+    margin-top: var(--space-root-1);
     color: transparent;
     background:
         linear-gradient(
             45deg,
-            var(--color-secondary),
-            var(--color-primary)
+            var(--color-cyan-5),
+            var(--color-blue-5)
         );
     background-clip: text;
 }

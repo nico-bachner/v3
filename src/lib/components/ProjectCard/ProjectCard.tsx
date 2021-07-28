@@ -2,7 +2,12 @@ import styles from './ProjectCard.module.css';
 
 import { Link, Text, Card } from '@nico-bachner/components-react';
 
-const ProjectCard: React.VFC<ProjectData> = ({
+type ProjectCardProps = ProjectData & {
+    type: 'h2' | 'h3';
+};
+
+const ProjectCard: React.VFC<ProjectCardProps> = ({
+    type,
     path,
     title,
     description,
@@ -10,11 +15,13 @@ const ProjectCard: React.VFC<ProjectData> = ({
 }) => (
     <Link href={`/${path.join('/')}`}>
         <Card variant="interactive" className={styles.card}>
-            <Text type="h3">{title}</Text>
-            <Text margin="tighter">{description}</Text>
+            <Text type={type} size={6} weight={7}>
+                {title}
+            </Text>
+            <Text margin={3}>{description}</Text>
             <div className={styles.footer}>
-                <Text color="primary">More Information →</Text>
-                <Text color="neutral-3">{period}</Text>
+                <Text color="blue-5">More Information →</Text>
+                <Text color="neutral-4">{period}</Text>
             </div>
         </Card>
     </Link>
