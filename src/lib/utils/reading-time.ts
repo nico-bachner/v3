@@ -1,4 +1,6 @@
 import readingTime from 'reading-time';
 
-export const getReadingTime = (file: string) =>
+const getReadingTime: Get<string, number> = (file) =>
     Math.round(readingTime(file).minutes);
+
+export { getReadingTime };

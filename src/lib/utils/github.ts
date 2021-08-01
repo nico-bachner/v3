@@ -8,15 +8,18 @@ type GitHubHistory = {
     };
 };
 
-type Props = {
+type GitHubProps = {
+    user: string;
+    repo: string;
+    baseBranch: string;
     basePath: string[];
     path: string[];
     extension?: string;
 };
 
-type Get<T> = (props: Props) => Promise<T>;
-
-export const getUpdated: Get<Date | undefined> = async ({
+const fetchDateUpdated: Fetch<GitHubProps, Date | undefined> = async ({
+    user,
+    repo,
     basePath,
     path,
     extension,
@@ -25,7 +28,12 @@ export const getUpdated: Get<Date | undefined> = async ({
     const fullFilePath = [fullPath, extension].join('.');
 
     const res = await fetch(
-        `https://api.github.com/repos/nico-bachner/v3/commits?path=${fullFilePath}`
+        [
+            'https://api.github.com/repos',
+            user,
+            repo,
+            `commits?path=${fullFilePath}`,
+        ].join('/')
     );
     const history: GitHubHistory[] = await res.json();
     const latest: GitHubHistory | undefined = history[0];
@@ -34,3 +42,28 @@ export const getUpdated: Get<Date | undefined> = async ({
         return new Date(latest.commit.author.date);
     }
 };
+
+const getEditUrl: Get<GitHubProps, string> = ({
+    user,
+    repo,
+    baseBranch,
+    basePath,
+    path,
+    extension,
+}) => {
+    const fullPath = [...basePath, ...path].join('/');
+    const fullFilePath = [fullPath, extension].join('.');
+
+    const editUrl = [
+        'https://github.com',
+        user,
+        repo,
+        'edit',
+        baseBranch,
+        fullFilePath,
+    ].join('/');
+
+    return editUrl;
+};
+
+export { fetchDateUpdated, getEditUrl };

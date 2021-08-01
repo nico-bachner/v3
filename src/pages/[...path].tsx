@@ -1,9 +1,9 @@
 import styles from '$lib/styles/Page.module.css';
 
-import { getMDXContent } from '@nico-bachner/mdx/content';
-import { getFile, getDirs, getPaths } from '$lib/utils/fs';
+import { fetchSerializedMDX } from '@nico-bachner/mdx/serialize';
+import { fetchFile, fetchRecursivePaths } from '$lib/utils/fs';
 import { getFileData, getFileContent } from '$lib/utils/file';
-import { getUpdated } from '$lib/utils/github';
+import { fetchDateUpdated, getEditUrl } from '$lib/utils/github';
 
 import { Link, Text } from '@nico-bachner/components-react';
 import MDX from '@nico-bachner/mdx';
@@ -20,55 +20,35 @@ type PageProps = {
     editUrl: string;
 };
 
+const github = {
+    user: 'nico-bachner',
+    repo: 'v3',
+    baseBranch: 'main',
+};
+
 const basePath = ['content'];
 const extension = 'mdx';
-const baseBranch = 'main';
 
 export const getStaticPaths: GetStaticPaths = async ({ locales }) => {
-    const pagePaths = await getPaths({
+    const paths = await fetchRecursivePaths({
         basePath,
         path: [],
         extension,
     });
-    const dirPaths = await getDirs({
-        basePath,
-        path: [],
-    });
-    const otherPaths = (
-        await Promise.all(
-            dirPaths.map(
-                async (path) =>
-                    await getPaths({
-                        basePath,
-                        path,
-                        extension,
-                    })
-            )
-        )
-    ).flat();
-
-    type Path = {
-        params: {
-            path: string[];
-        };
-        locale: string;
-    };
-
-    const paths: Path[] = [...pagePaths, ...otherPaths]
-        .map((path) =>
-            (locales as Locale[]).map((locale) => {
-                return {
-                    params: {
-                        path,
-                    },
-                    locale,
-                };
-            })
-        )
-        .flat();
 
     return {
-        paths,
+        paths: paths
+            .map((path) =>
+                (locales as Locale[]).map((locale) => {
+                    return {
+                        params: {
+                            path,
+                        },
+                        locale,
+                    };
+                })
+            )
+            .flat(),
         fallback: false,
     };
 };
@@ -86,7 +66,7 @@ export const getStaticProps: GetStaticProps<PageProps> = async ({
             };
         }
 
-        const file = await getFile({
+        const file = await fetchFile({
             basePath,
             path,
             extension,
@@ -102,9 +82,10 @@ export const getStaticProps: GetStaticProps<PageProps> = async ({
         }
 
         const content = getFileContent(file);
-        const mdx = await getMDXContent(content);
+        const mdx = await fetchSerializedMDX(content);
 
-        const updated = await getUpdated({
+        const updated = await fetchDateUpdated({
+            ...github,
             basePath,
             path,
             extension,
@@ -113,23 +94,12 @@ export const getStaticProps: GetStaticProps<PageProps> = async ({
             ? updated.toLocaleDateString(locale)
             : 'Never';
 
-        const fullPath = [...basePath, ...path].join('/');
-        const fullFilePath = [fullPath, extension].join('.');
-        const editUrl = [
-            'https://github.com',
-            'nico-bachner',
-            'v3',
-            'edit',
-            baseBranch,
-            fullFilePath,
-        ].join('/');
-
         const props: PageProps = {
             title,
             description,
             mdx,
             lastUpdated,
-            editUrl,
+            editUrl: getEditUrl({ ...github, basePath, path }),
         };
 
         return { props };

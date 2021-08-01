@@ -2,6 +2,22 @@ import styles from './ProjectCard.module.css';
 
 import { Link, Text, Card } from '@nico-bachner/components-react';
 
+const getPeriod = (from: number, to: number | null) => {
+    const from_year = new Date(from).getFullYear();
+
+    if (to) {
+        const to_year = new Date(to).getFullYear();
+
+        if (to_year == from_year) {
+            return `${to_year}`;
+        }
+
+        return `${from_year} → ${to_year}`;
+    }
+
+    return `${from_year} → Present`;
+};
+
 type ProjectCardProps = ProjectData & {
     type: 'h2' | 'h3';
 };
@@ -11,7 +27,8 @@ const ProjectCard: React.VFC<ProjectCardProps> = ({
     path,
     title,
     description,
-    period,
+    from,
+    to,
 }) => (
     <Link href={`/${path.join('/')}`}>
         <Card variant="interactive" className={styles.card}>
@@ -21,7 +38,7 @@ const ProjectCard: React.VFC<ProjectCardProps> = ({
             <Text margin={3}>{description}</Text>
             <div className={styles.footer}>
                 <Text color="blue-5">More Information →</Text>
-                <Text color="neutral-4">{period}</Text>
+                <Text color="neutral-4">{getPeriod(from, to)}</Text>
             </div>
         </Card>
     </Link>

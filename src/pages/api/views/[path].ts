@@ -1,4 +1,4 @@
-import { getViews, getUpdatedViews } from '$lib/utils/views';
+import { fetchViews, fetchUpdatedViews } from '$lib/utils/views';
 
 import { NextApiHandler } from 'next';
 
@@ -14,16 +14,20 @@ const Views: NextApiHandler = async (req, res) => {
     }
 
     if (req.method == 'POST') {
+        const views = await fetchUpdatedViews(path);
+
         return res.status(200).json({
             path,
-            views: await getUpdatedViews(path),
+            views,
         });
     }
 
     if (req.method == 'GET') {
+        const views = await fetchViews(path);
+
         return res.status(200).json({
             path,
-            views: await getViews(path),
+            views,
         });
     }
 };

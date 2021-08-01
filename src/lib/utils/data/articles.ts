@@ -1,4 +1,4 @@
-import { getFile, getPaths } from '../fs';
+import { fetchFile, fetchPaths } from '../fs';
 import { getFileData } from '../file';
 import { getReadingTime } from '../reading-time';
 
@@ -6,18 +6,8 @@ const basePath = ['content'];
 const path = ['articles'];
 const extension = 'mdx';
 
-export const getArticles = async () => {
-    const paths = await getPaths({ basePath, path, extension });
-
-    const articles = await Promise.all(
-        paths.map(async (path) => await getData(path))
-    );
-
-    return articles.sort((a, b) => b.published - a.published);
-};
-
-const getData = async (path: string[]): Promise<ArticleData> => {
-    const file = await getFile({ basePath, path, extension });
+const fetchArticleData: Fetch<string[], ArticleData> = async (path) => {
+    const file = await fetchFile({ basePath, path, extension });
 
     const {
         title,
@@ -48,3 +38,15 @@ const getData = async (path: string[]): Promise<ArticleData> => {
         reading_time: getReadingTime(file),
     };
 };
+
+const fetchArticlesData = async () => {
+    const paths = await fetchPaths({ basePath, path, extension });
+
+    const articles = await Promise.all(
+        paths.map(async (path) => await fetchArticleData(path))
+    );
+
+    return articles.sort((a, b) => b.published - a.published);
+};
+
+export { fetchArticlesData };

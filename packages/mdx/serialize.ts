@@ -2,7 +2,7 @@ import { serialize } from 'next-mdx-remote/serialize';
 
 import type { MDXContent } from './types';
 
-export const getMDXContent = async (file: string): Promise<MDXContent> =>
+const fetchSerializedMDX = async (file: string): Promise<MDXContent> =>
     await serialize(file, {
         mdxOptions: {
             remarkPlugins: [
@@ -17,3 +17,5 @@ export const getMDXContent = async (file: string): Promise<MDXContent> =>
             ],
         },
     });
+
+export { fetchSerializedMDX };

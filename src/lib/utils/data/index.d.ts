@@ -4,7 +4,6 @@ type ProjectData = {
     description: string;
     from: number;
     to: number | null;
-    period: string;
     featured: boolean;
 };
 

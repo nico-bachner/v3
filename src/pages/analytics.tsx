@@ -1,7 +1,7 @@
 import styles from '$lib/styles/Analytics.module.css';
 
 import { useAuth } from '$lib/hooks/useAuth';
-import { getAllViews } from '$lib/utils/views';
+import { fetchAllViews } from '$lib/utils/views';
 
 import { Table, Text } from '@nico-bachner/components-react';
 import Head from '$lib/components/Head';
@@ -13,7 +13,7 @@ type Props = {
 };
 
 export const getServerSideProps: GetServerSideProps = async () => {
-    const views = await getAllViews();
+    const views = await fetchAllViews();
 
     const props: Props = {
         views,

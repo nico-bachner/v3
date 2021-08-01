@@ -1,8 +1,7 @@
 import styles from '$lib/styles/Articles.module.css';
 
-import { getMDXContent } from '@nico-bachner/mdx/content';
-import { getFile } from '$lib/utils/fs';
-import { getArticles } from '$lib/utils/data/articles';
+import { fetchTranslation } from '$lib/utils/translation';
+import { fetchArticlesData } from '$lib/utils/data/articles';
 
 import MDX from '@nico-bachner/mdx';
 import Head from '$lib/components/Head';
@@ -17,15 +16,9 @@ type ArticlesProps = {
 };
 
 export const getStaticProps: GetStaticProps = async ({ locale }) => {
-    const file = await getFile({
-        basePath: ['translations'],
-        path: [locale as string, 'articles'],
-        extension: 'mdx',
-    });
-
     const props: ArticlesProps = {
-        content: await getMDXContent(file),
-        articles: await getArticles(),
+        content: await fetchTranslation(locale, ['articles']),
+        articles: await fetchArticlesData(),
     };
 
     return { props };

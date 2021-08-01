@@ -1,14 +1,6 @@
 import db from '$lib/utils/supabase';
 
-export const getAllViews = async () => {
-    const { data: views } = await db
-        .from<ViewItem>('views')
-        .select('path, views');
-
-    return views ?? [];
-};
-
-export const getViews = async (path: string) => {
+const fetchViews: Fetch<string, number> = async (path: string) => {
     const { data } = await db
         .from<ViewItem>('views')
         .select('path, views')
@@ -23,8 +15,8 @@ export const getViews = async (path: string) => {
     return 0;
 };
 
-export const getUpdatedViews = async (path: string) => {
-    const views = await getViews(path);
+const fetchUpdatedViews = async (path: string) => {
+    const views = await fetchViews(path);
 
     const { data } = await db
         .from<ViewItem>('views')
@@ -33,3 +25,13 @@ export const getUpdatedViews = async (path: string) => {
 
     return data?.length ? (data[0] as ViewItem).views : views;
 };
+
+const fetchAllViews = async () => {
+    const { data: views } = await db
+        .from<ViewItem>('views')
+        .select('path, views');
+
+    return views ?? [];
+};
+
+export { fetchViews, fetchUpdatedViews, fetchAllViews };

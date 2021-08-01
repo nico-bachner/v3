@@ -8,7 +8,7 @@ type Props = {
 
 type Get<T> = (props: Props) => Promise<T>;
 
-export const getFile: Get<string> = async ({ basePath, path, extension }) => {
+const fetchFile: Get<string> = async ({ basePath, path, extension }) => {
     const fullPath = [...basePath, ...path].join('/');
 
     const fullFilePath = [fullPath, extension].join('.');
@@ -18,7 +18,7 @@ export const getFile: Get<string> = async ({ basePath, path, extension }) => {
     return file;
 };
 
-export const getDirs: Get<string[][]> = async ({ basePath, path }) => {
+const fetchDirs: Get<string[][]> = async ({ basePath, path }) => {
     const files = await fs.readdir(
         [process.cwd(), ...basePath, ...path].join('/'),
         'utf-8'
@@ -29,11 +29,7 @@ export const getDirs: Get<string[][]> = async ({ basePath, path }) => {
         .map((file) => [...path, file]);
 };
 
-export const getPaths: Get<string[][]> = async ({
-    basePath,
-    path,
-    extension,
-}) => {
+const fetchPaths: Get<string[][]> = async ({ basePath, path, extension }) => {
     const files = await fs.readdir(
         [process.cwd(), ...basePath, ...path].join('/'),
         'utf-8'
@@ -55,3 +51,58 @@ export const getPaths: Get<string[][]> = async ({
         return [...path, slug as string];
     });
 };
+
+const fetchRecursivePaths: Get<string[][]> = async ({
+    basePath,
+    path,
+    extension,
+}) => {
+    const paths1 = await fetchPaths({
+        basePath,
+        path,
+        extension,
+    });
+    const dirs1 = await fetchDirs({
+        basePath,
+        path: [],
+    });
+    const paths2 = (
+        await Promise.all(
+            dirs1.map(
+                async (path) =>
+                    await fetchPaths({
+                        basePath,
+                        path,
+                        extension,
+                    })
+            )
+        )
+    ).flat();
+    const dirs2 = (
+        await Promise.all(
+            dirs1.map(
+                async (path) =>
+                    await fetchDirs({
+                        basePath,
+                        path,
+                    })
+            )
+        )
+    ).flat();
+    const paths3 = (
+        await Promise.all(
+            dirs2.map(
+                async (path) =>
+                    await fetchPaths({
+                        basePath,
+                        path,
+                        extension,
+                    })
+            )
+        )
+    ).flat();
+
+    return [...paths1, ...paths2, ...paths3];
+};
+
+export { fetchFile, fetchPaths, fetchRecursivePaths };

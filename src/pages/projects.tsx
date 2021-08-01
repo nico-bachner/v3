@@ -1,8 +1,7 @@
 import styles from '$lib/styles/Projects.module.css';
 
-import { getMDXContent } from '@nico-bachner/mdx/content';
-import { getFile } from '$lib/utils/fs';
-import { getProjects } from '$lib/utils/data/projects';
+import { fetchTranslation } from '$lib/utils/translation';
+import { fetchProjectsData } from '$lib/utils/data/projects';
 
 import MDX from '@nico-bachner/mdx';
 import Head from '$lib/components/Head';
@@ -17,15 +16,12 @@ type ProjectsProps = {
 };
 
 export const getStaticProps: GetStaticProps = async ({ locale }) => {
-    const file = await getFile({
-        basePath: ['translations'],
-        path: [locale as string, 'projects'],
-        extension: 'mdx',
-    });
+    const content = await fetchTranslation(locale, ['projects']);
+    const projects = await fetchProjectsData();
 
     const props: ProjectsProps = {
-        content: await getMDXContent(file),
-        projects: await getProjects(),
+        content,
+        projects,
     };
 
     return { props };

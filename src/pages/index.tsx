@@ -1,9 +1,8 @@
 import styles from '$lib/styles/Home.module.css';
 
-import { getMDXContent } from '@nico-bachner/mdx/content';
-import { getFile } from '$lib/utils/fs';
-import { getProjects } from '$lib/utils/data/projects';
-import { getArticles } from '$lib/utils/data/articles';
+import { fetchProjectsData } from '$lib/utils/data/projects';
+import { fetchArticlesData } from '$lib/utils/data/articles';
+import { fetchTranslation } from '$lib/utils/translation';
 import { useI18n } from '$lib/hooks/useI18n';
 
 import { Link, Text } from '@nico-bachner/components-react';
@@ -27,28 +26,17 @@ type HomeProps = {
 };
 
 export const getStaticProps: GetStaticProps = async ({ locale }) => {
-    const getTranslation = async (path: string[]) => {
-        const file = await getFile({
-            basePath: ['translations'],
-            path: [locale as string, 'home', ...path],
-            extension: 'mdx',
-        });
-
-        const content = await getMDXContent(file);
-
-        return content;
+    const content = {
+        about: await fetchTranslation(locale, ['home', 'about']),
+        projects: await fetchTranslation(locale, ['home', 'projects']),
+        articles: await fetchTranslation(locale, ['home', 'articles']),
+        contact: await fetchTranslation(locale, ['home', 'contact']),
     };
-
-    const projects = await getProjects();
-    const articles = await getArticles();
+    const projects = await fetchProjectsData();
+    const articles = await fetchArticlesData();
 
     const props: HomeProps = {
-        content: {
-            about: await getTranslation(['about']),
-            projects: await getTranslation(['projects']),
-            articles: await getTranslation(['articles']),
-            contact: await getTranslation(['contact']),
-        },
+        content,
         projects: projects.filter((project) => project.featured),
         articles: articles.filter((article) => article.featured),
     };
