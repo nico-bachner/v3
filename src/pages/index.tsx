@@ -3,7 +3,7 @@ import styles from '$styles/Home.module.css';
 import { fetchProjectsData } from '$lib/utils/data/projects';
 import { fetchArticlesData } from '$lib/utils/data/articles';
 import { fetchTranslation } from '$lib/utils/translation';
-import { useI18n } from '$lib/hooks/useI18n';
+import { useTranslation } from '$lib/hooks/useTranslation';
 
 import { Link, Text } from '@nico-bachner/components-react';
 import MDX from '@nico-bachner/mdx';
@@ -45,7 +45,7 @@ export const getStaticProps: GetStaticProps = async ({ locale }) => {
 };
 
 const Home: NextPage<HomeProps> = ({ content, projects, articles }) => {
-    const i18n = useI18n();
+    const i18n = useTranslation();
 
     return (
         <main className={styles.main}>

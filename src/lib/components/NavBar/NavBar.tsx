@@ -1,14 +1,14 @@
 import styles from './NavBar.module.css';
 
 import { useRouter } from 'next/router';
-import { useI18n } from '$lib/hooks/useI18n';
+import { useTranslation } from '$lib/hooks/useTranslation';
 
-import { Button, Link, Text } from '@nico-bachner/components-react';
+import { Link, Text } from '@nico-bachner/components-react';
 import { Logo } from '@nico-bachner/icons-react';
 
 const Navigation: React.VFC = () => {
     const { pathname } = useRouter();
-    const { pages } = useI18n();
+    const { pages } = useTranslation();
 
     return (
         <nav className={styles.nav}>

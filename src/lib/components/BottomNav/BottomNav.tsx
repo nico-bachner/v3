@@ -1,13 +1,13 @@
 import styles from './BottomNav.module.css';
 
 import { useRouter } from 'next/router';
-import { useI18n } from '$lib/hooks/useI18n';
+import { useTranslation } from '$lib/hooks/useTranslation';
 
 import { Link, Text } from '@nico-bachner/components-react';
 
 const MobileNavigation: React.VFC = () => {
     const router = useRouter();
-    const { pages } = useI18n();
+    const { pages } = useTranslation();
 
     return (
         <nav className={styles.nav}>

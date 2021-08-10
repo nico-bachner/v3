@@ -1,7 +1,7 @@
 import styles from '$styles/CommandCentre.module.css';
 
 import { useRouter } from 'next/router';
-import { useI18n } from '$lib/hooks/useI18n';
+import { useTranslation } from '$lib/hooks/useTranslation';
 
 import { Text, Link, List, Select } from '@nico-bachner/components-react';
 import Head from '$lib/components/Head';
@@ -10,7 +10,7 @@ import type { NextPage } from 'next';
 
 const CommandCentre: NextPage = () => {
     const { pathname, query, locale, locales, push } = useRouter();
-    const { pages, links } = useI18n();
+    const { pages, links } = useTranslation();
 
     return (
         <main className={styles.main}>
