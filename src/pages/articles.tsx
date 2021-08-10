@@ -1,4 +1,4 @@
-import styles from '$lib/styles/Articles.module.css';
+import styles from '$styles/Articles.module.css';
 
 import { fetchTranslation } from '$lib/utils/translation';
 import { fetchArticlesData } from '$lib/utils/data/articles';

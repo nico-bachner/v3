@@ -1,17 +1,39 @@
-import classes from './List.module.css';
+import styles from './List.module.css';
 
 type ListProps = {
-    type?: 'ordered' | 'unordered';
+    type: 'ordered' | 'unordered';
+    items: React.ReactChild[];
+    className?: string;
 };
 
-const List: React.FC<ListProps> = ({ children, type = 'unordered' }) => {
-    const styles = [classes.list, classes[type]].join(' ');
-
+const List: React.VFC<ListProps> = ({
+    type = 'unordered',
+    items,
+    className,
+}) => {
     switch (type) {
         case 'ordered':
-            return <ol className={styles}>{children}</ol>;
+            return (
+                <ol
+                    className={[styles.list, styles[type], className].join(' ')}
+                >
+                    {items.map((item, index) => (
+                        <li key={index} className={styles.item}>
+                            {item}
+                        </li>
+                    ))}
+                </ol>
+            );
         case 'unordered':
-            return <ul className={styles}>{children}</ul>;
+            return (
+                <ul
+                    className={[styles.list, styles[type], className].join(' ')}
+                >
+                    {items.map((item, index) => (
+                        <li key={index}>{item}</li>
+                    ))}
+                </ul>
+            );
     }
 };
 

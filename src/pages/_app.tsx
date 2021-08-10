@@ -2,17 +2,11 @@ import '$lib/styles/global.css';
 
 import { useEffect } from 'react';
 import { useRouter } from 'next/router';
-import { DefaultLayout } from '$lib/layouts';
 
-import type { NextPage } from 'next';
-import type { AppProps as NextAppProps } from 'next/app';
+import NavBar from '$lib/components/NavBar';
+import BottomNav from '$lib/components/BottomNav';
 
-type GetLayout = (page: NextPage | React.ReactElement<any, any>) => JSX.Element;
-
-type AppProps = {
-    Component: NextAppProps['Component'] & { getLayout: GetLayout };
-    pageProps: NextAppProps['pageProps'];
-};
+import type { AppProps } from 'next/app';
 
 const App: React.VFC<AppProps> = ({ Component, pageProps }) => {
     const { pathname, query } = useRouter();
@@ -37,16 +31,18 @@ const App: React.VFC<AppProps> = ({ Component, pageProps }) => {
     );
 
     useEffect(() => {
-        fetch(`/api/views/${path}`, {
+        fetch(`/api/analytics/views/${path}`, {
             method: 'POST',
         });
     }, [path]);
 
-    const getLayout =
-        Component.getLayout ??
-        ((page: NextPage) => <DefaultLayout>{page}</DefaultLayout>);
-
-    return getLayout(<Component {...pageProps} />);
+    return (
+        <>
+            <NavBar />
+            <Component {...pageProps} />
+            <BottomNav />
+        </>
+    );
 };
 
 export default App;

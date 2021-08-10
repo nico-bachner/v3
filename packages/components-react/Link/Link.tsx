@@ -8,10 +8,25 @@ type LinkProps = {
     className?: string;
 };
 
-const Link: React.FC<LinkProps> = ({ children, href, variant, className }) => (
-    <NextLink href={href}>
-        {href.startsWith('/') || href.startsWith('#') ? (
+const Link: React.FC<LinkProps> = ({ children, href, variant, className }) => {
+    if (href.startsWith('/')) {
+        return (
+            <NextLink href={href}>
+                <a
+                    className={[
+                        classes.link,
+                        classes[variant as string],
+                        className,
+                    ].join(' ')}
+                >
+                    {children}
+                </a>
+            </NextLink>
+        );
+    } else if (href.startsWith('#')) {
+        return (
             <a
+                href={href}
                 className={[
                     classes.link,
                     classes[variant as string],
@@ -20,8 +35,11 @@ const Link: React.FC<LinkProps> = ({ children, href, variant, className }) => (
             >
                 {children}
             </a>
-        ) : (
+        );
+    } else
+        return (
             <a
+                href={href}
                 target="_blank"
                 rel="noopener noreferrer"
                 className={[
@@ -32,8 +50,7 @@ const Link: React.FC<LinkProps> = ({ children, href, variant, className }) => (
             >
                 {children}
             </a>
-        )}
-    </NextLink>
-);
+        );
+};
 
 export default Link;

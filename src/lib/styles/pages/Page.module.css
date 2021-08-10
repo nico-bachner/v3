@@ -1,0 +1,11 @@
+.main {
+    max-width: 640px;
+    padding: 0 var(--space-7);
+    margin: 0 auto 20vh;
+}
+
+.bottom {
+    display: flex;
+    justify-content: space-between;
+    margin: var(--space-9) 0;
+}

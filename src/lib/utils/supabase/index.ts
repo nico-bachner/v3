@@ -6,4 +6,8 @@ const supabase = createClient(
     process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
 );
 
+const { auth } = supabase;
+
+export { auth };
+
 export default supabase;

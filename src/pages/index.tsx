@@ -1,4 +1,4 @@
-import styles from '$lib/styles/Home.module.css';
+import styles from '$styles/Home.module.css';
 
 import { fetchProjectsData } from '$lib/utils/data/projects';
 import { fetchArticlesData } from '$lib/utils/data/articles';
@@ -48,7 +48,7 @@ const Home: NextPage<HomeProps> = ({ content, projects, articles }) => {
     const i18n = useI18n();
 
     return (
-        <main className={styles.home}>
+        <main className={styles.main}>
             <Head title="Nico Bachner" description={i18n.description} />
 
             <Text type="h1">{i18n.title}</Text>

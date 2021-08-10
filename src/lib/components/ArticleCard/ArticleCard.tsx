@@ -21,7 +21,7 @@ const ArticleCard: React.VFC<ArticleCardProps> = ({
             <Text className={styles.description}>{description}</Text>
             <div className={styles.footer}>
                 <Text color="blue-5">More Information →</Text>
-                <Text color="neutral-4">{reading_time} minute read</Text>
+                <Text color="neutral-5">{reading_time} minute read</Text>
             </div>
         </Card>
     </Link>

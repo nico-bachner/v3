@@ -4,7 +4,7 @@ type ButtonProps = {
     variant: 'primary' | 'secondary' | 'minimal';
     className?: string;
     type?: 'button' | 'submit' | 'reset';
-    onClick: () => void;
+    onClick?: () => void;
 };
 
 const Button: React.FC<ButtonProps> = ({

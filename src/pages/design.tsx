@@ -1,4 +1,4 @@
-import styles from '$lib/styles/Design.module.css';
+import styles from '$styles/Design.module.css';
 
 import {
     Button,
@@ -16,12 +16,16 @@ const Design = () => (
             title="Design | Nico Bachner"
             description="Nico Bachner's Design System"
         />
+
         <Text type="h1">Design</Text>
         <Text size={6} margin={3}>
             My personal Design System
         </Text>
+
         <section>
-            <Text type="h2">Typography</Text>
+            <Text type="h2" margin={5}>
+                Typography
+            </Text>
             <div className={styles.table}>
                 <Text>h1</Text>
                 <Text type="h1">Heading 1</Text>
@@ -36,8 +40,11 @@ const Design = () => (
                 <Text>Paragraph</Text>
             </div>
         </section>
+
         <section>
-            <Text type="h2">Hyperlinks</Text>
+            <Text type="h2" margin={5}>
+                Hyperlinks
+            </Text>
             <div className={styles.list}>
                 <Text>
                     <Link href="/">Default (unstyled)</Link>
@@ -64,19 +71,29 @@ const Design = () => (
                 </Text>
             </div>
         </section>
+
         <section>
-            <Text type="h2">Cards</Text>
-            <Text type="h3">Default</Text>
+            <Text type="h2" margin={5}>
+                Cards
+            </Text>
+            <Text type="h3" margin={5}>
+                Default
+            </Text>
             <Card>
                 <Text>Default Card</Text>
             </Card>
-            <Text type="h3">Interactive</Text>
+            <Text type="h3" margin={5}>
+                Interactive
+            </Text>
             <Card variant="interactive">
                 <Text>Interactive Card (Hover Me)</Text>
             </Card>
         </section>
+
         <section>
-            <Text type="h2">Select</Text>
+            <Text type="h2" margin={5}>
+                Select
+            </Text>
             <div className={styles.column}>
                 <Select
                     options={[
@@ -87,25 +104,27 @@ const Design = () => (
                 />
             </div>
         </section>
+
         <section>
-            <Text type="h2">List</Text>
+            <Text type="h2" margin={5}>
+                List
+            </Text>
 
-            <Text type="h3">Ordered</Text>
-            <List type="ordered">
-                <li>Item 1</li>
-                <li>Item 2</li>
-                <li>Item 3</li>
-            </List>
+            <Text type="h3" margin={5}>
+                Ordered
+            </Text>
+            <List type="ordered" items={['Item 1', 'Item 2', 'Item 3']} />
 
-            <Text type="h3">Unordered</Text>
-            <List type="unordered">
-                <li>Item 1</li>
-                <li>Item 2</li>
-                <li>Item 3</li>
-            </List>
+            <Text type="h3" margin={5}>
+                Unordered
+            </Text>
+            <List type="unordered" items={['Item 1', 'Item 2', 'Item 3']} />
         </section>
+
         <section>
-            <Text type="h2">Button</Text>
+            <Text type="h2" margin={5}>
+                Button
+            </Text>
             <div className={styles.column}>
                 <Button
                     variant="primary"

@@ -1,4 +1,4 @@
-import styles from '$lib/styles/Page.module.css';
+import styles from '$styles/Page.module.css';
 
 import { fetchSerializedMDX } from '@nico-bachner/mdx/serialize';
 import { fetchFile, fetchRecursivePaths } from '$lib/utils/fs';
@@ -117,10 +117,12 @@ const Page: NextPage<PageProps> = ({
     lastUpdated,
     editUrl,
 }) => (
-    <main className={styles.page}>
+    <main className={styles.main}>
         <Head title={title} description={description} />
 
-        <MDX content={mdx} />
+        <article>
+            <MDX content={mdx} />
+        </article>
 
         <div className={styles.bottom}>
             <Text color="neutral-5">Last updated: {lastUpdated}</Text>

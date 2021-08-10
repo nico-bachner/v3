@@ -3,6 +3,7 @@ export { default as Card } from './Card';
 export { default as Code } from './Code';
 export { default as CodeBlock } from './CodeBlock';
 export { default as Divider } from './Divider';
+export { default as Form } from './Form';
 export { default as Image } from './Image';
 export { default as Input } from './Input';
 export { default as Link } from './Link';

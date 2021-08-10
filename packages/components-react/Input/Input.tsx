@@ -19,6 +19,7 @@ type InputProps = {
         | 'time'
         | 'url';
     value: string;
+    required: boolean;
     onChange?: React.ChangeEventHandler<HTMLInputElement>;
     placeholder?: string;
 };
@@ -26,12 +27,14 @@ type InputProps = {
 const Input: React.VFC<InputProps> = ({
     type,
     value,
+    required,
     onChange,
     placeholder,
 }) => (
     <input
         type={type}
         value={value}
+        required={required}
         onChange={onChange}
         placeholder={placeholder}
         className={styles.input}

@@ -1,4 +1,4 @@
-import styles from '$lib/styles/Projects.module.css';
+import styles from '$styles/Projects.module.css';
 
 import { fetchTranslation } from '$lib/utils/translation';
 import { fetchProjectsData } from '$lib/utils/data/projects';
@@ -34,7 +34,7 @@ const Projects: NextPage<ProjectsProps> = ({ content, projects }) => (
             description="Nico Bachner's Projects"
         />
 
-        <div className={styles.center}>
+        <div className={styles.text}>
             <MDX content={content} />
         </div>
 

@@ -9,15 +9,13 @@ type MDXProps = {
 };
 
 const MDX: React.VFC<MDXProps> = ({ content, components }) => (
-    <article>
-        <MDXRemote
-            {...content}
-            components={{
-                ...MDXComponents,
-                ...components,
-            }}
-        />
-    </article>
+    <MDXRemote
+        {...content}
+        components={{
+            ...MDXComponents,
+            ...components,
+        }}
+    />
 );
 
 export default MDX;
