@@ -5,18 +5,18 @@ description: Nico Bachner's Mac Setup
 
 # Mac Setup
 
-Here's the procedure I follow when doing a clean (re)install on my Mac.
+This is the procedure I refer to when doing a clean (re)install on a Mac.
 
 ## System Settings
 
-### Trackpad Settings
+The first thing I do when the initial setup procedure is done is customise the trackpad settings (_System Preferences > View > Trackpad_).
 
-The first thing I do when the initial setup procedure is done is customise the trackpad settings:
+In the _Point & Click_ tab:
 
-1.  Turn on _tap to click_
-2.  Set _click strength_ to light
-3.  Set _tracking speed_ to the maximum value
-4.  Turn on _silent clicking_
+1. Turn on _tap to click_
+2. Set _click strength_ to light
+3. Set _tracking speed_ to the maximum value
+4. Turn on _silent clicking_
 
 <Image
     src="/images/mac/settings/trackpad.png"
@@ -25,7 +25,9 @@ The first thing I do when the initial setup procedure is done is customise the t
     height={1248}
 />
 
-I also disable the _swipe between pages_ functionality.
+In the _More Gestures_ tab:
+
+1. disable the _swipe between pages_ functionality.
 
 <Image
     src="/images/mac/settings/trackpad-more.png"
@@ -34,12 +36,10 @@ I also disable the _swipe between pages_ functionality.
     height={1248}
 />
 
-### Dock Settings
+Then I move on to the Dock settings (_System Preferences > View > Dock & Menu Bar_):
 
-Then I move on to the Dock settings:
-
-1.  Automatically hide & show the Dock
-2.  Do not show recent applications in Dock
+1. Automatically hide & show the Dock
+2. Do not show recent applications in Dock
 
 <Image
     src="/images/mac/settings/dock.png"
@@ -48,76 +48,165 @@ Then I move on to the Dock settings:
     height={1300}
 />
 
+## Safari Settings
+
+1. Adjust Preferences (_Terminal > Preferences_):
+
+    - In _Search_, switch the default search engine.
+    - In _Advanced_, turn on _Show full website address_ and _Show Develop menu in menu bar_.
+
+2. Show Status Bar: _Safari > View > Show Status Bar_
+
 ## Command Line Setup
 
-Install XCode Command Line Tools:
+Install the XCode Command Line Tools:
 
 ```bash
 xcode-select --install
 ```
 
-### Setup [Homebrew](https://brew.sh)
-
-Install Homebrew:
+Install [Homebrew](https://brew.sh):
 
 ```bash
 curl -fsSL "https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh" | bash
 ```
 
-Open [taps](https://docs.brew.sh/Taps):
+Install Applications:
 
 ```bash
-brew tap homebrew/core
 brew tap homebrew/cask
-brew tap homebrew/cask-fonts
-```
-
-### Install Packages
-
-```bash
-brew install starship
-brew install fish
-brew install node
-brew install deno
-brew install gh
-```
-
-### Install Applications
-
-```bash
-brew install --cask visual-studio-code
 brew install --cask google-chrome
 brew install --cask firefox
 brew install --cask discord
-brew install --cask signal
 ```
 
-### Install [Fira Code](https://github.com/tonsky/FiraCode)
+## Fonts
+
+Install [Fira Code](https://github.com/tonsky/FiraCode):
 
 ```bash
+brew tap homebrew/cask-fonts
 brew install --cask font-fira-code
 ```
 
-### Setup [Fish Shell](https://fishshell.com)
+Go to _Terminal > Preferences_ and change the font to **Fira Code Retina 11**.
+
+## Terminal Shell
+
+Install [Fish Shell](https://fishshell.com):
+
+```bash
+brew install fish
+```
+
+Set as default shell:
 
 ```bash
 echo $(brew --prefix)/bin/fish | sudo tee -a /etc/shells
 chsh -s $(brew --prefix)/bin/fish
 ```
 
-When you open a new terminal window, fish shows a welcome message. To disable this, run the following:
+Since it is a new shell, Homebrew is no longer in `$PATH`, so it needs to be re-added:
 
 ```bash
-set fish_greeting ""
+fish_add_path /opt/homebrew/bin
 ```
 
-### Setup [Starship](https://starship.rs)
+When opening a new terminal window, fish shows a welcome message. To disable this, run the following:
+
+```bash
+set -U fish_greeting ""
+```
+
+To make the terminal more interactive, install [Starship](https://starship.rs):
+
+```bash
+brew install starship
+```
+
+Starship needs to be initialised on shell startup:
 
 ```bash
 echo "starship init fish | source" > ~/.config/fish/config.fish
 ```
 
-### Setup Projects Directory
+## Setup [Node.js](https://nodejs.org)
+
+```bash
+brew install node@14
+fish_add_path /opt/homebrew/opt/node@14/bin
+```
+
+Install [pnpm](https://pnpm.io):
+
+```bash
+npm install -g pnpm
+```
+
+Install [ni](https://github.com/antfu/ni):
+
+```bash
+pnpm add -g @antfu/ni
+```
+
+## Setup [GitHub](https://github.com)
+
+[Log in](https://github.com/login).
+
+Install the [GitHub CLI](https://cli.github.com):
+
+```bash
+brew install gh
+```
+
+Login:
+
+```bash
+gh auth login
+```
+
+## Setup [Vercel](https://vercel.com)
+
+[Log in](https://vercel.com/login).
+
+Install the [Vercel CLI](https://vercel.com/cli):
+
+```bash
+pnpm add -g vercel
+```
+
+Link project:
+
+```bash
+vercel link
+```
+
+Fetch environmental variables:
+
+```bash
+vercel env pull
+```
+
+## Setup [VS Code](https://code.visualstudio.org)
+
+Install:
+
+```bash
+brew install --cask visual-studio-code
+```
+
+Install extensions:
+
+-   Nako
+-   VSCode Icons
+-   ESLint
+-   Prettier
+-   Stylelint
+-   GitLens
+
+## Setup Workspace
+
+Create a `projects/` directory:
 
 ```bash
 mkdir ~/projects
