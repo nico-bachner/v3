@@ -15,6 +15,8 @@ import type { MDXContent } from '@nico-bachner/mdx/types';
 type PageProps = {
     title: string;
     description: string;
+    og_image: string | null;
+    canonical_url: string | null;
     mdx: MDXContent;
     lastUpdated: string;
     editUrl: string;
@@ -72,13 +74,19 @@ export const getStaticProps: GetStaticProps<PageProps> = async ({
             extension,
         });
 
-        const { title, description } = getFileData(file);
+        const { title, description, image, url } = getFileData(file);
 
         if (typeof title != 'string') {
             throw new Error(`'title' should be a string (${path})`);
         }
         if (typeof description != 'string') {
             throw new Error(`'description' should be a string (${path})`);
+        }
+        if (typeof image != 'string' && typeof image != 'undefined') {
+            throw new Error(`'image' should be a string (${path})`);
+        }
+        if (typeof url != 'string' && typeof url != 'undefined') {
+            throw new Error(`'url' should be a string (${path})`);
         }
 
         const content = getFileContent(file);
@@ -97,6 +105,8 @@ export const getStaticProps: GetStaticProps<PageProps> = async ({
         const props: PageProps = {
             title,
             description,
+            og_image: image ?? null,
+            canonical_url: url ?? null,
             mdx,
             lastUpdated,
             editUrl: getEditUrl({ ...github, basePath, path }),
@@ -113,12 +123,19 @@ export const getStaticProps: GetStaticProps<PageProps> = async ({
 const Page: NextPage<PageProps> = ({
     title,
     description,
+    og_image,
+    canonical_url,
     mdx,
     lastUpdated,
     editUrl,
 }) => (
     <main className={styles.main}>
-        <Head title={title} description={description} />
+        <Head
+            title={title}
+            description={description}
+            image={og_image ?? undefined}
+            url={canonical_url ?? undefined}
+        />
 
         <article>
             <MDX content={mdx} />
