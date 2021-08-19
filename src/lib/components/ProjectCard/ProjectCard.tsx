@@ -35,7 +35,7 @@ const ProjectCard: React.VFC<ProjectCardProps> = ({
             <Text type={type} size={6} weight={7}>
                 {title}
             </Text>
-            <Text margin={3}>{description}</Text>
+            <Text className={styles.description}>{description}</Text>
             <div className={styles.footer}>
                 <Text color="blue-5">More Information →</Text>
                 <Text color="neutral-5">{getPeriod(from, to)}</Text>
