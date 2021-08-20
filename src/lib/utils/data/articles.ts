@@ -1,6 +1,5 @@
 import { fetchFile, fetchPaths } from '../fs';
 import { getFileData } from '../file';
-import { getReadingTime } from '../reading-time';
 
 const basePath = ['content'];
 const path = ['articles'];
@@ -29,13 +28,16 @@ const fetchArticleData: Fetch<string[], ArticleData> = async (path) => {
         throw new Error(`'featured', if used, should be a boolean (${path})`);
     }
 
+    const wordCount = file.split(' ').length;
+    const readingTime = Math.round(wordCount / 220);
+
     return {
         path,
         title,
         description,
         featured,
         published: published.getTime(),
-        reading_time: getReadingTime(file),
+        reading_time: readingTime,
     };
 };
 
