@@ -45,15 +45,15 @@ export const getStaticProps: GetStaticProps = async ({ locale }) => {
 };
 
 const Home: NextPage<HomeProps> = ({ content, projects, articles }) => {
-    const i18n = useTranslation();
+    const { title, subtitle, actions } = useTranslation();
 
     return (
         <main className={styles.main}>
-            <Head title="Nico Bachner" description={i18n.description} />
+            <Head title="Nico Bachner" />
 
-            <Text type="h1">{i18n.title}</Text>
+            <Text type="h1">{title}</Text>
             <Text size={8} weight={7} className={styles.subtitle}>
-                {i18n.subtitle}
+                {subtitle}
             </Text>
 
             <section id="about">
@@ -73,7 +73,7 @@ const Home: NextPage<HomeProps> = ({ content, projects, articles }) => {
                 </div>
                 <Text align="right" transform="capitalize">
                     <Link href="/projects" variant="highlight">
-                        {i18n.actions.viewAll}
+                        {actions.viewAll}
                     </Link>
                 </Text>
             </section>
@@ -91,7 +91,7 @@ const Home: NextPage<HomeProps> = ({ content, projects, articles }) => {
                 </div>
                 <Text align="right" transform="capitalize">
                     <Link href="/projects" variant="highlight">
-                        {i18n.actions.viewAll}
+                        {actions.viewAll}
                     </Link>
                 </Text>
             </section>
