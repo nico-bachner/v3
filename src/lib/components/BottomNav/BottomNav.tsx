@@ -16,7 +16,7 @@ const MobileNavigation: React.VFC = () => {
                     <Link
                         href={href}
                         variant={
-                            router.pathname != href ? 'secondary' : 'disabled'
+                            router.pathname != href ? 'primary' : 'disabled'
                         }
                     >
                         {title}
