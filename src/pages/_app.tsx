@@ -5,6 +5,7 @@ import { useRouter } from 'next/router';
 
 import NavBar from '$lib/components/NavBar';
 import BottomNav from '$lib/components/BottomNav';
+import Footer from '$lib/components/Footer';
 
 import type { AppProps } from 'next/app';
 
@@ -40,6 +41,7 @@ const App: React.VFC<AppProps> = ({ Component, pageProps }) => {
         <>
             <NavBar />
             <Component {...pageProps} />
+            <Footer />
             <BottomNav />
         </>
     );

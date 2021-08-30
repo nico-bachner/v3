@@ -3,11 +3,11 @@ import styles from './NavBar.module.css';
 import { useRouter } from 'next/router';
 import { useTranslation } from '$lib/hooks/useTranslation';
 
-import { Link, Text } from '@nico-bachner/components-react';
+import { Link, Text, Select } from '@nico-bachner/components-react';
 import { Logo } from '@nico-bachner/icons-react';
 
 const Navigation: React.VFC = () => {
-    const { pathname } = useRouter();
+    const { pathname, query, locale, locales, push } = useRouter();
     const { pages } = useTranslation();
 
     return (
@@ -27,9 +27,20 @@ const Navigation: React.VFC = () => {
                     </Text>
                 ))}
             </div>
-            <Link href="/command-centre" className={styles.command}>
-                ⌘
-            </Link>
+            <Select
+                options={(locales as Locale[]).map((locale) => {
+                    return {
+                        value: locale,
+                        content: locale.toUpperCase(),
+                    };
+                })}
+                value={locale}
+                onChange={({ target }) => {
+                    push({ pathname, query }, pathname, {
+                        locale: target.value,
+                    });
+                }}
+            />
         </nav>
     );
 };

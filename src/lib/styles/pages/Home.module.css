@@ -1,7 +1,7 @@
 .main {
     max-width: 640px;
     padding: 0 var(--space-7);
-    margin: 0 auto 20vh;
+    margin: 0 auto;
 }
 
 .main > section {
