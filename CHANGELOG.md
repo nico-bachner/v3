@@ -2,6 +2,48 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.17.0](https://github.com/nico-bachner/v3/compare/v1.16.0...v1.17.0) (2021-08-30)
+
+
+### Features
+
+* add authentication ([3568704](https://github.com/nico-bachner/v3/commit/35687045f88ee89b3055aca91c92bf56c568bd8a))
+* added custom og_image and canonical_url fields to mdx front matter ([530dfd0](https://github.com/nico-bachner/v3/commit/530dfd09cdc628b53e74b7f7f1fadb5ce8e4119d))
+* added dropdown menu to navbar ([892b35d](https://github.com/nico-bachner/v3/commit/892b35dcaafc01109e32121e08578470ea8c0f66))
+* **auth:** add GitHub oauth login ([832c66e](https://github.com/nico-bachner/v3/commit/832c66eda1887d88018c66de58e35cdee3fb8db6))
+* **auth:** make auth login global ([68f88b6](https://github.com/nico-bachner/v3/commit/68f88b6b475d01f237a2deec4229ebb821120ce2))
+* **components:** added CodeBlock component ([404a841](https://github.com/nico-bachner/v3/commit/404a841de9cf018b657fdb7e700b609149ec04f4))
+* **components:** added table component ([3b155d6](https://github.com/nico-bachner/v3/commit/3b155d6034c0f8f49487f2da52c53f167a0b8214))
+* **content:** added Grillet project ([aa91912](https://github.com/nico-bachner/v3/commit/aa919126f721ec75ecb667596fd9d4aa740859b9))
+* **design:** reinstated footer ([c096ded](https://github.com/nico-bachner/v3/commit/c096dedb572fd87466ff014737c59550dd4f52d5))
+* **layouts:** added support for page-specific layouts ([1385485](https://github.com/nico-bachner/v3/commit/1385485768c3feb061715003505b968e4c707919))
+* **mdx:** added 2-level deep file system routing to content ([3f6e4e0](https://github.com/nico-bachner/v3/commit/3f6e4e09deff8070e54651ffe67ebf1f0d58a7dd))
+* move paragraph translations to mdx files ([2f97021](https://github.com/nico-bachner/v3/commit/2f9702141143898ab840c6d20c2182d69a05468a))
+* refactor styling ([b75e68a](https://github.com/nico-bachner/v3/commit/b75e68a9d6a2b0c27c08fc33706f9e1ddbdc383a))
+* **typography:** move font definitions to package ([b70ddce](https://github.com/nico-bachner/v3/commit/b70ddce4778c062088f3c7e4f24307388e8073aa))
+
+
+### Bug Fixes
+
+* **api:** hopefully fix 404 in production ([74d1f6f](https://github.com/nico-bachner/v3/commit/74d1f6f24f0d2a2f7404381428f91b5eac9461c0))
+* **auth:** fix sign out button ([7f0ffdf](https://github.com/nico-bachner/v3/commit/7f0ffdfb729ac99ec2821f23da6b0e337eb67f93))
+* **build:** ignore lib types ([aed673e](https://github.com/nico-bachner/v3/commit/aed673e3b5b699ddceac87eecfe5b0692894745a))
+* **components:** added missing '/' in link logic ([322c6e1](https://github.com/nico-bachner/v3/commit/322c6e1a107d15defec2637008f9f6b227bf54df))
+* **components:** adjust text colot ([2c5068a](https://github.com/nico-bachner/v3/commit/2c5068a58ff414d14901ca695036f0ae1207fa1c))
+* **content:** change email address ([bcb6891](https://github.com/nico-bachner/v3/commit/bcb689136dd21c8f78282e3138931531c5bf9b37))
+* **design:** change bottom nav links to primary variant ([008ca1e](https://github.com/nico-bachner/v3/commit/008ca1e4871eff5f9b03fd14978684c709f1fa71))
+* fix sign out button in menu ([410d672](https://github.com/nico-bachner/v3/commit/410d672db3a1f5e42f5e264a80a11fab67a9e2b5))
+* fix signin button in menu ([9fced3e](https://github.com/nico-bachner/v3/commit/9fced3ee65639432b3c0b56f347a3684388341c4))
+* **mdx:** add rehype to peerDependencies ([aba50f9](https://github.com/nico-bachner/v3/commit/aba50f972c4ee03d8c2967fed63e4dde69fe8af3))
+* revisit site metadata ([e98be21](https://github.com/nico-bachner/v3/commit/e98be2179bcdf9125afa1ab051befece5d815605))
+* **styles:** fix broken background color ([72adc70](https://github.com/nico-bachner/v3/commit/72adc700337294f6a269ab3cac0dc1eab9559e8e))
+* switch to server side rendering for statistics ([1c7be57](https://github.com/nico-bachner/v3/commit/1c7be57c45994e65db52e9c948d63c7085aabccb))
+* update another legacy import ([4386e78](https://github.com/nico-bachner/v3/commit/4386e78d1ebd502a76114c8b8ee8efb90d1af140))
+* update Head usage ([f453676](https://github.com/nico-bachner/v3/commit/f4536760dc397c400bd7ca6362743a5cf1bb6cfc))
+* update legacy import ([cc8e7a6](https://github.com/nico-bachner/v3/commit/cc8e7a67e5f29236b3f3a45ac39fd2b7a68b0e3c))
+* **ux:** automatically close menu on route change ([106c60e](https://github.com/nico-bachner/v3/commit/106c60e67f19064afaf3d5184658d91533bf3dc7))
+* work around styling issue ([26622b4](https://github.com/nico-bachner/v3/commit/26622b42d7019e031515cd036bbd78b062bcd2ff))
+
 ## [1.16.0](https://github.com/nico-bachner/v3/compare/v1.15.0...v1.16.0) (2021-07-21)
 
 
