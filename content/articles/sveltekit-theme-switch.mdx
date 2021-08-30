@@ -79,7 +79,7 @@ We first import `theme` from `'$lib/stores'`. `$lib/stores` is a path alias for 
 
 We now want to modify the value of `theme`. We could do this by calling `theme.set(x)`, where `x` is the value we want theme to be (In this setup, `'system'`, `'light'`, or `'dark'`). However, there is an easier way: the `$` shortcut. By referencing a Svelte Store using a `$` prefix, it becomes mutable.
 
-(If a value is mutable, that means it can be changed by assigning a new value to it. In JavaScript, for example, `let` and `var` create mutable variables, whereas `const` creates immutable ones.)
+> If a value is mutable, that means it can be changed by assigning a new value to it. In JavaScript, for example, `let` and `var` create mutable variables, whereas `const` creates immutable ones.
 
 Since `$theme` is mutable, we use the svelte binding `bind:value` to get `theme` to track the changes to the value of the selected option. The browser does most of the heavy lifting in this case, since all we need to do is read the `value` attribute.
 

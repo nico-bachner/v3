@@ -1,4 +1,5 @@
 import {
+    Blockquote,
     Code,
     CodeBlock,
     Link,
@@ -65,6 +66,7 @@ export const MDXComponents = {
     pre: CodeBlock,
     ol: OrderedList,
     ul: UnorderedList,
+    blockquote: Blockquote,
 
     // add custom components
     Image,
