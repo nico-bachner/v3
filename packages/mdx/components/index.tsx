@@ -15,13 +15,13 @@ const H1: React.FC = ({ children }) => (
 );
 
 const H2: React.FC = ({ children }) => (
-    <Text type="h2" marginStart={6} marginEnd={3}>
+    <Text type="h2" marginStart={7} marginEnd={3}>
         {children}
     </Text>
 );
 
 const H3: React.FC = ({ children }) => (
-    <Text type="h3" marginStart={6} marginEnd={4}>
+    <Text type="h3" marginStart={7} marginEnd={3}>
         {children}
     </Text>
 );
@@ -31,7 +31,7 @@ const Strong: React.FC = ({ children }) => (
 );
 
 const P: React.FC = ({ children }) => (
-    <Text type="p" marginStart={6} marginEnd={5}>
+    <Text type="p" margin={5}>
         {children}
     </Text>
 );

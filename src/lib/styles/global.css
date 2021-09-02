@@ -11,6 +11,7 @@ html {
 
 h1,
 h2,
-h3 {
+h3,
+sup {
     scroll-padding-top: 10rem;
 }

@@ -54,6 +54,14 @@ const fetchProjectsData = async () => {
             return b.to - a.to;
         }
 
+        if (a.to && !b.to) {
+            return 1;
+        }
+
+        if (!a.to && b.to) {
+            return -1;
+        }
+
         return b.from - a.from;
     });
 };

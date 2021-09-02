@@ -45,11 +45,16 @@ const Text: React.FC<TextProps> = ({
             color: color ? `var(--color-${color}) ` : undefined,
             textAlign: align,
             textTransform: transform,
-            marginBlock: margin ? `var(--space-${margin})` : undefined,
-            marginBlockStart: marginStart
+            marginBlockStart: margin
+                ? `var(--space-${margin})`
+                : marginStart
                 ? `var(--space-${marginStart})`
                 : undefined,
-            marginBlockEnd: marginEnd ? `var(--space-${marginEnd})` : undefined,
+            marginBlockEnd: margin
+                ? `var(--space-${margin})`
+                : marginEnd
+                ? `var(--space-${marginEnd})`
+                : undefined,
             ...style,
         },
     };
