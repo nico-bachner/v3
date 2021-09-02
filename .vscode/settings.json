@@ -1,8 +1,6 @@
 {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
 
-    "css.lint.unknownAtRules": "ignore",
-
     "files.associations": {
         ".stylelintrc": "json"
     },
