@@ -1,28 +1,28 @@
-export const de: Translation = {
-    title: 'Ich bin Nico,',
-    subtitle: 'ein Open Source Enthusiast.',
+const translation: Translation = {
+    title: 'Hej, jeg er Nico,',
+    subtitle: 'en Open Source Entusiast.',
     description:
-        'Ein Student, selbstgelehrter Entwickler und Open Source-Enthusiast',
+        'En studerende, selvlærende udvikler, og open source entusiast',
     actions: {
-        changeLanguage: 'sprache ändern',
-        readMore: 'weiter lesen',
-        viewAll: 'alle sehen',
-        showAll: 'alle zeigen',
-        showMore: 'weitere zeigen',
-        showLess: 'weniger zeigen',
+        changeLanguage: 'ændrere sprog',
+        viewAll: 'se alle',
+        readMore: 'læse videre',
+        showAll: 'vise alle',
+        showMore: 'vise flere',
+        showLess: 'vise mindre',
     },
     pages: {
         main: [
             {
-                title: 'Startseite',
+                title: 'Hjem',
                 href: '/',
             },
             {
-                title: 'Projekte',
+                title: 'Projekter',
                 href: '/projects',
             },
             {
-                title: 'Artikel',
+                title: 'Artikler',
                 href: '/articles',
             },
         ],
@@ -64,3 +64,5 @@ export const de: Translation = {
         ],
     },
 };
+
+export default translation;

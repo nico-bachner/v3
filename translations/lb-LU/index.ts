@@ -1,4 +1,4 @@
-export const lb: Translation = {
+const translation: Translation = {
     title: 'Ech sin den Nico,',
     subtitle: 'en Open Source Enthusiast.',
     description:
@@ -64,3 +64,5 @@ export const lb: Translation = {
         ],
     },
 };
+
+export default translation;

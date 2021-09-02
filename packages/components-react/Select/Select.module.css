@@ -5,6 +5,7 @@
     font-family: var(--font-sans);
     font-size: var(--font-size-4);
     font-weight: var(--font-weight);
+    line-height: var(--line-height-3);
     color: var(--color-text);
     background: transparent;
     background-image: url('/icons/arrow-down.svg');

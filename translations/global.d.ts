@@ -1,5 +1,5 @@
 // Translation Types
-type Locale = 'en' | 'da' | 'fr' | 'de' | 'lb';
+type Locale = 'en-AU' | 'da-DK' | 'fr-FR' | 'de-DE' | 'lb-LU';
 
 type Link = {
     title: string;

@@ -1,28 +1,28 @@
-export const en: Translation = {
-    title: "Hi, I'm Nico.",
-    subtitle: "I'm an Aspiring Open Sourcerer.",
+const translation: Translation = {
+    title: 'Ich bin Nico,',
+    subtitle: 'ein Open Source Enthusiast.',
     description:
-        'A Student, Self-Taught Developer, and Aspiring Open Sourcerer',
+        'Ein Student, selbstgelehrter Entwickler und Open Source-Enthusiast',
     actions: {
-        changeLanguage: 'change language',
-        readMore: 'read more',
-        viewAll: 'view all',
-        showAll: 'show all',
-        showMore: 'show more',
-        showLess: 'show less',
+        changeLanguage: 'sprache ändern',
+        readMore: 'weiter lesen',
+        viewAll: 'alle sehen',
+        showAll: 'alle zeigen',
+        showMore: 'weitere zeigen',
+        showLess: 'weniger zeigen',
     },
     pages: {
         main: [
             {
-                title: 'Home',
+                title: 'Startseite',
                 href: '/',
             },
             {
-                title: 'Projects',
+                title: 'Projekte',
                 href: '/projects',
             },
             {
-                title: 'Articles',
+                title: 'Artikel',
                 href: '/articles',
             },
         ],
@@ -32,11 +32,7 @@ export const en: Translation = {
                 href: '/design',
             },
             {
-                title: 'Uses',
-                href: '/uses',
-            },
-            {
-                title: 'Mac Setup',
+                title: 'Mac Konfiguration',
                 href: '/mac-setup',
             },
         ],
@@ -68,3 +64,5 @@ export const en: Translation = {
         ],
     },
 };
+
+export default translation;

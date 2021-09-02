@@ -30,7 +30,9 @@ const List: React.VFC<ListProps> = ({
                     className={[styles.list, styles[type], className].join(' ')}
                 >
                     {items.map((item, index) => (
-                        <li key={index}>{item}</li>
+                        <li key={index} className={styles.item}>
+                            {item}
+                        </li>
                     ))}
                 </ul>
             );

@@ -28,10 +28,28 @@ const Navigation: React.VFC = () => {
                 ))}
             </div>
             <Select
-                options={(locales as Locale[]).map((locale) => {
+                options={locales!.map((locale) => {
+                    const [languageCode, countryCode] = locale.split('-');
+
+                    /* 
+                    const languageName = languageCode!
+                        .replace('en', 'English')
+                        .replace('da', 'Dansk')
+                        .replace('fr', 'Français')
+                        .replace('de', 'Deutsch')
+                        .replace('lb', 'Lëtzebuergesch');
+
+                    const countryFlag = countryCode!
+                        .replace('AU', '🇦🇺')
+                        .replace('DK', '🇩🇰')
+                        .replace('FR', '🇫🇷')
+                        .replace('DE', '🇩🇪')
+                        .replace('LU', '🇱🇺');
+                    */
+
                     return {
                         value: locale,
-                        content: locale.toUpperCase(),
+                        content: languageCode!.toUpperCase(),
                     };
                 })}
                 value={locale}

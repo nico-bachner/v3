@@ -1,28 +1,28 @@
-export const da: Translation = {
-    title: 'Hej, jeg er Nico,',
-    subtitle: 'en Open Source Entusiast.',
+const translation: Translation = {
+    title: 'Je suis Nico,',
+    subtitle: "un passionné d'Open Source.",
     description:
-        'En studerende, selvlærende udvikler, og open source entusiast',
+        "Je suis un étudiant, un développeur autodidacte, et un passionné d'Open Source",
     actions: {
-        changeLanguage: 'ændrere sprog',
-        viewAll: 'se alle',
-        readMore: 'læse videre',
-        showAll: 'vise alle',
-        showMore: 'vise flere',
-        showLess: 'vise mindre',
+        changeLanguage: 'changer la langue',
+        viewAll: 'en voir tous',
+        readMore: 'continuer à lire',
+        showAll: 'montrer tous',
+        showMore: 'montrer plus',
+        showLess: 'montrer moins',
     },
     pages: {
         main: [
             {
-                title: 'Hjem',
+                title: 'Accueil',
                 href: '/',
             },
             {
-                title: 'Projekter',
+                title: 'Projets',
                 href: '/projects',
             },
             {
-                title: 'Artikler',
+                title: 'Articles',
                 href: '/articles',
             },
         ],
@@ -32,7 +32,7 @@ export const da: Translation = {
                 href: '/design',
             },
             {
-                title: 'Mac Konfiguration',
+                title: 'Configuration Mac',
                 href: '/mac-setup',
             },
         ],
@@ -54,7 +54,7 @@ export const da: Translation = {
         ],
         other: [
             {
-                title: 'Source Code',
+                title: 'Code Source',
                 href: 'https://github.com/nico-bachner/v3',
             },
             {
@@ -64,3 +64,5 @@ export const da: Translation = {
         ],
     },
 };
+
+export default translation;
