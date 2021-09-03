@@ -20,10 +20,8 @@ const ArticleCard: React.VFC<ArticleCardProps> = ({
             </Text>
             <Text className={styles.description}>{description}</Text>
             <div className={styles.footer}>
-                <Text color="blue-5">Read More →</Text>
-                <Text color="neutral-5" className={styles.info}>
-                    {reading_time} minute read
-                </Text>
+                <Text color="blue-5">Read →</Text>
+                <Text color="neutral-5">±{reading_time} min.</Text>
             </div>
         </Card>
     </Link>

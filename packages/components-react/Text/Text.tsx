@@ -7,9 +7,7 @@ type TextProps = {
     weight?: FontWeight;
     align?: 'left' | 'center' | 'right';
     transform?: 'capitalize' | 'uppercase' | 'lowercase';
-    margin?: Space;
-    marginStart?: Space;
-    marginEnd?: Space;
+    margin?: [Space, Space] | Space;
     className?: string;
     style?: React.CSSProperties;
 };
@@ -23,8 +21,6 @@ const Text: React.FC<TextProps> = ({
     align,
     transform,
     margin,
-    marginStart,
-    marginEnd,
     className,
     style,
 }) => {
@@ -46,14 +42,14 @@ const Text: React.FC<TextProps> = ({
             textAlign: align,
             textTransform: transform,
             marginBlockStart: margin
-                ? `var(--space-${margin})`
-                : marginStart
-                ? `var(--space-${marginStart})`
+                ? Array.isArray(margin)
+                    ? `var(--space-${margin[0]})`
+                    : `var(--space-${margin})`
                 : undefined,
             marginBlockEnd: margin
-                ? `var(--space-${margin})`
-                : marginEnd
-                ? `var(--space-${marginEnd})`
+                ? Array.isArray(margin)
+                    ? `var(--space-${margin[1]})`
+                    : `var(--space-${margin})`
                 : undefined,
             ...style,
         },

@@ -15,7 +15,7 @@ const SignUp: NextPage = () => {
 
     return (
         <main className={styles.main}>
-            <Text type="h1" marginEnd={5}>
+            <Text type="h1" margin={[0, 5]}>
                 Sign Up
             </Text>
 

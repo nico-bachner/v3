@@ -17,7 +17,7 @@ const Login: NextPage = () => {
         return (
             <main className={styles.main}>
                 <Text type="h1">Login</Text>
-                <Text size={6} marginStart={6} marginEnd={5}>
+                <Text size={6} margin={6}>
                     Logged In!
                 </Text>
             </main>
@@ -27,14 +27,14 @@ const Login: NextPage = () => {
     return (
         <main className={styles.main}>
             <Text type="h1">Login</Text>
-            <Text size={6} marginStart={2}>
+            <Text size={6} margin={[3, 5]}>
                 Sign in to see more content
             </Text>
 
             <div className={styles.methods}>
                 <section className={styles.oauth}>
                     <Text type="h2">OAuth</Text>
-                    <Text marginStart={3} marginEnd={5}>
+                    <Text margin={[3, 5]}>
                         Sign in via one of the providers below
                     </Text>
                     <div className={styles.providers}>
@@ -52,7 +52,7 @@ const Login: NextPage = () => {
 
                 <section className={styles.email}>
                     <Text type="h2">Email</Text>
-                    <Text marginStart={3} marginEnd={5}>
+                    <Text margin={[3, 5]}>
                         Sign in via magic link with your email below
                     </Text>
                     <form className={styles.form}>

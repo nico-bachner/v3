@@ -35,7 +35,7 @@ const Analytics: NextPage<Props> = ({ views }) => {
                     description="Nico Bachner's Analytics"
                 />
                 <Text type="h1">Analytics</Text>
-                <Text size={6} marginStart={3} marginEnd={5}>
+                <Text size={6} margin={[3, 5]}>
                     Statistics about page views, etc.
                 </Text>
 
