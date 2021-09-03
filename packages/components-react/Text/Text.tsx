@@ -41,14 +41,9 @@ const Text: React.FC<TextProps> = ({
             color: color ? `var(--color-${color}) ` : undefined,
             textAlign: align,
             textTransform: transform,
-            marginBlockStart: margin
+            marginBlock: margin
                 ? Array.isArray(margin)
-                    ? `var(--space-${margin[0]})`
-                    : `var(--space-${margin})`
-                : undefined,
-            marginBlockEnd: margin
-                ? Array.isArray(margin)
-                    ? `var(--space-${margin[1]})`
+                    ? margin.map((x) => `var(--space-${x})`).join(' ')
                     : `var(--space-${margin})`
                 : undefined,
             ...style,
