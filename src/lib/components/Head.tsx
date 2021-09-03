@@ -22,7 +22,7 @@ const Head: React.FC<HeadProps> = ({
 }) => {
     const { locale, locales, asPath } = useRouter();
     const { description: defaultDescription } = useTranslation();
-    const defaultUrl = `https://nicobachner.com${asPath}`;
+    const defaultUrl = 'https://nicobachner.com/' + locale + asPath;
 
     return (
         <NextHead>
@@ -33,6 +33,14 @@ const Head: React.FC<HeadProps> = ({
                 content={description ?? defaultDescription}
             />
             <link rel="canonical" href={url ?? defaultUrl} />
+            {locales!.map((locale) => (
+                <link
+                    key={locale}
+                    rel="alternate"
+                    href={'https://nicobachner.com/' + locale + asPath}
+                    hrefLang={locale}
+                />
+            ))}
 
             <meta property="og:title" content={title} />
             <meta property="og:type" content={type} />
@@ -52,9 +60,9 @@ const Head: React.FC<HeadProps> = ({
             />
             <meta property="og:site_name" content="Nico Bachner" />
             <meta property="og:locale" content={locale} />
-            {locales?.map((locale) => (
+            {locales!.map((locale) => (
                 <meta
-                    key={locale}
+                    key={locale + 'og'}
                     property="og:locale:alternate"
                     content={locale}
                 />
