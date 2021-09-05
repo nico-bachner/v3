@@ -8,7 +8,7 @@ import Head from '$lib/components/Head';
 import Card from '$lib/components/ProjectCard';
 
 import type { NextPage, GetStaticProps } from 'next';
-import type { MDXContent } from '@nico-bachner/mdx/types';
+import type { MDXContent } from '@nico-bachner/mdx/utils';
 
 type ProjectsProps = {
     content: MDXContent;

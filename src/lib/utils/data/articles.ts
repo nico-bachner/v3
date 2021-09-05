@@ -1,5 +1,5 @@
+import { getMDXData } from '@nico-bachner/mdx/utils';
 import { fetchFile, fetchPaths } from '../fs';
-import { getFileData } from '../file';
 
 const basePath = ['content'];
 const path = ['articles'];
@@ -13,7 +13,7 @@ const fetchArticleData: Fetch<string[], ArticleData> = async (path) => {
         description,
         published,
         featured = false,
-    } = getFileData(file);
+    } = getMDXData(file);
 
     if (typeof title != 'string') {
         throw new Error(`'title' should be a string (${path})`);

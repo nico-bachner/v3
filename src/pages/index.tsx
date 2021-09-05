@@ -12,7 +12,7 @@ import ProjectCard from '$lib/components/ProjectCard';
 import ArticleCard from '$lib/components/ArticleCard';
 
 import type { NextPage, GetStaticProps } from 'next';
-import type { MDXContent } from '@nico-bachner/mdx/types';
+import type { MDXContent } from '@nico-bachner/mdx/utils';
 
 type HomeProps = {
     content: {

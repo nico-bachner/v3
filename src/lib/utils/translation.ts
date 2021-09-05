@@ -1,5 +1,5 @@
 import { fetchFile } from '$lib/utils/fs';
-import { fetchSerializedMDX } from '@nico-bachner/mdx/serialize';
+import { fetchMDXContent } from '@nico-bachner/mdx/utils';
 
 const fetchTranslation = async (locale: string | undefined, path: string[]) => {
     const file = await fetchFile({
@@ -8,7 +8,7 @@ const fetchTranslation = async (locale: string | undefined, path: string[]) => {
         extension: 'mdx',
     });
 
-    const content = await fetchSerializedMDX(file);
+    const content = await fetchMDXContent(file);
 
     return content;
 };

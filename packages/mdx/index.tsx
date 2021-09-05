@@ -1,7 +1,7 @@
 import { MDXRemote } from 'next-mdx-remote';
 import { MDXComponents } from './components';
 
-import type { MDXContent } from './types';
+import type { MDXContent } from './utils';
 
 type MDXProps = {
     content: MDXContent;

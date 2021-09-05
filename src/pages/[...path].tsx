@@ -1,8 +1,7 @@
 import styles from '$styles/Page.module.css';
 
-import { fetchSerializedMDX } from '@nico-bachner/mdx/serialize';
+import { fetchMDXContent, getMDXData } from '@nico-bachner/mdx/utils';
 import { fetchFile, fetchRecursivePaths } from '$lib/utils/fs';
-import { getFileData, getFileContent } from '$lib/utils/file';
 import { fetchDateUpdated, getEditUrl } from '$lib/utils/github';
 
 import { Link, Text } from '@nico-bachner/components-react';
@@ -10,14 +9,14 @@ import MDX from '@nico-bachner/mdx';
 import Head from '$lib/components/Head';
 
 import type { NextPage, GetStaticPaths, GetStaticProps } from 'next';
-import type { MDXContent } from '@nico-bachner/mdx/types';
+import type { MDXContent } from '@nico-bachner/mdx/utils';
 
 type PageProps = {
     title: string;
     description: string;
     og_image: string | null;
     canonical_url: string | null;
-    mdx: MDXContent;
+    content: MDXContent;
     lastUpdated: string;
     editUrl: string;
 };
@@ -74,7 +73,7 @@ export const getStaticProps: GetStaticProps<PageProps> = async ({
             extension,
         });
 
-        const { title, description, image, url } = getFileData(file);
+        const { title, description, image, url } = getMDXData(file);
 
         if (typeof title != 'string') {
             throw new Error(`'title' should be a string (${path})`);
@@ -88,9 +87,6 @@ export const getStaticProps: GetStaticProps<PageProps> = async ({
         if (typeof url != 'string' && typeof url != 'undefined') {
             throw new Error(`'url' should be a string (${path})`);
         }
-
-        const content = getFileContent(file);
-        const mdx = await fetchSerializedMDX(content);
 
         const updated = await fetchDateUpdated({
             ...github,
@@ -107,7 +103,7 @@ export const getStaticProps: GetStaticProps<PageProps> = async ({
             description,
             og_image: image ?? null,
             canonical_url: url ?? null,
-            mdx,
+            content: await fetchMDXContent(file),
             lastUpdated,
             editUrl: getEditUrl({ ...github, basePath, path }),
         };
@@ -125,7 +121,7 @@ const Page: NextPage<PageProps> = ({
     description,
     og_image,
     canonical_url,
-    mdx,
+    content,
     lastUpdated,
     editUrl,
 }) => (
@@ -138,7 +134,7 @@ const Page: NextPage<PageProps> = ({
         />
 
         <article>
-            <MDX content={mdx} />
+            <MDX content={content} />
         </article>
 
         <div className={styles.bottom}>

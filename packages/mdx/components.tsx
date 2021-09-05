@@ -7,7 +7,7 @@ import {
     Text,
 } from '@nico-bachner/components-react';
 
-import styles from './MDX.module.css';
+import styles from './components.module.css';
 
 const H1: React.FC = ({ children }) => (
     <Text type="h1" margin={[0, 3]}>

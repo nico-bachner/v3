@@ -1,9 +1,10 @@
 import { serialize } from 'next-mdx-remote/serialize';
+import matter from 'gray-matter';
 
-import type { MDXContent } from './types';
+type MDXContent = { compiledSource: string };
 
-const fetchSerializedMDX = async (file: string): Promise<MDXContent> =>
-    await serialize(file, {
+const fetchMDXContent: Fetch<string, MDXContent> = async (file) =>
+    await serialize(matter(file).content, {
         mdxOptions: {
             remarkPlugins: [
                 require('remark-math'),
@@ -18,4 +19,16 @@ const fetchSerializedMDX = async (file: string): Promise<MDXContent> =>
         },
     });
 
-export { fetchSerializedMDX };
+type MDXData = {
+    [key: string]: any;
+};
+
+const getMDXData: Get<string, MDXData> = (file) => {
+    const { data } = matter(file);
+
+    return data;
+};
+
+export type { MDXContent, MDXData };
+
+export { fetchMDXContent, getMDXData };

@@ -1,4 +1,4 @@
-import { promises as fs } from 'fs';
+import { readFile, readdir } from 'fs/promises';
 
 type Props = {
     basePath: string[];
@@ -13,13 +13,13 @@ const fetchFile: Get<string> = async ({ basePath, path, extension }) => {
 
     const fullFilePath = [fullPath, extension].join('.');
 
-    const file = await fs.readFile(fullFilePath, 'utf-8');
+    const file = await readFile(fullFilePath, 'utf-8');
 
     return file;
 };
 
 const fetchDirs: Get<string[][]> = async ({ basePath, path }) => {
-    const files = await fs.readdir(
+    const files = await readdir(
         [process.cwd(), ...basePath, ...path].join('/'),
         'utf-8'
     );
@@ -30,7 +30,7 @@ const fetchDirs: Get<string[][]> = async ({ basePath, path }) => {
 };
 
 const fetchPaths: Get<string[][]> = async ({ basePath, path, extension }) => {
-    const files = await fs.readdir(
+    const files = await readdir(
         [process.cwd(), ...basePath, ...path].join('/'),
         'utf-8'
     );
