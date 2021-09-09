@@ -1,4 +1,3 @@
-import '@nico-bachner/design-tokens';
 import '@nico-bachner/css';
 import '@nico-bachner/mdx/styles.css';
 
