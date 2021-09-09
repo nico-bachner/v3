@@ -27,7 +27,7 @@ const View: NextApiHandler = async (req, res) => {
         const { data: originalLocalesItem } = await db
             .from<LocalesItem>('locales')
             .select('locale, views')
-            .eq('locale', path);
+            .eq('locale', locale);
 
         if (!originalLocalesItem) {
             throw new Error(`'originalLocalesItem' not found`);
