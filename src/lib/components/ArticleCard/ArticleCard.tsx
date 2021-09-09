@@ -15,12 +15,12 @@ const ArticleCard: React.VFC<ArticleCardProps> = ({
 }) => (
     <Link href={`/${path.join('/')}`}>
         <Card variant="interactive" className={styles.card}>
-            <Text type={type} size={6} weight={7}>
+            <Text type={type} size={6}>
                 {title}
             </Text>
             <Text className={styles.description}>{description}</Text>
             <div className={styles.footer}>
-                <Text color="blue-5">Read →</Text>
+                <Text color="blue">Read →</Text>
                 <Text color="neutral-5">{reading_time} min</Text>
             </div>
         </Card>

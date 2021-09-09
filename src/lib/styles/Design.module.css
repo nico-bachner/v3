@@ -1,0 +1,22 @@
+.main {
+    max-width: 640px;
+    padding: 0 var(--space-7);
+    margin: 0 auto;
+}
+
+.main > h2 {
+    margin-block-start: var(--space-9);
+    margin-block-end: var(--space-7);
+}
+
+.main > h3 {
+    margin-block-start: var(--space-7);
+    margin-block-end: var(--space-5);
+}
+
+.table {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    gap: 2rem 5rem;
+    align-items: center;
+}

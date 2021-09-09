@@ -1,7 +1,7 @@
 .card {
     box-sizing: border-box;
     width: 100%;
-    padding: var(--space-root-7);
+    padding: var(--space-7);
 }
 
 .interactive {
@@ -10,7 +10,7 @@
 
 @media (min-width: 640px) {
     .card {
-        padding: var(--space-root-7) var(--space-root-8);
+        padding: var(--space-7) var(--space-8);
     }
 }
 

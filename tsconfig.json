@@ -16,8 +16,7 @@
         "jsx": "preserve",
         "baseUrl": ".",
         "paths": {
-            "$lib/*": ["src/lib/*"],
-            "$styles/*": ["src/lib/styles/pages/*"]
+            "@lib/*": ["src/lib/*"]
         }
     },
     "include": ["next-env.d.ts", "**/*.d.ts", "**/*.ts", "**/*.tsx"],

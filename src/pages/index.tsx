@@ -1,15 +1,15 @@
-import styles from '$styles/Home.module.css';
+import styles from '@lib/styles/Home.module.css';
 
-import { fetchProjectsData } from '$lib/utils/data/projects';
-import { fetchArticlesData } from '$lib/utils/data/articles';
-import { fetchTranslation } from '$lib/utils/translation';
-import { useTranslation } from '$lib/hooks/useTranslation';
+import { fetchProjectsData } from '@lib/utils/data/projects';
+import { fetchArticlesData } from '@lib/utils/data/articles';
+import { fetchTranslation } from '@lib/utils/translation';
+import { useTranslation } from '@lib/hooks/useTranslation';
 
 import { Link, Text } from '@nico-bachner/components-react';
 import MDX from '@nico-bachner/mdx';
-import Head from '$lib/components/Head';
-import ProjectCard from '$lib/components/ProjectCard';
-import ArticleCard from '$lib/components/ArticleCard';
+import Head from '@lib/components/Head';
+import ProjectCard from '@lib/components/ProjectCard';
+import ArticleCard from '@lib/components/ArticleCard';
 
 import type { NextPage, GetStaticProps } from 'next';
 import type { MDXContent } from '@nico-bachner/mdx/utils';
@@ -25,23 +25,36 @@ type HomeProps = {
     articles: ArticleData[];
 };
 
-export const getStaticProps: GetStaticProps = async ({ locale }) => {
+export const getStaticProps: GetStaticProps<HomeProps> = async ({ locale }) => {
     const content = {
-        about: await fetchTranslation(locale, ['home', 'about']),
-        projects: await fetchTranslation(locale, ['home', 'projects']),
-        articles: await fetchTranslation(locale, ['home', 'articles']),
-        contact: await fetchTranslation(locale, ['home', 'contact']),
+        about: await fetchTranslation({
+            locale,
+            path: ['home', 'about'],
+        }),
+        projects: await fetchTranslation({
+            locale,
+            path: ['home', 'projects'],
+        }),
+        articles: await fetchTranslation({
+            locale,
+            path: ['home', 'articles'],
+        }),
+        contact: await fetchTranslation({
+            locale,
+            path: ['home', 'contact'],
+        }),
     };
+
     const projects = await fetchProjectsData();
     const articles = await fetchArticlesData();
 
-    const props: HomeProps = {
-        content,
-        projects: projects.filter((project) => project.featured),
-        articles: articles.filter((article) => article.featured),
+    return {
+        props: {
+            content,
+            projects: projects.filter((project) => project.featured),
+            articles: articles.filter((article) => article.featured),
+        },
     };
-
-    return { props };
 };
 
 const Home: NextPage<HomeProps> = ({ content, projects, articles }) => {
@@ -52,7 +65,7 @@ const Home: NextPage<HomeProps> = ({ content, projects, articles }) => {
             <Head title="Nico Bachner" />
 
             <Text type="h1">{title}</Text>
-            <Text size={8} weight={7} className={styles.subtitle}>
+            <Text size={8} className={styles.subtitle}>
                 {subtitle}
             </Text>
 

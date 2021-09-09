@@ -1,2 +1,2 @@
-type Fetch<P, R> = (props: P) => Promise<R>;
-type Get<P, R> = (props: P) => R;
+type Get<Input, Return> = (input: Input) => Return;
+type Fetch<Input, Return> = (input: Input) => Promise<Return>;

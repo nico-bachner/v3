@@ -1,0 +1,98 @@
+
+:root {
+    /* ---- spacing ---- */
+
+    --space-1: 0.38rem;
+    --space-2: 0.49rem;
+    --space-3: 0.62rem;
+    --space-4: 0.79rem;
+    --space-5: 1rem;
+    --space-6: 1.27rem;
+    --space-7: 1.62rem;
+    --space-8: 2.06rem;
+    --space-9: 2.62rem;
+
+    /* ---- typography ---- */
+
+    --font-sans: 'Inter', sans-serif;
+    --font-mono: 'Fira Code', monospace;
+    --font-features-sans: "frac", "ss01", "cv01", "cv07", "cv10";
+    --font-features-mono: "frac" 0, "tnum";
+    --font-size: clamp(12pt, 2vw, 14pt);
+    --line-height: 1.76;
+    --color-text: var(--color-neutral-7);
+
+    --font-size-1: calc(0.38 * var(--font-size));
+    --font-size-2: calc(0.48 * var(--font-size));
+    --font-size-3: calc(0.62 * var(--font-size));
+    --font-size-4: calc(0.79 * var(--font-size));
+    --font-size-5: calc(1 * var(--font-size));
+    --font-size-6: calc(1.27 * var(--font-size));
+    --font-size-7: calc(1.62 * var(--font-size));
+    --font-size-8: calc(2.06 * var(--font-size));
+    --font-size-9: calc(2.62 * var(--font-size));
+
+    --line-height-1: calc(0.62 * var(--line-height));
+    --line-height-2: calc(0.7 * var(--line-height));
+    --line-height-3: calc(0.79 * var(--line-height));
+    --line-height-4: calc(0.89 * var(--line-height));
+    --line-height-5: calc(1 * var(--line-height));
+    --line-height-6: calc(1.13 * var(--line-height));
+    --line-height-7: calc(1.27 * var(--line-height));
+    --line-height-8: calc(1.44 * var(--line-height));
+    --line-height-9: calc(1.62 * var(--line-height));
+
+    --font-weight-1: 185;
+    --font-weight-2: 225;
+    --font-weight-3: 272;
+    --font-weight-4: 330;
+    --font-weight-5: 400;
+    --font-weight-6: 485;
+    --font-weight-7: 588;
+    --font-weight-8: 713;
+    --font-weight-9: 864;
+
+    /* ---- colours ---- */
+
+    color-scheme: light dark;
+
+    --color-blue: hsl(210deg, 100%, 50%);
+    --color-cyan: hsl(180deg, 100%, 50%);
+}
+
+@supports (color: lch(0% 0 0deg / 0)) {
+    :root {
+        --color-blue: lch(50% 200 240deg);
+        --color-cyan: lch(80% 200 240deg);
+    }
+}
+
+@media (prefers-color-scheme: light) {
+    :root {
+        --color-neutral-0: hsl(210deg, 10%, 100%);
+        --color-neutral-1: hsl(210deg, 10%, 85%);
+        --color-neutral-2: hsl(210deg, 10%, 81%);
+        --color-neutral-3: hsl(210deg, 10%, 76%);
+        --color-neutral-4: hsl(210deg, 10%, 70%);
+        --color-neutral-5: hsl(210deg, 10%, 62%);
+        --color-neutral-6: hsl(210deg, 10%, 51%);
+        --color-neutral-7: hsl(210deg, 10%, 38%);
+        --color-neutral-8: hsl(210deg, 10%, 21%);
+        --color-neutral-9: hsl(210deg, 10%, 0%);
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --color-neutral-0: hsl(210deg, 10%, 0%);
+        --color-neutral-1: hsl(210deg, 10%, 15%);
+        --color-neutral-2: hsl(210deg, 10%, 19%);
+        --color-neutral-3: hsl(210deg, 10%, 24%);
+        --color-neutral-4: hsl(210deg, 10%, 30%);
+        --color-neutral-5: hsl(210deg, 10%, 38%);
+        --color-neutral-6: hsl(210deg, 10%, 49%);
+        --color-neutral-7: hsl(210deg, 10%, 62%);
+        --color-neutral-8: hsl(210deg, 10%, 79%);
+        --color-neutral-9: hsl(210deg, 10%, 100%);
+    }
+}

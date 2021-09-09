@@ -12,10 +12,10 @@ const getPeriod = (from: number, to: number | null) => {
             return `${to_year}`;
         }
 
-        return `${from_year} → ${to_year}`;
+        return `${from_year} – ${to_year}`;
     }
 
-    return `${from_year} → Present`;
+    return `${from_year} – Present`;
 };
 
 type ProjectCardProps = ProjectData & {
@@ -32,12 +32,12 @@ const ProjectCard: React.VFC<ProjectCardProps> = ({
 }) => (
     <Link href={`/${path.join('/')}`}>
         <Card variant="interactive" className={styles.card}>
-            <Text type={type} size={6} weight={7}>
+            <Text type={type} size={6}>
                 {title}
             </Text>
             <Text className={styles.description}>{description}</Text>
             <div className={styles.footer}>
-                <Text color="blue-5">More Information →</Text>
+                <Text color="blue">More Information →</Text>
                 <Text color="neutral-5" className={styles.info}>
                     {getPeriod(from, to)}
                 </Text>

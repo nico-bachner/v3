@@ -1,15 +1,16 @@
 import styles from './Table.module.css';
 
+type Variant = 'default' | 'monospace' | 'tabular';
 type TableData = React.ReactChild;
-
 type TableRow = TableData[];
 
 type TableProps = {
+    variant: Variant[];
     head: TableRow;
-    body: TableRow[];
+    body?: TableRow[];
 };
 
-const Table: React.VFC<TableProps> = ({ head, body }) => (
+const Table: React.VFC<TableProps> = ({ variant, head, body }) => (
     <table className={styles.table}>
         <thead>
             <tr>
@@ -19,10 +20,15 @@ const Table: React.VFC<TableProps> = ({ head, body }) => (
             </tr>
         </thead>
         <tbody>
-            {body.map((row, index) => (
+            {body?.map((row, index) => (
                 <tr key={index}>
                     {row.map((item, index) => (
-                        <td key={index}>{item}</td>
+                        <td
+                            key={index}
+                            className={styles[`column-${variant[index]}`]}
+                        >
+                            {item}
+                        </td>
                     ))}
                 </tr>
             ))}

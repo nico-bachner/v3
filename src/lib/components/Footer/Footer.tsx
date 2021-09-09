@@ -1,6 +1,6 @@
 import styles from './Footer.module.css';
 
-import { useTranslation } from '$lib/hooks/useTranslation';
+import { useTranslation } from '@lib/hooks/useTranslation';
 
 import { Link, Text } from '@nico-bachner/components-react';
 

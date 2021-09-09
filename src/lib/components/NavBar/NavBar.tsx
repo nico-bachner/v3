@@ -1,12 +1,12 @@
 import styles from './NavBar.module.css';
 
 import { useRouter } from 'next/router';
-import { useTranslation } from '$lib/hooks/useTranslation';
+import { useTranslation } from '@lib/hooks/useTranslation';
 
 import { Link, Text, Select } from '@nico-bachner/components-react';
 import { Logo } from '@nico-bachner/icons-react';
 
-const Navigation: React.VFC = () => {
+const NavBar: React.VFC = () => {
     const { pathname, query, locale, locales, push } = useRouter();
     const { pages } = useTranslation();
 
@@ -17,10 +17,11 @@ const Navigation: React.VFC = () => {
             </Link>
             <div className={styles.links}>
                 {pages.main.map(({ href, title }) => (
-                    <Text key={href} weight={6}>
+                    <Text key={href}>
                         <Link
                             href={href}
-                            variant={pathname == href ? 'disabled' : 'primary'}
+                            variant={pathname != href ? 'primary' : 'disabled'}
+                            className={styles.link}
                         >
                             {title}
                         </Link>
@@ -30,22 +31,6 @@ const Navigation: React.VFC = () => {
             <Select
                 options={locales!.map((locale) => {
                     const [languageCode, countryCode] = locale.split('-');
-
-                    /* 
-                    const languageName = languageCode!
-                        .replace('en', 'English')
-                        .replace('da', 'Dansk')
-                        .replace('fr', 'Français')
-                        .replace('de', 'Deutsch')
-                        .replace('lb', 'Lëtzebuergesch');
-
-                    const countryFlag = countryCode!
-                        .replace('AU', '🇦🇺')
-                        .replace('DK', '🇩🇰')
-                        .replace('FR', '🇫🇷')
-                        .replace('DE', '🇩🇪')
-                        .replace('LU', '🇱🇺');
-                    */
 
                     return {
                         value: locale,
@@ -63,4 +48,4 @@ const Navigation: React.VFC = () => {
     );
 };
 
-export default Navigation;
+export default NavBar;

@@ -1,11 +1,11 @@
-import styles from '$styles/Projects.module.css';
+import styles from '@lib/styles/Projects.module.css';
 
-import { fetchTranslation } from '$lib/utils/translation';
-import { fetchProjectsData } from '$lib/utils/data/projects';
+import { fetchTranslation } from '@lib/utils/translation';
+import { fetchProjectsData } from '@lib/utils/data/projects';
 
 import MDX from '@nico-bachner/mdx';
-import Head from '$lib/components/Head';
-import Card from '$lib/components/ProjectCard';
+import Head from '@lib/components/Head';
+import Card from '@lib/components/ProjectCard';
 
 import type { NextPage, GetStaticProps } from 'next';
 import type { MDXContent } from '@nico-bachner/mdx/utils';
@@ -15,17 +15,17 @@ type ProjectsProps = {
     projects: ProjectData[];
 };
 
-export const getStaticProps: GetStaticProps = async ({ locale }) => {
-    const content = await fetchTranslation(locale, ['projects']);
-    const projects = await fetchProjectsData();
-
-    const props: ProjectsProps = {
-        content,
-        projects,
-    };
-
-    return { props };
-};
+export const getStaticProps: GetStaticProps<ProjectsProps> = async ({
+    locale,
+}) => ({
+    props: {
+        content: await fetchTranslation({
+            locale,
+            path: ['projects'],
+        }),
+        projects: await fetchProjectsData(),
+    },
+});
 
 const Projects: NextPage<ProjectsProps> = ({ content, projects }) => (
     <main className={styles.main}>

@@ -1,10 +1,15 @@
-import { fetchFile } from '$lib/utils/fs';
-import { fetchMDXContent } from '@nico-bachner/mdx/utils';
+import { fetchFile } from '@lib/utils/fs';
+import { fetchMDXContent, MDXContent } from '@nico-bachner/mdx/utils';
 
-const fetchTranslation = async (locale: string | undefined, path: string[]) => {
+type Args = {
+    locale: string | undefined;
+    path: string[];
+};
+
+const fetchTranslation: Fetch<Args, MDXContent> = async ({ locale, path }) => {
     const file = await fetchFile({
         basePath: ['translations'],
-        path: [locale as Locale, ...path],
+        path: [locale!, ...path],
         extension: 'mdx',
     });
 

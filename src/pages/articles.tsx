@@ -1,11 +1,11 @@
-import styles from '$styles/Articles.module.css';
+import styles from '@lib/styles/Articles.module.css';
 
-import { fetchTranslation } from '$lib/utils/translation';
-import { fetchArticlesData } from '$lib/utils/data/articles';
+import { fetchTranslation } from '@lib/utils/translation';
+import { fetchArticlesData } from '@lib/utils/data/articles';
 
 import MDX from '@nico-bachner/mdx';
-import Head from '$lib/components/Head';
-import Card from '$lib/components/ArticleCard';
+import Head from '@lib/components/Head';
+import Card from '@lib/components/ArticleCard';
 
 import type { NextPage, GetStaticProps } from 'next';
 import type { MDXContent } from '@nico-bachner/mdx/utils';
@@ -15,14 +15,17 @@ type ArticlesProps = {
     articles: ArticleData[];
 };
 
-export const getStaticProps: GetStaticProps = async ({ locale }) => {
-    const props: ArticlesProps = {
-        content: await fetchTranslation(locale, ['articles']),
+export const getStaticProps: GetStaticProps<ArticlesProps> = async ({
+    locale,
+}) => ({
+    props: {
+        content: await fetchTranslation({
+            locale,
+            path: ['articles'],
+        }),
         articles: await fetchArticlesData(),
-    };
-
-    return { props };
-};
+    },
+});
 
 const Articles: NextPage<ArticlesProps> = ({ content, articles }) => (
     <main className={styles.main}>

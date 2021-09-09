@@ -9,18 +9,19 @@
     background-color: transparent;
     width: 100%;
     padding: var(--space-3) var(--space-5);
-    border: 1px solid var(--color-neutral-3);
+    border: 1px solid var(--color-neutral-2);
     border-radius: var(--space-1);
 }
 
 .input:hover {
-    border-color: var(--color-neutral-5);
+    border-color: var(--color-neutral-4);
 }
 
 .input:focus {
-    border-color: var(--color-neutral-5);
+    border-color: var(--color-neutral-6);
+    backdrop-filter: blur(20px);
 }
 
 .input::placeholder {
-    color: var(--color-neutral-5);
+    color: var(--color-neutral-4);
 }

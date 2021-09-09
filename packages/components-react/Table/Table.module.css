@@ -20,3 +20,13 @@
 .table td {
     padding: var(--space-3) var(--space-5);
 }
+
+.column-tabular {
+    text-align: right;
+    font-family: var(--font-mono);
+    font-feature-settings: var(--font-features-mono);
+}
+
+.column-monospace {
+    font-family: var(--font-mono);
+}

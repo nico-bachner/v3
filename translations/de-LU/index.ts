@@ -32,8 +32,8 @@ const translation: Translation = {
                 href: '/design',
             },
             {
-                title: 'Mac Konfiguration',
-                href: '/mac-setup',
+                title: 'Besucher',
+                href: '/visitors',
             },
         ],
     },
@@ -42,10 +42,6 @@ const translation: Translation = {
             {
                 title: 'GitHub',
                 href: 'https://github.com/nico-bachner',
-            },
-            {
-                title: 'Twitter',
-                href: 'https://twitter.com/nico_bachner',
             },
             {
                 title: 'Polywork',

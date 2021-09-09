@@ -1,17 +1,7 @@
-@supports (backdrop-filter: blur()) {
-    .nav {
-        backdrop-filter: blur(16px);
-    }
-}
-
-@supports not (backdrop-filter: blur()) {
-    .nav {
-        background-color: var(--color-neutral-1);
-    }
-}
-
 .nav {
     z-index: 50;
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
     position: sticky;
     bottom: 0;
     display: flex;
@@ -20,8 +10,9 @@
     padding: var(--space-8) 0;
 }
 
-.nav > p > a {
-    padding: var(--space-3);
+.link {
+    font-weight: var(--font-weight-8);
+    border: none;
 }
 
 @media (min-width: 640px) {

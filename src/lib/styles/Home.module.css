@@ -1,0 +1,28 @@
+.main {
+    max-width: 640px;
+    padding: 0 var(--space-7);
+    margin: 0 auto;
+}
+
+.main > section {
+    margin: 5rem 0;
+}
+
+.subtitle {
+    margin-top: var(--space-1);
+    font-weight: var(--font-weight-7);
+    color: transparent;
+    background:
+        linear-gradient(
+            60deg,
+            var(--color-cyan),
+            var(--color-blue)
+        );
+    background-clip: text;
+}
+
+.grid {
+    display: grid;
+    gap: var(--space-5);
+    margin: var(--space-7) 0;
+}

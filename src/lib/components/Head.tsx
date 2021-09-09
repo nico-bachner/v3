@@ -1,5 +1,6 @@
+import { useEffect } from 'react';
 import { useRouter } from 'next/router';
-import { useTranslation } from '$lib/hooks/useTranslation';
+import { useTranslation } from '@lib/hooks/useTranslation';
 
 import NextHead from 'next/head';
 
@@ -20,9 +21,35 @@ const Head: React.FC<HeadProps> = ({
     description,
     author,
 }) => {
-    const { locale, locales, asPath } = useRouter();
+    const { pathname, query, asPath, locale, locales } = useRouter();
     const { description: defaultDescription } = useTranslation();
     const defaultUrl = 'https://nicobachner.com/' + locale + asPath;
+
+    const path = encodeURIComponent(
+        pathname
+            .split('/')
+            .map((arg) => {
+                if (arg.includes('[') && arg.includes(']')) {
+                    const key = arg
+                        .replace(/\[/g, '')
+                        .replace(/\]/g, '')
+                        .replace('...', '');
+
+                    return query[key];
+                }
+
+                return arg;
+            })
+            .flat()
+            .join('/')
+    );
+
+    useEffect(() => {
+        fetch(`/api/view`, {
+            method: 'POST',
+            body: JSON.stringify({ path, locale }),
+        });
+    }, [path, locale]);
 
     return (
         <NextHead>

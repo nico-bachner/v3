@@ -1,26 +1,22 @@
 import classes from './Text.module.css';
 
 type TextProps = {
-    type?: 'h1' | 'h2' | 'h3' | 'strong' | 'p';
+    type?: 'h1' | 'h2' | 'h3' | 'strong';
     color?: Color;
-    size?: FontSize;
-    weight?: FontWeight;
+    size?: Scale;
     align?: 'left' | 'center' | 'right';
     transform?: 'capitalize' | 'uppercase' | 'lowercase';
-    margin?: [Space, Space] | Space;
     className?: string;
     style?: React.CSSProperties;
 };
 
 const Text: React.FC<TextProps> = ({
     children,
-    type = 'p',
+    type,
     color,
     size,
-    weight,
     align,
     transform,
-    margin,
     className,
     style,
 }) => {
@@ -34,18 +30,12 @@ const Text: React.FC<TextProps> = ({
             classes.text,
             classes[`type-${type}`],
             classes[`size-${size}`],
-            classes[`weight-${weight}`],
             className,
         ].join(' '),
         style: {
-            color: color ? `var(--color-${color}) ` : undefined,
+            color: color ? `var(--color-${color})` : undefined,
             textAlign: align,
             textTransform: transform,
-            marginBlock: margin
-                ? Array.isArray(margin)
-                    ? margin.map((x) => `var(--space-${x})`).join(' ')
-                    : `var(--space-${margin})`
-                : undefined,
             ...style,
         },
     };
@@ -59,7 +49,7 @@ const Text: React.FC<TextProps> = ({
             return <h3 {...styling}>{children}</h3>;
         case 'strong':
             return <strong {...styling}>{children}</strong>;
-        case 'p':
+        default:
             return <p {...styling}>{children}</p>;
     }
 };

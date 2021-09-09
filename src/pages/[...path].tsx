@@ -1,12 +1,12 @@
-import styles from '$styles/Page.module.css';
+import styles from '@lib/styles/Page.module.css';
 
 import { fetchMDXContent, getMDXData } from '@nico-bachner/mdx/utils';
-import { fetchFile, fetchRecursivePaths } from '$lib/utils/fs';
-import { fetchDateUpdated, getEditUrl } from '$lib/utils/github';
+import { fetchFile, fetchRecursivePaths } from '@lib/utils/fs';
+import { fetchDateUpdated, getEditUrl } from '@lib/utils/github';
 
 import { Link, Text } from '@nico-bachner/components-react';
 import MDX from '@nico-bachner/mdx';
-import Head from '$lib/components/Head';
+import Head from '@lib/components/Head';
 
 import type { NextPage, GetStaticPaths, GetStaticProps } from 'next';
 import type { MDXContent } from '@nico-bachner/mdx/utils';
@@ -31,25 +31,25 @@ const basePath = ['content'];
 const extension = 'mdx';
 
 export const getStaticPaths: GetStaticPaths = async ({ locales }) => {
-    const paths = await fetchRecursivePaths({
-        basePath,
-        path: [],
-        extension,
-    });
+    const paths = (
+        await fetchRecursivePaths({
+            basePath,
+            path: [],
+            extension,
+        })
+    )
+        .map((path) =>
+            locales!.map((locale) => ({
+                params: {
+                    path,
+                },
+                locale,
+            }))
+        )
+        .flat();
 
     return {
-        paths: paths
-            .map((path) =>
-                (locales as Locale[]).map((locale) => {
-                    return {
-                        params: {
-                            path,
-                        },
-                        locale,
-                    };
-                })
-            )
-            .flat(),
+        paths,
         fallback: false,
     };
 };

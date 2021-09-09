@@ -1,14 +1,15 @@
-import styles from '$styles/Design.module.css';
+import styles from '@lib/styles/Design.module.css';
 
 import {
     Button,
     Card,
+    Input,
     Link,
     List,
     Select,
     Text,
 } from '@nico-bachner/components-react';
-import Head from '$lib/components/Head';
+import Head from '@lib/components/Head';
 
 const Design = () => (
     <main className={styles.main}>
@@ -18,140 +19,144 @@ const Design = () => (
         />
 
         <Text type="h1">Design</Text>
-        <Text size={6} margin={3}>
+        <Text size={6} style={{ marginBlockStart: 'var(--space-3)' }}>
             My personal Design System
         </Text>
 
-        <section>
-            <Text type="h2" margin={5}>
-                Typography
+        <Text type="h2">Typography</Text>
+        <div className={styles.table}>
+            <Text>h1</Text>
+            <Text type="h1">Heading 1</Text>
+
+            <Text>h2</Text>
+            <Text type="h2">Heading 2</Text>
+
+            <Text>h3</Text>
+            <Text type="h3">Heading 3</Text>
+
+            <Text>p</Text>
+            <Text>Paragraph</Text>
+        </div>
+
+        <Text type="h2">Hyperlinks</Text>
+        <div className={styles.table}>
+            <Text>Default</Text>
+            <Text>
+                <Link href="/">Click Me</Link>
             </Text>
-            <div className={styles.table}>
-                <Text>h1</Text>
-                <Text type="h1">Heading 1</Text>
 
-                <Text>h2</Text>
-                <Text type="h2">Heading 2</Text>
-
-                <Text>h3</Text>
-                <Text type="h3">Heading 3</Text>
-
-                <Text>p</Text>
-                <Text>Paragraph</Text>
-            </div>
-        </section>
-
-        <section>
-            <Text type="h2" margin={5}>
-                Hyperlinks
+            <Text>Highlight</Text>
+            <Text>
+                <Link href="/" variant="highlight">
+                    Click Me
+                </Link>
             </Text>
-            <div className={styles.list}>
-                <Text>
-                    <Link href="/">Default (unstyled)</Link>
-                </Text>
-                <Text>
-                    <Link href="/" variant="highlight">
-                        Highlight
-                    </Link>
-                </Text>
-                <Text>
-                    <Link href="/" variant="primary">
-                        Primary
-                    </Link>
-                </Text>
-                <Text>
-                    <Link href="/" variant="secondary">
-                        Secondary
-                    </Link>
-                </Text>
-                <Text>
-                    <Link href="/" variant="disabled">
-                        Disabled
-                    </Link>
-                </Text>
-            </div>
-        </section>
 
-        <section>
-            <Text type="h2" margin={5}>
-                Cards
+            <Text>Primary</Text>
+            <Text>
+                <Link href="/" variant="primary">
+                    Click Me
+                </Link>
             </Text>
-            <Text type="h3" margin={5}>
-                Default
+
+            <Text> Secondary</Text>
+            <Text>
+                <Link href="/" variant="secondary">
+                    Click Me
+                </Link>
             </Text>
+
+            <Text>Disabled</Text>
+            <Text>
+                <Link href="/" variant="disabled">
+                    Click Me
+                </Link>
+            </Text>
+        </div>
+
+        <Text type="h2">Cards</Text>
+        <div className={styles.table}>
+            <Text>Default</Text>
             <Card>
-                <Text>Default Card</Text>
+                <Text>Hover Me</Text>
             </Card>
-            <Text type="h3" margin={5}>
-                Interactive
-            </Text>
+
+            <Text>Interactive</Text>
             <Card variant="interactive">
-                <Text>Interactive Card (Hover Me)</Text>
+                <Text>Hover Me</Text>
             </Card>
-        </section>
+        </div>
 
-        <section>
-            <Text type="h2" margin={5}>
-                Select
-            </Text>
-            <div className={styles.column}>
-                <Select
-                    options={[
-                        { value: 1, content: 'Option 1' },
-                        { value: 2, content: 'Option 2' },
-                        { value: 3, content: 'Option 3' },
-                    ]}
-                />
-            </div>
-        </section>
+        <Text type="h2">Select</Text>
+        <div className={styles.table}>
+            <Text>Default</Text>
+            <Select
+                options={[
+                    { value: 1, content: 'Option 1' },
+                    { value: 2, content: 'Option 2' },
+                    { value: 3, content: 'Option 3' },
+                ]}
+            />
+        </div>
 
-        <section>
-            <Text type="h2" margin={5}>
-                List
-            </Text>
+        <Text type="h2">List</Text>
 
-            <Text type="h3" margin={5}>
-                Ordered
-            </Text>
+        <div className={styles.table}>
+            <Text>Ordered</Text>
             <List type="ordered" items={['Item 1', 'Item 2', 'Item 3']} />
 
-            <Text type="h3" margin={5}>
-                Unordered
-            </Text>
+            <Text>Unordered</Text>
             <List type="unordered" items={['Item 1', 'Item 2', 'Item 3']} />
-        </section>
+        </div>
 
-        <section>
-            <Text type="h2" margin={5}>
-                Button
-            </Text>
-            <div className={styles.column}>
-                <Button
-                    variant="primary"
-                    onClick={() => {
-                        alert('Clicked');
-                    }}
-                >
-                    Click Me
-                </Button>
-                <Button
-                    variant="secondary"
-                    onClick={() => {
-                        alert('Clicked');
-                    }}
-                >
-                    Click Me
-                </Button>
-                <Button
-                    variant="minimal"
-                    onClick={() => {
-                        alert('Clicked');
-                    }}
-                >
-                    Click Me
-                </Button>
-            </div>
-        </section>
+        <Text type="h2">Button</Text>
+
+        <div className={styles.table}>
+            <Text>Primary</Text>
+            <Button
+                variant="primary"
+                onClick={() => {
+                    alert('Clicked');
+                }}
+            >
+                Click Me
+            </Button>
+
+            <Text>Secondary</Text>
+            <Button
+                variant="secondary"
+                onClick={() => {
+                    alert('Clicked');
+                }}
+            >
+                Click Me
+            </Button>
+
+            <Text>Minimal</Text>
+            <Button
+                variant="minimal"
+                onClick={() => {
+                    alert('Clicked');
+                }}
+            >
+                Click Me
+            </Button>
+        </div>
+
+        <Text type="h2">Input</Text>
+        <div className={styles.table}>
+            <Text>Text</Text>
+            <Input type="text" placeholder="type something here" />
+
+            <Text>Number</Text>
+            <Input type="number" placeholder="type something here" />
+
+            <Text>Password</Text>
+            <Input type="password" placeholder="type something here" />
+
+            <Text>Date</Text>
+            <Input type="date" placeholder="type something here" />
+        </div>
     </main>
 );
 

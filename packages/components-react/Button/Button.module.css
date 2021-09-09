@@ -2,10 +2,9 @@
     cursor: pointer;
     font-family: var(--font-sans);
     font-size: var(--font-size-4);
-    line-height: var(--line-height-6);
-    padding-block: var(--space-root-1);
-    padding-inline: var(--space-root-4);
-    border-radius: var(--space-root-1);
+    line-height: var(--line-height-1);
+    padding: var(--space-4);
+    border-radius: var(--space-1);
     transition: all 200ms ease;
 }
 
@@ -15,22 +14,22 @@
 }
 
 .primary {
-    color: var(--color-neutral-1);
+    color: var(--color-neutral-0);
     background-color: var(--color-neutral-9);
 }
 
 .primary:hover {
     color: var(--color-neutral-9);
-    background-color: var(--color-neutral-1);
+    background-color: var(--color-neutral-0);
 }
 
 .secondary {
     color: var(--color-neutral-9);
-    background-color: var(--color-neutral-1);
+    background-color: var(--color-neutral-0);
 }
 
 .secondary:hover {
-    color: var(--color-neutral-1);
+    color: var(--color-neutral-0);
     background-color: var(--color-neutral-9);
 }
 
@@ -42,12 +41,20 @@
 }
 
 @media (prefers-color-scheme: light) {
+    .minimal {
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    }
+
     .minimal:hover {
         box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
     }
 }
 
 @media (prefers-color-scheme: dark) {
+    .minimal {
+        background-color: var(--color-neutral-1);
+    }
+
     .minimal:hover {
         background-color: var(--color-neutral-2);
     }

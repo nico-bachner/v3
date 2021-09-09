@@ -6,9 +6,11 @@ type Props = {
     extension?: string;
 };
 
-type Get<T> = (props: Props) => Promise<T>;
-
-const fetchFile: Get<string> = async ({ basePath, path, extension }) => {
+const fetchFile: Fetch<Props, string> = async ({
+    basePath,
+    path,
+    extension,
+}) => {
     const fullPath = [...basePath, ...path].join('/');
 
     const fullFilePath = [fullPath, extension].join('.');
@@ -18,7 +20,7 @@ const fetchFile: Get<string> = async ({ basePath, path, extension }) => {
     return file;
 };
 
-const fetchDirs: Get<string[][]> = async ({ basePath, path }) => {
+const fetchDirs: Fetch<Props, string[][]> = async ({ basePath, path }) => {
     const files = await readdir(
         [process.cwd(), ...basePath, ...path].join('/'),
         'utf-8'
@@ -29,7 +31,11 @@ const fetchDirs: Get<string[][]> = async ({ basePath, path }) => {
         .map((file) => [...path, file]);
 };
 
-const fetchPaths: Get<string[][]> = async ({ basePath, path, extension }) => {
+const fetchPaths: Fetch<Props, string[][]> = async ({
+    basePath,
+    path,
+    extension,
+}) => {
     const files = await readdir(
         [process.cwd(), ...basePath, ...path].join('/'),
         'utf-8'
@@ -52,7 +58,7 @@ const fetchPaths: Get<string[][]> = async ({ basePath, path, extension }) => {
     });
 };
 
-const fetchRecursivePaths: Get<string[][]> = async ({
+const fetchRecursivePaths: Fetch<Props, string[][]> = async ({
     basePath,
     path,
     extension,

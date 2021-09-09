@@ -18,8 +18,8 @@ type InputProps = {
         | 'text'
         | 'time'
         | 'url';
-    value: string;
-    required: boolean;
+    value?: string;
+    required?: boolean;
     onChange?: React.ChangeEventHandler<HTMLInputElement>;
     placeholder?: string;
 };

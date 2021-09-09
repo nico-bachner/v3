@@ -5,7 +5,7 @@
 }
 
 .description {
-    margin-block: var(--space-root-3);
+    margin-block: var(--space-3);
 }
 
 .footer {
@@ -17,7 +17,7 @@
     display: none;
 }
 
-@media (min-width: 640px) {
+@media (min-width: 360px) {
     .info {
         display: initial;
     }

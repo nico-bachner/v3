@@ -10,7 +10,7 @@ import {
 import styles from './components.module.css';
 
 const H1: React.FC = ({ children }) => (
-    <Text type="h1" margin={[0, 3]}>
+    <Text type="h1" style={{ marginBlockEnd: 'var(--space-3)' }}>
         {children}
     </Text>
 );
@@ -32,9 +32,7 @@ const Strong: React.FC = ({ children }) => (
 );
 
 const P: React.FC = ({ children }) => (
-    <Text type="p" className={styles.paragraph}>
-        {children}
-    </Text>
+    <Text className={styles.paragraph}>{children}</Text>
 );
 
 type MDXLinkProps = {

@@ -5,6 +5,6 @@
     font-weight: var(--font-weight);
     font-style: italic;
     margin: var(--space-5) 0;
-    padding: 0 0 0 var(--space-root-7);
-    border-left: var(--space-3) solid var(--color-neutral-3);
+    padding: 0 0 0 var(--space-7);
+    border-left: var(--space-3) solid var(--color-neutral-1);
 }
