@@ -5,6 +5,7 @@ import { fetchProjectsData } from '@lib/utils/data/projects';
 
 import MDX from '@nico-bachner/mdx';
 import Head from '@lib/components/Head';
+import Layout from '@lib/components/Layout';
 import Card from '@lib/components/ProjectCard';
 
 import type { NextPage, GetStaticProps } from 'next';
@@ -28,7 +29,7 @@ export const getStaticProps: GetStaticProps<ProjectsProps> = async ({
 });
 
 const Projects: NextPage<ProjectsProps> = ({ content, projects }) => (
-    <main className={styles.main}>
+    <Layout className={styles.main}>
         <Head
             title="Projects | Nico Bachner"
             description="Nico Bachner's Projects"
@@ -43,7 +44,7 @@ const Projects: NextPage<ProjectsProps> = ({ content, projects }) => (
                 <Card key={project.title} type="h2" {...project} />
             ))}
         </div>
-    </main>
+    </Layout>
 );
 
 export default Projects;

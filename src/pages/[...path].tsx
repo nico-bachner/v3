@@ -7,6 +7,7 @@ import { fetchDateUpdated, getEditUrl } from '@lib/utils/github';
 import { Link, Text } from '@nico-bachner/components-react';
 import MDX from '@nico-bachner/mdx';
 import Head from '@lib/components/Head';
+import Layout from '@lib/components/Layout';
 
 import type { NextPage, GetStaticPaths, GetStaticProps } from 'next';
 import type { MDXContent } from '@nico-bachner/mdx/utils';
@@ -125,7 +126,7 @@ const Page: NextPage<PageProps> = ({
     lastUpdated,
     editUrl,
 }) => (
-    <main className={styles.main}>
+    <Layout>
         <Head
             title={title}
             description={description}
@@ -145,7 +146,7 @@ const Page: NextPage<PageProps> = ({
                 </Link>
             </Text>
         </div>
-    </main>
+    </Layout>
 );
 
 export default Page;

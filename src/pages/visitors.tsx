@@ -1,9 +1,8 @@
-import styles from '@lib/styles/Visitors.module.css';
-
 import { fetchViews } from '@lib/utils/views';
 
 import { Table, Text } from '@nico-bachner/components-react';
 import Head from '@lib/components/Head';
+import Layout from '@lib/components/Layout';
 
 import type { NextPage, GetServerSideProps } from 'next';
 
@@ -21,7 +20,7 @@ export const getServerSideProps: GetServerSideProps<Props> = async () => ({
 });
 
 const Visitors: NextPage<Props> = ({ views }) => (
-    <main className={styles.main}>
+    <Layout>
         <Head
             title="Visitors | Nico Bachner"
             description="Insights into the visitors of nicobachner.com"
@@ -74,7 +73,7 @@ const Visitors: NextPage<Props> = ({ views }) => (
             head={['Path', 'Views']}
             body={views.locales?.map(({ locale, views }) => [locale, views])}
         />
-    </main>
+    </Layout>
 );
 
 export default Visitors;

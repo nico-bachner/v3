@@ -28,10 +28,6 @@ body {
     margin: 0;
 }
 
-main {
-    padding: 0 var(--space-6);
-}
-
 img,
 picture {
     display: block;

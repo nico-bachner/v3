@@ -5,6 +5,7 @@ import { fetchArticlesData } from '@lib/utils/data/articles';
 
 import MDX from '@nico-bachner/mdx';
 import Head from '@lib/components/Head';
+import Layout from '@lib/components/Layout';
 import Card from '@lib/components/ArticleCard';
 
 import type { NextPage, GetStaticProps } from 'next';
@@ -28,7 +29,7 @@ export const getStaticProps: GetStaticProps<ArticlesProps> = async ({
 });
 
 const Articles: NextPage<ArticlesProps> = ({ content, articles }) => (
-    <main className={styles.main}>
+    <Layout>
         <Head
             title="Articles | Nico Bachner"
             description="Nico Bachner's Articles"
@@ -43,7 +44,7 @@ const Articles: NextPage<ArticlesProps> = ({ content, articles }) => (
                 <Card key={article.title} type="h2" {...article} />
             ))}
         </div>
-    </main>
+    </Layout>
 );
 
 export default Articles;

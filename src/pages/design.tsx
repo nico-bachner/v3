@@ -10,9 +10,10 @@ import {
     Text,
 } from '@nico-bachner/components-react';
 import Head from '@lib/components/Head';
+import Layout from '@lib/components/Layout';
 
 const Design = () => (
-    <main className={styles.main}>
+    <Layout className={styles.main}>
         <Head
             title="Design | Nico Bachner"
             description="Nico Bachner's Design System"
@@ -157,7 +158,7 @@ const Design = () => (
             <Text>Date</Text>
             <Input type="date" placeholder="type something here" />
         </div>
-    </main>
+    </Layout>
 );
 
 export default Design;

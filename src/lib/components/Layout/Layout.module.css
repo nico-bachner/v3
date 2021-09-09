@@ -1,4 +1,5 @@
-.main {
+.layout {
     max-width: 640px;
+    padding: 0 var(--space-6);
     margin: auto;
 }

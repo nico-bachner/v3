@@ -1,12 +1,11 @@
-import styles from '@lib/styles/404.module.css';
-
 import { Link, Text } from '@nico-bachner/components-react';
 import Head from '@lib/components/Head';
+import Layout from '@lib/components/Layout';
 
 import type { NextPage } from 'next';
 
 const NotFound: NextPage = () => (
-    <main className={styles.main}>
+    <Layout>
         <Head title="404 | Nico Bachner" description="Page Not Found" />
         <Text type="h1">404 - Page Not Found</Text>
         <Text style={{ marginBlock: 'var(--space-5)' }}>
@@ -20,7 +19,7 @@ const NotFound: NextPage = () => (
                 Homepage
             </Link>
         </Text>
-    </main>
+    </Layout>
 );
 
 export default NotFound;

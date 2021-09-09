@@ -8,6 +8,7 @@ import { useTranslation } from '@lib/hooks/useTranslation';
 import { Link, Text } from '@nico-bachner/components-react';
 import MDX from '@nico-bachner/mdx';
 import Head from '@lib/components/Head';
+import Layout from '@lib/components/Layout';
 import ProjectCard from '@lib/components/ProjectCard';
 import ArticleCard from '@lib/components/ArticleCard';
 
@@ -61,7 +62,7 @@ const Home: NextPage<HomeProps> = ({ content, projects, articles }) => {
     const { title, subtitle, actions } = useTranslation();
 
     return (
-        <main className={styles.main}>
+        <Layout className={styles.main}>
             <Head title="Nico Bachner" />
 
             <Text type="h1">{title}</Text>
@@ -112,7 +113,7 @@ const Home: NextPage<HomeProps> = ({ content, projects, articles }) => {
             <section id="contact">
                 <MDX content={content.contact} />
             </section>
-        </main>
+        </Layout>
     );
 };
 
