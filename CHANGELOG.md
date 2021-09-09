@@ -2,6 +2,25 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.18.0](https://github.com/nico-bachner/v3/compare/v1.17.0...v1.18.0) (2021-09-09)
+
+
+### Features
+
+* combined multiple packages into one ([a6a5361](https://github.com/nico-bachner/v3/commit/a6a53611114cce3c6001b702a0bc6537f40bb1ab))
+* **design:** added Blockquote component ([550993c](https://github.com/nico-bachner/v3/commit/550993c297ee5e56480a192f2545a9b5a317d3c7))
+* **i18n:** add country code to locales ([4d6f175](https://github.com/nico-bachner/v3/commit/4d6f1751dff404535b16a81cc77806bc6adaa8f7))
+* **i18n:** add link rel="alternate" tags ([dfbc1c0](https://github.com/nico-bachner/v3/commit/dfbc1c06d71e5ad7b0df7326a0f02b9d4843d5ea))
+
+
+### Bug Fixes
+
+* **api:** locale views can now count higher than 1 ([b2da191](https://github.com/nico-bachner/v3/commit/b2da1915a9c927bbe576084e2bcb992bcd68ed24))
+* **design:** decrease page margin slightly ([a2adab6](https://github.com/nico-bachner/v3/commit/a2adab66107dad2da857f0c6f8c5d0778ff21b89))
+* **design:** hide extra project/article information on smaller viewports ([a077333](https://github.com/nico-bachner/v3/commit/a077333f972a0f656eb591647355a707bec723f2))
+* fine-tune projects sort order ([a3effd2](https://github.com/nico-bachner/v3/commit/a3effd2e6764854fce6a06e339ee5e053e3168d3))
+* **typography:** remove FOIT (flash of invisible text) ([976139c](https://github.com/nico-bachner/v3/commit/976139c44d871f2bd87d1f53675f8ac0472b984a))
+
 ## [1.17.0](https://github.com/nico-bachner/v3/compare/v1.16.0...v1.17.0) (2021-08-30)
 
 
