@@ -71,7 +71,7 @@ type ComponentProps = {
     variant: '1' | '2' | '3'
 }
 
-const Component: React.FC = ({ children, variant }) => {
+const Component: React.FC<ComponentProps> = ({ children, variant }) => {
     return (
         <Component className={styles[`variant-${variant}`]}>
             {children}
@@ -132,7 +132,11 @@ type ComponentProps = {
     property2: '1' | '2' | '3'
 }
 
-const Component: React.FC = ({ children, variant }) => {
+const Component: React.FC<ComponentProps> = ({
+    children,
+    property1,
+    property2
+}) => {
     return (
         <Component
             className={[
@@ -158,6 +162,6 @@ const Home: React.VFC = () => {
 export default Home;
 ```
 
-One thing to look out for is the whitespace as the argument of `.join()`. Without it, the classNames would just be concatenated into one long name that the browser cannot recognise. Adding the space separates the classNames into recognisable tokens.
+One thing to look out for is the whitespace as the argument of `.join()`. Without it, the `class names would just be concatenated into one long name that the browser cannot recognise. Adding the space separates the class names into recognisable tokens.
 
 Notice how have full control over how fine-grain the control should be? The previous example only had one control point (the `variant`), but it could just as well have a prop for each individual style property. This flexibility is especially useful when architecting a design system.
