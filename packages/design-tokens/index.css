@@ -32,6 +32,16 @@
     --font-size-8: calc(2.06 * var(--font-size));
     --font-size-9: calc(2.62 * var(--font-size));
 
+    --font-weight-1: 185;
+    --font-weight-2: 225;
+    --font-weight-3: 272;
+    --font-weight-4: 330;
+    --font-weight-5: 400;
+    --font-weight-6: 485;
+    --font-weight-7: 588;
+    --font-weight-8: 713;
+    --font-weight-9: 864;
+
     --line-height-1: calc(0.62 * var(--line-height));
     --line-height-2: calc(0.7 * var(--line-height));
     --line-height-3: calc(0.79 * var(--line-height));
@@ -42,15 +52,15 @@
     --line-height-8: calc(1.44 * var(--line-height));
     --line-height-9: calc(1.62 * var(--line-height));
 
-    --font-weight-1: 185;
-    --font-weight-2: 225;
-    --font-weight-3: 272;
-    --font-weight-4: 330;
-    --font-weight-5: 400;
-    --font-weight-6: 485;
-    --font-weight-7: 588;
-    --font-weight-8: 713;
-    --font-weight-9: 864;
+    --letter-spacing-1: -0.0262em;
+    --letter-spacing-2: -0.0162em;
+    --letter-spacing-3: -0.01em;
+    --letter-spacing-4: -0.0062em;
+    --letter-spacing-5: 0;
+    --letter-spacing-6: 0.0062em;
+    --letter-spacing-7: 0.01em;
+    --letter-spacing-8: 0.0162em;
+    --letter-spacing-9: 0.0262em;
 
     /* ---- colours ---- */
 

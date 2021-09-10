@@ -10,28 +10,28 @@
 }
 
 /* ---- Individual Defaults ---- */
-.type-h1,
-.type-h2,
-.type-h3 {
-    color: var(--color-neutral-9);
-}
-
 .type-h1 {
+    color: var(--color-neutral-9);
     font-size: var(--font-size-9);
-    line-height: var(--line-height-1);
     font-weight: var(--font-weight-9);
+    line-height: var(--line-height-1);
+    letter-spacing: var(--letter-spacing-1);
 }
 
 .type-h2 {
+    color: var(--color-neutral-9);
     font-size: var(--font-size-8);
-    line-height: var(--line-height-2);
     font-weight: var(--font-weight-8);
+    line-height: var(--line-height-2);
+    letter-spacing: var(--letter-spacing-2);
 }
 
 .type-h3 {
+    color: var(--color-neutral-9);
     font-size: var(--font-size-7);
-    line-height: var(--line-height-3);
     font-weight: var(--font-weight-7);
+    line-height: var(--line-height-3);
+    letter-spacing: var(--letter-spacing-3);
 }
 
 .type-strong {
@@ -43,44 +43,53 @@
 .size-1 {
     font-size: var(--font-size-1);
     line-height: var(--line-height-9);
+    letter-spacing: var(--letter-spacing-9);
 }
 
 .size-2 {
     font-size: var(--font-size-2);
     line-height: var(--line-height-8);
+    letter-spacing: var(--letter-spacing-8);
 }
 
 .size-3 {
     font-size: var(--font-size-3);
     line-height: var(--line-height-7);
+    letter-spacing: var(--letter-spacing-7);
 }
 
 .size-4 {
     font-size: var(--font-size-4);
     line-height: var(--line-height-6);
+    letter-spacing: var(--letter-spacing-6);
 }
 
 .size-5 {
     font-size: var(--font-size-5);
     line-height: var(--line-height-5);
+    letter-spacing: var(--letter-spacing-5);
 }
 
 .size-6 {
     font-size: var(--font-size-6);
     line-height: var(--line-height-4);
+    letter-spacing: var(--letter-spacing-4);
 }
 
 .size-7 {
     font-size: var(--font-size-7);
     line-height: var(--line-height-3);
+    letter-spacing: var(--letter-spacing-3);
 }
 
 .size-8 {
     font-size: var(--font-size-8);
     line-height: var(--line-height-2);
+    letter-spacing: var(--letter-spacing-2);
 }
 
 .size-9 {
     font-size: var(--font-size-9);
     line-height: var(--line-height-1);
+    letter-spacing: var(--letter-spacing-1);
 }

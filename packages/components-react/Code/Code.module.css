@@ -2,9 +2,11 @@
     display: inline-block;
     font-feature-settings: var(--font-features-mono);
     font-family: var(--font-mono);
-    font-size: var(--space-4);
+    font-size: var(--space-5);
     font-weight: var(--font-weight);
-    padding-inline: 4pt;
-    border: 1px solid var(--color-neutral-2);
+    line-height: var(--line-height-1);
+    padding-inline: 0.4em;
+    padding-block: 0.3em;
     border-radius: var(--space-1);
+    background-color: var(--color-neutral-1);
 }
