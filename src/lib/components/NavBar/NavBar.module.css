@@ -10,6 +10,8 @@
     justify-content: space-between;
     padding: var(--space-5) var(--space-6);
     margin: var(--space-8) auto;
+    border-bottom-left-radius: var(--space-3);
+    border-bottom-right-radius: var(--space-3);
 }
 
 .logo {
