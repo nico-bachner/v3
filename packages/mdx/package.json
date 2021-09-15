@@ -4,6 +4,7 @@
     "dependencies": {
         "@nico-bachner/components-react": "workspace:*",
         "gray-matter": "^4.0.3",
+        "katex": "^0.13.18",
         "mdx-prism": "^0.3.4",
         "next-mdx-remote": "^3.0.4",
         "rehype": "^11.0.0",

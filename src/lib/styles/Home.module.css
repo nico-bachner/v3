@@ -1,9 +1,9 @@
 .main > section {
-    margin: 5rem 0;
+    margin-block: 5rem;
 }
 
 .subtitle {
-    margin-top: var(--space-1);
+    margin-block-start: var(--space-1);
     font-weight: var(--font-weight-8);
     color: transparent;
     background:

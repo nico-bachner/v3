@@ -12,13 +12,17 @@
     --space-8: 2.06rem;
     --space-9: 2.62rem;
 
+    --width-sm: 692px;
+    --width-md: 840px;
+    --width-lg: 1080px;
+
     /* ---- typography ---- */
 
     --font-sans: 'Inter', sans-serif;
     --font-mono: 'Fira Code', monospace;
     --font-features-sans: "frac", "ss01", "cv01", "cv07", "cv10";
     --font-features-mono: "frac" 0, "tnum";
-    --font-size: clamp(12pt, 2vw, 14pt);
+    --font-size: clamp(12pt, 2.4vw, 14.5pt);
     --line-height: 1.76;
     --color-text: var(--color-neutral-7);
 
@@ -66,14 +70,16 @@
 
     color-scheme: light dark;
 
-    --color-blue: hsl(210deg, 100%, 50%);
+    --color-red: hsl(0deg, 100%, 50%);
     --color-cyan: hsl(180deg, 100%, 50%);
+    --color-blue: hsl(210deg, 100%, 50%);
 }
 
 @supports (color: lch(0% 0 0deg / 0)) {
     :root {
-        --color-blue: lch(50% 200 240deg);
+        --color-red: lch(80% 200 30deg);
         --color-cyan: lch(80% 200 240deg);
+        --color-blue: lch(50% 200 240deg);
     }
 }
 

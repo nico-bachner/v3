@@ -126,7 +126,7 @@ const Page: NextPage<PageProps> = ({
     lastUpdated,
     editUrl,
 }) => (
-    <Layout>
+    <Layout width="md">
         <Head
             title={title}
             description={description}

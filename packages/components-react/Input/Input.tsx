@@ -1,44 +1,55 @@
 import styles from './Input.module.css';
 
+import { useState } from 'react';
+
 type InputProps = {
     type:
-        | 'checkbox'
-        | 'color'
         | 'date'
         | 'email'
-        | 'file'
-        | 'image'
-        | 'month'
         | 'number'
         | 'password'
-        | 'radio'
-        | 'range'
         | 'search'
         | 'tel'
         | 'text'
         | 'time'
         | 'url';
-    value?: string;
+    /*  
+        | 'checkbox'
+        | 'color'
+        | 'file'
+        | 'image'
+        | 'range'
+    */
+    onChange?: (value: string) => void;
     required?: boolean;
-    onChange?: React.ChangeEventHandler<HTMLInputElement>;
     placeholder?: string;
 };
 
 const Input: React.VFC<InputProps> = ({
     type,
-    value,
-    required,
     onChange,
+    required,
     placeholder,
-}) => (
-    <input
-        type={type}
-        value={value}
-        required={required}
-        onChange={onChange}
-        placeholder={placeholder}
-        className={styles.input}
-    />
-);
+}) => {
+    const [value, setValue] = useState('');
+    const [error, setError] = useState(false);
+
+    return (
+        <input
+            type={type}
+            value={value}
+            required={required}
+            onChange={({ target }) => {
+                setValue(target.value);
+
+                if (onChange) {
+                    onChange(target.value);
+                }
+            }}
+            placeholder={placeholder}
+            className={styles[type]}
+        />
+    );
+};
 
 export default Input;

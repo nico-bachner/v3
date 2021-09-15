@@ -62,7 +62,7 @@ const Home: NextPage<HomeProps> = ({ content, projects, articles }) => {
     const { title, subtitle, actions } = useTranslation();
 
     return (
-        <Layout className={styles.main}>
+        <Layout width="sm" className={styles.main}>
             <Head title="Nico Bachner" />
 
             <Text type="h1">{title}</Text>

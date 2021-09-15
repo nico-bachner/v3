@@ -1,12 +1,39 @@
-.heading {
-    margin-block: var(--space-7) var(--space-3);
+.h1 {
+    margin-block-end: var(--space-5);
+    max-width: var(--width-sm);
+    margin-inline: auto;
 }
 
-.paragraph {
+:is(article) .h1 {
+    margin-block-end: var(--space-8);
+}
+
+.h2 {
+    margin-block: var(--space-8) var(--space-7);
+    max-width: var(--width-sm);
+    margin-inline: auto;
+}
+
+.h3 {
+    margin-block: var(--space-7) var(--space-6);
+    max-width: var(--width-sm);
+    margin-inline: auto;
+}
+
+.p {
+    max-width: var(--width-sm);
     margin-block: var(--space-5);
+    margin-inline: auto;
 }
 
-.orderedList {
+.pre {
+    margin-block-end: var(--space-9);
+}
+
+.ol {
+    box-sizing: border-box;
+    max-width: var(--width-sm);
+    margin-inline: auto;
     list-style-type: decimal;
     color: var(--color-text);
     font-family: var(--font-sans);
@@ -15,7 +42,10 @@
     padding-left: var(--space-9);
 }
 
-.unorderedList {
+.ul {
+    box-sizing: border-box;
+    max-width: var(--width-sm);
+    margin-inline: auto;
     list-style-type: circle;
     color: var(--color-text);
     font-family: var(--font-sans);
@@ -24,12 +54,12 @@
     padding-left: var(--space-9);
 }
 
-.orderedList > *,
-.unorderedList > * {
+.ol > *,
+.ul > * {
     margin: var(--space-3) 0;
 }
 
-.orderedList > *::marker,
-.unorderedList > *::marker {
+.ol > *::marker,
+.ul > *::marker {
     color: var(--color-neutral-4);
 }

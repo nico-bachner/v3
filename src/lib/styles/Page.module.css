@@ -1,5 +1,7 @@
 .bottom {
     display: flex;
     justify-content: space-between;
-    margin: var(--space-9) 0;
+    max-width: var(--width-sm);
+    margin-block: var(--space-9);
+    margin-inline: auto;
 }

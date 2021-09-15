@@ -29,7 +29,7 @@ export const getStaticProps: GetStaticProps<ArticlesProps> = async ({
 });
 
 const Articles: NextPage<ArticlesProps> = ({ content, articles }) => (
-    <Layout>
+    <Layout width="sm">
         <Head
             title="Articles | Nico Bachner"
             description="Nico Bachner's Articles"

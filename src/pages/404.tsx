@@ -5,7 +5,7 @@ import Layout from '@lib/components/Layout';
 import type { NextPage } from 'next';
 
 const NotFound: NextPage = () => (
-    <Layout>
+    <Layout width="sm">
         <Head title="404 | Nico Bachner" description="Page Not Found" />
         <Text type="h1">404 - Page Not Found</Text>
         <Text style={{ marginBlock: 'var(--space-5)' }}>

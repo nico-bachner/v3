@@ -4,7 +4,7 @@
     -webkit-backdrop-filter: blur(16px);
     z-index: 50;
     inset: 0;
-    max-width: 50rem;
+    max-width: 54rem;
     display: flex;
     align-items: center;
     justify-content: space-between;

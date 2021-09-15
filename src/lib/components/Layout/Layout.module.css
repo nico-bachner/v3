@@ -1,5 +1,18 @@
 .layout {
-    max-width: 640px;
     padding: 0 var(--space-6);
+}
+
+.width-sm {
+    max-width: 672px;
+    margin: auto;
+}
+
+.width-md {
+    max-width: 848px;
+    margin: auto;
+}
+
+.width-lg {
+    max-width: 1080px;
     margin: auto;
 }

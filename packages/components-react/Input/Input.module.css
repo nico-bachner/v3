@@ -1,4 +1,12 @@
-.input {
+.date,
+.email,
+.number,
+.password,
+.search,
+.tel,
+.text,
+.time,
+.url {
     box-sizing: border-box;
     appearance: none;
     outline: none;
@@ -13,15 +21,37 @@
     border-radius: var(--space-1);
 }
 
-.input:hover {
+.date:hover,
+.email:hover,
+.numberv,
+.password:hover,
+.search:hover,
+.tel:hover,
+.text:hover,
+.time:hover,
+.url:hover {
     border-color: var(--color-neutral-4);
 }
 
-.input:focus {
+.date:focus,
+.email:focus,
+.number:focus,
+.password:focus,
+.search:focus,
+.tel:focus,
+.text:focus,
+.time:focus,
+.url:focus {
     border-color: var(--color-neutral-6);
     backdrop-filter: blur(20px);
 }
 
-.input::placeholder {
+.email::placeholder,
+.number::placeholder,
+.password::placeholder,
+.search::placeholder,
+.tel::placeholder,
+.text::placeholder,
+.url::placeholder {
     color: var(--color-neutral-4);
 }

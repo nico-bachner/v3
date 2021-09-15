@@ -1,12 +1,9 @@
-/* ---- rehype-katex ---- */
-@import url(https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css);
-
 /* ---- remark-code-titles ---- */
 .remark-code-title {
     font-family: var(--font-sans);
     font-size: var(--font-size-sm);
     font-weight: var(--font-weight-bold);
-    margin: 2rem 1rem 1rem;
+    margin: var(--space-9) var(--space-7) var(--space-5);
     color: var(--color-neutral-8);
 }
 
@@ -17,6 +14,11 @@
 
 .footnotes > hr {
     border: 1px solid var(--color-neutral-1);
+}
+
+/* ---- katex ---- */
+.math {
+    margin-block: var(--space-9);
 }
 
 /* ---- mdx-prism ---- */

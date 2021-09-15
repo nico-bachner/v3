@@ -1,16 +1,25 @@
-.main > h2 {
-    margin-block-start: var(--space-9);
-    margin-block-end: var(--space-7);
+.main > h1,
+.main > h1 + p,
+.main > section > h2 {
+    max-width: 672px;
+    margin-inline: auto;
 }
 
-.main > h3 {
-    margin-block-start: var(--space-7);
-    margin-block-end: var(--space-5);
+.main > h1 {
+    margin-block-end: var(--space-3);
+}
+
+.main > section {
+    margin-block: 5rem;
+}
+
+.main > section > h2 {
+    margin-block-end: var(--space-9);
 }
 
 .table {
     display: grid;
-    grid-template-columns: 1fr 4fr;
+    grid-template-columns: 1fr 3fr;
     gap: 2rem 5rem;
     align-items: center;
 }

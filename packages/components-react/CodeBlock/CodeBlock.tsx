@@ -1,7 +1,11 @@
 import styles from './CodeBlock.module.css';
 
-const CodeBlock: React.FC = ({ children }) => (
-    <pre className={styles.code}>{children}</pre>
+type CodeBlockProps = {
+    className?: string;
+};
+
+const CodeBlock: React.FC<CodeBlockProps> = ({ children, className }) => (
+    <pre className={[styles.code, className].join(' ')}>{children}</pre>
 );
 
 export default CodeBlock;

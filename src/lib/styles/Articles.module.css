@@ -1,5 +1,6 @@
 .grid {
     display: grid;
-    gap: 1rem;
-    margin: 2rem auto;
+    gap: var(--space-5);
+    margin-block: var(--space-8);
+    margin-inline: auto;
 }
