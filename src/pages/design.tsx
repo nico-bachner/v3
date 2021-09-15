@@ -13,7 +13,7 @@ import Head from '@lib/components/Head';
 import Layout from '@lib/components/Layout';
 
 const Design = () => (
-    <Layout width="md" className={styles.main}>
+    <Layout width="lg" className={styles.main}>
         <Head
             title="Design | Nico Bachner"
             description="Nico Bachner's Design System"
@@ -55,7 +55,7 @@ const Design = () => (
 
         <section>
             <Text type="h2">Hyperlinks</Text>
-            <div className={styles.table}>
+            <div className={styles.smallTable}>
                 <Text>Default</Text>
                 <Text>
                     <Link href="/">Click Me</Link>
@@ -93,7 +93,7 @@ const Design = () => (
 
         <section>
             <Text type="h2">Lists</Text>
-            <div className={styles.table}>
+            <div className={styles.smallTable}>
                 <Text>Ordered</Text>
                 <List type="ordered" items={['Item 1', 'Item 2', 'Item 3']} />
 

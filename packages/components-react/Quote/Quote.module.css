@@ -1,4 +1,5 @@
 .blockquote {
+    box-sizing: border-box;
     font-family: var(--font-sans);
     font-feature-settings: var(--font-features-sans);
     font-size: var(--space-5);

@@ -29,7 +29,7 @@ export const getStaticProps: GetStaticProps<ProjectsProps> = async ({
 });
 
 const Projects: NextPage<ProjectsProps> = ({ content, projects }) => (
-    <Layout width="md" className={styles.main}>
+    <Layout width="lg" className={styles.main}>
         <Head
             title="Projects | Nico Bachner"
             description="Nico Bachner's Projects"

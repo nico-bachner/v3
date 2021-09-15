@@ -20,7 +20,7 @@ export const getServerSideProps: GetServerSideProps<Props> = async () => ({
 });
 
 const Visitors: NextPage<Props> = ({ views }) => (
-    <Layout width="md">
+    <Layout width="sm">
         <Head
             title="Visitors | Nico Bachner"
             description="Insights into the visitors of nicobachner.com"

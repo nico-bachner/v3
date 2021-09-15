@@ -28,6 +28,13 @@
 
 .pre {
     margin-block-end: var(--space-9);
+    max-width: var(--width-md);
+    margin-inline: auto;
+}
+
+.blockquote {
+    max-width: var(--width-sm);
+    margin-inline: auto;
 }
 
 .ol {

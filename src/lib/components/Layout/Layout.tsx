@@ -1,7 +1,7 @@
 import styles from './Layout.module.css';
 
 type LayoutProps = {
-    width: 'sm' | 'md' | 'lg';
+    width: 'sm' | 'md' | 'lg' | 'xl';
     className?: string;
 };
 

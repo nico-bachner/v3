@@ -3,16 +3,21 @@
 }
 
 .width-sm {
-    max-width: 672px;
+    max-width: var(--width-sm);
     margin: auto;
 }
 
 .width-md {
-    max-width: 848px;
+    max-width: var(--width-md);
     margin: auto;
 }
 
 .width-lg {
-    max-width: 1080px;
+    max-width: var(--width-lg);
+    margin: auto;
+}
+
+.width-xl {
+    max-width: var(--width-xl);
     margin: auto;
 }

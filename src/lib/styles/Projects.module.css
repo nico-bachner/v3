@@ -11,12 +11,10 @@
     display: grid;
     gap: var(--space-5);
     margin-block: var(--space-8);
-    margin-inline: auto;
 }
 
 @media (min-width: 640px) {
     .grid {
-        max-width: var(--width-md);
         grid-template-columns: 1fr 12rem 1fr;
         gap: var(--space-7);
     }

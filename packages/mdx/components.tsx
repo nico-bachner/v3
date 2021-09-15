@@ -1,5 +1,5 @@
 import {
-    Blockquote,
+    Quote,
     Code,
     CodeBlock,
     Link,
@@ -36,26 +36,28 @@ const P: React.FC = ({ children }) => (
     <Text className={styles.p}>{children}</Text>
 );
 
-type MDXLinkProps = {
+const A: React.FC<{
     href: string;
-};
-
-const MDXLink: React.FC<MDXLinkProps> = ({ href, children }) => (
+}> = ({ href, children }) => (
     <Link href={href} variant="highlight">
         {children}
     </Link>
 );
 
-const OrderedList: React.FC = ({ children }) => (
+const OL: React.FC = ({ children }) => (
     <ol className={styles.ol}>{children}</ol>
 );
 
-const UnorderedList: React.FC = ({ children }) => (
+const UL: React.FC = ({ children }) => (
     <ul className={styles.ul}>{children}</ul>
 );
 
 const Pre: React.FC = ({ children }) => (
     <CodeBlock className={styles.pre}>{children}</CodeBlock>
+);
+
+const Blockquote: React.FC = ({ children }) => (
+    <Quote className={styles.blockquote}>{children}</Quote>
 );
 
 export const MDXComponents = {
@@ -65,11 +67,11 @@ export const MDXComponents = {
     h3: H3,
     strong: Strong,
     p: P,
-    a: MDXLink,
+    a: A,
     inlineCode: Code,
     pre: Pre,
-    ol: OrderedList,
-    ul: UnorderedList,
+    ol: OL,
+    ul: UL,
     blockquote: Blockquote,
 
     // add custom components
