@@ -1,8 +1,8 @@
 const translation: Translation = {
     title: 'Hej, jeg er Nico,',
-    subtitle: 'en Open Source Entusiast.',
+    subtitle: 'en Open Source-entusiast.',
     description:
-        'En studerende, selvlærende udvikler, og open source entusiast',
+        'En studerende, selvlærende udvikler, og Open Source-entusiast',
     actions: {
         changeLanguage: 'ændrere sprog',
         viewAll: 'se alle',
