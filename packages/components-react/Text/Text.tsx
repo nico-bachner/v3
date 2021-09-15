@@ -8,6 +8,7 @@ type TextProps = {
     transform?: 'capitalize' | 'uppercase' | 'lowercase';
     className?: string;
     style?: React.CSSProperties;
+    id?: string;
 };
 
 const Text: React.FC<TextProps> = ({
@@ -19,13 +20,9 @@ const Text: React.FC<TextProps> = ({
     transform,
     className,
     style,
+    id,
 }) => {
-    type Styling = {
-        className: string;
-        style: React.CSSProperties;
-    };
-
-    const styling: Styling = {
+    const props = {
         className: [
             classes.text,
             classes[`type-${type}`],
@@ -38,19 +35,20 @@ const Text: React.FC<TextProps> = ({
             textTransform: transform,
             ...style,
         },
+        id,
     };
 
     switch (type) {
         case 'h1':
-            return <h1 {...styling}>{children}</h1>;
+            return <h1 {...props}>{children}</h1>;
         case 'h2':
-            return <h2 {...styling}>{children}</h2>;
+            return <h2 {...props}>{children}</h2>;
         case 'h3':
-            return <h3 {...styling}>{children}</h3>;
+            return <h3 {...props}>{children}</h3>;
         case 'strong':
-            return <strong {...styling}>{children}</strong>;
+            return <strong {...props}>{children}</strong>;
         default:
-            return <p {...styling}>{children}</p>;
+            return <p {...props}>{children}</p>;
     }
 };
 

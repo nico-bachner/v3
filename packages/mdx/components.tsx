@@ -16,8 +16,8 @@ const H1: React.FC = ({ children }) => (
     </Text>
 );
 
-const H2: React.FC = ({ children }) => (
-    <Text type="h2" className={styles.h2}>
+const H2: React.FC<{ id?: string }> = ({ children, id }) => (
+    <Text type="h2" id={id} className={styles.h2}>
         {children}
     </Text>
 );
@@ -36,9 +36,7 @@ const P: React.FC = ({ children }) => (
     <Text className={styles.p}>{children}</Text>
 );
 
-const A: React.FC<{
-    href: string;
-}> = ({ href, children }) => (
+const A: React.FC<{ href: string }> = ({ children, href }) => (
     <Link href={href} variant="highlight">
         {children}
     </Link>
