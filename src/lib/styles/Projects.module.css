@@ -1,7 +1,3 @@
-.main {
-    max-width: initial;
-}
-
 .text {
     max-width: var(--width-sm);
     margin-inline: auto;
