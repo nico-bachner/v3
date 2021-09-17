@@ -12,7 +12,8 @@
         "rehype-slug": "^4.0.1",
         "remark-code-titles": "^0.1.2",
         "remark-footnotes": "^2.0.0",
-        "remark-math": "^3.0.1"
+        "remark-math": "^3.0.1",
+        "remark-toc": "^7.2.0"
     },
     "peerDependencies": {
         "@nico-bachner/colors": ">=0.6.0",

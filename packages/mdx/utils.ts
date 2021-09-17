@@ -7,6 +7,7 @@ const fetchMDXContent: Fetch<string, MDXContent> = async (file) =>
     await serialize(matter(file).content, {
         mdxOptions: {
             remarkPlugins: [
+                [require('remark-toc'), { tight: true }],
                 require('remark-math'),
                 require('remark-footnotes'),
                 require('remark-code-titles'),
