@@ -1,4 +1,4 @@
-import styles from '@lib/styles/Articles.module.css';
+import styles from '@lib/styles/Home.module.css';
 
 import { fetchTranslation } from '@lib/utils/translation';
 import { fetchArticlesData } from '@lib/utils/data/articles';
@@ -6,7 +6,7 @@ import { fetchArticlesData } from '@lib/utils/data/articles';
 import MDX from '@nico-bachner/mdx';
 import Head from '@lib/components/Head';
 import Layout from '@lib/components/Layout';
-import Card from '@lib/components/ArticleCard';
+import { ArticleCard } from '@lib/components/Card';
 
 import type { NextPage, GetStaticProps } from 'next';
 import type { MDXContent } from '@nico-bachner/mdx/utils';
@@ -35,13 +35,15 @@ const Articles: NextPage<ArticlesProps> = ({ content, articles }) => (
             description="Nico Bachner's Articles"
         />
 
-        <div className={styles.center}>
-            <MDX content={content} />
-        </div>
+        <MDX content={content} />
 
         <div className={styles.grid}>
             {articles.map((article) => (
-                <Card key={article.title} type="h2" {...article} />
+                <ArticleCard
+                    key={article.path[article.path.length]}
+                    type="h2"
+                    {...article}
+                />
             ))}
         </div>
     </Layout>

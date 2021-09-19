@@ -8,7 +8,13 @@ const extension = 'mdx';
 const fetchProjectData: Fetch<string[], ProjectData> = async (path) => {
     const file = await fetchFile({ basePath, path, extension });
 
-    const { title, description, featured = false, from, to } = getMDXData(file);
+    const {
+        title,
+        description,
+        featured = false,
+        from,
+        to = null,
+    } = getMDXData(file);
 
     if (typeof title != 'string') {
         throw new Error(`'title' should be a string (${path})`);
@@ -22,7 +28,7 @@ const fetchProjectData: Fetch<string[], ProjectData> = async (path) => {
     if (!(from instanceof Date)) {
         throw new Error(`'from' should be a Date (${path})`);
     }
-    if (!(to instanceof Date) && typeof to != 'undefined') {
+    if (to != null && !(to instanceof Date)) {
         throw new Error(`'to', if used, should be a Date (${path})`);
     }
 

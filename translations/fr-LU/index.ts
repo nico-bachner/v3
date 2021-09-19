@@ -1,15 +1,20 @@
 const translation: Translation = {
-    title: 'Je suis Nico,',
-    subtitle: "un passionné d'Open Source.",
-    description:
-        "Je suis un étudiant, un développeur autodidacte, et un passionné d'Open Source",
+    general: {
+        title: 'Je suis Nico,',
+        subtitle: "un passionné d'Open Source.",
+        description:
+            "Je suis un étudiant, un développeur autodidacte, et un passionné d'Open Source",
+    },
     actions: {
         changeLanguage: 'changer la langue',
-        viewAll: 'en voir tous',
-        readMore: 'continuer à lire',
-        showAll: 'montrer tous',
-        showMore: 'montrer plus',
-        showLess: 'montrer moins',
+        moreInformation: "plus d'informations",
+        read: 'lire',
+        readMore: 'lire la suite',
+        showAll: 'afficher tous',
+        showLess: 'afficher moins',
+        showMore: 'afficher plus',
+        viewAll: 'voir tous',
+        visit: 'visiter',
     },
     pages: {
         main: [
@@ -54,7 +59,7 @@ const translation: Translation = {
                 href: 'https://github.com/nico-bachner/v3',
             },
             {
-                title: 'CV',
+                title: 'Curriculum Vitae',
                 href: 'https://read.cv/nico_bachner',
             },
         ],

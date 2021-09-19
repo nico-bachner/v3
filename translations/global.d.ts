@@ -7,16 +7,21 @@ type Link = {
 };
 
 type Translation = {
-    title: string;
-    subtitle: string;
-    description: string;
+    general: {
+        title: string;
+        subtitle: string;
+        description: string;
+    };
     actions: {
         changeLanguage: string;
+        moreInformation: string;
+        read: string;
         readMore: string;
-        viewAll: string;
         showAll: string;
-        showMore: string;
         showLess: string;
+        showMore: string;
+        viewAll: string;
+        visit: string;
     };
     pages: {
         main: Link[];

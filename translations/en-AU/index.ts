@@ -1,15 +1,20 @@
 const translation: Translation = {
-    title: "Hi, I'm Nico.",
-    subtitle: "I'm an Aspiring Open Sourcerer.",
-    description:
-        'A Student, Self-Taught Developer, and Aspiring Open Sourcerer',
+    general: {
+        title: "Hi, I'm Nico.",
+        subtitle: "I'm an Aspiring Open Sourcerer.",
+        description:
+            'A University Student, self-taught Web Developer, and aspiring Open Sourcerer',
+    },
     actions: {
         changeLanguage: 'change language',
+        moreInformation: 'more information',
+        read: 'read',
         readMore: 'read more',
-        viewAll: 'view all',
         showAll: 'show all',
-        showMore: 'show more',
         showLess: 'show less',
+        showMore: 'show more',
+        viewAll: 'view all',
+        visit: 'visit',
     },
     pages: {
         main: [
@@ -54,7 +59,7 @@ const translation: Translation = {
                 href: 'https://github.com/nico-bachner/v3',
             },
             {
-                title: 'CV',
+                title: 'Curriculum Vitae',
                 href: 'https://read.cv/nico_bachner',
             },
         ],

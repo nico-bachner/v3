@@ -1,15 +1,20 @@
 const translation: Translation = {
-    title: 'Hej, jeg er Nico,',
-    subtitle: 'en Open Source-entusiast.',
-    description:
-        'En studerende, selvlærende udvikler, og Open Source-entusiast',
+    general: {
+        title: 'Hej, jeg er Nico,',
+        subtitle: 'en Open Source-entusiast.',
+        description:
+            'En studerende, selvlært webudvikler og open source-entusiast',
+    },
     actions: {
-        changeLanguage: 'ændrere sprog',
+        changeLanguage: 'skift sprog',
+        moreInformation: 'flere oplysninger',
+        read: 'læs',
+        readMore: 'læs mere',
+        showAll: 'vis alle',
+        showLess: 'vis færre',
+        showMore: 'vis flere',
         viewAll: 'se alle',
-        readMore: 'læse videre',
-        showAll: 'vise alle',
-        showMore: 'vise flere',
-        showLess: 'vise mindre',
+        visit: 'besøg',
     },
     pages: {
         main: [
@@ -54,7 +59,7 @@ const translation: Translation = {
                 href: 'https://github.com/nico-bachner/v3',
             },
             {
-                title: 'CV',
+                title: 'Curriculum Vitae',
                 href: 'https://read.cv/nico_bachner',
             },
         ],

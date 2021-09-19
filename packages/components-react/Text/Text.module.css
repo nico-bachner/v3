@@ -7,7 +7,6 @@
     font-family: var(--font-sans);
     font-feature-settings: var(--font-features-sans);
     margin-block: 0;
-    scroll-margin-block-start: 128px;
 }
 
 /* ---- Individual Defaults ---- */
@@ -33,6 +32,14 @@
     font-weight: var(--font-weight-7);
     line-height: var(--line-height-3);
     letter-spacing: var(--letter-spacing-3);
+}
+
+.type-h4 {
+    color: var(--color-neutral-9);
+    font-size: var(--font-size-6);
+    font-weight: var(--font-weight-6);
+    line-height: var(--line-height-4);
+    letter-spacing: var(--letter-spacing-4);
 }
 
 .type-strong {

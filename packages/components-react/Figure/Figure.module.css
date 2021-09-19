@@ -1,0 +1,13 @@
+.figure {
+    margin: 0;
+}
+
+.caption {
+    color: var(--color-text);
+    font-size: var(--font-size-5);
+    line-height: var(--line-height-5);
+    font-weight: var(--font-weight-5);
+    font-family: var(--font-sans);
+    font-feature-settings: var(--font-features-sans);
+    text-align: center;
+}

@@ -11,8 +11,8 @@ const fetchArticleData: Fetch<string[], ArticleData> = async (path) => {
     const {
         title,
         description,
-        published,
         featured = false,
+        published,
     } = getMDXData(file);
 
     if (typeof title != 'string') {
@@ -21,11 +21,11 @@ const fetchArticleData: Fetch<string[], ArticleData> = async (path) => {
     if (typeof description != 'string') {
         throw new Error(`'description' should be a string (${path})`);
     }
-    if (!(published instanceof Date)) {
-        throw new Error(`'published' should be a Date (${path})`);
-    }
     if (typeof featured != 'boolean') {
         throw new Error(`'featured', if used, should be a boolean (${path})`);
+    }
+    if (!(published instanceof Date)) {
+        throw new Error(`'published' should be a Date (${path})`);
     }
 
     const wordCount = file.split(' ').length;

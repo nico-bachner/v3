@@ -1,7 +1,7 @@
 import classes from './Text.module.css';
 
 type TextProps = {
-    type?: 'h1' | 'h2' | 'h3' | 'strong';
+    type?: 'h1' | 'h2' | 'h3' | 'h4' | 'strong';
     color?: Color;
     size?: Scale;
     align?: 'left' | 'center' | 'right';
@@ -45,6 +45,8 @@ const Text: React.FC<TextProps> = ({
             return <h2 {...props}>{children}</h2>;
         case 'h3':
             return <h3 {...props}>{children}</h3>;
+        case 'h4':
+            return <h4 {...props}>{children}</h4>;
         case 'strong':
             return <strong {...props}>{children}</strong>;
         default:

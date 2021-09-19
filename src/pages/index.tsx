@@ -9,8 +9,7 @@ import { Link, Text } from '@nico-bachner/components-react';
 import MDX from '@nico-bachner/mdx';
 import Head from '@lib/components/Head';
 import Layout from '@lib/components/Layout';
-import ProjectCard from '@lib/components/ProjectCard';
-import ArticleCard from '@lib/components/ArticleCard';
+import { ProjectCard, ArticleCard } from '@lib/components/Card';
 
 import type { NextPage, GetStaticProps } from 'next';
 import type { MDXContent } from '@nico-bachner/mdx/utils';
@@ -52,22 +51,22 @@ export const getStaticProps: GetStaticProps<HomeProps> = async ({ locale }) => {
     return {
         props: {
             content,
-            projects: projects.filter((project) => project.featured),
-            articles: articles.filter((article) => article.featured),
+            projects: projects.filter(({ featured }) => featured),
+            articles: articles.filter(({ featured }) => featured),
         },
     };
 };
 
 const Home: NextPage<HomeProps> = ({ content, projects, articles }) => {
-    const { title, subtitle, actions } = useTranslation();
+    const { general, actions } = useTranslation();
 
     return (
         <Layout width="sm" className={styles.main}>
             <Head title="Nico Bachner" />
 
-            <Text type="h1">{title}</Text>
+            <Text type="h1">{general.title}</Text>
             <Text size={8} className={styles.subtitle}>
-                {subtitle}
+                {general.subtitle}
             </Text>
 
             <section id="about">
@@ -79,7 +78,7 @@ const Home: NextPage<HomeProps> = ({ content, projects, articles }) => {
                 <div className={styles.grid}>
                     {projects.map((project) => (
                         <ProjectCard
-                            key={project.title}
+                            key={project.path[project.path.length - 1]}
                             type="h3"
                             {...project}
                         />
@@ -97,14 +96,14 @@ const Home: NextPage<HomeProps> = ({ content, projects, articles }) => {
                 <div className={styles.grid}>
                     {articles.map((article) => (
                         <ArticleCard
-                            key={article.title}
+                            key={article.path[article.path.length - 1]}
                             type="h3"
                             {...article}
                         />
                     ))}
                 </div>
                 <Text align="right" transform="capitalize">
-                    <Link href="/projects" variant="highlight">
+                    <Link href="/articles" variant="highlight">
                         {actions.viewAll}
                     </Link>
                 </Text>

@@ -1,7 +1,7 @@
 .card {
     box-sizing: border-box;
     width: 100%;
-    padding: var(--space-7);
+    padding: var(--space-5) var(--space-6);
 }
 
 .interactive {

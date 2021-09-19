@@ -2,9 +2,9 @@ type ProjectData = {
     path: string[];
     title: string;
     description: string;
+    featured: boolean;
     from: number;
     to: number | null;
-    featured: boolean;
 };
 
 type ArticleData = {
@@ -12,6 +12,22 @@ type ArticleData = {
     title: string;
     description: string;
     featured: boolean;
-    reading_time: number;
     published: number;
+    reading_time: number;
+};
+
+type PaperData = {
+    path: string[];
+    title: string;
+    description: string;
+    featured: boolean;
+    published: number;
+    institution: string | null;
+};
+
+type PageData = {
+    path: string[];
+    title: string;
+    description: string;
+    featured: boolean;
 };

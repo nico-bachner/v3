@@ -14,9 +14,10 @@ import type { MDXContent } from '@nico-bachner/mdx/utils';
 
 type PageProps = {
     title: string;
+    subtitle: string | null;
     description: string;
-    og_image: string | null;
-    canonical_url: string | null;
+    image: string | null;
+    url: string | null;
     content: MDXContent;
     lastUpdated: string;
     editUrl: string;
@@ -74,19 +75,30 @@ export const getStaticProps: GetStaticProps<PageProps> = async ({
             extension,
         });
 
-        const { title, description, image, url } = getMDXData(file);
+        const {
+            title,
+            subtitle = null,
+            description,
+            image = null,
+            url = null,
+        } = getMDXData(file);
 
         if (typeof title != 'string') {
             throw new Error(`'title' should be a string (${path})`);
         }
+        if (subtitle && typeof subtitle != 'string') {
+            throw new Error(
+                `'subtitle', if used, should be a string (${path})`
+            );
+        }
         if (typeof description != 'string') {
             throw new Error(`'description' should be a string (${path})`);
         }
-        if (typeof image != 'string' && typeof image != 'undefined') {
-            throw new Error(`'image' should be a string (${path})`);
+        if (image && typeof image != 'string') {
+            throw new Error(`'image', if used, should be a string (${path})`);
         }
-        if (typeof url != 'string' && typeof url != 'undefined') {
-            throw new Error(`'url' should be a string (${path})`);
+        if (url && typeof url != 'string') {
+            throw new Error(`'url', if used, should be a string (${path})`);
         }
 
         const updated = await fetchDateUpdated({
@@ -101,9 +113,10 @@ export const getStaticProps: GetStaticProps<PageProps> = async ({
 
         const props: PageProps = {
             title,
+            subtitle,
             description,
-            og_image: image ?? null,
-            canonical_url: url ?? null,
+            image,
+            url,
             content: await fetchMDXContent(file),
             lastUpdated,
             editUrl: getEditUrl({ ...github, basePath, path }),
@@ -119,9 +132,10 @@ export const getStaticProps: GetStaticProps<PageProps> = async ({
 
 const Page: NextPage<PageProps> = ({
     title,
+    subtitle,
     description,
-    og_image,
-    canonical_url,
+    image,
+    url,
     content,
     lastUpdated,
     editUrl,
@@ -130,11 +144,17 @@ const Page: NextPage<PageProps> = ({
         <Head
             title={title}
             description={description}
-            image={og_image ?? undefined}
-            url={canonical_url ?? undefined}
+            image={image ?? undefined}
+            url={url ?? undefined}
         />
 
         <article>
+            <Text type="h1" className={styles.title}>
+                {title}
+            </Text>
+            <Text size={6} className={styles.subtitle}>
+                {subtitle}
+            </Text>
             <MDX content={content} />
         </article>
 

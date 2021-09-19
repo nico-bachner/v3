@@ -1,6 +1,0 @@
-.grid {
-    display: grid;
-    gap: var(--space-5);
-    margin-block: var(--space-8);
-    margin-inline: auto;
-}

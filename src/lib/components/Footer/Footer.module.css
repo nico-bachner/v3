@@ -8,7 +8,7 @@
     display: grid;
     grid-template-columns: auto auto;
     gap: 5rem;
-    margin: 8rem 0;
+    margin-block: 6rem 8rem;
     padding-top: 5rem;
     border-top: 1px solid var(--color-neutral-1);
 }

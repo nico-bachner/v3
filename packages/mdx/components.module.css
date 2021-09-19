@@ -5,16 +5,22 @@
 }
 
 :is(article) .h1 {
-    margin-block-end: var(--space-8);
+    margin-block-end: var(--space-9);
 }
 
 .h2 {
-    margin-block: var(--space-8) var(--space-7);
+    margin-block: var(--space-9) var(--space-8);
     max-width: var(--width-sm);
     margin-inline: auto;
 }
 
 .h3 {
+    margin-block: var(--space-8) var(--space-7);
+    max-width: var(--width-sm);
+    margin-inline: auto;
+}
+
+.h4 {
     margin-block: var(--space-7) var(--space-6);
     max-width: var(--width-sm);
     margin-inline: auto;
@@ -27,7 +33,7 @@
 }
 
 .pre {
-    margin-block-end: var(--space-9);
+    margin-block-end: var(--space-7);
     max-width: var(--width-md);
     margin-inline: auto;
 }
@@ -35,6 +41,20 @@
 .blockquote {
     max-width: var(--width-sm);
     margin-inline: auto;
+}
+
+.image {
+    max-width: var(--width-md);
+    margin-block: var(--space-9);
+    margin-inline: auto;
+}
+
+.table {
+    margin-block: var(--space-7);
+}
+
+.figure {
+    margin-block: var(--space-9);
 }
 
 .ol {
@@ -63,7 +83,7 @@
 
 .ol > *,
 .ul > * {
-    margin: var(--space-3) 0;
+    margin: var(--space-1) 0;
 }
 
 .ol > *::marker,

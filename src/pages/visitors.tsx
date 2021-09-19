@@ -1,3 +1,5 @@
+import styles from '@lib/styles/Visitors.module.css';
+
 import { fetchViews } from '@lib/utils/views';
 
 import { Table, Text } from '@nico-bachner/components-react';
@@ -20,59 +22,61 @@ export const getServerSideProps: GetServerSideProps<Props> = async () => ({
 });
 
 const Visitors: NextPage<Props> = ({ views }) => (
-    <Layout width="sm">
+    <Layout width="sm" className={styles.main}>
         <Head
             title="Visitors | Nico Bachner"
             description="Insights into the visitors of nicobachner.com"
         />
         <Text type="h1">Visitors</Text>
-
-        <Text size={6} style={{ marginBlockStart: 'var(--space-3)' }}>
+        <Text size={6} className={styles.subtitle}>
             Insights into the visitors of nicobachner.com
         </Text>
 
-        <Text
-            type="h2"
-            style={{
-                marginBlockStart: 'var(--space-9)',
-                marginBlockEnd: 'var(--space-7)',
-            }}
-        >
-            Page Views
-        </Text>
+        <section id="views">
+            <Text type="h2">Page Views</Text>
 
-        <Text
-            type="h3"
-            style={{
-                marginBlockStart: 'var(--space-7)',
-                marginBlockEnd: 'var(--space-5)',
-            }}
-        >
-            By Path
-        </Text>
-        <Table
-            variant={['monospace', 'tabular']}
-            head={['Path', 'Views']}
-            body={views.paths?.map(({ path, views }) => [
-                decodeURIComponent(path),
-                views,
-            ])}
-        />
+            <Text type="h3" className={styles.h3}>
+                By Path
+            </Text>
+            <Table.Root>
+                <Table.Head>
+                    <Table.Row>
+                        <Table.HeadItem>Path</Table.HeadItem>
+                        <Table.HeadItem>Views</Table.HeadItem>
+                    </Table.Row>
+                </Table.Head>
+                <Table.Body>
+                    {views.paths?.map(({ path, views }) => (
+                        <Table.Row key={path}>
+                            <Table.BodyItem>
+                                {decodeURIComponent(path)}
+                            </Table.BodyItem>
+                            <Table.BodyItem>{views}</Table.BodyItem>
+                        </Table.Row>
+                    ))}
+                </Table.Body>
+            </Table.Root>
 
-        <Text
-            type="h3"
-            style={{
-                marginBlockStart: 'var(--space-7)',
-                marginBlockEnd: 'var(--space-5)',
-            }}
-        >
-            By Locale (Language and Region)
-        </Text>
-        <Table
-            variant={['monospace', 'tabular']}
-            head={['Path', 'Views']}
-            body={views.locales?.map(({ locale, views }) => [locale, views])}
-        />
+            <Text type="h3" className={styles.h3}>
+                By Locale (Language and Region)
+            </Text>
+            <Table.Root>
+                <Table.Head>
+                    <Table.Row>
+                        <Table.HeadItem>Path</Table.HeadItem>
+                        <Table.HeadItem>Views</Table.HeadItem>
+                    </Table.Row>
+                </Table.Head>
+                <Table.Body>
+                    {views.locales?.map(({ locale, views }) => (
+                        <Table.Row key={locale}>
+                            <Table.BodyItem>{locale}</Table.BodyItem>
+                            <Table.BodyItem>{views}</Table.BodyItem>
+                        </Table.Row>
+                    ))}
+                </Table.Body>
+            </Table.Root>
+        </section>
     </Layout>
 );
 

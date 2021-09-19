@@ -22,7 +22,7 @@ const Head: React.FC<HeadProps> = ({
     author,
 }) => {
     const { pathname, query, asPath, locale, locales } = useRouter();
-    const { description: defaultDescription } = useTranslation();
+    const { general } = useTranslation();
     const defaultUrl = 'https://nicobachner.com/' + locale + asPath;
 
     const path = encodeURIComponent(
@@ -57,7 +57,7 @@ const Head: React.FC<HeadProps> = ({
             <meta name="author" content={author ?? 'Nico Bachner'} />
             <meta
                 name="description"
-                content={description ?? defaultDescription}
+                content={description ?? general.description}
             />
             <link rel="canonical" href={url ?? defaultUrl} />
             {locales!.map((locale) => (
@@ -83,7 +83,7 @@ const Head: React.FC<HeadProps> = ({
             />
             <meta
                 property="og:description"
-                content={description ?? defaultDescription}
+                content={description ?? general.description}
             />
             <meta property="og:site_name" content="Nico Bachner" />
             <meta property="og:locale" content={locale} />

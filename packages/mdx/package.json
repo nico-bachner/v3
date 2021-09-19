@@ -1,6 +1,6 @@
 {
     "name": "@nico-bachner/mdx",
-    "version": "0.5.0",
+    "version": "0.6.0",
     "dependencies": {
         "@nico-bachner/components-react": "workspace:*",
         "gray-matter": "^4.0.3",
@@ -16,12 +16,10 @@
         "remark-toc": "^7.2.0"
     },
     "peerDependencies": {
-        "@nico-bachner/colors": ">=0.6.0",
-        "@nico-bachner/typography": ">=0.7.0",
+        "@nico-bachner/design-tokens": ">=0.1.0",
         "next": ">=11",
         "react": ">=17",
         "react-dom": ">=17",
-        "rehype": ">=11",
-        "typescript": ">=4.3"
+        "typescript": ">=4.4"
     }
 }

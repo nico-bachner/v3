@@ -3,10 +3,13 @@ import {
     Code,
     CodeBlock,
     Link,
+    Figure,
     Image,
+    Table,
     Text,
 } from '@nico-bachner/components-react';
 
+import Script from 'next/script';
 import 'katex/dist/katex.min.css';
 import styles from './components.module.css';
 
@@ -22,8 +25,14 @@ const H2: React.FC<{ id?: string }> = ({ children, id }) => (
     </Text>
 );
 
-const H3: React.FC = ({ children }) => (
-    <Text type="h3" className={styles.h3}>
+const H3: React.FC<{ id?: string }> = ({ children, id }) => (
+    <Text type="h3" id={id} className={styles.h3}>
+        {children}
+    </Text>
+);
+
+const H4: React.FC<{ id?: string }> = ({ children, id }) => (
+    <Text type="h4" id={id} className={styles.h4}>
         {children}
     </Text>
 );
@@ -58,11 +67,40 @@ const Blockquote: React.FC = ({ children }) => (
     <Quote className={styles.blockquote}>{children}</Quote>
 );
 
+const MDXTable: React.FC = ({ children }) => (
+    <Table.Root className={styles.table}>{children}</Table.Root>
+);
+
+const MDXFigure: React.FC<{ id: string; caption: string }> = ({
+    children,
+    ...props
+}) => (
+    <Figure {...props} className={styles.figure}>
+        {children}
+    </Figure>
+);
+
+const MDXImage: React.VFC<{
+    src: string;
+    alt: string;
+    width: number;
+    height: number;
+}> = ({ src, alt, width, height }) => (
+    <Image
+        src={src}
+        alt={alt}
+        width={width}
+        height={height}
+        className={styles.image}
+    />
+);
+
 export const MDXComponents = {
     // override mdx default components
     h1: H1,
     h2: H2,
     h3: H3,
+    h4: H4,
     strong: Strong,
     p: P,
     a: A,
@@ -71,7 +109,14 @@ export const MDXComponents = {
     ol: OL,
     ul: UL,
     blockquote: Blockquote,
+    table: MDXTable,
+    thead: Table.Head,
+    tbody: Table.Body,
+    tr: Table.Row,
+    th: Table.HeadItem,
+    td: Table.BodyItem,
 
     // add custom components
-    Image,
+    Figure: MDXFigure,
+    Image: MDXImage,
 };

@@ -6,7 +6,7 @@ import { fetchProjectsData } from '@lib/utils/data/projects';
 import MDX from '@nico-bachner/mdx';
 import Head from '@lib/components/Head';
 import Layout from '@lib/components/Layout';
-import Card from '@lib/components/ProjectCard';
+import { ProjectCard } from '@lib/components/Card';
 
 import type { NextPage, GetStaticProps } from 'next';
 import type { MDXContent } from '@nico-bachner/mdx/utils';
@@ -41,7 +41,11 @@ const Projects: NextPage<ProjectsProps> = ({ content, projects }) => (
 
         <div className={styles.grid}>
             {projects.map((project) => (
-                <Card key={project.title} type="h2" {...project} />
+                <ProjectCard
+                    key={project.path[project.path.length - 1]}
+                    type="h2"
+                    {...project}
+                />
             ))}
         </div>
     </Layout>

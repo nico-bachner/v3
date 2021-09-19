@@ -18,5 +18,9 @@
 .grid {
     display: grid;
     gap: var(--space-5);
-    margin: var(--space-7) 0;
+    margin-block: var(--space-8);
+}
+
+.h3 {
+    margin-block-start: var(--space-9);
 }

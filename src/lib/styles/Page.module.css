@@ -1,7 +1,18 @@
+.title,
+.subtitle {
+    max-width: var(--width-sm);
+    margin-inline: auto;
+}
+
+.subtitle {
+    font-weight: var(--font-weight-6);
+    margin-block: var(--space-5) var(--space-9);
+}
+
 .bottom {
     display: flex;
     justify-content: space-between;
     max-width: var(--width-sm);
-    margin-block: var(--space-9);
+    margin-block: 5rem;
     margin-inline: auto;
 }

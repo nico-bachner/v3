@@ -1,0 +1,40 @@
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.header {
+    font-weight: var(--font-weight-7);
+}
+
+.body {
+    margin-block: var(--space-1);
+}
+
+@media (min-width: 640px) {
+    .body {
+        margin-block: var(--space-3);
+    }
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+}
+
+.cta {
+    color: var(--color-blue);
+    text-transform: capitalize;
+}
+
+.info {
+    display: none;
+}
+
+@media (min-width: 360px) {
+    .info {
+        display: initial;
+        color: var(--color-neutral-5);
+    }
+}
