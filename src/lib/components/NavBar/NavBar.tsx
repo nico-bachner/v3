@@ -28,22 +28,24 @@ const NavBar: React.VFC = () => {
                     </Text>
                 ))}
             </div>
-            <Select
-                options={locales!.map((locale) => {
-                    const [languageCode, countryCode] = locale.split('-');
-
-                    return {
-                        value: locale,
-                        content: languageCode!.toUpperCase(),
-                    };
-                })}
+            <Select.Root
                 value={locale}
                 onChange={({ target }) => {
                     push({ pathname, query }, pathname, {
                         locale: target.value,
                     });
                 }}
-            />
+            >
+                {locales!.map((locale) => {
+                    const [languageCode, countryCode] = locale.split('-');
+
+                    return (
+                        <Select.Option key={locale} value={locale}>
+                            {languageCode!.toUpperCase()}
+                        </Select.Option>
+                    );
+                })}
+            </Select.Root>
         </nav>
     );
 };

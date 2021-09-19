@@ -1,19 +1,13 @@
 import styles from './Select.module.css';
 
-type Option = {
-    value: string | number;
-    content?: string | number;
-};
-
-type SelectProps = {
-    options: Option[];
+type SelectRootProps = {
     value?: string;
     onChange?: React.ChangeEventHandler<HTMLSelectElement>;
     className?: string;
 };
 
-const Select: React.VFC<SelectProps> = ({
-    options,
+const Root: React.FC<SelectRootProps> = ({
+    children,
     value,
     onChange,
     className,
@@ -23,12 +17,28 @@ const Select: React.VFC<SelectProps> = ({
         value={value}
         onChange={onChange}
     >
-        {options.map(({ value, content }) => (
-            <option key={value} value={value}>
-                {content}
-            </option>
-        ))}
+        {children}
     </select>
 );
+
+type SelectOptionProps = {
+    value: string;
+    className?: string;
+};
+
+const Option: React.FC<SelectOptionProps> = ({
+    children,
+    value,
+    className,
+}) => (
+    <option value={value} className={[styles.option, className].join(' ')}>
+        {children}
+    </option>
+);
+
+const Select = {
+    Root,
+    Option,
+};
 
 export default Select;

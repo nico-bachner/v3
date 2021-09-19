@@ -9,13 +9,25 @@ const Root: React.FC<ListProps> = ({ children, type, className }) => {
     switch (type) {
         case 'ordered':
             return (
-                <ol className={[styles.ordered, className].join(' ')}>
+                <ol
+                    className={[
+                        styles.list,
+                        styles[`type-ordered`],
+                        className,
+                    ].join(' ')}
+                >
                     {children}
                 </ol>
             );
         case 'unordered':
             return (
-                <ul className={[styles.unordered, className].join(' ')}>
+                <ul
+                    className={[
+                        styles.list,
+                        styles[`type-unordered`],
+                        className,
+                    ].join(' ')}
+                >
                     {children}
                 </ul>
             );

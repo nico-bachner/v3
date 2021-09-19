@@ -141,13 +141,11 @@ const Design = () => (
                 <Input type="url" placeholder="example.com" />
 
                 <Text>Select</Text>
-                <Select
-                    options={[
-                        { value: 1, content: 'Option 1' },
-                        { value: 2, content: 'Option 2' },
-                        { value: 3, content: 'Option 3' },
-                    ]}
-                />
+                <Select.Root>
+                    <Select.Option value="1">Option 1</Select.Option>
+                    <Select.Option value="2">Option 2</Select.Option>
+                    <Select.Option value="3">Option 3</Select.Option>
+                </Select.Root>
             </div>
         </section>
 
