@@ -1,4 +1,15 @@
-.list {
+.ordered {
+    list-style-type: decimal;
+    color: var(--color-neutral-6);
+    font-family: var(--font-sans);
+    font-size: var(--font-size);
+    line-height: var(--line-height);
+    margin: 0;
+    padding-left: var(--space-9);
+}
+
+.unordered {
+    list-style-type: circle;
     color: var(--color-neutral-6);
     font-family: var(--font-sans);
     font-size: var(--font-size);
@@ -8,17 +19,9 @@
 }
 
 .item {
-    margin: var(--space-3) 0;
+    margin-block: var(--space-1);
 }
 
 .item::marker {
     color: var(--color-neutral-4);
-}
-
-.ordered {
-    list-style-type: decimal;
-}
-
-.unordered {
-    list-style-type: circle;
 }

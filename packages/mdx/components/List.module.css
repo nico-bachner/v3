@@ -1,0 +1,5 @@
+.list {
+    box-sizing: border-box;
+    max-width: var(--width-sm);
+    margin-inline: auto;
+}

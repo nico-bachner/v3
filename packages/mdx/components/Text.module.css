@@ -1,0 +1,33 @@
+.h1 {
+    margin-block-end: var(--space-5);
+    max-width: var(--width-sm);
+    margin-inline: auto;
+}
+
+:is(article) .h1 {
+    margin-block-end: var(--space-9);
+}
+
+.h2 {
+    margin-block: var(--space-9) var(--space-8);
+    max-width: var(--width-sm);
+    margin-inline: auto;
+}
+
+.h3 {
+    margin-block: var(--space-8) var(--space-7);
+    max-width: var(--width-sm);
+    margin-inline: auto;
+}
+
+.h4 {
+    margin-block: var(--space-7) var(--space-6);
+    max-width: var(--width-sm);
+    margin-inline: auto;
+}
+
+.p {
+    max-width: var(--width-sm);
+    margin-block: var(--space-5);
+    margin-inline: auto;
+}

@@ -95,10 +95,18 @@ const Design = () => (
             <Text type="h2">Lists</Text>
             <div className={styles.smallTable}>
                 <Text>Ordered</Text>
-                <List type="ordered" items={['Item 1', 'Item 2', 'Item 3']} />
+                <List.Root type="ordered">
+                    <List.Item>Item 1</List.Item>
+                    <List.Item>Item 2</List.Item>
+                    <List.Item>Item 3</List.Item>
+                </List.Root>
 
                 <Text>Unordered</Text>
-                <List type="unordered" items={['Item 1', 'Item 2', 'Item 3']} />
+                <List.Root type="unordered">
+                    <List.Item>Item 1</List.Item>
+                    <List.Item>Item 2</List.Item>
+                    <List.Item>Item 3</List.Item>
+                </List.Root>
             </div>
         </section>
 

@@ -1,0 +1,20 @@
+.pre {
+    margin-block-end: var(--space-7);
+    max-width: var(--width-md);
+    margin-inline: auto;
+}
+
+.blockquote {
+    max-width: var(--width-sm);
+    margin-inline: auto;
+}
+
+.image {
+    max-width: var(--width-md);
+    margin-block: var(--space-9);
+    margin-inline: auto;
+}
+
+.figure {
+    margin-block: var(--space-9);
+}
