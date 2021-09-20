@@ -24,8 +24,8 @@ const fetchArticleData: Fetch<string[], ArticleData> = async (path) => {
     if (typeof featured != 'boolean') {
         throw new Error(`'featured', if used, should be a boolean (${path})`);
     }
-    if (!(published instanceof Date)) {
-        throw new Error(`'published' should be a Date (${path})`);
+    if (published != false && !(published instanceof Date)) {
+        throw new Error(`'published', should be a Date or false (${path})`);
     }
 
     const wordCount = file.split(' ').length;
@@ -36,7 +36,7 @@ const fetchArticleData: Fetch<string[], ArticleData> = async (path) => {
         title,
         description,
         featured,
-        published: published.getTime(),
+        published: published ? published.getTime() : false,
         reading_time: readingTime,
     };
 };
@@ -48,7 +48,9 @@ const fetchArticlesData = async () => {
         paths.map(async (path) => await fetchArticleData(path))
     );
 
-    return articles.sort((a, b) => b.published - a.published);
+    return articles
+        .filter(({ published }) => published)
+        .sort((a, b) => b.published - a.published);
 };
 
 export { fetchArticlesData };
