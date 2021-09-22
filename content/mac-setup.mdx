@@ -18,7 +18,7 @@ In the _Point & Click_ tab:
 4. Turn on _silent clicking_
 
 <Image
-    src="/images/mac/settings/trackpad.png"
+    src="/images/macos-trackpad-settings-1.png"
     alt="Trackpad Settings"
     width={1560}
     height={1248}
@@ -29,7 +29,7 @@ In the _More Gestures_ tab:
 1. disable the _swipe between pages_ functionality.
 
 <Image
-    src="/images/mac/settings/trackpad-more.png"
+    src="/images/macos-trackpad-settings-2.png"
     alt="Trackpad Settings"
     width={1560}
     height={1248}
@@ -41,11 +41,21 @@ Then I move on to the Dock settings (`View > Dock & Menu Bar`):
 2. Do not show recent applications in Dock
 
 <Image
-    src="/images/mac/settings/dock.png"
+    src="/images/macos-dock-settings.png"
     alt="Dock Settings"
     width={1560}
     height={1300}
 />
+
+Then there are some things that require the command line:
+
+```bash
+# Don't create .DS_Store files
+defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
+
+# Disable auto-correct
+defaults write -g NSAutomaticSpellingCorrectionEnabled -bool false
+```
 
 ## Finder Settings
 

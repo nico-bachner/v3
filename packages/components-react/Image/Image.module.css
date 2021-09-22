@@ -1,26 +1,20 @@
-.image {
-    transition: filter 300ms ease;
-    filter: grayscale(1);
-}
-
-.container {
-    transition: transform 300ms ease;
-}
-
-.image:hover {
-    filter: grayscale(0);
-}
-
-.container:hover {
-    transform: scale(1.05);
-}
-
-@media (prefers-color-scheme: dark) {
+@media (hover: hover) {
     .image {
-        filter: brightness(75%);
+        transition: filter 300ms ease;
+        filter: grayscale(1);
     }
 
     .image:hover {
-        filter: brightness(100%);
+        filter: grayscale(0);
+    }
+
+    @media (prefers-color-scheme: dark) {
+        .image {
+            filter: brightness(70%);
+        }
+
+        .image:hover {
+            filter: brightness(100%);
+        }
     }
 }

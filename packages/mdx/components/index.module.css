@@ -9,12 +9,22 @@
     margin-inline: auto;
 }
 
+.figure {
+    margin-block: var(--space-9);
+}
+
 .image {
     max-width: var(--width-md);
     margin-block: var(--space-9);
     margin-inline: auto;
 }
 
-.figure {
-    margin-block: var(--space-9);
+@media (hover: hover) {
+    .image {
+        transition: transform 300ms ease;
+    }
+
+    .image:hover {
+        transform: scale(1.05);
+    }
 }
