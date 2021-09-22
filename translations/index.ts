@@ -1,10 +1,11 @@
-import en from './en-AU';
-import da from './da-DK';
-import fr from './fr-LU';
-import de from './de-LU';
-import lb from './lb-LU';
+import en from './en';
+import da from './da';
+import fr from './fr';
+import de from './de';
+import lb from './lb';
 
 const translations = {
+    en,
     'en-AU': en,
     'da-DK': da,
     'fr-LU': fr,

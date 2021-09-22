@@ -52,7 +52,7 @@ const Head: React.FC<HeadProps> = ({
             body: JSON.stringify({
                 path,
                 language,
-                location: location?.toLowerCase(),
+                location: location?.toLowerCase() ?? 'other',
             }),
         });
     }, [path, locale]);

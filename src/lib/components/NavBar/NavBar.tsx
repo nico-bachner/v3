@@ -36,12 +36,13 @@ const NavBar: React.VFC = () => {
                     });
                 }}
             >
-                {locales!.map((locale) => {
+                {locales?.map((locale) => {
                     const [languageCode, countryCode] = locale.split('-');
 
                     return (
                         <Select.Option key={locale} value={locale}>
-                            {languageCode!.toUpperCase()}
+                            {languageCode?.toUpperCase()}
+                            {countryCode ? ` (${countryCode})` : undefined}
                         </Select.Option>
                     );
                 })}
