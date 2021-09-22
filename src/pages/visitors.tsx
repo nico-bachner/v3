@@ -2,7 +2,7 @@ import styles from '@lib/styles/Visitors.module.css';
 
 import { fetchViews } from '@lib/utils/views';
 
-import { Table, Text } from '@nico-bachner/components-react';
+import { Chart, Table, Text } from '@nico-bachner/components-react';
 import Head from '@lib/components/Head';
 import Layout from '@lib/components/Layout';
 
@@ -46,36 +46,36 @@ const Visitors: NextPage<Props> = ({ views }) => (
                     </Table.Row>
                 </Table.Head>
                 <Table.Body>
-                    {views.paths?.map(({ path, views }) => (
-                        <Table.Row key={path}>
-                            <Table.BodyItem>
-                                {decodeURIComponent(path)}
-                            </Table.BodyItem>
-                            <Table.BodyItem>{views}</Table.BodyItem>
-                        </Table.Row>
-                    ))}
+                    {views.paths
+                        ?.filter(({ views }) => views > 0)
+                        .map(({ path, views }) => (
+                            <Table.Row key={path}>
+                                <Table.BodyItem>
+                                    {decodeURIComponent(path)}
+                                </Table.BodyItem>
+                                <Table.BodyItem>{views}</Table.BodyItem>
+                            </Table.Row>
+                        ))}
                 </Table.Body>
             </Table.Root>
 
             <Text type="h3" className={styles.h3}>
                 By Locale (Language and Region)
             </Text>
-            <Table.Root>
-                <Table.Head>
-                    <Table.Row>
-                        <Table.HeadItem>Path</Table.HeadItem>
-                        <Table.HeadItem>Views</Table.HeadItem>
-                    </Table.Row>
-                </Table.Head>
-                <Table.Body>
-                    {views.locales?.map(({ locale, views }) => (
-                        <Table.Row key={locale}>
-                            <Table.BodyItem>{locale}</Table.BodyItem>
-                            <Table.BodyItem>{views}</Table.BodyItem>
-                        </Table.Row>
-                    ))}
-                </Table.Body>
-            </Table.Root>
+            <Chart
+                type="pie"
+                data={views.locales!.map(({ locale, views }, index) => {
+                    const colors = ['var(--color-blue)'];
+
+                    return {
+                        value: views,
+                        color: colors[index] ?? 'var(--color-neutral-6)',
+                        label: locale,
+                    };
+                })}
+                fontSize="4px"
+                className={styles.pie}
+            />
         </section>
     </Layout>
 );

@@ -1,9 +1,10 @@
 {
     "name": "@nico-bachner/components-react",
-    "version": "0.3.1",
+    "version": "0.3.2",
     "dependencies": {
         "@nico-bachner/icons-react": "workspace:*",
-        "@nico-bachner/react-hooks": "workspace:*"
+        "@nico-bachner/react-hooks": "workspace:*",
+        "d3": "^7.0.3"
     },
     "peerDependencies": {
         "@nico-bachner/design-tokens": ">=0.1.0",
@@ -11,5 +12,8 @@
         "react": ">=17",
         "react-dom": ">=17",
         "typescript": ">=4.4"
+    },
+    "devDependencies": {
+        "@types/d3": "^7.0.0"
     }
 }
