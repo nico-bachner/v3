@@ -3,48 +3,68 @@ import db from '@lib/utils/supabase';
 import type { NextApiHandler } from 'next';
 
 const View: NextApiHandler = async (req, res) => {
-    const { path, locale } = JSON.parse(req.body);
+    const { path, language, location } = JSON.parse(req.body);
 
     if (req.method == 'POST') {
         const { data: originalPathsItem } = await db
-            .from<PathsItem>('paths')
+            .from<PathData>('paths')
             .select('path, views')
             .eq('path', path);
 
         if (!originalPathsItem) {
-            throw new Error(`'originalPathsItem' not found`);
+            throw new Error(`data not found`);
         }
 
         if (originalPathsItem[0]) {
             await db
-                .from<PathsItem>('paths')
+                .from<PathData>('paths')
                 .update({ views: originalPathsItem[0].views + 1 })
                 .match({ path });
         } else {
-            await db.from<PathsItem>('paths').insert([{ path, views: 1 }]);
+            await db.from<PathData>('paths').insert([{ path, views: 1 }]);
         }
 
-        const { data: originalLocalesItem } = await db
-            .from<LocalesItem>('locales')
-            .select('locale, views')
-            .eq('locale', locale);
+        const { data: languagesData } = await db
+            .from<LanguageData>('languages')
+            .select('language, views')
+            .eq('language', language);
 
-        if (!originalLocalesItem) {
-            throw new Error(`'originalLocalesItem' not found`);
+        if (!languagesData) {
+            throw new Error(`data not found`);
         }
 
-        if (originalLocalesItem[0]) {
+        if (languagesData[0]) {
             await db
-                .from<LocalesItem>('locales')
-                .update({ views: originalLocalesItem[0].views + 1 })
-                .match({ locale });
+                .from<LanguageData>('languages')
+                .update({ views: languagesData[0].views + 1 })
+                .match({ language });
         } else {
             await db
-                .from<LocalesItem>('locales')
-                .insert([{ locale, views: 1 }]);
+                .from<LanguageData>('languages')
+                .insert([{ language, views: 1 }]);
         }
 
-        return res.status(200).json('');
+        const { data: locationsData } = await db
+            .from<LocationData>('locations')
+            .select('location, views')
+            .eq('location', location);
+
+        if (!locationsData) {
+            throw new Error(`data not found`);
+        }
+
+        if (locationsData[0]) {
+            await db
+                .from<LocationData>('locations')
+                .update({ views: locationsData[0].views + 1 })
+                .match({ location });
+        } else {
+            await db
+                .from<LocationData>('locations')
+                .insert([{ location, views: 1 }]);
+        }
+
+        return res.status(200).json({});
     }
 };
 

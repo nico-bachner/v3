@@ -1,35 +1,12 @@
-import db from '@lib/utils/supabase';
+import { fetchViews } from '@lib/utils/views';
 
 import type { NextApiHandler } from 'next';
 
-type PathsItem = {
-    path: string;
-    views: number;
-};
-
-type LocalesItem = {
-    locale: string;
-    views: number;
-};
-
 const Views: NextApiHandler = async (req, res) => {
     if (req.method == 'GET') {
-        const { data: unorderedPaths } = await db
-            .from<PathsItem>('paths')
-            .select('path, views');
+        const data = await fetchViews();
 
-        const paths = unorderedPaths?.sort((a, b) => b.views - a.views);
-
-        const { data: unorderedLocales } = await db
-            .from<LocalesItem>('locales')
-            .select('locale, views');
-
-        const locales = unorderedLocales?.sort((a, b) => b.views - a.views);
-
-        return res.status(200).json({
-            paths,
-            locales,
-        });
+        return res.status(200).json(data);
     }
 };
 

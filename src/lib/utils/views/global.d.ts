@@ -1,9 +1,14 @@
-type PathsItem = {
+type PathData = {
     path: string;
     views: number;
 };
 
-type LocalesItem = {
-    locale: string;
+type LanguageData = {
+    language: string;
+    views: number;
+};
+
+type LocationData = {
+    location: string;
     views: number;
 };

@@ -5,8 +5,8 @@ import * as d3 from 'd3';
 
 type DataItem = {
     value: number;
-    color: string;
-    label: string;
+    label?: string;
+    color?: string;
 };
 
 type ChartProps = {
@@ -55,7 +55,13 @@ const Chart: React.VFC<ChartProps> = ({
                                 endAngle,
                             })
                         )
-                        .style('fill', (_, index) => data[index]!.color);
+                        .style('fill', (_, index) => {
+                            const hue = index * (360 / data.length);
+
+                            return (
+                                data[index]?.color ?? `hsl(${hue}deg, 80%, 40%)`
+                            );
+                        });
 
                     arcs.append('text')
                         .text(

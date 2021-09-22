@@ -45,9 +45,15 @@ const Head: React.FC<HeadProps> = ({
     );
 
     useEffect(() => {
+        const [language, location] = locale!.split('-');
+
         fetch(`/api/view`, {
             method: 'POST',
-            body: JSON.stringify({ path, locale }),
+            body: JSON.stringify({
+                path,
+                language,
+                location: location?.toLowerCase(),
+            }),
         });
     }, [path, locale]);
 
