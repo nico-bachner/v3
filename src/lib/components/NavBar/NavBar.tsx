@@ -42,7 +42,6 @@ const NavBar: React.VFC = () => {
                     return (
                         <Select.Option key={locale} value={locale}>
                             {languageCode?.toUpperCase()}
-                            {countryCode ? ` (${countryCode})` : undefined}
                         </Select.Option>
                     );
                 })}

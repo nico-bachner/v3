@@ -44,26 +44,6 @@ const View: NextApiHandler = async (req, res) => {
                 .insert([{ language, views: 1 }]);
         }
 
-        const { data: locationsData } = await db
-            .from<LocationData>('locations')
-            .select('location, views')
-            .eq('location', location);
-
-        if (!locationsData) {
-            throw new Error(`data not found`);
-        }
-
-        if (locationsData[0]) {
-            await db
-                .from<LocationData>('locations')
-                .update({ views: locationsData[0].views + 1 })
-                .match({ location });
-        } else {
-            await db
-                .from<LocationData>('locations')
-                .insert([{ location, views: 1 }]);
-        }
-
         return res.status(200).json({});
     }
 };

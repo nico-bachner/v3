@@ -5,7 +5,6 @@ import de from './de';
 import lb from './lb';
 
 const translations = {
-    en,
     'en-AU': en,
     'da-DK': da,
     'fr-LU': fr,

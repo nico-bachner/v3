@@ -9,11 +9,7 @@ const fetchViews = async () => {
         .from<LanguageData>('languages')
         .select('language, views');
 
-    const { data: locations } = await db
-        .from<LocationData>('locations')
-        .select('location, views');
-
-    if (!paths || !languages || !locations) {
+    if (!paths || !languages) {
         throw new Error(
             `The required data could not be extracted from the database`
         );
@@ -22,7 +18,6 @@ const fetchViews = async () => {
     return {
         paths: paths.sort((a, b) => b.views - a.views),
         languages: languages.sort((a, b) => b.views - a.views),
-        locations: locations.sort((a, b) => b.views - a.views),
     };
 };
 

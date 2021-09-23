@@ -12,7 +12,6 @@ type Props = {
     views: {
         paths?: PathData[];
         languages?: LanguageData[];
-        locations?: LocationData[];
     };
 };
 
@@ -23,7 +22,7 @@ export const getServerSideProps: GetServerSideProps<Props> = async () => ({
 });
 
 const Visitors: NextPage<Props> = ({ views }) => {
-    const { paths, languages, locations } = views;
+    const { paths, languages } = views;
 
     return (
         <Layout width="sm" className={styles.main}>
@@ -71,19 +70,6 @@ const Visitors: NextPage<Props> = ({ views }) => {
                     data={languages!.map(({ language, views }) => ({
                         value: views,
                         label: language.toUpperCase(),
-                    }))}
-                    fontSize="4px"
-                    className={styles.pie}
-                />
-
-                <Text type="h3" className={styles.h3}>
-                    By Location
-                </Text>
-                <Chart
-                    type="pie"
-                    data={locations!.map(({ location, views }) => ({
-                        value: views,
-                        label: location.toUpperCase(),
                     }))}
                     fontSize="4px"
                     className={styles.pie}

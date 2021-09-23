@@ -7,8 +7,3 @@ type LanguageData = {
     language: string;
     views: number;
 };
-
-type LocationData = {
-    location: string;
-    views: number;
-};
