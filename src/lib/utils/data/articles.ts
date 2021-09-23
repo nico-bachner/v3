@@ -28,8 +28,13 @@ const fetchArticleData: Fetch<string[], ArticleData> = async (path) => {
         throw new Error(`'published', should be a Date or false (${path})`);
     }
 
-    const wordCount = file.split(' ').length;
-    const readingTime = Math.round(wordCount / 220);
+    const rawWordCount = file.split(' ').length;
+
+    const adjustedWordCount = file.toLowerCase().includes('table of contents')
+        ? rawWordCount * 1.1
+        : rawWordCount;
+
+    const readingTime = Math.round(adjustedWordCount / 220);
 
     return {
         path,

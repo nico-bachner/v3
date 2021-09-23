@@ -1,11 +1,11 @@
 import styles from './List.module.css';
 
-type ListProps = {
+type RootProps = {
     type: 'ordered' | 'unordered';
     className?: string;
 };
 
-const Root: React.FC<ListProps> = ({ children, type, className }) => {
+const Root: React.FC<RootProps> = ({ children, type, className }) => {
     switch (type) {
         case 'ordered':
             return (
@@ -34,12 +34,15 @@ const Root: React.FC<ListProps> = ({ children, type, className }) => {
     }
 };
 
-type ListItemProps = {
+type ItemProps = {
+    id?: string;
     className?: string;
 };
 
-const Item: React.FC<ListItemProps> = ({ children, className }) => (
-    <li className={[styles.item, className].join(' ')}>{children}</li>
+const Item: React.FC<ItemProps> = ({ id, children, className }) => (
+    <li id={id} className={[styles.item, className].join(' ')}>
+        {children}
+    </li>
 );
 
 const List = {

@@ -19,7 +19,7 @@
 
 * {
     overflow-wrap: break-word;
-    scroll-margin-block-start: 8rem;
+    scroll-margin-block-start: calc(8rem + 10vh);
 }
 
 html {

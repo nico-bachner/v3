@@ -40,7 +40,7 @@ const Articles: NextPage<ArticlesProps> = ({ content, articles }) => (
         <div className={styles.grid}>
             {articles.map((article) => (
                 <ArticleCard
-                    key={article.path[article.path.length]}
+                    key={article.path[article.path.length - 1]}
                     type="h2"
                     {...article}
                 />
