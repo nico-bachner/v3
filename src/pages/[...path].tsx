@@ -29,7 +29,7 @@ const github = {
     baseBranch: 'main',
 };
 
-const basePath = ['content'];
+const basePath = ['content', 'pages'];
 const extension = 'mdx';
 
 export const getStaticPaths: GetStaticPaths = async ({ locales }) => {

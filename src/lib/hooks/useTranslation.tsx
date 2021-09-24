@@ -1,6 +1,6 @@
 import { useRouter } from 'next/router';
 
-import { translations } from 'translations';
+import { translations } from 'content/translations';
 
 const useTranslation = () => {
     const { locale } = useRouter();

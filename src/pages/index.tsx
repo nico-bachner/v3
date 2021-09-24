@@ -25,7 +25,7 @@ type HomeProps = {
     articles: ArticleData[];
 };
 
-export const getStaticProps: GetStaticProps<HomeProps> = async ({ locale }) => {
+const getStaticProps: GetStaticProps<HomeProps> = async ({ locale }) => {
     const content = {
         about: await fetchTranslation({
             locale,
@@ -115,5 +115,7 @@ const Home: NextPage<HomeProps> = ({ content, projects, articles }) => {
         </Layout>
     );
 };
+
+export { getStaticProps };
 
 export default Home;

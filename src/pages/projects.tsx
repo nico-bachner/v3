@@ -16,9 +16,7 @@ type ProjectsProps = {
     projects: ProjectData[];
 };
 
-export const getStaticProps: GetStaticProps<ProjectsProps> = async ({
-    locale,
-}) => ({
+const getStaticProps: GetStaticProps<ProjectsProps> = async ({ locale }) => ({
     props: {
         content: await fetchTranslation({
             locale,
@@ -50,5 +48,7 @@ const Projects: NextPage<ProjectsProps> = ({ content, projects }) => (
         </div>
     </Layout>
 );
+
+export { getStaticProps };
 
 export default Projects;

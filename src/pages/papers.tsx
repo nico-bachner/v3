@@ -16,9 +16,7 @@ type PapersProps = {
     papers: PaperData[];
 };
 
-export const getStaticProps: GetStaticProps<PapersProps> = async ({
-    locale,
-}) => ({
+const getStaticProps: GetStaticProps<PapersProps> = async ({ locale }) => ({
     props: {
         content: await fetchTranslation({
             locale,
@@ -48,5 +46,7 @@ const Papers: NextPage<PapersProps> = ({ content, papers }) => (
         </div>
     </Layout>
 );
+
+export { getStaticProps };
 
 export default Papers;

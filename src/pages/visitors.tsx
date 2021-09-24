@@ -15,7 +15,7 @@ type Props = {
     };
 };
 
-export const getServerSideProps: GetServerSideProps<Props> = async () => ({
+const getServerSideProps: GetServerSideProps<Props> = async () => ({
     props: {
         views: await fetchViews(),
     },
@@ -78,5 +78,7 @@ const Visitors: NextPage<Props> = ({ views }) => {
         </Layout>
     );
 };
+
+export { getServerSideProps };
 
 export default Visitors;

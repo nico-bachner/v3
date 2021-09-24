@@ -16,9 +16,7 @@ type PagesProps = {
     pages: PageData[];
 };
 
-export const getStaticProps: GetStaticProps<PagesProps> = async ({
-    locale,
-}) => ({
+const getStaticProps: GetStaticProps<PagesProps> = async ({ locale }) => ({
     props: {
         content: await fetchTranslation({
             locale,
@@ -45,5 +43,7 @@ const Pages: NextPage<PagesProps> = ({ content, pages }) => (
         </div>
     </Layout>
 );
+
+export { getStaticProps };
 
 export default Pages;

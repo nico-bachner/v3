@@ -7,9 +7,11 @@ type Args = {
 };
 
 const fetchTranslation: Fetch<Args, MDXContent> = async ({ locale, path }) => {
+    const [languageCode, countryCode] = locale!.split('-');
+
     const file = await fetchFile({
-        basePath: ['translations'],
-        path: [locale?.slice(0, 2)!, ...path],
+        basePath: ['content', 'translations'],
+        path: [languageCode!, ...path],
         extension: 'mdx',
     });
 

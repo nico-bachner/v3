@@ -1,7 +1,7 @@
 import { getMDXData } from '@nico-bachner/mdx/utils';
 import { fetchFile, fetchPaths } from '../fs';
 
-const basePath = ['content'];
+const basePath = ['content', 'pages'];
 const path = ['papers'];
 const extension = 'mdx';
 

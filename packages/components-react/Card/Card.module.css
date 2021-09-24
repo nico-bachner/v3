@@ -20,7 +20,7 @@
     }
 
     .interactive {
-        transition: box-shadow 200ms ease;
+        transition: box-shadow 300ms ease;
     }
 
     .interactive:hover {
@@ -35,7 +35,7 @@
     }
 
     .interactive {
-        transition: border-color 200ms ease;
+        transition: border-color 300ms ease;
     }
 
     .interactive:hover {
