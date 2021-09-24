@@ -64,10 +64,7 @@ const Chart: React.VFC<ChartProps> = ({
                         });
 
                     arcs.append('text')
-                        .text(
-                            ({ data: percentage }, index) =>
-                                `${data[index]?.label} (${percentage}%)`
-                        )
+                        .text((_, index) => data[index]!.label!)
                         .attr('text-anchor', 'middle')
                         .attr(
                             'transform',
