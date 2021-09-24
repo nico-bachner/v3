@@ -59,6 +59,14 @@ const Visitors: NextPage<Props> = ({ views }) => {
                                     <Table.BodyItem>{views}</Table.BodyItem>
                                 </Table.Row>
                             ))}
+                        <Table.Row className={styles.strong}>
+                            <Table.BodyItem>Total</Table.BodyItem>
+                            <Table.BodyItem>
+                                {paths
+                                    ?.map((path) => path.views)
+                                    ?.reduce((prev, current) => prev + current)}
+                            </Table.BodyItem>
+                        </Table.Row>
                     </Table.Body>
                 </Table.Root>
 

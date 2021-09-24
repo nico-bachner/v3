@@ -11,6 +11,11 @@
     margin-block-end: var(--space-7);
 }
 
+.strong {
+    color: var(--color-neutral-9);
+    font-weight: var(--font-weight-8);
+}
+
 .pie {
     max-width: 500px;
     margin-inline: auto;
