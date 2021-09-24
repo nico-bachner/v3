@@ -55,7 +55,7 @@ const translation: Translation = {
         ],
         other: [
             {
-                title: 'Source Code',
+                title: 'Quelltext',
                 href: 'https://github.com/nico-bachner/v3',
             },
             {

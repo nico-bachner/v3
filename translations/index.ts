@@ -5,11 +5,11 @@ import de from './de';
 import lb from './lb';
 
 const translations = {
-    'en-AU': en,
-    'da-DK': da,
-    'fr-LU': fr,
-    'de-LU': de,
-    'lb-LU': lb,
+    en,
+    da,
+    fr,
+    de,
+    lb,
 };
 
 export { translations };
