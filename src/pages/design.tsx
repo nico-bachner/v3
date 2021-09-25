@@ -24,6 +24,7 @@ import {
 } from '@nico-bachner/icons-react';
 import Head from '@lib/components/Head';
 import Layout from '@lib/components/Layout';
+import IconCard from '@lib/components/Card/IconCard';
 
 const Design = () => (
     <Layout width="lg" className={styles.main}>
@@ -215,72 +216,17 @@ const Design = () => (
         <section>
             <Text type="h2">Icons</Text>
             <div className={styles.iconsGrid}>
-                <Card>
-                    <ArrowDownLeft />
-                    <Text size={4} align="center">
-                        Arrow Down Left
-                    </Text>
-                </Card>
-                <Card>
-                    <ArrowDownRight />
-                    <Text size={4} align="center">
-                        Arrow Down Right
-                    </Text>
-                </Card>
-                <Card>
-                    <ArrowUpLeft />
-                    <Text size={4} align="center">
-                        Arrow Up Left
-                    </Text>
-                </Card>
-                <Card>
-                    <ArrowUpRight />
-                    <Text size={4} align="center">
-                        Arrow Up Right
-                    </Text>
-                </Card>
-                <Card>
-                    <ChevronDown />
-                    <Text size={4} align="center">
-                        Chevron Down
-                    </Text>
-                </Card>
-                <Card>
-                    <ChevronLeft />
-                    <Text size={4} align="center">
-                        Chevron Left
-                    </Text>
-                </Card>
-                <Card>
-                    <ChevronRight />
-                    <Text size={4} align="center">
-                        Chevron Right
-                    </Text>
-                </Card>
-                <Card>
-                    <ChevronUp />
-                    <Text size={4} align="center">
-                        Chevron Up
-                    </Text>
-                </Card>
-                <Card>
-                    <Logo />
-                    <Text size={4} align="center">
-                        Logo
-                    </Text>
-                </Card>
-                <Card>
-                    <SignMinus />
-                    <Text size={4} align="center">
-                        Sign Minus
-                    </Text>
-                </Card>
-                <Card>
-                    <SignPlus />
-                    <Text size={4} align="center">
-                        Sign Plus
-                    </Text>
-                </Card>
+                <IconCard name="Arrow Down Left" icon={<ArrowDownLeft />} />
+                <IconCard name="Arrow Down Right" icon={<ArrowDownRight />} />
+                <IconCard name="Arrow Up Left" icon={<ArrowUpLeft />} />
+                <IconCard name="Arrow Up Right" icon={<ArrowUpRight />} />
+                <IconCard name="Chevron Down" icon={<ChevronDown />} />
+                <IconCard name="Chevron Left" icon={<ChevronLeft />} />
+                <IconCard name="Chevron Right" icon={<ChevronRight />} />
+                <IconCard name="Chevron Up" icon={<ChevronUp />} />
+                <IconCard name="Logo" icon={<Logo />} />
+                <IconCard name="Sign Minus" icon={<SignMinus />} />
+                <IconCard name="Sign Plus" icon={<SignPlus />} />
             </div>
         </section>
     </Layout>
