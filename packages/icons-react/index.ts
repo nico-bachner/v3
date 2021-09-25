@@ -1,6 +1,11 @@
-export { default as Arrow } from './Arrow';
-export { default as File } from './File';
-export { default as Folder } from './Folder';
+export { default as ArrowDownLeft } from './ArrowDownLeft';
+export { default as ArrowDownRight } from './ArrowDownRight';
+export { default as ArrowUpLeft } from './ArrowUpLeft';
+export { default as ArrowUpRight } from './ArrowUpRight';
+export { default as ChevronDown } from './ChevronDown';
+export { default as ChevronLeft } from './ChevronLeft';
+export { default as ChevronRight } from './ChevronRight';
+export { default as ChevronUp } from './ChevronUp';
 export { default as Logo } from './Logo';
-export { default as Minus } from './Minus';
-export { default as Plus } from './Plus';
+export { default as SignMinus } from './SignMinus';
+export { default as SignPlus } from './SignPlus';

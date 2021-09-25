@@ -1,43 +1,73 @@
 import styles from './Select.module.css';
 
-type SelectRootProps = {
+import React, { forwardRef } from 'react';
+
+import { ChevronDown } from '@nico-bachner/icons-react';
+
+type RootProps = {
     value?: string;
     onChange?: React.ChangeEventHandler<HTMLSelectElement>;
     className?: string;
 };
 
-const Root: React.FC<SelectRootProps> = ({
+const Root: React.FC<RootProps> = ({
     children,
     value,
     onChange,
     className,
 }) => (
-    <select
-        className={[styles.select, className].join(' ')}
-        value={value}
-        onChange={onChange}
-    >
-        {children}
-    </select>
+    <div className={[styles.container, className].join(' ')}>
+        <select value={value} onChange={onChange} className={styles.select}>
+            {children}
+        </select>
+        <div className={styles.icon}>
+            <ChevronDown />
+        </div>
+    </div>
 );
 
-type SelectOptionProps = {
-    value: string;
+type OptionGroupProps = {
+    label: string;
     className?: string;
 };
 
-const Option: React.FC<SelectOptionProps> = ({
+const OptionGroup: React.FC<OptionGroupProps> = ({
     children,
-    value,
+    label,
     className,
 }) => (
-    <option value={value} className={[styles.option, className].join(' ')}>
+    <optgroup
+        label={label}
+        className={[styles.optionGroup, className].join(' ')}
+    >
+        {children}
+    </optgroup>
+);
+
+type OptionProps = {
+    value: string;
+    label?: string;
+    className?: string;
+};
+
+const Option: React.FC<OptionProps> = ({
+    children,
+    value,
+    label,
+    className,
+}) => (
+    <option
+        value={value}
+        label={label}
+        className={[styles.option, className].join(' ')}
+    >
         {children}
     </option>
 );
 
 const Select = {
     Root,
+    OptionGroup,
     Option,
 };
 

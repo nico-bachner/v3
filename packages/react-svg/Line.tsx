@@ -4,12 +4,11 @@ type Coordinate = {
 };
 
 type LineProps = {
-    from: Coordinate;
-    to: Coordinate;
+    points: Coordinate[];
 };
 
-const Line: React.VFC<LineProps> = ({ from, to }) => (
-    <line x1={from.x} y1={from.y} x2={to.x} y2={to.y} />
+const Line: React.VFC<LineProps> = ({ points }) => (
+    <polyline points={points.map(({ x, y }) => [x, y].join(',')).join(' ')} />
 );
 
 export default Line;

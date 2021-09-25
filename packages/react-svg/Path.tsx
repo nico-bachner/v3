@@ -1,63 +1,45 @@
-import { useRef, useState, useEffect } from 'react';
-
-type Draw = {
-    duration: number;
-    delay?: number;
+type Coordinate = {
+    x: number;
+    y: number;
 };
+
+type Move = [id: 'M', to: Coordinate];
+type Arc = [
+    id: 'A',
+    radius: Coordinate,
+    rotation: number,
+    arc: 0 | 1,
+    sweep: 0 | 1,
+    to: Coordinate
+];
+
+type Command = Move | Arc;
 
 type PathProps = {
-    commands: string[];
-    fill?: string | boolean;
-    draw?: Draw | false;
+    commands: Command[];
 };
 
-const Path: React.VFC<PathProps> = ({
-    commands,
-    fill = false,
-    draw = false,
-}) => {
-    const path = useRef<SVGPathElement>(null);
-    const [length, setLength] = useState<number | undefined>(undefined);
-
-    useEffect(() => {
-        if (!path.current) throw Error(`'path' is not assigned`);
-
-        setLength(path.current.getTotalLength());
-    }, [path]);
-
-    if (draw) {
-        const { duration, delay = 0 } = draw;
-
-        return (
-            <>
-                <path
-                    d={commands.join(' ')}
-                    fill={fill ? 'currentColor' : 'none'}
-                    ref={path}
-                />
-                <style jsx>{`
-                    @keyframes draw {
-                        to {
-                            stroke-dashoffset: 0;
-                        }
-                    }
-
-                    path {
-                        stroke-dasharray: ${length};
-                        stroke-dashoffset: ${length};
-                        animation: draw ${duration}ms linear ${delay}ms forwards;
-                    }
-                `}</style>
-            </>
-        );
-    }
+const Path: React.VFC<PathProps> = ({ commands }) => {
+    const parseCommand = (command: Command) => {
+        switch (command[0]) {
+            case 'M':
+                return ['M', command[1].x, command[1].y].join(' ');
+            case 'A':
+                return [
+                    'A',
+                    command[1].x,
+                    command[1].y,
+                    command[2],
+                    command[3],
+                    command[4],
+                    command[5].x,
+                    command[5].y,
+                ].join(' ');
+        }
+    };
 
     return (
-        <path
-            d={commands.join(' ')}
-            fill={fill ? 'currentColor' : 'none'}
-            ref={path}
-        />
+        <path d={commands.map((command) => parseCommand(command)).join(' ')} />
     );
 };
 

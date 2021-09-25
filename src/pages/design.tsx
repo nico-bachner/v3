@@ -9,6 +9,19 @@ import {
     Select,
     Text,
 } from '@nico-bachner/components-react';
+import {
+    ArrowDownLeft,
+    ArrowDownRight,
+    ArrowUpLeft,
+    ArrowUpRight,
+    ChevronDown,
+    ChevronLeft,
+    ChevronRight,
+    ChevronUp,
+    Logo,
+    SignMinus,
+    SignPlus,
+} from '@nico-bachner/icons-react';
 import Head from '@lib/components/Head';
 import Layout from '@lib/components/Layout';
 
@@ -195,6 +208,78 @@ const Design = () => (
                 <Text>Interactive</Text>
                 <Card variant="interactive">
                     <Text>Hover Me</Text>
+                </Card>
+            </div>
+        </section>
+
+        <section>
+            <Text type="h2">Icons</Text>
+            <div className={styles.iconsGrid}>
+                <Card>
+                    <ArrowDownLeft />
+                    <Text size={4} align="center">
+                        Arrow Down Left
+                    </Text>
+                </Card>
+                <Card>
+                    <ArrowDownRight />
+                    <Text size={4} align="center">
+                        Arrow Down Right
+                    </Text>
+                </Card>
+                <Card>
+                    <ArrowUpLeft />
+                    <Text size={4} align="center">
+                        Arrow Up Left
+                    </Text>
+                </Card>
+                <Card>
+                    <ArrowUpRight />
+                    <Text size={4} align="center">
+                        Arrow Up Right
+                    </Text>
+                </Card>
+                <Card>
+                    <ChevronDown />
+                    <Text size={4} align="center">
+                        Chevron Down
+                    </Text>
+                </Card>
+                <Card>
+                    <ChevronLeft />
+                    <Text size={4} align="center">
+                        Chevron Left
+                    </Text>
+                </Card>
+                <Card>
+                    <ChevronRight />
+                    <Text size={4} align="center">
+                        Chevron Right
+                    </Text>
+                </Card>
+                <Card>
+                    <ChevronUp />
+                    <Text size={4} align="center">
+                        Chevron Up
+                    </Text>
+                </Card>
+                <Card>
+                    <Logo />
+                    <Text size={4} align="center">
+                        Logo
+                    </Text>
+                </Card>
+                <Card>
+                    <SignMinus />
+                    <Text size={4} align="center">
+                        Sign Minus
+                    </Text>
+                </Card>
+                <Card>
+                    <SignPlus />
+                    <Text size={4} align="center">
+                        Sign Plus
+                    </Text>
                 </Card>
             </div>
         </section>

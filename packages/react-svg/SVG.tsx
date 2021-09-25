@@ -1,27 +1,27 @@
-import styles from './SVG.module.css';
-
 type SVGProps = {
     width?: number;
     height?: number;
+    color?: string;
     thickness?: number;
     className?: string;
 };
 
 const SVG: React.FC<SVGProps> = ({
     children,
-    width = 12,
-    height = 12,
-    thickness = 0.75,
+    width = 24,
+    height = 24,
+    color = 'currentColor',
+    thickness = 2,
     className,
 }) => (
     <svg
-        width={width}
-        height={height}
         viewBox={[0, 0, width, height].join(' ')}
-        className={[styles.svg, className].join(' ')}
+        fill="none"
+        stroke={color}
         strokeWidth={thickness}
-        stroke="currentColor"
-        fill="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        className={className}
     >
         {children}
     </svg>
