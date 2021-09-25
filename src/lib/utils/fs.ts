@@ -63,52 +63,33 @@ const fetchRecursivePaths: Fetch<Props, string[][]> = async ({
     path,
     extension,
 }) => {
-    const paths1 = await fetchPaths({
+    const paths = await fetchPaths({
         basePath,
         path,
         extension,
     });
-    const dirs1 = await fetchDirs({
-        basePath,
-        path: [],
-    });
-    const paths2 = (
-        await Promise.all(
-            dirs1.map(
-                async (path) =>
-                    await fetchPaths({
-                        basePath,
-                        path,
-                        extension,
-                    })
-            )
-        )
-    ).flat();
-    const dirs2 = (
-        await Promise.all(
-            dirs1.map(
-                async (path) =>
-                    await fetchDirs({
-                        basePath,
-                        path,
-                    })
-            )
-        )
-    ).flat();
-    const paths3 = (
-        await Promise.all(
-            dirs2.map(
-                async (path) =>
-                    await fetchPaths({
-                        basePath,
-                        path,
-                        extension,
-                    })
-            )
-        )
-    ).flat();
 
-    return [...paths1, ...paths2, ...paths3];
+    const dirs = await fetchDirs({
+        basePath,
+        path,
+    });
+
+    if (!dirs.length) {
+        return paths;
+    }
+
+    const restPaths = await Promise.all(
+        dirs.map(
+            async (path) =>
+                await fetchRecursivePaths({
+                    basePath,
+                    path,
+                    extension,
+                })
+        )
+    );
+
+    return restPaths.flat();
 };
 
 export { fetchFile, fetchPaths, fetchRecursivePaths };
