@@ -11,15 +11,16 @@ import Layout from '@lib/components/Layout';
 
 import type { NextPage, GetStaticPaths, GetStaticProps } from 'next';
 import type { MDXContent } from '@nico-bachner/mdx/utils';
+import { useTranslation } from '@lib/hooks/useTranslation';
 
-type PageProps = {
+type PathProps = {
     title: string;
     subtitle: string | null;
     description: string;
     image: string | null;
     url: string | null;
     content: MDXContent;
-    lastUpdated: string;
+    updated: string | null;
     editUrl: string;
 };
 
@@ -32,7 +33,7 @@ const github = {
 const basePath = ['content', 'pages'];
 const extension = 'mdx';
 
-export const getStaticPaths: GetStaticPaths = async ({ locales }) => {
+const getStaticPaths: GetStaticPaths = async ({ locales }) => {
     const paths = (
         await fetchRecursivePaths({
             basePath,
@@ -56,117 +57,115 @@ export const getStaticPaths: GetStaticPaths = async ({ locales }) => {
     };
 };
 
-export const getStaticProps: GetStaticProps<PageProps> = async ({
+const getStaticProps: GetStaticProps<PathProps> = async ({
     params,
     locale,
 }) => {
-    if (params && locale) {
-        const { path } = params;
+    const { path } = params!;
 
-        if (!Array.isArray(path)) {
-            return {
-                notFound: true,
-            };
-        }
-
-        const file = await fetchFile({
-            basePath,
-            path,
-            extension,
-        });
-
-        const {
-            title,
-            subtitle = null,
-            description,
-            image = null,
-            url = null,
-        } = getMDXData(file);
-
-        if (typeof title != 'string') {
-            throw new Error(`'title' should be a string (${path})`);
-        }
-        if (subtitle && typeof subtitle != 'string') {
-            throw new Error(
-                `'subtitle', if used, should be a string (${path})`
-            );
-        }
-        if (typeof description != 'string') {
-            throw new Error(`'description' should be a string (${path})`);
-        }
-        if (image && typeof image != 'string') {
-            throw new Error(`'image', if used, should be a string (${path})`);
-        }
-        if (url && typeof url != 'string') {
-            throw new Error(`'url', if used, should be a string (${path})`);
-        }
-
-        const updated = await fetchDateUpdated({
-            ...github,
-            basePath,
-            path,
-            extension,
-        });
-        const lastUpdated = updated
-            ? updated.toLocaleDateString(locale)
-            : 'Never';
-
-        const props: PageProps = {
-            title,
-            subtitle,
-            description,
-            image,
-            url,
-            content: await fetchMDXContent(file),
-            lastUpdated,
-            editUrl: getEditUrl({ ...github, basePath, path }),
+    if (!Array.isArray(path)) {
+        return {
+            notFound: true,
         };
-
-        return { props };
     }
 
-    return {
-        notFound: true,
+    const file = await fetchFile({
+        basePath,
+        path,
+        extension,
+    });
+
+    const {
+        title,
+        subtitle = null,
+        description,
+        image = null,
+        url = null,
+    } = getMDXData(file);
+
+    if (typeof title != 'string') {
+        throw new Error(`'title' should be a string (${path})`);
+    }
+    if (subtitle && typeof subtitle != 'string') {
+        throw new Error(`'subtitle', if used, should be a string (${path})`);
+    }
+    if (typeof description != 'string') {
+        throw new Error(`'description' should be a string (${path})`);
+    }
+    if (image && typeof image != 'string') {
+        throw new Error(`'image', if used, should be a string (${path})`);
+    }
+    if (url && typeof url != 'string') {
+        throw new Error(`'url', if used, should be a string (${path})`);
+    }
+
+    const props: PathProps = {
+        title,
+        subtitle,
+        description,
+        image,
+        url,
+        content: await fetchMDXContent(file),
+        updated:
+            (
+                await fetchDateUpdated({
+                    ...github,
+                    basePath,
+                    path,
+                    extension,
+                })
+            )?.toLocaleDateString(locale) ?? null,
+        editUrl: getEditUrl({ ...github, basePath, path }),
     };
+
+    return { props };
 };
 
-const Page: NextPage<PageProps> = ({
+const Path: NextPage<PathProps> = ({
     title,
     subtitle,
     description,
     image,
     url,
     content,
-    lastUpdated,
+    updated,
     editUrl,
-}) => (
-    <Layout width="md">
-        <Head
-            title={title}
-            description={description}
-            image={image ?? undefined}
-            url={url ?? undefined}
-        />
+}) => {
+    const { informations, actions, values } = useTranslation();
 
-        <article>
-            <Text type="h1" className={styles.title}>
-                {title}
-            </Text>
-            <Text size={6} className={styles.subtitle}>
-                {subtitle}
-            </Text>
-            <MDX content={content} />
-        </article>
+    return (
+        <Layout width="md">
+            <Head
+                title={title}
+                description={description}
+                image={image ?? undefined}
+                url={url ?? undefined}
+            />
 
-        <div className={styles.bottom}>
-            <Text color="neutral-5">Last updated: {lastUpdated}</Text>
-            <Text>
-                <Link href={editUrl} variant="highlight">
-                    Edit on GitHub →
-                </Link>
-            </Text>
-        </div>
-    </Layout>
-);
+            <article>
+                <Text type="h1" className={styles.title}>
+                    {title}
+                </Text>
+                <Text size={6} className={styles.subtitle}>
+                    {subtitle}
+                </Text>
+                <MDX content={content} />
+            </article>
 
-export default Page;
+            <div className={styles.bottom}>
+                <Text color="neutral-5">
+                    {informations.lastUpdated}: {updated ?? values.never}
+                </Text>
+                <Text>
+                    <Link href={editUrl} variant="highlight">
+                        {actions.editOnGitHub} →
+                    </Link>
+                </Text>
+            </div>
+        </Layout>
+    );
+};
+
+export { getStaticPaths, getStaticProps };
+
+export default Path;

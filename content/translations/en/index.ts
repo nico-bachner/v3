@@ -5,16 +5,23 @@ const translation: Translation = {
         description:
             'A University Student, self-taught Web Developer, and aspiring Open Sourcerer',
     },
+    informations: {
+        lastUpdated: 'Last updated',
+    },
     actions: {
-        changeLanguage: 'change language',
-        moreInformation: 'more information',
-        read: 'read',
-        readMore: 'read more',
-        showAll: 'show all',
-        showLess: 'show less',
-        showMore: 'show more',
-        viewAll: 'view all',
-        visit: 'visit',
+        changeLanguage: 'Change language',
+        editOnGitHub: 'Edit on GitHub',
+        moreInformation: 'More information',
+        read: 'Read',
+        readMore: 'Read more',
+        showAll: 'Show all',
+        showLess: 'Show less',
+        showMore: 'Show more',
+        viewAll: 'View all',
+        visit: 'Visit',
+    },
+    values: {
+        never: 'Never',
     },
     pages: {
         main: [

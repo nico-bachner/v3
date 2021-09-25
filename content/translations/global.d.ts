@@ -10,8 +10,12 @@ type Translation = {
         subtitle: string;
         description: string;
     };
+    informations: {
+        lastUpdated: string;
+    };
     actions: {
         changeLanguage: string;
+        editOnGitHub: string;
         moreInformation: string;
         read: string;
         readMore: string;
@@ -20,6 +24,9 @@ type Translation = {
         showMore: string;
         viewAll: string;
         visit: string;
+    };
+    values: {
+        never: string;
     };
     pages: {
         main: Link[];

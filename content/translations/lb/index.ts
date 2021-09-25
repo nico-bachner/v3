@@ -5,16 +5,23 @@ const translation: Translation = {
         description:
             "E lëtzebuergesche student an Open Source-enthusiast, deen sech selwer d'programméieren bäibruecht huet",
     },
+    informations: {
+        lastUpdated: 'Lescht aktualiséiert',
+    },
     actions: {
         changeLanguage: 'Sprooch änneren',
-        moreInformation: 'méi Informatiounen',
-        read: 'lies',
-        readMore: 'lies méi',
-        showAll: 'alleguer weisens',
-        showLess: 'manner weisen',
-        showMore: 'méi weisen',
-        viewAll: 'alleguer gesinn',
-        visit: 'besichen',
+        editOnGitHub: 'Op GitHub beaarbechten',
+        moreInformation: 'Méi Informatiounen',
+        read: 'Lies',
+        readMore: 'Lies méi',
+        showAll: 'Alleguer weisens',
+        showLess: 'Manner weisen',
+        showMore: 'Méi weisen',
+        viewAll: 'Alleguer gesinn',
+        visit: 'Besichen',
+    },
+    values: {
+        never: 'Ni',
     },
     pages: {
         main: [

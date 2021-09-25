@@ -5,16 +5,23 @@ const translation: Translation = {
         description:
             "Je suis un étudiant, un développeur autodidacte, et un passionné d'Open Source",
     },
+    informations: {
+        lastUpdated: 'Dernière mise à jour',
+    },
     actions: {
-        changeLanguage: 'changer la langue',
-        moreInformation: "plus d'informations",
-        read: 'lire',
-        readMore: 'lire la suite',
-        showAll: 'afficher tous',
-        showLess: 'afficher moins',
-        showMore: 'afficher plus',
-        viewAll: 'voir tous',
-        visit: 'visiter',
+        changeLanguage: 'Changer la langue',
+        editOnGitHub: 'Modifier sur GitHub',
+        moreInformation: "Plus d'informations",
+        read: 'Lire',
+        readMore: 'En lire la suite',
+        showAll: 'Afficher tous',
+        showLess: 'Afficher moins',
+        showMore: 'Afficher plus',
+        viewAll: 'Voir tous',
+        visit: 'Visiter',
+    },
+    values: {
+        never: 'Jamais',
     },
     pages: {
         main: [
