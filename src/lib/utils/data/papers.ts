@@ -25,8 +25,8 @@ const fetchPaperData: Fetch<string[], PaperData> = async (path) => {
     if (typeof featured != 'boolean') {
         throw new Error(`'featured', if used, should be a boolean (${path})`);
     }
-    if (!(published instanceof Date)) {
-        throw new Error(`'published' should be a Date (${path})`);
+    if (published != false && !(published instanceof Date)) {
+        throw new Error(`'published', should be a Date or false (${path})`);
     }
     if (institution != null && typeof institution != 'string') {
         throw new Error(`'institution', if used, should be a string (${path})`);
@@ -37,7 +37,7 @@ const fetchPaperData: Fetch<string[], PaperData> = async (path) => {
         title,
         description,
         featured,
-        published: published.getTime(),
+        published: published ? published.getTime() : false,
         institution,
     };
 };
@@ -49,7 +49,9 @@ const fetchPapersData = async () => {
         paths.map(async (path) => await fetchPaperData(path))
     );
 
-    return papers.sort((a, b) => b.published - a.published);
+    return papers
+        .filter(({ published }) => published)
+        .sort((a, b) => (b.published as number) - (a.published as number));
 };
 
 export { fetchPapersData };

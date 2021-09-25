@@ -16,6 +16,22 @@ const fetchMDXContent: Fetch<string, MDXContent> = async (file) =>
                 require('mdx-prism'),
                 require('rehype-slug'),
                 require('rehype-katex'),
+                [
+                    require('rehype-autolink-headings'),
+                    {
+                        content: {
+                            type: 'element',
+                            tagName: 'span',
+                            properties: { className: ['heading-link'] },
+                            children: [
+                                {
+                                    type: 'text',
+                                    value: '#',
+                                },
+                            ],
+                        },
+                    },
+                ],
             ],
         },
     });

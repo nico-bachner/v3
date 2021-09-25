@@ -28,21 +28,13 @@ const fetchArticleData: Fetch<string[], ArticleData> = async (path) => {
         throw new Error(`'published', should be a Date or false (${path})`);
     }
 
-    const rawWordCount = file.split(' ').length;
-
-    const adjustedWordCount = file.toLowerCase().includes('table of contents')
-        ? rawWordCount * 1.1
-        : rawWordCount;
-
-    const readingTime = Math.round(adjustedWordCount / 220);
-
     return {
         path,
         title,
         description,
         featured,
         published: published ? published.getTime() : false,
-        reading_time: readingTime,
+        reading_time: Math.round(file.split(' ').length / 220),
     };
 };
 
@@ -55,7 +47,7 @@ const fetchArticlesData = async () => {
 
     return articles
         .filter(({ published }) => published)
-        .sort((a, b) => b.published - a.published);
+        .sort((a, b) => (b.published as number) - (a.published as number));
 };
 
 export { fetchArticlesData };

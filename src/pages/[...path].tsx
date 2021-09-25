@@ -1,4 +1,4 @@
-import styles from '@lib/styles/Page.module.css';
+import styles from '@lib/styles/Path.module.css';
 
 import { fetchMDXContent, getMDXData } from '@nico-bachner/mdx/utils';
 import { fetchFile, fetchRecursivePaths } from '@lib/utils/fs';
@@ -21,7 +21,7 @@ type PathProps = {
     url: string | null;
     content: MDXContent;
     updated: string | null;
-    editUrl: string;
+    edit_url: string;
 };
 
 const github = {
@@ -99,6 +99,13 @@ const getStaticProps: GetStaticProps<PathProps> = async ({
         throw new Error(`'url', if used, should be a string (${path})`);
     }
 
+    const updated = await fetchDateUpdated({
+        ...github,
+        basePath,
+        path,
+        extension,
+    });
+
     const props: PathProps = {
         title,
         subtitle,
@@ -106,16 +113,8 @@ const getStaticProps: GetStaticProps<PathProps> = async ({
         image,
         url,
         content: await fetchMDXContent(file),
-        updated:
-            (
-                await fetchDateUpdated({
-                    ...github,
-                    basePath,
-                    path,
-                    extension,
-                })
-            )?.toLocaleDateString(locale) ?? null,
-        editUrl: getEditUrl({ ...github, basePath, path }),
+        updated: updated?.toLocaleDateString(locale) ?? null,
+        edit_url: getEditUrl({ ...github, basePath, path }),
     };
 
     return { props };
@@ -129,7 +128,7 @@ const Path: NextPage<PathProps> = ({
     url,
     content,
     updated,
-    editUrl,
+    edit_url,
 }) => {
     const { informations, actions, values } = useTranslation();
 
@@ -157,7 +156,7 @@ const Path: NextPage<PathProps> = ({
                     {informations.lastUpdated}: {updated ?? values.never}
                 </Text>
                 <Text>
-                    <Link href={editUrl} variant="highlight">
+                    <Link href={edit_url} variant="highlight">
                         {actions.editOnGitHub} →
                     </Link>
                 </Text>

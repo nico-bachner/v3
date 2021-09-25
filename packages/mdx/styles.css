@@ -26,9 +26,32 @@ sup {
     margin-block: var(--space-9);
 }
 
+/* ---- rehype-autolink-headings ---- */
+.heading-link {
+    display: none;
+}
+
+@media (min-width: 848px) {
+    article .heading-link {
+        display: initial;
+        position: absolute;
+        margin-left: -1em;
+        width: 100%;
+        max-width: calc(var(--width-sm) + 1em);
+        opacity: 0;
+        transition: opacity 150ms ease;
+        border: none;
+    }
+
+    article .heading-link:hover {
+        opacity: 100%;
+    }
+}
+
 /* ---- katex ---- */
-.math {
+.math.math-display {
     margin-block: var(--space-9);
+    overflow-x: scroll;
 }
 
 /* ---- mdx-prism ---- */

@@ -12,7 +12,7 @@ type ArticleData = {
     title: string;
     description: string;
     featured: boolean;
-    published: number;
+    published: number | false;
     reading_time: number;
 };
 
@@ -21,7 +21,7 @@ type PaperData = {
     title: string;
     description: string;
     featured: boolean;
-    published: number;
+    published: number | false;
     institution: string | null;
 };
 
