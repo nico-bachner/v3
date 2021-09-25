@@ -2,6 +2,38 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.19.0](https://github.com/nico-bachner/v3/compare/v1.18.0...v1.19.0) (2021-09-25)
+
+
+### Features
+
+* added total count for path views ([8027964](https://github.com/nico-bachner/v3/commit/8027964e78c67fd5e92549547c1ef96f9fd711dc))
+* articles have the option not to be published yet ([635dadc](https://github.com/nico-bachner/v3/commit/635dadcc4e338740853f0d7dfdba02d6705b5a6a))
+* **components:** add Chart component ([a8fe48a](https://github.com/nico-bachner/v3/commit/a8fe48a29773c1166b69c7c37982c4c2173b58c5))
+* **components:** improve Chart colors ([7f623b1](https://github.com/nico-bachner/v3/commit/7f623b13002d669cef6cb29dc387c412c6ef62b2))
+* **components:** improve Select component ([ef55605](https://github.com/nico-bachner/v3/commit/ef5560531284238290046f7cb59ccada47003e04))
+* **design:** add custom letter spacing ([6ed5c04](https://github.com/nico-bachner/v3/commit/6ed5c04f2f46195d0ae5527b103f9b35b3b53acd))
+* **design:** improvements to typography & layout ([af92191](https://github.com/nico-bachner/v3/commit/af92191d2e01e81a7383e3b8027d9422073ef91b))
+* **design:** Text now accepts `id`, scroll padding top is fixed ([fa0657b](https://github.com/nico-bachner/v3/commit/fa0657b87af1289b7ca944fe7dee498f4f22049e))
+* **i18n:** extend translations ([b2f4579](https://github.com/nico-bachner/v3/commit/b2f4579398e569a8596b577214a1b6689c3ff142))
+* **i18n:** improve locale flexibility ([8521666](https://github.com/nico-bachner/v3/commit/85216667eaa7405cc9e5afb7562ff69351e1d574))
+* make recursive paths funtion actually recursive ([b5c0f0e](https://github.com/nico-bachner/v3/commit/b5c0f0e10bf3c685ab70bff0ff32b088723d3686))
+* **mdx:** added automatic table of components generation ([5902e67](https://github.com/nico-bachner/v3/commit/5902e673a46ef67b529409f6d2b19e307d708906))
+* **mdx:** further improved component usage ([7eb414a](https://github.com/nico-bachner/v3/commit/7eb414a603411dbb4db9be1c96526e5f0ffe3c2f))
+* **mdx:** improved component usage ([cd0a6f7](https://github.com/nico-bachner/v3/commit/cd0a6f73848aedada4792dab88a20bfbd243e7bd))
+
+
+### Bug Fixes
+
+* **components:** remove false percentages from `Chart` ([a9d2b7b](https://github.com/nico-bachner/v3/commit/a9d2b7b64948f6414c01562aae3ec0deea02af33))
+* **data:** remove misleading location data type ([862eb39](https://github.com/nico-bachner/v3/commit/862eb3938e08f66149c3fb91f90e8a89cf9c397a))
+* **design:** add rounded corners to navbar ([46433a5](https://github.com/nico-bachner/v3/commit/46433a53abb612c798ac8a2a38ca1144def0c2e5))
+* **design:** fix broken projects layout ([3c5d758](https://github.com/nico-bachner/v3/commit/3c5d758823be31ab52d73c502dde57852fe18c90))
+* **design:** minor layout fixes & improvements ([f21d9fb](https://github.com/nico-bachner/v3/commit/f21d9fbc6d8591f846652930b47fef698e99465e))
+* **i18n:** revert to only use language codes ([c8ba921](https://github.com/nico-bachner/v3/commit/c8ba9212ecdad583528c2c78b226b0f43fddbd08))
+* **meta:** remove misleading urls from projects ([086e56e](https://github.com/nico-bachner/v3/commit/086e56e4dd39d4143caa4ab2dd5a5688b09436ea))
+* **ux:** images only hover on hoverable devices ([6f43919](https://github.com/nico-bachner/v3/commit/6f439194fae385954974fcdb3b55ea697bf71547))
+
 ## [1.18.0](https://github.com/nico-bachner/v3/compare/v1.17.0...v1.18.0) (2021-09-09)
 
 
