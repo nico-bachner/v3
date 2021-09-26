@@ -19,6 +19,7 @@ type PathProps = {
     description: string;
     image: string | null;
     url: string | null;
+    index: boolean;
     content: MDXContent;
     updated: string | null;
     edit_url: string;
@@ -81,6 +82,7 @@ const getStaticProps: GetStaticProps<PathProps> = async ({
         description,
         image = null,
         url = null,
+        published,
     } = getMDXData(file);
 
     if (typeof title != 'string') {
@@ -112,6 +114,7 @@ const getStaticProps: GetStaticProps<PathProps> = async ({
         description,
         image,
         url,
+        index: published == false ? false : true,
         content: await fetchMDXContent(file),
         updated: updated?.toLocaleDateString(locale) ?? null,
         edit_url: getEditUrl({ ...github, basePath, path }),
@@ -126,6 +129,7 @@ const Path: NextPage<PathProps> = ({
     description,
     image,
     url,
+    index,
     content,
     updated,
     edit_url,
@@ -139,6 +143,7 @@ const Path: NextPage<PathProps> = ({
                 description={description}
                 image={image ?? undefined}
                 url={url ?? undefined}
+                index={index}
             />
 
             <article>

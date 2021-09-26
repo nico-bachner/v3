@@ -6,7 +6,7 @@ type IconCardProps = {
 };
 
 const IconCard: React.VFC<IconCardProps> = ({ name, icon }) => {
-    const slug = name.replaceAll(' ', '');
+    const slug = name.replace(/ /g, '');
 
     return (
         <Link

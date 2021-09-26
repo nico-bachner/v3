@@ -1,23 +1,13 @@
-import { useRouter } from 'next/router';
+import { usePath } from './usePath';
 
-const useCurrent = (href: string) => {
-    const { pathname, query } = useRouter();
+const useCurrent = (href: string): boolean => {
+    const path = usePath();
 
-    return (
-        href ==
-        pathname
-            .split('/')
-            .map((arg) => {
-                if (arg.includes('[') && arg.includes(']')) {
-                    const key = arg.slice(1, -1);
+    if (href == path) {
+        return true;
+    }
 
-                    return query[key];
-                }
-
-                return arg;
-            })
-            .join('/')
-    );
+    return false;
 };
 
 export { useCurrent };

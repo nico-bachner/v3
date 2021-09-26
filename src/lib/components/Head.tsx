@@ -11,38 +11,22 @@ type HeadProps = {
     url?: string;
     description?: string;
     author?: string;
+    index?: boolean;
 };
 
 const Head: React.FC<HeadProps> = ({
     title,
     type = 'website',
-    image,
+    image = `https://og-image.vercel.app/${encodeURIComponent(title)}.png`,
     url,
     description,
-    author,
+    author = 'Nico Bachner',
+    index = true,
 }) => {
-    const { pathname, query, asPath, locale, locales } = useRouter();
+    const { asPath, locale, locales } = useRouter();
     const { general } = useTranslation();
+
     const defaultUrl = 'https://nicobachner.com/' + locale + asPath;
-
-    const path = encodeURIComponent(
-        pathname
-            .split('/')
-            .map((arg) => {
-                if (arg.includes('[') && arg.includes(']')) {
-                    const key = arg
-                        .replace(/\[/g, '')
-                        .replace(/\]/g, '')
-                        .replace('...', '');
-
-                    return query[key];
-                }
-
-                return arg;
-            })
-            .flat()
-            .join('/')
-    );
 
     useEffect(() => {
         const [language, location] = locale!.split('-');
@@ -50,16 +34,16 @@ const Head: React.FC<HeadProps> = ({
         fetch(`/api/view`, {
             method: 'POST',
             body: JSON.stringify({
-                path,
+                path: encodeURIComponent(asPath),
                 language,
             }),
         });
-    }, [path, locale]);
+    }, [asPath, locale]);
 
     return (
         <NextHead>
             <title>{title}</title>
-            <meta name="author" content={author ?? 'Nico Bachner'} />
+            <meta name="author" content={author} />
             <meta
                 name="description"
                 content={description ?? general.description}
@@ -77,15 +61,7 @@ const Head: React.FC<HeadProps> = ({
             <meta property="og:title" content={title} />
             <meta property="og:type" content={type} />
             <meta property="og:url" content={url ?? defaultUrl} />
-            <meta
-                property="og:image"
-                content={
-                    image ??
-                    `https://og-image.vercel.app/${encodeURIComponent(
-                        title
-                    )}.png`
-                }
-            />
+            <meta property="og:image" content={image} />
             <meta
                 property="og:description"
                 content={description ?? general.description}
@@ -99,6 +75,7 @@ const Head: React.FC<HeadProps> = ({
                     content={locale}
                 />
             ))}
+            <meta name="robots" content={index ? 'index' : 'noindex'} />
         </NextHead>
     );
 };
