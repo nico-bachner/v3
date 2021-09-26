@@ -1,11 +1,20 @@
+export { default as ArrowDown } from './ArrowDown';
+export { default as ArrowUp } from './ArrowUp';
+export { default as ArrowLeft } from './ArrowLeft';
+export { default as ArrowRight } from './ArrowRight';
 export { default as ArrowDownLeft } from './ArrowDownLeft';
 export { default as ArrowDownRight } from './ArrowDownRight';
 export { default as ArrowUpLeft } from './ArrowUpLeft';
 export { default as ArrowUpRight } from './ArrowUpRight';
+
+export { default as Check } from './Check';
+
 export { default as ChevronDown } from './ChevronDown';
+export { default as ChevronUp } from './ChevronUp';
 export { default as ChevronLeft } from './ChevronLeft';
 export { default as ChevronRight } from './ChevronRight';
-export { default as ChevronUp } from './ChevronUp';
-export { default as Logo } from './Logo';
+
 export { default as SignMinus } from './SignMinus';
 export { default as SignPlus } from './SignPlus';
+
+export { default as Logo } from './Logo';

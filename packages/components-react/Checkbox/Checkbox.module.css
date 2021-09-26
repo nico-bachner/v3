@@ -1,0 +1,11 @@
+.root {
+    appearance: none;
+    width: var(--space-7);
+    height: var(--space-7);
+    padding: 0.1rem;
+    margin: 0;
+    color: var(--color-neutral-7);
+    background-color: transparent;
+    border: 1px solid var(--color-neutral-2);
+    border-radius: 0.3rem;
+}

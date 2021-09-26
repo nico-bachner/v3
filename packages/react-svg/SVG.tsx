@@ -11,7 +11,7 @@ const SVG: React.FC<SVGProps> = ({
     width = 24,
     height = 24,
     color = 'currentColor',
-    thickness = 2,
+    thickness = 1.5,
     className,
 }) => (
     <svg
