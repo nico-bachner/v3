@@ -7,6 +7,9 @@ export { default as ArrowDownRight } from './ArrowDownRight';
 export { default as ArrowUpLeft } from './ArrowUpLeft';
 export { default as ArrowUpRight } from './ArrowUpRight';
 
+export { default as Book } from './Book';
+export { default as BookOpen } from './BookOpen';
+export { default as Bookmark } from './Bookmark';
 export { default as Check } from './Check';
 
 export { default as ChevronDown } from './ChevronDown';
@@ -14,6 +17,8 @@ export { default as ChevronUp } from './ChevronUp';
 export { default as ChevronLeft } from './ChevronLeft';
 export { default as ChevronRight } from './ChevronRight';
 
+export { default as Command } from './Command';
+export { default as Copy } from './Copy';
 export { default as SignMinus } from './SignMinus';
 export { default as SignPlus } from './SignPlus';
 

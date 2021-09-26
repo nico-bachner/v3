@@ -1,20 +1,19 @@
-import { SVG, Line } from '@nico-bachner/svg-react';
+import SVG from '@nico-bachner/svg-react';
 
 type ChevronDownProps = {
-    color?: string;
     className?: string;
 };
 
-const ChevronDown: React.VFC<ChevronDownProps> = ({ color, className }) => (
-    <SVG color={color} className={className}>
-        <Line
+const ChevronDown: React.VFC<ChevronDownProps> = ({ className }) => (
+    <SVG.Root className={className}>
+        <SVG.Line
             points={[
                 { x: 6, y: 9 },
                 { x: 12, y: 15 },
                 { x: 18, y: 9 },
             ]}
         />
-    </SVG>
+    </SVG.Root>
 );
 
 export default ChevronDown;

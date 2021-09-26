@@ -1,7 +1,5 @@
 import styles from './Select.module.css';
 
-import React, { forwardRef } from 'react';
-
 import { ChevronDown } from '@nico-bachner/icons-react';
 
 type RootProps = {

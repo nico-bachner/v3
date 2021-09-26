@@ -1,26 +1,25 @@
-import { SVG, Line } from '@nico-bachner/svg-react';
+import SVG from '@nico-bachner/svg-react';
 
 type ArrowUpRightProps = {
-    color?: string;
     className?: string;
 };
 
-const ArrowUpRight: React.VFC<ArrowUpRightProps> = ({ color, className }) => (
-    <SVG color={color} className={className}>
-        <Line
+const ArrowUpRight: React.VFC<ArrowUpRightProps> = ({ className }) => (
+    <SVG.Root className={className}>
+        <SVG.Line
             points={[
+                { x: 17, y: 7 },
                 { x: 7, y: 17 },
-                { x: 17, y: 7 },
             ]}
         />
-        <Line
+        <SVG.Line
             points={[
-                { x: 7, y: 7 },
-                { x: 17, y: 7 },
                 { x: 17, y: 17 },
+                { x: 17, y: 7 },
+                { x: 7, y: 7 },
             ]}
         />
-    </SVG>
+    </SVG.Root>
 );
 
 export default ArrowUpRight;

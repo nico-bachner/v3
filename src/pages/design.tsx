@@ -19,11 +19,16 @@ import {
     ArrowDownRight,
     ArrowUpLeft,
     ArrowUpRight,
+    Book,
+    BookOpen,
+    Bookmark,
     Check,
     ChevronDown,
     ChevronUp,
     ChevronLeft,
     ChevronRight,
+    Command,
+    Copy,
     SignMinus,
     SignPlus,
     Logo,
@@ -216,6 +221,7 @@ const Icons = () => (
         <IconCard name="Arrow Up" icon={<ArrowUp />} />
         <IconCard name="Arrow Left" icon={<ArrowLeft />} />
         <IconCard name="Arrow Right" icon={<ArrowRight />} />
+
         <IconCard name="Arrow Down Left" icon={<ArrowDownLeft />} />
         <IconCard name="Arrow Down Right" icon={<ArrowDownRight />} />
         <IconCard name="Arrow Up Left" icon={<ArrowUpLeft />} />
@@ -226,9 +232,16 @@ const Icons = () => (
         <IconCard name="Chevron Left" icon={<ChevronLeft />} />
         <IconCard name="Chevron Right" icon={<ChevronRight />} />
 
+        <IconCard name="Book" icon={<Book />} />
+        <IconCard name="Book Open" icon={<BookOpen />} />
+        <IconCard name="Bookmark" icon={<Bookmark />} />
+        <IconCard name="Check" icon={<Check />} />
+
+        <IconCard name="Command" icon={<Command />} />
+        <IconCard name="Copy" icon={<Copy />} />
         <IconCard name="Sign Minus" icon={<SignMinus />} />
         <IconCard name="Sign Plus" icon={<SignPlus />} />
-        <IconCard name="Check" icon={<Check />} />
+
         <IconCard name="Logo" icon={<Logo />} />
     </div>
 );

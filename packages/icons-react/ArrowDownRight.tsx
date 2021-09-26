@@ -1,29 +1,25 @@
-import { SVG, Line } from '@nico-bachner/svg-react';
+import SVG from '@nico-bachner/svg-react';
 
 type ArrowDownRightProps = {
-    color?: string;
     className?: string;
 };
 
-const ArrowDownRight: React.VFC<ArrowDownRightProps> = ({
-    color,
-    className,
-}) => (
-    <SVG color={color} className={className}>
-        <Line
+const ArrowDownRight: React.VFC<ArrowDownRightProps> = ({ className }) => (
+    <SVG.Root className={className}>
+        <SVG.Line
             points={[
                 { x: 7, y: 7 },
                 { x: 17, y: 17 },
             ]}
         />
-        <Line
+        <SVG.Line
             points={[
                 { x: 7, y: 17 },
                 { x: 17, y: 17 },
                 { x: 17, y: 7 },
             ]}
         />
-    </SVG>
+    </SVG.Root>
 );
 
 export default ArrowDownRight;
