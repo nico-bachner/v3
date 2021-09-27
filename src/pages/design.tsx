@@ -27,8 +27,14 @@ import {
     ChevronUp,
     ChevronLeft,
     ChevronRight,
+    Code,
     Command,
     Copy,
+    Download,
+    File,
+    Folder,
+    FolderMinus,
+    FolderPlus,
     SignMinus,
     SignPlus,
     Logo,
@@ -237,11 +243,18 @@ const Icons = () => (
         <IconCard name="Bookmark" icon={<Bookmark />} />
         <IconCard name="Check" icon={<Check />} />
 
+        <IconCard name="Code" icon={<Code />} />
         <IconCard name="Command" icon={<Command />} />
         <IconCard name="Copy" icon={<Copy />} />
+        <IconCard name="Download" icon={<Download />} />
+
+        <IconCard name="File" icon={<File />} />
+        <IconCard name="Folder" icon={<Folder />} />
+        <IconCard name="Folder Minus" icon={<FolderMinus />} />
+        <IconCard name="Folder Plus" icon={<FolderPlus />} />
+
         <IconCard name="Sign Minus" icon={<SignMinus />} />
         <IconCard name="Sign Plus" icon={<SignPlus />} />
-
         <IconCard name="Logo" icon={<Logo />} />
     </div>
 );
