@@ -38,39 +38,56 @@ const Line: React.VFC<LineProps> = ({ points }) => (
     <polyline points={points.map(({ x, y }) => [x, y].join(',')).join(' ')} />
 );
 
+type CircleProps = {
+    centre: Coordinate;
+    radius: number;
+};
+
+const Circle: React.VFC<CircleProps> = ({ centre, radius }) => (
+    <circle cx={centre.x} cy={centre.y} r={radius} />
+);
+
 type RectProps = {
     origin: Coordinate;
     width: number;
     height: number;
-    radius?: Coordinate;
+    rounded?: number;
 };
 
-const Rect: React.VFC<RectProps> = ({ origin, width, height, radius }) => (
+const Rectangle: React.VFC<RectProps> = ({
+    origin,
+    width,
+    height,
+    rounded,
+}) => (
     <rect
         x={origin.x}
         y={origin.y}
         width={width}
         height={height}
-        rx={radius?.x}
-        ry={radius?.y}
+        rx={rounded}
+        ry={rounded}
     />
 );
 
-type Move = [id: 'M' | 'm', to: Coordinate];
-type Line = [id: 'L' | 'l', to: Coordinate];
-type Horizontal = [id: 'H' | 'h', to: number];
-type Vertical = [id: 'V' | 'v', to: number];
-type Arc = [
-    id: 'A' | 'a',
-    radius: Coordinate,
-    rotation: number,
-    arc: 0 | 1,
-    sweep: 0 | 1,
-    to: Coordinate
-];
-type Return = [id: 'Z'];
+type Move = ['M' | 'm', Coordinate];
+type Line = ['L' | 'l', Coordinate];
+type Horizontal = ['H' | 'h', number];
+type Vertical = ['V' | 'v', number];
+type CubicBezier = ['C' | 'c', Coordinate, Coordinate, Coordinate];
+type SmoothBezier = ['S' | 's', Coordinate, Coordinate];
+type Arc = ['A' | 'a', Coordinate, number, 0 | 1, 0 | 1, Coordinate];
+type Return = ['Z'];
 
-type Command = Move | Line | Horizontal | Vertical | Arc | Return;
+type Command =
+    | Move
+    | Line
+    | Horizontal
+    | Vertical
+    | CubicBezier
+    | SmoothBezier
+    | Arc
+    | Return;
 
 type PathProps = {
     commands: Command[];
@@ -91,6 +108,26 @@ const Path: React.VFC<PathProps> = ({ commands }) => {
             case 'V':
             case 'v':
                 return [command[0], command[1]].join(' ');
+            case 'C':
+            case 'c':
+                return [
+                    command[0],
+                    command[1].x,
+                    command[1].y,
+                    command[2].x,
+                    command[2].y,
+                    command[3].x,
+                    command[3].y,
+                ].join(' ');
+            case 'S':
+            case 's':
+                return [
+                    command[0],
+                    command[1].x,
+                    command[1].y,
+                    command[2].x,
+                    command[2].y,
+                ].join(' ');
             case 'A':
             case 'a':
                 return [
@@ -116,8 +153,9 @@ const Path: React.VFC<PathProps> = ({ commands }) => {
 const SVG = {
     Root,
     Line,
+    Circle,
+    Rectangle,
     Path,
-    Rect,
 };
 
 export default SVG;

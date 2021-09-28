@@ -5,7 +5,7 @@ type LogoProps = {
 };
 
 const Logo: React.VFC<LogoProps> = ({ className }) => (
-    <SVG.Root className={className}>
+    <SVG.Root thickness={1.5} className={className}>
         <SVG.Path
             commands={[
                 ['M', { x: 8, y: 12 }],

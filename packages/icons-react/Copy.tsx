@@ -6,11 +6,11 @@ type CopyProps = {
 
 const Copy: React.VFC<CopyProps> = ({ className }) => (
     <SVG.Root className={className}>
-        <SVG.Rect
+        <SVG.Rectangle
             origin={{ x: 9, y: 9 }}
             width={13}
             height={13}
-            radius={{ x: 2, y: 2 }}
+            rounded={2}
         />
         <SVG.Path
             commands={[
