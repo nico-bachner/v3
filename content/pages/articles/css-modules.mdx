@@ -160,6 +160,57 @@ const Home: React.VFC = () => {
 export default Home;
 ```
 
-One thing to look out for is the whitespace as the argument of `.join()`. Without it, the `class names would just be concatenated into one long name that the browser cannot recognise. Adding the space separates the class names into recognisable tokens.
+If distilling all component styling into props feels too limiting, there's a solution for that too. It is possible to give a component custom styles by passing it a `className` prop:
 
-Notice how have full control over how fine-grain the control should be? The previous example only had one control point (the `variant`), but it could just as well have a prop for each individual style property. This flexibility is especially useful when architecting a design system.
+```css:Component.module.css
+/* omitted for brevity — same as the above example */
+```
+
+```tsx:Component.tsx
+import styles from './Component.module.css';
+
+type ComponentProps = {
+    property1: '1' | '2' | '3'
+    property2: '1' | '2' | '3'
+    className?: string
+}
+
+const Component: React.FC<ComponentProps> = ({
+    children,
+    property1,
+    property2,
+    className,
+}) => {
+    return (
+        <Component
+            className={[
+                styles[`property1-${property1}`],
+                styles[`property1-${property2}`],
+                className,
+            ].join(' ')}
+        >
+            {children}
+        </Component>
+    );
+};
+
+export default Component;
+```
+
+```tsx:index.tsx
+import Component from './Component';
+
+const Home: React.VFC = () => {
+    return (
+        <Component property1="2" property2="3" className={styles.component}>
+            Some Content
+        </Component>
+    );
+};
+
+export default Home;
+```
+
+One thing to look out for is the whitespace as the argument of `.join()`. Without it, the class names would just be concatenated into one long name that the browser cannot recognise. Adding the space avoids this by separating the class names into recognisable tokens.
+
+Notice how have full control over how fine-grain the control should be? The first example only had one control point (the `variant`), while the second had a prop for each individual style property (`property1` and `property2`). This gives us a lot of flexibility in terms of styling our components, which is especially useful when architecting a design system.
