@@ -117,7 +117,7 @@ const getStaticProps: GetStaticProps<PathProps> = async ({
         index: published == false ? false : true,
         content: await fetchMDXContent(file),
         updated: updated?.toLocaleDateString(locale) ?? null,
-        edit_url: getEditUrl({ ...github, basePath, path }),
+        edit_url: getEditUrl({ ...github, basePath, path, extension }),
     };
 
     return { props };

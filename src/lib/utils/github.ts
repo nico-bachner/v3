@@ -14,7 +14,7 @@ type GitHubProps = {
     baseBranch: string;
     basePath: string[];
     path: string[];
-    extension?: string;
+    extension: string;
 };
 
 const fetchDateUpdated: Fetch<GitHubProps, Date | undefined> = async ({
@@ -35,8 +35,7 @@ const fetchDateUpdated: Fetch<GitHubProps, Date | undefined> = async ({
             `commits?path=${fullFilePath}`,
         ].join('/')
     );
-    const history: GitHubHistory[] = await res.json();
-    const latest: GitHubHistory | undefined = history[0];
+    const [latest]: GitHubHistory[] = await res.json();
 
     if (latest) {
         return new Date(latest.commit.author.date);
