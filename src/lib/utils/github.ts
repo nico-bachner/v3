@@ -35,7 +35,8 @@ const fetchDateUpdated: Fetch<GitHubProps, Date | undefined> = async ({
             `commits?path=${fullFilePath}`,
         ].join('/')
     );
-    const [latest]: GitHubHistory[] = await res.json();
+    const history: GitHubHistory[] = await res.json();
+    const latest: GitHubHistory | undefined = history[0];
 
     if (latest) {
         return new Date(latest.commit.author.date);
