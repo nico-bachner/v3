@@ -16,6 +16,7 @@
         "@nico-bachner/css": "workspace:*",
         "@nico-bachner/icons-react": "workspace:*",
         "@nico-bachner/mdx": "workspace:*",
+        "@nico-bachner/react-hooks": "workspace:*",
         "@supabase/supabase-js": "^1.23.0",
         "next": "^11.1.2",
         "react": "^17.0.2",

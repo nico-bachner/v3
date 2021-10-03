@@ -24,10 +24,3 @@ type PaperData = {
     published: number | false;
     institution: string | null;
 };
-
-type PageData = {
-    path: string[];
-    title: string;
-    description: string;
-    featured: boolean;
-};

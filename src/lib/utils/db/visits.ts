@@ -3,11 +3,11 @@ import db from '@lib/utils/supabase';
 const fetchViews = async () => {
     const { data: paths } = await db
         .from<PathData>('paths')
-        .select('path, views');
+        .select('path, visits');
 
     const { data: languages } = await db
         .from<LanguageData>('languages')
-        .select('language, views');
+        .select('language, visits');
 
     if (!paths || !languages) {
         throw new Error(
@@ -16,8 +16,8 @@ const fetchViews = async () => {
     }
 
     return {
-        paths: paths.sort((a, b) => b.views - a.views),
-        languages: languages.sort((a, b) => b.views - a.views),
+        paths: paths.sort((a, b) => b.visits - a.visits),
+        languages: languages.sort((a, b) => b.visits - a.visits),
     };
 };
 

@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { useRouter } from 'next/router';
+import { usePath } from '@nico-bachner/react-hooks';
 import { useTranslation } from '@lib/hooks/useTranslation';
 
 import NextHead from 'next/head';
@@ -17,30 +18,33 @@ type HeadProps = {
 const Head: React.FC<HeadProps> = ({
     title,
     type = 'website',
-    image = `https://og-image.vercel.app/${encodeURIComponent(title)}.png`,
-    url,
+    image = `https://og-image.vercel.app/${encodeURIComponent(
+        title
+    )}.png?images=https://nicobachner.com/images/icon.png`,
+    url: canonicalUrl,
     description,
     author = 'Nico Bachner',
     index = true,
 }) => {
-    const { asPath, locale, locales } = useRouter();
+    const { locale, locales } = useRouter();
+    const path = usePath();
     const { general } = useTranslation();
 
-    const defaultUrl = 'https://nicobachner.com/' + locale + asPath;
+    const url = 'https://nicobachner.com/' + locale + path;
 
     useEffect(() => {
-        const [language, location] = locale!.split('-');
+        const [language] = locale!.split('-');
 
         if (index) {
-            fetch(`/api/view`, {
+            fetch(`/api/visit`, {
                 method: 'POST',
                 body: JSON.stringify({
-                    path: encodeURIComponent(asPath),
+                    path: encodeURIComponent(path),
                     language,
                 }),
             });
         }
-    }, [asPath, locale, index]);
+    }, [path, locale, index]);
 
     return (
         <NextHead>
@@ -50,19 +54,20 @@ const Head: React.FC<HeadProps> = ({
                 name="description"
                 content={description ?? general.description}
             />
-            <link rel="canonical" href={url ?? defaultUrl} />
-            {locales!.map((locale) => (
-                <link
-                    key={locale}
-                    rel="alternate"
-                    href={'https://nicobachner.com/' + locale + asPath}
-                    hrefLang={locale}
-                />
-            ))}
+            <link rel="canonical" href={canonicalUrl ?? url} />
+            {!canonicalUrl &&
+                locales!.map((locale) => (
+                    <link
+                        key={locale}
+                        rel="alternate"
+                        href={'https://nicobachner.com/' + locale + path}
+                        hrefLang={locale}
+                    />
+                ))}
 
             <meta property="og:title" content={title} />
             <meta property="og:type" content={type} />
-            <meta property="og:url" content={url ?? defaultUrl} />
+            <meta property="og:url" content={canonicalUrl ?? url} />
             <meta property="og:image" content={image} />
             <meta
                 property="og:description"

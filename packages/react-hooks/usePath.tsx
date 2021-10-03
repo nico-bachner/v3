@@ -19,10 +19,11 @@ const usePath = () => {
             return arg;
         })
         .flat()
-        .join('/');
+        .join('/')
+        .split('#')[0]!;
     */
 
-    const path = asPath;
+    const path = asPath.split('#')[0]!;
 
     return path;
 };

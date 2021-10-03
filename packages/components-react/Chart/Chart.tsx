@@ -1,13 +1,9 @@
 import styles from './Chart.module.css';
 
 import { useEffect, useRef } from 'react';
-import * as d3 from 'd3';
+import { pie } from './pie';
 
-type DataItem = {
-    value: number;
-    label?: string;
-    color?: string;
-};
+import type { DataItem } from './types';
 
 type ChartProps = {
     type: 'pie';
@@ -26,65 +22,9 @@ const Chart: React.VFC<ChartProps> = ({
 
     useEffect(() => {
         if (ref.current) {
-            const element = d3.select(ref.current);
-
             switch (type) {
                 case 'pie':
-                    const pie = d3.pie();
-                    const arc = d3.arc();
-
-                    element.select('svg').remove();
-
-                    const svg = element
-                        .append('svg')
-                        .attr('viewBox', `0 0 100 100`)
-                        .append('g')
-                        .attr('transform', `translate(50, 50)`);
-
-                    const arcs = svg
-                        .selectAll()
-                        .data(pie(data.map((item) => item.value)))
-                        .enter();
-
-                    arcs.append('path')
-                        .attr('d', ({ startAngle, endAngle }) =>
-                            arc({
-                                innerRadius: 0,
-                                outerRadius: 50,
-                                startAngle,
-                                endAngle,
-                            })
-                        )
-                        .style('fill', (_, index) => {
-                            const hue = index * (360 / data.length);
-
-                            return (
-                                data[index]?.color ?? `hsl(${hue}deg, 80%, 40%)`
-                            );
-                        });
-
-                    arcs.append('text')
-                        .text((_, index) => data[index]!.label!)
-                        .attr('text-anchor', 'middle')
-                        .attr(
-                            'transform',
-                            ({ startAngle, endAngle }, index) => {
-                                const [x, y] = arc.centroid({
-                                    innerRadius: 0,
-                                    outerRadius: Math.min(
-                                        50 + Math.sqrt(index) * 20,
-                                        90
-                                    ),
-                                    startAngle,
-                                    endAngle,
-                                });
-
-                                return `translate(${x}, ${y})`;
-                            }
-                        )
-                        .style('fill', 'var(--color-neutral-1)')
-                        .style('font-family', 'var(--font-sans)')
-                        .style('font-size', fontSize);
+                    pie({ ref, data, fontSize });
             }
         }
     }, [ref, type, data, fontSize]);
