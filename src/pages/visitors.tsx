@@ -52,71 +52,100 @@ const getServerSideProps: GetServerSideProps<Props> = async () => {
     };
 };
 
-const Visitors: NextPage<Props> = ({ visits }) => {
-    const { paths, languages } = visits;
+const Visitors: NextPage<Props> = ({ visits, clicks }) => (
+    <Layout width="sm" className={styles.main}>
+        <Head
+            title="Visitors | Nico Bachner"
+            description="Insights into the visitors of nicobachner.com"
+        />
+        <Text type="h1">Visitors</Text>
+        <Text size={6} className={styles.subtitle}>
+            Insights into the visitors of nicobachner.com
+        </Text>
 
-    return (
-        <Layout width="sm" className={styles.main}>
-            <Head
-                title="Visitors | Nico Bachner"
-                description="Insights into the visitors of nicobachner.com"
-            />
-            <Text type="h1">Visitors</Text>
-            <Text size={6} className={styles.subtitle}>
-                Insights into the visitors of nicobachner.com
+        <section id="visits">
+            <Text type="h2">Page visits</Text>
+
+            <Text type="h3" className={styles.h3}>
+                By Path
             </Text>
+            <Table.Root>
+                <Table.Head>
+                    <Table.Row>
+                        <Table.HeadItem>Path</Table.HeadItem>
+                        <Table.HeadItem>Visits</Table.HeadItem>
+                    </Table.Row>
+                </Table.Head>
+                <Table.Body>
+                    {visits.paths
+                        .filter(({ visits }) => visits > 0)
+                        .map(({ path, visits }) => (
+                            <Table.Row key={path}>
+                                <Table.BodyItem>
+                                    {decodeURIComponent(path)}
+                                </Table.BodyItem>
+                                <Table.BodyItem>{visits}</Table.BodyItem>
+                            </Table.Row>
+                        ))}
+                    <Table.Row className={styles.strong}>
+                        <Table.BodyItem>Total</Table.BodyItem>
+                        <Table.BodyItem>
+                            {visits.paths
+                                .map(({ visits }) => visits)
+                                .reduce((prev, current) => prev + current)}
+                        </Table.BodyItem>
+                    </Table.Row>
+                </Table.Body>
+            </Table.Root>
 
-            <section id="visits">
-                <Text type="h2">Page visits</Text>
+            <Text type="h3" className={styles.h3}>
+                By Language
+            </Text>
+            <Chart
+                type="pie"
+                data={visits.languages.map(({ language, visits }) => ({
+                    value: visits,
+                    label: language.toUpperCase(),
+                }))}
+                fontSize="4px"
+                className={styles.pie}
+            />
+        </section>
 
-                <Text type="h3" className={styles.h3}>
-                    By Path
-                </Text>
-                <Table.Root>
-                    <Table.Head>
-                        <Table.Row>
-                            <Table.HeadItem>Path</Table.HeadItem>
-                            <Table.HeadItem>visits</Table.HeadItem>
-                        </Table.Row>
-                    </Table.Head>
-                    <Table.Body>
-                        {paths
-                            ?.filter(({ visits }) => visits > 0)
-                            .map(({ path, visits }) => (
-                                <Table.Row key={path}>
-                                    <Table.BodyItem>
-                                        {decodeURIComponent(path)}
-                                    </Table.BodyItem>
-                                    <Table.BodyItem>{visits}</Table.BodyItem>
-                                </Table.Row>
-                            ))}
-                        <Table.Row className={styles.strong}>
-                            <Table.BodyItem>Total</Table.BodyItem>
-                            <Table.BodyItem>
-                                {paths
-                                    ?.map((path) => path.visits)
-                                    ?.reduce((prev, current) => prev + current)}
-                            </Table.BodyItem>
-                        </Table.Row>
-                    </Table.Body>
-                </Table.Root>
+        <section id="visits">
+            <Text type="h2">Link Clicks</Text>
 
-                <Text type="h3" className={styles.h3}>
-                    By Language
-                </Text>
-                <Chart
-                    type="pie"
-                    data={languages.map(({ language, visits }) => ({
-                        value: visits,
-                        label: language.toUpperCase(),
-                    }))}
-                    fontSize="4px"
-                    className={styles.pie}
-                />
-            </section>
-        </Layout>
-    );
-};
+            <Table.Root>
+                <Table.Head>
+                    <Table.Row>
+                        <Table.HeadItem>Destination</Table.HeadItem>
+                        <Table.HeadItem>Clicks</Table.HeadItem>
+                    </Table.Row>
+                </Table.Head>
+                <Table.Body>
+                    {clicks
+                        .filter(({ clicks }) => clicks > 0)
+                        .map(({ href, clicks }) => (
+                            <Table.Row key={href}>
+                                <Table.BodyItem>
+                                    {decodeURIComponent(href)}
+                                </Table.BodyItem>
+                                <Table.BodyItem>{clicks}</Table.BodyItem>
+                            </Table.Row>
+                        ))}
+                    <Table.Row className={styles.strong}>
+                        <Table.BodyItem>Total</Table.BodyItem>
+                        <Table.BodyItem>
+                            {clicks
+                                .map(({ clicks }) => clicks)
+                                .reduce((prev, current) => prev + current)}
+                        </Table.BodyItem>
+                    </Table.Row>
+                </Table.Body>
+            </Table.Root>
+        </section>
+    </Layout>
+);
 
 export { getServerSideProps };
 
