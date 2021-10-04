@@ -1,10 +1,12 @@
-import classes from './Link.module.css';
+import styles from './Link.module.css';
 
 import NextLink from 'next/link';
+import React from 'react';
 
 type LinkProps = {
     href: string;
     variant?: 'default' | 'highlight' | 'primary' | 'secondary' | 'disabled';
+    onClick?: React.ChangeEventHandler<HTMLAnchorElement>;
     className?: string;
 };
 
@@ -23,7 +25,7 @@ const Link: React.FC<LinkProps> = ({
                 }),
             });
         },
-        className: [classes.link, classes[variant], className].join(' '),
+        className: [styles.link, styles[variant], className].join(' '),
     };
 
     if (href.startsWith('/')) {

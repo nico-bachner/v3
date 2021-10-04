@@ -1,6 +1,7 @@
 import styles from './Card.module.css';
 
-import { Link, Text, Card as BaseCard } from '@nico-bachner/components-react';
+import { Text, Card as BaseCard } from '@nico-bachner/components-react';
+import Link from '@lib/components/Link';
 
 type CardProps = {
     type: 'h2' | 'h3' | 'h4';

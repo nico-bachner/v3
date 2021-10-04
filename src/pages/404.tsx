@@ -1,4 +1,5 @@
-import { Link, Text } from '@nico-bachner/components-react';
+import { Text } from '@nico-bachner/components-react';
+import Link from '@lib/components/Link';
 import Head from '@lib/components/Head';
 import Layout from '@lib/components/Layout';
 

@@ -1,6 +1,6 @@
 import db from '@lib/utils/supabase';
 
-const fetchViews = async () => {
+const fetchVisits = async () => {
     const { data: paths } = await db
         .from<PathData>('paths')
         .select('path, visits');
@@ -21,4 +21,4 @@ const fetchViews = async () => {
     };
 };
 
-export { fetchViews };
+export { fetchVisits };

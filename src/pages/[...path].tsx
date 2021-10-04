@@ -4,7 +4,8 @@ import { fetchMDXContent, getMDXData } from '@nico-bachner/mdx/utils';
 import { fetchFile, fetchRecursivePaths } from '@lib/utils/fs';
 import { fetchDateUpdated, getEditUrl } from '@lib/utils/github';
 
-import { Link, Text } from '@nico-bachner/components-react';
+import { Text } from '@nico-bachner/components-react';
+import Link from '@lib/components/Link';
 import MDX from '@nico-bachner/mdx';
 import Head from '@lib/components/Head';
 import Layout from '@lib/components/Layout';

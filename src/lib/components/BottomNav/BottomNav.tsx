@@ -3,7 +3,8 @@ import styles from './BottomNav.module.css';
 import { useRouter } from 'next/router';
 import { useTranslation } from '@lib/hooks/useTranslation';
 
-import { Link, Text } from '@nico-bachner/components-react';
+import { Text } from '@nico-bachner/components-react';
+import Link from '@lib/components/Link';
 
 const BottomNav: React.VFC = () => {
     const router = useRouter();

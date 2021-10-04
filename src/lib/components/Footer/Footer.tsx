@@ -2,7 +2,8 @@ import styles from './Footer.module.css';
 
 import { useTranslation } from '@lib/hooks/useTranslation';
 
-import { Link, Text } from '@nico-bachner/components-react';
+import { Text } from '@nico-bachner/components-react';
+import Link from '@lib/components/Link';
 
 const Footer = () => {
     const { pages, links } = useTranslation();

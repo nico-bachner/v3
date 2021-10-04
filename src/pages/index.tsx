@@ -5,7 +5,8 @@ import { fetchArticlesData } from '@lib/utils/data/articles';
 import { fetchTranslation } from '@lib/utils/translation';
 import { useTranslation } from '@lib/hooks/useTranslation';
 
-import { Link, Text } from '@nico-bachner/components-react';
+import { Text } from '@nico-bachner/components-react';
+import Link from '@lib/components/Link';
 import MDX from '@nico-bachner/mdx';
 import Head from '@lib/components/Head';
 import Layout from '@lib/components/Layout';
