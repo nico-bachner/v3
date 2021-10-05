@@ -1,0 +1,7 @@
+.breadcrumbs {
+    margin-bottom: var(--space-5);
+}
+
+.breadcrumb {
+    margin-inline: var(--space-1);
+}

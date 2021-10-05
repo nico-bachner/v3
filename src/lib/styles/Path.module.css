@@ -1,7 +1,5 @@
-.title,
-.subtitle {
-    max-width: var(--width-sm);
-    margin-inline: auto;
+.standaloneTitle {
+    margin-block-end: var(--space-9);
 }
 
 .subtitle {

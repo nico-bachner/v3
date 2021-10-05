@@ -2,12 +2,9 @@ import Card from './Card';
 
 import { useTranslation } from '@lib/hooks/useTranslation';
 
-type PaperCardProps = PaperData & {
-    type: 'h2' | 'h3' | 'h4';
-};
+type PaperCardProps = PaperData;
 
 const PaperCard: React.VFC<PaperCardProps> = ({
-    type,
     path,
     title,
     description,
@@ -17,7 +14,6 @@ const PaperCard: React.VFC<PaperCardProps> = ({
 
     return (
         <Card
-            type={type}
             href={`/${path.join('/')}`}
             header={title}
             body={description}

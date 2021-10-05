@@ -65,7 +65,7 @@ const Home: NextPage<HomeProps> = ({ content, projects, articles }) => {
         <Layout width="sm" className={styles.main}>
             <Head title="Nico Bachner" />
 
-            <Text type="h1">{general.title}</Text>
+            <Text type="heading-1">{general.title}</Text>
             <Text size={8} className={styles.subtitle}>
                 {general.subtitle}
             </Text>
@@ -80,7 +80,6 @@ const Home: NextPage<HomeProps> = ({ content, projects, articles }) => {
                     {projects.map((project) => (
                         <ProjectCard
                             key={project.path[project.path.length - 1]}
-                            type="h3"
                             {...project}
                         />
                     ))}
@@ -98,7 +97,6 @@ const Home: NextPage<HomeProps> = ({ content, projects, articles }) => {
                     {articles.map((article) => (
                         <ArticleCard
                             key={article.path[article.path.length - 1]}
-                            type="h3"
                             {...article}
                         />
                     ))}

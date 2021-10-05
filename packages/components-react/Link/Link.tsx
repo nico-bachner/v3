@@ -10,6 +10,9 @@ type LinkProps = {
     className?: string;
 };
 
+/**
+ * Only works in Next.js because it leverages the Next.js router.
+ */
 const Link: React.FC<LinkProps> = ({
     children,
     href,

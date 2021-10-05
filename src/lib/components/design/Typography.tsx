@@ -5,11 +5,17 @@ import { Text } from '@nico-bachner/components-react';
 const Typography = () => (
     <div className={styles.table}>
         <Text>Heading 1</Text>
-        <Text type="h1">The quick brown fox jumps over the lazy dog</Text>
+        <Text type="heading-1">
+            The quick brown fox jumps over the lazy dog
+        </Text>
         <Text>Heading 2</Text>
-        <Text type="h2">The quick brown fox jumps over the lazy dog</Text>
+        <Text type="heading-2">
+            The quick brown fox jumps over the lazy dog
+        </Text>
         <Text>Heading 3</Text>
-        <Text type="h3">The quick brown fox jumps over the lazy dog</Text>
+        <Text type="heading-3">
+            The quick brown fox jumps over the lazy dog
+        </Text>
 
         <Text>Paragraph (Larger)</Text>
         <Text size={6}>The quick brown fox jumps over the lazy dog</Text>

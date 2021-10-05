@@ -5,7 +5,7 @@
 }
 
 .header {
-    font-weight: var(--font-weight-7);
+    color: var(--color-neutral-9);
 }
 
 .body {

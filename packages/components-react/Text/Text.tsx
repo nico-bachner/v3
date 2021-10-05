@@ -1,9 +1,18 @@
-import classes from './Text.module.css';
+import styles from './Text.module.css';
 
 type TextProps = {
-    type?: 'h1' | 'h2' | 'h3' | 'h4' | 'strong';
-    color?: Color;
+    type?:
+        | 'heading-1'
+        | 'heading-2'
+        | 'heading-3'
+        | 'heading-4'
+        | 'paragraph'
+        | 'inline'
+        | 'strong';
+
     size?: Scale;
+    width?: 'sm' | 'md' | 'lg' | 'xl';
+    color?: Color;
     align?: 'left' | 'center' | 'right';
     transform?: 'capitalize' | 'uppercase' | 'lowercase';
     className?: string;
@@ -13,9 +22,10 @@ type TextProps = {
 
 const Text: React.FC<TextProps> = ({
     children,
-    type,
-    color,
+    type = 'paragraph',
+    width,
     size,
+    color,
     align,
     transform,
     className,
@@ -24,9 +34,9 @@ const Text: React.FC<TextProps> = ({
 }) => {
     const props = {
         className: [
-            classes.text,
-            classes[`type-${type}`],
-            classes[`size-${size}`],
+            styles[type ?? '_'],
+            styles[`size-${size}`],
+            styles[`width-${width}`],
             className,
         ].join(' '),
         style: {
@@ -39,18 +49,20 @@ const Text: React.FC<TextProps> = ({
     };
 
     switch (type) {
-        case 'h1':
+        case 'paragraph':
+            return <p {...props}>{children}</p>;
+        case 'heading-1':
             return <h1 {...props}>{children}</h1>;
-        case 'h2':
+        case 'heading-2':
             return <h2 {...props}>{children}</h2>;
-        case 'h3':
+        case 'heading-3':
             return <h3 {...props}>{children}</h3>;
-        case 'h4':
+        case 'heading-4':
             return <h4 {...props}>{children}</h4>;
+        case 'inline':
+            return <span {...props}>{children}</span>;
         case 'strong':
             return <strong {...props}>{children}</strong>;
-        default:
-            return <p {...props}>{children}</p>;
     }
 };
 

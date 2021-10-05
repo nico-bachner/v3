@@ -4,7 +4,6 @@ import { Text, Card as BaseCard } from '@nico-bachner/components-react';
 import Link from '@lib/components/Link';
 
 type CardProps = {
-    type: 'h2' | 'h3' | 'h4';
     href: string;
     header: string;
     body: string;
@@ -12,18 +11,13 @@ type CardProps = {
     info?: React.ReactChild;
 };
 
-const Card: React.VFC<CardProps> = ({
-    type,
-    href,
-    header,
-    body,
-    cta,
-    info,
-}) => (
+const Card: React.VFC<CardProps> = ({ href, header, body, cta, info }) => (
     <Link href={href}>
         <BaseCard variant="interactive" className={styles.card}>
-            <Text type={type} size={6} className={styles.header}>
-                {header}
+            <Text size={6}>
+                <Text type="strong" className={styles.header}>
+                    {header}
+                </Text>
             </Text>
             <Text className={styles.body}>{body}</Text>
             <div className={styles.footer}>

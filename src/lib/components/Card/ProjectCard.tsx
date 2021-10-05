@@ -2,12 +2,9 @@ import Card from './Card';
 
 import { useTranslation } from '@lib/hooks/useTranslation';
 
-type ProjectCardProps = ProjectData & {
-    type: 'h2' | 'h3' | 'h4';
-};
+type ProjectCardProps = ProjectData;
 
 const ProjectCard: React.VFC<ProjectCardProps> = ({
-    type,
     path,
     title,
     description,
@@ -34,7 +31,6 @@ const ProjectCard: React.VFC<ProjectCardProps> = ({
 
     return (
         <Card
-            type={type}
             href={`/${path.join('/')}`}
             header={title}
             body={description}

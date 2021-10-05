@@ -42,13 +42,13 @@ const Visitors: NextPage<Props> = ({
                 title="Visitors | Nico Bachner"
                 description="Insights into the visitors of nicobachner.com"
             />
-            <Text type="h1">Visitors</Text>
+            <Text type="heading-1">Visitors</Text>
             <Text size={6} className={styles.subtitle}>
                 Insights into the visitors of nicobachner.com
             </Text>
 
             <section id="visits">
-                <Text type="h2">Page visits</Text>
+                <Text type="heading-2">Page visits</Text>
 
                 <Button
                     variant="primary"
@@ -62,7 +62,7 @@ const Visitors: NextPage<Props> = ({
                     Refresh
                 </Button>
 
-                <Text type="h3" className={styles.h3}>
+                <Text type="heading-3" className={styles.h3}>
                     By Path
                 </Text>
                 <Table.Root>
@@ -94,7 +94,7 @@ const Visitors: NextPage<Props> = ({
                     </Table.Body>
                 </Table.Root>
 
-                <Text type="h3" className={styles.h3}>
+                <Text type="heading-3" className={styles.h3}>
                     By Language
                 </Text>
                 <Chart
@@ -109,7 +109,7 @@ const Visitors: NextPage<Props> = ({
             </section>
 
             <section id="visits">
-                <Text type="h2">Link Clicks</Text>
+                <Text type="heading-2">Link Clicks</Text>
 
                 <Button
                     variant="primary"

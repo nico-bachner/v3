@@ -41,7 +41,6 @@ const Projects: NextPage<ProjectsProps> = ({ content, projects }) => (
             {projects.map((project) => (
                 <ProjectCard
                     key={project.path[project.path.length - 1]}
-                    type="h2"
                     {...project}
                 />
             ))}

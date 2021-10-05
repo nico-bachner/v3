@@ -39,7 +39,6 @@ const Articles: NextPage<ArticlesProps> = ({ content, articles }) => (
             {articles.map((article) => (
                 <ArticleCard
                     key={article.path[article.path.length - 1]}
-                    type="h2"
                     {...article}
                 />
             ))}

@@ -20,41 +20,41 @@ const Design = () => {
                 description="Nico Bachner's Design System"
             />
 
-            <Text type="h1">Design</Text>
+            <Text type="heading-1">Design</Text>
             <Text size={6}>My personal Design System</Text>
 
             <section>
-                <Text type="h2">Typography</Text>
+                <Text type="heading-2">Typography</Text>
                 <Typography />
             </section>
 
             <section>
-                <Text type="h2">Buttons</Text>
+                <Text type="heading-2">Buttons</Text>
                 <Buttons />
             </section>
 
             <section>
-                <Text type="h2">Cards</Text>
+                <Text type="heading-2">Cards</Text>
                 <Cards />
             </section>
 
             <section>
-                <Text type="h2">Hyperlinks</Text>
+                <Text type="heading-2">Hyperlinks</Text>
                 <Hyperlinks />
             </section>
 
             <section>
-                <Text type="h2">Lists</Text>
+                <Text type="heading-2">Lists</Text>
                 <Lists />
             </section>
 
             <section>
-                <Text type="h2">Form Elements</Text>
+                <Text type="heading-2">Form Elements</Text>
                 <FormElements />
             </section>
 
             <section>
-                <Text type="h2">Icons</Text>
+                <Text type="heading-2">Icons</Text>
                 <Icons />
             </section>
         </Layout>

@@ -9,6 +9,7 @@ import Link from '@lib/components/Link';
 import MDX from '@nico-bachner/mdx';
 import Head from '@lib/components/Head';
 import Layout from '@lib/components/Layout';
+import Breadcrumbs from '@lib/components/Breadcrumbs';
 
 import type { NextPage, GetStaticPaths, GetStaticProps } from 'next';
 import type { MDXContent } from '@nico-bachner/mdx/utils';
@@ -147,13 +148,20 @@ const Path: NextPage<PathProps> = ({
                 index={index}
             />
 
+            <Breadcrumbs />
+
             <article>
-                <Text type="h1" className={styles.title}>
+                <Text
+                    type="heading-1"
+                    width="sm"
+                    className={subtitle ? styles.title : styles.standaloneTitle}
+                >
                     {title}
                 </Text>
-                <Text size={6} className={styles.subtitle}>
+                <Text size={6} width="sm" className={styles.subtitle}>
                     {subtitle}
                 </Text>
+
                 <MDX content={content} />
             </article>
 

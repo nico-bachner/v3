@@ -37,11 +37,7 @@ const Papers: NextPage<PapersProps> = ({ content, papers }) => (
 
         <div className={styles.grid}>
             {papers.map((paper) => (
-                <PaperCard
-                    key={paper.path[paper.path.length]}
-                    type="h2"
-                    {...paper}
-                />
+                <PaperCard key={paper.path[paper.path.length]} {...paper} />
             ))}
         </div>
     </Layout>

@@ -10,7 +10,9 @@ featured: true
 
 CSS Modules achieves what is called **_weak scoping_**. This means that, although styles are scoped to their respective components, they can still be overridden by external styles. Depending on how you use this property, this is what makes CSS Modules so incredibly effective.
 
-Normally, styling components with CSS modules looks something like this:
+The usual approach to styling components using CSS Modules looks something like this:
+
+The CSS is written in a `.module.css` file, and target class names.
 
 ```css:Component.module.css
 .component {
@@ -18,6 +20,8 @@ Normally, styling components with CSS modules looks something like this:
     property-2: 'value-2';
 }
 ```
+
+These classes are then imported as a JavaScript object which is usually given the name `styles`. The imported object is has the class names defined in the `.module.css` file as keys.
 
 ```tsx:Component.tsx
 import styles from './Component.module.css';
@@ -32,11 +36,11 @@ export default Component;
 ```tsx:index.tsx
 import Component from './Component';
 
-const Home: React.VFC = () => {
+const ParentComponent: React.VFC = () => {
     return <Component>Some Content</Component>;
 };
 
-export default Home;
+export default ParentComponent;
 ```
 
 That's all well and good. But what if you want to be able to adjust the styles from **outside** the component? That starts to get tricky.
@@ -83,11 +87,11 @@ export default Component;
 ```tsx:index.tsx
 import Component from './Component';
 
-const Home: React.VFC = () => {
+const ParentComponent: React.VFC = () => {
     return <Component variant="1">Some Content</Component>;
 };
 
-export default Home;
+export default ParentComponent;
 ```
 
 We now have the ability to change the styling of the component through one of its props.
@@ -153,11 +157,11 @@ export default Component;
 ```tsx:index.tsx
 import Component from './Component';
 
-const Home: React.VFC = () => {
+const ParentComponent: React.VFC = () => {
     return <Component property1="2" property2="3">Some Content</Component>;
 };
 
-export default Home;
+export default ParentComponent;
 ```
 
 If distilling all component styling into props feels too limiting, there's a solution for that too. It is possible to give a component custom styles by passing it a `className` prop:
@@ -198,9 +202,10 @@ export default Component;
 ```
 
 ```tsx:index.tsx
+import styles from './ParentComponent.module.css'
 import Component from './Component';
 
-const Home: React.VFC = () => {
+const ParentComponent: React.VFC = () => {
     return (
         <Component property1="2" property2="3" className={styles.component}>
             Some Content
@@ -208,7 +213,7 @@ const Home: React.VFC = () => {
     );
 };
 
-export default Home;
+export default ParentComponent;
 ```
 
 One thing to look out for is the whitespace as the argument of `.join()`. Without it, the class names would just be concatenated into one long name that the browser cannot recognise. Adding the space avoids this by separating the class names into recognisable tokens.
