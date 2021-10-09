@@ -7,30 +7,34 @@ import Breadcrumbs from '@lib/components/Breadcrumbs';
 
 type LayoutProps = {
     width: 'sm' | 'md' | 'lg' | 'xl';
-    breadcrumbs?: boolean;
+    home?: boolean;
     className?: string;
 };
 
 const Layout: React.FC<LayoutProps> = ({
     children,
     width,
-    breadcrumbs = true,
+    home = false,
     className,
 }) => {
     return (
         <div className={styles.container}>
             <NavBar />
-            {breadcrumbs && <Breadcrumbs />}
-            <main
+
+            <div
                 className={[
                     styles.layout,
                     styles[`width-${width}`],
                     className,
                 ].join(' ')}
             >
-                {children}
-            </main>
-            <Footer />
+                {!home && <Breadcrumbs />}
+
+                <main>{children}</main>
+
+                <Footer />
+            </div>
+
             <BottomNav />
         </div>
     );

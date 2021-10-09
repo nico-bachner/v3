@@ -2,6 +2,11 @@
     margin-bottom: var(--space-5);
 }
 
-.breadcrumb {
-    margin-inline: var(--space-1);
+.container {
+    display: flex;
+    gap: var(--space-2);
+}
+
+.separator {
+    margin-right: var(--space-2);
 }

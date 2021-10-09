@@ -36,15 +36,17 @@ const Breadcrumbs: React.VFC = () => {
 
     return (
         <nav className={styles.breadcrumbs} aria-label="breadcrumbs">
-            <Text width="sm" transform="capitalize">
+            <Text
+                width="sm"
+                transform="capitalize"
+                className={styles.container}
+            >
                 {breadcrumbs?.map(({ title, href }, index) => (
                     <Text key={href} type="inline">
-                        {index != 0 && '/'}
-                        <Link
-                            variant="highlight"
-                            href={href}
-                            className={styles.breadcrumb}
-                        >
+                        {index != 0 && (
+                            <span className={styles.separator}>/</span>
+                        )}
+                        <Link variant="highlight" href={href}>
                             {title}
                         </Link>
                     </Text>
