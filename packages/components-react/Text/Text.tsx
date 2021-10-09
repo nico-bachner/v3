@@ -34,7 +34,7 @@ const Text: React.FC<TextProps> = ({
 }) => {
     const props = {
         className: [
-            styles[type ?? '_'],
+            styles[type],
             styles[`size-${size}`],
             styles[`width-${width}`],
             className,

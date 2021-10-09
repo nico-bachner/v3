@@ -9,7 +9,6 @@ import Link from '@lib/components/Link';
 import MDX from '@nico-bachner/mdx';
 import Head from '@lib/components/Head';
 import Layout from '@lib/components/Layout';
-import Breadcrumbs from '@lib/components/Breadcrumbs';
 
 import type { NextPage, GetStaticPaths, GetStaticProps } from 'next';
 import type { MDXContent } from '@nico-bachner/mdx/utils';
@@ -147,8 +146,6 @@ const Path: NextPage<PathProps> = ({
                 url={url ?? undefined}
                 index={index}
             />
-
-            <Breadcrumbs />
 
             <article>
                 <Text
