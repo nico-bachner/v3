@@ -1,7 +1,3 @@
-.main > section {
-    margin-block: 5rem;
-}
-
 .subtitle {
     margin-block-start: var(--space-1);
     font-weight: var(--font-weight-8);
@@ -15,12 +11,6 @@
     background-clip: text;
 }
 
-.grid {
-    display: grid;
-    gap: var(--space-5);
-    margin-block: var(--space-8);
-}
-
-.h3 {
-    margin-block-start: var(--space-9);
+.section {
+    margin-block: 5rem;
 }
