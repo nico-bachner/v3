@@ -89,7 +89,7 @@ const fetchRecursivePaths: Fetch<Props, string[][]> = async ({
         )
     );
 
-    return restPaths.flat();
+    return [paths, ...restPaths].flat();
 };
 
 export { fetchFile, fetchPaths, fetchRecursivePaths };
