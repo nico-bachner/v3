@@ -3,7 +3,7 @@ import styles from './Breadcrumbs.module.css';
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 
-import { Text } from 'packages/components-react';
+import { Text } from '@nico-bachner/components-react';
 import Link from '@lib/components/Link';
 
 type Breadcrumb = {
@@ -22,7 +22,6 @@ const Breadcrumbs: React.VFC = () => {
         const path = pathNoQuery!.split('/');
 
         const breadcrumbs = path.map((item, index) => {
-            console.log(path);
             const title = index == 0 ? 'Home' : item.replace(/-/g, ' ');
             const href = index == 0 ? '/' : path.slice(0, index + 1).join('/');
 
