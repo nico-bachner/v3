@@ -7,10 +7,7 @@ import { Text } from 'packages/components-react';
 import Link from '@lib/components/Link';
 
 type Breadcrumb = {
-    /** Breadcrumb title. Example: 'blog-entries' */
     title: string;
-
-    /** The URL which the breadcrumb points to. Example: 'blog/blog-entries' */
     href: string;
 };
 
@@ -20,7 +17,9 @@ const Breadcrumbs: React.VFC = () => {
     const [breadcrumbs, setBreadcrumbs] = useState<Breadcrumb[] | null>(null);
 
     useEffect(() => {
-        const path = asPath.split('/');
+        const [pathNoAnchor] = asPath.split('#');
+        const [pathNoQuery] = pathNoAnchor!.split('?');
+        const path = pathNoQuery!.split('/');
 
         const breadcrumbs = path.map((item, index) => {
             console.log(path);
