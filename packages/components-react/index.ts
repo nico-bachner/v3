@@ -1,16 +1,22 @@
-export { default as Button } from './Button';
-export { default as Card } from './Card';
-export { default as Chart } from './Chart';
-export { default as Checkbox } from './Checkbox';
-export { default as Code } from './Code';
-export { default as CodeBlock } from './CodeBlock';
-export { default as Figure } from './Figure';
-export { default as Grid } from './Grid';
-export { default as Image } from './Image';
-export { default as Input } from './Input';
-export { default as Link } from './Link';
-export { default as List } from './List';
-export { default as Quote } from './Quote';
-export { default as Select } from './Select';
-export { default as Table } from './Table';
-export { default as Text } from './Text';
+// compound components
+export { default as Grid } from './src/Grid'
+export { default as List } from './src/List'
+export { default as Select } from './src/Select'
+export { default as Table } from './src/Table'
+
+// regular components
+export { default as Button } from './src/Button'
+export { default as Card } from './src/Card'
+export { default as Checkbox } from './src/Checkbox'
+export { default as Code } from './src/Code'
+export { default as CodeBlock } from './src/CodeBlock'
+export { default as Container } from './src/Container'
+export { default as Divider } from './src/Divider'
+export { default as Image } from './src/Image'
+export { default as Link } from './src/Link'
+export { default as PieChart } from './src/PieChart'
+export { default as Section } from './src/Section'
+export { default as Spacer } from './src/Spacer'
+export { default as Stack } from './src/Stack'
+export { default as Text } from './src/Text'
+export { default as TextInput } from './src/TextInput'

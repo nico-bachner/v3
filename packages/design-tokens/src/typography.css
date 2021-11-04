@@ -1,0 +1,47 @@
+:root {
+    --font-sans: 'Inter', sans-serif;
+    --font-mono: 'Fira Code', monospace;
+
+    --font-size-1: clamp(4.872pt, 2.4vw, 5.496pt);
+    --font-size-2: clamp(6.192pt, 2.4vw, 6.984pt);
+    --font-size-3: clamp(7.872pt, 2.4vw, 8.88pt);
+    --font-size-4: clamp(10.02pt, 2.4vw, 11.304pt);
+    --font-size-5: clamp(12.744pt, 2vw, 14.376pt);
+    --font-size-6: clamp(16.212pt, 2.544vw, 18.288pt);
+    --font-size-7: clamp(20.616pt, 3.236vw, 23.256pt);
+    --font-size-8: clamp(26.232pt, 4.116vw, 29.58pt);
+    --font-size-9: clamp(33.36pt, 5.236vw, 37.632pt);
+    --font-size-10: clamp(42.432pt, 6.66vw, 47.868pt);
+
+    --font-weight-100: 100;
+    --font-weight-200: 200;
+    --font-weight-300: 300;
+    --font-weight-400: 400;
+    --font-weight-500: 500;
+    --font-weight-600: 600;
+    --font-weight-700: 700;
+    --font-weight-800: 800;
+    --font-weight-900: 900;
+
+    --line-height-0: 1;
+    --line-height-1: 1.128;
+    --line-height-2: 1.272;
+    --line-height-3: 1.436;
+    --line-height-4: 1.618;
+    --line-height-5: 1.825;
+    --line-height-6: 2.058;
+    --line-height-7: 2.321;
+    --line-height-8: 2.618;
+    --line-height-9: 2.953;
+
+    --letter-spacing-0: -0.0424em;
+    --letter-spacing-1: -0.0162em;
+    --letter-spacing-2: -0.0162em;
+    --letter-spacing-3: -0.01em;
+    --letter-spacing-4: -0.0062em;
+    --letter-spacing-5: 0em;
+    --letter-spacing-6: 0.0062em;
+    --letter-spacing-7: 0.01em;
+    --letter-spacing-8: 0.0162em;
+    --letter-spacing-9: 0.0262em;
+}

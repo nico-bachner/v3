@@ -1,76 +1,40 @@
+import type { Translation } from '../types'
+
 const translation: Translation = {
-    general: {
-        title: "Hi, I'm Nico.",
-        subtitle: "I'm an Aspiring Open Sourcerer.",
+    bio: {
+        tagline: 'Aspiring Open Sourcerer',
         description:
-            'A University Student, self-taught Web Developer, and aspiring Open Sourcerer',
+            'A University Student, a self-taught Web Developer, and an Aspiring Open Sourcerer',
     },
-    informations: {
-        lastUpdated: 'Last updated',
+    words: {
+        home: 'Home',
+        about: 'About',
+        projects: 'Projects',
+        articles: 'Articles',
+        contact: 'Contact',
+        design: 'Design',
+        visitors: 'Visitors',
+        source_code: 'Source Code',
+        cv: 'CV',
     },
     actions: {
-        changeLanguage: 'Change language',
-        editOnGitHub: 'Edit on GitHub',
-        moreInformation: 'More information',
+        change_language: 'Change language',
+        edit_on_github: 'Edit on GitHub',
+        more_info: 'More information',
         read: 'Read',
-        readMore: 'Read more',
-        showAll: 'Show all',
-        showLess: 'Show less',
-        showMore: 'Show more',
-        viewAll: 'View all',
+        read_more: 'Read more',
+        show_all: 'Show all',
+        show_less: 'Show less',
+        show_more: 'Show more',
+        view_all: 'View all',
         visit: 'Visit',
     },
     values: {
         never: 'Never',
     },
-    pages: {
-        main: [
-            {
-                title: 'Home',
-                href: '/',
-            },
-            {
-                title: 'Projects',
-                href: '/projects',
-            },
-            {
-                title: 'Articles',
-                href: '/articles',
-            },
-        ],
-        other: [
-            {
-                title: 'Design',
-                href: '/design',
-            },
-            {
-                title: 'Visitors',
-                href: '/visitors',
-            },
-        ],
+    infos: {
+        last_updated: 'Last updated',
     },
-    links: {
-        social: [
-            {
-                title: 'GitHub',
-                href: 'https://github.com/nico-bachner',
-            },
-            {
-                title: 'Polywork',
-                href: 'https://www.polywork.com/nico_b',
-            },
-        ],
-        other: [
-            {
-                title: 'Source Code',
-                href: 'https://github.com/nico-bachner/v3',
-            },
-            {
-                title: 'Curriculum Vitae',
-                href: 'https://read.cv/nico_bachner',
-            },
-        ],
-    },
-};
+}
 
-export default translation;
+export default translation

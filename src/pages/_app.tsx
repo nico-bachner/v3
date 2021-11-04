@@ -1,10 +1,18 @@
-import '@nico-bachner/css';
-import '@nico-bachner/mdx/styles.css';
+import '@nico-bachner/mdx/styles.css'
+import '@nico-bachner/design-tokens/tokens.css'
 
-import type { AppProps } from 'next/app';
+import { ThemeProvider, globalStyles } from '@nico-bachner/css'
+
+import type { AppProps } from 'next/app'
 
 const App: React.VFC<AppProps> = ({ Component, pageProps }) => {
-    return <Component {...pageProps} />;
-};
+    globalStyles()
 
-export default App;
+    return (
+        <ThemeProvider>
+            <Component {...pageProps} />
+        </ThemeProvider>
+    )
+}
+
+export default App

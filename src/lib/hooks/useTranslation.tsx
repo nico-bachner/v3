@@ -1,11 +1,11 @@
-import { useRouter } from 'next/router';
+import { useRouter } from 'next/router'
 
-import { translations } from 'content/translations';
+import { translations } from 'content/translations'
 
 const useTranslation = () => {
-    const { locale } = useRouter();
+    const { locale } = useRouter()
 
-    return (translations as any)[locale as string] as Translation;
-};
+    return translations[locale!]!
+}
 
-export { useTranslation };
+export { useTranslation }

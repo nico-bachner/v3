@@ -1,14 +1,17 @@
 {
     "name": "@nico-bachner/components-react",
-    "version": "0.3.2",
+    "version": "0.4.0",
     "dependencies": {
+        "@nico-bachner/css": "workspace:*",
+        "@nico-bachner/design-tokens": "workspace:*",
         "@nico-bachner/icons-react": "workspace:*",
         "@nico-bachner/react-hooks": "workspace:*",
         "@radix-ui/react-checkbox": "^0.1.0",
+        "@radix-ui/react-label": "^0.1.0",
+        "@radix-ui/react-separator": "^0.1.0",
         "d3": "^7.0.3"
     },
     "peerDependencies": {
-        "@nico-bachner/design-tokens": ">=0.1.0",
         "next": ">=11",
         "react": ">=17",
         "react-dom": ">=17",

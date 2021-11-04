@@ -1,15 +1,17 @@
-import db from '@lib/utils/supabase';
+import db from '@lib/utils/supabase'
 
 const fetchClicks = async () => {
     const { data: clicks } = await db
         .from<ClickData>('clicks')
-        .select('href, clicks');
+        .select('href, clicks')
 
     if (!clicks) {
-        throw new Error(`clicks could not be fetched`);
+        throw new Error(`clicks could not be fetched`)
     }
 
-    return clicks.sort((a, b) => b.clicks - a.clicks);
-};
+    return clicks
+        .sort((a, b) => (a.href > b.href ? 1 : -1))
+        .sort((a, b) => b.clicks - a.clicks)
+}
 
-export { fetchClicks };
+export { fetchClicks }

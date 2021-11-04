@@ -1,17 +1,6 @@
 {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
 
-    "files.associations": {
-        ".stylelintrc": "json"
-    },
-
-    "[css]": {
-        "editor.defaultFormatter": "stylelint.vscode-stylelint",
-        "editor.codeActionsOnSave": {
-            "source.fixAll.stylelint": true
-        }
-    },
-
     "[mdx]": {
         "editor.wordWrap": "wordWrapColumn"
     }

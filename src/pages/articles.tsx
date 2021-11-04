@@ -1,20 +1,19 @@
-import styles from '@lib/styles/Home.module.css';
+import { fetchTranslation } from '@lib/utils/mdx'
+import { fetchArticlesData } from '@lib/utils/data/articles'
 
-import { fetchTranslation } from '@lib/utils/translation';
-import { fetchArticlesData } from '@lib/utils/data/articles';
+import { Grid, Spacer, Text } from '@nico-bachner/components-react'
+import MDX from '@nico-bachner/mdx'
+import Head from '@lib/components/Head'
+import Layout from '@lib/components/Layout'
+import { ArticleCard } from '@lib/components/InfoCard'
 
-import MDX from '@nico-bachner/mdx';
-import Head from '@lib/components/Head';
-import Layout from '@lib/components/Layout';
-import { ArticleCard } from '@lib/components/Card';
-
-import type { NextPage, GetStaticProps } from 'next';
-import type { MDXContent } from '@nico-bachner/mdx/utils';
+import type { NextPage, GetStaticProps } from 'next'
+import type { MDXContent } from '@nico-bachner/mdx/utils'
 
 type ArticlesProps = {
-    content: MDXContent;
-    articles: ArticleData[];
-};
+    content: MDXContent
+    articles: ArticleData[]
+}
 
 const getStaticProps: GetStaticProps<ArticlesProps> = async ({ locale }) => ({
     props: {
@@ -24,10 +23,10 @@ const getStaticProps: GetStaticProps<ArticlesProps> = async ({ locale }) => ({
         }),
         articles: await fetchArticlesData(),
     },
-});
+})
 
 const Articles: NextPage<ArticlesProps> = ({ content, articles }) => (
-    <Layout width="sm">
+    <Layout>
         <Head
             title="Articles | Nico Bachner"
             description="Nico Bachner's Articles"
@@ -35,17 +34,18 @@ const Articles: NextPage<ArticlesProps> = ({ content, articles }) => (
 
         <MDX content={content} />
 
-        <div className={styles.grid}>
+        <Spacer y={10} />
+
+        <Grid.Root columns="auto" gap={10}>
             {articles.map((article) => (
-                <ArticleCard
-                    key={article.path[article.path.length - 1]}
-                    {...article}
-                />
+                <Grid.Item key={article.path[article.path.length - 1]}>
+                    <ArticleCard {...article} />
+                </Grid.Item>
             ))}
-        </div>
+        </Grid.Root>
     </Layout>
-);
+)
 
-export { getStaticProps };
+export { getStaticProps }
 
-export default Articles;
+export default Articles

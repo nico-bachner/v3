@@ -1,23 +1,29 @@
-import styles from './List.module.css';
+import { List } from '@nico-bachner/components-react'
+import { styled } from '@nico-bachner/css'
+import { spacing, utils } from '@nico-bachner/design-tokens'
 
-import { List } from '@nico-bachner/components-react';
+const Wrapper = styled('div', {
+    wmax: utils.sizes.sm,
+    mx: 'auto',
+    my: spacing[6],
+})
 
 const OL: React.FC = ({ children }) => (
-    <List.Root type="ordered" className={styles.list}>
-        {children}
-    </List.Root>
-);
+    <Wrapper>
+        <List.Root ordered>{children}</List.Root>
+    </Wrapper>
+)
 
 const UL: React.FC = ({ children }) => (
-    <List.Root type="unordered" className={styles.list}>
-        {children}
-    </List.Root>
-);
+    <Wrapper>
+        <List.Root>{children}</List.Root>
+    </Wrapper>
+)
 
 const MDXList = {
     ol: OL,
     ul: UL,
     li: List.Item,
-};
+}
 
-export default MDXList;
+export default MDXList

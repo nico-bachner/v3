@@ -1,14 +1,14 @@
 type PathData = {
-    path: string;
-    visits: number;
-};
+    path: string
+    visits: number
+}
 
 type LanguageData = {
-    language: string;
-    visits: number;
-};
+    language: string
+    visits: number
+}
 
 type ClickData = {
-    href: string;
-    clicks: number;
-};
+    href: string
+    clicks: number
+}

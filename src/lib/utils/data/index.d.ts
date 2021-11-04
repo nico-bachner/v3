@@ -1,26 +1,26 @@
 type ProjectData = {
-    path: string[];
-    title: string;
-    description: string;
-    featured: boolean;
-    from: number;
-    to: number | null;
-};
+    path: string[]
+    title: string
+    description: string
+    featured: boolean
+    from: number
+    to: number | null
+}
 
 type ArticleData = {
-    path: string[];
-    title: string;
-    description: string;
-    featured: boolean;
-    published: number | false;
-    reading_time: number;
-};
+    path: string[]
+    title: string
+    description: string
+    featured: boolean
+    published: number | false
+    reading_time: number
+}
 
 type PaperData = {
-    path: string[];
-    title: string;
-    description: string;
-    featured: boolean;
-    published: number | false;
-    institution: string | null;
-};
+    path: string[]
+    title: string
+    description: string
+    featured: boolean
+    published: number | false
+    institution: string | null
+}

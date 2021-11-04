@@ -1,30 +1,29 @@
-import styles from '@lib/styles/Home.module.css';
+import { fetchProjectsData } from '@lib/utils/data/projects'
+import { fetchArticlesData } from '@lib/utils/data/articles'
+import { fetchTranslation } from '@lib/utils/mdx'
+import { useTranslation } from '@lib/hooks/useTranslation'
 
-import { fetchProjectsData } from '@lib/utils/data/projects';
-import { fetchArticlesData } from '@lib/utils/data/articles';
-import { fetchTranslation } from '@lib/utils/translation';
-import { useTranslation } from '@lib/hooks/useTranslation';
+import { Grid, Section, Spacer, Text } from '@nico-bachner/components-react'
+import { ProjectCard, ArticleCard } from '@lib/components/InfoCard'
+import Link from '@lib/components/Link'
+import MDX from '@nico-bachner/mdx'
+import Head from '@lib/components/Head'
+import Layout from '@lib/components/Layout'
+import HomeSection from '@lib/components/HomeSection'
 
-import { Grid, Text } from '@nico-bachner/components-react';
-import Link from '@lib/components/Link';
-import MDX from '@nico-bachner/mdx';
-import Head from '@lib/components/Head';
-import Layout from '@lib/components/Layout';
-import { ProjectCard, ArticleCard } from '@lib/components/Card';
-
-import type { NextPage, GetStaticProps } from 'next';
-import type { MDXContent } from '@nico-bachner/mdx/utils';
+import type { NextPage, GetStaticProps } from 'next'
+import type { MDXContent } from '@nico-bachner/mdx/utils'
 
 type HomeProps = {
     content: {
-        about: MDXContent;
-        projects: MDXContent;
-        articles: MDXContent;
-        contact: MDXContent;
-    };
-    projects: ProjectData[];
-    articles: ArticleData[];
-};
+        about: MDXContent
+        projects: MDXContent
+        articles: MDXContent
+        contact: MDXContent
+    }
+    projects: ProjectData[]
+    articles: ArticleData[]
+}
 
 const getStaticProps: GetStaticProps<HomeProps> = async ({ locale }) => {
     const content = {
@@ -44,10 +43,10 @@ const getStaticProps: GetStaticProps<HomeProps> = async ({ locale }) => {
             locale,
             path: ['home', 'contact'],
         }),
-    };
+    }
 
-    const projects = await fetchProjectsData();
-    const articles = await fetchArticlesData();
+    const projects = await fetchProjectsData()
+    const articles = await fetchArticlesData()
 
     return {
         props: {
@@ -55,74 +54,62 @@ const getStaticProps: GetStaticProps<HomeProps> = async ({ locale }) => {
             projects: projects.filter(({ featured }) => featured),
             articles: articles.filter(({ featured }) => featured),
         },
-    };
-};
+    }
+}
 
 const Home: NextPage<HomeProps> = ({ content, projects, articles }) => {
-    const { general, actions } = useTranslation();
+    const { bio, words } = useTranslation()
 
     return (
-        <Layout width="sm" home={true}>
+        <Layout home={true}>
             <Head title="Nico Bachner" />
 
-            <Text type="heading-1">{general.title}</Text>
-            <Text size={8} className={styles.subtitle}>
-                {general.subtitle}
+            <Text type="h1" size={10} weight={900}>
+                Nico Bachner
+            </Text>
+            <Text size={9} weight={800} color={['cyan', 'blue']}>
+                {bio.tagline}
             </Text>
 
-            <section id="about" className={styles.section}>
-                <MDX content={content.about} />
-            </section>
+            <HomeSection
+                id="about"
+                title={words.about}
+                content={content.about}
+            />
 
-            <section id="projects" className={styles.section}>
-                <MDX content={content.projects} />
-                <Grid
-                    columns={1}
-                    gap={5}
-                    style={{ marginBlock: 'var(--space-8)' }}
-                >
-                    {projects.map((project) => (
-                        <ProjectCard
-                            key={project.path[project.path.length - 1]}
-                            {...project}
-                        />
-                    ))}
-                </Grid>
-                <Text align="right" transform="capitalize">
-                    <Link href="/projects" variant="highlight">
-                        {actions.viewAll}
-                    </Link>
-                </Text>
-            </section>
+            <HomeSection
+                id="projects"
+                title={words.projects}
+                content={content.projects}
+                items={projects.map((project) => (
+                    <Grid.Item key={project.path[project.path.length - 1]}>
+                        <ProjectCard {...project} />
+                    </Grid.Item>
+                ))}
+                href="/projects"
+            />
 
-            <section id="articles" className={styles.section}>
-                <MDX content={content.articles} />
-                <Grid
-                    columns={1}
-                    gap={5}
-                    style={{ marginBlock: 'var(--space-8)' }}
-                >
-                    {articles.map((article) => (
-                        <ArticleCard
-                            key={article.path[article.path.length - 1]}
-                            {...article}
-                        />
-                    ))}
-                </Grid>
-                <Text align="right" transform="capitalize">
-                    <Link href="/articles" variant="highlight">
-                        {actions.viewAll}
-                    </Link>
-                </Text>
-            </section>
+            <HomeSection
+                id="articles"
+                title={words.articles}
+                content={content.articles}
+                items={articles.map((article) => (
+                    <Grid.Item key={article.path[article.path.length - 1]}>
+                        <ArticleCard {...article} />
+                    </Grid.Item>
+                ))}
+                href="/articles"
+            />
 
-            <section id="contact" className={styles.section}>
-                <MDX content={content.contact} />
-            </section>
+            <HomeSection
+                id="contact"
+                title={words.contact}
+                content={content.contact}
+            />
         </Layout>
-    );
-};
+    )
+}
 
-export { getStaticProps };
+export { getStaticProps }
 
-export default Home;
+export default Home

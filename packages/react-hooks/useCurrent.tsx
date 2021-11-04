@@ -1,13 +1,13 @@
-import { usePath } from './usePath';
+import { usePath } from './usePath'
 
 const useCurrent = (href: string): boolean => {
-    const path = usePath();
+    const path = usePath()
 
     if (href == path) {
-        return true;
+        return true
     }
 
-    return false;
-};
+    return false
+}
 
-export { useCurrent };
+export { useCurrent }

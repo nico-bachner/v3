@@ -1,7 +1,7 @@
-import { useRouter } from 'next/router';
+import { useRouter } from 'next/router'
 
 const usePath = () => {
-    const { /* pathname, query, */ asPath } = useRouter();
+    const { /* pathname, query, */ asPath } = useRouter()
 
     /*
     const path = pathname
@@ -23,9 +23,9 @@ const usePath = () => {
         .split('#')[0]!;
     */
 
-    const path = asPath.split('#')[0]!;
+    const path = asPath.split('#')[0]!
 
-    return path;
-};
+    return path
+}
 
-export { usePath };
+export { usePath }

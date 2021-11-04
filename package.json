@@ -7,32 +7,30 @@
         "build": "next build",
         "start": "next start",
         "lint": "next lint",
-        "format": "prettier --write **/*.{ts,tsx,mdx} && stylelint **/*.css --fix",
+        "format": "prettier --write **/*.{ts,tsx,mdx}",
         "release": "standard-version",
         "publish": "pnpm -r publish --access public"
     },
     "dependencies": {
         "@nico-bachner/components-react": "workspace:*",
         "@nico-bachner/css": "workspace:*",
+        "@nico-bachner/design-tokens": "workspace:*",
         "@nico-bachner/icons-react": "workspace:*",
         "@nico-bachner/mdx": "workspace:*",
         "@nico-bachner/react-hooks": "workspace:*",
-        "@supabase/supabase-js": "^1.23.0",
-        "next": "^11.1.2",
+        "@supabase/supabase-js": "^1.25.2",
+        "next": "12.0.1",
         "react": "^17.0.2",
         "react-dom": "^17.0.2",
-        "typescript": "^4.4.3"
+        "typescript": "^4.4.4"
     },
     "devDependencies": {
-        "@types/node": "^14.17.18",
-        "@types/react": "^17.0.24",
-        "@types/react-dom": "^17.0.9",
+        "@types/node": "^14.17.32",
+        "@types/react": "^17.0.34",
+        "@types/react-dom": "^17.0.11",
         "eslint": "^7.32.0",
-        "eslint-config-next": "^11.1.2",
+        "eslint-config-next": "^12.0.2",
         "prettier": "^2.4.1",
-        "standard-version": "^9.3.1",
-        "stylelint": "^13.13.1",
-        "stylelint-config-standard": "^22.0.0",
-        "stylelint-order": "^4.1.0"
+        "standard-version": "^9.3.2"
     }
 }

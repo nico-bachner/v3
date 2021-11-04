@@ -13,7 +13,7 @@ The third iteration of my personal website.
 -   [Typescript](https://www.typescriptlang.org)
 -   [React](https://reactjs.org)
 -   [Next.js](https://nextjs.org)
--   [CSS Modules](https://github.com/css-modules/css-modules)
+-   [Stitches](https://stitches.dev)
 -   [MDX](https://mdxjs.com)
 
 ## Tooling

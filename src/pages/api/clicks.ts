@@ -1,11 +1,11 @@
-import { fetchClicks } from '@lib/utils/db/clicks';
+import { fetchClicks } from '@lib/utils/db/clicks'
 
-import type { NextApiHandler } from 'next';
+import type { NextApiHandler } from 'next'
 
 const Clicks: NextApiHandler = async (req, res) => {
-    const clicks = await fetchClicks();
+    const clicks = await fetchClicks()
 
-    return res.status(200).json(clicks);
-};
+    return res.status(200).json(clicks)
+}
 
-export default Clicks;
+export default Clicks

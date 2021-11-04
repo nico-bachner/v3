@@ -1,24 +1,31 @@
-import styles from '@lib/styles/Visitors.module.css';
+import { colors, spacing, typography } from '@nico-bachner/design-tokens'
+import { useState } from 'react'
+import { fetchVisits } from '@lib/utils/db/visits'
+import { fetchClicks } from '@lib/utils/db/clicks'
 
-import { Button, Chart, Table, Text } from '@nico-bachner/components-react';
-import Head from '@lib/components/Head';
-import Layout from '@lib/components/Layout';
+import {
+    Button,
+    PieChart,
+    Table,
+    Text,
+    Section,
+    Spacer,
+    Stack,
+} from '@nico-bachner/components-react'
+import Head from '@lib/components/Head'
+import Layout from '@lib/components/Layout'
 
-import { useState } from 'react';
-import { fetchVisits } from '@lib/utils/db/visits';
-import { fetchClicks } from '@lib/utils/db/clicks';
-
-import type { NextPage, GetServerSideProps } from 'next';
+import type { NextPage, GetServerSideProps } from 'next'
 
 type VisitsData = {
-    paths: PathData[];
-    languages: LanguageData[];
-};
+    paths: PathData[]
+    languages: LanguageData[]
+}
 
 type Props = {
-    visits: VisitsData;
-    clicks: ClickData[];
-};
+    visits: VisitsData
+    clicks: ClickData[]
+}
 
 const getServerSideProps: GetServerSideProps<Props> = async () => {
     return {
@@ -26,50 +33,53 @@ const getServerSideProps: GetServerSideProps<Props> = async () => {
             visits: await fetchVisits(),
             clicks: await fetchClicks(),
         },
-    };
-};
+    }
+}
 
 const Visitors: NextPage<Props> = ({
     visits: initialVisits,
     clicks: initialClicks,
 }) => {
-    const [visits, setVisits] = useState(initialVisits);
-    const [clicks, setClicks] = useState(initialClicks);
+    const [visits, setVisits] = useState(initialVisits)
+    const [clicks, setClicks] = useState(initialClicks)
 
     return (
-        <Layout width="sm" className={styles.main}>
+        <Layout>
             <Head
                 title="Visitors | Nico Bachner"
                 description="Insights into the visitors of nicobachner.com"
             />
-            <Text type="heading-1">Visitors</Text>
-            <Text size={6} className={styles.subtitle}>
+
+            <Text type="h1">Visitors</Text>
+            <Text size={6} marginTop={6}>
                 Insights into the visitors of nicobachner.com
             </Text>
 
-            <section id="visits">
-                <Text type="heading-2">Page visits</Text>
+            <Section id="visits">
+                <Stack direction="row" justify="space-between">
+                    <Text type="h2">Page visits</Text>
 
-                <Button
-                    variant="primary"
-                    onClick={async () => {
-                        const res = await fetch('/api/visits');
-                        const visits: VisitsData = await res.json();
+                    <Button
+                        variant="primary"
+                        onClick={async () => {
+                            const res = await fetch('/api/visits')
+                            const visits: VisitsData = await res.json()
 
-                        setVisits(visits);
-                    }}
-                >
-                    Refresh
-                </Button>
+                            setVisits(visits)
+                        }}
+                    >
+                        Refresh
+                    </Button>
+                </Stack>
 
-                <Text type="heading-3" className={styles.h3}>
+                <Text type="h3" margin={[12, 10]}>
                     By Path
                 </Text>
                 <Table.Root>
                     <Table.Head>
                         <Table.Row>
-                            <Table.HeadItem>Path</Table.HeadItem>
-                            <Table.HeadItem>Visits</Table.HeadItem>
+                            <Table.Item type="head">Path</Table.Item>
+                            <Table.Item type="head">Visits</Table.Item>
                         </Table.Row>
                     </Table.Head>
                     <Table.Body>
@@ -77,57 +87,67 @@ const Visitors: NextPage<Props> = ({
                             .filter(({ visits }) => visits > 0)
                             .map(({ path, visits }) => (
                                 <Table.Row key={path}>
-                                    <Table.BodyItem>
+                                    <Table.Item type="body">
                                         {decodeURIComponent(path)}
-                                    </Table.BodyItem>
-                                    <Table.BodyItem>{visits}</Table.BodyItem>
+                                    </Table.Item>
+                                    <Table.Item type="body">
+                                        {visits}
+                                    </Table.Item>
                                 </Table.Row>
                             ))}
-                        <Table.Row className={styles.strong}>
-                            <Table.BodyItem>Total</Table.BodyItem>
-                            <Table.BodyItem>
+                        <Table.Row
+                            css={{
+                                color: colors['neutral-10'],
+                                fontWeight: typography.fontWeights[700],
+                            }}
+                        >
+                            <Table.Item type="body">Total</Table.Item>
+                            <Table.Item type="body">
                                 {visits.paths
                                     .map(({ visits }) => visits)
                                     .reduce((prev, current) => prev + current)}
-                            </Table.BodyItem>
+                            </Table.Item>
                         </Table.Row>
                     </Table.Body>
                 </Table.Root>
 
-                <Text type="heading-3" className={styles.h3}>
+                <Text type="h3" margin={[12, 10]}>
                     By Language
                 </Text>
-                <Chart
-                    type="pie"
+
+                <PieChart
                     data={visits.languages.map(({ language, visits }) => ({
                         value: visits,
                         label: language.toUpperCase(),
                     }))}
-                    fontSize="4px"
-                    className={styles.pie}
+                    css={{ px: spacing[20] }}
                 />
-            </section>
+            </Section>
 
-            <section id="visits">
-                <Text type="heading-2">Link Clicks</Text>
+            <Section id="clicks">
+                <Stack direction="row" justify="space-between">
+                    <Text type="h2">Link Clicks</Text>
 
-                <Button
-                    variant="primary"
-                    onClick={async () => {
-                        const res = await fetch('/api/clicks');
-                        const clicks: ClickData[] = await res.json();
+                    <Button
+                        variant="primary"
+                        onClick={async () => {
+                            const res = await fetch('/api/clicks')
+                            const clicks = await res.json()
 
-                        setClicks(clicks);
-                    }}
-                >
-                    Refresh
-                </Button>
+                            setClicks(clicks)
+                        }}
+                    >
+                        Refresh
+                    </Button>
+                </Stack>
+
+                <Spacer y={14} />
 
                 <Table.Root>
                     <Table.Head>
                         <Table.Row>
-                            <Table.HeadItem>Destination</Table.HeadItem>
-                            <Table.HeadItem>Clicks</Table.HeadItem>
+                            <Table.Item type="head">Destination</Table.Item>
+                            <Table.Item type="head">Clicks</Table.Item>
                         </Table.Row>
                     </Table.Head>
                     <Table.Body>
@@ -135,27 +155,34 @@ const Visitors: NextPage<Props> = ({
                             .filter(({ clicks }) => clicks > 0)
                             .map(({ href, clicks }) => (
                                 <Table.Row key={href}>
-                                    <Table.BodyItem>
+                                    <Table.Item type="body">
                                         {decodeURIComponent(href)}
-                                    </Table.BodyItem>
-                                    <Table.BodyItem>{clicks}</Table.BodyItem>
+                                    </Table.Item>
+                                    <Table.Item type="body">
+                                        {clicks}
+                                    </Table.Item>
                                 </Table.Row>
                             ))}
-                        <Table.Row className={styles.strong}>
-                            <Table.BodyItem>Total</Table.BodyItem>
-                            <Table.BodyItem>
+                        <Table.Row
+                            css={{
+                                color: colors['neutral-10'],
+                                fontWeight: typography.fontWeights[700],
+                            }}
+                        >
+                            <Table.Item type="body">Total</Table.Item>
+                            <Table.Item type="body">
                                 {clicks
                                     .map(({ clicks }) => clicks)
                                     .reduce((prev, current) => prev + current)}
-                            </Table.BodyItem>
+                            </Table.Item>
                         </Table.Row>
                     </Table.Body>
                 </Table.Root>
-            </section>
+            </Section>
         </Layout>
-    );
-};
+    )
+}
 
-export { getServerSideProps };
+export { getServerSideProps }
 
-export default Visitors;
+export default Visitors

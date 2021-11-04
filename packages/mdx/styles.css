@@ -1,60 +1,31 @@
-/* ---- remark-code-titles ---- */
-.remark-code-title {
-    font-family: var(--font-sans);
-    font-size: var(--font-size-sm);
-    font-weight: var(--font-weight-bold);
-    margin: var(--space-9) var(--space-7) var(--space-5);
-    color: var(--color-neutral-8);
-}
-
-/* ---- remark-footnotes ---- */
-sup {
-    line-height: var(--line-height-1);
-}
-
-.footnotes {
-    max-width: var(--width-sm);
-    margin-block: 6rem 8rem;
-    margin-inline: auto;
-}
-
-.footnotes > hr {
-    border: 1px solid var(--color-neutral-1);
-}
-
-.footnotes > ol {
-    margin-block: var(--space-9);
-}
-
-/* ---- rehype-autolink-headings ---- */
-.heading-link {
-    display: none;
-}
-
-@media (min-width: 848px) {
-    article .heading-link {
-        display: initial;
-        position: absolute;
-        margin-left: -1em;
-        width: 100%;
-        max-width: calc(var(--width-sm) + 1em);
-        opacity: 0;
-        transition: opacity 150ms ease;
-        border: none;
-    }
-
-    article .heading-link:hover {
-        opacity: 100%;
-    }
-}
-
 /* ---- katex ---- */
 .math.math-display {
-    margin-block: var(--space-9);
-    overflow-x: scroll;
+    margin-block: var(--space-14);
+    overflow-x: hidden;
 }
 
-/* ---- mdx-prism ---- */
+/* ---- highlight.js ---- */
+.hljs-comment {
+    color: var(--color-neutral-6);
+}
+.hljs-keyword,
+.hljs-selector-class {
+    color: hsl(330deg, 100%, 50%);
+}
+.hljs-tag,
+.hljs-class,
+.hljs-property {
+    color: hsl(210deg, 100%, 50%);
+}
+.hljs-attr {
+    color: hsl(30deg, 100%, 40%);
+}
+.hljs-string {
+    color: hsl(120deg, 50%, 50%);
+}
+
+/* prism.js
+
 .token.plain-text,
 .token.attr-equals,
 .language-yml .token.punctuation {
@@ -62,7 +33,7 @@ sup {
 }
 
 .token.comment {
-    color: var(--color-light);
+    color: var(--colors-neutral-8);
 }
 
 .token.keyword,
@@ -93,3 +64,4 @@ sup {
 .token.attr-name {
     color: hsl(30deg, 100%, 40%);
 }
+*/

@@ -16,8 +16,9 @@ Before we begin, I'd like to note that this guide uses [TypeScript](https://www.
 
 The first thing we'll do is to define our **themes**. We can do this in the global type definitions (`src/global.d.ts`). That way, we'll have access to the types throughout our project.
 
-```ts:src/global.d.ts
-type Theme = 'system' | 'light' | 'dark';
+```ts
+// src/global.d.ts
+type Theme = 'system' | 'light' | 'dark'
 ```
 
 What we're doing here is declaring a _global type_ called `Theme` which we can access from anywhere in our project. This means that if we declare a variables type to be `Theme`, then we can only assign the values `'system'`, `'light'`, or `'dark'` to it.
@@ -32,12 +33,13 @@ Now that we've got type definitions out of the way, we can move on to the heart 
 
 The theme store is a [Svelte Store](https://svelte.dev/docs#svelte_store). To create it, we use the `writable` function provided by Svelte.
 
-```ts:src/lib/stores.ts
-import { writable } from 'svelte/store';
+```ts
+// src/lib/stores.ts
+import { writable } from 'svelte/store'
 
-const theme = writable('system');
+const theme = writable('system')
 
-export { theme };
+export { theme }
 ```
 
 Here, we're creating a Svelte Store called `theme` and assigning it the default value of `'system'`. Again, it is important that `'system'` is the default so that the user's preferences are respected.
@@ -46,9 +48,10 @@ Here, we're creating a Svelte Store called `theme` and assigning it the default 
 
 We can now use the Svelte Store we created in our theme switch component.
 
-```html:src/lib/components/ThemeSwitch.svelte
+```html
+<!-- src/lib/components/ThemeSwitch.svelte -->
 <script lang="ts">
-    import { theme } from '$lib/stores';
+    import { theme } from '$lib/stores'
 </script>
 
 <select bind:value="{$theme}">
@@ -72,14 +75,15 @@ We now have a Svelte Store that stores the theme value, as well as a theme switc
 
 The way I went about this is swapping stylesheets in the `<head>` of the generated document.
 
-```html:src/routes/__layout.svelte
+```html
+<!-- src/routes/__layout.svelte -->
 <script lang="ts">
-    import { theme } from '$lib/stores';
+    import { theme } from '$lib/stores'
 </script>
 
 <svelte:head>
-    <meta name="color-scheme" content={$theme == 'system' ? 'light dark' : $theme} />
-    <link rel="stylesheet" href={`/theme/${$theme}.css`} />
+    <meta name="color-scheme" content={$theme == 'system' ? 'light dark' :
+    $theme} /> <link rel="stylesheet" href={`/theme/${$theme}.css`} />
 </svelte:head>
 
 <slot />
@@ -119,7 +123,8 @@ static
 
 In `light.css` and `dark.css` (or whatever you choose to call you themes), we style our project accordingly. An example[^3]:
 
-```css:light.css
+```css
+/* light.css */
 :root {
     --color-lightest: hsl(0deg, 0%, 100%);
     --color-lighter: hsl(0deg, 0%, 80%);
@@ -132,7 +137,8 @@ In `light.css` and `dark.css` (or whatever you choose to call you themes), we st
 
 While these are straightforward, the file `system.css` requires more attention, because we need to think about the user's system preferences. While the `prefers-color-scheme` media query makes accessing the user's preference a straightforward process, we need to keep in mind that there are only two predefined choices, `light` and `dark`. Hence we need to style accordingly:
 
-```css:system.css
+```css
+/* system.css */
 @media (prefers-color-scheme: light) {
     :root {
         --color-lightest: hsl(0deg, 0%, 100%);

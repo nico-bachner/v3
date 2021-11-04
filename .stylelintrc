@@ -1,8 +1,0 @@
-{
-    "extends": "stylelint-config-standard",
-    "plugins": ["stylelint-order"],
-    "rules": {
-        "indentation": 4,
-        "custom-property-empty-line-before": null
-    }
-}

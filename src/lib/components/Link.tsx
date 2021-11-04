@@ -1,11 +1,11 @@
-import { Link as BaseLink } from '@nico-bachner/components-react';
+import { Link as BaseLink } from '@nico-bachner/components-react'
 
-const Link: typeof BaseLink = ({
-    children,
-    href,
-    variant = 'default',
-    className,
-}) => (
+type LinkProps = {
+    variant?: 'default' | 'highlight' | 'primary' | 'secondary' | 'disabled'
+    href: string
+}
+
+const Link: React.FC<LinkProps> = ({ children, variant, href }) => (
     <BaseLink
         href={href}
         variant={variant}
@@ -15,12 +15,11 @@ const Link: typeof BaseLink = ({
                 body: JSON.stringify({
                     href: encodeURIComponent(href),
                 }),
-            });
+            })
         }}
-        className={className}
     >
         {children}
     </BaseLink>
-);
+)
 
-export default Link;
+export default Link

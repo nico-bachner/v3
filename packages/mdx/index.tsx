@@ -1,12 +1,12 @@
-import { MDXRemote } from 'next-mdx-remote';
-import { MDXComponents } from './components';
+import { MDXRemote } from 'next-mdx-remote'
+import { MDXComponents } from './components'
 
-import type { MDXContent } from './utils';
+import type { MDXContent } from './utils'
 
 type MDXProps = {
-    content: MDXContent;
-    components?: Record<string, React.ReactNode>;
-};
+    content: MDXContent
+    components?: Record<string, React.ReactNode>
+}
 
 const MDX: React.VFC<MDXProps> = ({ content, components }) => (
     <MDXRemote
@@ -16,6 +16,6 @@ const MDX: React.VFC<MDXProps> = ({ content, components }) => (
             ...components,
         }}
     />
-);
+)
 
-export default MDX;
+export default MDX

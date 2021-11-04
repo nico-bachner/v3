@@ -1,0 +1,28 @@
+:root {
+    --size-sm: 692px;
+    --size-md: 760px;
+    --size-lg: 848px;
+
+    --shadow-sm: 0 4px 16px hsla(0deg, 0%, 0%, 0.1);
+    --shadow-md: 0 6px 24px hsla(0deg, 0%, 0%, 0.15);
+    --shadow-lg: 0 8px 32px hsla(0deg, 0%, 0%, 0.2);
+
+    --filter-grayscale-on: grayscale(1);
+    --filter-grayscale-off: grayscale(0);
+
+    --filter-blur-sm: blur(12px);
+    --filter-blur-md: blur(16px);
+    --filter-blur-lg: blur(20px);
+
+    --filter-brightness-0: brightness(0%);
+    --filter-brightness-10: brightness(10%);
+    --filter-brightness-20: brightness(20%);
+    --filter-brightness-30: brightness(30%);
+    --filter-brightness-40: brightness(40%);
+    --filter-brightness-50: brightness(50%);
+    --filter-brightness-60: brightness(60%);
+    --filter-brightness-70: brightness(70%);
+    --filter-brightness-80: brightness(80%);
+    --filter-brightness-90: brightness(90%);
+    --filter-brightness-100: brightness(100%);
+}

@@ -1,6 +1,9 @@
 {
     "name": "@nico-bachner/react-hooks",
-    "version": "0.1.1",
+    "version": "0.1.2",
+    "dependencies": {
+        "next-themes": "^0.0.15"
+    },
     "peerDependencies": {
         "next": ">=11",
         "react": ">=17",

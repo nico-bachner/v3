@@ -1,19 +1,19 @@
-import { useEffect } from 'react';
-import { useRouter } from 'next/router';
-import { usePath } from '@nico-bachner/react-hooks';
-import { useTranslation } from '@lib/hooks/useTranslation';
+import { useEffect } from 'react'
+import { useRouter } from 'next/router'
+import { usePath } from '@nico-bachner/react-hooks'
+import { useTranslation } from '@lib/hooks/useTranslation'
 
-import NextHead from 'next/head';
+import NextHead from 'next/head'
 
 type HeadProps = {
-    title: string;
-    type?: 'article' | 'website';
-    image?: string;
-    url?: string;
-    description?: string;
-    author?: string;
-    index?: boolean;
-};
+    title: string
+    type?: 'article' | 'website'
+    image?: string
+    url?: string
+    description?: string
+    author?: string
+    index?: boolean
+}
 
 const Head: React.FC<HeadProps> = ({
     title,
@@ -26,14 +26,14 @@ const Head: React.FC<HeadProps> = ({
     author = 'Nico Bachner',
     index = true,
 }) => {
-    const { locale, locales } = useRouter();
-    const path = usePath();
-    const { general } = useTranslation();
+    const { locale, locales } = useRouter()
+    const path = usePath()
+    const { bio } = useTranslation()
 
-    const url = 'https://nicobachner.com/' + locale + path;
+    const url = 'https://nicobachner.com/' + locale + path
 
     useEffect(() => {
-        const [language] = locale!.split('-');
+        const [language] = locale!.split('-')
 
         if (index) {
             fetch(`/api/visit`, {
@@ -42,18 +42,15 @@ const Head: React.FC<HeadProps> = ({
                     path: encodeURIComponent(path),
                     language,
                 }),
-            });
+            })
         }
-    }, [path, locale, index]);
+    }, [path, locale, index])
 
     return (
         <NextHead>
             <title>{title}</title>
             <meta name="author" content={author} />
-            <meta
-                name="description"
-                content={description ?? general.description}
-            />
+            <meta name="description" content={description ?? bio.description} />
             <link rel="canonical" href={canonicalUrl ?? url} />
             {!canonicalUrl &&
                 locales!.map((locale) => (
@@ -71,7 +68,7 @@ const Head: React.FC<HeadProps> = ({
             <meta property="og:image" content={image} />
             <meta
                 property="og:description"
-                content={description ?? general.description}
+                content={description ?? bio.description}
             />
             <meta property="og:site_name" content="Nico Bachner" />
             <meta property="og:locale" content={locale} />
@@ -84,7 +81,7 @@ const Head: React.FC<HeadProps> = ({
             ))}
             <meta name="robots" content={index ? 'index' : 'noindex'} />
         </NextHead>
-    );
-};
+    )
+}
 
-export default Head;
+export default Head

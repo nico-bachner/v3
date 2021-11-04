@@ -1,21 +1,21 @@
 type GitHubHistory = {
     commit: {
         author: {
-            name: string;
-            email: string;
-            date: string;
-        };
-    };
-};
+            name: string
+            email: string
+            date: string
+        }
+    }
+}
 
 type GitHubProps = {
-    user: string;
-    repo: string;
-    baseBranch: string;
-    basePath: string[];
-    path: string[];
-    extension: string;
-};
+    user: string
+    repo: string
+    baseBranch: string
+    basePath: string[]
+    path: string[]
+    extension: string
+}
 
 const fetchDateUpdated: Fetch<GitHubProps, Date | undefined> = async ({
     user,
@@ -24,8 +24,8 @@ const fetchDateUpdated: Fetch<GitHubProps, Date | undefined> = async ({
     path,
     extension,
 }) => {
-    const fullPath = [...basePath, ...path].join('/');
-    const fullFilePath = [fullPath, extension].join('.');
+    const fullPath = [...basePath, ...path].join('/')
+    const fullFilePath = [fullPath, extension].join('.')
 
     const res = await fetch(
         [
@@ -34,14 +34,14 @@ const fetchDateUpdated: Fetch<GitHubProps, Date | undefined> = async ({
             repo,
             `commits?path=${fullFilePath}`,
         ].join('/')
-    );
-    const history: GitHubHistory[] = await res.json();
-    const latest: GitHubHistory | undefined = history[0];
+    )
+    const history: GitHubHistory[] = await res.json()
+    const latest: GitHubHistory | undefined = history[0]
 
     if (latest) {
-        return new Date(latest.commit.author.date);
+        return new Date(latest.commit.author.date)
     }
-};
+}
 
 const getEditUrl: Get<GitHubProps, string> = ({
     user,
@@ -51,8 +51,8 @@ const getEditUrl: Get<GitHubProps, string> = ({
     path,
     extension,
 }) => {
-    const fullPath = [...basePath, ...path].join('/');
-    const fullFilePath = [fullPath, extension].join('.');
+    const fullPath = [...basePath, ...path].join('/')
+    const fullFilePath = [fullPath, extension].join('.')
 
     const editUrl = [
         'https://github.com',
@@ -61,9 +61,9 @@ const getEditUrl: Get<GitHubProps, string> = ({
         'edit',
         baseBranch,
         fullFilePath,
-    ].join('/');
+    ].join('/')
 
-    return editUrl;
-};
+    return editUrl
+}
 
-export { fetchDateUpdated, getEditUrl };
+export { fetchDateUpdated, getEditUrl }

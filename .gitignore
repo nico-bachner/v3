@@ -19,5 +19,3 @@ pnpm-lock.yaml
 
 # miscellaneous
 .DS_Store
-
-.vercel

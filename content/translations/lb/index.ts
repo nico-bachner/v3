@@ -1,76 +1,40 @@
+import type { Translation } from '../types'
+
 const translation: Translation = {
-    general: {
-        title: 'Ech sin den Nico,',
-        subtitle: 'en Open Source Enthusiast.',
+    bio: {
+        tagline: '',
         description:
             "E lëtzebuergesche student an Open Source-enthusiast, deen sech selwer d'programméieren bäibruecht huet",
     },
-    informations: {
-        lastUpdated: 'Lescht aktualiséiert',
+    words: {
+        home: 'Heem',
+        about: 'Iwwer Mech',
+        projects: 'Projeten',
+        articles: 'Artikelen',
+        contact: 'Contact',
+        design: 'Design',
+        visitors: 'Visiteuren',
+        source_code: 'Quelltext',
+        cv: 'Liewenslaaf',
     },
     actions: {
-        changeLanguage: 'Sprooch änneren',
-        editOnGitHub: 'Op GitHub beaarbechten',
-        moreInformation: 'Méi Informatiounen',
+        change_language: 'Sprooch änneren',
+        edit_on_github: 'Op GitHub beaarbechten',
+        more_info: 'Méi Informatiounen',
         read: 'Lies',
-        readMore: 'Lies méi',
-        showAll: 'Alleguer weisens',
-        showLess: 'Manner weisen',
-        showMore: 'Méi weisen',
-        viewAll: 'Alleguer gesinn',
+        read_more: 'Lies méi',
+        show_all: 'Alleguer weisens',
+        show_less: 'Manner weisen',
+        show_more: 'Méi weisen',
+        view_all: 'Alleguer gesinn',
         visit: 'Besichen',
     },
     values: {
         never: 'Ni',
     },
-    pages: {
-        main: [
-            {
-                title: 'Heem',
-                href: '/',
-            },
-            {
-                title: 'Projeten',
-                href: '/projects',
-            },
-            {
-                title: 'Artikelen',
-                href: '/articles',
-            },
-        ],
-        other: [
-            {
-                title: 'Design',
-                href: '/design',
-            },
-            {
-                title: 'Visiteuren',
-                href: '/visitors',
-            },
-        ],
+    infos: {
+        last_updated: 'Lescht aktualiséiert',
     },
-    links: {
-        social: [
-            {
-                title: 'GitHub',
-                href: 'https://github.com/nico-bachner',
-            },
-            {
-                title: 'Polywork',
-                href: 'https://www.polywork.com/nico_b',
-            },
-        ],
-        other: [
-            {
-                title: 'Quelltext',
-                href: 'https://github.com/nico-bachner/v3',
-            },
-            {
-                title: 'Curriculum Vitae',
-                href: 'https://read.cv/nico_bachner',
-            },
-        ],
-    },
-};
+}
 
-export default translation;
+export default translation

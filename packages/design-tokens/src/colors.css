@@ -1,0 +1,78 @@
+:root {
+    --color-inherit: inherit;
+    --color-transparent: transparent;
+}
+
+@media (prefers-color-scheme: light) {
+    [data-theme='system'] {
+        --color-neutral-0: hsl(210deg, 12%, 100%);
+        --color-neutral-1: hsl(210deg, 12%, 89%);
+        --color-neutral-2: hsl(210deg, 12%, 85%);
+        --color-neutral-3: hsl(210deg, 12%, 81%);
+        --color-neutral-4: hsl(210deg, 12%, 76%);
+        --color-neutral-5: hsl(210deg, 12%, 70%);
+        --color-neutral-6: hsl(210deg, 12%, 62%);
+        --color-neutral-7: hsl(210deg, 12%, 51%);
+        --color-neutral-8: hsl(210deg, 12%, 38%);
+        --color-neutral-9: hsl(210deg, 12%, 21%);
+        --color-neutral-10: hsl(210deg, 12%, 0%);
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    [data-theme='system'] {
+        --color-neutral-0: hsl(210deg, 12%, 0%);
+        --color-neutral-1: hsl(210deg, 12%, 11%);
+        --color-neutral-2: hsl(210deg, 12%, 15%);
+        --color-neutral-3: hsl(210deg, 12%, 19%);
+        --color-neutral-4: hsl(210deg, 12%, 24%);
+        --color-neutral-5: hsl(210deg, 12%, 30%);
+        --color-neutral-6: hsl(210deg, 12%, 38%);
+        --color-neutral-7: hsl(210deg, 12%, 49%);
+        --color-neutral-8: hsl(210deg, 12%, 62%);
+        --color-neutral-9: hsl(210deg, 12%, 77%);
+        --color-neutral-10: hsl(210deg, 12%, 100%);
+    }
+}
+
+[data-theme='light'] {
+    --color-neutral-0: hsl(210deg, 12%, 100%);
+    --color-neutral-1: hsl(210deg, 12%, 89%);
+    --color-neutral-2: hsl(210deg, 12%, 85%);
+    --color-neutral-3: hsl(210deg, 12%, 81%);
+    --color-neutral-4: hsl(210deg, 12%, 76%);
+    --color-neutral-5: hsl(210deg, 12%, 70%);
+    --color-neutral-6: hsl(210deg, 12%, 62%);
+    --color-neutral-7: hsl(210deg, 12%, 51%);
+    --color-neutral-8: hsl(210deg, 12%, 38%);
+    --color-neutral-9: hsl(210deg, 12%, 21%);
+    --color-neutral-10: hsl(210deg, 12%, 0%);
+}
+
+[data-theme='dark'] {
+    --color-neutral-0: hsl(210deg, 12%, 0%);
+    --color-neutral-1: hsl(210deg, 12%, 11%);
+    --color-neutral-2: hsl(210deg, 12%, 15%);
+    --color-neutral-3: hsl(210deg, 12%, 19%);
+    --color-neutral-4: hsl(210deg, 12%, 24%);
+    --color-neutral-5: hsl(210deg, 12%, 30%);
+    --color-neutral-6: hsl(210deg, 12%, 38%);
+    --color-neutral-7: hsl(210deg, 12%, 49%);
+    --color-neutral-8: hsl(210deg, 12%, 62%);
+    --color-neutral-9: hsl(210deg, 12%, 77%);
+    --color-neutral-10: hsl(210deg, 12%, 100%);
+}
+
+:root {
+    --color-red: hsl(0deg, 100%, 50%);
+    --color-cyan: hsl(180deg, 100%, 50%);
+    --color-blue: hsl(210deg, 100%, 50%);
+}
+
+@supports (color: lch(0% 0 0deg / 0)) {
+    :root {
+        --color-red: lch(80% 200 30deg);
+        --color-cyan: lch(80% 200 240deg);
+        --color-blue: lch(50% 200 240deg);
+    }
+}
