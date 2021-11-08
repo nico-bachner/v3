@@ -21,14 +21,14 @@ const Container = styled('div', {
 })
 
 type LayoutProps = {
-    home?: boolean
+    breadcrumbs?: boolean
     width?: Size
     css?: CSS
 }
 
 const Layout: React.FC<LayoutProps> = ({
     children,
-    home = false,
+    breadcrumbs = true,
     width = 'sm',
     css,
 }) => {
@@ -36,7 +36,7 @@ const Layout: React.FC<LayoutProps> = ({
         <div>
             <Navbar />
 
-            {!home && (
+            {breadcrumbs && (
                 <Container
                     css={{
                         mb: spacing[8],
