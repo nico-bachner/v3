@@ -22,7 +22,7 @@ const BottomNav: React.VFC = () => {
                 backgroundColor: colors['inherit'],
                 backdropFilter: utils.filters.blur.md,
 
-                py: spacing[13],
+                py: spacing[12],
                 px: spacing[0],
 
                 ...responsive({
@@ -30,7 +30,7 @@ const BottomNav: React.VFC = () => {
                 }),
             }}
         >
-            <Text weight={800}>
+            <Text size={4} weight={800}>
                 <Link
                     href="/"
                     variant={pathname != '/' ? 'primary' : 'disabled'}
@@ -38,7 +38,7 @@ const BottomNav: React.VFC = () => {
                     {words.home}
                 </Link>
             </Text>
-            <Text weight={800}>
+            <Text size={4} weight={800}>
                 <Link
                     href="/projects"
                     variant={pathname != '/projects' ? 'primary' : 'disabled'}
@@ -46,7 +46,7 @@ const BottomNav: React.VFC = () => {
                     {words.projects}
                 </Link>
             </Text>
-            <Text weight={800}>
+            <Text size={4} weight={800}>
                 <Link
                     href="/articles"
                     variant={pathname != '/articles' ? 'primary' : 'disabled'}
