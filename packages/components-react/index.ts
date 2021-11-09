@@ -1,5 +1,4 @@
 // compound components
-export { default as Grid } from './src/Grid'
 export { default as List } from './src/List'
 export { default as Select } from './src/Select'
 export { default as Table } from './src/Table'
@@ -12,6 +11,7 @@ export { default as Code } from './src/Code'
 export { default as CodeBlock } from './src/CodeBlock'
 export { default as Container } from './src/Container'
 export { default as Divider } from './src/Divider'
+export { default as Grid } from './src/Grid'
 export { default as Image } from './src/Image'
 export { default as Link } from './src/Link'
 export { default as PieChart } from './src/PieChart'

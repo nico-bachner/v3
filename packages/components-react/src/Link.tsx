@@ -78,7 +78,7 @@ const Link: React.FC<LinkProps> = ({
     if (href.startsWith('/')) {
         return (
             <NextLink href={href}>
-                <BaseLink variant={variant} onClick={onClick}>
+                <BaseLink href={href} variant={variant} onClick={onClick}>
                     {children}
                 </BaseLink>
             </NextLink>

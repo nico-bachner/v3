@@ -1,4 +1,4 @@
-import { Grid, Link, List, Text, Spacer } from '@nico-bachner/components-react'
+import { Grid, Text } from '@nico-bachner/components-react'
 import Head from '@lib/components/Head'
 import Layout from '@lib/components/Layout'
 import InfoCard from '@lib/components/InfoCard'
@@ -19,24 +19,20 @@ const Design: NextPage = () => (
             My personal Design System
         </Text>
 
-        <Grid.Root columns="auto" gap={10}>
-            <Grid.Item>
-                <InfoCard
-                    href="/design/icons"
-                    header="Icons"
-                    body="A collection of hand-coded icons"
-                    cta="See More"
-                />
-            </Grid.Item>
-            <Grid.Item>
-                <InfoCard
-                    href="/design/typography"
-                    header="Typography"
-                    body="Typography presets"
-                    cta="See More"
-                />
-            </Grid.Item>
-        </Grid.Root>
+        <Grid columns="auto" gap={10}>
+            <InfoCard
+                href="/design/icons"
+                header="Icons"
+                body="A collection of hand-coded icons"
+                cta="See More"
+            />
+            <InfoCard
+                href="/design/typography"
+                header="Typography"
+                body="Typography presets"
+                cta="See More"
+            />
+        </Grid>
     </Layout>
 )
 

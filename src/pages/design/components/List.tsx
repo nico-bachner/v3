@@ -1,4 +1,4 @@
-import { Card, Container, Grid, Text } from '@nico-bachner/components-react'
+import { Container, Grid, List, Text } from '@nico-bachner/components-react'
 import Head from '@lib/components/Head'
 import Layout from '@lib/components/Layout'
 
@@ -6,19 +6,19 @@ import { responsive } from '@nico-bachner/css'
 
 import type { NextPage } from 'next'
 
-const CardPage: NextPage = () => (
+const ListPage: NextPage = () => (
     <Layout width="lg">
         <Head
-            title="Card - Nico Design"
+            title="List - Nico Design"
             description="Nico Bachner's Design System"
         />
 
         <Text type="h1" width="sm">
-            Card
+            List
         </Text>
 
         <Text size={6} width="sm" margin={[6, 14]}>
-            For grouping content
+            For ordering text-based content
         </Text>
 
         <Grid
@@ -30,24 +30,28 @@ const CardPage: NextPage = () => (
             })}
         >
             <Container css={{ alignSelf: 'center' }}>
-                <Text>Default</Text>
+                <Text>Unordered (Default)</Text>
             </Container>
             <Container css={{ alignSelf: 'center' }}>
-                <Card>
-                    <Text>Hover Me</Text>
-                </Card>
+                <List.Root>
+                    <List.Item>Item 1</List.Item>
+                    <List.Item>Item 2</List.Item>
+                    <List.Item>Item 3</List.Item>
+                </List.Root>
             </Container>
 
             <Container css={{ alignSelf: 'center' }}>
-                <Text>Interactive</Text>
+                <Text>Ordered</Text>
             </Container>
             <Container css={{ alignSelf: 'center' }}>
-                <Card interactive>
-                    <Text>Hover Me</Text>
-                </Card>
+                <List.Root ordered>
+                    <List.Item>Item 1</List.Item>
+                    <List.Item>Item 2</List.Item>
+                    <List.Item>Item 3</List.Item>
+                </List.Root>
             </Container>
         </Grid>
     </Layout>
 )
 
-export default CardPage
+export default ListPage

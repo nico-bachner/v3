@@ -1,7 +1,7 @@
 import { CSS } from './stitches'
 
 type Responsive<T> = {
-    sm: T
+    sm?: T
     md?: T
     lg?: T
 }

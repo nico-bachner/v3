@@ -1,6 +1,7 @@
-import { Card, Grid, Link, Text, Spacer } from '@nico-bachner/components-react'
+import { Card, Grid, Spacer, Text } from '@nico-bachner/components-react'
 import Head from '@lib/components/Head'
 import Layout from '@lib/components/Layout'
+import Link from '@lib/components/Link'
 
 import dynamic from 'next/dynamic'
 import { colors } from '@nico-bachner/design-tokens/tokens'
@@ -46,7 +47,7 @@ const Icons: NextPage<IconsProps> = ({ icons }) => (
 
         <Spacer y={14} />
 
-        <Grid.Root columns="repeat(auto-fill, minmax(160px, 1fr))" gap={10}>
+        <Grid columns="repeat(auto-fill, minmax(160px, 1fr))" gap={10}>
             {icons.map((path) => {
                 const slug = path[path.length - 1]
 
@@ -74,7 +75,7 @@ const Icons: NextPage<IconsProps> = ({ icons }) => (
                     </Link>
                 )
             })}
-        </Grid.Root>
+        </Grid>
     </Layout>
 )
 

@@ -1,4 +1,4 @@
-import { Checkbox, Container, Grid, Text } from '@nico-bachner/components-react'
+import { Container, Grid, Text } from '@nico-bachner/components-react'
 import Head from '@lib/components/Head'
 import Layout from '@lib/components/Layout'
 
@@ -6,51 +6,63 @@ import { responsive } from '@nico-bachner/css'
 
 import type { NextPage } from 'next'
 
-const CheckboxPage: NextPage = () => (
+const TextPage: NextPage = () => (
     <Layout width="lg">
         <Head
-            title="CheckboxPage - Nico Design"
+            title="Text - Nico Design"
             description="Nico Bachner's Design System"
         />
 
         <Text type="h1" width="sm">
-            CheckboxPage
+            Text
         </Text>
-
         <Text size={6} width="sm" margin={[6, 14]}>
-            For toggling a field
+            For text-based content
         </Text>
 
         <Grid
             gap={14}
             css={responsive({
                 lg: {
-                    gridTemplateColumns: '1fr 2fr',
+                    gridTemplateColumns: '1fr 4fr',
                 },
             })}
         >
             <Container css={{ alignSelf: 'center' }}>
-                <Text>Default</Text>
+                <Text>Heading 1</Text>
             </Container>
             <Container css={{ alignSelf: 'center' }}>
-                <Checkbox />
-            </Container>
-
-            <Container css={{ alignSelf: 'center' }}>
-                <Text>Unchecked</Text>
-            </Container>
-            <Container css={{ alignSelf: 'center' }}>
-                <Checkbox defaultValue={false} />
+                <Text type="h1">
+                    The quick brown fox jumps over the lazy dog
+                </Text>
             </Container>
 
             <Container css={{ alignSelf: 'center' }}>
-                <Text>Checked</Text>
+                <Text>Heading 2</Text>
             </Container>
             <Container css={{ alignSelf: 'center' }}>
-                <Checkbox defaultValue={true} />
+                <Text type="h2">
+                    The quick brown fox jumps over the lazy dog
+                </Text>
+            </Container>
+
+            <Container css={{ alignSelf: 'center' }}>
+                <Text>Heading 3</Text>
+            </Container>
+            <Container css={{ alignSelf: 'center' }}>
+                <Text type="h3">
+                    The quick brown fox jumps over the lazy dog
+                </Text>
+            </Container>
+
+            <Container css={{ alignSelf: 'center' }}>
+                <Text>Paragraph</Text>
+            </Container>
+            <Container css={{ alignSelf: 'center' }}>
+                <Text>The quick brown fox jumps over the lazy dog</Text>
             </Container>
         </Grid>
     </Layout>
 )
 
-export default CheckboxPage
+export default TextPage

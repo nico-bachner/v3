@@ -1,6 +1,6 @@
 import { Grid, Section, Spacer, Text } from '@nico-bachner/components-react'
-import Link from '@lib/components/Link'
 import MDX from '@nico-bachner/mdx'
+import Link from './Link'
 
 import { useTranslation } from '@lib/hooks/useTranslation'
 
@@ -33,9 +33,7 @@ const HomeSection: React.VFC<HomeSectionProps> = ({
                 <>
                     <Spacer y={10} />
 
-                    <Grid.Root columns="auto" gap={10}>
-                        {items}
-                    </Grid.Root>
+                    <Grid gap={10}>{items}</Grid>
 
                     <Spacer y={12} />
 

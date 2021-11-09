@@ -2,8 +2,8 @@ import { spacing } from '@nico-bachner/design-tokens'
 import { useState, useEffect } from 'react'
 import { useRouter } from 'next/router'
 
-import { Container, Text, Stack } from '@nico-bachner/components-react'
-import Link from '@lib/components/Link'
+import { Container, Stack, Text } from '@nico-bachner/components-react'
+import Link from './Link'
 
 type Breadcrumb = {
     title: string
@@ -38,7 +38,7 @@ const Breadcrumbs: React.VFC = () => {
             <Text transform="capitalize">
                 <Stack as="span" direction="row" gap={8}>
                     {breadcrumbs?.map(({ title, href }, index) => (
-                        <Text key={href} type="span">
+                        <Text key={href} type="p">
                             {index != 0 && (
                                 <Container
                                     as="span"

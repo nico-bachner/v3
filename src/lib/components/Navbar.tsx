@@ -1,16 +1,15 @@
 import { Text, Stack } from '@nico-bachner/components-react'
 import { Logo } from '@nico-bachner/icons-react'
-import Link from '@lib/components/Link'
+import Link from './Link'
 import LanguageSwitch from '@lib/components/LanguageSwitch'
 import ThemeSwitch from '@lib/components/ThemeSwitch'
 
-import { styled } from '@nico-bachner/css'
+import { styled, responsive } from '@nico-bachner/css'
 import { colors, spacing, utils } from '@nico-bachner/design-tokens'
 import { useRouter } from 'next/router'
 import { useTranslation } from '@lib/hooks/useTranslation'
 
-const Nav = styled('nav', {
-    position: 'sticky',
+const BaseNavbar = styled('nav', {
     inset: spacing[0],
     zIndex: '20',
 
@@ -19,15 +18,13 @@ const Nav = styled('nav', {
 
     boxSizing: 'border-box',
 
-    px: spacing[11],
-    py: spacing[11],
     mx: spacing[0],
     my: spacing[13],
 
-    '@sm': {
-        px: spacing[12],
-        py: spacing[13],
-    },
+    ...responsive({
+        sm: { px: spacing[11], py: spacing[11] },
+        md: { px: spacing[12], py: spacing[13], position: 'sticky' },
+    }),
 })
 
 const LogoWrapper = styled('div', {
@@ -40,7 +37,7 @@ const Navbar: React.VFC = () => {
     const { words } = useTranslation()
 
     return (
-        <Nav>
+        <BaseNavbar>
             <Stack
                 direction="row"
                 justify="space-between"
@@ -58,13 +55,10 @@ const Navbar: React.VFC = () => {
                 <Stack
                     direction="row"
                     gap={12}
-                    css={{
-                        display: 'none',
-
-                        '@sm': {
-                            display: 'flex',
-                        },
-                    }}
+                    css={responsive({
+                        sm: { display: 'none' },
+                        md: { display: 'flex' },
+                    })}
                 >
                     <Text weight={600}>
                         <Link
@@ -100,7 +94,7 @@ const Navbar: React.VFC = () => {
                     <ThemeSwitch />
                 </Stack>
             </Stack>
-        </Nav>
+        </BaseNavbar>
     )
 }
 

@@ -1,6 +1,8 @@
-import { Grid, Text, Select } from '@nico-bachner/components-react'
+import { Container, Grid, Text, Select } from '@nico-bachner/components-react'
 import Head from '@lib/components/Head'
 import Layout from '@lib/components/Layout'
+
+import { responsive } from '@nico-bachner/css'
 
 import type { NextPage } from 'next'
 
@@ -16,27 +18,26 @@ const SelectPage: NextPage = () => (
         </Text>
 
         <Text size={6} width="sm" margin={[6, 14]}>
-            For input wit predefined options
+            For user input with predefined options
         </Text>
 
-        <Grid.Root
-            columns="auto"
+        <Grid
             gap={14}
-            css={{
-                '@md': {
+            css={responsive({
+                lg: {
                     gridTemplateColumns: '1fr 2fr',
                 },
-            }}
+            })}
         >
-            <Grid.Item justifyY="center">
+            <Container css={{ alignSelf: 'center' }}>
                 <Text>Default</Text>
-            </Grid.Item>
+            </Container>
             <Select.Root>
                 <Select.Option value="1">Option 1</Select.Option>
                 <Select.Option value="2">Option 2</Select.Option>
                 <Select.Option value="3">Option 3</Select.Option>
             </Select.Root>
-        </Grid.Root>
+        </Grid>
     </Layout>
 )
 

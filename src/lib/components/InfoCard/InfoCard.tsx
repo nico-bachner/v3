@@ -1,5 +1,4 @@
-import { Card, Stack, Text } from '@nico-bachner/components-react'
-import Link from '@lib/components/Link'
+import { Card, Link, Stack, Text } from '@nico-bachner/components-react'
 
 type InfoCardProps = {
     href: string

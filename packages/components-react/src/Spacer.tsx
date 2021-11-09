@@ -1,9 +1,8 @@
-import { styled } from '@nico-bachner/css'
+import Container from './Container'
+
 import { spacing } from '@nico-bachner/design-tokens'
 
 import type { Space } from '@nico-bachner/design-tokens'
-
-const BaseSpacer = styled('div')
 
 type SpacerProps = {
     x?: Space
@@ -11,7 +10,7 @@ type SpacerProps = {
 }
 
 const Spacer: React.VFC<SpacerProps> = ({ x, y }) => (
-    <BaseSpacer
+    <Container
         css={{
             width: x ? spacing[x] : undefined,
             height: y ? spacing[y] : undefined,

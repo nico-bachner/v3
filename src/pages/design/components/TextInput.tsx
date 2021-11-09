@@ -1,6 +1,13 @@
-import { Grid, Text, TextInput } from '@nico-bachner/components-react'
+import {
+    Container,
+    Grid,
+    Text,
+    TextInput,
+} from '@nico-bachner/components-react'
 import Head from '@lib/components/Head'
 import Layout from '@lib/components/Layout'
+
+import { responsive } from '@nico-bachner/css'
 
 import type { NextPage } from 'next'
 
@@ -16,53 +23,52 @@ const TextInputPage: NextPage = () => (
         </Text>
 
         <Text size={6} width="sm" margin={[6, 14]}>
-            For text-based input
+            For text-based user input
         </Text>
 
-        <Grid.Root
-            columns="auto"
+        <Grid
             gap={14}
-            css={{
-                '@md': {
+            css={responsive({
+                lg: {
                     gridTemplateColumns: '1fr 2fr',
                 },
-            }}
+            })}
         >
-            <Grid.Item justifyY="center">
+            <Container css={{ alignSelf: 'center' }}>
                 <Text>Text</Text>
-            </Grid.Item>
-            <Grid.Item justifyY="center">
+            </Container>
+            <Container css={{ alignSelf: 'center' }}>
                 <TextInput type="text" placeholder="type something here" />
-            </Grid.Item>
+            </Container>
 
-            <Grid.Item justifyY="center">
+            <Container css={{ alignSelf: 'center' }}>
                 <Text>Email</Text>
-            </Grid.Item>
-            <Grid.Item justifyY="center">
+            </Container>
+            <Container css={{ alignSelf: 'center' }}>
                 <TextInput type="email" placeholder="mail@example.com" />
-            </Grid.Item>
+            </Container>
 
-            <Grid.Item justifyY="center">
+            <Container css={{ alignSelf: 'center' }}>
                 <Text>Password</Text>
-            </Grid.Item>
-            <Grid.Item justifyY="center">
+            </Container>
+            <Container css={{ alignSelf: 'center' }}>
                 <TextInput type="password" placeholder="12345secret" />
-            </Grid.Item>
+            </Container>
 
-            <Grid.Item justifyY="center">
+            <Container css={{ alignSelf: 'center' }}>
                 <Text>Search</Text>
-            </Grid.Item>
-            <Grid.Item justifyY="center">
+            </Container>
+            <Container css={{ alignSelf: 'center' }}>
                 <TextInput type="search" placeholder="abc" />
-            </Grid.Item>
+            </Container>
 
-            <Grid.Item justifyY="center">
+            <Container css={{ alignSelf: 'center' }}>
                 <Text>URL</Text>
-            </Grid.Item>
-            <Grid.Item justifyY="center">
+            </Container>
+            <Container css={{ alignSelf: 'center' }}>
                 <TextInput type="url" placeholder="example.com" />
-            </Grid.Item>
-        </Grid.Root>
+            </Container>
+        </Grid>
     </Layout>
 )
 

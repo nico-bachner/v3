@@ -1,23 +1,10 @@
-import { useTheme } from '@nico-bachner/react-hooks'
-import { styled } from '@nico-bachner/css'
+import Container from './Container'
+
+import { responsive } from '@nico-bachner/css'
 import { colors, motion, spacing, utils } from '@nico-bachner/design-tokens'
+import { useTheme } from '@nico-bachner/react-hooks'
 
 import type { CSS } from '@nico-bachner/css'
-
-const BaseCard = styled('div', {
-    px: spacing[11],
-    py: spacing[10],
-
-    '@sm': {
-        px: spacing[12],
-        py: spacing[11],
-    },
-
-    '@md': {
-        px: spacing[13],
-        py: spacing[12],
-    },
-})
 
 type CardProps = {
     interactive?: boolean
@@ -29,8 +16,14 @@ const Card: React.FC<CardProps> = ({ children, interactive, css }) => {
     const { resolvedTheme } = useTheme()
 
     return (
-        <BaseCard
+        <Container
             css={{
+                ...responsive({
+                    sm: { px: spacing[11], py: spacing[10] },
+                    md: { px: spacing[12], py: spacing[11] },
+                    lg: { px: spacing[13], py: spacing[12] },
+                }),
+
                 ...(resolvedTheme == 'light'
                     ? {
                           boxShadow: utils.shadows.sm,
@@ -65,7 +58,7 @@ const Card: React.FC<CardProps> = ({ children, interactive, css }) => {
             }}
         >
             {children}
-        </BaseCard>
+        </Container>
     )
 }
 

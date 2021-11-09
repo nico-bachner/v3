@@ -1,23 +1,21 @@
-import { styled } from '@nico-bachner/css'
+import Container from './Container'
 
 import type { CSS } from '@nico-bachner/css'
 
-const BaseItem = styled('div')
-
-type ItemProps = {
+type GridItemProps = {
     as?: keyof JSX.IntrinsicElements
 
     column?: [number, number]
     row?: [number, number]
 
     justify?: 'start' | 'end' | 'center' | 'stretch'
-    justifyX?: ItemProps['justify']
-    justifyY?: ItemProps['justify']
+    justifyX?: GridItemProps['justify']
+    justifyY?: GridItemProps['justify']
 
     css?: CSS
 }
 
-const Item: React.FC<ItemProps> = ({
+const GridItem: React.FC<GridItemProps> = ({
     children,
     as,
 
@@ -30,7 +28,7 @@ const Item: React.FC<ItemProps> = ({
 
     css,
 }) => (
-    <BaseItem
+    <Container
         as={as}
         css={{
             gridColumnStart: column?.[0],
@@ -46,7 +44,7 @@ const Item: React.FC<ItemProps> = ({
         }}
     >
         {children}
-    </BaseItem>
+    </Container>
 )
 
-export default Item
+export default GridItem

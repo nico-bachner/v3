@@ -14,8 +14,6 @@ import type {
 
 const BaseText = styled('p', {
     fontFamily: typography.fonts.sans,
-
-    mx: spacing[0],
     my: spacing[0],
 
     variants: {
@@ -56,8 +54,6 @@ const BaseText = styled('p', {
                 letterSpacing: typography.letterSpacings[5],
             },
             small: {},
-            span: {},
-            div: {},
             label: {},
             strong: {
                 color: colors['neutral-10'],
@@ -68,18 +64,10 @@ const BaseText = styled('p', {
 })
 
 type TextProps = {
+    as?: keyof JSX.IntrinsicElements
+    type?: 'h1' | 'h2' | 'h3' | 'h4' | 'p' | 'small' | 'label' | 'strong'
+
     id?: string
-    type?:
-        | 'h1'
-        | 'h2'
-        | 'h3'
-        | 'h4'
-        | 'p'
-        | 'small'
-        | 'span'
-        | 'div'
-        | 'label'
-        | 'strong'
 
     size?: FontSize
     weight?: FontWeight
@@ -100,8 +88,11 @@ const linearGradient = (args: string[]) => `linear-gradient(${args.join(', ')})`
 
 const Text: React.FC<TextProps> = ({
     children,
-    id,
+
+    as,
     type = 'p',
+
+    id,
 
     size,
     weight,
@@ -119,7 +110,7 @@ const Text: React.FC<TextProps> = ({
 }) => (
     <BaseText
         id={id}
-        as={type}
+        as={as ?? type}
         type={type}
         css={{
             ...(size

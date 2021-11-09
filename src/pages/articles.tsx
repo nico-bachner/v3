@@ -1,7 +1,7 @@
 import { fetchTranslation } from '@lib/utils/mdx'
 import { fetchArticlesData } from '@lib/utils/data/articles'
 
-import { Grid, Spacer, Text } from '@nico-bachner/components-react'
+import { Grid, Spacer } from '@nico-bachner/components-react'
 import MDX from '@nico-bachner/mdx'
 import Head from '@lib/components/Head'
 import Layout from '@lib/components/Layout'
@@ -36,13 +36,14 @@ const Articles: NextPage<ArticlesProps> = ({ content, articles }) => (
 
         <Spacer y={10} />
 
-        <Grid.Root columns="auto" gap={10}>
+        <Grid gap={10}>
             {articles.map((article) => (
-                <Grid.Item key={article.path[article.path.length - 1]}>
-                    <ArticleCard {...article} />
-                </Grid.Item>
+                <ArticleCard
+                    key={article.path[article.path.length - 1]}
+                    {...article}
+                />
             ))}
-        </Grid.Root>
+        </Grid>
     </Layout>
 )
 

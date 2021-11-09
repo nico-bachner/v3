@@ -1,12 +1,9 @@
-import { styled } from '@nico-bachner/css'
+import Container from './Container'
+
 import { colors, spacing } from '@nico-bachner/design-tokens'
 
 import type { CSS } from '@nico-bachner/css'
 import type { Space } from '@nico-bachner/design-tokens'
-
-const BaseStack = styled('div', {
-    display: 'flex',
-})
 
 type StackProps = {
     as?: keyof JSX.IntrinsicElements
@@ -32,9 +29,11 @@ const Stack: React.FC<StackProps> = ({
     debug,
     css,
 }) => (
-    <BaseStack
+    <Container
         as={as}
         css={{
+            display: 'flex',
+
             gap: spacing[gap],
             flexDirection: direction,
             justifyContent: justify,
@@ -50,7 +49,7 @@ const Stack: React.FC<StackProps> = ({
         }}
     >
         {children}
-    </BaseStack>
+    </Container>
 )
 
 export default Stack

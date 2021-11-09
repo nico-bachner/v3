@@ -3,10 +3,8 @@ import { fetchArticlesData } from '@lib/utils/data/articles'
 import { fetchTranslation } from '@lib/utils/mdx'
 import { useTranslation } from '@lib/hooks/useTranslation'
 
-import { Grid, Section, Spacer, Text } from '@nico-bachner/components-react'
+import { Text } from '@nico-bachner/components-react'
 import { ProjectCard, ArticleCard } from '@lib/components/InfoCard'
-import Link from '@lib/components/Link'
-import MDX from '@nico-bachner/mdx'
 import Head from '@lib/components/Head'
 import Layout from '@lib/components/Layout'
 import HomeSection from '@lib/components/HomeSection'
@@ -82,9 +80,10 @@ const Home: NextPage<HomeProps> = ({ content, projects, articles }) => {
                 title={words.projects}
                 content={content.projects}
                 items={projects.map((project) => (
-                    <Grid.Item key={project.path[project.path.length - 1]}>
-                        <ProjectCard {...project} />
-                    </Grid.Item>
+                    <ProjectCard
+                        key={project.path[project.path.length - 1]}
+                        {...project}
+                    />
                 ))}
                 href="/projects"
             />
@@ -94,9 +93,10 @@ const Home: NextPage<HomeProps> = ({ content, projects, articles }) => {
                 title={words.articles}
                 content={content.articles}
                 items={articles.map((article) => (
-                    <Grid.Item key={article.path[article.path.length - 1]}>
-                        <ArticleCard {...article} />
-                    </Grid.Item>
+                    <ArticleCard
+                        key={article.path[article.path.length - 1]}
+                        {...article}
+                    />
                 ))}
                 href="/articles"
             />

@@ -1,7 +1,8 @@
+import { responsive } from '@nico-bachner/css'
 import { fetchTranslation } from '@lib/utils/mdx'
 import { fetchProjectsData } from '@lib/utils/data/projects'
 
-import { Grid, Spacer } from '@nico-bachner/components-react'
+import { Container, Grid, Spacer } from '@nico-bachner/components-react'
 import MDX from '@nico-bachner/mdx'
 import Head from '@lib/components/Head'
 import Layout from '@lib/components/Layout'
@@ -36,20 +37,17 @@ const Projects: NextPage<ProjectsProps> = ({ content, projects }) => (
 
         <Spacer y={12} />
 
-        <Grid.Root
-            columns="auto"
+        <Grid
             gap={12}
-            css={{
-                '@md': {
-                    gridTemplateColumns: '1fr 12rem 1fr',
-                },
-            }}
+            css={responsive({
+                lg: { gridTemplateColumns: '1fr 12rem 1fr' },
+            })}
         >
             {projects.map((project) => (
-                <Grid.Item
+                <Container
                     key={project.path[project.path.length - 1]}
-                    css={{
-                        '@md': {
+                    css={responsive({
+                        lg: {
                             gridColumn: 'span 2 / span 2',
 
                             '&:nth-child(odd)': {
@@ -59,12 +57,12 @@ const Projects: NextPage<ProjectsProps> = ({ content, projects }) => (
                                 gridColumnStart: '2',
                             },
                         },
-                    }}
+                    })}
                 >
                     <ProjectCard {...project} />
-                </Grid.Item>
+                </Container>
             ))}
-        </Grid.Root>
+        </Grid>
     </Layout>
 )
 

@@ -1,24 +1,25 @@
 import { spacing } from '@nico-bachner/design-tokens'
+import { responsive } from '@nico-bachner/css'
 import { useTranslation } from '@lib/hooks/useTranslation'
 
-import { Text, Grid, Stack } from '@nico-bachner/components-react'
-import Link from '@lib/components/Link'
+import { Grid, Text, Stack } from '@nico-bachner/components-react'
+import Link from './Link'
 
 const Footer: React.VFC = () => {
     const { words } = useTranslation()
 
     return (
-        <Grid.Root
+        <Grid
             as="footer"
-            columns="1fr 1fr"
             gap={12}
             css={{
                 mt: spacing[16],
                 mb: spacing[18],
 
-                '@md': {
-                    gridTemplateColumns: '1fr 1fr 1fr 1fr',
-                },
+                ...responsive({
+                    sm: { gridTemplateColumns: '1fr 1fr' },
+                    lg: { gridTemplateColumns: '1fr 1fr 1fr 1fr' },
+                }),
             }}
         >
             <Stack
@@ -48,13 +49,10 @@ const Footer: React.VFC = () => {
             </Stack>
             <Stack
                 gap={10}
-                css={{
-                    textAlign: 'right',
-
-                    '@md': {
-                        textAlign: 'center',
-                    },
-                }}
+                css={responsive({
+                    sm: { textAlign: 'right' },
+                    lg: { textAlign: 'center' },
+                })}
             >
                 <Text>
                     <Text type="strong">Assorted</Text>
@@ -72,13 +70,10 @@ const Footer: React.VFC = () => {
             </Stack>
             <Stack
                 gap={10}
-                css={{
-                    textAlign: 'left',
-
-                    '@md': {
-                        textAlign: 'center',
-                    },
-                }}
+                css={responsive({
+                    sm: { textAlign: 'left' },
+                    lg: { textAlign: 'center' },
+                })}
             >
                 <Text>
                     <Text type="strong">Social</Text>
@@ -118,7 +113,7 @@ const Footer: React.VFC = () => {
                     </Link>
                 </Text>
             </Stack>
-        </Grid.Root>
+        </Grid>
     )
 }
 

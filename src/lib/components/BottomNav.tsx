@@ -1,9 +1,10 @@
 import { colors, spacing, utils } from '@nico-bachner/design-tokens'
+import { responsive } from '@nico-bachner/css'
 import { useRouter } from 'next/router'
 import { useTranslation } from '@lib/hooks/useTranslation'
 
-import { Text, Stack } from '@nico-bachner/components-react'
-import Link from '@lib/components/Link'
+import { Stack, Text } from '@nico-bachner/components-react'
+import Link from './Link'
 
 const BottomNav: React.VFC = () => {
     const { pathname } = useRouter()
@@ -24,9 +25,9 @@ const BottomNav: React.VFC = () => {
                 py: spacing[13],
                 px: spacing[0],
 
-                '@sm': {
-                    display: 'none',
-                },
+                ...responsive({
+                    md: { display: 'none' },
+                }),
             }}
         >
             <Text weight={800}>

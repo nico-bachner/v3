@@ -1,9 +1,8 @@
-import { styled } from '@nico-bachner/css'
+import Container from './Container'
+
 import { spacing } from '@nico-bachner/design-tokens'
 
 import type { Space } from '@nico-bachner/design-tokens'
-
-const BaseSection = styled('section')
 
 type SectionProps = {
     id?: string
@@ -11,14 +10,15 @@ type SectionProps = {
 }
 
 const Section: React.FC<SectionProps> = ({ children, id, margin }) => (
-    <BaseSection
+    <Container
+        as="section"
         id={id}
         css={{
             marginBlock: spacing[margin ?? 18],
         }}
     >
         {children}
-    </BaseSection>
+    </Container>
 )
 
 export default Section

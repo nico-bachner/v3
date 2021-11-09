@@ -1,23 +1,21 @@
-import { styled } from '@nico-bachner/css'
+import Container from './Container'
 import { colors, spacing } from '@nico-bachner/design-tokens'
 
 import type { CSS } from '@nico-bachner/css'
 import type { Space } from '@nico-bachner/design-tokens'
 
-const BaseRoot = styled('div')
-
-type RootProps = {
+type GridProps = {
     as?: keyof JSX.IntrinsicElements
 
-    columns?: CSS['gridTemplateColumns']
-    rows?: CSS['gridTemplateRows']
+    columns?: (Space | 'auto' | `${number}fr`)[] | string
+    rows?: (Space | 'auto' | `${number}fr`)[] | string
     gap?: Space
 
     debug?: boolean
     css?: CSS
 }
 
-const Root: React.FC<RootProps> = ({
+const Grid: React.FC<GridProps> = ({
     children,
     as,
 
@@ -28,12 +26,14 @@ const Root: React.FC<RootProps> = ({
     debug,
     css,
 }) => (
-    <BaseRoot
+    <Container
         as={as}
         css={{
             display: 'grid',
-            gridTemplateColumns: columns,
-            gridTemplateRown: rows,
+            gridTemplateColumns: Array.isArray(columns)
+                ? columns?.join(' ')
+                : columns,
+            gridTemplateRows: Array.isArray(rows) ? rows?.join(' ') : rows,
             gap: spacing[gap],
 
             ...(debug && {
@@ -44,7 +44,7 @@ const Root: React.FC<RootProps> = ({
         }}
     >
         {children}
-    </BaseRoot>
+    </Container>
 )
 
-export default Root
+export default Grid

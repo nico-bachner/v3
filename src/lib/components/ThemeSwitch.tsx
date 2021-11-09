@@ -1,4 +1,5 @@
 import { Select } from '@nico-bachner/components-react'
+// TODO: use icons
 import { Display } from '@nico-bachner/icons-react'
 
 import { useState, useEffect } from 'react'
@@ -8,8 +9,9 @@ const ThemeSwitch: React.FC = () => {
     const [mounted, setMounted] = useState(false)
     const { theme, themes, setTheme } = useTheme()
 
-    // When mounted on client, now we can show the UI
-    useEffect(() => setMounted(true), [])
+    useEffect(() => {
+        setMounted(true)
+    }, [])
 
     if (!mounted) return null
 

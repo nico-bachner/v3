@@ -1,6 +1,8 @@
-import { Button, Grid, Text } from '@nico-bachner/components-react'
+import { Button, Container, Grid, Text } from '@nico-bachner/components-react'
 import Head from '@lib/components/Head'
 import Layout from '@lib/components/Layout'
+
+import { responsive } from '@nico-bachner/css'
 
 import type { NextPage } from 'next'
 
@@ -19,36 +21,35 @@ const ButtonPage: NextPage = () => (
             For clicking and such...
         </Text>
 
-        <Grid.Root
-            columns="auto"
+        <Grid
             gap={14}
-            css={{
-                '@md': {
+            css={responsive({
+                lg: {
                     gridTemplateColumns: '1fr 2fr',
                 },
-            }}
+            })}
         >
-            <Grid.Item justifyY="center">
+            <Container css={{ alignSelf: 'center' }}>
                 <Text>Primary</Text>
-            </Grid.Item>
-            <Grid.Item justifyY="center">
+            </Container>
+            <Container css={{ alignSelf: 'center' }}>
                 <Button variant="primary">Click Me</Button>
-            </Grid.Item>
+            </Container>
 
-            <Grid.Item justifyY="center">
+            <Container css={{ alignSelf: 'center' }}>
                 <Text>Shadow</Text>
-            </Grid.Item>
-            <Grid.Item justifyY="center">
+            </Container>
+            <Container css={{ alignSelf: 'center' }}>
                 <Button variant="shadow">Click Me</Button>
-            </Grid.Item>
+            </Container>
 
-            <Grid.Item justifyY="center">
+            <Container css={{ alignSelf: 'center' }}>
                 <Text>Ghost</Text>
-            </Grid.Item>
-            <Grid.Item justifyY="center">
+            </Container>
+            <Container css={{ alignSelf: 'center' }}>
                 <Button variant="ghost">Click Me</Button>
-            </Grid.Item>
-        </Grid.Root>
+            </Container>
+        </Grid>
     </Layout>
 )
 

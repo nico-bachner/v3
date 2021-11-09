@@ -3,11 +3,11 @@ import { fetchMDXContent, getMDXData } from '@nico-bachner/mdx/utils'
 import { fetchFile, fetchRecursivePaths } from '@lib/utils/fs'
 import { fetchDateUpdated, getEditUrl } from '@lib/utils/github'
 
-import { Text, Stack } from '@nico-bachner/components-react'
-import Link from '@lib/components/Link'
+import { Stack, Text } from '@nico-bachner/components-react'
 import MDX from '@nico-bachner/mdx'
 import Head from '@lib/components/Head'
 import Layout from '@lib/components/Layout'
+import Link from '@lib/components/Link'
 
 import type { NextPage, GetStaticPaths, GetStaticProps } from 'next'
 import type { MDXContent } from '@nico-bachner/mdx/utils'
