@@ -34,29 +34,25 @@ const Breadcrumbs: React.VFC = () => {
     }, [asPath])
 
     return (
-        <nav aria-label="breadcrumbs">
-            <Text transform="capitalize">
-                <Stack as="span" direction="row" gap={8}>
-                    {breadcrumbs?.map(({ title, href }, index) => (
-                        <Text key={href} type="p">
-                            {index != 0 && (
-                                <Container
-                                    as="span"
-                                    css={{
-                                        mr: spacing[8],
-                                    }}
-                                >
-                                    /
-                                </Container>
-                            )}
-                            <Link variant="highlight" href={href}>
-                                {title}
-                            </Link>
-                        </Text>
-                    ))}
-                </Stack>
-            </Text>
-        </nav>
+        <Stack as="nav" direction="row" gap={8}>
+            {breadcrumbs?.map(({ title, href }, index) => (
+                <Text key={href} type="p" transform="capitalize">
+                    {index != 0 && (
+                        <Container
+                            as="span"
+                            css={{
+                                mr: spacing[8],
+                            }}
+                        >
+                            /
+                        </Container>
+                    )}
+                    <Link variant="highlight" href={href}>
+                        {title}
+                    </Link>
+                </Text>
+            ))}
+        </Stack>
     )
 }
 

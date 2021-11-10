@@ -1,5 +1,8 @@
 import { Card, Link, Stack, Text } from '@nico-bachner/components-react'
 
+import { responsive } from '@nico-bachner/css'
+import { spacing } from '@nico-bachner/design-tokens/tokens'
+
 type InfoCardProps = {
     href: string
     header: string
@@ -17,11 +20,11 @@ const InfoCard: React.VFC<InfoCardProps> = ({
 }) => (
     <Link href={href}>
         <Card interactive>
-            <Stack gap={6}>
+            <Stack gap={8}>
                 <Text size={6}>
                     <Text type="strong">{header}</Text>
                 </Text>
-                <Text>{body}</Text>
+                <Text truncate={3}>{body}</Text>
                 <Stack direction="row" justify="space-between">
                     <Text color="blue">{cta} →</Text>
                     <Text color="neutral-8">{info}</Text>

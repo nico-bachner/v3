@@ -6,11 +6,20 @@ const BaseContainer = styled('div')
 
 type ContainerProps = {
     as?: keyof JSX.IntrinsicElements
+
     id?: string
+
     css?: CSS
 }
 
-const Container: React.FC<ContainerProps> = ({ children, as, id, css }) => (
+const Container: React.FC<ContainerProps> = ({
+    children,
+    as,
+
+    id,
+
+    css,
+}) => (
     <BaseContainer as={as} id={id} css={css}>
         {children}
     </BaseContainer>

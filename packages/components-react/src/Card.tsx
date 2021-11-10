@@ -19,9 +19,9 @@ const Card: React.FC<CardProps> = ({ children, interactive, css }) => {
         <Container
             css={{
                 ...responsive({
-                    sm: { px: spacing[11], py: spacing[10] },
-                    md: { px: spacing[12], py: spacing[11] },
-                    lg: { px: spacing[13], py: spacing[12] },
+                    sm: { px: spacing[12], py: spacing[11] },
+                    md: { px: spacing[13], py: spacing[12] },
+                    lg: { px: spacing[14], py: spacing[13] },
                 }),
 
                 ...(resolvedTheme == 'light'

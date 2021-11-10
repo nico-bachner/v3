@@ -132,7 +132,14 @@ const Text: React.FC<TextProps> = ({
 
             textTransform: transform,
             textAlign: align,
-            lineClamp: truncate,
+            ...(truncate
+                ? {
+                      display: '-webkit-box',
+                      '-webkit-line-clamp': 3,
+                      '-webkit-box-orient': 'vertical',
+                      overflow: 'hidden',
+                  }
+                : {}),
 
             ...(color
                 ? Array.isArray(color)
