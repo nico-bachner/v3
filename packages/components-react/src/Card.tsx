@@ -31,7 +31,7 @@ const Card: React.FC<CardProps> = ({ children, interactive, css }) => {
                     : {
                           border: `1px solid`,
                           borderColor: colors['neutral-3'],
-                          r: spacing[5],
+                          r: spacing[8],
                       }),
 
                 ...(interactive

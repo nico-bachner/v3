@@ -147,10 +147,10 @@ const Path: NextPage<PathProps> = ({
             />
 
             <article>
-                <Text type="h1" width="sm" margin={[0, subtitle ? 0 : 10]}>
+                <Text type="h1" width="sm" margin={[0, subtitle ? 0 : 12]}>
                     {title}
                 </Text>
-                <Text size={6} weight={600} width="sm" margin={[5, 10]}>
+                <Text size={6} weight={500} width="sm" margin={[5, 12]}>
                     {subtitle}
                 </Text>
 
