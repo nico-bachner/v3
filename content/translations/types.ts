@@ -13,6 +13,7 @@ type Translation = {
         visitors: string
         source_code: string
         cv: string
+        page_not_found: string
     }
     actions: {
         change_language: string

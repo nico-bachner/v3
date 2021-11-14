@@ -16,6 +16,7 @@ const translation: Translation = {
         visitors: 'Visiteuren',
         source_code: 'Quelltext',
         cv: 'Liewenslaaf',
+        page_not_found: 'Säit nët fonnt',
     },
     actions: {
         change_language: 'Sprooch änneren',

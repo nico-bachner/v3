@@ -1,19 +1,21 @@
 import { colors, spacing, typography } from '@nico-bachner/design-tokens'
 import { useState } from 'react'
+import { useTranslation } from '@lib/hooks/useTranslation'
 import { fetchVisits } from '@lib/utils/db/visits'
 import { fetchClicks } from '@lib/utils/db/clicks'
 
 import {
     Button,
     PieChart,
-    Table,
-    Text,
     Section,
     Spacer,
     Stack,
+    Table,
+    Text,
 } from '@nico-bachner/components-react'
 import Head from '@lib/components/Head'
 import Layout from '@lib/components/Layout'
+import Title from '@lib/components/Title'
 
 import type { NextPage, GetServerSideProps } from 'next'
 
@@ -40,6 +42,8 @@ const Visitors: NextPage<Props> = ({
     visits: initialVisits,
     clicks: initialClicks,
 }) => {
+    const { words } = useTranslation()
+
     const [visits, setVisits] = useState(initialVisits)
     const [clicks, setClicks] = useState(initialClicks)
 
@@ -50,17 +54,16 @@ const Visitors: NextPage<Props> = ({
                 description="Insights into the visitors of nicobachner.com"
             />
 
-            <Text type="h1">Visitors</Text>
-            <Text size={6} marginTop={6}>
-                Insights into the visitors of nicobachner.com
-            </Text>
+            <Title
+                title={words.visitors}
+                subtitle="Insights into the visitors of nicobachner.com"
+            />
 
             <Section id="visits">
                 <Stack direction="row" justify="space-between">
                     <Text type="h2">Page visits</Text>
 
                     <Button
-                        variant="primary"
                         onClick={async () => {
                             const res = await fetch('/api/visits')
                             const visits: VisitsData = await res.json()
@@ -129,7 +132,6 @@ const Visitors: NextPage<Props> = ({
                     <Text type="h2">Link Clicks</Text>
 
                     <Button
-                        variant="primary"
                         onClick={async () => {
                             const res = await fetch('/api/clicks')
                             const clicks = await res.json()

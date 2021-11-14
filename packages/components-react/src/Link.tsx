@@ -15,18 +15,16 @@ const BaseLink = styled('a', {
                 color: 'inherit',
             },
             highlight: {
-                color: colors['blue'],
+                color: colors['blue-6'],
 
                 transitionProperty: 'border-bottom-color',
                 transitionDuration: motion.durations.fast,
                 transitionTimingFunction: motion.easings.default,
 
-                borderBottomWidth: '0.09em',
-                borderBottomStyle: 'solid',
-                borderBottomColor: colors['transparent'],
+                borderBottom: ['0.09em', 'solid', 'transparent'].join(' '),
 
                 '&:hover': {
-                    borderBottomColor: colors['blue'],
+                    borderBottomColor: colors['blue-6'],
                 },
             },
             primary: {
@@ -36,9 +34,7 @@ const BaseLink = styled('a', {
                 transitionDuration: motion.durations.fast,
                 transitionTimingFunction: motion.easings.default,
 
-                borderBottomWidth: '0.09em',
-                borderBottomStyle: 'solid',
-                borderBottomColor: 'transparent',
+                borderBottom: ['0.09em', 'solid', 'transparent'].join(' '),
 
                 '&:hover': {
                     borderBottomColor: colors['neutral-10'],

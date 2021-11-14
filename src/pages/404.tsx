@@ -1,26 +1,41 @@
-import { Text } from '@nico-bachner/components-react'
 import Head from '@lib/components/Head'
 import Layout from '@lib/components/Layout'
-import Link from '@lib/components/Link'
+import MDX from '@nico-bachner/mdx'
+import Title from '@lib/components/Title'
 
-import type { NextPage } from 'next'
+import { useTranslation } from '@lib/hooks/useTranslation'
+import { fetchTranslation } from '@lib/utils/mdx'
 
-const NotFound: NextPage = () => (
-    <Layout width="sm">
-        <Head title="404 | Nico Bachner" description="Page Not Found" />
-        <Text type="h1">404 - Page Not Found</Text>
-        <Text margin={[8, 8]}>
-            It seems the page you were looking for does not exist. You should
-            double-check the url to make sure you are looking for the right
-            page.
-        </Text>
-        <Text>
-            In the meantime, why not return to the{' '}
-            <Link href="/" variant="highlight">
-                Homepage
-            </Link>
-        </Text>
-    </Layout>
-)
+import type { NextPage, GetStaticProps } from 'next'
+import type { MDXContent } from '@nico-bachner/mdx/utils'
+
+type NotFoundProps = {
+    content: MDXContent
+}
+
+const getStaticProps: GetStaticProps<NotFoundProps> = async ({ locale }) => ({
+    props: {
+        content: await fetchTranslation({
+            locale,
+            path: ['404'],
+        }),
+    },
+})
+
+const NotFound: NextPage<NotFoundProps> = ({ content }) => {
+    const { words } = useTranslation()
+
+    return (
+        <Layout width="sm">
+            <Head title="404 | Nico Bachner" description="Page Not Found" />
+
+            <Title title={`404 - ${words.page_not_found}`} />
+
+            <MDX content={content} />
+        </Layout>
+    )
+}
+
+export { getStaticProps }
 
 export default NotFound

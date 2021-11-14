@@ -16,6 +16,7 @@ const translation: Translation = {
         visitors: 'Besucher',
         source_code: 'Quelltext',
         cv: 'Lebenslauf',
+        page_not_found: 'Seite nicht gefunden',
     },
     actions: {
         change_language: 'Sprache ändern',

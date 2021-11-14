@@ -16,6 +16,7 @@ const translation: Translation = {
         visitors: 'Gæster',
         source_code: 'Source Code',
         cv: 'CV',
+        page_not_found: 'Side ikke fundet',
     },
     actions: {
         change_language: 'Skift sprog',

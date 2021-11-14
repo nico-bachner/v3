@@ -1,56 +1,61 @@
-import { Text, Stack } from '@nico-bachner/components-react'
+import { Container, Text, Stack } from '@nico-bachner/components-react'
 import { Logo } from '@nico-bachner/icons-react'
 import Link from './Link'
 import LanguageSwitch from '@lib/components/LanguageSwitch'
 import ThemeSwitch from '@lib/components/ThemeSwitch'
 
-import { styled, responsive } from '@nico-bachner/css'
+import { responsive } from '@nico-bachner/css'
 import { colors, spacing, utils } from '@nico-bachner/design-tokens'
 import { useRouter } from 'next/router'
 import { useTranslation } from '@lib/hooks/useTranslation'
-
-const BaseNavbar = styled('nav', {
-    inset: spacing[0],
-    zIndex: '20',
-
-    backgroundColor: colors['inherit'],
-    backdropFilter: utils.filters.blur.md,
-
-    boxSizing: 'border-box',
-
-    mx: spacing[0],
-    my: spacing[13],
-
-    ...responsive({
-        sm: { px: spacing[11], py: spacing[11] },
-        md: { px: spacing[12], py: spacing[13], position: 'sticky' },
-    }),
-})
-
-const LogoWrapper = styled('div', {
-    color: colors['neutral-10'],
-    width: spacing[15],
-})
 
 const Navbar: React.VFC = () => {
     const { pathname } = useRouter()
     const { words } = useTranslation()
 
     return (
-        <BaseNavbar>
+        <Container
+            as="nav"
+            css={{
+                inset: spacing[0],
+                z: '20',
+
+                backgroundColor: colors['inherit'],
+                backdropFilter: utils.filters.blur.md,
+
+                boxSizing: 'border-box',
+
+                mx: spacing[0],
+                my: spacing[13],
+
+                ...responsive({
+                    sm: { px: spacing[11], py: spacing[11] },
+                    md: {
+                        px: spacing[12],
+                        py: spacing[13],
+                        position: 'sticky',
+                    },
+                }),
+            }}
+        >
             <Stack
                 direction="row"
                 justify="space-between"
                 align="center"
                 css={{
-                    maxWidth: utils.sizes.lg,
+                    wmax: utils.sizes.md,
                     mx: 'auto',
                 }}
             >
                 <Link href="/">
-                    <LogoWrapper>
+                    <Container
+                        css={{
+                            color: colors['neutral-10'],
+                            width: spacing[15],
+                        }}
+                    >
                         <Logo />
-                    </LogoWrapper>
+                    </Container>
                 </Link>
                 <Stack
                     direction="row"
@@ -94,7 +99,7 @@ const Navbar: React.VFC = () => {
                     <ThemeSwitch />
                 </Stack>
             </Stack>
-        </BaseNavbar>
+        </Container>
     )
 }
 

@@ -1,11 +1,13 @@
-import { fetchTranslation } from '@lib/utils/mdx'
-import { fetchArticlesData } from '@lib/utils/data/articles'
-
 import { Grid, Spacer } from '@nico-bachner/components-react'
-import MDX from '@nico-bachner/mdx'
+import { ArticleCard } from '@lib/components/InfoCard'
 import Head from '@lib/components/Head'
 import Layout from '@lib/components/Layout'
-import { ArticleCard } from '@lib/components/InfoCard'
+import Title from '@lib/components/Title'
+import MDX from '@nico-bachner/mdx'
+
+import { useTranslation } from '@lib/hooks/useTranslation'
+import { fetchTranslation } from '@lib/utils/mdx'
+import { fetchArticlesData } from '@lib/utils/data/articles'
 
 import type { NextPage, GetStaticProps } from 'next'
 import type { MDXContent } from '@nico-bachner/mdx/utils'
@@ -25,27 +27,33 @@ const getStaticProps: GetStaticProps<ArticlesProps> = async ({ locale }) => ({
     },
 })
 
-const Articles: NextPage<ArticlesProps> = ({ content, articles }) => (
-    <Layout>
-        <Head
-            title="Articles | Nico Bachner"
-            description="Nico Bachner's Articles"
-        />
+const Articles: NextPage<ArticlesProps> = ({ content, articles }) => {
+    const { words } = useTranslation()
 
-        <MDX content={content} />
+    return (
+        <Layout>
+            <Head
+                title="Articles | Nico Bachner"
+                description="Nico Bachner's Articles"
+            />
 
-        <Spacer y={10} />
+            <Title title={words.articles} />
 
-        <Grid gap={10}>
-            {articles.map((article) => (
-                <ArticleCard
-                    key={article.path[article.path.length - 1]}
-                    {...article}
-                />
-            ))}
-        </Grid>
-    </Layout>
-)
+            <MDX content={content} />
+
+            <Spacer y={10} />
+
+            <Grid gap={10}>
+                {articles.map((article) => (
+                    <ArticleCard
+                        key={article.path[article.path.length - 1]}
+                        {...article}
+                    />
+                ))}
+            </Grid>
+        </Layout>
+    )
+}
 
 export { getStaticProps }
 

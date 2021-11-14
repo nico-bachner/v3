@@ -4,12 +4,12 @@ import {
     motion,
     spacing,
     typography,
-    utils,
 } from '@nico-bachner/design-tokens'
+
+import type { CSS } from '@nico-bachner/css'
 
 const BaseButton = styled('button', {
     cursor: 'pointer',
-    border: 'none',
 
     fontFamily: typography.fonts.sans,
     fontWeight: typography.fontWeights[400],
@@ -17,55 +17,63 @@ const BaseButton = styled('button', {
     lineHeight: typography.lineHeights[1],
     letterSpacing: typography.letterSpacings[6],
 
-    px: spacing[10],
-    py: spacing[9],
+    color: '$$buttonTheme',
+    backgroundColor: '$$buttonBg',
+    border: `1px solid`,
+    borderColor: '$$buttonTheme',
     r: spacing[6],
 
     transitionProperty: 'all',
     transitionDuration: motion.durations.medium,
     transitionTimingFunction: motion.easings.default,
 
+    '&:hover': {
+        color: '$$buttonBg',
+        backgroundColor: '$$buttonTheme',
+        borderColor: '$$buttonBg',
+    },
+
+    '&:active': {
+        color: '$$buttonBg',
+        backgroundColor: colors['neutral-1'],
+        borderColor: '$$buttonBg',
+    },
+
     variants: {
         variant: {
             primary: {
-                color: colors['neutral-0'],
-                backgroundColor: colors['neutral-10'],
-                border: '1px solid',
-                borderColor: colors['neutral-10'],
-
-                '&:hover': {
-                    color: colors['neutral-10'],
-                    backgroundColor: colors['neutral-0'],
-                },
+                $$buttonTheme: colors['neutral-0'],
+                $$buttonBg: colors['neutral-10'],
             },
-            shadow: {
-                color: colors['neutral-10'],
-                backgroundColor: colors['inherit'],
-
-                '@light': {
-                    boxShadow: utils.shadows.md,
-                },
-                '@dark': {
-                    border: '1px solid',
-                    borderColor: colors['neutral-4'],
-                },
-
-                '&:hover': {
-                    '@light': {
-                        boxShadow: utils.shadows.lg,
-                    },
-                    '@dark': {
-                        borderColor: colors['neutral-8'],
-                    },
-                },
+            secondary: {
+                $$buttonTheme: colors['neutral-10'],
+                $$buttonBg: colors['neutral-0'],
             },
-            ghost: {
-                color: colors['neutral-10'],
-                backgroundColor: colors['inherit'],
-
-                '&:hover': {
-                    backgroundColor: colors['neutral-2'],
-                },
+            red: {
+                $$buttonTheme: colors['red-6'],
+                $$buttonBg: colors['neutral-0'],
+            },
+            cyan: {
+                $$buttonTheme: colors['cyan-6'],
+                $$buttonBg: colors['neutral-0'],
+            },
+            blue: {
+                $$buttonTheme: colors['blue-6'],
+                $$buttonBg: colors['neutral-0'],
+            },
+        },
+        size: {
+            sm: {
+                px: spacing[9],
+                py: spacing[8],
+            },
+            md: {
+                px: spacing[10],
+                py: spacing[9],
+            },
+            lg: {
+                px: spacing[11],
+                py: spacing[10],
             },
         },
     },
@@ -74,21 +82,23 @@ const BaseButton = styled('button', {
 type ButtonProps = {
     // functional
     children: React.ReactText
-    type?: 'button' | 'submit' | 'reset'
     onClick?: () => void
 
     // presentational
-    variant?: 'primary' | 'shadow' | 'ghost'
+    variant?: 'primary' | 'secondary' | 'red' | 'cyan' | 'blue'
+    size?: 'sm' | 'md' | 'lg'
+    css?: CSS
 }
 
 const Button: React.VFC<ButtonProps> = ({
     children,
-    type = 'button',
     onClick,
 
     variant = 'primary',
+    size = 'md',
+    css,
 }) => (
-    <BaseButton type={type} onClick={onClick} variant={variant}>
+    <BaseButton onClick={onClick} variant={variant} size={size} css={css}>
         {children}
     </BaseButton>
 )

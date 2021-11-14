@@ -16,6 +16,7 @@ const translation: Translation = {
         visitors: 'Visitors',
         source_code: 'Source Code',
         cv: 'CV',
+        page_not_found: 'Page not found',
     },
     actions: {
         change_language: 'Change language',

@@ -1,7 +1,8 @@
-import { List, Text } from '@nico-bachner/components-react'
+import { List } from '@nico-bachner/components-react'
 import Head from '@lib/components/Head'
 import Layout from '@lib/components/Layout'
 import Link from '@lib/components/Link'
+import Title from '@lib/components/Title'
 
 import type { NextPage } from 'next'
 
@@ -12,15 +13,7 @@ const Typography: NextPage = () => (
             description="Nico Bachner's Design System"
         />
 
-        <Text type="h1" width="sm">
-            Typography
-        </Text>
-
-        <Text size={6} width="sm" margin={[6, 14]}>
-            Typography presets
-        </Text>
-
-        <Text width="sm" margin={10}></Text>
+        <Title title="Typography" />
 
         <List.Root>
             <List.Item>

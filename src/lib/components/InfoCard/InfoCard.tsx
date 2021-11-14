@@ -26,7 +26,7 @@ const InfoCard: React.VFC<InfoCardProps> = ({
                 </Text>
                 <Text truncate={3}>{body}</Text>
                 <Stack direction="row" justify="space-between">
-                    <Text color="blue">{cta} →</Text>
+                    <Text color="blue-6">{cta} →</Text>
                     <Text color="neutral-8">{info}</Text>
                 </Stack>
             </Stack>

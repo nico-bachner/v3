@@ -8,6 +8,7 @@ import MDX from '@nico-bachner/mdx'
 import Head from '@lib/components/Head'
 import Layout from '@lib/components/Layout'
 import Link from '@lib/components/Link'
+import Title from '@lib/components/Title'
 
 import type { NextPage, GetStaticPaths, GetStaticProps } from 'next'
 import type { MDXContent } from '@nico-bachner/mdx/utils'
@@ -147,12 +148,7 @@ const Path: NextPage<PathProps> = ({
             />
 
             <article>
-                <Text type="h1" width="sm" margin={[0, subtitle ? 0 : 12]}>
-                    {title}
-                </Text>
-                <Text size={6} weight={500} width="sm" margin={[5, 12]}>
-                    {subtitle}
-                </Text>
+                <Title title={title} subtitle={subtitle ?? undefined} />
 
                 <MDX content={content} />
             </article>

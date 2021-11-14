@@ -1,7 +1,7 @@
 :root {
     --size-sm: 692px;
-    --size-md: 760px;
-    --size-lg: 848px;
+    --size-md: 768px;
+    --size-lg: 960px;
 
     --shadow-sm: 0 4px 16px hsla(0deg, 0%, 0%, 0.1);
     --shadow-md: 0 6px 24px hsla(0deg, 0%, 0%, 0.15);
