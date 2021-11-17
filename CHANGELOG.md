@@ -2,6 +2,44 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.20.0](https://github.com/nico-bachner/v3/compare/v1.19.0...v1.20.0) (2021-11-17)
+
+
+### Features
+
+* added breadcrumbs ([110b737](https://github.com/nico-bachner/v3/commit/110b737a1a1b2c69998cc72f4d58415efe85ba35))
+* added breadcrumbs to Layout component ([a732e71](https://github.com/nico-bachner/v3/commit/a732e710cfe7ca76060cc20569889bd9b8c1e949))
+* added link click counter ([d278c11](https://github.com/nico-bachner/v3/commit/d278c11873518e19194430d78f5a56342980fffd))
+* added link clicks to visitors page ([a7c3268](https://github.com/nico-bachner/v3/commit/a7c326888379ab472fc5f1b47ba51e7d3084f842))
+* added refresh buttons to visitors page ([6777539](https://github.com/nico-bachner/v3/commit/67775393d3a8dd72df492ed1abf0b23c1cf40fc9))
+* **components:** add Grid component ([92a4332](https://github.com/nico-bachner/v3/commit/92a43327bf0aabccf1e1f37a56812be6dcc104db))
+* **design:** improve button component ([7c3dfe4](https://github.com/nico-bachner/v3/commit/7c3dfe4c2e418dd86377fc1804fd6ae54efc413a))
+* **design:** improved interactive `Card` state ([3564106](https://github.com/nico-bachner/v3/commit/3564106ce4d9e4590ddc91a3469407d9eddc75d2))
+* **design:** truncate info card body text ([2e4d84c](https://github.com/nico-bachner/v3/commit/2e4d84cf2f589a621f6850fffdd1a35d67f38646))
+* **icons:** add more icons ([7f4942b](https://github.com/nico-bachner/v3/commit/7f4942b1e46adc22ff8365cb34db734617915ce4))
+* **icons:** add more icons ([86c0177](https://github.com/nico-bachner/v3/commit/86c017708cee3ba6ee91c35ee2bc097d52fb0fa3))
+* **icons:** further extend icon palette ([e8885a9](https://github.com/nico-bachner/v3/commit/e8885a90b1be41619c2e411a1ffa0a91755da0a8))
+* **icons:** further extend icon palette ([34cd813](https://github.com/nico-bachner/v3/commit/34cd813f7b2c7d17f8774207afe263740a7361ff))
+* **icons:** rewrite svg utils and extend icon palette ([a2e6ce0](https://github.com/nico-bachner/v3/commit/a2e6ce0f72f33c4bdd8778415db9e0d98f40d6c6))
+* **mdx:** added autolink headings ([df363c2](https://github.com/nico-bachner/v3/commit/df363c29e43982520ae55fadd56af629cdd7f921))
+* only index published articles ([75a4745](https://github.com/nico-bachner/v3/commit/75a47457e6e949b78d5b38d9517eac32e7e22e6e))
+* use Stitches ([2291c3c](https://github.com/nico-bachner/v3/commit/2291c3caf62f9170001a11c3c17dce12a1faa201))
+
+
+### Bug Fixes
+
+* **design:** adjusted subtitle margins ([36ed3a7](https://github.com/nico-bachner/v3/commit/36ed3a7747abfd862af43ea45e34134143c03565))
+* **design:** fixed breadcrumbs alignment ([1b72ef8](https://github.com/nico-bachner/v3/commit/1b72ef84b6d95a7e421402493721029c19ded442))
+* **design:** fixed broken media queries ([948959c](https://github.com/nico-bachner/v3/commit/948959c4bb18c0a349eb3982508039c283585546))
+* **design:** improve NavBar design ([ead3fb5](https://github.com/nico-bachner/v3/commit/ead3fb56e57ca80c6dacd4a0aae3c82ef659850e))
+* **design:** make bottom nav links smaller ([261517d](https://github.com/nico-bachner/v3/commit/261517df3d62ea1715d4bcad5f673e1498710b60))
+* fix broken GitHub edit link ([7357679](https://github.com/nico-bachner/v3/commit/73576795dbe6afcde190b2df0ae61c474b972a89))
+* fix build ([62bae60](https://github.com/nico-bachner/v3/commit/62bae60a6ed85623c8b69a19c0494a042ffef5ef))
+* fixed an issue causing missing pages ([70e7462](https://github.com/nico-bachner/v3/commit/70e7462d64eae4a8d03da10891a20c0b9f136724))
+* fixed url formatting in breadcrumb text ([4b9af5a](https://github.com/nico-bachner/v3/commit/4b9af5ab198e07b8981c0d3d4a4eab2c9822a26e))
+* remove papers ([3a80a1c](https://github.com/nico-bachner/v3/commit/3a80a1c9522f61faf1d0b53204a1a63948c51279))
+* remove superfluous page ([727b80c](https://github.com/nico-bachner/v3/commit/727b80cd13c0d82c914a86626763fb8d2e8e110c))
+
 ## [1.19.0](https://github.com/nico-bachner/v3/compare/v1.18.0...v1.19.0) (2021-09-25)
 
 
