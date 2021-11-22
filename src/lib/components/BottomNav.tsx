@@ -30,7 +30,7 @@ const BottomNav: React.VFC = () => {
                 }),
             }}
         >
-            <Text size={4} weight={800}>
+            <Text size={4} weight={8}>
                 <Link
                     href="/"
                     variant={pathname != '/' ? 'primary' : 'disabled'}
@@ -38,7 +38,7 @@ const BottomNav: React.VFC = () => {
                     {words.home}
                 </Link>
             </Text>
-            <Text size={4} weight={800}>
+            <Text size={4} weight={8}>
                 <Link
                     href="/projects"
                     variant={pathname != '/projects' ? 'primary' : 'disabled'}
@@ -46,7 +46,7 @@ const BottomNav: React.VFC = () => {
                     {words.projects}
                 </Link>
             </Text>
-            <Text size={4} weight={800}>
+            <Text size={4} weight={8}>
                 <Link
                     href="/articles"
                     variant={pathname != '/articles' ? 'primary' : 'disabled'}

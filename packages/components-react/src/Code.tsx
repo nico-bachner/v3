@@ -5,7 +5,7 @@ const BaseCode = styled('code', {
     display: 'inline-block',
 
     fontFamily: typography.fonts.mono,
-    fontWeight: typography.fontWeights[400],
+    fontWeight: typography.fontWeights[5],
     fontSize: typography.fontSizes[4],
     lineHeight: typography.lineHeights[0],
 

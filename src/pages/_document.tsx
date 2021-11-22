@@ -7,7 +7,7 @@ class Document extends NextDocument {
             <Html>
                 <Head>
                     <link
-                        href="https://fonts.googleapis.com/css2?family=Inter:wght@212;249;293;344;404;474;556;653;767;900&family=Fira+Code&display=swap"
+                        href="https://fonts.googleapis.com/css2?family=Inter:wght@193;234;284;344;417;505;612;742;900&family=Fira+Code:wght@417&display=swap"
                         rel="stylesheet"
                     />
                     <style

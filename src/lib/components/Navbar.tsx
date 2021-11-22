@@ -65,7 +65,7 @@ const Navbar: React.VFC = () => {
                         md: { display: 'flex' },
                     })}
                 >
-                    <Text weight={600}>
+                    <Text weight={7}>
                         <Link
                             href="/"
                             variant={pathname != '/' ? 'primary' : 'disabled'}
@@ -73,7 +73,7 @@ const Navbar: React.VFC = () => {
                             {words.home}
                         </Link>
                     </Text>
-                    <Text weight={600}>
+                    <Text weight={7}>
                         <Link
                             href="/projects"
                             variant={
@@ -83,7 +83,7 @@ const Navbar: React.VFC = () => {
                             {words.projects}
                         </Link>
                     </Text>
-                    <Text weight={600}>
+                    <Text weight={7}>
                         <Link
                             href="/articles"
                             variant={

@@ -12,7 +12,7 @@ const Title: React.VFC<TitleProps> = ({ title, subtitle }) => (
         </Text>
 
         {subtitle ? (
-            <Text size={6} weight={500} width="sm" margin={[5, 12]}>
+            <Text size={6} weight={7} width="sm" margin={[5, 12]}>
                 {subtitle}
             </Text>
         ) : null}

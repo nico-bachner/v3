@@ -11,7 +11,7 @@ const BaseTextInput = styled('input', {
     r: spacing[5],
 
     fontFamily: typography.fonts.sans,
-    fontWeight: typography.fontWeights[400],
+    fontWeight: typography.fontWeights[5],
     fontSize: typography.fontSizes[4],
     lineHeight: typography.lineHeights[0],
 

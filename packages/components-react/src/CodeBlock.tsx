@@ -3,7 +3,7 @@ import { colors, spacing, typography } from '@nico-bachner/design-tokens'
 
 const BaseCodeBlock: React.FC = styled('pre', {
     fontFamily: typography.fonts.mono,
-    fontWeight: typography.fontWeights[400],
+    fontWeight: typography.fontWeights[5],
     fontSize: typography.fontSizes[4],
     lineHeight: typography.lineHeights[4],
     tabSize: '4',

@@ -12,7 +12,7 @@ const BaseButton = styled('button', {
     cursor: 'pointer',
 
     fontFamily: typography.fonts.sans,
-    fontWeight: typography.fontWeights[400],
+    fontWeight: typography.fontWeights[5],
     fontSize: typography.fontSizes[4],
     lineHeight: typography.lineHeights[1],
     letterSpacing: typography.letterSpacings[6],

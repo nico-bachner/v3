@@ -62,10 +62,10 @@ const Home: NextPage<HomeProps> = ({ content, projects, articles }) => {
         <Layout breadcrumbs={false}>
             <Head title="Nico Bachner" />
 
-            <Text type="h1" size={10} weight={900}>
+            <Text type="h1" size={10}>
                 Nico Bachner
             </Text>
-            <Text size={9} weight={800} color={['cyan-7', 'blue-7']}>
+            <Text size={9} weight={8} color={['cyan-7', 'blue-7']}>
                 {bio.tagline}
             </Text>
 

@@ -15,7 +15,7 @@ const BaseLink = styled('a', {
                 color: 'inherit',
             },
             highlight: {
-                color: colors['blue-6'],
+                color: colors['blue-7'],
 
                 transitionProperty: 'border-bottom-color',
                 transitionDuration: motion.durations.fast,
@@ -24,7 +24,7 @@ const BaseLink = styled('a', {
                 borderBottom: ['0.09em', 'solid', 'transparent'].join(' '),
 
                 '&:hover': {
-                    borderBottomColor: colors['blue-6'],
+                    borderBottomColor: colors['blue-7'],
                 },
             },
             primary: {

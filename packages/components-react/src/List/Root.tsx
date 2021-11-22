@@ -7,7 +7,7 @@ const BaseRoot = styled('ul', {
     listStylePosition: 'inside',
 
     fontFamily: typography.fonts.sans,
-    fontWeight: typography.fontWeights[400],
+    fontWeight: typography.fontWeights[5],
     fontSize: typography.fontSizes[5],
     lineHeight: typography.lineHeights[5],
 

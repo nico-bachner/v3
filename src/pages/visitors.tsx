@@ -101,7 +101,7 @@ const Visitors: NextPage<Props> = ({
                         <Table.Row
                             css={{
                                 color: colors['neutral-10'],
-                                fontWeight: typography.fontWeights[700],
+                                fontWeight: typography.fontWeights[7],
                             }}
                         >
                             <Table.Item type="body">Total</Table.Item>
@@ -168,7 +168,7 @@ const Visitors: NextPage<Props> = ({
                         <Table.Row
                             css={{
                                 color: colors['neutral-10'],
-                                fontWeight: typography.fontWeights[700],
+                                fontWeight: typography.fontWeights[7],
                             }}
                         >
                             <Table.Item type="body">Total</Table.Item>
