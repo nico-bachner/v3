@@ -26,7 +26,7 @@ const NotFound: NextPage<NotFoundProps> = ({ content }) => {
     const { words } = useTranslation()
 
     return (
-        <Layout width="sm">
+        <Layout>
             <Head title="404 | Nico Bachner" description="Page Not Found" />
 
             <Title title={`404 - ${words.page_not_found}`} />

@@ -1,31 +1,31 @@
 import { Text } from '@nico-bachner/components-react'
 
 const H1: React.FC = ({ children }) => (
-    <Text type="h1" width="sm" marginBottom={12}>
+    <Text type="h1" width="md" marginBottom={12}>
         {children}
     </Text>
 )
 
 const H2: React.FC<{ id?: string }> = ({ children, id }) => (
-    <Text type="h2" width="sm" margin={[13, 11]} id={id}>
+    <Text type="h2" width="md" margin={[13, 11]} id={id}>
         {children}
     </Text>
 )
 
 const H3: React.FC<{ id?: string }> = ({ children, id }) => (
-    <Text type="h3" width="sm" margin={[12, 11]} id={id}>
+    <Text type="h3" width="md" margin={[12, 11]} id={id}>
         {children}
     </Text>
 )
 
 const H4: React.FC<{ id?: string }> = ({ children, id }) => (
-    <Text type="h4" width="sm" margin={11} id={id}>
+    <Text type="h4" width="md" margin={11} id={id}>
         {children}
     </Text>
 )
 
 const P: React.FC = ({ children }) => (
-    <Text type="p" width="sm" margin={10}>
+    <Text type="p" width="md" margin={10}>
         {children}
     </Text>
 )

@@ -7,7 +7,7 @@ import Title from '@lib/components/Title'
 import type { NextPage } from 'next'
 
 const Design: NextPage = () => (
-    <Layout width="sm">
+    <Layout>
         <Head
             title="Design | Nico Bachner"
             description="Nico Bachner's Design System"

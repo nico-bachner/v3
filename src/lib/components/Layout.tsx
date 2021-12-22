@@ -19,7 +19,7 @@ type LayoutProps = {
 const Layout: React.FC<LayoutProps> = ({
     children,
     breadcrumbs = true,
-    width = 'sm',
+    width = 'md',
     css,
 }) => {
     return (
@@ -29,7 +29,8 @@ const Layout: React.FC<LayoutProps> = ({
             {breadcrumbs && (
                 <Container
                     css={{
-                        wmax: utils.sizes.sm,
+                        boxSizing: 'content-box',
+                        wmax: utils.sizes.md,
                         mx: 'auto',
                         mb: spacing[8],
 
@@ -47,6 +48,7 @@ const Layout: React.FC<LayoutProps> = ({
             <Container
                 as="main"
                 css={{
+                    boxSizing: 'content-box',
                     wmax: utils.sizes[width],
                     mx: 'auto',
                     mb: spacing[17],
@@ -65,7 +67,8 @@ const Layout: React.FC<LayoutProps> = ({
 
             <Container
                 css={{
-                    wmax: utils.sizes.sm,
+                    boxSizing: 'content-box',
+                    wmax: utils.sizes.md,
                     mx: 'auto',
 
                     ...responsive({

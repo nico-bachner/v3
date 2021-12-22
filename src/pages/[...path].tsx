@@ -138,7 +138,7 @@ const Path: NextPage<PathProps> = ({
     const { infos, actions, values } = useTranslation()
 
     return (
-        <Layout width="lg">
+        <Layout width="xl">
             <Head
                 title={title}
                 description={description}
@@ -157,7 +157,7 @@ const Path: NextPage<PathProps> = ({
                 direction="row"
                 justify="space-between"
                 css={{
-                    maxWidth: utils.sizes.sm,
+                    maxWidth: utils.sizes.md,
                     marginBlock: spacing[16],
                     marginInline: 'auto',
                 }}

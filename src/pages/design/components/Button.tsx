@@ -1,14 +1,5 @@
-import {
-    Button,
-    Container,
-    Grid,
-    Stack,
-    Text,
-} from '@nico-bachner/components-react'
+import { Button, Stack, Text } from '@nico-bachner/components-react'
 import ComponentPage from '@lib/components/ComponentPage'
-
-import { spacing } from 'packages/design-tokens/tokens'
-import { responsive } from '@nico-bachner/css'
 
 import type { NextPage } from 'next'
 
@@ -16,7 +7,7 @@ const ButtonPage: NextPage = () => (
     <ComponentPage
         title="Button"
         subtitle="For clicking and such..."
-        width="sm"
+        width="md"
     >
         <Text type="h2" margin={[15, 11]}>
             Sizes

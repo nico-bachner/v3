@@ -1,7 +1,8 @@
 :root {
-    --size-sm: 692px;
-    --size-md: 768px;
-    --size-lg: 960px;
+    --size-sm: calc(var(--font-size-5) / 2 * 60);
+    --size-md: calc(var(--font-size-5) / 2 * 70);
+    --size-lg: calc(var(--font-size-5) / 2 * 80);
+    --size-xl: calc(var(--font-size-5) / 2 * 90);
 
     --shadow-sm: 0 4px 16px hsla(0deg, 0%, 0%, 0.1);
     --shadow-md: 0 6px 24px hsla(0deg, 0%, 0%, 0.15);

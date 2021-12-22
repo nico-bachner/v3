@@ -3,6 +3,7 @@ const utils = {
         sm: 'var(--size-sm)',
         md: 'var(--size-md)',
         lg: 'var(--size-lg)',
+        xl: 'var(--size-xl)',
     },
     shadows: {
         sm: 'var(--shadow-sm)',

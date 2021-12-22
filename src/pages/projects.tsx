@@ -32,7 +32,7 @@ const Projects: NextPage<ProjectsProps> = ({ content, projects }) => {
     const { words } = useTranslation()
 
     return (
-        <Layout width="lg">
+        <Layout width="xl">
             <Head
                 title="Projects | Nico Bachner"
                 description="Nico Bachner's Projects"

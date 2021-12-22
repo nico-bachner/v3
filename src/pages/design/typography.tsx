@@ -7,7 +7,7 @@ import Title from '@lib/components/Title'
 import type { NextPage } from 'next'
 
 const Typography: NextPage = () => (
-    <Layout width="sm">
+    <Layout>
         <Head
             title="Typography - Nico Design"
             description="Nico Bachner's Design System"

@@ -14,8 +14,8 @@ import Table from './Table'
 import Text from './Text'
 
 const Wrapper = styled('div', {
-    marginInline: 'auto',
-    maxWidth: utils.sizes.sm,
+    mx: 'auto',
+    wmax: utils.sizes.md,
 })
 
 const A: React.FC<{ href: string }> = ({ children, href }) => (
@@ -33,8 +33,8 @@ const Hr: React.VFC = () => (
 const Pre: React.FC = ({ children }) => (
     <Wrapper
         css={{
-            marginBottom: spacing[10],
-            maxWidth: utils.sizes.md,
+            my: spacing[15],
+            wmax: utils.sizes.lg,
         }}
     >
         <CodeBlock>{children}</CodeBlock>
@@ -56,7 +56,7 @@ const MDXImage: React.VFC<{
     <Wrapper
         css={{
             marginBlock: spacing[8],
-            maxWidth: utils.sizes.md,
+            maxWidth: utils.sizes.xl,
         }}
     >
         <Image src={src} alt={alt} width={width} height={height} />

@@ -43,7 +43,7 @@ const Navbar: React.VFC = () => {
                 justify="space-between"
                 align="center"
                 css={{
-                    wmax: utils.sizes.md,
+                    wmax: utils.sizes.lg,
                     mx: 'auto',
                 }}
             >
