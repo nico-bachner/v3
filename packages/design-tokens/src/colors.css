@@ -90,13 +90,3 @@
     --color-blue-8: hsl(210deg, 100%, 62%);
     --color-blue-9: hsl(210deg, 100%, 77%);
 }
-
-/*
-@supports (color: lch(0% 0 0deg / 0)) {
-    :root {
-        --color-red: lch(80% 200 30deg);
-        --color-cyan: lch(80% 200 240deg);
-        --color-blue: lch(50% 200 240deg); 
-    }
-}
-*/

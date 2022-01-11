@@ -1,4 +1,4 @@
-import { styled } from '@nico-bachner/css'
+import { styled, linearGradient } from '@nico-bachner/css'
 import { colors, spacing, typography, utils } from '@nico-bachner/design-tokens'
 
 import type { CSS } from '@nico-bachner/css'
@@ -83,8 +83,6 @@ type TextProps = {
 
     css?: CSS
 }
-
-const linearGradient = (args: string[]) => `linear-gradient(${args.join(', ')})`
 
 const Text: React.FC<TextProps> = ({
     children,

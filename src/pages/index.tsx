@@ -65,7 +65,7 @@ const Home: NextPage<HomeProps> = ({ content, projects, articles }) => {
             <Text type="h1" size={10}>
                 Nico Bachner
             </Text>
-            <Text size={9} weight={8} color={['cyan-7', 'blue-7']}>
+            <Text size={9} weight={8} color={['cyan-6', 'blue-6']}>
                 {bio.tagline}
             </Text>
 

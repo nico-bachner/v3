@@ -20,6 +20,8 @@ const responsive = ({ sm, md, lg }: Responsive<CSS>): CSS => ({
     },
 })
 
-export { responsive }
+const linearGradient = (args: string[]) => `linear-gradient(${args.join(', ')})`
+
+export { responsive, linearGradient }
 
 export type { Responsive }

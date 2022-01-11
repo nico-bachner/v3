@@ -1,4 +1,4 @@
-import { styled } from '@nico-bachner/css'
+import { styled, linearGradient } from '@nico-bachner/css'
 import { colors, motion } from '@nico-bachner/design-tokens'
 
 import NextLink from 'next/link'
