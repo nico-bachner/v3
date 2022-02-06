@@ -60,21 +60,19 @@ const BaseLink = styled('a', {
 })
 
 type LinkProps = {
-    variant?: 'default' | 'highlight' | 'primary' | 'secondary' | 'disabled'
     href: string
-    onClick?: React.MouseEventHandler<HTMLAnchorElement>
-}
+} & React.ComponentProps<typeof BaseLink>
 
 const Link: React.FC<LinkProps> = ({
     children,
     variant = 'default',
     href,
-    onClick,
+    ...props
 }) => {
     if (href.startsWith('/')) {
         return (
             <NextLink href={href}>
-                <BaseLink href={href} variant={variant} onClick={onClick}>
+                <BaseLink href={href} variant={variant} {...props}>
                     {children}
                 </BaseLink>
             </NextLink>
@@ -83,7 +81,7 @@ const Link: React.FC<LinkProps> = ({
 
     if (href.startsWith('#')) {
         return (
-            <BaseLink variant={variant} href={href} onClick={onClick}>
+            <BaseLink variant={variant} href={href} {...props}>
                 {children}
             </BaseLink>
         )
@@ -93,9 +91,9 @@ const Link: React.FC<LinkProps> = ({
         <BaseLink
             variant={variant}
             href={href}
-            onClick={onClick}
             target="_blank"
             rel="noopener noreferrer"
+            {...props}
         >
             {children}
         </BaseLink>

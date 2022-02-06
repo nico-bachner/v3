@@ -8,7 +8,7 @@ import {
     Link,
 } from '@nico-bachner/components-react'
 import { styled } from '@nico-bachner/css'
-import { spacing, utils, motion, typography } from '@nico-bachner/design-tokens'
+import { spacing, utils, typography } from '@nico-bachner/design-tokens'
 import List from './List'
 import Table from './Table'
 import Text from './Text'
@@ -41,11 +41,9 @@ const Pre: React.FC = ({ children }) => (
     </Wrapper>
 )
 
-const BaseSup = styled('sup', {
+const Sup = styled('sup', {
     lineHeight: typography.lineHeights[0],
 })
-
-const Sup: React.FC = ({ children }) => <BaseSup>{children}</BaseSup>
 
 const MDXImage: React.VFC<{
     src: string
