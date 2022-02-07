@@ -11,6 +11,7 @@ type MDXProps = {
 const MDX: React.VFC<MDXProps> = ({ content, components }) => (
     <MDXRemote
         {...content}
+        // @ts-ignore
         components={{
             ...MDXComponents,
             ...components,
