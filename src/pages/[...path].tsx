@@ -16,7 +16,6 @@ import { useTranslation } from '@lib/hooks/useTranslation'
 
 type PathProps = {
     title: string
-    subtitle: string | null
     description: string
     image: string | null
     url: string | null
@@ -79,7 +78,6 @@ const getStaticProps: GetStaticProps<PathProps> = async ({
 
     const {
         title,
-        subtitle = null,
         description,
         image = null,
         url = null,
@@ -88,9 +86,6 @@ const getStaticProps: GetStaticProps<PathProps> = async ({
 
     if (typeof title != 'string') {
         throw new Error(`'title' should be a string (${path})`)
-    }
-    if (subtitle && typeof subtitle != 'string') {
-        throw new Error(`'subtitle', if used, should be a string (${path})`)
     }
     if (typeof description != 'string') {
         throw new Error(`'description' should be a string (${path})`)
@@ -111,7 +106,6 @@ const getStaticProps: GetStaticProps<PathProps> = async ({
 
     const props: PathProps = {
         title,
-        subtitle,
         description,
         image,
         url,
@@ -126,7 +120,6 @@ const getStaticProps: GetStaticProps<PathProps> = async ({
 
 const Path: NextPage<PathProps> = ({
     title,
-    subtitle,
     description,
     image,
     url,
@@ -148,7 +141,7 @@ const Path: NextPage<PathProps> = ({
             />
 
             <article>
-                <Title title={title} subtitle={subtitle ?? undefined} />
+                <Title title={title} subtitle={description} />
 
                 <MDX content={content} />
             </article>

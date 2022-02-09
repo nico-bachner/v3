@@ -8,7 +8,13 @@ const extension = 'mdx'
 const fetchArticleData: Fetch<string[], ArticleData> = async (path) => {
     const file = await fetchFile({ basePath, path, extension })
 
-    const { title, description, featured = false, published } = getMDXData(file)
+    const {
+        title,
+        description,
+        featured = false,
+        visible = true,
+        published = false,
+    } = getMDXData(file)
 
     if (typeof title != 'string') {
         throw new Error(`'title' should be a string (${path})`)
@@ -19,8 +25,11 @@ const fetchArticleData: Fetch<string[], ArticleData> = async (path) => {
     if (typeof featured != 'boolean') {
         throw new Error(`'featured', if used, should be a boolean (${path})`)
     }
+    if (typeof visible != 'boolean') {
+        throw new Error(`'visible', if used, should be a boolean (${path})`)
+    }
     if (published != false && !(published instanceof Date)) {
-        throw new Error(`'published', should be a Date or false (${path})`)
+        throw new Error(`'published', if used, should be a Date (${path})`)
     }
 
     return {
@@ -28,7 +37,8 @@ const fetchArticleData: Fetch<string[], ArticleData> = async (path) => {
         title,
         description,
         featured,
-        published: published ? published.getTime() : false,
+        visible: published ? visible : false,
+        published: published ? published.getTime() : null,
         reading_time: Math.round(file.split(' ').length / 220),
     }
 }
@@ -41,8 +51,8 @@ const fetchArticlesData = async () => {
     )
 
     return articles
-        .filter(({ published }) => published)
-        .sort((a, b) => (b.published as number) - (a.published as number))
+        .filter(({ visible }) => visible)
+        .sort((a, b) => b.published - a.published)
 }
 
 export { fetchArticlesData }

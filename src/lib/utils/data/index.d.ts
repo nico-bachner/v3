@@ -1,26 +1,17 @@
-type ProjectData = {
+type PageData = {
     path: string[]
     title: string
     description: string
     featured: boolean
+    visible: boolean
+}
+
+type ProjectData = PageData & {
     from: number
     to: number | null
 }
 
-type ArticleData = {
-    path: string[]
-    title: string
-    description: string
-    featured: boolean
-    published: number | false
+type ArticleData = PageData & {
+    published: number
     reading_time: number
-}
-
-type PaperData = {
-    path: string[]
-    title: string
-    description: string
-    featured: boolean
-    published: number | false
-    institution: string | null
 }
