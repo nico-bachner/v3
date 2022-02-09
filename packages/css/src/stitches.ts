@@ -90,6 +90,11 @@ const { styled, css, keyframes, globalCss, getCssText, createTheme } =
             hmin: (value: PropertyValue<'height'>) => ({
                 minHeight: value,
             }),
+
+            // z-index
+            z: (value: number) => ({
+                zIndex: value,
+            }),
         },
     })
 

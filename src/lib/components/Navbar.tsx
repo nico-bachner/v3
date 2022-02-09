@@ -18,7 +18,7 @@ const Navbar: React.VFC = () => {
             as="nav"
             css={{
                 inset: spacing[0],
-                z: '20',
+                z: 20,
 
                 backgroundColor: colors['inherit'],
                 backdropFilter: utils.filters.blur.md,
