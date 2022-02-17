@@ -13,6 +13,12 @@ const Navbar: React.VFC = () => {
     const { pathname } = useRouter()
     const { words } = useTranslation()
 
+    const links = [
+        { path: '/', title: words.home },
+        { path: '/projects', title: words.projects },
+        { path: '/articles', title: words.articles },
+    ]
+
     return (
         <Container
             as="nav"
@@ -65,34 +71,20 @@ const Navbar: React.VFC = () => {
                         md: { display: 'flex' },
                     })}
                 >
-                    <Text weight={7}>
-                        <Link
-                            href="/"
-                            variant={pathname != '/' ? 'primary' : 'disabled'}
-                        >
-                            {words.home}
-                        </Link>
-                    </Text>
-                    <Text weight={7}>
-                        <Link
-                            href="/projects"
-                            variant={
-                                pathname != '/projects' ? 'primary' : 'disabled'
-                            }
-                        >
-                            {words.projects}
-                        </Link>
-                    </Text>
-                    <Text weight={7}>
-                        <Link
-                            href="/articles"
-                            variant={
-                                pathname != '/articles' ? 'primary' : 'disabled'
-                            }
-                        >
-                            {words.articles}
-                        </Link>
-                    </Text>
+                    {links.map((link) => (
+                        <Text weight={8} key={link.path}>
+                            <Link
+                                href={link.path}
+                                variant={
+                                    pathname != link.path
+                                        ? 'primary'
+                                        : 'disabled'
+                                }
+                            >
+                                {link.title}
+                            </Link>
+                        </Text>
+                    ))}
                 </Stack>
                 <Stack direction="row" align="center" gap={10}>
                     <LanguageSwitch />
