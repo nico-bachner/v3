@@ -15,29 +15,38 @@ const BaseLink = styled('a', {
                 color: 'inherit',
             },
             highlight: {
-                color: colors['blue-7'],
+                color: colors['blue-6'],
 
-                transitionProperty: 'border-bottom-color',
+                transitionProperty: 'color',
                 transitionDuration: motion.durations.fast,
                 transitionTimingFunction: motion.easings.default,
 
-                borderBottom: ['0.09em', 'solid', 'transparent'].join(' '),
-
                 '&:hover': {
-                    borderBottomColor: colors['blue-7'],
+                    color: colors['cyan-6'],
                 },
             },
             primary: {
                 color: colors['neutral-10'],
+                $$underlineColor: colors['neutral-10'],
 
-                transitionProperty: 'border-bottom-color',
-                transitionDuration: motion.durations.fast,
-                transitionTimingFunction: motion.easings.default,
-
-                borderBottom: ['0.09em', 'solid', 'transparent'].join(' '),
+                '&::after': {
+                    content: '',
+                    display: 'block',
+                    width: '100%',
+                    height: '2pt',
+                    background: '$$underlineColor',
+                    transform: 'scaleX(0)',
+                    transformOrigin: '100% 50%',
+                    transitionProperty: 'transform',
+                    transitionDuration: motion.durations.medium,
+                    transitionTimingFunction: motion.easings.default,
+                },
 
                 '&:hover': {
-                    borderBottomColor: colors['neutral-10'],
+                    '&::after': {
+                        transform: 'scaleX(1)',
+                        transformOrigin: '0% 50%',
+                    },
                 },
             },
             secondary: {
