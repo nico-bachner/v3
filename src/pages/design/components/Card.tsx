@@ -42,7 +42,7 @@ const CardPage: NextPage = () => (
                 <Text>Interactive</Text>
             </Container>
             <Container css={{ alignSelf: 'center' }}>
-                <Card interactive>
+                <Card variant="interactive">
                     <Text>Hover Me</Text>
                 </Card>
             </Container>

@@ -16,7 +16,7 @@ const IconCard: React.VFC<IconCardProps> = ({ slug }) => {
             href={`https://github.com/nico-bachner/v3/blob/main/packages/icons-react/src/${slug}.tsx`}
         >
             <Card
-                interactive
+                variant="interactive"
                 css={{
                     color: colors['neutral-10'],
                 }}
