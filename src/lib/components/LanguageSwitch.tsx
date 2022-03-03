@@ -8,9 +8,9 @@ const LanguageSwitch: React.FC = () => {
     return (
         <Select.Root
             value={locale}
-            onChange={({ target }) => {
+            onValueChange={(value) => {
                 push({ pathname, query }, pathname, {
-                    locale: target.value,
+                    locale: value,
                 })
             }}
         >
@@ -18,9 +18,9 @@ const LanguageSwitch: React.FC = () => {
                 const [languageCode, countryCode] = locale.split('-')
 
                 return (
-                    <Select.Option key={locale} value={locale}>
+                    <Select.Item key={locale} value={locale}>
                         {languageCode?.toUpperCase()}
-                    </Select.Option>
+                    </Select.Item>
                 )
             })}
         </Select.Root>

@@ -1,11 +1,9 @@
 import Root from './Root'
-import OptionGroup from './OptionGroup'
-import Option from './Option'
+import Item from './Item'
 
 const Select = {
     Root,
-    OptionGroup,
-    Option,
+    Item,
 }
 
 export default Select

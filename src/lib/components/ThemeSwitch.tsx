@@ -18,14 +18,15 @@ const ThemeSwitch: React.FC = () => {
     return (
         <Select.Root
             value={theme}
-            onChange={({ target }) => {
-                setTheme(target.value)
+            defaultValue="system"
+            onValueChange={(value) => {
+                setTheme(value)
             }}
         >
             {themes.map((theme) => (
-                <Select.Option key={theme} value={theme}>
+                <Select.Item key={theme} value={theme}>
                     {theme.toUpperCase()}
-                </Select.Option>
+                </Select.Item>
             ))}
         </Select.Root>
     )
