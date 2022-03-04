@@ -1,9 +1,8 @@
 import { colors, spacing, utils } from '@nico-bachner/design-tokens'
-import { responsive } from '@nico-bachner/css'
 import { useRouter } from 'next/router'
 import { useTranslation } from '@lib/hooks/useTranslation'
 
-import { Stack, Text } from '@nico-bachner/components-react'
+import { Container, Stack, Text } from '@nico-bachner/components-react'
 import Link from './Link'
 
 const BottomNav: React.VFC = () => {
@@ -16,44 +15,89 @@ const BottomNav: React.VFC = () => {
             justify="space-evenly"
             css={{
                 position: 'sticky',
-                bottom: spacing[0],
+                inset: spacing[10],
                 zIndex: '20',
 
-                backgroundColor: colors['inherit'],
+                backgroundColor: 'hsl(210deg 10% 50% / 5%)',
                 backdropFilter: utils.filters.blur.md,
 
-                py: spacing[12],
-                px: spacing[0],
+                display: 'flex',
+                gap: spacing[8],
 
-                ...responsive({
-                    md: { display: 'none' },
-                }),
+                wmax: 'max-content',
+                mx: 'auto',
+
+                py: spacing[8],
+                px: spacing[8],
+                r: spacing[10],
             }}
         >
-            <Text size={4} weight={8}>
-                <Link
-                    href="/"
-                    variant={pathname != '/' ? 'primary' : 'disabled'}
+            <Link href="/">
+                <Container
+                    css={{
+                        backgroundColor:
+                            pathname == '/'
+                                ? 'hsl(210deg 10% 50% / 30%)'
+                                : 'hsl(210deg 10% 50% / 10%)',
+
+                        '&:hover': {
+                            backgroundColor: 'hsl(210deg 10% 50% / 20%)',
+                        },
+
+                        py: spacing[8],
+                        px: spacing[10],
+                        r: spacing[9],
+                    }}
                 >
-                    {words.home}
-                </Link>
-            </Text>
-            <Text size={4} weight={8}>
-                <Link
-                    href="/projects"
-                    variant={pathname != '/projects' ? 'primary' : 'disabled'}
+                    <Text size={4} weight={8}>
+                        {words.home}
+                    </Text>
+                </Container>
+            </Link>
+            <Link href="/projects">
+                <Container
+                    css={{
+                        backgroundColor:
+                            pathname == '/projects'
+                                ? 'hsl(210deg 10% 50% / 30%)'
+                                : 'hsl(210deg 10% 50% / 10%)',
+
+                        '&:hover': {
+                            backgroundColor: 'hsl(210deg 10% 50% / 20%)',
+                        },
+
+                        py: spacing[8],
+                        px: spacing[10],
+                        r: spacing[9],
+                    }}
                 >
-                    {words.projects}
-                </Link>
-            </Text>
-            <Text size={4} weight={8}>
-                <Link
-                    href="/articles"
-                    variant={pathname != '/articles' ? 'primary' : 'disabled'}
+                    <Text size={4} weight={8}>
+                        {words.projects}
+                    </Text>
+                </Container>
+            </Link>
+            <Link href="/articles">
+                <Container
+                    css={{
+                        backgroundColor:
+                            pathname == '/articles'
+                                ? 'hsl(210deg 10% 50% / 30%)'
+                                : 'hsl(210deg 10% 50% / 10%)',
+
+                        '&:hover': {
+                            backgroundColor: 'hsl(210deg 10% 50% / 20%)',
+                        },
+
+                        py: spacing[8],
+                        px: spacing[10],
+                        r: spacing[9],
+                    }}
                 >
-                    {words.articles}
-                </Link>
-            </Text>
+                    <Text size={4} weight={8}>
+                        {words.articles}
+                    </Text>
+                </Container>
+            </Link>
         </Stack>
     )
 }

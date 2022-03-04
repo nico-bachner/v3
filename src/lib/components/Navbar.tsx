@@ -39,7 +39,6 @@ const Navbar: React.VFC = () => {
                     md: {
                         px: spacing[12],
                         py: spacing[13],
-                        position: 'sticky',
                     },
                 }),
             }}
